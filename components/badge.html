@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -32,24 +33,59 @@
 
   <section class="doc-section">
     <h2 id="variants">Variants</h2>
+    <p>Three colours, each as a dot or a count. The colours come from the brand's badge tokens (<code>--aec-badge-color-primary-*</code>, <code>-black-*</code> and <code>-white-*</code>).</p>
     <div class="doc-variants">
-      <div class="doc-variant"><div><h3>Primary</h3><p>The default: blue with white text.</p></div><div class="doc-variant-demo"><span class="aec-badge aec-badge--dot"></span><span class="aec-badge">3</span><span class="aec-badge aec-badge--md">12</span></div></div>
-      <div class="doc-variant"><div><h3>Dark</h3><p>A neutral alternative to blue.</p></div><div class="doc-variant-demo"><span class="aec-badge aec-badge--dark aec-badge--dot"></span><span class="aec-badge aec-badge--dark">3</span><span class="aec-badge aec-badge--dark aec-badge--md">12</span></div></div>
-      <div class="doc-variant"><div><h3>Light</h3><p>For dark or coloured surfaces only. It has no border.</p></div><div class="doc-variant-demo is-inverse"><span class="aec-badge aec-badge--light aec-badge--dot"></span><span class="aec-badge aec-badge--light">3</span><span class="aec-badge aec-badge--light aec-badge--md">12</span></div></div>
+      <div class="doc-variant"><div><h3 id="variant-primary">Primary</h3><p>The default. Uses the brand's primary colour.</p></div><div class="doc-variant-demo"><span class="aec-badge aec-badge--dot"></span><span class="aec-badge">3</span><span class="aec-badge aec-badge--md">12</span></div></div>
+      <div class="doc-variant"><div><h3 id="variant-dark">Dark</h3><p>A neutral alternative to primary, for places where the primary colour would compete with nearby content.</p></div><div class="doc-variant-demo"><span class="aec-badge aec-badge--dark aec-badge--dot"></span><span class="aec-badge aec-badge--dark">3</span><span class="aec-badge aec-badge--dark aec-badge--md">12</span></div></div>
+      <div class="doc-variant"><div><h3 id="variant-light">Light</h3><p>For dark or coloured surfaces only. It has no border.</p></div><div class="doc-variant-demo is-inverse"><span class="aec-badge aec-badge--light aec-badge--dot"></span><span class="aec-badge aec-badge--light">3</span><span class="aec-badge aec-badge--light aec-badge--md">12</span></div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <p>Badges have no states of their own. They sit on a component that does, such as an <a href="icon-button.html">icon button</a> or a <a href="chip.html">chip</a>, and keep the same colours when it is hovered, focused or pressed. When the count changes, update the number in place.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline aec-icon-btn--lg" type="button" tabindex="-1" aria-label="Notifications, 12 new"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/notification.svg)" aria-hidden="true"></span></button><span class="aec-badge aec-badge--md" id="badge-anatomy" aria-hidden="true">12</span></span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 32px);top:4px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 36px);top:38px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 52px);top:45px">3</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong><span data-measure="#badge-anatomy" data-prop="height"></span> tall and at least as wide, with <span data-measure="#badge-anatomy" data-prop="border-radius"></span> corners in this brand. It grows with the number.</span></li>
+        <li><span><strong>Count</strong><span data-measure="#badge-anatomy" data-prop="font-size"></span> <span data-measure="#badge-anatomy" data-prop="font-family"></span>, weight <span data-measure="#badge-anatomy" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Anchor</strong>The element the badge belongs to. <code>.aec-badge-anchor</code> pins the badge to its top-right corner, with a ring in the page background colour to separate them.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <p>Three sizes. Small is the default. The blue marks are measured from the real badges in the active brand.</p>
+    <div class="doc-spec is-row" data-spec="height,width,padding,radius">
+      <span class="aec-badge aec-badge--dot" id="badge-dot" data-spec-target></span>
+      <span class="aec-badge" id="badge-sm" data-spec-target>3</span>
+      <span class="aec-badge" id="badge-sm-wide" data-spec-target>99+</span>
+      <span class="aec-badge aec-badge--md" id="badge-md" data-spec-target>12</span>
     </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Size</th><th>Class</th><th>Box</th><th>Label</th></tr></thead>
+      <thead><tr><th>Size</th><th>Class</th><th>Height</th><th>Minimum width</th><th>Side padding</th><th>Text</th><th>Weight</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>X small</td><td><code>.aec-badge--dot</code></td><td>8×8 dot</td><td>—</td></tr>
-        <tr><td>Small (default)</td><td>—</td><td>16px tall, minimum width 16px</td><td>12px bold</td></tr>
-        <tr><td>Medium</td><td><code>.aec-badge--md</code></td><td>24px tall, minimum width 24px</td><td>14px bold</td></tr>
+        <tr><td>X small (dot)</td><td><code>.aec-badge--dot</code></td><td data-measure="#badge-dot" data-prop="height"></td><td data-measure="#badge-dot" data-prop="width"></td><td>—</td><td>—</td><td>—</td><td><code>--drp-badge-container-bg-xs-*</code></td></tr>
+        <tr><td>Small (default)</td><td>—</td><td data-measure="#badge-sm" data-prop="height"></td><td data-measure="#badge-sm" data-prop="width"></td><td data-measure="#badge-sm" data-prop="padding-left"></td><td data-measure="#badge-sm" data-prop="font-size"></td><td data-measure="#badge-sm" data-prop="font-weight"></td><td><code>--drp-badge-container-bg-small-*</code>, <code>--drp-badge-typography-small-*</code></td></tr>
+        <tr><td>Medium</td><td><code>.aec-badge--md</code></td><td data-measure="#badge-md" data-prop="height"></td><td data-measure="#badge-md" data-prop="width"></td><td data-measure="#badge-md" data-prop="padding-left"></td><td data-measure="#badge-md" data-prop="font-size"></td><td data-measure="#badge-md" data-prop="font-weight"></td><td><code>--drp-badge-container-bg-medium-*</code>, <code>--drp-badge-typography-medium-*</code></td></tr>
       </tbody>
     </table></div>
+    <p>The minimum width equals the height, so a single digit sits in a circle. Longer counts such as <em>99+</em> stretch the badge sideways (<span data-measure="#badge-sm-wide" data-prop="width"></span> in this brand).</p>
   </section>
 
   <section class="doc-section">
     <h2 id="placement">Placement</h2>
-    <p>Wrap the element and the badge in <code>.aec-badge-anchor</code> to pin the badge to the top-right corner. A white ring separates it from the element underneath.</p>
+    <p>Wrap the element and the badge in <code>.aec-badge-anchor</code> to pin the badge to the top-right corner. A ring in the page background colour separates it from the element underneath. Inside a chip or toggle, put the badge after the label instead.</p>
     <div class="doc-example" data-label="Badge on an icon button and avatar">
       <div class="doc-example-preview">
         <span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Notifications, 4 new"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/notification.svg)" aria-hidden="true"></span></button><span class="aec-badge" aria-hidden="true">4</span></span>
@@ -61,11 +97,25 @@
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
-    <ul>
-      <li>For counts over 99, show "99+".</li>
-      <li>Use a dot when the presence of something matters more than how many there are.</li>
-      <li>Don't put a badge on every item. Save it for things that need attention.</li>
-    </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Messages, 2 new"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/envelope-plain.svg)" aria-hidden="true"></span></button><span class="aec-badge" aria-hidden="true">2</span></span><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Saved vehicles"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Documents"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/document.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Do</strong>Save badges for things that need attention, such as new messages from the dealer.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Messages, 2 new"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/envelope-plain.svg)" aria-hidden="true"></span></button><span class="aec-badge" aria-hidden="true">2</span></span><span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Saved vehicles, 5"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span></button><span class="aec-badge" aria-hidden="true">5</span></span><span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Documents, 3"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/document.svg)" aria-hidden="true"></span></button><span class="aec-badge" aria-hidden="true">3</span></span></div><figcaption><strong>Don't</strong>Put a badge on every item. When everything is highlighted, nothing stands out.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-dark"><button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" aria-pressed="false">Offers <span class="aec-badge aec-badge--light">4</span></button></div><figcaption><strong>Do</strong>Use the light badge on dark surfaces, such as the header or an inverse chip.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-dark"><button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" aria-pressed="false">Offers <span class="aec-badge aec-badge--dark">4</span></button></div><figcaption><strong>Don't</strong>Put a dark badge on a dark surface. It blends into the background.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">Offers <span class="aec-badge">2</span></button></div><figcaption><strong>Do</strong>Use a primary badge on a light, unfilled control.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><button class="aec-btn aec-btn--primary" type="button">Offers <span class="aec-badge">2</span></button></div><figcaption><strong>Don't</strong>Put a primary badge on a primary filled button. The badge disappears into it.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>A badge holds a number, or nothing at all. Use a dot when the presence of something matters more than how many there are.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Notifications, more than 99 new"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/notification.svg)" aria-hidden="true"></span></button><span class="aec-badge" aria-hidden="true">99+</span></span></div><figcaption><strong>Do</strong>Show "99+" for counts over 99.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Notifications, 1284 new"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/notification.svg)" aria-hidden="true"></span></button><span class="aec-badge" aria-hidden="true">1,284</span></span></div><figcaption><strong>Don't</strong>Show long numbers. The badge covers the element it belongs to.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-chip aec-chip--info">New</span></div><figcaption><strong>Do</strong>Use an information chip when you need a word.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-badge aec-badge--md">New</span></div><figcaption><strong>Don't</strong>Put words in a badge. It is sized for one to three digits.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
@@ -73,7 +123,37 @@
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Convey the meaning in text <span class="doc-wcag">WCAG 1.1.1 · 1.3.1</span></h3><p>A bare number isn't meaningful when read out on its own. Put the meaning in the parent control's name, such as <code>aria-label="Notifications, 4 new"</code>, and hide the badge. Alternatively, add visually hidden text inside the badge.</p></div>
       <div class="doc-a11y-item"><h3>Live counts <span class="doc-wcag">WCAG 4.1.3</span></h3><p>If a count changes while the page is open, announce the change through a polite live region.</p></div>
+      <div class="doc-a11y-item"><h3>Not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>A dot only says "something is new". Make sure the parent's name or nearby text says what.</p></div>
+      <div class="doc-a11y-item"><h3>Not focusable</h3><p>Badges never take focus or respond to clicks. Keyboard users reach the information through the parent control.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>The count needs at least 4.5:1 against the badge. These ratios are measured live in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Variant</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Primary · small</td><td><span class="aec-badge" data-contrast-sample>3</span></td><td data-contrast-result></td></tr>
+        <tr><td>Primary · medium</td><td><span class="aec-badge aec-badge--md" data-contrast-sample>12</span></td><td data-contrast-result></td></tr>
+        <tr><td>Dark</td><td><span class="aec-badge aec-badge--dark" data-contrast-sample>3</span></td><td data-contrast-result></td></tr>
+        <tr><td>Light</td><td style="background:var(--aec-color-bg-inverse)"><span class="aec-badge aec-badge--light" data-contrast-sample>3</span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Notifications, 4 new"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/notification.svg)" aria-hidden="true"></span></button><span class="aec-badge" aria-hidden="true">4</span></span></div><figcaption><strong>Do</strong>Put the count in the button's name and hide the badge. A screen reader says "Notifications, 4 new, button".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-badge-anchor"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Notifications"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/notification.svg)" aria-hidden="true"></span></button><span class="aec-badge">4</span></span></div><figcaption><strong>Don't</strong>Leave the badge as a separate number. A screen reader says "Notifications, button, 4", with no meaning.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>colour</td><td>primary / black / white</td><td>(none) / <code>.aec-badge--dark</code> / <code>.aec-badge--light</code></td></tr>
+        <tr><td>size</td><td>x small / small / medium</td><td><code>.aec-badge--dot</code> / (none) / <code>.aec-badge--md</code></td></tr>
+        <tr><td>Placement</td><td>top-right of another element</td><td><code>.aec-badge-anchor</code> wrapper</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -89,6 +169,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

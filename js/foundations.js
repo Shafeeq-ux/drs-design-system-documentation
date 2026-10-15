@@ -30,7 +30,7 @@
     var link = document.querySelector('link[data-brand-css="' + id + '"]');
     var out = { base: {}, m768: {}, m1025: {} };
     if (!link || !link.sheet) return out;
-    var read = function (rule, into) { for (var i = 0; i < rule.style.length; i++) { var n = rule.style[i]; if (n.indexOf('--aec-typography-') === 0) into[n] = rule.style.getPropertyValue(n).trim(); } };
+    var read = function (rule, into) { for (var i = 0; i < rule.style.length; i++) { var n = rule.style[i]; if (n.indexOf('--aec-typography-') === 0 || n.indexOf('--drp-typography-') === 0) into[n] = rule.style.getPropertyValue(n).trim(); } };
     try {
       [].forEach.call(link.sheet.cssRules, function (r) {
         if (r.selectorText) read(r, out.base);
@@ -64,8 +64,9 @@
   }
 
   // ---------- Typography ----------
+  function drpName(name) { return /^body-\d$/.test(name) ? name + '-regular' : name; }
   function typeSpec(name) {
-    var V = brandTypeVars(), k = '--aec-typography-' + name + '-';
+    var V = brandTypeVars(), k = '--drp-typography-' + drpName(name) + '-';
     var pick = function (o) { var sz = o[k + 'font-size']; return sz ? [sz.replace('px', ''), (o[k + 'line-height'] || '').replace('px', ''), o[k + 'font-weight'], o[k + 'text-transform']] : null; };
     var m = pick(V.base), t = pick(V.m768), d = pick(V.m1025) || t || m;
     return { mobile: m, desktop: d || m, family: (V.base[k + 'font-family'] || '').split(',')[0].replace(/"/g, '') };
@@ -79,11 +80,11 @@
       var sp = typeSpec(t.name);
       var d = sp.desktop, m = sp.mobile;
       if (!d) { d = t.desktop; m = t.mobile; }
-      var cls = 'aec-' + t.name;
+      var cls = 'drp-typography-' + drpName(t.name);
       var mob = m && d && m.join() !== d.join() ? '<br>Mobile ' + fmt(m) : '';
       return '<div class="doc-type-row"><div class="doc-type-meta"><strong>' + t.name.replace('-', ' ') + '</strong>' +
         (sp.desktop ? 'Desktop ' + fmt(d) : d[0] + '/' + d[1]) + mob + (sp.family ? '<br>' + esc(sp.family) : '') +
-        '<br><button type="button" class="doc-btn" style="margin-top:8px" data-copy="' + cls + '" data-copy-label=".' + cls + '">.' + cls + '</button></div>' +
+        '<br><button type="button" class="doc-btn" style="margin-top:8px" data-copy="' + cls + '" data-copy-label=".' + cls + '">.' + cls + '</button><span class="doc-small doc-muted" style="display:block;margin-top:4px">Alias <code>.aec-' + t.name + '</code></span></div>' +
         '<div class="doc-type-sample ' + cls + '">' + esc(sample) + '</div></div>';
     }).join('');
   });
@@ -92,9 +93,9 @@
     var rows = T.typography.map(function (t) {
       var sp = typeSpec(t.name);
       var d = sp.desktop || t.desktop, m = sp.mobile || t.mobile || t.desktop;
-      return '<tr><td><code>.aec-' + t.name + '</code></td><td>' + d[0] + ' / ' + d[1] + '</td><td>' + m[0] + ' / ' + m[1] + '</td><td>' + d[2] + (m[2] !== d[2] ? ' (mobile ' + m[2] + ')' : '') + '</td><td>' + esc(sp.family || '') + '</td><td><code>--aec-typography-' + t.name + '-font-size</code></td></tr>';
+      return '<tr><td><code>.drp-typography-' + drpName(t.name) + '</code><br><span class="doc-small doc-muted">alias <code>.aec-' + t.name + '</code></span></td><td>' + d[0] + ' / ' + d[1] + '</td><td>' + m[0] + ' / ' + m[1] + '</td><td>' + d[2] + (m[2] !== d[2] ? ' (mobile ' + m[2] + ')' : '') + '</td><td>' + esc(sp.family || '') + '</td><td><code>--drp-typography-' + drpName(t.name) + '-*</code></td></tr>';
     }).join('');
-    el.innerHTML = '<table class="doc-table"><thead><tr><th>Class</th><th>Desktop (px)</th><th>Mobile (px)</th><th>Weight</th><th>Family</th><th>Size token</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    el.innerHTML = '<table class="doc-table"><thead><tr><th>Class</th><th>Desktop (px)</th><th>Mobile (px)</th><th>Weight</th><th>Family</th><th>Tokens</th></tr></thead><tbody>' + rows + '</tbody></table>';
   });
   }
 
@@ -134,36 +135,95 @@
 
   }
 
-  function renderAll() { renderColour(); renderType(); renderMetrics(); }
+  // Every .drp-typography-* class the active brand defines
+  function renderTypeClasses() {
+    document.querySelectorAll('[data-type-classes]').forEach(function (el) {
+      var V = brandTypeVars(), names = [];
+      Object.keys(V.base).forEach(function (k) { var m = k.match(/^--drp-typography-(.+)-font-size$/); if (m && names.indexOf(m[1]) < 0) names.push(m[1]); });
+      var order = function (n) { return /^display/.test(n) ? 0 : /^heading/.test(n) ? 1 : /^body/.test(n) ? 2 : /^button/.test(n) ? 3 : 4; };
+      names.sort(function (a, b) { return order(a) - order(b) || a.localeCompare(b, undefined, { numeric: true }); });
+      var val = function (o, n, p) { return o['--drp-typography-' + n + '-' + p]; };
+      el.innerHTML = names.length ? '<table class="doc-table"><thead><tr><th>Class</th><th>Sample</th><th>Size / line</th><th>Weight</th><th>Case</th><th>From 768px</th></tr></thead><tbody>' + names.map(function (n) {
+        var b = V.base, t = V.m768;
+        var tab = val(t, n, 'font-size') ? val(t, n, 'font-size').replace('px', '') + ' / ' + (val(t, n, 'line-height') || '').replace('px', '') : '—';
+        var deco = val(b, n, 'text-decoration');
+        return '<tr><td><button type="button" class="doc-btn" data-copy="drp-typography-' + n + '" data-copy-label=".drp-typography-' + n + '"><code>.drp-typography-' + n + '</code></button></td>' +
+          '<td><span class="drp-typography-' + n + '">Your deal</span></td>' +
+          '<td>' + (val(b, n, 'font-size') || '').replace('px', '') + ' / ' + (val(b, n, 'line-height') || '').replace('px', '') + '</td>' +
+          '<td>' + esc(val(b, n, 'font-weight') || '') + '</td><td>' + esc((val(b, n, 'text-transform') || 'none') + (deco && deco !== 'none' ? ', ' + deco : '')) + '</td><td>' + tab + '</td></tr>';
+      }).join('') + '</tbody></table>' : '<p class="doc-muted">Loading…</p>';
+    });
+  }
+
+  function renderAll() {
+    renderColour(); renderType(); renderMetrics(); renderTypeClasses();
+    var bf = document.querySelectorAll('[data-brand-font]');
+    if (bf.length) { var f = getComputedStyle(document.body).fontFamily.split(',')[0].replace(/["']/g, ''); bf.forEach(function (n) { n.textContent = f; }); }
+  }
   renderAll();
   document.addEventListener('drs:brand', renderAll);
   // the brand sheet may still be loading on first paint
   var bl = document.querySelector('link[data-brand-css]');
   if (bl && !bl.sheet) bl.addEventListener('load', renderAll);
 
-  // ---------- Icons ----------
+  // ---------- Icons (brand icon fonts, js/icons-data.js) ----------
   var grid = document.querySelector('[data-icon-grid]');
-  if (grid) {
-    var ROOT = window.DRS.ROOT;
+  var IC = window.DRS_ICONS, BR = window.DRS_BRANDS;
+  if (grid && IC && BR) {
     var search = document.getElementById('icon-search');
     var sizeSel = document.getElementById('icon-size');
+    var brandSel = document.getElementById('icon-brand');
     var count = document.getElementById('icon-count');
-    fetch(ROOT + 'assets/icons/icons.json').then(function (r) { return r.json(); }).then(function (data) {
-      var all = data.icons || [];
-      function draw() {
-        var q = (search.value || '').trim().toLowerCase();
-        var list = all.filter(function (i) { return !q || i.name.indexOf(q) > -1; });
-        count.textContent = list.length + ' of ' + all.length + ' icons';
-        grid.style.setProperty('--icon-size', sizeSel.value + 'px');
-        grid.innerHTML = list.map(function (i) {
-          return '<button type="button" class="doc-icon" data-copy="' + i.name + '" data-copy-label="Icon name ‘' + i.name + '’" title="' + esc(i.figma) + '">' +
-            '<span class="aec-icon" style="--aec-icon-src:url(/' + i.file + ');width:var(--icon-size);height:var(--icon-size)" aria-hidden="true"></span><span>' + esc(i.name) + '</span></button>';
-        }).join('') || '<p class="doc-muted">No icons match “' + esc(q) + '”.</p>';
-      }
-      search.addEventListener('input', draw);
-      sizeSel.addEventListener('change', draw);
-      draw();
-    }).catch(function () { grid.innerHTML = '<p class="doc-muted">Icon manifest could not be loaded.</p>'; });
+    var nameOf = function (id) { var b = BR.brands.filter(function (x) { return x.id === id; })[0]; return b ? b.name : id; };
+    BR.brands.forEach(function (b) { if (IC.brands[b.id]) brandSel.insertAdjacentHTML('beforeend', '<option value="' + b.id + '">' + esc(b.name) + '</option>'); });
+    var total = document.querySelector('[data-icon-total]');
+    if (total) total.textContent = Object.keys(IC.brands).length + ' icon fonts';
+    function current() { return brandSel.value || window.DRS.currentBrand() || BR.default; }
+    function drawIcons() {
+      var id = current(), set = IC.brands[id] || IC.brands[BR.default];
+      var q = (search.value || '').trim().toLowerCase();
+      var list = set.icons.filter(function (i) { return !q || i[0].indexOf(q) > -1; });
+      count.textContent = list.length + ' of ' + set.count + ' icons · ' + nameOf(id) + ' (' + set.font + ')';
+      grid.style.setProperty('--icon-size', sizeSel.value + 'px');
+      grid.innerHTML = list.map(function (i) {
+        var snippet = '<span class="aec-icon" data-icon="' + i[0] + '" aria-hidden="true"></span>';
+        return '<button type="button" class="doc-icon" data-copy="' + esc(snippet) + '" data-copy-label="Icon ‘' + i[0] + '’ markup" title="' + esc(i[0]) + ' · \\' + i[1] + '">' +
+          '<span class="aec-icon" data-icon="' + i[0] + '" aria-hidden="true"></span><span class="doc-icon-name">' + esc(i[0]) + '</span><span class="doc-icon-code">\\' + i[1] + '</span></button>';
+      }).join('') || '<p class="doc-muted">No icons match “' + esc(q) + '”.</p>';
+    }
+    function setGridBrand() {
+      var id = brandSel.value;
+      if (!id) { grid.removeAttribute('data-brand'); drawIcons(); return; }
+      window.DRS.loadBrand(id).then(function () { grid.setAttribute('data-brand', id); drawIcons(); });
+    }
+    search.addEventListener('input', drawIcons);
+    sizeSel.addEventListener('change', drawIcons);
+    brandSel.addEventListener('change', setGridBrand);
+    document.addEventListener('drs:brand', function () { if (!brandSel.value) drawIcons(); });
+    drawIcons();
+
+    // Comparison table: a few common icons in every brand
+    var cmp = document.querySelector('[data-icon-compare]');
+    if (cmp) {
+      var picks = ['car', 'search', 'calendar-check', 'location', 'edit', 'close', 'info', 'arrow-right', 'trade-in', 'document', 'payment', 'phone'].filter(function (n) { return IC.brands[BR.default] && IC.brands[BR.default].icons.some(function (i) { return i[0] === n; }); }).slice(0, 8);
+      var ids = BR.brands.filter(function (b) { return IC.brands[b.id]; }).map(function (b) { return b.id; });
+      Promise.all(ids.map(function (id) { return window.DRS.loadBrand(id).catch(function () {}); })).then(function () {
+        cmp.innerHTML = '<table class="doc-table doc-icon-compare"><thead><tr><th scope="col">Icon</th>' + ids.map(function (id) { return '<th scope="col">' + esc(nameOf(id)) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+          picks.map(function (n) { return '<tr><th scope="row"><code>' + n + '</code></th>' + ids.map(function (id) { return '<td data-brand="' + id + '"><span class="aec-icon aec-icon--32" data-icon="' + n + '" aria-hidden="true"></span></td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table>';
+      });
+    }
+
+    // Downloads
+    var dl = document.querySelector('[data-icon-downloads]');
+    if (dl) {
+      dl.innerHTML = BR.brands.filter(function (b) { return IC.brands[b.id]; }).map(function (b) {
+        var f = IC.brands[b.id];
+        return '<div class="doc-icon-dl" data-brand="' + b.id + '"><div class="doc-icon-dl-glyphs"><span class="aec-icon" data-icon="car" aria-hidden="true"></span><span class="aec-icon" data-icon="search" aria-hidden="true"></span><span class="aec-icon" data-icon="edit" aria-hidden="true"></span></div>' +
+          '<div><strong>' + esc(b.name) + '</strong><span class="doc-small doc-muted">' + esc(f.font) + ' · ' + f.count + ' icons</span></div>' +
+          '<a class="doc-btn" href="' + window.DRS.ROOT + 'downloads/icons/' + f.zip + '" download>' + esc(f.zip) + '</a></div>';
+      }).join('');
+      BR.brands.forEach(function (b) { if (IC.brands[b.id]) window.DRS.loadBrand(b.id).catch(function () {}); });
+    }
   }
 
   var ill = document.querySelector('[data-illustrations]');

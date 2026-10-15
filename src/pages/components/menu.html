@@ -1,6 +1,6 @@
 ---
 title: Menu
-description: Menus show a list of options or actions that opens from a button or field, with optional search.
+description: Menus show a list of options or actions that opens from a button or field, with optional search. Covers item states, anatomy, spacing, content and accessibility.
 figma: 3769-50175
 ---
 <div class="doc-content">
@@ -8,6 +8,10 @@ figma: 3769-50175
   <h1>Menu</h1>
   <p class="doc-lead">Shows a list of options or actions in a panel that opens from a button or field.</p>
   <div class="doc-meta"><span>Menu + Menu List item</span><span><code>.aec-menu</code></span></div>
+
+  <div class="doc-intro">
+    <p>A menu keeps secondary actions and choices out of the way until people need them. Use an <strong>action menu</strong> for commands, such as <em>Save deal</em>, and a <strong>selection menu</strong> to pick one value, such as a sort order. Items can have an icon, a description, a header and dividers. For a value submitted with a form, use a <a href="text-field.html#dropdown">dropdown text field</a> instead.</p>
+  </div>
 
   <section class="doc-section">
     <h2 id="actions">Action menu</h2>
@@ -30,7 +34,7 @@ figma: 3769-50175
 
   <section class="doc-section">
     <h2 id="select">Selection menu with search</h2>
-    <p>For picking one value, use <code>menuitemradio</code> items. The selected item is bold and gets a blue tick. Turn on search for long lists.</p>
+    <p>For picking one value, use <code>menuitemradio</code> items. The selected item uses the selected typography and gets a tick. Turn on search for long lists.</p>
     <div class="doc-example" data-label="Select menu">
       <div class="doc-example-preview" style="min-height:420px;align-items:flex-start">
         <div class="aec-menu-anchor">
@@ -51,25 +55,97 @@ figma: 3769-50175
   </section>
 
   <section class="doc-section">
-    <h2 id="items">Item states</h2>
-    <div class="aec-menu" style="position:static;max-width:280px" role="presentation">
-      <div class="aec-menu__header">Header</div>
-      <div class="aec-menu__item">Default</div>
-      <div class="aec-menu__item" style="background:var(--aec-color-bg-variant)">Hover / pressed</div>
-      <div class="aec-menu__item" aria-selected="true">Selected</div>
-      <div class="aec-menu__item" aria-disabled="true">Disabled</div>
-      <div class="aec-menu__item"><span class="aec-menu__text"><span>With description</span><span class="aec-menu__desc">Descriptive text</span></span></div>
+    <h2 id="states">Item states</h2>
+    <p>Menu items have default, hover, pressed, selected and disabled states. Colours come from the active brand's list item tokens (<code>--aec-list-item-color-*</code>), so switch the brand in the header to compare them. Keyboard focus shows the hover background with a 3px <code>focus/default</code> bar on the leading edge.</p>
+    <div class="doc-state-matrix" data-states="default,hover,pressed,selected,disabled" aria-label="Menu item states">
+      <template data-row="Item"><div class="aec-menu__item" role="menuitemradio" aria-checked="false" style="width:200px">Lowest price</div></template>
+      <template data-row="With icon"><div class="aec-menu__item" role="menuitemradio" aria-checked="false" style="width:200px"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span>Save deal</div></template>
+      <template data-row="With description"><div class="aec-menu__item" role="menuitemradio" aria-checked="false" style="width:200px"><span class="aec-menu__text"><span class="aec-menu__label">Lowest mileage</span><span class="aec-menu__desc">Used only</span></span></div></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-menu" id="menu-anat" style="position:static;z-index:auto;width:280px" role="presentation">
+          <div class="aec-menu__header" id="menu-anat-header">Price</div>
+          <div class="aec-menu__item" id="menu-anat-item"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span>Save deal</div>
+          <div class="aec-menu__item" id="menu-anat-sel" aria-selected="true">Lowest price</div>
+          <div class="aec-menu__item"><span class="aec-menu__text"><span>Lowest mileage</span><span class="aec-menu__desc" id="menu-anat-desc">Used and certified only</span></span></div>
+          <hr class="aec-menu__divider">
+          <div class="aec-menu__item" aria-disabled="true">Delete deal</div>
+        </div>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 152px);top:20px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 100px);top:46px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 140px);top:86px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 0px);top:86px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 62px);top:134px">5</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 24px);top:203px">6</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 100px);top:233px">7</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong>At least <span data-measure="#menu-anat" data-prop="width"></span> wide here, with <span data-measure="#menu-anat" data-prop="padding-top"></span> vertical padding, a <span data-measure="#menu-anat" data-prop="border-width"></span> border and <code>shadow/s</code>.</span></li>
+        <li><span><strong>Header (optional)</strong><span data-measure="#menu-anat-header" data-prop="font-size"></span> <code>text/subtle</code>, groups related items.</span></li>
+        <li><span><strong>Icon (optional)</strong><span data-measure="#menu-anat-item" data-prop="icon-size"></span>, <span data-measure="#menu-anat-item" data-prop="gap"></span> from the label.</span></li>
+        <li><span><strong>Label</strong><span data-measure="#menu-anat-item" data-prop="font-size"></span> <span data-measure="#menu-anat-item" data-prop="font-family"></span>, weight <span data-measure="#menu-anat-item" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Selected tick</strong>Shown on the selected item, whose label changes to weight <span data-measure="#menu-anat-sel" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Description (optional)</strong><span data-measure="#menu-anat-desc" data-prop="font-size"></span>, one short line under the label.</span></li>
+        <li><span><strong>Divider (optional)</strong>Separates groups, for example a destructive action.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Size and spacing</h2>
+    <p>Menus come in one size. The blue marks are measured from a real item in the active brand, so they change when you switch brands.</p>
+    <div class="doc-spec" data-spec="height,padding,padding-y,gap,icon">
+      <div class="aec-menu__item" id="menu-spec-item" style="width:280px" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span>Share with co-applicant</div>
     </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Part</th><th>Spec</th></tr></thead>
+      <thead><tr><th>Part</th><th>Height</th><th>Side padding</th><th>Top padding</th><th>Gap</th><th>Text</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Container</td><td>Min width 240px, 8px vertical padding, <code>bg/default</code>, 1px <code>border/default</code>, <code>shadow/s</code>, square corners</td></tr>
-        <tr><td>Item</td><td>48px minimum height, 12/24px padding, body-2, 8px gap to icon</td></tr>
-        <tr><td>Hover / pressed</td><td><code>bg/variant</code></td></tr>
-        <tr><td>Selected</td><td><code>bg/variant</code>, bold label, 24px tick in <code>primary/default</code></td></tr>
-        <tr><td>Header</td><td>32px, 4/16px padding, body-3 <code>text/subtle</code></td></tr>
+        <tr><td>Container</td><td>—</td><td>—</td><td data-measure="#menu-anat" data-prop="padding-top"></td><td>—</td><td>—</td><td>None (semantic <code>--aec-color-bg-default</code>, <code>--aec-color-border-default</code>)</td></tr>
+        <tr><td>Header</td><td data-measure="#menu-anat-header" data-prop="height"></td><td data-measure="#menu-anat-header" data-prop="padding-left"></td><td data-measure="#menu-anat-header" data-prop="padding-top"></td><td>—</td><td data-measure="#menu-anat-header" data-prop="font-size"></td><td>None (semantic <code>--drp-typography-body-3-regular-*</code>)</td></tr>
+        <tr><td>Item</td><td data-measure="#menu-spec-item" data-prop="height"></td><td data-measure="#menu-spec-item" data-prop="padding-left"></td><td data-measure="#menu-spec-item" data-prop="padding-top"></td><td data-measure="#menu-spec-item" data-prop="gap"></td><td data-measure="#menu-spec-item" data-prop="font-size"></td><td><code>--drp-list-item-container-bg-*</code>, <code>--drp-list-item-typography-default-*</code></td></tr>
+        <tr><td>Selected item</td><td data-measure="#menu-anat-sel" data-prop="height"></td><td data-measure="#menu-anat-sel" data-prop="padding-left"></td><td data-measure="#menu-anat-sel" data-prop="padding-top"></td><td data-measure="#menu-anat-sel" data-prop="gap"></td><td data-measure="#menu-anat-sel" data-prop="font-size"></td><td><code>--drp-list-item-typography-selected-*</code></td></tr>
+        <tr><td>Description</td><td>—</td><td>—</td><td>—</td><td>—</td><td data-measure="#menu-anat-desc" data-prop="font-size"></td><td><code>--drp-list-item-typography-description-*</code></td></tr>
       </tbody>
     </table></div>
+    <p>Item colours come from <code>--aec-list-item-color-*</code>. The container, header, search and divider have no brand tokens of their own and use semantic colour tokens. Corners are square in every brand.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__header">Price</div><div class="aec-menu__item">Lowest price</div><div class="aec-menu__item">Highest price</div><div class="aec-menu__header">Vehicle</div><div class="aec-menu__item">Lowest mileage</div><div class="aec-menu__item">Newest model year</div></div></div><figcaption><strong>Do</strong>Group related items under short headers.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item">Lowest mileage</div><div class="aec-menu__item">Highest price</div><div class="aec-menu__item">Newest model year</div><div class="aec-menu__item">Lowest price</div></div></div><figcaption><strong>Don't</strong>Mix unrelated options in a random order.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item">Save deal</div><div class="aec-menu__item">Download summary</div><hr class="aec-menu__divider"><div class="aec-menu__item">Delete deal</div></div></div><figcaption><strong>Do</strong>Put destructive actions last, after a divider.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item">Save deal</div><div class="aec-menu__item">Delete deal</div><div class="aec-menu__item">Download summary</div></div></div><figcaption><strong>Don't</strong>Put a destructive action between everyday actions, where it's easy to press by mistake.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span>Save deal</div><div class="aec-menu__item"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span>Share</div><div class="aec-menu__item"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/download.svg)" aria-hidden="true"></span>Download</div></div></div><figcaption><strong>Do</strong>Give every item an icon, or none, so labels line up.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span>Save deal</div><div class="aec-menu__item">Share</div><div class="aec-menu__item"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/download.svg)" aria-hidden="true"></span>Download</div></div></div><figcaption><strong>Don't</strong>Add icons to only some items.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__search"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/search.svg)" aria-hidden="true"></span><input type="search" placeholder="Search dealers" aria-label="Search dealers"></div><div class="aec-menu__item">Downtown Motors</div><div class="aec-menu__item">Eastside Auto</div><div class="aec-menu__item">Lakeshore Cars</div></div></div><figcaption><strong>Do</strong>Add search to long lists, such as dealers or models.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__search"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/search.svg)" aria-hidden="true"></span><input type="search" placeholder="Search" aria-label="Search"></div><div class="aec-menu__item">Finance</div><div class="aec-menu__item">Lease</div></div></div><figcaption><strong>Don't</strong>Add search to a short list. It's quicker to scan.</figcaption></figure>
+    </div>
+    <ul>
+      <li>Open the menu next to its trigger and keep it on screen. On small screens, consider a bottom sheet for long lists.</li>
+      <li>Close the menu after an action or a selection, and show the selected value on the trigger.</li>
+      <li>Don't put menus inside menus. Use a dialog or a separate page for deep choices.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Start action labels with a verb: <em>Save deal</em>, <em>Download summary</em>.</li>
+      <li>Keep labels to one to four words in sentence case, with no end punctuation.</li>
+      <li>Use descriptions only when two items could be confused, and keep them to one line.</li>
+      <li>Write headers as short nouns: <em>Price</em>, <em>Vehicle</em>.</li>
+    </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item">Share with co-applicant</div><div class="aec-menu__item">Download summary</div></div></div><figcaption><strong>Do</strong>Say exactly what each item does.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item">Click here to share this deal with someone else…</div><div class="aec-menu__item">Options</div></div></div><figcaption><strong>Don't</strong>Write long sentences or vague labels.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
@@ -78,8 +154,56 @@ figma: 3769-50175
       <div class="doc-a11y-item"><h3>Trigger <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The button has <code>aria-haspopup="menu"</code>, <code>aria-expanded</code> and <code>aria-controls</code>.</p></div>
       <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Enter, Space or ↓ opens the menu and focuses the first item (↑ focuses the last). Arrows and Home/End move between items, Esc closes and returns focus, and Tab closes.</p></div>
       <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>The focused item gets the hover background and a 3px <code>focus/default</code> bar. Figma has no focus state, so this is added in code.</p></div>
+      <div class="doc-a11y-item"><h3>Roles and selection <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Use <code>menuitem</code> for actions and <code>menuitemradio</code> with <code>aria-checked</code> for a single choice. Mark unavailable items with <code>aria-disabled="true"</code> so they stay discoverable. Headers and dividers are <code>role="presentation"</code>.</p></div>
       <div class="doc-a11y-item"><h3>Form selects</h3><p>For a value submitted with a form, prefer a native <code>&lt;select&gt;</code> styled as a <a href="text-field.html#dropdown">dropdown text field</a>.</p></div>
     </div>
+
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Item text needs at least 4.5:1 against the item background in every state people can act on. Ratios are measured live in the active brand. Disabled items are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Item</td><td><div class="aec-menu__item" style="width:200px" data-contrast-sample>Save deal</div></td><td data-contrast-result></td></tr>
+        <tr><td>Item, hover</td><td><div class="aec-menu__item is-hover" style="width:200px" data-contrast-sample>Save deal</div></td><td data-contrast-result></td></tr>
+        <tr><td>Item, selected</td><td><div class="aec-menu__item" aria-selected="true" style="width:200px" data-contrast-sample>Lowest price</div></td><td data-contrast-result></td></tr>
+        <tr><td>Description</td><td><div class="aec-menu__item" style="width:200px"><span class="aec-menu__text"><span>Lowest mileage</span><span class="aec-menu__desc" data-contrast-sample>Used only</span></span></div></td><td data-contrast-result></td></tr>
+        <tr><td>Header</td><td><div class="aec-menu__header" data-contrast-sample>Price</div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The focus bar needs at least 3:1 against the item. The menu's border and shadow are decorative, so they don't have to meet 3:1, but the menu must still stand out from the page.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Focus bar</td><td><div class="aec-menu" style="position:static;min-width:0;width:200px;padding:0" role="presentation"><div class="aec-menu__item is-hover" data-contrast-sample data-contrast-mode="focus">Save deal</div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Menu border</td><td><div class="aec-menu" style="position:static;min-width:0;width:200px;padding:0" role="presentation" data-contrast-sample data-contrast-mode="border"><div class="aec-menu__item">Save deal</div></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item">Save deal</div><div class="aec-menu__item" aria-disabled="true">Delete deal</div></div></div><figcaption><strong>Do</strong>Keep unavailable items in the menu with <code>aria-disabled</code>, so people know the action exists.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item">Save deal</div></div></div><figcaption><strong>Don't</strong>Remove items without explanation, so the menu changes from one visit to the next.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item" aria-selected="true">Lowest price</div><div class="aec-menu__item">Highest price</div></div></div><figcaption><strong>Do</strong>Show the selected item with a tick and bold text, plus <code>aria-checked</code>.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-menu" style="position:static" role="presentation"><div class="aec-menu__item" style="color:var(--aec-color-primary-default)">Lowest price</div><div class="aec-menu__item">Highest price</div></div></div><figcaption><strong>Don't</strong>Show the selection with colour alone.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class or attribute</th></tr></thead>
+      <tbody>
+        <tr><td>Menu</td><td>—</td><td><code>.aec-menu</code> inside <code>.aec-menu-anchor</code></td></tr>
+        <tr><td>search</td><td>true</td><td><code>.aec-menu__search</code></td></tr>
+        <tr><td>Menu List item</td><td>—</td><td><code>.aec-menu__item</code></td></tr>
+        <tr><td>state</td><td>hover / pressed / selected / disabled</td><td><code>:hover</code> / <code>:active</code> / <code>aria-checked="true"</code> / <code>aria-disabled="true"</code></td></tr>
+        <tr><td>icon</td><td>true</td><td>child <code>.aec-icon</code> before the label</td></tr>
+        <tr><td>description</td><td>true</td><td><code>.aec-menu__text</code> with <code>.aec-menu__desc</code></td></tr>
+        <tr><td>header / divider</td><td>—</td><td><code>.aec-menu__header</code> / <code>.aec-menu__divider</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">

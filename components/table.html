@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Table · DRS Design System</title>
-<meta name="description" content="Tables organise data into rows and columns so it can be scanned and compared.">
+<meta name="description" content="Tables organise data into rows and columns, such as a payment breakdown or a list of saved deals, so it can be scanned and compared.">
 <meta name="theme-color" content="#262626">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -25,6 +26,10 @@
   <h1>Table</h1>
   <p class="doc-lead">Organises data into rows and columns so it can be scanned and compared, for example a payment breakdown or saved deals.</p>
   <div class="doc-meta"><span>Legacy Figma component, remapped</span><span><code>.aec-table</code></span></div>
+
+  <div class="doc-intro">
+    <p>Use a table when people need to compare values across several items, such as the status and monthly payment of each saved deal. A table can have sortable columns, selectable rows and three densities. It has no brand tokens of its own: it uses the semantic <code>--aec-color-*</code> tokens and the body-2 type style, so it still follows the active brand. For a short list of label and value pairs, such as a price summary, a plain list is often easier to read.</p>
+  </div>
 
   <section class="doc-section">
     <h2 id="default">Default</h2>
@@ -52,44 +57,165 @@
   </section>
 
   <section class="doc-section">
-    <h2 id="sizes">Density</h2>
-    <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Size</th><th>Class</th><th>Row height</th></tr></thead>
-      <tbody>
-        <tr><td>Small</td><td><code>.aec-table--sm</code></td><td>40px</td></tr>
-        <tr><td>Default</td><td>—</td><td>48px (header 46px)</td></tr>
-        <tr><td>Large</td><td><code>.aec-table--lg</code></td><td>56px</td></tr>
-      </tbody>
-    </table></div>
-    <p>Add <code>.aec-table--bordered</code> to put borders on every cell.</p>
+    <h2 id="states">States</h2>
+    <p>Rows are default or selected. A selected row gets a <code>primary/subtle</code> background, set by <code>aria-selected="true"</code> on the <code>&lt;tr&gt;</code>. Rows also turn <code>bg/variant</code> on hover, which you can try in the example above. Hover isn't shown here, because the docs can't force it on a table row yet.</p>
+    <div class="doc-state-matrix" data-states="default,selected" aria-label="Table row states">
+      <template data-row="Default"><table class="aec-table" style="width:280px"><tbody><tr data-state-el aria-selected="false"><td>2025 Equinox LT</td><td class="aec-num">$489</td></tr></tbody></table></template>
+      <template data-row="Small"><table class="aec-table aec-table--sm" style="width:280px"><tbody><tr data-state-el aria-selected="false"><td>2025 Equinox LT</td><td class="aec-num">$489</td></tr></tbody></table></template>
+      <template data-row="Large"><table class="aec-table aec-table--lg" style="width:280px"><tbody><tr data-state-el aria-selected="false"><td>2025 Equinox LT</td><td class="aec-num">$489</td></tr></tbody></table></template>
+      <template data-row="Bordered"><table class="aec-table aec-table--bordered" style="width:280px"><tbody><tr data-state-el aria-selected="false"><td>2025 Equinox LT</td><td class="aec-num">$489</td></tr></tbody></table></template>
+    </div>
   </section>
 
   <section class="doc-section">
-    <h2 id="spec">Specification</h2>
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-table-wrap" id="tbl-anatomy-wrap" style="max-width:340px">
+          <table class="aec-table">
+            <thead><tr><th scope="col" id="tbl-anatomy-th"><button class="aec-table__sort" type="button" tabindex="-1">Vehicle</button></th><th scope="col" class="aec-num">Monthly</th></tr></thead>
+            <tbody>
+              <tr><td id="tbl-anatomy-td">2025 Equinox LT</td><td class="aec-num">$489</td></tr>
+              <tr aria-selected="true"><td>2025 Silverado 1500</td><td class="aec-num">$612</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 196px);top:46px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 100px);top:8px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 196px);top:93px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 176px);top:93px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 196px);top:141px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Header row</strong><code>bg/variant</code>, <span data-measure="#tbl-anatomy-th" data-prop="font-size"></span> weight <span data-measure="#tbl-anatomy-th" data-prop="font-weight"></span>, <code>text/subtle</code>.</span></li>
+        <li><span><strong>Sort button (optional)</strong>Shows the sort direction. The column header carries <code>aria-sort</code>.</span></li>
+        <li><span><strong>Cell</strong><span data-measure="#tbl-anatomy-td" data-prop="font-size"></span> <span data-measure="#tbl-anatomy-td" data-prop="font-family"></span>, <code>text/default</code>, with a <span data-measure="#tbl-anatomy-td" data-prop="border-bottom-width"></span> <code>border/default</code> divider below.</span></li>
+        <li><span><strong>Number cell</strong><code>.aec-num</code>: right-aligned, with tabular figures so digits line up.</span></li>
+        <li><span><strong>Selected row</strong><code>primary/subtle</code>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Density and spacing</h2>
+    <p>Three densities. Default suits most tables. Use small for long lists on desktop and large when rows hold controls. The blue marks are measured from real cells in the active brand.</p>
+    <div class="doc-spec" data-spec="height,padding,padding-y">
+      <div class="aec-table-wrap" style="width:340px"><table class="aec-table">
+        <thead><tr><th scope="col" id="tbl-spec-th" data-spec-target>Vehicle</th><th scope="col" class="aec-num">Monthly</th></tr></thead>
+        <tbody><tr><td>2025 Equinox LT</td><td class="aec-num" id="tbl-spec-td" data-spec-target>$489</td></tr></tbody>
+      </table></div>
+    </div>
+    <div class="doc-spec" data-spec="height,padding-y">
+      <div class="aec-table-wrap" style="width:340px"><table class="aec-table aec-table--sm"><tbody><tr><td id="tbl-sm" data-spec-target>Small</td><td class="aec-num">$489</td></tr></tbody></table></div>
+      <div class="aec-table-wrap" style="width:340px"><table class="aec-table"><tbody><tr><td id="tbl-md" data-spec-target>Default</td><td class="aec-num">$489</td></tr></tbody></table></div>
+      <div class="aec-table-wrap" style="width:340px"><table class="aec-table aec-table--lg"><tbody><tr><td id="tbl-lg" data-spec-target>Large</td><td class="aec-num">$489</td></tr></tbody></table></div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Density</th><th>Class</th><th>Row height</th><th>Top and bottom padding</th><th>Outer side padding</th><th>Inner side padding</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Small</td><td><code>.aec-table--sm</code></td><td data-measure="#tbl-sm" data-prop="height"></td><td data-measure="#tbl-sm" data-prop="padding-top"></td><td data-measure="#tbl-sm" data-prop="padding-left"></td><td data-measure="#tbl-sm" data-prop="padding-right"></td><td rowspan="4">None of its own. Uses <code>--aec-color-bg-variant</code>, <code>--aec-color-primary-subtle</code>, <code>--aec-color-border-default</code>, <code>--aec-color-text-*</code> and <code>--drp-typography-body-2-regular-*</code></td></tr>
+        <tr><td>Default</td><td>—</td><td data-measure="#tbl-md" data-prop="height"></td><td data-measure="#tbl-md" data-prop="padding-top"></td><td data-measure="#tbl-md" data-prop="padding-left"></td><td data-measure="#tbl-md" data-prop="padding-right"></td></tr>
+        <tr><td>Large</td><td><code>.aec-table--lg</code></td><td data-measure="#tbl-lg" data-prop="height"></td><td data-measure="#tbl-lg" data-prop="padding-top"></td><td data-measure="#tbl-lg" data-prop="padding-left"></td><td data-measure="#tbl-lg" data-prop="padding-right"></td></tr>
+        <tr><td>Header row (default)</td><td><code>thead th</code></td><td data-measure="#tbl-spec-th" data-prop="height"></td><td data-measure="#tbl-spec-th" data-prop="padding-top"></td><td data-measure="#tbl-spec-th" data-prop="padding-left"></td><td data-measure="#tbl-spec-th" data-prop="padding-right"></td></tr>
+      </tbody>
+    </table></div>
+    <p>The first and last cells in a row have more side padding than the cells between them. Add <code>.aec-table--bordered</code> to put borders on every cell.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
     <ul>
-      <li><strong>Header</strong>: <code>bg/variant</code>, body-2 demi, <code>text/subtle</code>, with optional sort buttons.</li>
-      <li><strong>Cell</strong>: body-2, <code>text/default</code>, padding 12/8px (16px at the outer edges), 1px <code>border/default</code> row dividers.</li>
-      <li><strong>Selected row</strong>: <code>primary/subtle</code>.</li>
-      <li><strong>Numbers</strong>: right-aligned with tabular figures (<code>.aec-num</code>).</li>
+      <li>Use a table for data people compare across rows. Don't use one to lay out a page or a form.</li>
+      <li>Put the column people scan first, usually the item name, on the left.</li>
+      <li>Keep row actions, such as <em>View deal</em>, in the last column.</li>
     </ul>
+    <h3 id="dodont-usage">Do / don't: usage</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">Item</th><th scope="col" class="aec-num">Amount</th></tr></thead><tbody><tr><td>MSRP</td><td class="aec-num">$48,395</td></tr><tr><td>Offers</td><td class="aec-num">−$2,000</td></tr><tr><td>Trade-in</td><td class="aec-num">−$14,200</td></tr></tbody></table></div></div><figcaption><strong>Do</strong>Right-align numbers with <code>.aec-num</code> so the digits line up.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">Item</th><th scope="col">Amount</th></tr></thead><tbody><tr><td>MSRP</td><td>$48,395</td></tr><tr><td>Offers</td><td>−$2,000</td></tr><tr><td>Trade-in</td><td>−$14,200</td></tr></tbody></table></div></div><figcaption><strong>Don't</strong>Left-align amounts. They are hard to compare.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">Vehicle</th><th scope="col" class="aec-num">Monthly</th></tr></thead><tbody><tr><td>2025 Equinox LT</td><td class="aec-num">$489</td></tr><tr><td>2024 Blazer EV</td><td class="aec-num">—</td></tr></tbody></table></div></div><figcaption><strong>Do</strong>Show a dash for a value that doesn't apply, and explain it nearby if it isn't obvious.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">Vehicle</th><th scope="col" class="aec-num">Monthly</th></tr></thead><tbody><tr><td>2025 Equinox LT</td><td class="aec-num">$489</td></tr><tr><td>2024 Blazer EV</td><td class="aec-num"></td></tr></tbody></table></div></div><figcaption><strong>Don't</strong>Leave a cell empty. It looks like the data failed to load.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">Vehicle</th><th scope="col">Status</th><th scope="col">Type</th><th scope="col" class="aec-num">Monthly</th></tr></thead><tbody><tr><td>2025 Equinox LT</td><td>Approved</td><td>Finance</td><td class="aec-num">$489</td></tr></tbody></table></div></div><figcaption><strong>Do</strong>Let a wide table scroll inside <code>.aec-table-wrap</code> on small screens.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table" style="font-size:10px;line-height:14px"><thead><tr><th scope="col">Vehicle</th><th scope="col">Status</th><th scope="col">Type</th><th scope="col" class="aec-num">Monthly</th></tr></thead><tbody><tr><td>2025 Equinox LT</td><td>Approved</td><td>Finance</td><td class="aec-num">$489</td></tr></tbody></table></div></div><figcaption><strong>Don't</strong>Shrink the text to make it fit. It becomes hard to read.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><tbody><tr aria-selected="true"><td style="width:40px"><input class="aec-checkbox" type="checkbox" checked aria-label="Select 2025 Silverado"></td><td>2025 Silverado 1500</td><td class="aec-num">$612</td></tr><tr><td><input class="aec-checkbox" type="checkbox" aria-label="Select 2025 Equinox"></td><td>2025 Equinox LT</td><td class="aec-num">$489</td></tr></tbody></table></div></div><figcaption><strong>Do</strong>Pair the selected row colour with a checked checkbox in the first column.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><tbody><tr aria-selected="true"><td>2025 Silverado 1500</td><td class="aec-num">$612</td></tr><tr><td>2025 Equinox LT</td><td class="aec-num">$489</td></tr></tbody></table></div></div><figcaption><strong>Don't</strong>Show selection with colour alone. Some people can't see the difference.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>Column headers are labels, not sentences. Use one or two words, in sentence case, and put units in the header rather than in every cell where you can, for example "Term (months)". Format values the same way down a column: the same currency format, the same date format and the same number of decimal places.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">Vehicle</th><th scope="col" class="aec-num">Term (months)</th></tr></thead><tbody><tr><td>2025 Equinox LT</td><td class="aec-num">60</td></tr></tbody></table></div></div><figcaption><strong>Do</strong>Keep headers short and put the unit in the header.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">THE VEHICLE YOU CHOSE</th><th scope="col" class="aec-num">HOW LONG</th></tr></thead><tbody><tr><td>2025 Equinox LT</td><td class="aec-num">60 months</td></tr></tbody></table></div></div><figcaption><strong>Don't</strong>Write long headers or set them in capitals.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">Payment</th><th scope="col" class="aec-num">Amount</th></tr></thead><tbody><tr><td>Down payment</td><td class="aec-num">$5,000.00</td></tr><tr><td>Monthly</td><td class="aec-num">$489.00</td></tr></tbody></table></div></div><figcaption><strong>Do</strong>Use one format for every value in a column.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-table-wrap" style="width:100%"><table class="aec-table"><thead><tr><th scope="col">Payment</th><th scope="col" class="aec-num">Amount</th></tr></thead><tbody><tr><td>Down payment</td><td class="aec-num">$5k</td></tr><tr><td>Monthly</td><td class="aec-num">489 USD</td></tr></tbody></table></div></div><figcaption><strong>Don't</strong>Mix formats in one column.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Semantics <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Use a real <code>&lt;table&gt;</code> with a <code>&lt;caption&gt;</code> and <code>scope</code> on header cells. Sorted columns use <code>aria-sort</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Headers and scope <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Use <code>&lt;th scope="col"&gt;</code> for column headers. If the first cell of each row names the row, such as the vehicle, make it <code>&lt;th scope="row"&gt;</code>. A screen reader then reads "2025 Equinox LT, Monthly, $489".</p></div>
+      <div class="doc-a11y-item"><h3>Sorting <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Put a <code>&lt;button class="aec-table__sort"&gt;</code> inside the header cell, and set <code>aria-sort="ascending"</code> or <code>"descending"</code> on the <code>&lt;th&gt;</code> of the sorted column only.</p></div>
+      <div class="doc-a11y-item"><h3>Selection <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Each row checkbox needs a label that names the row, such as "Select 2025 Equinox". The header checkbox selects all rows.</p></div>
       <div class="doc-a11y-item"><h3>Scrolling <span class="doc-wcag">WCAG 1.4.10</span></h3><p>Wide tables scroll inside <code>.aec-table-wrap</code>. Give the wrapper <code>tabindex="0"</code> and a label so keyboard users can scroll it.</p></div>
+    </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Text needs at least 4.5:1 against its row. These ratios are measured live in the active brand, using the same tokens as the table.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Header text</td><td style="background:var(--aec-color-bg-variant)"><span class="aec-body-2" style="color:var(--aec-color-text-subtle);font-weight:var(--aec-font-weight-demi)" data-contrast-sample>Monthly</span></td><td data-contrast-result></td></tr>
+        <tr><td>Cell text</td><td style="background:var(--aec-color-bg-default)"><span class="aec-body-2" style="color:var(--aec-color-text-default)" data-contrast-sample>2025 Equinox LT</span></td><td data-contrast-result></td></tr>
+        <tr><td>Hover row</td><td style="background:var(--aec-color-bg-variant)"><span class="aec-body-2" style="color:var(--aec-color-text-default)" data-contrast-sample>2025 Equinox LT</span></td><td data-contrast-result></td></tr>
+        <tr><td>Selected row</td><td style="background:var(--aec-color-primary-subtle)"><span class="aec-body-2" style="color:var(--aec-color-text-default)" data-contrast-sample>2025 Silverado 1500</span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>Focus rings need at least 3:1. Row dividers and the outer border are decorative, because the alignment of the columns already shows the structure.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Outer border (decorative)</td><td><div class="aec-table-wrap" style="width:160px;height:32px" data-contrast-sample data-contrast-mode="border"></div></td><td data-contrast-result></td></tr>
+        <tr><td>Row divider (decorative)</td><td style="background:var(--aec-color-bg-default)"><span style="display:block;width:160px;border-top:var(--aec-border-width-10) solid var(--aec-color-border-default)" data-contrast-sample data-contrast-mode="border"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Sort button focus ring</td><td style="background:var(--aec-color-bg-variant)"><button class="aec-table__sort" type="button" tabindex="-1" data-contrast-sample data-contrast-mode="focus">Monthly</button></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><code>&lt;caption&gt;Saved deals&lt;/caption&gt;</code><code>&lt;th scope="col"&gt;Monthly&lt;/th&gt;</code></div><figcaption><strong>Do</strong>Give the table a caption and mark up header cells. A screen reader announces "Saved deals, table, 3 rows".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><code>&lt;div class="row"&gt;&lt;div&gt;Monthly&lt;/div&gt;…</code></div><figcaption><strong>Don't</strong>Build a table from <code>&lt;div&gt;</code>s. Screen readers can't move by row or column, or tell which header a value belongs to.</figcaption></figure>
     </div>
   </section>
 
   <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class or attribute</th></tr></thead>
+      <tbody>
+        <tr><td>Table</td><td>—</td><td><code>table.aec-table</code> inside <code>.aec-table-wrap</code></td></tr>
+        <tr><td>Size</td><td>small / default / large</td><td><code>.aec-table--sm</code> / (none) / <code>.aec-table--lg</code></td></tr>
+        <tr><td>Borders</td><td>all cells</td><td><code>.aec-table--bordered</code></td></tr>
+        <tr><td>Header cell</td><td>sortable</td><td><code>th[aria-sort]</code> &gt; <code>button.aec-table__sort</code></td></tr>
+        <tr><td>Cell</td><td>number</td><td><code>.aec-num</code></td></tr>
+        <tr><td>Checkbox</td><td>true</td><td><code>input.aec-checkbox</code> in the first column</td></tr>
+        <tr><td>Row state</td><td>hover / selected</td><td><code>:hover</code> / <code>tr[aria-selected="true"]</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
-    <ul class="doc-small">
-      <li>This is a legacy component, with an off-palette grey scale (#f1f1f3, #60616c, #e4e4e7), <code>Space/Padding/*</code> variables and an older checkbox. The code maps it to current tokens and uses the current <a href="checkbox.html">checkbox</a>.</li>
-      <li>The size order is inconsistent: Small controls are taller than Default ones.</li>
-      <li>Figma has no hover or selected row states. The code adds them.</li>
-      <li>There are typos in Figma ("Checkbox Dropdawn", "Expended").</li>
-    </ul>
+    <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><div><p><strong>Differences found in the Figma library, for the design team to review:</strong></p>
+      <ul style="margin:8px 0 0;padding-left:18px">
+        <li>This is a legacy component, with an off-palette grey scale (#f1f1f3, #60616c, #e4e4e7), <code>Space/Padding/*</code> variables and an older checkbox. The code maps it to current tokens and uses the current <a href="checkbox.html">checkbox</a>.</li>
+        <li>The size order is inconsistent: Small controls are taller than Default ones.</li>
+        <li>Figma has no hover or selected row states. The code adds them.</li>
+        <li>There are no table tokens in the brand files, so the table looks the same in every brand apart from its semantic colours and type.</li>
+        <li>There are typos in Figma ("Checkbox Dropdawn", "Expended").</li>
+      </ul></div></div>
   </section>
 </div>
 </main>
@@ -97,6 +223,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

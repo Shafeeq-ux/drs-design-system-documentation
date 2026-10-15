@@ -1,24 +1,25 @@
 ---
 title: Typography
-description: Display, heading and body text styles for the DRS Chevrolet foundation, set in DM Sans with responsive sizes.
+description: Display, heading and body text styles. Every brand sets its own typeface, sizes, weights and letter case through .drp-typography-* classes.
 figma: 398-2756
 scripts: foundations.js
 ---
 <div class="doc-content">
   <p class="doc-eyebrow">Foundations</p>
   <h1>Typography</h1>
-  <p class="doc-lead">One typeface and a small set of styles. Display and headings scale down on mobile, and body styles stay the same at every size.</p>
-  <div class="doc-meta"><span>Typeface: DM Sans</span><span>11 styles · 3 breakpoints</span></div>
+  <p class="doc-lead">A small set of styles: display, six headings and three body sizes. Each brand sets its own typeface, sizes, weights and letter case. The values below are read live from the brand chosen in the header.</p>
+  <div class="doc-meta"><span>Typeface: <span data-brand-font>brand font</span></span><span>11 styles · 3 breakpoints</span><span><code>.drp-typography-*</code></span></div>
 
   <div class="doc-intro">
-    <p>Figma uses <strong>Chevy Sans</strong>. The web build uses <strong>DM Sans</strong> from Google Fonts. Weights are mapped as follows: Chevy Sans Medium → 400, Demi → 600, Bold → 700. <code>body/*/medium</code> uses 500.</p>
-    <p>Sizes are mobile-first. Desktop and tablet values apply from <code>768px</code> up. The Figma tablet and desktop styles are identical.</p>
+    <p><strong>Typography isn't a <code>--aec-</code> variable in the brand files.</strong> Each style is a class with a <code>font</code> shorthand, such as <code>.drp-typography-heading-1 { font: 700 26px/36px "Chevy Sans"; text-transform: none; … }</code>. Larger sizes sit inside <code>@media (min-width: 768px)</code> and <code>@media (min-width: 1025px)</code> blocks, and brands with separate mobile styles add <code>.drp-typography-mobile-heading-*</code>. Body styles come in variants: <code>-regular</code>, <code>-medium</code>, <code>-bold</code>, <code>-link</code>, <code>-all-caps</code> and <code>-list</code>. The <code>--aec-font-family-*</code> and <code>--aec-font-weight-*</code> variables only name the families and weights.</p>
+    <p>On this site you can use the brand file's class names directly: <code>class="drp-typography-heading-1"</code> re-themes with the brand. Each value is also a custom property, <code>--drp-typography-&lt;style&gt;-font-size</code>, <code>-line-height</code>, <code>-font-weight</code>, <code>-font-family</code>, <code>-text-transform</code> and so on. Components use their own type classes, such as <code>.drp-button-contained-typography-large</code>.</p>
+    <p>Brand typefaces are licensed, so this site shows a free substitute: Chevy Sans as DM Sans, StratumGMC as Barlow, Buick as Figtree and Lexend, and Cadillac Gothic as Archivo. See <a href="../brands/index.html#fonts">Brand fonts</a>.</p>
   </div>
 
   <section class="doc-section">
     <h2 id="display">Display</h2>
     <p>For hero headlines and marketing moments. Use at most one per screen.</p>
-    <div data-type-scale="display" data-sample="Find your next Chevy"></div>
+    <div data-type-scale="display" data-sample="Find your next vehicle"></div>
   </section>
 
   <section class="doc-section">
@@ -46,25 +47,34 @@ scripts: foundations.js
 
   <section class="doc-section">
     <h2 id="scale">Full scale</h2>
+    <p>The core styles, with values from the active brand's <code>--drp-typography-*</code> tokens. The <code>.aec-*</code> names are kept as aliases.</p>
     <div class="doc-table-wrap" data-type-table></div>
   </section>
 
   <section class="doc-section">
-    <h2 id="usage">Usage</h2>
-<pre><code>&lt;h1 class="aec-heading-1"&gt;Review your deal&lt;/h1&gt;
-&lt;p class="aec-body-1"&gt;Your estimated payment includes taxes and fees.&lt;/p&gt;
+    <h2 id="classes">All brand type classes</h2>
+    <p>Every <code>.drp-typography-*</code> class the active brand defines, including body variants (regular, medium, bold, link, all caps, list), button text and the separate mobile styles. Each class is a <code>font</code> shorthand in the brand file, plus <code>text-transform</code>, <code>letter-spacing</code>, <code>text-decoration</code> and <code>text-indent</code>. Select a class name to copy it.</p>
+    <div class="doc-table-wrap" data-type-classes></div>
+  </section>
 
-/* or with tokens */
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+<pre><code>&lt;!-- brand type classes, the same names as the brand files --&gt;
+&lt;h1 class="drp-typography-heading-1"&gt;Review your deal&lt;/h1&gt;
+&lt;p class="drp-typography-body-1-regular"&gt;Your estimated payment includes taxes and fees.&lt;/p&gt;
+&lt;a class="drp-typography-body-2-link" href="…"&gt;View payment summary&lt;/a&gt;
+
+/* or with the custom properties behind them */
 .title {
-  font-size: var(--aec-typography-heading-3-font-size);
-  line-height: var(--aec-typography-heading-3-line-height);
-  font-weight: var(--aec-typography-heading-3-font-weight);
+  font: var(--drp-typography-heading-3-font-weight) var(--drp-typography-heading-3-font-size)/var(--drp-typography-heading-3-line-height) var(--drp-typography-heading-3-font-family);
+  text-transform: var(--drp-typography-heading-3-text-transform);
 }</code></pre>
-    <div class="doc-dd">
-      <div class="doc-dd-card"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start"><span class="aec-heading-4">Trade-in value</span><span class="aec-body-2 aec-text-subtle">Based on your vehicle's condition</span></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Pair a heading with body text one or two steps smaller to make the hierarchy clear.</div></div>
-      <div class="doc-dd-card is-dont"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start"><span class="aec-heading-4 aec-all-caps">TRADE-IN VALUE</span><span class="aec-heading-5">Based on your vehicle's condition</span></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't put long headings in all caps, or stack two headings of nearly the same size.</div></div>
+    <p>On this site, <code>.drp-typography-*</code> classes follow the nearest <code>[data-brand]</code>. The older <code>.aec-heading-*</code>, <code>.aec-body-*</code> and <code>.aec-display-*</code> classes still work. They use the mobile styles below 768px when a brand defines them.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><span class="aec-heading-4">Trade-in value</span><span class="aec-body-2 aec-text-subtle">Based on your vehicle's condition</span></div><figcaption><strong>Do</strong>Pair a heading with body text one or two steps smaller to make the hierarchy clear.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><span class="aec-heading-4">Trade-in value</span><span class="aec-heading-5">Based on your vehicle's condition</span></div><figcaption><strong>Don't</strong>Stack two headings of nearly the same size.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><span class="aec-heading-3">Choose your protection</span></div><figcaption><strong>Do</strong>Type headings in sentence case. Brands that use uppercase (GMC) apply it through <code>text-transform</code> in their tokens.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><span class="aec-heading-3">CHOOSE YOUR PROTECTION</span></div><figcaption><strong>Don't</strong>Type capitals into the content. It stays uppercase in brands that don't use it, and screen readers may spell it out.</figcaption></figure>
     </div>
   </section>
 </div>

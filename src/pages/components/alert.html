@@ -10,16 +10,28 @@ figma: 3769-50197
   <div class="doc-meta"><span>4 statuses</span><span><code>.aec-alert</code></span></div>
 
   <div class="doc-intro">
-    <p>Use an alert for messages tied to the content in front of the user, such as <em>Your credit application was approved</em>. For brief confirmations of an action, use a <a href="snackbar.html">snackbar</a>. For neutral announcements at the top of a page, use a <a href="banner.html">banner</a>.</p>
+    <p>Use an alert for messages tied to the content in front of the user, such as <em>Your credit application was approved</em>. Alerts come in four statuses: <strong>success, warning, error and info</strong>. For brief confirmations of an action, use a <a href="snackbar.html">snackbar</a>. For neutral announcements at the top of a page, use a <a href="banner.html">banner</a>. For a hint about a single term, use a <a href="tooltip.html">tooltip</a>.</p>
   </div>
 
   <section class="doc-section">
     <h2 id="status">Statuses</h2>
+    <p>Choose the status by what the message means for the person, not by how serious it looks. Each status has its own colour, icon and accent border, all set by the brand's notification tokens (<code>--aec-notification-color-&lt;status&gt;-*</code>).</p>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3 id="status-success">Success</h3><p>Something finished as expected, for example a pre-qualification or a verified document.</p></div>
+        <div class="doc-variant-demo"><div class="aec-alert aec-alert--success aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Your trade-in value is locked for 7 days.</p></div></div></div></div></div>
+      <div class="doc-variant"><div><h3 id="status-warning">Warning</h3><p>Something needs attention soon but doesn't block progress, such as an offer that is about to end.</p></div>
+        <div class="doc-variant-demo"><div class="aec-alert aec-alert--warning aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Your reservation expires in 24 hours.</p></div></div></div></div></div>
+      <div class="doc-variant"><div><h3 id="status-error">Error</h3><p>Something went wrong and the person can't continue until they fix it.</p></div>
+        <div class="doc-variant-demo"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">We couldn't verify your insurance. Upload a new card.</p></div></div></div></div></div>
+      <div class="doc-variant"><div><h3 id="status-info">Info</h3><p>Useful context that helps people decide, such as what a price includes.</p></div>
+        <div class="doc-variant-demo"><div class="aec-alert aec-alert--info aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Prices exclude tax, title and registration.</p></div></div></div></div></div>
+    </div>
+
     <div class="doc-example" data-label="Alert statuses">
       <div class="doc-example-preview is-stretch">
         <div class="aec-alert aec-alert--success" role="status">
           <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span>
-            <div class="aec-alert__content"><p class="aec-alert__title">You're pre-qualified</p><p class="aec-alert__message">Estimated APR 5.9% for 60 months. Final terms are confirmed by GM Financial.</p></div></div>
+            <div class="aec-alert__content"><p class="aec-alert__title">You're pre-qualified</p><p class="aec-alert__message">Estimated APR 5.9% for 60 months. Your lender confirms the final terms.</p></div></div>
         </div>
         <div class="aec-alert aec-alert--warning" role="status">
           <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span>
@@ -39,24 +51,122 @@ figma: 3769-50197
   </section>
 
   <section class="doc-section">
+    <h2 id="options">Optional parts</h2>
+    <p>The icon and message are always shown. The title, action link and close button are optional. Use <code>.aec-alert--flat</code> to remove the shadow when the alert sits inside a card or panel.</p>
+    <div class="doc-example" data-label="Title, link, close and flat">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-alert aec-alert--warning">
+          <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span>
+            <div class="aec-alert__content"><p class="aec-alert__message">Message only. Add a title when the message needs more than one sentence.</p></div></div>
+        </div>
+        <div class="aec-alert aec-alert--error" data-aec-dismissable>
+          <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>
+            <div class="aec-alert__content"><p class="aec-alert__title">Your payment didn't go through</p><p class="aec-alert__message">Your card was declined. Try another card or contact your bank.</p><a class="aec-link" href="#options">Change payment method</a></div></div>
+          <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" data-aec-dismiss><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+        </div>
+        <div class="aec-alert aec-alert--info aec-alert--flat">
+          <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span>
+            <div class="aec-alert__content"><p class="aec-alert__title">Flat alert</p><p class="aec-alert__message">No shadow, and it fills the width of its container.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">Interactive states</h2>
+    <p>The alert itself isn't interactive. Its action link and close button are, and they keep their own states inside every status. Focus adds the 2px <code>focus/default</code> ring.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,pressed" aria-label="Alert control states">
+      <template data-row="Close button"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Action link"><a class="aec-link" href="#states">Edit address</a></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
     <h2 id="anatomy">Anatomy</h2>
-    <ol>
-      <li><strong>Container</strong>: <code>bg/default</code>, 1px <code>border/default</code>, <code>shadow/m</code>, square corners and 16px padding. Add <code>.aec-alert--flat</code> to remove the shadow inside cards.</li>
-      <li><strong>Status accent</strong>: a 2px left border in the status colour.</li>
-      <li><strong>Icon</strong>: 24px, in the status colour.</li>
-      <li><strong>Title (optional)</strong>: body-1 bold, <code>text/default</code>.</li>
-      <li><strong>Message</strong>: body-2, <code>text/subtle</code>.</li>
-      <li><strong>Link (optional)</strong> and <strong>close button (optional)</strong>.</li>
-    </ol>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-alert aec-alert--error" id="alert-anatomy">
+          <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>
+            <div class="aec-alert__content"><p class="aec-alert__title" id="alert-anatomy-title">Address not verified</p><p class="aec-alert__message" id="alert-anatomy-message">Check the ZIP code and try again.</p><a class="aec-link" href="#anatomy" tabindex="-1">Edit address</a></div></div>
+          <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+        </div>
+        <span class="doc-anatomy-pin" style="right:4px;bottom:8px">1</span>
+        <span class="doc-anatomy-pin" style="left:4px;top:50%">2</span>
+        <span class="doc-anatomy-pin" style="left:30px;top:16px">3</span>
+        <span class="doc-anatomy-pin" style="left:45%;top:16px">4</span>
+        <span class="doc-anatomy-pin" style="left:62%;top:46%">5</span>
+        <span class="doc-anatomy-pin" style="left:45%;bottom:8px">6</span>
+        <span class="doc-anatomy-pin" style="right:4px;top:16px">7</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong><span data-measure="#alert-anatomy" data-prop="padding-left"></span> padding and <span data-measure="#alert-anatomy" data-prop="border-radius"></span> corners in this brand. The outer border is <span data-measure="#alert-anatomy" data-prop="border-width"></span>; some brands have none. Background, border and shadow come from the notification tokens.</span></li>
+        <li><span><strong>Status accent</strong>A <span data-measure="#alert-anatomy" data-prop="border-left-width"></span> left border in the status colour.</span></li>
+        <li><span><strong>Status icon</strong><span data-measure="#alert-anatomy" data-prop="icon-size"></span>, in the status colour. Use the matching icon for each status.</span></li>
+        <li><span><strong>Title (optional)</strong><span data-measure="#alert-anatomy-title" data-prop="font-size"></span> <span data-measure="#alert-anatomy-title" data-prop="font-family"></span>, weight <span data-measure="#alert-anatomy-title" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Message</strong><span data-measure="#alert-anatomy-message" data-prop="font-size"></span> on a <span data-measure="#alert-anatomy-message" data-prop="line-height"></span> line height, weight <span data-measure="#alert-anatomy-message" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Action link (optional)</strong>A primary <a href="link.html">link</a> that helps fix the problem.</span></li>
+        <li><span><strong>Close button (optional)</strong>A small neutral <a href="icon-button.html">icon button</a>, labelled <em>Dismiss</em>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Spacing</h2>
+    <p>The blue marks are measured from the real alert in the active brand, so they change when you switch brands. The pink mark is the space between the content and the close button.</p>
+    <div class="doc-spec" data-spec="padding,padding-y,gap,radius,border,icon">
+      <div class="aec-alert aec-alert--success" id="alert-spec" data-spec-target>
+        <div class="aec-alert__body" id="alert-spec-body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span>
+          <div class="aec-alert__content" id="alert-spec-content"><p class="aec-alert__title" id="alert-spec-title">You're pre-qualified</p><p class="aec-alert__message" id="alert-spec-message">Estimated APR 5.9% for 60 months.</p></div></div>
+        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Container padding</td><td data-measure="#alert-spec" data-prop="padding-left"></td><td><code>--aec-notification-container-inside-spacing</code></td></tr>
+        <tr><td>Content to close button</td><td data-measure="#alert-spec" data-prop="gap"></td><td><code>--aec-notification-container-inside-item-spacing</code></td></tr>
+        <tr><td>Icon to text</td><td data-measure="#alert-spec-body" data-prop="gap"></td><td><code>--aec-spacing-container-gap-s</code></td></tr>
+        <tr><td>Title to message</td><td data-measure="#alert-spec-content" data-prop="gap"></td><td><code>--aec-spacing-container-gap-xs</code></td></tr>
+        <tr><td>Corners</td><td data-measure="#alert-spec" data-prop="border-radius"></td><td><code>--aec-notification-container-inside-border-radius</code></td></tr>
+        <tr><td>Border</td><td data-measure="#alert-spec" data-prop="border-width"></td><td><code>--aec-notification-container-inside-border-width-*</code></td></tr>
+        <tr><td>Status accent</td><td data-measure="#alert-spec" data-prop="border-left-width"></td><td><code>--aec-notification-container-inside-border-width-left</code></td></tr>
+        <tr><td>Status icon</td><td data-measure="#alert-spec" data-prop="icon-size"></td><td><code>--aec-notification-color-&lt;status&gt;-icon</code> (colour)</td></tr>
+        <tr><td>Title text</td><td><span data-measure="#alert-spec-title" data-prop="font-size"></span> / <span data-measure="#alert-spec-title" data-prop="line-height"></span></td><td><code>--drp-notification-typography-title-*</code></td></tr>
+        <tr><td>Message text</td><td><span data-measure="#alert-spec-message" data-prop="font-size"></span> / <span data-measure="#alert-spec-message" data-prop="line-height"></span></td><td><code>--drp-notification-typography-description-*</code></td></tr>
+        <tr><td>Shadow</td><td>—</td><td><code>--aec-notification-container-inside-box-shadow</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
-    <div class="doc-dd">
-      <div class="doc-dd-card"><div class="doc-dd-preview"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Upload a photo of your driver's licence to continue.</p></div></div></div></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Say what happened and what to do next.</div></div>
-      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Error 422: validation failed.</p></div></div></div></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't show technical codes or blame the user.</div></div>
+    <p>Alerts interrupt. Use them sparingly, and only when the message changes what the person should do next.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--warning aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">The $1,500 loyalty bonus expires on October 31.</p></div></div></div></div><figcaption><strong>Do</strong>Match the status to the meaning. A deadline is a warning.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">The $1,500 loyalty bonus expires on October 31.</p></div></div></div></div><figcaption><strong>Don't</strong>Use error for something that isn't blocking. People learn to ignore red.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__title">2 details need fixing</p><p class="aec-alert__message">Check your ZIP code and phone number.</p></div></div></div></div><figcaption><strong>Do</strong>Show one alert per area. Combine related problems into one message.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">ZIP code is invalid.</p></div></div></div><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Phone number is invalid.</p></div></div></div></div><figcaption><strong>Don't</strong>Stack several alerts. They compete, and the page jumps as each one appears.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Vehicle saved to your garage</span><button class="aec-snackbar__action" type="button">View</button></div></div><figcaption><strong>Do</strong>Confirm a quick action, such as saving a vehicle, with a <a href="snackbar.html">snackbar</a>.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--success aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Vehicle saved.</p></div></div></div></div><figcaption><strong>Don't</strong>Use an alert for a confirmation that doesn't need to stay on screen.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Upload a photo of your driver's licence to continue.</p></div></div></div></div><figcaption><strong>Do</strong>Keep an error visible until the problem is fixed.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Upload a photo of your driver's licence to continue.</p></div></div><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div></div><figcaption><strong>Don't</strong>Let people dismiss an error that still blocks them, or hide it on a timer.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>Say what happened, why it matters and what to do next, in that order. Write in plain English and sentence case.</p>
+    <ul>
+      <li><strong>Title:</strong> optional. Three to six words that sum up the message, for example <em>Offer ends soon</em>. No full stop.</li>
+      <li><strong>Message:</strong> one or two short sentences. Lead with the fact, then the next step. Use full stops.</li>
+      <li><strong>Action:</strong> a link that starts with a verb and names the fix, such as <em>Edit address</em>. Use one action at most.</li>
+      <li>Don't blame the person ("You entered an invalid ZIP"). Describe the problem ("We couldn't find that ZIP code").</li>
+    </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">We couldn't verify your address. Check the ZIP code and try again.</p></div></div></div></div><figcaption><strong>Do</strong>Say what happened and what to do next.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Error 422: validation failed.</p></div></div></div></div><figcaption><strong>Don't</strong>Show technical codes or blame the person.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Your card was declined.</p><a class="aec-link" href="#content">Change payment method</a></div></div></div></div><figcaption><strong>Do</strong>Write the action as what it does.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Your card was declined.</p><a class="aec-link" href="#content">OK</a></div></div></div></div><figcaption><strong>Don't</strong>Use "OK" or "Click here". The link should make sense on its own.</figcaption></figure>
     </div>
   </section>
 
@@ -64,16 +174,59 @@ figma: 3769-50197
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Announcements <span class="doc-wcag">WCAG 4.1.3</span></h3><p>Use <code>role="alert"</code> only for urgent errors that appear dynamically. Use <code>role="status"</code> for success, info and warning. Alerts present when the page loads need neither.</p></div>
-      <div class="doc-a11y-item"><h3>Not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>Each status has its own icon and message, so meaning doesn't depend on the accent colour.</p></div>
+      <div class="doc-a11y-item"><h3>Not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>Each status has its own icon and message, so meaning doesn't depend on the accent colour. The icon is decorative (<code>aria-hidden="true"</code>), so the words must carry the meaning.</p></div>
       <div class="doc-a11y-item"><h3>Dismissing <span class="doc-wcag">WCAG 2.1.1</span></h3><p>The close button is a labelled icon button. When the alert is removed, focus moves to the next element.</p></div>
+      <div class="doc-a11y-item"><h3>Link text <span class="doc-wcag">WCAG 2.4.4</span></h3><p>The action link must make sense out of context, because screen reader users often list the links on a page.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Title and message text need at least 4.5:1 against the alert background. These ratios are measured live in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Status and part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Success title</td><td><div class="aec-alert aec-alert--success aec-alert--flat"><p class="aec-alert__title" data-contrast-sample>You're pre-qualified</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Success message</td><td><div class="aec-alert aec-alert--success aec-alert--flat"><p class="aec-alert__message" data-contrast-sample>Your lender confirms the final terms.</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Warning title</td><td><div class="aec-alert aec-alert--warning aec-alert--flat"><p class="aec-alert__title" data-contrast-sample>Offer ends soon</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Warning message</td><td><div class="aec-alert aec-alert--warning aec-alert--flat"><p class="aec-alert__message" data-contrast-sample>The bonus expires on October 31.</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Error title</td><td><div class="aec-alert aec-alert--error aec-alert--flat"><p class="aec-alert__title" data-contrast-sample>Address not verified</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Error message</td><td><div class="aec-alert aec-alert--error aec-alert--flat"><p class="aec-alert__message" data-contrast-sample>Check the ZIP code and try again.</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Info title</td><td><div class="aec-alert aec-alert--info aec-alert--flat"><p class="aec-alert__title" data-contrast-sample>About pricing</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Info message</td><td><div class="aec-alert aec-alert--info aec-alert--flat"><p class="aec-alert__message" data-contrast-sample>Prices exclude tax and registration.</p></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The status icon and accent border share one colour per status (<code>--aec-notification-color-&lt;status&gt;-icon</code>). It should reach 3:1 against the alert background so the icon stays recognisable. The bar next to each icon is a sample of that colour.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Success icon and accent</td><td><div class="aec-alert aec-alert--success aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span><span data-contrast-sample data-contrast-mode="border" style="align-self:center;width:24px;border-top:4px solid var(--_icon)" aria-hidden="true"></span></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Warning icon and accent</td><td><div class="aec-alert aec-alert--warning aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><span data-contrast-sample data-contrast-mode="border" style="align-self:center;width:24px;border-top:4px solid var(--_icon)" aria-hidden="true"></span></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Error icon and accent</td><td><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><span data-contrast-sample data-contrast-mode="border" style="align-self:center;width:24px;border-top:4px solid var(--_icon)" aria-hidden="true"></span></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Info icon and accent</td><td><div class="aec-alert aec-alert--info aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><span data-contrast-sample data-contrast-mode="border" style="align-self:center;width:24px;border-top:4px solid var(--_icon)" aria-hidden="true"></span></div></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Class or attribute</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td><code>.aec-alert</code></td><td>Add one status class.</td></tr>
+        <tr><td>Status</td><td><code>.aec-alert--success</code> / <code>--warning</code> / <code>--error</code> / <code>--info</code></td><td>Sets the background, border, accent and icon colour.</td></tr>
+        <tr><td>No shadow</td><td><code>.aec-alert--flat</code></td><td>Also removes the maximum width.</td></tr>
+        <tr><td>Icon and text wrapper</td><td><code>.aec-alert__body</code></td><td>Holds the status icon and <code>.aec-alert__content</code>.</td></tr>
+        <tr><td>Title / message</td><td><code>.aec-alert__title</code> / <code>.aec-alert__message</code></td><td>Inside <code>.aec-alert__content</code>.</td></tr>
+        <tr><td>Action</td><td><code>.aec-link</code></td><td>Inside <code>.aec-alert__content</code>, after the message.</td></tr>
+        <tr><td>Close</td><td><code>.aec-icon-btn--neutral.aec-icon-btn--sm</code> + <code>data-aec-dismiss</code></td><td>Direct child of the alert. Add <code>data-aec-dismissable</code> to the alert.</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
     <ul class="doc-small">
       <li>Every status uses the same placeholder icon. The code uses status icons from the library (<code>state-success</code>, <code>warning</code>, <code>state-error</code>, <code>info</code>).</li>
-      <li><em>Information</em> uses grey #666666 in Figma. The code uses <code>info/default</code>. Confirm which is intended.</li>
+      <li><em>Information</em> uses grey #666666 in Figma. The brand token <code>--aec-notification-color-information-icon</code> follows Figma (grey in DRS Base), but the semantic <code>info/default</code> colour is blue. Confirm which is intended.</li>
       <li>The shadow is a raw effect, but its values match <code>shadow/m</code> exactly.</li>
     </ul>
   </section>

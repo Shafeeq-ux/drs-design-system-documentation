@@ -30,7 +30,12 @@ window.DRS_BRANDS = {
       "families": [
         "DM Sans"
       ],
-      "google": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      "google": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
+      "icons": {
+        "font": "drs-sc-icons",
+        "zip": "drs-sc-icons-v1.0.zip",
+        "count": 207
+      }
     },
     {
       "id": "chevrolet",
@@ -60,7 +65,12 @@ window.DRS_BRANDS = {
       "families": [
         "Chevy Sans"
       ],
-      "google": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      "google": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
+      "icons": {
+        "font": "chevy-sc-icons",
+        "zip": "chevy-sc-icons-v1.0.zip",
+        "count": 198
+      }
     },
     {
       "id": "gmc",
@@ -90,7 +100,12 @@ window.DRS_BRANDS = {
       "families": [
         "StratumGMC"
       ],
-      "google": "https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap"
+      "google": "https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap",
+      "icons": {
+        "font": "gmc-sc-icons",
+        "zip": "gmc-sc-icons-v1.0.zip",
+        "count": 196
+      }
     },
     {
       "id": "buick",
@@ -121,7 +136,12 @@ window.DRS_BRANDS = {
         "Buick Text",
         "Buick Headline"
       ],
-      "google": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap"
+      "google": "https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap",
+      "icons": {
+        "font": "buick-sc-icons",
+        "zip": "buick-sc-icons-v1.0.zip",
+        "count": 196
+      }
     },
     {
       "id": "cadillac",
@@ -153,7 +173,12 @@ window.DRS_BRANDS = {
         "Cadillac Gothic",
         "Cadillac Gothic Wide"
       ],
-      "google": "https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"
+      "google": "https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap",
+      "icons": {
+        "font": "cadillac-sc-icons",
+        "zip": "cadillac-sc-icons-v1.0.zip",
+        "count": 196
+      }
     },
     {
       "id": "carbravo",
@@ -183,7 +208,12 @@ window.DRS_BRANDS = {
       "families": [
         "Chevy Sans"
       ],
-      "google": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      "google": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
+      "icons": {
+        "font": "carbravo-sc-icons",
+        "zip": "carbravo-sc-icons-v1.0.zip",
+        "count": 196
+      }
     }
   ],
   "fonts": {

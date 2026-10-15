@@ -7,8 +7,27 @@ figma: 3769-50200
   <p class="doc-eyebrow">Components · Feedback</p>
   <h1>Progress <span class="doc-nav-badge" style="font-size:14px;vertical-align:middle">Beta</span></h1>
   <p class="doc-lead">Shows that something is happening and, when known, how far along it is, for example uploading documents or checking credit.</p>
+  <div class="doc-meta"><span>Spinner · linear</span><span><code>.aec-spinner</code> · <code>.aec-progress</code></span></div>
 
   <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><p><strong>Not yet designed.</strong> The Figma Progress page only holds a placeholder (four grey 24px circles). These styles are a token-based proposal for the design team to review and may change.</p></div>
+
+  <div class="doc-intro">
+    <p>Use a <strong>spinner</strong> for short waits of unknown length and a <strong>linear</strong> bar when you can show how much is done. Progress has no status colours (success, warning, error, info) and <strong>no brand component tokens of its own</strong>. It uses the semantic colour tokens <code>--aec-color-primary-default</code>, <code>--aec-color-primary-subtle</code> and <code>--aec-color-bg-variant</code>, so it still re-themes with the brand. When a task finishes or fails, replace the indicator with a message, such as an <a href="alert.html">alert</a> or a <a href="snackbar.html">snackbar</a>.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3 id="variant-spinner">Spinner</h3><p>Three sizes: <code>.aec-spinner--sm</code>, default and <code>.aec-spinner--lg</code>. Use small inside compact elements, large for a whole panel.</p></div>
+        <div class="doc-variant-demo"><span class="aec-spinner aec-spinner--sm" role="status" aria-label="Loading"></span><span class="aec-spinner" role="status" aria-label="Loading"></span><span class="aec-spinner aec-spinner--lg" role="status" aria-label="Loading"></span></div></div>
+      <div class="doc-variant"><div><h3 id="variant-determinate">Linear, determinate</h3><p>Shows how much is done. Set <code>--aec-progress</code> and <code>aria-valuenow</code>.</p></div>
+        <div class="doc-variant-demo" style="flex-direction:column;align-items:stretch"><div class="aec-progress" role="progressbar" aria-label="Upload progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" style="--aec-progress:40%"></div></div></div>
+      <div class="doc-variant"><div><h3 id="variant-large">Linear, large</h3><p><code>.aec-progress--lg</code>. A thicker bar for a page-level task, such as submitting a credit application.</p></div>
+        <div class="doc-variant-demo" style="flex-direction:column;align-items:stretch"><div class="aec-progress aec-progress--lg" role="progressbar" aria-label="Application progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70" style="--aec-progress:70%"></div></div></div>
+      <div class="doc-variant"><div><h3 id="variant-indeterminate">Linear, indeterminate</h3><p><code>.aec-progress--indeterminate</code>. A moving segment for a step that has a clear place on the page but no known length.</p></div>
+        <div class="doc-variant-demo" style="flex-direction:column;align-items:stretch"><div class="aec-progress aec-progress--indeterminate" role="progressbar" aria-label="Checking availability"></div></div></div>
+    </div>
+  </section>
 
   <section class="doc-section">
     <h2 id="spinner">Spinner</h2>
@@ -24,7 +43,7 @@ figma: 3769-50200
 
   <section class="doc-section">
     <h2 id="linear">Linear</h2>
-    <p>For tasks with a known end point, such as a document upload. Set the value with <code>--aec-progress</code> and <code>aria-valuenow</code>.</p>
+    <p>For tasks with a known end point, such as a document upload. Set the value with <code>--aec-progress</code> and <code>aria-valuenow</code>. Wrap the bar in <code>.aec-progress-field</code> to add a label and value.</p>
     <div class="doc-example" data-label="Linear progress">
       <div class="doc-example-preview is-stretch">
         <div class="aec-progress-field">
@@ -37,6 +56,85 @@ figma: 3769-50200
         </div>
       </div>
     </div>
+    <div class="doc-example" data-label="Values from start to finish">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-progress-field"><div class="aec-progress-field__head"><span id="pg-v0">Uploading pay stub</span><span>0%</span></div><div class="aec-progress" role="progressbar" aria-labelledby="pg-v0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="--aec-progress:0%"></div></div>
+        <div class="aec-progress-field"><div class="aec-progress-field__head"><span id="pg-v25">Uploading pay stub</span><span>25%</span></div><div class="aec-progress" role="progressbar" aria-labelledby="pg-v25" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" style="--aec-progress:25%"></div></div>
+        <div class="aec-progress-field"><div class="aec-progress-field__head"><span id="pg-v100">Pay stub uploaded</span><span>100%</span></div><div class="aec-progress" role="progressbar" aria-labelledby="pg-v100" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" style="--aec-progress:100%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage" style="flex-direction:column;align-items:stretch">
+        <div class="aec-progress-field" id="pg-anatomy-field">
+          <div class="aec-progress-field__head" id="pg-anatomy-head"><span id="pg-anatomy-label">Uploading insurance card</span><span>64%</span></div>
+          <div class="aec-progress" id="pg-anatomy-bar" role="progressbar" aria-labelledby="pg-anatomy-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64" style="--aec-progress:64%"></div>
+        </div>
+        <span class="doc-anatomy-pin" style="left:8px;top:6px">1</span>
+        <span class="doc-anatomy-pin" style="right:8px;top:6px">2</span>
+        <span class="doc-anatomy-pin" style="left:30%;bottom:4px">3</span>
+        <span class="doc-anatomy-pin" style="left:80%;bottom:4px">4</span>
+      </div>
+      <ol>
+        <li><span><strong>Label</strong><span data-measure="#pg-anatomy-head" data-prop="font-size"></span> <span data-measure="#pg-anatomy-head" data-prop="font-family"></span>, in <code>text/default</code>. Says what is happening.</span></li>
+        <li><span><strong>Value (optional)</strong>The percentage, in <code>text/subtle</code> with tabular numbers.</span></li>
+        <li><span><strong>Indicator</strong>The filled part, in <code>--aec-color-primary-default</code>.</span></li>
+        <li><span><strong>Track</strong><span data-measure="#pg-anatomy-bar" data-prop="height"></span> tall and fully rounded (<code>--aec-border-radius-rounded</code>), in <code>--aec-color-bg-variant</code>. It sits <span data-measure="#pg-anatomy-field" data-prop="gap"></span> below the label.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Sizes and spacing</h2>
+    <p>The blue marks are measured from the real indicators. Sizes are set in the component CSS, not by brand tokens, so they're the same in every brand.</p>
+    <div class="doc-spec" data-spec="height">
+      <div class="aec-progress" id="pg-spec" data-spec-target role="progressbar" aria-label="Default bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--aec-progress:50%;max-width:320px"></div>
+      <div class="aec-progress aec-progress--lg" id="pg-spec-lg" data-spec-target role="progressbar" aria-label="Large bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--aec-progress:50%;max-width:320px"></div>
+    </div>
+    <div class="doc-spec is-row" data-spec="height,border">
+      <span class="aec-spinner aec-spinner--sm" id="sp-spec-sm" data-spec-target role="status" aria-label="Loading"></span>
+      <span class="aec-spinner" id="sp-spec" data-spec-target role="status" aria-label="Loading"></span>
+      <span class="aec-spinner aec-spinner--lg" id="sp-spec-lg" data-spec-target role="status" aria-label="Loading"></span>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Element</th><th>Class</th><th>Size</th><th>Stroke</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Linear bar</td><td><code>.aec-progress</code></td><td data-measure="#pg-spec" data-prop="height"></td><td>Fully rounded</td><td><code>--aec-color-bg-variant</code>, <code>--aec-color-primary-default</code>, <code>--aec-border-radius-rounded</code></td></tr>
+        <tr><td>Large bar</td><td><code>.aec-progress--lg</code></td><td data-measure="#pg-spec-lg" data-prop="height"></td><td>Fully rounded</td><td>As above</td></tr>
+        <tr><td>Small spinner</td><td><code>.aec-spinner--sm</code></td><td data-measure="#sp-spec-sm" data-prop="height"></td><td data-measure="#sp-spec-sm" data-prop="border-width"></td><td><code>--aec-color-primary-subtle</code> (ring), <code>--aec-color-primary-default</code> (arc)</td></tr>
+        <tr><td>Spinner</td><td><code>.aec-spinner</code></td><td data-measure="#sp-spec" data-prop="height"></td><td data-measure="#sp-spec" data-prop="border-width"></td><td>As above</td></tr>
+        <tr><td>Large spinner</td><td><code>.aec-spinner--lg</code></td><td data-measure="#sp-spec-lg" data-prop="height"></td><td data-measure="#sp-spec-lg" data-prop="border-width"></td><td>As above</td></tr>
+        <tr><td>Label to bar</td><td><code>.aec-progress-field</code></td><td data-measure="#pg-anatomy-field" data-prop="gap"></td><td>—</td><td><code>--aec-spacing-container-gap-s</code></td></tr>
+        <tr><td>Label text</td><td><code>.aec-progress-field__head</code></td><td><span data-measure="#pg-anatomy-head" data-prop="font-size"></span> / <span data-measure="#pg-anatomy-head" data-prop="line-height"></span></td><td>—</td><td><code>--drp-typography-body-2-regular-*</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-progress-field"><div class="aec-progress-field__head"><span>Uploading driver's licence</span><span>64%</span></div><div class="aec-progress" style="--aec-progress:64%"></div></div></div><figcaption><strong>Do</strong>Use a determinate bar when you know how much is done.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-spinner aec-spinner--lg"></span><span class="aec-body-3">Uploading driver's licence</span></div><figcaption><strong>Don't</strong>Show a spinner for a long upload with a known size. People can't tell if it's stuck.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-progress-field"><div class="aec-progress-field__head"><span>Checking credit</span></div><div class="aec-progress aec-progress--indeterminate"></div></div></div><figcaption><strong>Do</strong>Say what is happening.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-progress aec-progress--indeterminate"></div></div><figcaption><strong>Don't</strong>Show a bare indicator with no label for anything longer than a moment.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><button class="aec-btn aec-btn--primary" type="button" aria-busy="true">Submit application</button></div><figcaption><strong>Do</strong>Use the button's own loading state when an action is in progress.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><button class="aec-btn aec-btn--primary" type="button">Submit application</button><span class="aec-spinner"></span></div><figcaption><strong>Don't</strong>Put a separate spinner next to a button that can still be pressed again.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-spinner aec-spinner--lg"></span><span class="aec-body-3">Loading offers</span></div><figcaption><strong>Do</strong>Show one indicator for one task, in the area that is loading.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-spinner"></span><span class="aec-spinner"></span><span class="aec-spinner"></span><span class="aec-spinner"></span></div><figcaption><strong>Don't</strong>Spin an indicator in every card at once. Use one for the list, or skeleton content.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li><strong>Label:</strong> say what is happening with an -ing verb, for example <em>Uploading insurance card</em> or <em>Checking credit</em>. Sentence case, no full stop, no ellipsis.</li>
+      <li><strong>Value:</strong> show a percentage only when it's accurate. Don't let it jump back or sit at 99%.</li>
+      <li><strong>When it's done:</strong> change the label to the result, such as <em>Pay stub uploaded</em>, or replace the indicator with a message. If it fails, show an error <a href="alert.html">alert</a> that says what to do next.</li>
+      <li>Avoid "Please wait" and "Loading…" on their own. Say what is loading.</li>
+    </ul>
   </section>
 
   <section class="doc-section">
@@ -44,6 +142,43 @@ figma: 3769-50200
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Role and name <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>role="progressbar"</code> with a label and <code>aria-valuenow</code>, <code>aria-valuemin</code> and <code>aria-valuemax</code>. Leave the values out for indeterminate progress. Spinners use <code>role="status"</code> with an <code>aria-label</code>.</p></div>
       <div class="doc-a11y-item"><h3>Motion <span class="doc-wcag">WCAG 2.3.3</span></h3><p>Animations slow down when <code>prefers-reduced-motion</code> is set.</p></div>
+      <div class="doc-a11y-item"><h3>Announcing the result <span class="doc-wcag">WCAG 4.1.3</span></h3><p>Screen readers don't announce every value change. When the task ends, announce the result in a <code>role="status"</code> region, for example with a snackbar.</p></div>
+      <div class="doc-a11y-item"><h3>Busy regions</h3><p>Set <code>aria-busy="true"</code> on the area that is loading and remove it when the content arrives.</p></div>
     </div>
+    <h3 id="contrast">Contrast <span class="doc-wcag">WCAG 1.4.3 · 1.4.11</span></h3>
+    <p>Label text needs 4.5:1. The indicator is a graphic people need to understand progress, so it needs 3:1 against the track, and the spinner arc needs 3:1 against the page. These ratios are measured live in the active brand. The bars are samples of each colour.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Label</td><td><div class="aec-progress-field"><div class="aec-progress-field__head"><span data-contrast-sample>Uploading insurance card</span><span>64%</span></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Value</td><td><div class="aec-progress-field"><div class="aec-progress-field__head"><span>Upload</span><span data-contrast-sample>64%</span></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Indicator on track</td><td><span style="display:inline-block;padding:8px;background:var(--aec-color-bg-variant)"><span data-contrast-sample data-contrast-mode="border" style="display:block;width:48px;border-top:4px solid var(--aec-color-primary-default)" aria-hidden="true"></span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Track on the page</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;width:48px;border-top:4px solid var(--aec-color-bg-variant)" aria-hidden="true"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Spinner arc on the page</td><td><span class="aec-spinner" data-contrast-sample data-contrast-mode="border" aria-hidden="true"></span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <p class="doc-small doc-muted">The track doesn't need 3:1 against the page when the indicator itself is clear, but a low ratio means an empty bar is hard to see. Pair it with a label and value.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Class or attribute</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Spinner</td><td><code>.aec-spinner</code> + <code>--sm</code> / <code>--lg</code></td><td><code>role="status"</code> and <code>aria-label</code>.</td></tr>
+        <tr><td>Linear bar</td><td><code>.aec-progress</code> + <code>--lg</code></td><td><code>role="progressbar"</code>.</td></tr>
+        <tr><td>Value</td><td><code>style="--aec-progress:64%"</code> + <code>aria-valuenow="64"</code></td><td>Keep both in sync.</td></tr>
+        <tr><td>Indeterminate</td><td><code>.aec-progress--indeterminate</code></td><td>No <code>aria-valuenow</code>.</td></tr>
+        <tr><td>Label and value</td><td><code>.aec-progress-field</code>, <code>.aec-progress-field__head</code></td><td>Point the bar at the label with <code>aria-labelledby</code>.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The Figma Progress page only holds a placeholder: four grey circles, with no states, sizes or linear style.</li>
+      <li>There are no progress tokens in the brand files. The code uses semantic colour tokens until a design and tokens exist.</li>
+    </ul>
   </section>
 </div>

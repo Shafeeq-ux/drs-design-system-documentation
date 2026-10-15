@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 <link rel="stylesheet" href="../css/brand-tools.css">
 </head>
@@ -24,7 +25,7 @@
   <p class="doc-eyebrow">Brands</p>
   <h1>Brand tokens</h1>
   <p class="doc-lead">Download the complete token set for any brand, or browse and compare every token across brands.</p>
-  <div class="doc-meta"><span>CSS · CSS variables · JSON</span><span><code>tokens/brands/source/</code></span></div>
+  <div class="doc-meta"><span>CSS · CSS variables · JSON · icon fonts</span><span><code>tokens/brands/source/</code></span></div>
 
   <section class="doc-section">
     <h2 id="downloads">Downloads</h2>
@@ -33,6 +34,7 @@
       <tbody>
         <tr><td><code>&lt;brand&gt;.css</code></td><td>Your app already uses the <code>.drp-*</code> classes. This is the brand file as delivered: the classes plus the <code>--aec-*</code> variables on <code>body</code>.</td></tr>
         <tr><td><code>&lt;brand&gt;.vars.css</code></td><td>You want every token as a CSS custom property on <code>:root</code>, including each <code>.drp-*</code> value, with breakpoint overrides in <code>@media</code> blocks.</td></tr>
+        <tr><td><code>&lt;font&gt;-v1.0.zip</code></td><td>You need the brand's icon font. It's the IcoMoon export, with the font files, <code>style.css</code> (<code>.icon-&lt;name&gt;</code> classes), <code>selection.json</code> and a demo page. Browse the glyphs on <a href="../foundations/icons.html">Icons</a>.</td></tr>
         <tr><td><code>&lt;brand&gt;.json</code></td><td>You need the tokens for a build tool, Style Dictionary, native apps or tests. Semantic tokens are under <code>tokens</code>, component tokens under <code>components</code> and breakpoint overrides under <code>media</code>.</td></tr>
       </tbody>
     </table></div>
@@ -59,6 +61,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 <script src="../js/brand-core.js"></script>
 <script src="../js/brand-tokens.js"></script>
 </body>

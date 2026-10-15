@@ -1,6 +1,6 @@
 ---
 title: Tabs
-description: Tabs switch between related views on the same page, in six visual styles.
+description: Tabs switch between related views on the same page, in six visual styles. Covers states, anatomy, sizing, content and accessibility.
 figma: 3769-50222
 ---
 <div class="doc-content">
@@ -9,6 +9,10 @@ figma: 3769-50222
   <p class="doc-lead">Switches between related views on the same page without leaving it, for example Finance, Lease and Cash.</p>
   <div class="doc-meta"><span>6 styles</span><span><code>.aec-tabs</code></span></div>
 
+  <div class="doc-intro">
+    <p>Tabs organise related content into views at the same level, so people can switch without leaving the page. There are six styles: <strong>underlined</strong>, <strong>inset</strong>, <strong>contained</strong>, <strong>segment</strong>, <strong>stacked</strong> and <strong>vertical</strong>. Use tabs for views, not for steps in a process, and not for navigation to other pages.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="underline">Underlined</h2>
     <p>The default. Text tabs with an underline beneath each label (Figma: <em>Underlined – Inside</em>).</p>
@@ -16,10 +20,10 @@ figma: 3769-50222
       <div class="doc-example-preview is-stretch">
         <div class="aec-tabs">
           <div class="aec-tabs__list" role="tablist" aria-label="Payment type">
-            <button class="aec-tab" role="tab" id="t1-a" aria-selected="true" aria-controls="p1-a">Finance</button>
-            <button class="aec-tab" role="tab" id="t1-b" aria-selected="false" aria-controls="p1-b">Lease</button>
-            <button class="aec-tab" role="tab" id="t1-c" aria-selected="false" aria-controls="p1-c">Cash</button>
-            <button class="aec-tab" role="tab" id="t1-d" aria-selected="false" aria-controls="p1-d" disabled>Subscribe</button>
+            <button class="aec-tab" type="button" role="tab" id="t1-a" aria-selected="true" aria-controls="p1-a">Finance</button>
+            <button class="aec-tab" type="button" role="tab" id="t1-b" aria-selected="false" aria-controls="p1-b">Lease</button>
+            <button class="aec-tab" type="button" role="tab" id="t1-c" aria-selected="false" aria-controls="p1-c">Cash</button>
+            <button class="aec-tab" type="button" role="tab" id="t1-d" aria-selected="false" aria-controls="p1-d" disabled>Subscribe</button>
           </div>
           <div class="aec-tabs__panel" role="tabpanel" id="p1-a" aria-labelledby="t1-a" tabindex="0">Estimated $612/mo for 60 months at 5.9% APR.</div>
           <div class="aec-tabs__panel" role="tabpanel" id="p1-b" aria-labelledby="t1-b" tabindex="0" hidden>Estimated $489/mo for 36 months, 10,000 miles/yr.</div>
@@ -32,14 +36,14 @@ figma: 3769-50222
 
   <section class="doc-section">
     <h2 id="inset">Inset</h2>
-    <p>Full-width tabs with a 4px indicator (Figma: <em>Underlined – Inset</em>). Use it for section-level navigation.</p>
+    <p>Full-width tabs with a thick bar under the selected label (Figma: <em>Underlined – Inset</em>). Use it for section-level navigation.</p>
     <div class="doc-example" data-label="Inset tabs">
       <div class="doc-example-preview is-stretch">
         <div class="aec-tabs aec-tabs--inset">
           <div class="aec-tabs__list" role="tablist" aria-label="Vehicle details">
-            <button class="aec-tab" role="tab" id="t2-a" aria-selected="true" aria-controls="p2-a">Overview</button>
-            <button class="aec-tab" role="tab" id="t2-b" aria-selected="false" aria-controls="p2-b">Specs</button>
-            <button class="aec-tab" role="tab" id="t2-c" aria-selected="false" aria-controls="p2-c">Features</button>
+            <button class="aec-tab" type="button" role="tab" id="t2-a" aria-selected="true" aria-controls="p2-a">Overview</button>
+            <button class="aec-tab" type="button" role="tab" id="t2-b" aria-selected="false" aria-controls="p2-b">Specs</button>
+            <button class="aec-tab" type="button" role="tab" id="t2-c" aria-selected="false" aria-controls="p2-c">Features</button>
           </div>
           <div class="aec-tabs__panel" role="tabpanel" id="p2-a" aria-labelledby="t2-a" tabindex="0">5.3L V8 · 4WD · Summit White</div>
           <div class="aec-tabs__panel" role="tabpanel" id="p2-b" aria-labelledby="t2-b" tabindex="0" hidden>Towing up to 13,300 lbs.</div>
@@ -56,17 +60,17 @@ figma: 3769-50222
       <div class="doc-example-preview is-stretch">
         <div class="aec-tabs aec-tabs--contained">
           <div class="aec-tabs__list" role="tablist" aria-label="Contained example">
-            <button class="aec-tab" role="tab" id="t3-a" aria-selected="true" aria-controls="p3-a">Monthly</button>
-            <button class="aec-tab" role="tab" id="t3-b" aria-selected="false" aria-controls="p3-b">Total</button>
+            <button class="aec-tab" type="button" role="tab" id="t3-a" aria-selected="true" aria-controls="p3-a">Monthly</button>
+            <button class="aec-tab" type="button" role="tab" id="t3-b" aria-selected="false" aria-controls="p3-b">Total</button>
           </div>
           <div class="aec-tabs__panel" role="tabpanel" id="p3-a" aria-labelledby="t3-a" tabindex="0">$612 / month</div>
           <div class="aec-tabs__panel" role="tabpanel" id="p3-b" aria-labelledby="t3-b" tabindex="0" hidden>$36,720 total</div>
         </div>
         <div class="aec-tabs aec-tabs--segment">
           <div class="aec-tabs__list" role="tablist" aria-label="Segment example">
-            <button class="aec-tab" role="tab" id="t4-a" aria-selected="false" aria-controls="p4-a">New</button>
-            <button class="aec-tab" role="tab" id="t4-b" aria-selected="true" aria-controls="p4-b">Used</button>
-            <button class="aec-tab" role="tab" id="t4-c" aria-selected="false" aria-controls="p4-c">Certified</button>
+            <button class="aec-tab" type="button" role="tab" id="t4-a" aria-selected="false" aria-controls="p4-a">New</button>
+            <button class="aec-tab" type="button" role="tab" id="t4-b" aria-selected="true" aria-controls="p4-b">Used</button>
+            <button class="aec-tab" type="button" role="tab" id="t4-c" aria-selected="false" aria-controls="p4-c">Certified</button>
           </div>
           <div class="aec-tabs__panel" role="tabpanel" id="p4-a" aria-labelledby="t4-a" tabindex="0" hidden>124 new vehicles</div>
           <div class="aec-tabs__panel" role="tabpanel" id="p4-b" aria-labelledby="t4-b" tabindex="0">58 used vehicles</div>
@@ -74,9 +78,9 @@ figma: 3769-50222
         </div>
         <div class="aec-tabs aec-tabs--stacked">
           <div class="aec-tabs__list" role="tablist" aria-label="Stacked example">
-            <button class="aec-tab" role="tab" id="t5-a" aria-selected="true" aria-controls="p5-a">Exterior</button>
-            <button class="aec-tab" role="tab" id="t5-b" aria-selected="false" aria-controls="p5-b">Interior</button>
-            <button class="aec-tab" role="tab" id="t5-c" aria-selected="false" aria-controls="p5-c">Wheels</button>
+            <button class="aec-tab" type="button" role="tab" id="t5-a" aria-selected="true" aria-controls="p5-a">Exterior</button>
+            <button class="aec-tab" type="button" role="tab" id="t5-b" aria-selected="false" aria-controls="p5-b">Interior</button>
+            <button class="aec-tab" type="button" role="tab" id="t5-c" aria-selected="false" aria-controls="p5-c">Wheels</button>
           </div>
           <div class="aec-tabs__panel" role="tabpanel" id="p5-a" aria-labelledby="t5-a" tabindex="0">Choose an exterior colour.</div>
           <div class="aec-tabs__panel" role="tabpanel" id="p5-b" aria-labelledby="t5-b" tabindex="0" hidden>Choose an interior.</div>
@@ -93,10 +97,10 @@ figma: 3769-50222
       <div class="doc-example-preview is-stretch">
         <div class="aec-tabs aec-tabs--vertical">
           <div class="aec-tabs__list" role="tablist" aria-label="Account" aria-orientation="vertical">
-            <button class="aec-tab" role="tab" id="t6-a" aria-selected="true" aria-controls="p6-a">Personal info</button>
-            <button class="aec-tab" role="tab" id="t6-b" aria-selected="false" aria-controls="p6-b">Co-applicant</button>
-            <button class="aec-tab" role="tab" id="t6-c" aria-selected="false" aria-controls="p6-c">Documents</button>
-            <button class="aec-tab" role="tab" id="t6-d" aria-selected="false" aria-controls="p6-d">Payment</button>
+            <button class="aec-tab" type="button" role="tab" id="t6-a" aria-selected="true" aria-controls="p6-a">Personal info</button>
+            <button class="aec-tab" type="button" role="tab" id="t6-b" aria-selected="false" aria-controls="p6-b">Co-applicant</button>
+            <button class="aec-tab" type="button" role="tab" id="t6-c" aria-selected="false" aria-controls="p6-c">Documents</button>
+            <button class="aec-tab" type="button" role="tab" id="t6-d" aria-selected="false" aria-controls="p6-d">Payment</button>
           </div>
           <div class="aec-tabs__panel" role="tabpanel" id="p6-a" aria-labelledby="t6-a" tabindex="0">Name, email and phone number.</div>
           <div class="aec-tabs__panel" role="tabpanel" id="p6-b" aria-labelledby="t6-b" tabindex="0" hidden>Add a co-applicant to your credit application.</div>
@@ -108,30 +112,168 @@ figma: 3769-50222
   </section>
 
   <section class="doc-section">
+    <h2 id="states">States</h2>
+    <p>Each style has default, hover, pressed, selected and disabled states. Colours come from the active brand's tab bar tokens (<code>--aec-tabbar-&lt;style&gt;-tab-item-color-*</code>), so switch the brand in the header to see how each one changes. Keyboard focus adds a 2px inset <code>focus/default</code> ring; it isn't shown here because it only appears on real keyboard focus.</p>
+    <div class="doc-state-matrix" data-states="default,hover,pressed,selected,disabled" aria-label="Tab states">
+      <template data-row="Underlined"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" role="tab" aria-selected="false" data-state-el>Lease</button></div></div></template>
+      <template data-row="Underlined medium"><div class="aec-tabs aec-tabs--md"><div class="aec-tabs__list"><button class="aec-tab" type="button" role="tab" aria-selected="false" data-state-el>Lease</button></div></div></template>
+      <template data-row="Inset"><div class="aec-tabs aec-tabs--inset" style="width:120px"><div class="aec-tabs__list"><button class="aec-tab" type="button" role="tab" aria-selected="false" data-state-el>Specs</button></div></div></template>
+      <template data-row="Contained"><div class="aec-tabs aec-tabs--contained" style="width:120px"><div class="aec-tabs__list"><button class="aec-tab" type="button" role="tab" aria-selected="false" data-state-el>Total</button></div></div></template>
+      <template data-row="Segment"><div class="aec-tabs aec-tabs--segment" style="width:120px"><div class="aec-tabs__list"><button class="aec-tab" type="button" role="tab" aria-selected="false" data-state-el>Used</button></div></div></template>
+      <template data-row="Stacked"><div class="aec-tabs aec-tabs--stacked"><div class="aec-tabs__list"><button class="aec-tab" type="button" role="tab" aria-selected="false" data-state-el>Interior</button></div></div></template>
+      <template data-row="Vertical"><div class="aec-tabs aec-tabs--vertical" style="display:block;width:140px"><div class="aec-tabs__list"><button class="aec-tab" type="button" role="tab" aria-selected="false" data-state-el>Documents</button></div></div></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-tabs" style="width:300px">
+          <div class="aec-tabs__list" id="tabs-anat-list" role="tablist" aria-label="Anatomy example">
+            <button class="aec-tab" type="button" role="tab" id="tabs-anat-sel" aria-selected="true" tabindex="-1">Finance</button>
+            <button class="aec-tab" type="button" role="tab" id="tabs-anat-tab" aria-selected="false" tabindex="-1">Lease</button>
+            <button class="aec-tab" type="button" role="tab" aria-selected="false" tabindex="-1">Cash</button>
+          </div>
+        </div>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 128px);top:6px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 128px);top:84px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 44px);top:6px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 82px);top:45px">4</span>
+      </div>
+      <ol>
+        <li><span><strong>Selected tab</strong>Label in the selected text colour, <span data-measure="#tabs-anat-sel" data-prop="font-size"></span> <span data-measure="#tabs-anat-sel" data-prop="font-family"></span>, weight <span data-measure="#tabs-anat-sel" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Indicator</strong>A <span data-measure="#tabs-anat-sel" data-prop="border-bottom-width"></span> underline in the selected border colour. Other styles use a bar, a fill or a border instead.</span></li>
+        <li><span><strong>Unselected tab</strong><span data-measure="#tabs-anat-tab" data-prop="height"></span> tall, with a <span data-measure="#tabs-anat-tab" data-prop="border-bottom-width"></span> default underline.</span></li>
+        <li><span><strong>Gap</strong><span data-measure="#tabs-anat-list" data-prop="gap"></span> between underlined tabs in this brand.</span></li>
+      </ol>
+    </div>
+    <p>A tab panel (<code>.aec-tabs__panel</code>) follows the tab list and shows the content of the selected tab.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Size and spacing</h2>
+    <p>The blue marks are measured from real selected tabs in the active brand, so they change when you switch brands. Underlined tabs come in large (default) and medium (<code>.aec-tabs--md</code>). The other styles have one size.</p>
+    <div class="doc-spec is-row" data-spec="height,padding,radius">
+      <div class="aec-tabs"><div class="aec-tabs__list" role="tablist" aria-label="Underlined size example"><button class="aec-tab" type="button" role="tab" id="tabs-spec-u" aria-selected="true" tabindex="-1" data-spec-target>Underlined</button></div></div>
+      <div class="aec-tabs aec-tabs--md"><div class="aec-tabs__list" role="tablist" aria-label="Medium size example"><button class="aec-tab" type="button" role="tab" id="tabs-spec-md" aria-selected="true" tabindex="-1" data-spec-target>Medium</button></div></div>
+      <div class="aec-tabs aec-tabs--inset" style="width:160px"><div class="aec-tabs__list" role="tablist" aria-label="Inset size example"><button class="aec-tab" type="button" role="tab" id="tabs-spec-in" aria-selected="true" tabindex="-1" data-spec-target>Inset</button></div></div>
+      <div class="aec-tabs aec-tabs--contained" style="width:160px"><div class="aec-tabs__list" id="tabs-spec-track" role="tablist" aria-label="Contained size example"><button class="aec-tab" type="button" role="tab" id="tabs-spec-co" aria-selected="true" tabindex="-1" data-spec-target>Contained</button></div></div>
+      <div class="aec-tabs aec-tabs--segment" style="width:160px"><div class="aec-tabs__list" role="tablist" aria-label="Segment size example"><button class="aec-tab" type="button" role="tab" id="tabs-spec-se" aria-selected="true" tabindex="-1" data-spec-target>Segment</button></div></div>
+      <div class="aec-tabs aec-tabs--stacked"><div class="aec-tabs__list" role="tablist" aria-label="Stacked size example"><button class="aec-tab" type="button" role="tab" id="tabs-spec-st" aria-selected="true" tabindex="-1" data-spec-target>Stacked</button></div></div>
+      <div class="aec-tabs aec-tabs--vertical" style="display:block"><div class="aec-tabs__list" role="tablist" aria-label="Vertical size example" aria-orientation="vertical"><button class="aec-tab" type="button" role="tab" id="tabs-spec-ve" aria-selected="true" tabindex="-1" data-spec-target>Vertical</button></div></div>
+    </div>
+    <div class="doc-spec is-row" data-spec="gap">
+      <div class="aec-tabs"><div class="aec-tabs__list" id="tabs-spec-gap-u" role="tablist" aria-label="Underlined gap example" data-spec-target><button class="aec-tab" type="button" role="tab" aria-selected="true" tabindex="-1">Finance</button><button class="aec-tab" type="button" role="tab" aria-selected="false" tabindex="-1">Lease</button></div></div>
+      <div class="aec-tabs aec-tabs--stacked"><div class="aec-tabs__list" id="tabs-spec-gap-st" role="tablist" aria-label="Stacked gap example" data-spec-target><button class="aec-tab" type="button" role="tab" aria-selected="true" tabindex="-1">Exterior</button><button class="aec-tab" type="button" role="tab" aria-selected="false" tabindex="-1">Interior</button></div></div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Style</th><th>Class</th><th>Height</th><th>Side padding</th><th>Corners</th><th>Text</th><th>Weight</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Underlined</td><td>(default)</td><td data-measure="#tabs-spec-u" data-prop="height"></td><td data-measure="#tabs-spec-u" data-prop="padding-left"></td><td data-measure="#tabs-spec-u" data-prop="border-radius"></td><td data-measure="#tabs-spec-u" data-prop="font-size"></td><td data-measure="#tabs-spec-u" data-prop="font-weight"></td><td><code>--drp-tab-underlined-inside-*</code> (large)</td></tr>
+        <tr><td>Underlined medium</td><td><code>.aec-tabs--md</code></td><td data-measure="#tabs-spec-md" data-prop="height"></td><td data-measure="#tabs-spec-md" data-prop="padding-left"></td><td data-measure="#tabs-spec-md" data-prop="border-radius"></td><td data-measure="#tabs-spec-md" data-prop="font-size"></td><td data-measure="#tabs-spec-md" data-prop="font-weight"></td><td><code>--drp-tab-underlined-inside-*</code> (medium)</td></tr>
+        <tr><td>Inset</td><td><code>.aec-tabs--inset</code></td><td data-measure="#tabs-spec-in" data-prop="height"></td><td data-measure="#tabs-spec-in" data-prop="padding-left"></td><td data-measure="#tabs-spec-in" data-prop="border-radius"></td><td data-measure="#tabs-spec-in" data-prop="font-size"></td><td data-measure="#tabs-spec-in" data-prop="font-weight"></td><td><code>--drp-tab-underlined-inset-*</code></td></tr>
+        <tr><td>Contained</td><td><code>.aec-tabs--contained</code></td><td data-measure="#tabs-spec-co" data-prop="height"></td><td data-measure="#tabs-spec-co" data-prop="padding-left"></td><td data-measure="#tabs-spec-co" data-prop="border-radius"></td><td data-measure="#tabs-spec-co" data-prop="font-size"></td><td data-measure="#tabs-spec-co" data-prop="font-weight"></td><td><code>--drp-tab-contained-*</code></td></tr>
+        <tr><td>Segment</td><td><code>.aec-tabs--segment</code></td><td data-measure="#tabs-spec-se" data-prop="height"></td><td data-measure="#tabs-spec-se" data-prop="padding-left"></td><td data-measure="#tabs-spec-se" data-prop="border-radius"></td><td data-measure="#tabs-spec-se" data-prop="font-size"></td><td data-measure="#tabs-spec-se" data-prop="font-weight"></td><td><code>--drp-tab-segment-*</code></td></tr>
+        <tr><td>Stacked</td><td><code>.aec-tabs--stacked</code></td><td data-measure="#tabs-spec-st" data-prop="height"></td><td data-measure="#tabs-spec-st" data-prop="padding-left"></td><td data-measure="#tabs-spec-st" data-prop="border-radius"></td><td data-measure="#tabs-spec-st" data-prop="font-size"></td><td data-measure="#tabs-spec-st" data-prop="font-weight"></td><td><code>--drp-tab-stacked-*</code></td></tr>
+        <tr><td>Vertical</td><td><code>.aec-tabs--vertical</code></td><td data-measure="#tabs-spec-ve" data-prop="height"></td><td data-measure="#tabs-spec-ve" data-prop="padding-left"></td><td data-measure="#tabs-spec-ve" data-prop="border-radius"></td><td data-measure="#tabs-spec-ve" data-prop="font-size"></td><td data-measure="#tabs-spec-ve" data-prop="font-weight"></td><td><code>--drp-tab-vertical-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <p>Indicators in this brand: underlined tabs use a <span data-measure="#tabs-spec-u" data-prop="border-bottom-width"></span> underline, vertical tabs a <span data-measure="#tabs-spec-ve" data-prop="border-right-width"></span> side bar, and stacked tabs a <span data-measure="#tabs-spec-st" data-prop="border-top-width"></span> border. The inset bar is drawn with <code>--drp-tab-underlined-inset-container-selected-bg-border-bottom-width</code>. The contained track has <span data-measure="#tabs-spec-track" data-prop="padding-left"></span> padding and <span data-measure="#tabs-spec-track" data-prop="border-radius"></span> corners. Add <code>.aec-tabs--fill</code> to stretch underlined tabs across the width.</p>
+  </section>
+
+  <section class="doc-section">
     <h2 id="reference">Style reference</h2>
     <div class="doc-table-wrap"><table class="doc-table">
       <thead><tr><th>Style</th><th>Class</th><th>Selected</th><th>Use for</th></tr></thead>
       <tbody>
-        <tr><td>Underlined</td><td>(default)</td><td><code>primary/default</code> text and 2px underline</td><td>Content sections</td></tr>
-        <tr><td>Inset</td><td><code>--inset</code></td><td>4px <code>primary/default</code> bar</td><td>Full-width section navigation</td></tr>
-        <tr><td>Contained</td><td><code>--contained</code></td><td><code>primary/default</code> pill</td><td>Two or three compact views</td></tr>
-        <tr><td>Segment</td><td><code>--segment</code></td><td><code>primary/default</code> fill</td><td>Filters such as New / Used</td></tr>
-        <tr><td>Stacked</td><td><code>--stacked</code></td><td><code>primary/default</code> fill</td><td>Configurator steps</td></tr>
-        <tr><td>Vertical</td><td><code>--vertical</code></td><td><code>bg/variant</code> with a 2px right bar</td><td>Settings and multi-section forms</td></tr>
+        <tr><td>Underlined</td><td>(default)</td><td>Selected text colour and underline</td><td>Content sections</td></tr>
+        <tr><td>Inset</td><td><code>--inset</code></td><td>Thick bar under the label</td><td>Full-width section navigation</td></tr>
+        <tr><td>Contained</td><td><code>--contained</code></td><td>Filled pill inside a track</td><td>Two or three compact views</td></tr>
+        <tr><td>Segment</td><td><code>--segment</code></td><td>Filled segment</td><td>Filters such as New / Used</td></tr>
+        <tr><td>Stacked</td><td><code>--stacked</code></td><td>Filled, bordered button</td><td>Configurator steps</td></tr>
+        <tr><td>Vertical</td><td><code>--vertical</code></td><td>Tinted background with a side bar</td><td>Settings and multi-section forms</td></tr>
       </tbody>
     </table></div>
-    <p>Add <code>.aec-tabs--md</code> for 14px labels and <code>.aec-tabs--fill</code> to stretch underlined tabs across the width.</p>
+    <p>Selected colours come from <code>--aec-tabbar-&lt;style&gt;-tab-item-color-selected-*</code>, where the style is <code>underlined-inside</code>, <code>underlined-inset</code>, <code>contained</code>, <code>segment</code>, <code>stacked</code> or <code>vertical</code>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">Finance</button><button class="aec-tab" type="button" aria-selected="false">Lease</button><button class="aec-tab" type="button" aria-selected="false">Cash</button></div></div></div><figcaption><strong>Do</strong>Use tabs for related views that people can switch between in any order.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">1. Trade-in</button><button class="aec-tab" type="button" aria-selected="false">2. Credit</button><button class="aec-tab" type="button" aria-selected="false">3. Pay</button></div></div></div><figcaption><strong>Don't</strong>Use tabs for steps that must be done in order. Use a <a href="progress.html">progress</a> stepper.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-tabs aec-tabs--segment" style="width:100%"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="false">New</button><button class="aec-tab" type="button" aria-selected="true">Used</button><button class="aec-tab" type="button" aria-selected="false">Certified</button></div></div></div><figcaption><strong>Do</strong>Keep contained and segment tabs to two to four short options.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-tabs aec-tabs--segment" style="width:100%"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="false">New</button><button class="aec-tab" type="button" aria-selected="true">Used</button><button class="aec-tab" type="button" aria-selected="false">Certified</button><button class="aec-tab" type="button" aria-selected="false">Demo</button><button class="aec-tab" type="button" aria-selected="false">Fleet</button><button class="aec-tab" type="button" aria-selected="false">Electric</button></div></div></div><figcaption><strong>Don't</strong>Squeeze many options into a segment. Use underlined tabs or a dropdown.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">Overview</button><button class="aec-tab" type="button" aria-selected="false">Specs</button></div><div class="aec-tabs__panel">5.3L V8 · 4WD</div></div></div><figcaption><strong>Do</strong>Use one level of tabs, with the content right below.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">Overview</button><button class="aec-tab" type="button" aria-selected="false">Specs</button></div><div class="aec-tabs__panel"><div class="aec-tabs aec-tabs--md"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">Engine</button><button class="aec-tab" type="button" aria-selected="false">Towing</button></div></div></div></div></div><figcaption><strong>Don't</strong>Nest tabs inside tabs. People lose track of where they are.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">Finance</button><button class="aec-tab" type="button" aria-selected="false">Lease</button></div></div></div><figcaption><strong>Do</strong>Always have one tab selected, so its panel is showing.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="false">Finance</button><button class="aec-tab" type="button" aria-selected="false">Lease</button></div></div></div><figcaption><strong>Don't</strong>Show a tab set with nothing selected and an empty panel.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Use one or two words that name the content: <em>Finance</em>, <em>Specs</em>, <em>Documents</em>.</li>
+      <li>Write in sentence case. Brands that show uppercase tabs apply it through their typography tokens.</li>
+      <li>Keep labels parallel, for example all nouns. Don't mix nouns and actions.</li>
+      <li>Don't truncate labels. If they don't fit, the list scrolls sideways; shorten the labels or use fewer tabs.</li>
+      <li>A count can follow the label, such as <em>Used (58)</em>, when it helps people choose.</li>
+    </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">Overview</button><button class="aec-tab" type="button" aria-selected="false">Specs</button><button class="aec-tab" type="button" aria-selected="false">Features</button></div></div></div><figcaption><strong>Do</strong>Use short, parallel nouns.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">Vehicle overview</button><button class="aec-tab" type="button" aria-selected="false">See all specs</button><button class="aec-tab" type="button" aria-selected="false">Features!</button></div></div></div><figcaption><strong>Don't</strong>Mix styles of label or add punctuation.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
-      <div class="doc-a11y-item"><h3>Roles <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>role="tablist"</code>, <code>tab</code> and <code>tabpanel</code>. Each tab has <code>aria-selected</code> and <code>aria-controls</code>, and each panel has <code>aria-labelledby</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Roles <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>role="tablist"</code>, <code>tab</code> and <code>tabpanel</code>. Each tab has <code>aria-selected</code> and <code>aria-controls</code>, and each panel has <code>aria-labelledby</code>. Give the tab list an <code>aria-label</code>.</p></div>
       <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves into the tab list. Arrow keys move between tabs and activate them (up and down for vertical tabs), and Home/End jump to the first or last tab. Tab again moves into the panel.</p></div>
       <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Tabs show a 2px inset focus ring. This is added in code, because Figma has no focus state.</p></div>
+      <div class="doc-a11y-item"><h3>Roving tabindex</h3><p>Only the selected tab is in the tab order (<code>tabindex="0"</code>); the others get <code>tabindex="-1"</code>. The script does this for you. Disabled tabs are skipped by the arrow keys.</p></div>
+      <div class="doc-a11y-item"><h3>Vertical tabs <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Add <code>aria-orientation="vertical"</code> to the tab list so screen readers announce the right arrow keys.</p></div>
+    </div>
+
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Tab labels need at least 4.5:1 against their background, selected or not. These ratios are measured live in the active brand. Disabled tabs are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Style</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Underlined, unselected</td><td><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="false" data-contrast-sample>Lease</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Underlined, selected</td><td><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="true" data-contrast-sample>Finance</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Inset, selected</td><td><div class="aec-tabs aec-tabs--inset" style="width:140px"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="true" data-contrast-sample>Overview</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Contained, selected</td><td><div class="aec-tabs aec-tabs--contained" style="width:140px"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="true" data-contrast-sample>Monthly</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Segment, unselected</td><td><div class="aec-tabs aec-tabs--segment" style="width:140px"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="false" data-contrast-sample>New</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Segment, selected</td><td><div class="aec-tabs aec-tabs--segment" style="width:140px"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="true" data-contrast-sample>Used</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Stacked, selected</td><td><div class="aec-tabs aec-tabs--stacked"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="true" data-contrast-sample>Exterior</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Vertical, selected</td><td><div class="aec-tabs aec-tabs--vertical" style="display:block;width:160px"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="true" data-contrast-sample>Personal info</button></div></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The selected indicator is the only thing that shows which tab is selected in some styles, so it needs at least 3:1 against the page. Samples use each style's selected indicator token.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Indicator</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Underlined underline</td><td><span style="display:block;width:80px;border-top:4px solid var(--aec-tabbar-underlined-inside-tab-item-color-selected-border-default)" data-contrast-sample data-contrast-mode="border"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Inset bar</td><td><span style="display:block;width:80px;border-top:4px solid var(--aec-tabbar-underlined-inset-tab-item-color-selected-border-default)" data-contrast-sample data-contrast-mode="border"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Contained pill</td><td><span style="display:block;width:80px;border-top:16px solid var(--aec-tabbar-contained-tab-item-color-selected-bg-default)" data-contrast-sample data-contrast-mode="border"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Segment fill</td><td><span style="display:block;width:80px;border-top:16px solid var(--aec-tabbar-segment-tab-item-color-selected-bg-default)" data-contrast-sample data-contrast-mode="border"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Stacked border</td><td><div class="aec-tabs aec-tabs--stacked"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="false" data-contrast-sample data-contrast-mode="border">Wheels</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Vertical bar</td><td><span style="display:block;width:80px;border-top:4px solid var(--aec-tabbar-vertical-tab-item-color-selected-border-default)" data-contrast-sample data-contrast-mode="border"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" tabindex="-1" aria-selected="false" data-contrast-sample data-contrast-mode="focus">Lease</button></div></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="true">Finance</button><button class="aec-tab" type="button" aria-selected="false">Lease</button></div></div></div><figcaption><strong>Do</strong>Show the selected tab with an indicator as well as a colour change.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-tabs"><div class="aec-tabs__list"><button class="aec-tab" type="button" aria-selected="false" style="color:var(--aec-color-primary-default)">Finance</button><button class="aec-tab" type="button" aria-selected="false">Lease</button></div></div></div><figcaption><strong>Don't</strong>Rely on text colour alone to show the selected tab.</figcaption></figure>
     </div>
   </section>
-
   <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
     <ul class="doc-small">

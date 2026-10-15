@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -26,12 +27,17 @@
   <p class="doc-lead">Briefly confirms the result of an action, such as <em>Vehicle saved</em>, with a message that disappears on its own.</p>
   <div class="doc-meta"><span>4 Figma variants</span><span><code>.aec-snackbar</code> · <code>AEC.snackbar()</code></span></div>
 
+  <div class="doc-intro">
+    <p>A snackbar appears at the bottom of the screen after someone does something, then goes away. It never blocks the page. Snackbars are <strong>neutral</strong>: they have no success, warning, error or info colours. When something goes wrong or needs a decision, use an <a href="alert.html">alert</a>. For context that isn't a response to an action, use a <a href="banner.html">banner</a>.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="demo">Try it</h2>
     <div class="doc-example" data-label="Trigger a snackbar">
       <div class="doc-example-preview">
         <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-snackbar="Vehicle saved to your garage" data-aec-snackbar-action="View">Save vehicle</button>
         <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-snackbar="Link copied">Copy link</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-snackbar="Quote downloaded" data-aec-snackbar-variant="inverse">Inverse</button>
       </div>
     </div>
 <pre><code>// JavaScript API (components.js)
@@ -39,38 +45,101 @@ AEC.snackbar({
   message: 'Vehicle saved to your garage',
   action: 'View',
   onAction: () =&gt; location.assign('/garage'),
+  variant: 'inverse', // optional
   timeout: 6000 // ms, default 6000
 });</code></pre>
   </section>
 
   <section class="doc-section">
     <h2 id="variants">Variants</h2>
-    <div class="doc-example" data-label="Static snackbars" data-no-code>
+    <p>Every snackbar has a message, and <code>AEC.snackbar()</code> always adds a close button. The action is optional. Long messages wrap and move the action below the text.</p>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3 id="variant-single">Single line</h3><p>The default. A short message, an optional action and the close button on one row.</p></div>
+        <div class="doc-variant-demo"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Link copied</span><button class="aec-snackbar__close" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg);--aec-icon-size:20px" aria-hidden="true"></span></button></div></div></div>
+      <div class="doc-variant"><div><h3 id="variant-action">With action</h3><p>One shortcut related to the message, such as <em>View</em> or <em>Undo</em>.</p></div>
+        <div class="doc-variant-demo"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Vehicle saved</span><button class="aec-snackbar__action" type="button">View</button><button class="aec-snackbar__close" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg);--aec-icon-size:20px" aria-hidden="true"></span></button></div></div></div>
+      <div class="doc-variant"><div><h3 id="variant-multiline">Multi-line</h3><p>Add <code>.aec-snackbar--multiline</code> when the message wraps. The action moves below the text.</p></div>
+        <div class="doc-variant-demo"><div class="aec-snackbar aec-snackbar--multiline is-static"><span class="aec-snackbar__msg">Your deal was sent to your dealer. A specialist will contact you soon.</span><button class="aec-snackbar__action" type="button">View deal</button></div></div></div>
+      <div class="doc-variant"><div><h3 id="variant-inverse">Inverse</h3><p>A dark snackbar (<code>.aec-snackbar--inverse</code>) for light, busy pages where the default would blend in. Code only.</p></div>
+        <div class="doc-variant-demo"><div class="aec-snackbar aec-snackbar--inverse is-static"><span class="aec-snackbar__msg">Quote downloaded</span><button class="aec-snackbar__action" type="button">Open</button><button class="aec-snackbar__close" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg);--aec-icon-size:20px" aria-hidden="true"></span></button></div></div></div>
+    </div>
+    <div class="doc-example" data-label="Static snackbars">
       <div class="doc-example-preview is-col">
-        <div class="aec-snackbar is-static"><span class="aec-snackbar__msg">For in-transit inventory</span><button class="aec-snackbar__action" type="button">Learn more</button></div>
-        <div class="aec-snackbar aec-snackbar--multiline is-static"><span class="aec-snackbar__msg">Your deal was sent to Bill Brown Chevrolet. A specialist will contact you within one business day.</span><button class="aec-snackbar__action" type="button">View deal</button></div>
+        <div class="aec-snackbar is-static"><span class="aec-snackbar__msg">For in-transit inventory</span><button class="aec-snackbar__action" type="button">Learn more</button><button class="aec-snackbar__close" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg);--aec-icon-size:20px" aria-hidden="true"></span></button></div>
+        <div class="aec-snackbar aec-snackbar--multiline is-static"><span class="aec-snackbar__msg">Your deal was sent to your dealer. A specialist will contact you within one business day.</span><button class="aec-snackbar__action" type="button">View deal</button></div>
       </div>
     </div>
+    <p>The action and close button have hover, focus and pressed states. Hover changes the action to <code>--aec-color-primary-hover</code> and darkens the close icon. Keyboard focus adds the 2px <code>focus/default</code> ring.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-snackbar is-static" id="snack-anatomy"><span class="aec-snackbar__msg" id="snack-anatomy-msg">Vehicle saved to your garage</span><button class="aec-snackbar__action" type="button" tabindex="-1" id="snack-anatomy-action">View</button><button class="aec-snackbar__close" type="button" aria-label="Dismiss" tabindex="-1" id="snack-anatomy-close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg);--aec-icon-size:20px" aria-hidden="true"></span></button></div>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 200px);top:8px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 110px);top:8px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 100px);top:8px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 150px);top:8px">4</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong>At least <span data-measure="#snack-anatomy" data-prop="min-height"></span> tall and up to <span data-measure="#snack-anatomy" data-prop="max-width"></span> wide, with <span data-measure="#snack-anatomy" data-prop="border-radius"></span> corners and a shadow in this brand.</span></li>
+        <li><span><strong>Message</strong><span data-measure="#snack-anatomy-msg" data-prop="font-size"></span> <span data-measure="#snack-anatomy-msg" data-prop="font-family"></span>, weight <span data-measure="#snack-anatomy-msg" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Action (optional)</strong>An underlined text button in the primary colour, weight <span data-measure="#snack-anatomy-action" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Close button</strong><span data-measure="#snack-anatomy-close" data-prop="width"></span> square, labelled <em>Dismiss</em>. Added by <code>AEC.snackbar()</code>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Spacing</h2>
+    <p>The blue marks are measured from the real snackbar in the active brand. The pink mark is the gap between the message, action and close button.</p>
+    <div class="doc-spec" data-spec="height,padding,padding-y,gap,radius,width">
+      <div class="aec-snackbar is-static" id="snack-spec" data-spec-target><span class="aec-snackbar__msg" id="snack-spec-msg">Vehicle saved to your garage</span><button class="aec-snackbar__action" type="button" tabindex="-1">View</button><button class="aec-snackbar__close" type="button" aria-label="Dismiss" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg);--aec-icon-size:20px" aria-hidden="true"></span></button></div>
+    </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <thead><tr><th>Part</th><th>Value</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Surface</td><td><code>bg/variant</code>, <code>border-radius-rounded-rect</code> (4px), <code>shadow/m</code></td></tr>
-        <tr><td>Size</td><td>Maximum width 384px (360px on mobile), minimum height 56px</td></tr>
-        <tr><td>Padding and gap</td><td>16px · 16px</td></tr>
-        <tr><td>Message</td><td>body-2, <code>text/default</code></td></tr>
-        <tr><td>Action (optional)</td><td>Primary link, body-2</td></tr>
-        <tr><td>Position</td><td>Bottom centre, 24px from the edge</td></tr>
+        <tr><td>Minimum height</td><td data-measure="#snack-spec" data-prop="min-height"></td><td>Fixed in the component CSS</td></tr>
+        <tr><td>Maximum width</td><td data-measure="#snack-spec" data-prop="max-width"></td><td>Fixed in the component CSS. On small screens the region is the viewport width minus a margin.</td></tr>
+        <tr><td>Left padding</td><td data-measure="#snack-spec" data-prop="padding-left"></td><td><code>--aec-spacing-container-padding-s</code></td></tr>
+        <tr><td>Right padding</td><td data-measure="#snack-spec" data-prop="padding-right"></td><td>Fixed, smaller so the close button sits near the edge</td></tr>
+        <tr><td>Top and bottom padding</td><td data-measure="#snack-spec" data-prop="padding-top"></td><td>Fixed in the component CSS</td></tr>
+        <tr><td>Gap between parts</td><td data-measure="#snack-spec" data-prop="gap"></td><td><code>--drp-snackbar-container-bg-gap</code></td></tr>
+        <tr><td>Corners</td><td data-measure="#snack-spec" data-prop="border-radius"></td><td><code>--drp-snackbar-container-bg-border-radius</code></td></tr>
+        <tr><td>Shadow</td><td>—</td><td><code>--drp-snackbar-container-bg-box-shadow</code></td></tr>
+        <tr><td>Message text</td><td><span data-measure="#snack-spec-msg" data-prop="font-size"></span> / <span data-measure="#snack-spec-msg" data-prop="line-height"></span></td><td><code>--drp-snackbar-typography-title-*</code></td></tr>
+        <tr><td>Colours</td><td>—</td><td><code>--aec-snackbar-color-bg</code>, <code>--aec-snackbar-color-description</code></td></tr>
+        <tr><td>Position</td><td>Bottom centre</td><td><code>.aec-snackbar-region</code>, stacked with a small gap</td></tr>
       </tbody>
     </table></div>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Vehicle saved to your garage</span><button class="aec-snackbar__action" type="button">View</button></div></div><figcaption><strong>Do</strong>Use a snackbar to confirm an action that worked.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Payment declined</span><button class="aec-snackbar__action" type="button">Update card</button></div></div><figcaption><strong>Don't</strong>Use a snackbar for an error that needs action. It disappears. Use an error <a href="alert.html">alert</a>.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Trade-in removed</span><button class="aec-snackbar__action" type="button">Undo</button></div></div><figcaption><strong>Do</strong>Offer one action at most.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Trade-in removed</span><button class="aec-snackbar__action" type="button">Undo</button><button class="aec-snackbar__action" type="button">View deal</button></div></div><figcaption><strong>Don't</strong>Add two actions. There isn't time to choose before it goes.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Link copied</span></div></div><figcaption><strong>Do</strong>Show one snackbar at a time. A new one replaces the last.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Link copied</span></div><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Vehicle saved</span></div><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Quote downloaded</span></div></div><figcaption><strong>Don't</strong>Stack several snackbars. They cover content and are hard to read in time.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Vehicle saved to your garage</span><button class="aec-snackbar__action" type="button">View</button></div></div><figcaption><strong>Do</strong>Make the action a shortcut to something people can also reach elsewhere.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Your documents are ready</span><button class="aec-snackbar__action" type="button">Sign now</button></div></div><figcaption><strong>Don't</strong>Put the only way to complete a task in a snackbar.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
     <ul>
-      <li>Use a snackbar for low-priority confirmations. Don't use it for errors that need action. Use an <a href="alert.html">alert</a> instead.</li>
-      <li>Keep the message to one short sentence, with at most one action.</li>
-      <li>Show one snackbar at a time.</li>
+      <li><strong>Message:</strong> say what just happened, in the past tense, for example <em>Vehicle saved</em> or <em>Link copied</em>. Keep it to a few words, and no more than one short sentence. Leave out the full stop on a fragment.</li>
+      <li><strong>Action:</strong> one or two words, starting with a verb, such as <em>View</em> or <em>Undo</em>. Don't add <em>OK</em> or <em>Dismiss</em>: the close button already does that.</li>
+      <li>Don't use generic messages such as "Success!". Say what succeeded.</li>
     </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Quote downloaded</span><button class="aec-snackbar__action" type="button">Open</button></div></div><figcaption><strong>Do</strong>Name what happened and offer a specific next step.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Success!</span><button class="aec-snackbar__action" type="button">OK</button></div></div><figcaption><strong>Don't</strong>Write a vague message or an "OK" action.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
@@ -78,7 +147,39 @@ AEC.snackbar({
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Status messages <span class="doc-wcag">WCAG 4.1.3</span></h3><p>Snackbars are rendered in a <code>role="status"</code>, <code>aria-live="polite"</code> region, so screen readers announce them without moving focus.</p></div>
       <div class="doc-a11y-item"><h3>Timing <span class="doc-wcag">WCAG 2.2.1</span></h3><p>The timer pauses on hover, and each snackbar has a close button. Never put the only way to do something inside a snackbar.</p></div>
+      <div class="doc-a11y-item"><h3>Focus <span class="doc-wcag">WCAG 2.4.3</span></h3><p>A snackbar doesn't take focus when it appears. Keyboard users can still reach the action and close button with Tab while it's on screen.</p></div>
+      <div class="doc-a11y-item"><h3>Close button name <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The close button has <code>aria-label="Dismiss"</code>, and its icon is hidden from assistive technology.</p></div>
     </div>
+    <h3 id="contrast">Contrast <span class="doc-wcag">WCAG 1.4.3 · 1.4.11</span></h3>
+    <p>The message and action need at least 4.5:1 against the snackbar. The close icon needs 3:1. These ratios are measured live in the active brand. The bar in the close-icon rows is a sample of the icon colour.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Message</td><td><div class="aec-snackbar is-static"><span class="aec-snackbar__msg" data-contrast-sample>Vehicle saved</span></div></td><td data-contrast-result></td></tr>
+        <tr><td>Action</td><td><div class="aec-snackbar is-static"><button class="aec-snackbar__action" type="button" tabindex="-1" data-contrast-sample>View</button></div></td><td data-contrast-result></td></tr>
+        <tr><td>Close icon</td><td><div class="aec-snackbar is-static"><span class="aec-snackbar__msg">Vehicle saved</span><span class="aec-snackbar__close" aria-hidden="true"><span data-contrast-sample data-contrast-mode="border" style="width:20px;border-top:4px solid currentColor"></span></span></div></td><td data-contrast-result></td></tr>
+        <tr><td>Inverse message</td><td><div class="aec-snackbar aec-snackbar--inverse is-static"><span class="aec-snackbar__msg" data-contrast-sample>Quote downloaded</span></div></td><td data-contrast-result></td></tr>
+        <tr><td>Inverse action</td><td><div class="aec-snackbar aec-snackbar--inverse is-static"><button class="aec-snackbar__action" type="button" tabindex="-1" data-contrast-sample>Open</button></div></td><td data-contrast-result></td></tr>
+        <tr><td>Inverse close icon</td><td><div class="aec-snackbar aec-snackbar--inverse is-static"><span class="aec-snackbar__msg">Quote downloaded</span><span class="aec-snackbar__close" aria-hidden="true"><span data-contrast-sample data-contrast-mode="border" style="width:20px;border-top:4px solid currentColor"></span></span></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Class or option</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td><code>.aec-snackbar</code></td><td>Created by <code>AEC.snackbar()</code>. Add <code>.is-static</code> to show one in place, as on this page.</td></tr>
+        <tr><td>Multi-line</td><td><code>.aec-snackbar--multiline</code></td><td>Stacks the action under the message.</td></tr>
+        <tr><td>Inverse</td><td><code>.aec-snackbar--inverse</code> · <code>variant: 'inverse'</code></td><td>Code only, not in Figma.</td></tr>
+        <tr><td>Message</td><td><code>.aec-snackbar__msg</code></td><td>—</td></tr>
+        <tr><td>Action</td><td><code>.aec-snackbar__action</code> · <code>action</code>, <code>onAction</code></td><td>A <code>&lt;button type="button"&gt;</code>.</td></tr>
+        <tr><td>Close</td><td><code>.aec-snackbar__close</code></td><td>Always added by the script.</td></tr>
+        <tr><td>Timing</td><td><code>timeout</code></td><td>In milliseconds. Default 6000. Pauses on hover.</td></tr>
+        <tr><td>Trigger without script</td><td><code>data-aec-snackbar</code>, <code>data-aec-snackbar-action</code>, <code>data-aec-snackbar-variant</code></td><td>On any button.</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -95,6 +196,7 @@ AEC.snackbar({
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

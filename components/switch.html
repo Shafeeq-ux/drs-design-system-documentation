@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -50,12 +51,10 @@
 
   <section class="doc-section">
     <h2 id="states">States</h2>
-    <div class="doc-states">
-      <div class="doc-state"><span class="doc-state-label">Off</span><input class="aec-switch" type="checkbox" role="switch" aria-label="Off"></div>
-      <div class="doc-state"><span class="doc-state-label">On</span><input class="aec-switch" type="checkbox" role="switch" checked aria-label="On"></div>
-      <div class="doc-state"><span class="doc-state-label">Focus</span><input class="aec-switch" type="checkbox" role="switch" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px" aria-label="Focus"></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled off</span><input class="aec-switch" type="checkbox" role="switch" disabled aria-label="Disabled off"></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled on</span><input class="aec-switch" type="checkbox" role="switch" disabled checked aria-label="Disabled on"></div>
+    <p>Each row is a value and each column is an interaction state. The colours come from the active brand's switch tokens (<code>--aec-switch-color-track-*</code> and <code>--aec-switch-color-handle-*</code>, with <code>-selected-</code> for on), so switch the brand in the header to see how each one changes. Focus adds a 2px <code>focus/default</code> ring, 2px outside the track. Pressed looks the same as hover, so it isn't shown.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,disabled" aria-label="Switch states">
+      <template data-row="Off"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
+      <template data-row="On"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
     </div>
   </section>
 
@@ -63,16 +62,55 @@
     <h2 id="anatomy">Anatomy</h2>
     <div class="doc-anatomy">
       <div class="doc-anatomy-stage">
-        <label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked tabindex="-1" aria-label="Example"><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label>
+        <label class="aec-control" id="sw-anatomy-row"><input class="aec-switch" type="checkbox" role="switch" checked tabindex="-1" aria-label="Example" id="sw-anatomy"><span class="aec-form-label"><span class="aec-form-label__text" id="sw-anatomy-label">Label</span></span></label>
         <span class="doc-anatomy-pin" style="left:calc(50% - 64px);top:2px">1</span>
         <span class="doc-anatomy-pin" style="left:calc(50% - 26px);bottom:2px">2</span>
         <span class="doc-anatomy-pin" style="left:calc(50% + 30px);top:2px">3</span>
       </div>
       <ol>
-        <li><span><strong>Track</strong>48×24px, fully rounded, 1px <code>secondary/default</code> border. Filled when on.</span></li>
-        <li><span><strong>Handle</strong>20px circle with <code>shadow/s</code>. Dark when off, white when on.</span></li>
-        <li><span><strong>Label</strong>body-2, 8px from the track.</span></li>
+        <li><span><strong>Track</strong><span data-measure="#sw-anatomy" data-prop="width"></span> × <span data-measure="#sw-anatomy" data-prop="height"></span>, <span data-measure="#sw-anatomy" data-prop="border-radius"></span> corners and a <span data-measure="#sw-anatomy" data-prop="border-width"></span> border in this brand. Filled when on.</span></li>
+        <li><span><strong>Handle</strong>A <span data-measure="#sw-probe-handle" data-prop="width"></span> circle, <span data-measure="#sw-probe-spacing" data-prop="width"></span> in from the track edge. It slides to the end of the track when on.</span></li>
+        <li><span><strong>Label</strong><span data-measure="#sw-anatomy-label" data-prop="font-size"></span> / <span data-measure="#sw-anatomy-label" data-prop="line-height"></span> <span data-measure="#sw-anatomy-label" data-prop="font-family"></span> (body-2), <span data-measure="#sw-anatomy-row" data-prop="gap"></span> from the track.</span></li>
       </ol>
+    </div>
+    <p>The label block is shared with checkboxes and radio buttons. See <a href="form-control.html">form control</a>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Size and spacing</h2>
+    <p>There is one size. The blue marks are measured from the real switch in the active brand, so they change when you switch brands. The row grows on small screens to give a larger touch target, so its height depends on the window width.</p>
+    <div class="doc-spec" data-spec="height,width,radius,border">
+      <input class="aec-switch" type="checkbox" role="switch" checked tabindex="-1" aria-label="Track example" id="sw-spec-track" data-spec-target>
+    </div>
+    <div class="doc-spec" data-spec="height,gap,padding-y">
+      <label class="aec-control" id="sw-spec-row" data-spec-target><input class="aec-switch" type="checkbox" role="switch" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Show monthly payment</span></span></label>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Width</th><th>Height</th><th>Corners</th><th>Border</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Track</td><td data-measure="#sw-spec-track" data-prop="width"></td><td data-measure="#sw-spec-track" data-prop="height"></td><td data-measure="#sw-spec-track" data-prop="border-radius"></td><td data-measure="#sw-spec-track" data-prop="border-width"></td><td><code>--aec-switch-container-*</code></td></tr>
+        <tr><td>Handle</td><td data-measure="#sw-probe-handle" data-prop="width"></td><td data-measure="#sw-probe-handle" data-prop="height"></td><td>Round</td><td>—</td><td><code>--aec-switch-handle-*</code></td></tr>
+        <tr><td>Handle inset</td><td data-measure="#sw-probe-spacing" data-prop="width"></td><td>—</td><td>—</td><td>—</td><td><code>--aec-switch-container-spacing</code></td></tr>
+        <tr><td>Hit area</td><td data-measure="#sw-probe-hit" data-prop="width"></td><td data-measure="#sw-probe-hit" data-prop="height"></td><td>—</td><td>—</td><td><code>--aec-switch-hit-area-*</code></td></tr>
+        <tr><td>Row (<code>.aec-control</code>)</td><td>—</td><td data-measure="#sw-spec-row" data-prop="height"></td><td>—</td><td>—</td><td><code>--aec-sizing-selectable-l</code>, <code>--aec-spacing-selectable-gap-m</code></td></tr>
+      </tbody>
+    </table></div>
+    <span id="sw-probe-handle" aria-hidden="true" style="position:absolute;visibility:hidden;width:var(--aec-switch-handle-width);height:var(--aec-switch-handle-height)"></span>
+    <span id="sw-probe-spacing" aria-hidden="true" style="position:absolute;visibility:hidden;width:var(--aec-switch-container-spacing);height:1px"></span>
+    <span id="sw-probe-hit" aria-hidden="true" style="position:absolute;visibility:hidden;width:var(--aec-switch-hit-area-width);height:var(--aec-switch-hit-area-height)"></span>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Show monthly payment</span></span></label></div><figcaption><strong>Do</strong>Use a switch for a setting that changes the page straight away.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Add gap insurance</span></span></label><button class="aec-btn aec-btn--primary" type="button">Save and continue</button></div><figcaption><strong>Don't</strong>Use a switch in a form that needs a save step. Use a checkbox.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><label class="aec-control aec-control--between"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Text me delivery updates</span></span></label><label class="aec-control aec-control--between"><input class="aec-switch" type="checkbox" role="switch"><span class="aec-form-label"><span class="aec-form-label__text">Email me price drops</span></span></label></div><figcaption><strong>Do</strong>Line switches up at the end of the row in settings lists.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><label class="aec-control aec-control--between"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Text me delivery updates</span></span></label><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch"><span class="aec-form-label"><span class="aec-form-label__text">Email me price drops</span></span></label></div><figcaption><strong>Don't</strong>Mix label positions in one list.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><fieldset class="aec-fieldset"><legend>Choose a plan</legend><div class="aec-choice-list"><label class="aec-control"><input class="aec-radio" type="radio" name="sw-dd-plan" checked><span class="aec-form-label"><span class="aec-form-label__text">Lease</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="sw-dd-plan"><span class="aec-form-label"><span class="aec-form-label__text">Finance</span></span></label></div></fieldset></div><figcaption><strong>Do</strong>Use radio buttons to choose between two named options.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch"><span class="aec-form-label"><span class="aec-form-label__text">Lease / Finance</span></span></label></div><figcaption><strong>Don't</strong>Use a switch to pick between two different things. People can't tell which side is "on".</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" disabled><span class="aec-form-label"><span class="aec-form-label__text">Apply loyalty bonus</span><span class="aec-form-label__desc">Available after you sign in</span></span></label></div><figcaption><strong>Do</strong>Say why a switch is disabled, in the description.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" disabled><span class="aec-form-label"><span class="aec-form-label__text">Apply loyalty bonus</span></span></label></div><figcaption><strong>Don't</strong>Disable a switch with no explanation.</figcaption></figure>
     </div>
   </section>
 
@@ -81,17 +119,65 @@
     <ul>
       <li>Name the setting, not the action: <em>Show monthly payment</em>, not <em>Turn on monthly payment</em>.</li>
       <li>Don't add "On" or "Off" text next to the switch. The state is already shown visually and announced.</li>
+      <li>Write labels in sentence case, with no full stop at the end.</li>
+      <li>Use the description to say what the setting affects, such as <em>Estimated for ZIP 48226</em>.</li>
     </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Include tax and fees</span></span></label></div><figcaption><strong>Do</strong>Describe what is true when the switch is on.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Hide tax and fees: On</span></span></label></div><figcaption><strong>Don't</strong>Use a negative label or repeat the state in the text.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Role <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>&lt;input type="checkbox" role="switch"&gt;</code>. Screen readers then announce "switch, on" or "switch, off".</p></div>
-      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Space toggles the switch. Focus shows the 2px ring around the track.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves focus to the switch and Space toggles it. Focus shows the 2px <code>focus/default</code> ring around the track.</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>Wrap the switch and its label in <code>&lt;label class="aec-control"&gt;</code> so the whole row is clickable. The row is <span data-measure="#sw-spec-row" data-prop="height"></span> tall at this window width.</p></div>
       <div class="doc-a11y-item"><h3>Not by colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>The handle's position shows the state as well as the fill.</p></div>
       <div class="doc-a11y-item"><h3>Announce changes <span class="doc-wcag">WCAG 4.1.3</span></h3><p>If the switch updates content elsewhere, such as prices, announce the change through an <code>aria-live="polite"</code> region.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Label and description text need at least 4.5:1 against the background. These ratios are measured live in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Label</td><td><span class="aec-form-label"><span class="aec-form-label__text" data-contrast-sample>Show monthly payment</span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Description</td><td><span class="aec-form-label"><span class="aec-form-label__desc" data-contrast-sample>Estimated for ZIP 48226</span></span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The track and the focus ring need at least 3:1 against the page. In each state, the track passes if either its border or its fill reaches 3:1. The fill swatches are drawn from the brand's switch tokens. Disabled switches are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Track border, off</td><td><input class="aec-switch" type="checkbox" role="switch" tabindex="-1" aria-label="Track off" data-contrast-sample data-contrast-mode="border"></td><td data-contrast-result></td></tr>
+        <tr><td>Track fill, off</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;box-sizing:border-box;width:var(--aec-switch-container-width);height:var(--aec-switch-container-height);border-radius:var(--aec-switch-container-border-radius);border:calc(var(--aec-switch-container-height) / 2) solid var(--aec-switch-color-track-bg-default)"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Track border, on</td><td><input class="aec-switch" type="checkbox" role="switch" checked tabindex="-1" aria-label="Track on" data-contrast-sample data-contrast-mode="border"></td><td data-contrast-result></td></tr>
+        <tr><td>Track fill, on</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;box-sizing:border-box;width:var(--aec-switch-container-width);height:var(--aec-switch-container-height);border-radius:var(--aec-switch-container-border-radius);border:calc(var(--aec-switch-container-height) / 2) solid var(--aec-switch-color-track-selected-bg-default)"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><input class="aec-switch is-focus" type="checkbox" role="switch" tabindex="-1" aria-label="Focus ring" data-contrast-sample data-contrast-mode="focus"></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Show monthly payment</span></span></label></div><figcaption><strong>Do</strong>Add <code>role="switch"</code>. A screen reader says "Show monthly payment, switch, on".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-switch" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Show monthly payment</span></span></label></div><figcaption><strong>Don't</strong>Leave the role out. It's announced as a checkbox, which suggests a save step.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Code</th></tr></thead>
+      <tbody>
+        <tr><td>Set</td><td>Switch / Switch with Label</td><td><code>input.aec-switch[type=checkbox][role=switch]</code>, inside <code>label.aec-control</code></td></tr>
+        <tr><td>selected</td><td>on / off</td><td><code>checked</code></td></tr>
+        <tr><td>state</td><td>hover</td><td><code>:hover</code></td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>disabled</code></td></tr>
+        <tr><td>focus-ring</td><td>true</td><td><code>:focus-visible</code></td></tr>
+        <tr><td>Label position</td><td>before / after</td><td><code>.aec-control--between</code> / (none)</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -108,6 +194,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -33,11 +34,11 @@
   <section class="doc-section">
     <h2 id="variants">Variants</h2>
     <div class="doc-variants">
-      <div class="doc-variant"><div><h3>Primary</h3><p>The default link, in Chevrolet blue. The Figma "brand" style is identical.</p></div>
+      <div class="doc-variant"><div><h3 id="variant-primary">Primary</h3><p>The default link, in the brand's link colour. The Figma "brand" style is identical.</p></div>
         <div class="doc-variant-demo"><a class="aec-link" href="#variants">View offer details</a></div></div>
-      <div class="doc-variant"><div><h3>Neutral</h3><p>For dense content, legal text and footers, where blue would be too loud.</p></div>
+      <div class="doc-variant"><div><h3 id="variant-neutral">Neutral</h3><p>For dense content, legal text and footers, where the primary colour would be too loud.</p></div>
         <div class="doc-variant-demo"><a class="aec-link aec-link--neutral" href="#variants">Terms and conditions</a></div></div>
-      <div class="doc-variant"><div><h3>Inverse</h3><p>For dark surfaces.</p></div>
+      <div class="doc-variant"><div><h3 id="variant-inverse">Inverse</h3><p>For dark surfaces such as the header, footer and hero banners.</p></div>
         <div class="doc-variant-demo is-inverse"><a class="aec-link aec-link--inverse" href="#variants">Find a dealer</a></div></div>
     </div>
     <div class="doc-example" data-label="Links with icons">
@@ -53,33 +54,83 @@
   </section>
 
   <section class="doc-section">
-    <h2 id="sizes">Sizes</h2>
-    <div class="doc-example" data-label="Sizes">
-      <div class="doc-example-preview">
-        <a class="aec-link aec-link--lg" href="#sizes">Large · 16</a>
-        <a class="aec-link" href="#sizes">Medium · 14</a>
-        <a class="aec-link aec-link--sm" href="#sizes">Small · 12</a>
-      </div>
+    <h2 id="states">States</h2>
+    <p>Links have default, hover, focus and disabled states. Pressed looks the same as hover, so it isn't shown. The colours come from the brand's link tokens (<code>--aec-link-color-&lt;variant&gt;-text-&lt;state&gt;</code> and <code>-icon-&lt;state&gt;</code>). Neutral links also get a thicker underline on hover, because their hover colour can be the same as the default. Focus adds a 2px <code>focus/default</code> ring.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,disabled" aria-label="Link states">
+      <template data-row="Primary"><a class="aec-link" href="#states">View offer details</a></template>
+      <template data-row="Primary with icon"><a class="aec-link" href="#states"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Back to vehicle</a></template>
+      <template data-row="Neutral"><a class="aec-link aec-link--neutral" href="#states">Terms and conditions</a></template>
+      <template data-row="Inverse" data-dark><a class="aec-link aec-link--inverse" href="#states">Find a dealer</a></template>
+    </div>
+    <h3 id="loading">Loading</h3>
+    <p>When a link starts something that takes a moment, such as loading a quote, the label can be swapped for a spinner. The underline is removed while it loads.</p>
+    <div class="doc-example" data-label="Loading link">
+      <div class="doc-example-preview"><span class="aec-link" aria-busy="true"><span class="aec-spinner" role="status" aria-label="Loading"></span></span></div>
     </div>
   </section>
 
   <section class="doc-section">
-    <h2 id="states">States</h2>
-    <div class="doc-states">
-      <div class="doc-state"><span class="doc-state-label">Default</span><a class="aec-link" href="#states">Link</a></div>
-      <div class="doc-state"><span class="doc-state-label">Hover / pressed</span><a class="aec-link" href="#states" style="color:var(--aec-color-primary-hover)">Link</a></div>
-      <div class="doc-state"><span class="doc-state-label">Focus</span><a class="aec-link" href="#states" style="outline:2px solid var(--aec-color-focus-default);outline-offset:4px">Link</a></div>
-      <div class="doc-state"><span class="doc-state-label">Loading</span><span class="aec-link" aria-busy="true"><span class="aec-spinner" role="status" aria-label="Loading"></span></span></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled</span><a class="aec-link" aria-disabled="true">Link</a></div>
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <a class="aec-link is-focus" id="link-anatomy" href="#anatomy" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Back to vehicle</a>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 65px);top:6px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 5px);top:6px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 5px);top:60px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 72px);top:33px">4</span>
+      </div>
+      <ol>
+        <li><span><strong>Icon (optional)</strong><span data-measure="#link-anatomy" data-prop="icon-size"></span>, <span data-measure="#link-anatomy" data-prop="gap"></span> from the label. Use it for direction or to show that a link opens something else.</span></li>
+        <li><span><strong>Label</strong><span data-measure="#link-anatomy" data-prop="font-size"></span> <span data-measure="#link-anatomy" data-prop="font-family"></span>, weight <span data-measure="#link-anatomy" data-prop="font-weight"></span>, line height <span data-measure="#link-anatomy" data-prop="line-height"></span> in this brand.</span></li>
+        <li><span><strong>Underline</strong>Always shown, in the label colour.</span></li>
+        <li><span><strong>Focus ring</strong>2px <code>focus/default</code> with <span data-measure="#link-anatomy" data-prop="border-radius"></span> corners, shown only on keyboard focus.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <p>Three sizes. Medium is the default. Pick the size that matches the text around the link. The blue marks are measured from the real links in the active brand.</p>
+    <div class="doc-spec" data-spec="height,gap,icon">
+      <a class="aec-link aec-link--lg" id="link-lg" href="#sizes" tabindex="-1" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Large link</a>
+      <a class="aec-link" id="link-md" href="#sizes" tabindex="-1" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Medium link</a>
+      <a class="aec-link aec-link--sm" id="link-sm" href="#sizes" tabindex="-1" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Small link</a>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Class</th><th>Text</th><th>Line height</th><th>Weight</th><th>Icon</th><th>Icon gap</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Large</td><td><code>.aec-link--lg</code></td><td data-measure="#link-lg" data-prop="font-size"></td><td data-measure="#link-lg" data-prop="line-height"></td><td data-measure="#link-lg" data-prop="font-weight"></td><td data-measure="#link-lg" data-prop="icon-size"></td><td data-measure="#link-lg" data-prop="gap"></td><td><code>--drp-link-typography-large-*</code></td></tr>
+        <tr><td>Medium (default)</td><td>—</td><td data-measure="#link-md" data-prop="font-size"></td><td data-measure="#link-md" data-prop="line-height"></td><td data-measure="#link-md" data-prop="font-weight"></td><td data-measure="#link-md" data-prop="icon-size"></td><td data-measure="#link-md" data-prop="gap"></td><td><code>--drp-link-typography-medium-*</code></td></tr>
+        <tr><td>Small</td><td><code>.aec-link--sm</code></td><td data-measure="#link-sm" data-prop="font-size"></td><td data-measure="#link-sm" data-prop="line-height"></td><td data-measure="#link-sm" data-prop="font-weight"></td><td data-measure="#link-sm" data-prop="icon-size"></td><td data-measure="#link-sm" data-prop="gap"></td><td><code>--drp-link-typography-small-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <p>Inside a <code>&lt;p&gt;</code> or <code>&lt;li&gt;</code>, a link takes the font size and line height of the surrounding text, whatever its size class.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><a class="aec-link" href="#usage">View financing options</a></div><figcaption><strong>Do</strong>Use a link to take people somewhere, such as another page or section.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><a class="aec-link" href="#usage">Submit credit application</a></div><figcaption><strong>Don't</strong>Use a link for an action that changes data. Use a <a href="button.html">button</a>.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-dark"><a class="aec-link aec-link--inverse" href="#usage">Find a dealer</a></div><figcaption><strong>Do</strong>Use the inverse link on dark surfaces.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-dark"><a class="aec-link" href="#usage">Find a dealer</a></div><figcaption><strong>Don't</strong>Put a primary link on a dark surface. It may not have enough contrast.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><p class="aec-body-2" style="max-width:300px;margin:0">Your trade-in value is an estimate. <a class="aec-link" href="#usage">See how we calculate it</a>.</p></div><figcaption><strong>Do</strong>Keep links in running text short, and put them where people need them.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><p class="aec-body-2" style="max-width:300px;margin:0">Read the <a class="aec-link" href="#usage">terms</a>, <a class="aec-link" href="#usage">privacy</a>, <a class="aec-link" href="#usage">fees</a> and <a class="aec-link" href="#usage">rates</a> before you continue.</p></div><figcaption><strong>Don't</strong>Put many links close together in one sentence. They are hard to tell apart and to tap.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><a class="aec-link" href="#usage">Vehicle history report<span class="aec-icon" style="--aec-icon-src:url(/assets/icons/more-link.svg)" aria-hidden="true"></span></a></div><figcaption><strong>Do</strong>Add the external-link icon when a link opens a new tab or another site.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><a class="aec-link" href="#usage"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Continue<span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-right.svg)" aria-hidden="true"></span></a></div><figcaption><strong>Don't</strong>Add icons on both sides, or use icons that don't match where the link goes.</figcaption></figure>
     </div>
   </section>
 
   <section class="doc-section">
     <h2 id="content">Content</h2>
-    <ul>
-      <li>Make the link text describe the destination: <em>View financing options</em>, not <em>Click here</em>.</li>
-      <li>Add an external-link icon and "(opens in a new tab)" to visually hidden text when a link opens a new tab.</li>
-    </ul>
+    <p>The link text should tell people where they will go. Write it in sentence case and keep it short.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><a class="aec-link" href="#content">View financing options</a></div><figcaption><strong>Do</strong>Describe the destination.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><a class="aec-link" href="#content">Click here</a></div><figcaption><strong>Don't</strong>Use "Click here" or "Learn more" on its own. It means nothing out of context.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><a class="aec-link" href="#content">Delivery options</a></div><figcaption><strong>Do</strong>Keep it to a few words, and use the title of the page it opens where you can.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><a class="aec-link" href="#content">https://example.com/delivery-options</a></div><figcaption><strong>Don't</strong>Show a raw web address as the link text.</figcaption></figure>
+    </div>
+    <p>When a link opens a new tab, add the external-link icon and "(opens in a new tab)" as visually hidden text.</p>
   </section>
 
   <section class="doc-section">
@@ -88,7 +139,49 @@
       <div class="doc-a11y-item"><h3>Link purpose <span class="doc-wcag">WCAG 2.4.4</span></h3><p>The text alone, or together with its sentence, should make the destination clear.</p></div>
       <div class="doc-a11y-item"><h3>Use of colour <span class="doc-wcag">WCAG 1.4.1</span></h3><p>Links stay underlined, so they don't rely on colour to stand out from text.</p></div>
       <div class="doc-a11y-item"><h3>Disabled links</h3><p>A link can't be truly disabled. Remove the <code>href</code> and add <code>aria-disabled="true"</code>, or better, render plain text.</p></div>
+      <div class="doc-a11y-item"><h3>Right element <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>&lt;a href&gt;</code> for navigation. It is reached with Tab and followed with Enter. A link styled with <code>.aec-link</code> on a <code>&lt;button&gt;</code> is still a button to assistive technology, so only do this for actions.</p></div>
+      <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Links show a 2px <code>focus/default</code> ring on <code>:focus-visible</code>. Don't remove it.</p></div>
+      <div class="doc-a11y-item"><h3>New tabs <span class="doc-wcag">WCAG 3.2.5</span></h3><p>Tell people before a link opens a new tab, with an icon and visually hidden text. Use <code>rel="noopener"</code> with <code>target="_blank"</code>.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Link text needs at least 4.5:1 against its background. These ratios are measured live in the active brand. Disabled links are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Variant</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Primary</td><td><a class="aec-link" href="#contrast" tabindex="-1" data-contrast-sample>View offer details</a></td><td data-contrast-result></td></tr>
+        <tr><td>Primary hover</td><td><a class="aec-link is-hover" href="#contrast" tabindex="-1" data-contrast-sample>View offer details</a></td><td data-contrast-result></td></tr>
+        <tr><td>Neutral</td><td><a class="aec-link aec-link--neutral" href="#contrast" tabindex="-1" data-contrast-sample>Terms and conditions</a></td><td data-contrast-result></td></tr>
+        <tr><td>Small</td><td><a class="aec-link aec-link--sm" href="#contrast" tabindex="-1" data-contrast-sample>Privacy policy</a></td><td data-contrast-result></td></tr>
+        <tr><td>Inverse</td><td style="background:var(--aec-color-bg-inverse)"><a class="aec-link aec-link--inverse" href="#contrast" tabindex="-1" data-contrast-sample>Find a dealer</a></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Focus contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Focus ring</td><td><a class="aec-link is-focus" href="#non-text-contrast" tabindex="-1" data-contrast-sample data-contrast-mode="focus">View offer details</a></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><a class="aec-link" href="#a11y-dodont">Download your quote (PDF)</a><a class="aec-link" href="#a11y-dodont">Download your trade-in appraisal (PDF)</a></div><figcaption><strong>Do</strong>Give each link a unique name, so a list of links on the page still makes sense.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><a class="aec-link" href="#a11y-dodont">Download</a><a class="aec-link" href="#a11y-dodont">Download</a></div><figcaption><strong>Don't</strong>Repeat the same text for links that go to different places.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>style</td><td>primary (brand) / neutral / inverse</td><td>(none) / <code>.aec-link--neutral</code> / <code>.aec-link--inverse</code></td></tr>
+        <tr><td>size</td><td>large / medium / small</td><td><code>.aec-link--lg</code> / (none) / <code>.aec-link--sm</code></td></tr>
+        <tr><td>state</td><td>hover / pressed / loading</td><td><code>:hover</code> / <code>:active</code> / <code>aria-busy="true"</code> with an <code>.aec-spinner</code></td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>aria-disabled="true"</code>, no <code>href</code></td></tr>
+        <tr><td>focus-ring</td><td>true</td><td><code>:focus-visible</code></td></tr>
+        <tr><td>left-icon / right-icon</td><td>true</td><td>child <code>.aec-icon</code> before/after the label</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -105,6 +198,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pagination · DRS Design System</title>
-<meta name="description" content="Pagination splits long lists — such as inventory results — across pages and lets people move between them.">
+<meta name="description" content="Pagination splits long lists — such as inventory results — across pages and lets people move between them. Covers states, anatomy, sizes, content and accessibility.">
 <meta name="theme-color" content="#262626">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -27,6 +28,10 @@
   <div class="doc-meta"><span>Legacy Figma component, remapped</span><span><code>.aec-pagination</code></span></div>
 
   <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><p>The Figma Pagination uses an older colour palette and older variables. The styles below map it to the current tokens and are pending design review.</p></div>
+
+  <div class="doc-intro">
+    <p>Pagination shows how many pages of results there are and which one people are on. It has numbered page links, previous and next arrows, an ellipsis for skipped pages and an optional page-size select. There's also a compact <strong>text</strong> version for small screens. Pagination has no brand tokens of its own: it uses the semantic <code>--aec-color-*</code> and <code>--drp-typography-body-*</code> styles (through the site aliases), so it follows each brand's base colours and fonts.</p>
+  </div>
 
   <section class="doc-section">
     <h2 id="default">Default</h2>
@@ -47,6 +52,7 @@
       </div>
     </div>
     <h3 class="doc-h3" id="text">With text arrows</h3>
+    <p>Use the text version on small screens, or when the total number of pages isn't important.</p>
     <div class="doc-example" data-label="Previous / next text">
       <div class="doc-example-preview">
         <nav class="aec-pagination" aria-label="Pages">
@@ -59,25 +65,155 @@
   </section>
 
   <section class="doc-section">
-    <h2 id="spec">Specification</h2>
+    <h2 id="states">States</h2>
+    <p>Page items have default, hover, current and disabled states. Hover tints the background with <code>bg/variant</code> and darkens the text. The current page has a <code>action/border/active</code> border and bold <code>primary/default</code> text, as in the example above. Disabled items, such as the previous arrow on page 1, use <code>text/disabled</code>.</p>
+    <div class="doc-state-matrix" data-states="default,disabled" aria-label="Pagination item states">
+      <template data-row="Page number"><a class="aec-pagination__item" href="#states">2</a></template>
+      <template data-row="Previous arrow"><a class="aec-pagination__item" href="#states" aria-label="Previous page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></a></template>
+      <template data-row="Next arrow"><a class="aec-pagination__item" href="#states" aria-label="Next page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></a></template>
+    </div>
+    <p class="doc-small doc-muted">Hover and keyboard focus can't be forced for pagination yet, so try them on the live example above. Focus adds a 2px <code>focus/default</code> ring.</p>
     <div class="doc-table-wrap"><table class="doc-table">
       <thead><tr><th>State</th><th>Background</th><th>Border</th><th>Text</th></tr></thead>
       <tbody>
         <tr><td>Default</td><td>—</td><td>—</td><td><code>text/subtle</code></td></tr>
         <tr><td>Hover</td><td><code>bg/variant</code></td><td>—</td><td><code>text/default</code></td></tr>
-        <tr><td>Current</td><td>—</td><td>1px <code>action/border/active</code></td><td><code>primary/default</code>, bold</td></tr>
+        <tr><td>Current</td><td>—</td><td><code>action/border/active</code></td><td><code>primary/default</code>, bold</td></tr>
         <tr><td>Disabled</td><td>—</td><td>—</td><td><code>text/disabled</code></td></tr>
       </tbody>
     </table></div>
-    <p class="doc-small doc-muted">Items are 32×32px (24px with <code>.aec-pagination--sm</code>), have a 6px radius and an 8px gap.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy-stage" style="border:1px solid var(--doc-line);border-radius:12px;margin:16px 0 0;padding:40px 16px">
+        <div class="aec-pagination">
+          <ul class="aec-pagination__list" id="pg-anat-list">
+            <li><a class="aec-pagination__item" id="pg-anat-prev" href="#anatomy" tabindex="-1" aria-label="Previous page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></a></li>
+            <li><a class="aec-pagination__item" href="#anatomy" tabindex="-1">1</a></li>
+            <li><a class="aec-pagination__item" id="pg-anat-current" href="#anatomy" tabindex="-1" aria-current="page">2</a></li>
+            <li><a class="aec-pagination__item" id="pg-anat-item" href="#anatomy" tabindex="-1">3</a></li>
+            <li><span class="aec-pagination__ellipsis" aria-hidden="true">…</span></li>
+            <li><a class="aec-pagination__item" href="#anatomy" tabindex="-1">12</a></li>
+            <li><a class="aec-pagination__item" href="#anatomy" tabindex="-1" aria-label="Next page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 109px);top:14px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 29px);top:14px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 11px);top:84px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 39px);top:14px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 109px);top:14px">5</span>
+    </div>
+    <div class="doc-anatomy" style="grid-template-columns:minmax(0,1fr);margin-top:8px">
+      <ol>
+        <li><span><strong>Previous arrow</strong>A <span data-measure="#pg-anat-prev" data-prop="icon-size"></span> caret. Disabled on the first page.</span></li>
+        <li><span><strong>Current page</strong>A <span data-measure="#pg-anat-current" data-prop="border-width"></span> border with bold text, weight <span data-measure="#pg-anat-current" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Page item</strong><span data-measure="#pg-anat-item" data-prop="height"></span> tall with <span data-measure="#pg-anat-item" data-prop="border-radius"></span> corners and <span data-measure="#pg-anat-item" data-prop="font-size"></span> <span data-measure="#pg-anat-item" data-prop="font-family"></span> numbers.</span></li>
+        <li><span><strong>Ellipsis</strong>Stands for skipped pages. It's hidden from screen readers.</span></li>
+        <li><span><strong>Next arrow</strong>Disabled on the last page. Items sit <span data-measure="#pg-anat-list" data-prop="gap"></span> apart.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <p>Two sizes. Default is for results pages; small (<code>.aec-pagination--sm</code>) fits inside tables and cards. The blue marks are measured from the real items.</p>
+    <div class="doc-spec is-row" data-spec="height,width,radius">
+      <div class="aec-pagination"><a class="aec-pagination__item" id="pg-spec-item" href="#sizes" tabindex="-1" data-spec-target>8</a></div>
+      <div class="aec-pagination"><a class="aec-pagination__item" id="pg-spec-cur" href="#sizes" tabindex="-1" aria-current="page" data-spec-target>9</a></div>
+      <div class="aec-pagination aec-pagination--sm"><a class="aec-pagination__item" id="pg-spec-sm" href="#sizes" tabindex="-1" data-spec-target>10</a></div>
+    </div>
+    <div class="doc-spec" data-spec="gap">
+      <div class="aec-pagination"><ul class="aec-pagination__list" id="pg-spec-list" data-spec-target><li><a class="aec-pagination__item" href="#sizes" tabindex="-1">1</a></li><li><a class="aec-pagination__item" href="#sizes" tabindex="-1" aria-current="page">2</a></li><li><a class="aec-pagination__item" href="#sizes" tabindex="-1">3</a></li></ul></div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Class</th><th>Height</th><th>Min width</th><th>Corners</th><th>Text</th><th>Gap</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Default</td><td>—</td><td data-measure="#pg-spec-item" data-prop="height"></td><td data-measure="#pg-spec-item" data-prop="min-width"></td><td data-measure="#pg-spec-item" data-prop="border-radius"></td><td data-measure="#pg-spec-item" data-prop="font-size"></td><td data-measure="#pg-spec-list" data-prop="gap"></td><td>None. Semantic <code>--drp-typography-body-2-regular-*</code>, <code>--aec-spacing-selectable-gap-m</code></td></tr>
+        <tr><td>Small</td><td><code>.aec-pagination--sm</code></td><td data-measure="#pg-spec-sm" data-prop="height"></td><td data-measure="#pg-spec-sm" data-prop="min-width"></td><td data-measure="#pg-spec-sm" data-prop="border-radius"></td><td data-measure="#pg-spec-sm" data-prop="font-size"></td><td data-measure="#pg-spec-list" data-prop="gap"></td><td>None. Semantic <code>--drp-typography-body-3-regular-*</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-pagination"><ul class="aec-pagination__list"><li><a class="aec-pagination__item" href="#usage" aria-label="Previous page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></a></li><li><a class="aec-pagination__item" href="#usage">1</a></li><li><span class="aec-pagination__ellipsis">…</span></li><li><a class="aec-pagination__item" href="#usage">5</a></li><li><a class="aec-pagination__item" href="#usage" aria-current="page">6</a></li><li><a class="aec-pagination__item" href="#usage">7</a></li><li><span class="aec-pagination__ellipsis">…</span></li><li><a class="aec-pagination__item" href="#usage">12</a></li><li><a class="aec-pagination__item" href="#usage" aria-label="Next page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></a></li></ul></div></div><figcaption><strong>Do</strong>Show the first and last pages and the pages around the current one, with an ellipsis for the rest.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-pagination"><ul class="aec-pagination__list" style="flex-wrap:wrap"><li><a class="aec-pagination__item" href="#usage">1</a></li><li><a class="aec-pagination__item" href="#usage">2</a></li><li><a class="aec-pagination__item" href="#usage">3</a></li><li><a class="aec-pagination__item" href="#usage">4</a></li><li><a class="aec-pagination__item" href="#usage">5</a></li><li><a class="aec-pagination__item" href="#usage" aria-current="page">6</a></li><li><a class="aec-pagination__item" href="#usage">7</a></li><li><a class="aec-pagination__item" href="#usage">8</a></li><li><a class="aec-pagination__item" href="#usage">9</a></li><li><a class="aec-pagination__item" href="#usage">10</a></li><li><a class="aec-pagination__item" href="#usage">11</a></li><li><a class="aec-pagination__item" href="#usage">12</a></li></ul></div></div><figcaption><strong>Don't</strong>List every page. It's hard to scan and wraps on small screens.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-pagination"><ul class="aec-pagination__list"><li><a class="aec-pagination__item" aria-disabled="true" aria-label="Previous page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></a></li><li><a class="aec-pagination__item" href="#usage" aria-current="page">1</a></li><li><a class="aec-pagination__item" href="#usage">2</a></li><li><a class="aec-pagination__item" href="#usage">3</a></li><li><a class="aec-pagination__item" href="#usage" aria-label="Next page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></a></li></ul></div></div><figcaption><strong>Do</strong>Keep the arrows in place and disable the one that can't be used.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-pagination"><ul class="aec-pagination__list"><li><a class="aec-pagination__item" href="#usage" aria-current="page">1</a></li><li><a class="aec-pagination__item" href="#usage">2</a></li><li><a class="aec-pagination__item" href="#usage">3</a></li><li><a class="aec-pagination__item" href="#usage" aria-label="Next page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></a></li></ul></div></div><figcaption><strong>Don't</strong>Hide an arrow on the first or last page. The controls shift under people's fingers.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-body-3 aec-text-subtle">Showing 21–40 of 236 vehicles</span><div class="aec-pagination"><ul class="aec-pagination__list"><li><a class="aec-pagination__item" href="#usage">1</a></li><li><a class="aec-pagination__item" href="#usage" aria-current="page">2</a></li><li><a class="aec-pagination__item" href="#usage">3</a></li></ul></div></div><figcaption><strong>Do</strong>Show how many results there are, so people know how much is left.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:center"><div class="aec-pagination"><ul class="aec-pagination__list"><li><a class="aec-pagination__item" href="#usage">1</a></li><li><a class="aec-pagination__item" href="#usage" aria-current="page">2</a></li><li><a class="aec-pagination__item" href="#usage">3</a></li></ul></div></div><figcaption><strong>Don't</strong>Show page numbers with no idea of the total.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview" style="max-width:300px;margin:auto"><div class="aec-pagination" style="justify-content:space-between;width:100%"><a class="aec-btn aec-btn--secondary aec-btn--inline" href="#usage"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Previous</a><span class="aec-body-3 aec-text-subtle">Page 2 of 12</span><a class="aec-btn aec-btn--secondary aec-btn--inline" href="#usage">Next<span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-right.svg)" aria-hidden="true"></span></a></div></div><figcaption><strong>Do</strong>Use the text version on small screens.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview" style="max-width:300px;margin:auto"><div class="aec-pagination aec-pagination--sm"><ul class="aec-pagination__list"><li><a class="aec-pagination__item" href="#usage">1</a></li><li><a class="aec-pagination__item" href="#usage" aria-current="page">2</a></li><li><a class="aec-pagination__item" href="#usage">3</a></li><li><a class="aec-pagination__item" href="#usage">4</a></li><li><span class="aec-pagination__ellipsis">…</span></li><li><a class="aec-pagination__item" href="#usage">12</a></li></ul></div></div><figcaption><strong>Don't</strong>Shrink numbered items on mobile. Small targets are hard to tap.</figcaption></figure>
+    </div>
+    <ul>
+      <li>Use pagination when people need to find their place again, such as inventory results. For feeds, consider a <em>Show more</em> button.</li>
+      <li>Place pagination below the list, centred or aligned with the content.</li>
+      <li>Keep filters and sorting when people change pages, and scroll back to the top of the list.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Label the arrows "Previous page" and "Next page" with <code>aria-label</code>. In the text version, use "Previous" and "Next".</li>
+      <li>Write the position as <em>Page 2 of 12</em> and the results count as <em>Showing 21–40 of 236 vehicles</em>.</li>
+      <li>Write page-size options as <em>20 / page</em>, with a hidden label "Results per page".</li>
+    </ul>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Landmark and current page <span class="doc-wcag">WCAG 1.3.1 · 4.1.2</span></h3><p>Use <code>&lt;nav aria-label&gt;</code>, mark the current page with <code>aria-current="page"</code>, and label the arrow links ("Previous page").</p></div>
-      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>Items are 32px, with an 8px gap between them.</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>Default items are <span data-measure="#pg-spec-item" data-prop="height"></span> tall, with <span data-measure="#pg-spec-list" data-prop="gap"></span> between them, which meets the 24×24px minimum. Small items are <span data-measure="#pg-spec-sm" data-prop="height"></span>, so don't use them on touch screens.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Every page item is a link, so Tab moves through them and Enter follows them. Disabled arrows have no <code>href</code> and <code>aria-disabled="true"</code>, so they're skipped.</p></div>
+      <div class="doc-a11y-item"><h3>Focus after changing page <span class="doc-wcag">WCAG 2.4.3</span></h3><p>If the list updates without a page load, move focus to the results heading and announce the new page, so screen reader users know it changed.</p></div>
     </div>
+
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Page numbers need at least 4.5:1 against the page. These ratios are measured live in the active brand. Disabled items are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Page number</td><td><a class="aec-pagination__item" href="#contrast" tabindex="-1" data-contrast-sample>3</a></td><td data-contrast-result></td></tr>
+        <tr><td>Current page</td><td><a class="aec-pagination__item" href="#contrast" tabindex="-1" aria-current="page" data-contrast-sample>2</a></td><td data-contrast-result></td></tr>
+        <tr><td>Page of total</td><td><span class="aec-body-2 aec-text-subtle" data-contrast-sample>Page 2 of 12</span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The current-page border and the focus ring need at least 3:1 against the page.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Current-page border</td><td><a class="aec-pagination__item" href="#non-text-contrast" tabindex="-1" aria-current="page" data-contrast-sample data-contrast-mode="border">2</a></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><a class="aec-pagination__item" href="#non-text-contrast" tabindex="-1" data-contrast-sample data-contrast-mode="focus">3</a></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-pagination"><ul class="aec-pagination__list"><li><a class="aec-pagination__item" href="#a11y-dodont">1</a></li><li><a class="aec-pagination__item" href="#a11y-dodont" aria-current="page">2</a></li><li><a class="aec-pagination__item" href="#a11y-dodont">3</a></li></ul></div></div><figcaption><strong>Do</strong>Show the current page with a border and bold text, plus <code>aria-current="page"</code>.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-pagination"><ul class="aec-pagination__list"><li><a class="aec-pagination__item" href="#a11y-dodont">1</a></li><li><a class="aec-pagination__item" href="#a11y-dodont" style="color:var(--aec-color-primary-default)">2</a></li><li><a class="aec-pagination__item" href="#a11y-dodont">3</a></li></ul></div></div><figcaption><strong>Don't</strong>Show the current page with colour alone.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Class or attribute</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td><code>&lt;nav class="aec-pagination" aria-label&gt;</code></td></tr>
+        <tr><td>List</td><td><code>.aec-pagination__list</code></td></tr>
+        <tr><td>Page or arrow</td><td><code>.aec-pagination__item</code></td></tr>
+        <tr><td>Current page</td><td><code>aria-current="page"</code></td></tr>
+        <tr><td>Disabled arrow</td><td><code>aria-disabled="true"</code> (no <code>href</code>)</td></tr>
+        <tr><td>Ellipsis</td><td><code>.aec-pagination__ellipsis</code> with <code>aria-hidden="true"</code></td></tr>
+        <tr><td>Small size</td><td><code>.aec-pagination--sm</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -94,6 +230,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

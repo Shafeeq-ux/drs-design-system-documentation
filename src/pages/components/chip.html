@@ -10,7 +10,7 @@ figma: 3769-50187
   <div class="doc-meta"><span>6 Figma component sets</span><span><code>.aec-chip</code></span></div>
 
   <div class="doc-intro">
-    <p>There are four kinds of chip. <strong>Information</strong> and <strong>plain</strong> chips are static labels. <strong>Selectable</strong> chips toggle filters. <strong>Dismissable</strong> chips show a chosen value that can be removed. All chips have square corners.</p>
+    <p>There are four kinds of chip. <strong>Information</strong> and <strong>plain</strong> chips are static labels. <strong>Selectable</strong> chips toggle filters. <strong>Dismissable</strong> chips show a chosen value that can be removed. The corner radius, sizes and colours come from each brand's chip tokens, so switch the brand in the header to compare them.</p>
   </div>
 
   <section class="doc-section">
@@ -33,9 +33,9 @@ figma: 3769-50187
           <span class="aec-chip aec-chip--info aec-chip--grey aec-chip--filled">Used</span>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-          <span class="aec-chip aec-chip--info aec-chip--sm">Small · 24</span>
-          <span class="aec-chip aec-chip--info">Medium · 32</span>
-          <span class="aec-chip aec-chip--info aec-chip--lg">Large · 40</span>
+          <span class="aec-chip aec-chip--info aec-chip--sm">Small</span>
+          <span class="aec-chip aec-chip--info">Medium</span>
+          <span class="aec-chip aec-chip--info aec-chip--lg">Large</span>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@ figma: 3769-50187
 
   <section class="doc-section">
     <h2 id="selectable">Selectable</h2>
-    <p>A filter that toggles on and off. Selected chips turn dark. Use it for vehicle filters such as body style or fuel type.</p>
+    <p>A filter that toggles on and off. Selected chips fill with the brand's selected colour. Use it for vehicle filters such as body style or fuel type.</p>
     <div class="doc-example" data-label="Selectable chips">
       <div class="doc-example-preview is-col">
         <div class="aec-chip-list" role="group" aria-label="Body style">
@@ -103,22 +103,117 @@ figma: 3769-50187
   </section>
 
   <section class="doc-section">
-    <h2 id="states">Selectable states</h2>
-    <div class="doc-states">
-      <div class="doc-state"><span class="doc-state-label">Default</span><span class="aec-chip aec-chip--selectable">Label</span></div>
-      <div class="doc-state"><span class="doc-state-label">Hover</span><span class="aec-chip aec-chip--selectable" style="background:var(--aec-color-bg-variant);border-color:var(--aec-color-border-variant);color:var(--aec-color-text-default)">Label</span></div>
-      <div class="doc-state"><span class="doc-state-label">Pressed</span><span class="aec-chip aec-chip--selectable" style="background:var(--aec-color-bg-variant);border-color:var(--aec-color-action-border-active);color:var(--aec-color-text-default)">Label</span></div>
-      <div class="doc-state"><span class="doc-state-label">Selected</span><span class="aec-chip aec-chip--selectable" aria-pressed="true">Label</span></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled</span><button class="aec-chip aec-chip--selectable" disabled>Label</button></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled selected</span><button class="aec-chip aec-chip--selectable" aria-pressed="true" disabled>Label</button></div>
+    <h2 id="states">States</h2>
+    <p>Information and plain chips are static, so they have no states. Selectable and dismissable chips take their state colours from the brand's chip tokens (<code>--aec-chip-selectable-color-*</code> and <code>--aec-chip-dismissable-color-*</code>). Focus adds a 2px <code>focus/default</code> ring, 2px outside the chip or its close button.</p>
+    <h3 id="states-selectable">Selectable</h3>
+    <div class="doc-state-matrix" data-states="default,hover,focus,pressed,selected,disabled" aria-label="Selectable chip states">
+      <template data-row="Medium"><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">Truck</button></template>
+      <template data-row="With icon"><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Electric</button></template>
+      <template data-row="Small"><button class="aec-chip aec-chip--selectable aec-chip--sm" type="button" aria-pressed="false">5 seats</button></template>
+    </div>
+    <p>Once selected, a chip keeps its selected colours on hover and press. It can still take focus and be disabled.</p>
+    <div class="doc-state-matrix" data-states="default,focus,disabled" aria-label="Selected chip states">
+      <template data-row="Selected"><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="true">SUV</button></template>
+      <template data-row="Selected · inverse" data-dark><button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" aria-pressed="true">Black</button></template>
+    </div>
+    <h3 id="states-inverse">Selectable inverse</h3>
+    <div class="doc-state-matrix" data-states="default,hover,focus,selected,disabled" aria-label="Inverse selectable chip states">
+      <template data-row="Inverse" data-dark><button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" aria-pressed="false">Summit White</button></template>
+    </div>
+    <h3 id="states-dismissable">Dismissable</h3>
+    <p>Hover and disabled apply to the whole chip. Focus goes to the close button, which is the only interactive part.</p>
+    <div class="doc-state-matrix" data-states="default,hover,disabled" aria-label="Dismissable chip states">
+      <template data-row="Dismissable"><ul class="aec-chip-list" aria-label="Applied filters"><li class="aec-chip aec-chip--input" data-state-el>Silverado<button class="aec-chip__remove" type="button" aria-label="Remove Silverado"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></template>
+      <template data-row="Inverse" data-dark><ul class="aec-chip-list" aria-label="Applied filters"><li class="aec-chip aec-chip--input aec-chip--inverse" data-state-el>Silverado<button class="aec-chip__remove" type="button" aria-label="Remove Silverado"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></template>
+    </div>
+    <div class="doc-state-matrix" data-states="default,focus" aria-label="Dismissable chip close button states">
+      <template data-row="Close button"><ul class="aec-chip-list" aria-label="Applied filters"><li class="aec-chip aec-chip--input">Silverado<button class="aec-chip__remove" type="button" aria-label="Remove Silverado" data-state-el><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <button class="aec-chip aec-chip--selectable is-focus" id="chip-anatomy" type="button" tabindex="-1" aria-pressed="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offers.svg)" aria-hidden="true"></span>Offers <span class="aec-badge">2</span></button>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 90px);top:41px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 47px);top:6px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 11px);top:6px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 25px);top:6px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 56px);top:74px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong><span data-measure="#chip-anatomy" data-prop="height"></span> tall with <span data-measure="#chip-anatomy" data-prop="border-radius"></span> corners and a <span data-measure="#chip-anatomy" data-prop="border-width"></span> border in this brand.</span></li>
+        <li><span><strong>Icon (optional)</strong><span data-measure="#chip-anatomy" data-prop="icon-size"></span>, <span data-measure="#chip-anatomy" data-prop="gap"></span> from the label.</span></li>
+        <li><span><strong>Label</strong><span data-measure="#chip-anatomy" data-prop="font-size"></span> <span data-measure="#chip-anatomy" data-prop="font-family"></span>, weight <span data-measure="#chip-anatomy" data-prop="font-weight"></span>. The letter case (<span data-measure="#chip-anatomy" data-prop="text-transform"></span>) comes from the brand.</span></li>
+        <li><span><strong>Count (optional)</strong>A <a href="badge.html">badge</a> with the number of matching results.</span></li>
+        <li><span><strong>Focus ring</strong>2px <code>focus/default</code>, shown only on keyboard focus. Dismissable chips show it on the close button instead.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <p>Information and dismissable chips come in three sizes, and selectable chips in two. Medium is the default. The blue marks are measured from the real chips in the active brand. Some brands use the same height for more than one size.</p>
+    <h3 id="sizes-information">Information</h3>
+    <div class="doc-spec is-row" data-spec="height,padding,gap,radius">
+      <span class="aec-chip aec-chip--info aec-chip--success aec-chip--sm" id="chip-info-sm" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/check-circle.svg)" aria-hidden="true"></span>Small</span>
+      <span class="aec-chip aec-chip--info aec-chip--success" id="chip-info-md" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/check-circle.svg)" aria-hidden="true"></span>Medium</span>
+      <span class="aec-chip aec-chip--info aec-chip--success aec-chip--lg" id="chip-info-lg" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/check-circle.svg)" aria-hidden="true"></span>Large</span>
+    </div>
+    <h3 id="sizes-selectable">Selectable</h3>
+    <div class="doc-spec is-row" data-spec="height,padding,gap,radius">
+      <button class="aec-chip aec-chip--selectable" id="chip-sel-md" type="button" tabindex="-1" aria-pressed="false" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Medium</button>
+      <button class="aec-chip aec-chip--selectable aec-chip--sm" id="chip-sel-sm" type="button" tabindex="-1" aria-pressed="false" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Small</button>
+    </div>
+    <h3 id="sizes-dismissable">Dismissable</h3>
+    <div class="doc-spec is-row" data-spec="height,padding,gap,radius">
+      <span class="aec-chip aec-chip--input aec-chip--sm" id="chip-dis-sm" data-spec-target>Small<button class="aec-chip__remove" type="button" tabindex="-1" aria-label="Remove Small"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></span>
+      <span class="aec-chip aec-chip--input" id="chip-dis-md" data-spec-target>Medium<button class="aec-chip__remove" type="button" tabindex="-1" aria-label="Remove Medium"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></span>
+      <span class="aec-chip aec-chip--input aec-chip--lg" id="chip-dis-lg" data-spec-target>Large<button class="aec-chip__remove" type="button" tabindex="-1" aria-label="Remove Large"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></span>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Chip · size</th><th>Class</th><th>Height</th><th>Side padding</th><th>Gap</th><th>Text</th><th>Corners</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Information · small</td><td><code>.aec-chip--sm</code></td><td data-measure="#chip-info-sm" data-prop="height"></td><td data-measure="#chip-info-sm" data-prop="padding-left"></td><td data-measure="#chip-info-sm" data-prop="gap"></td><td data-measure="#chip-info-sm" data-prop="font-size"></td><td data-measure="#chip-info-sm" data-prop="border-radius"></td><td><code>--drp-chip-information-container-xs-*</code></td></tr>
+        <tr><td>Information · medium</td><td>—</td><td data-measure="#chip-info-md" data-prop="height"></td><td data-measure="#chip-info-md" data-prop="padding-left"></td><td data-measure="#chip-info-md" data-prop="gap"></td><td data-measure="#chip-info-md" data-prop="font-size"></td><td data-measure="#chip-info-md" data-prop="border-radius"></td><td><code>--drp-chip-information-container-small-*</code></td></tr>
+        <tr><td>Information · large</td><td><code>.aec-chip--lg</code></td><td data-measure="#chip-info-lg" data-prop="height"></td><td data-measure="#chip-info-lg" data-prop="padding-left"></td><td data-measure="#chip-info-lg" data-prop="gap"></td><td data-measure="#chip-info-lg" data-prop="font-size"></td><td data-measure="#chip-info-lg" data-prop="border-radius"></td><td><code>--drp-chip-information-container-medium-*</code></td></tr>
+        <tr><td>Selectable · medium</td><td>—</td><td data-measure="#chip-sel-md" data-prop="height"></td><td data-measure="#chip-sel-md" data-prop="padding-left"></td><td data-measure="#chip-sel-md" data-prop="gap"></td><td data-measure="#chip-sel-md" data-prop="font-size"></td><td data-measure="#chip-sel-md" data-prop="border-radius"></td><td><code>--drp-chip-selectable-container-medium-*</code></td></tr>
+        <tr><td>Selectable · small</td><td><code>.aec-chip--sm</code></td><td data-measure="#chip-sel-sm" data-prop="height"></td><td data-measure="#chip-sel-sm" data-prop="padding-left"></td><td data-measure="#chip-sel-sm" data-prop="gap"></td><td data-measure="#chip-sel-sm" data-prop="font-size"></td><td data-measure="#chip-sel-sm" data-prop="border-radius"></td><td><code>--drp-chip-selectable-container-small-*</code></td></tr>
+        <tr><td>Dismissable · small</td><td><code>.aec-chip--sm</code></td><td data-measure="#chip-dis-sm" data-prop="height"></td><td data-measure="#chip-dis-sm" data-prop="padding-left"></td><td data-measure="#chip-dis-sm" data-prop="gap"></td><td data-measure="#chip-dis-sm" data-prop="font-size"></td><td data-measure="#chip-dis-sm" data-prop="border-radius"></td><td><code>--drp-chip-dismissable-container-xs-*</code></td></tr>
+        <tr><td>Dismissable · medium</td><td>—</td><td data-measure="#chip-dis-md" data-prop="height"></td><td data-measure="#chip-dis-md" data-prop="padding-left"></td><td data-measure="#chip-dis-md" data-prop="gap"></td><td data-measure="#chip-dis-md" data-prop="font-size"></td><td data-measure="#chip-dis-md" data-prop="border-radius"></td><td><code>--drp-chip-dismissable-container-small-*</code></td></tr>
+        <tr><td>Dismissable · large</td><td><code>.aec-chip--lg</code></td><td data-measure="#chip-dis-lg" data-prop="height"></td><td data-measure="#chip-dis-lg" data-prop="padding-left"></td><td data-measure="#chip-dis-lg" data-prop="gap"></td><td data-measure="#chip-dis-lg" data-prop="font-size"></td><td data-measure="#chip-dis-lg" data-prop="border-radius"></td><td><code>--drp-chip-dismissable-container-medium-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="chip-spacing">Spacing in a list</h3>
+    <p>Wrap a set of chips in <code>.aec-chip-list</code>. Chips sit <span data-measure="#chip-list-spec" data-prop="gap"></span> apart and wrap onto a new line when they run out of room.</p>
+    <div class="doc-spec" data-spec="gap">
+      <div class="aec-chip-list" id="chip-list-spec" role="group" aria-label="Fuel type" data-spec-target><button class="aec-chip aec-chip--selectable" type="button" tabindex="-1" aria-pressed="true">Electric</button><button class="aec-chip aec-chip--selectable" type="button" tabindex="-1" aria-pressed="false">Hybrid</button><button class="aec-chip aec-chip--selectable" type="button" tabindex="-1" aria-pressed="false">Gas</button></div>
     </div>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
-    <div class="doc-dd">
-      <div class="doc-dd-card"><div class="doc-dd-preview"><span class="aec-chip aec-chip--info aec-chip--success">Approved</span></div><div class="doc-dd-body"><div class="doc-dd-label">Do</div>Keep status labels to one or two words, and match the colour to the meaning.</div></div>
-      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><span class="aec-chip aec-chip--info aec-chip--error">Popular</span></div><div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use status colours for decoration. Red means a problem.</div></div>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-chip aec-chip--info aec-chip--success">Approved</span><span class="aec-chip aec-chip--info aec-chip--error">Offer expired</span></div><figcaption><strong>Do</strong>Match the status to the meaning: success for done, warning for waiting, error for a problem.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-chip aec-chip--info aec-chip--error">Popular</span></div><figcaption><strong>Don't</strong>Use status colours for decoration. The error colour means a problem.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-chip-list" role="group" aria-label="Body style"><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="true">SUV</button><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">Truck</button><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">Sedan</button></div></div><figcaption><strong>Do</strong>Use selectable chips for filters that people can combine, and apply them straight away.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-chip-list" role="group" aria-label="Actions"><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">Apply for credit</button><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">Book test drive</button></div></div><figcaption><strong>Don't</strong>Use chips as action buttons. Use a <a href="button.html">button</a>.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><ul class="aec-chip-list" aria-label="Applied filters"><li class="aec-chip aec-chip--input">Silverado<button class="aec-chip__remove" type="button" aria-label="Remove Silverado"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li><li class="aec-chip aec-chip--input">Under $50,000<button class="aec-chip__remove" type="button" aria-label="Remove Under $50,000"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></div><figcaption><strong>Do</strong>Use dismissable chips to show the filters someone has applied, so they can remove them one at a time.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><ul class="aec-chip-list" aria-label="Status"><li class="aec-chip aec-chip--input">Approved<button class="aec-chip__remove" type="button" aria-label="Remove Approved"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></div><figcaption><strong>Don't</strong>Use a dismissable chip for a status. People can't remove a credit decision.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-chip aec-chip--info aec-chip--warning">Pending signature</span><span class="aec-chip aec-chip--info aec-chip--grey">Used</span></div><figcaption><strong>Do</strong>Use one chip style per list. Subtle chips suit most lists.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-chip aec-chip--info aec-chip--warning aec-chip--filled">Pending signature</span><span class="aec-chip aec-chip--info aec-chip--grey">Used</span><span class="aec-chip-plain aec-chip-plain--success"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span>Verified</span></div><figcaption><strong>Don't</strong>Mix filled, subtle and plain chips side by side. The difference looks meaningful when it isn't.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>Chip labels are short. Write them in sentence case: brands that show uppercase chips apply it through their typography tokens.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-chip aec-chip--info aec-chip--warning">Pending signature</span></div><figcaption><strong>Do</strong>Keep status labels to one or two words.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-chip aec-chip--info aec-chip--warning">Waiting for the co-applicant to sign</span></div><figcaption><strong>Don't</strong>Write a sentence in a chip. Put the detail next to it.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><ul class="aec-chip-list" aria-label="Applied filters"><li class="aec-chip aec-chip--input">Under $50,000<button class="aec-chip__remove" type="button" aria-label="Remove Under $50,000"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></div><figcaption><strong>Do</strong>Show the value that was chosen in a dismissable chip.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><ul class="aec-chip-list" aria-label="Applied filters"><li class="aec-chip aec-chip--input">Price<button class="aec-chip__remove" type="button" aria-label="Remove Price"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></div><figcaption><strong>Don't</strong>Show only the filter name. People can't tell what is applied.</figcaption></figure>
     </div>
   </section>
 
@@ -127,9 +222,69 @@ figma: 3769-50187
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Filter state <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Selectable chips are <code>&lt;button aria-pressed&gt;</code>. Wrap a set in <code>role="group"</code> with an <code>aria-label</code>.</p></div>
       <div class="doc-a11y-item"><h3>Remove buttons <span class="doc-wcag">WCAG 2.4.6</span></h3><p>Each close button needs a specific name, such as <code>aria-label="Remove Silverado"</code>. After a chip is removed, focus moves to the next chip.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Each selectable chip and each close button is a tab stop, and works with Enter or Space. Information and plain chips are not focusable.</p></div>
       <div class="doc-a11y-item"><h3>Status is not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>The status word carries the meaning. Plain chips also add an icon.</p></div>
-      <div class="doc-a11y-item"><h3>Contrast <span class="doc-wcag">WCAG 1.4.3</span></h3><p>Filled chips all pass AA. Subtle chips don't: primary is 4.00:1, success 3.78:1 and error 3.76:1 on their subtle backgrounds. Warning is only 2.87:1, so the code darkens subtle warning text to #7a5a1e (5.43:1). Until darker <code>on-subtle</code> tokens exist, use filled chips wherever the status text is essential.</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>The close button is small. Keep the standard gap between dismissable chips so each one can be tapped on its own.</p></div>
+      <div class="doc-a11y-item"><h3>Contrast <span class="doc-wcag">WCAG 1.4.3</span></h3><p>Filled chips generally have the strongest contrast. Some subtle chips fall below 4.5:1 in some brands, so check the table below. Until darker <code>on-subtle</code> tokens exist, use filled chips wherever the status text is essential.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Chip text needs at least 4.5:1 against its background. These ratios are measured live from the chips below in the active brand. Disabled chips are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Variant</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Information · primary</td><td><span class="aec-chip aec-chip--info" data-contrast-sample>New</span></td><td data-contrast-result></td></tr>
+        <tr><td>Information · success</td><td><span class="aec-chip aec-chip--info aec-chip--success" data-contrast-sample>Approved</span></td><td data-contrast-result></td></tr>
+        <tr><td>Information · warning</td><td><span class="aec-chip aec-chip--info aec-chip--warning" data-contrast-sample>Pending</span></td><td data-contrast-result></td></tr>
+        <tr><td>Information · error</td><td><span class="aec-chip aec-chip--info aec-chip--error" data-contrast-sample>Expired</span></td><td data-contrast-result></td></tr>
+        <tr><td>Information · grey</td><td><span class="aec-chip aec-chip--info aec-chip--grey" data-contrast-sample>Used</span></td><td data-contrast-result></td></tr>
+        <tr><td>Filled · primary</td><td><span class="aec-chip aec-chip--info aec-chip--filled" data-contrast-sample>New</span></td><td data-contrast-result></td></tr>
+        <tr><td>Filled · success</td><td><span class="aec-chip aec-chip--info aec-chip--success aec-chip--filled" data-contrast-sample>Approved</span></td><td data-contrast-result></td></tr>
+        <tr><td>Filled · warning</td><td><span class="aec-chip aec-chip--info aec-chip--warning aec-chip--filled" data-contrast-sample>Pending</span></td><td data-contrast-result></td></tr>
+        <tr><td>Filled · error</td><td><span class="aec-chip aec-chip--info aec-chip--error aec-chip--filled" data-contrast-sample>Expired</span></td><td data-contrast-result></td></tr>
+        <tr><td>Filled · grey</td><td><span class="aec-chip aec-chip--info aec-chip--grey aec-chip--filled" data-contrast-sample>Used</span></td><td data-contrast-result></td></tr>
+        <tr><td>Plain · warning</td><td><span class="aec-chip-plain aec-chip-plain--warning" data-contrast-sample>Action needed</span></td><td data-contrast-result></td></tr>
+        <tr><td>Plain · error</td><td><span class="aec-chip-plain aec-chip-plain--error" data-contrast-sample>Declined</span></td><td data-contrast-result></td></tr>
+        <tr><td>Selectable</td><td><button class="aec-chip aec-chip--selectable" type="button" tabindex="-1" aria-pressed="false" data-contrast-sample>Truck</button></td><td data-contrast-result></td></tr>
+        <tr><td>Selectable · selected</td><td><button class="aec-chip aec-chip--selectable" type="button" tabindex="-1" aria-pressed="true" data-contrast-sample>SUV</button></td><td data-contrast-result></td></tr>
+        <tr><td>Dismissable</td><td><span class="aec-chip aec-chip--input" data-contrast-sample>Silverado</span></td><td data-contrast-result></td></tr>
+        <tr><td>Selectable · inverse</td><td style="background:var(--aec-color-bg-inverse)"><button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" tabindex="-1" aria-pressed="false" data-contrast-sample>Summit White</button></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The border of an unselected chip shows where the control is, so it needs at least 3:1 against the page.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Selectable border</td><td><button class="aec-chip aec-chip--selectable" type="button" tabindex="-1" aria-pressed="false" data-contrast-sample data-contrast-mode="border">Truck</button></td><td data-contrast-result></td></tr>
+        <tr><td>Dismissable border</td><td><span class="aec-chip aec-chip--input" data-contrast-sample data-contrast-mode="border">Silverado</span></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><button class="aec-chip aec-chip--selectable is-focus" type="button" tabindex="-1" aria-pressed="false" data-contrast-sample data-contrast-mode="focus">Truck</button></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><ul class="aec-chip-list" aria-label="Applied filters"><li class="aec-chip aec-chip--input">Silverado<button class="aec-chip__remove" type="button" aria-label="Remove Silverado"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></div><figcaption><strong>Do</strong>Name the close button after the chip. A screen reader says "Remove Silverado, button".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><ul class="aec-chip-list" aria-label="Applied filters"><li class="aec-chip aec-chip--input">Silverado<button class="aec-chip__remove" type="button" aria-label="Remove"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li></ul></div><figcaption><strong>Don't</strong>Label every close button "Remove". In a list of filters, people can't tell them apart.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>Chip – Information</td><td>—</td><td><code>.aec-chip.aec-chip--info</code></td></tr>
+        <tr><td>status</td><td>primary / success / warning / error / grey</td><td>(none) / <code>.aec-chip--success</code> / <code>--warning</code> / <code>--error</code> / <code>--grey</code></td></tr>
+        <tr><td>style</td><td>subtle / filled</td><td>(none) / <code>.aec-chip--filled</code></td></tr>
+        <tr><td>Chip – Plain</td><td>—</td><td><code>.aec-chip-plain</code> + <code>.aec-chip-plain--&lt;status&gt;</code></td></tr>
+        <tr><td>Chip – Selectable</td><td>—</td><td><code>.aec-chip.aec-chip--selectable</code> on a <code>&lt;button&gt;</code></td></tr>
+        <tr><td>Chip – Dismissable</td><td>—</td><td><code>.aec-chip.aec-chip--input</code> + <code>.aec-chip__remove</code></td></tr>
+        <tr><td>size</td><td>small / medium / large</td><td><code>.aec-chip--sm</code> / (none) / <code>.aec-chip--lg</code></td></tr>
+        <tr><td>inverse</td><td>true</td><td><code>.aec-chip--inverse</code></td></tr>
+        <tr><td>state</td><td>hover / pressed / selected</td><td><code>:hover</code> / <code>:active</code> / <code>aria-pressed="true"</code></td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>disabled</code> (selectable) or <code>aria-disabled="true"</code> (dismissable)</td></tr>
+        <tr><td>Group</td><td>—</td><td><code>.aec-chip-list</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -139,6 +294,7 @@ figma: 3769-50187
       <li>Dismissable <em>active</em> looks the same as hover. Selectable <em>pressed</em> adds a blue border.</li>
       <li>The <code>*/on-subtle</code> colours are below 4.5:1 on their <code>*/subtle</code> backgrounds (warning 2.87, error 3.76, success 3.78, primary 4.00). Proposal: darker on-subtle tokens, for example warning #7a5a1e.</li>
       <li>Chips have square corners, while buttons are rounded to 8px. Check that this difference is intended.</li>
+      <li>The size names don't line up across chip types. The default information chip uses the <code>container-small</code> tokens, while the default selectable chip uses <code>container-medium</code>.</li>
     </ul>
   </section>
 </div>

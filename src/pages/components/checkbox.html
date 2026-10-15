@@ -32,7 +32,7 @@ figma: 3769-50171
       </div>
     </div>
     <h3 class="doc-h3" id="indeterminate">Indeterminate</h3>
-    <p>Use the indeterminate state for a parent checkbox when some, but not all, of its children are selected. Set it with JavaScript: <code>input.indeterminate = true</code>.</p>
+    <p>Use the indeterminate state for a parent checkbox when some, but not all, of its children are selected. Set it with JavaScript: <code>input.indeterminate = true</code>. There is no HTML attribute for it.</p>
     <div class="doc-example" data-label="Select all">
       <div class="doc-example-preview is-col">
         <label class="aec-control"><input class="aec-checkbox" type="checkbox" id="cb-all" data-demo-indeterminate><span class="aec-form-label"><span class="aec-form-label__text">All documents</span></span></label>
@@ -42,65 +42,168 @@ figma: 3769-50171
         </div>
       </div>
     </div>
+    <h3 class="doc-h3" id="group">Group with an error</h3>
+    <p>Put related checkboxes in a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code>. When a required consent box is left empty, mark it invalid and show the message under it.</p>
+    <div class="doc-example" data-label="Required consent">
+      <div class="doc-example-preview is-col">
+        <fieldset class="aec-fieldset">
+          <legend>Before you continue</legend>
+          <div class="aec-choice-list">
+            <label class="aec-control"><input class="aec-checkbox" type="checkbox" name="consent" aria-invalid="true" aria-describedby="cb-consent-error"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the financing terms</span></span></label>
+          </div>
+          <p class="aec-field__help aec-field__help--error" id="cb-consent-error"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Agree to the financing terms to continue</p>
+        </fieldset>
+      </div>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="states">States</h2>
-    <div class="doc-states">
-      <div class="doc-state"><span class="doc-state-label">Unchecked</span><input class="aec-checkbox" type="checkbox" aria-label="Unchecked"></div>
-      <div class="doc-state"><span class="doc-state-label">Checked</span><input class="aec-checkbox" type="checkbox" checked aria-label="Checked"></div>
-      <div class="doc-state"><span class="doc-state-label">Indeterminate</span><input class="aec-checkbox" type="checkbox" data-demo-ind aria-label="Indeterminate"></div>
-      <div class="doc-state"><span class="doc-state-label">Focus</span><input class="aec-checkbox" type="checkbox" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px" aria-label="Focus"></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled</span><input class="aec-checkbox" type="checkbox" disabled aria-label="Disabled"></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled checked</span><input class="aec-checkbox" type="checkbox" disabled checked aria-label="Disabled checked"></div>
-      <div class="doc-state"><span class="doc-state-label">Error</span><input class="aec-checkbox" type="checkbox" aria-invalid="true" aria-label="Error"></div>
+    <p>Each row is a value and each column is an interaction state. The colours come from the active brand's checkbox tokens (<code>--aec-checkbox-color-&lt;value&gt;-&lt;part&gt;-&lt;state&gt;</code>, where value is empty for unchecked, <code>selected</code> for checked and <code>intermediate</code> for indeterminate), so switch the brand in the header to see how each one changes. Focus adds a 2px <code>focus/default</code> ring, 2px outside the box. In some brands, pressing an unchecked box previews the check.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,pressed,disabled" aria-label="Checkbox states">
+      <template data-row="Unchecked"><label class="aec-control"><input class="aec-checkbox" type="checkbox" data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
+      <template data-row="Checked"><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
+      <template data-row="Indeterminate"><label class="aec-control"><input class="aec-checkbox" type="checkbox" data-state-el data-matrix-indeterminate><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
     </div>
-    <p class="doc-small doc-muted">The checked state is a white box with a dark check, not a filled box. While the mouse is pressed on an unchecked box, a grey check previews the selection.</p>
+    <h3 id="states-error">Error</h3>
+    <p>Error uses the brand's <code>--aec-color-error-default</code> border. It applies to both values; disabled boxes never show an error.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,pressed" aria-label="Checkbox error states">
+      <template data-row="Unchecked, error"><label class="aec-control"><input class="aec-checkbox" type="checkbox" aria-invalid="true" data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
+      <template data-row="Checked, error"><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked aria-invalid="true" data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="anatomy">Anatomy</h2>
     <div class="doc-anatomy">
       <div class="doc-anatomy-stage">
-        <label class="aec-control"><input class="aec-checkbox" type="checkbox" checked tabindex="-1" aria-label="Example"><span class="aec-form-label"><span class="aec-form-label__text">Label <span class="aec-form-label__count">(0)</span></span><span class="aec-form-label__desc">Descriptive text</span></span></label>
+        <label class="aec-control" id="cb-anatomy-row"><input class="aec-checkbox" type="checkbox" checked tabindex="-1" aria-label="Example" id="cb-anatomy"><span class="aec-form-label"><span class="aec-form-label__text" id="cb-anatomy-label">Label <span class="aec-form-label__count">(0)</span></span><span class="aec-form-label__desc" id="cb-anatomy-desc">Descriptive text</span></span></label>
         <span class="doc-anatomy-pin" style="left:calc(50% - 80px);top:2px">1</span>
         <span class="doc-anatomy-pin" style="left:calc(50% - 30px);top:2px">2</span>
         <span class="doc-anatomy-pin" style="left:calc(50% + 34px);top:2px">3</span>
         <span class="doc-anatomy-pin" style="left:calc(50% + 40px);bottom:8px">4</span>
       </div>
       <ol>
-        <li><span><strong>Box</strong>24×24px, 1.5px <code>text/default</code> border, 2px radius, check glyph 16px.</span></li>
-        <li><span><strong>Label</strong>body-2 (14/22), <code>text/default</code>.</span></li>
-        <li><span><strong>Count (optional)</strong>For filters, such as "(12)".</span></li>
-        <li><span><strong>Description (optional)</strong>body-3 (12/20), <code>text/subtle</code>.</span></li>
+        <li><span><strong>Box</strong><span data-measure="#cb-anatomy" data-prop="width"></span> × <span data-measure="#cb-anatomy" data-prop="height"></span> with <span data-measure="#cb-anatomy" data-prop="border-radius"></span> corners and a <span data-measure="#cb-anatomy" data-prop="border-width"></span> border in this brand. The check or dash takes the checkbox icon colour.</span></li>
+        <li><span><strong>Label</strong><span data-measure="#cb-anatomy-label" data-prop="font-size"></span> / <span data-measure="#cb-anatomy-label" data-prop="line-height"></span> <span data-measure="#cb-anatomy-label" data-prop="font-family"></span> (body-2), <code>text/default</code>, <span data-measure="#cb-anatomy-row" data-prop="gap"></span> from the box.</span></li>
+        <li><span><strong>Count (optional)</strong>For filters, such as "(12)", in <code>text/subtle</code>.</span></li>
+        <li><span><strong>Description (optional)</strong><span data-measure="#cb-anatomy-desc" data-prop="font-size"></span> / <span data-measure="#cb-anatomy-desc" data-prop="line-height"></span> (body-3), <code>text/subtle</code>.</span></li>
       </ol>
     </div>
-    <p>The row is 48px tall on mobile and 40px from 768px up, with an 8px gap between the box and the label. See <a href="form-control.html">form control</a>.</p>
+    <p>The label block is shared with radio buttons and switches. See <a href="form-control.html">form control</a>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Size and spacing</h2>
+    <p>There is one size. The blue marks are measured from the real checkbox in the active brand, so they change when you switch brands. The row grows on small screens to give a larger touch target, so its height depends on the window width.</p>
+    <div class="doc-spec" data-spec="height,width,radius,border">
+      <input class="aec-checkbox" type="checkbox" checked tabindex="-1" aria-label="Box example" id="cb-spec-box" data-spec-target>
+    </div>
+    <div class="doc-spec" data-spec="height,gap,padding-y">
+      <label class="aec-control" id="cb-spec-row" data-spec-target><input class="aec-checkbox" type="checkbox" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Paint protection film</span></span></label>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Width</th><th>Height</th><th>Corners</th><th>Border</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Box</td><td data-measure="#cb-spec-box" data-prop="width"></td><td data-measure="#cb-spec-box" data-prop="height"></td><td data-measure="#cb-spec-box" data-prop="border-radius"></td><td data-measure="#cb-spec-box" data-prop="border-width"></td><td><code>--drp-checkbox-container-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Height</th><th>Vertical padding</th><th>Box to label</th><th>Label text</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Row (<code>.aec-control</code>)</td><td data-measure="#cb-spec-row" data-prop="height"></td><td data-measure="#cb-spec-row" data-prop="padding-top"></td><td data-measure="#cb-spec-row" data-prop="gap"></td><td data-measure="#cb-anatomy-label" data-prop="font-size"></td><td><code>--aec-sizing-selectable-l</code>, <code>--aec-spacing-selectable-gap-m</code>, <code>--drp-typography-body-2-regular-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <p>Inside a data table (<code>.aec-table</code>) the box uses a smaller, fixed size so it fits the row.</p>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
-    <div class="doc-dd">
-      <div class="doc-dd-card"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start;gap:0"><label class="aec-control"><input class="aec-checkbox" type="checkbox" tabindex="-1" checked><span class="aec-form-label"><span class="aec-form-label__text">Email me updates about my order</span></span></label></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Write labels as positive statements that describe what happens when the box is checked.</div></div>
-      <div class="doc-dd-card is-dont"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start;gap:0"><label class="aec-control"><input class="aec-checkbox" type="checkbox" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Don't send me no updates</span></span></label></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use negative or double-negative labels.</div></div>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Floor liners</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Cargo tray</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Roof rack</span></span></label></div><figcaption><strong>Do</strong>Use checkboxes when people can pick any number of options, including none.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Finance</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Lease</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Cash</span></span></label></div><figcaption><strong>Don't</strong>Use checkboxes for options that exclude each other. Use a <a href="radio.html">radio group</a>.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Tyre and wheel protection</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Key replacement</span></span></label></div><figcaption><strong>Do</strong>Stack options vertically, one per line, so they're easy to scan.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Tyre and wheel protection</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Key replacement</span></span></label></div><figcaption><strong>Don't</strong>Lay long options out in a row. It's hard to tell which box belongs to which label.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Add gap insurance</span></span></label><button class="aec-btn aec-btn--primary" type="button">Continue</button></div><figcaption><strong>Do</strong>Apply the choice when the form is submitted.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Go to delivery options</span></span></label></div><figcaption><strong>Don't</strong>Use a checkbox to submit a form or move to another page.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the financing terms</span></span></label></div><figcaption><strong>Do</strong>Leave consent boxes unchecked so people make an active choice.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Sign me up for partner offers</span></span></label></div><figcaption><strong>Don't</strong>Pre-check boxes for marketing or anything that adds cost.</figcaption></figure>
     </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>The label says what happens when the box is checked. Keep it short and put extra detail in the description.</p>
     <ul>
-      <li>Stack options vertically, one per line, so they're easy to scan.</li>
-      <li>Group related checkboxes in a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code>.</li>
-      <li>Don't make a checkbox submit a form or trigger navigation.</li>
+      <li>Write labels in sentence case, with no full stop at the end.</li>
+      <li>Use the description for one short line of detail, such as what's included or why an option is unavailable.</li>
+      <li>Use the count only in filters, to show how many results an option will return.</li>
+      <li>Write error messages that say what to do, such as <em>Agree to the financing terms to continue</em>.</li>
     </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Email me updates about my order</span></span></label></div><figcaption><strong>Do</strong>Write labels as positive statements that describe what happens when the box is checked.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Don't send me no updates</span></span></label></div><figcaption><strong>Don't</strong>Use negative or double-negative labels.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Protection plan</span><span class="aec-form-label__desc">Covers parts and labour for 5 years</span></span></label></div><figcaption><strong>Do</strong>Keep the label short and move detail into the description.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Add a protection plan that covers parts and labour for 5 years from the delivery date.</span></span></label></div><figcaption><strong>Don't</strong>Write a whole sentence in the label.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
-      <div class="doc-a11y-item"><h3>Native input <span class="doc-wcag">WCAG 4.1.2</span></h3><p><code>.aec-checkbox</code> styles a real <code>&lt;input type="checkbox"&gt;</code>, so the checked, indeterminate and disabled states are announced automatically.</p></div>
-      <div class="doc-a11y-item"><h3>Label in a target <span class="doc-wcag">WCAG 2.5.8</span></h3><p>Wrap the input and label text in <code>&lt;label class="aec-control"&gt;</code> so the whole row is clickable. Each row is at least 40px tall.</p></div>
-      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves focus to the box and Space toggles it. Focus shows a 2px ring.</p></div>
-      <div class="doc-a11y-item"><h3>Errors <span class="doc-wcag">WCAG 3.3.1</span></h3><p>For a required consent box, set <code>aria-invalid="true"</code> and link an error message with <code>aria-describedby</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Native input <span class="doc-wcag">WCAG 4.1.2</span></h3><p><code>.aec-checkbox</code> styles a real <code>&lt;input type="checkbox"&gt;</code>, so the checked, indeterminate and disabled states are announced automatically. Don't rebuild it with <code>role="checkbox"</code> on a <code>div</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Label in a target <span class="doc-wcag">WCAG 2.5.8</span></h3><p>Wrap the input and label text in <code>&lt;label class="aec-control"&gt;</code> so the whole row is clickable. The row is <span data-measure="#cb-spec-row" data-prop="height"></span> tall at this window width.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves focus to the box and Space toggles it. Each checkbox is its own tab stop. Focus shows a 2px <code>focus/default</code> ring on <code>:focus-visible</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Groups <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Wrap related checkboxes in <code>&lt;fieldset class="aec-fieldset"&gt;</code> with a <code>&lt;legend&gt;</code> that asks the question. Screen readers read the legend before each option.</p></div>
+      <div class="doc-a11y-item"><h3>Errors <span class="doc-wcag">WCAG 3.3.1</span></h3><p>For a required consent box, set <code>aria-invalid="true"</code> and link an error message with <code>aria-describedby</code>. The error icon and text mean colour isn't the only signal.</p></div>
+      <div class="doc-a11y-item"><h3>Indeterminate</h3><p>The browser announces a parent checkbox as "mixed" when <code>indeterminate</code> is set. Update it whenever a child changes.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Label and description text need at least 4.5:1 against the background. These ratios are measured live in the active brand. Disabled checkboxes are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Label</td><td><span class="aec-form-label"><span class="aec-form-label__text" data-contrast-sample>Protection plan</span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Description</td><td><span class="aec-form-label"><span class="aec-form-label__desc" data-contrast-sample>Covers parts and labour</span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Count</td><td><span class="aec-form-label"><span class="aec-form-label__text"><span class="aec-form-label__count" data-contrast-sample>(12)</span></span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Error message</td><td><p class="aec-field__help aec-field__help--error" data-contrast-sample>Agree to the terms to continue</p></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The box border and the focus ring need at least 3:1 against the page so people can find the control. A checked box passes if either its border or its fill reaches 3:1, and the check mark needs 3:1 against the fill. The swatches are drawn from the brand's checkbox tokens.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Unchecked border</td><td><input class="aec-checkbox" type="checkbox" tabindex="-1" aria-label="Unchecked border" data-contrast-sample data-contrast-mode="border"></td><td data-contrast-result></td></tr>
+        <tr><td>Checked border</td><td><input class="aec-checkbox" type="checkbox" checked tabindex="-1" aria-label="Checked border" data-contrast-sample data-contrast-mode="border"></td><td data-contrast-result></td></tr>
+        <tr><td>Checked fill</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;box-sizing:border-box;width:var(--drp-checkbox-container-width);height:var(--drp-checkbox-container-height);border-radius:var(--drp-checkbox-container-border-radius);border:calc(var(--drp-checkbox-container-height) / 2) solid var(--aec-checkbox-color-selected-bg-default)"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Check mark on fill</td><td><span style="display:inline-block;padding:6px;border-radius:var(--drp-checkbox-container-border-radius);background:var(--aec-checkbox-color-selected-bg-default)"><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;box-sizing:border-box;width:var(--drp-checkbox-container-width);height:var(--drp-checkbox-container-height);border-radius:var(--drp-checkbox-container-border-radius);border:calc(var(--drp-checkbox-container-height) / 2) solid var(--aec-checkbox-color-selected-icon-default)"></span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Error border</td><td><input class="aec-checkbox" type="checkbox" tabindex="-1" aria-label="Error border" aria-invalid="true" data-contrast-sample data-contrast-mode="border"></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><input class="aec-checkbox is-focus" type="checkbox" tabindex="-1" aria-label="Focus ring" data-contrast-sample data-contrast-mode="focus"></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Add roof rack</span></span></label></div><figcaption><strong>Do</strong>Wrap the box and its text in one <code>&lt;label&gt;</code>, so tapping the text toggles the box.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><input class="aec-checkbox" type="checkbox" aria-label="Add roof rack"><span class="aec-body-2">Add roof rack</span></div><figcaption><strong>Don't</strong>Place loose text next to the box. Only the small box is clickable.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox" aria-invalid="true"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the financing terms</span></span></label><p class="aec-field__help aec-field__help--error"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Agree to the terms to continue</p></div><figcaption><strong>Do</strong>Show an error message with an icon, linked with <code>aria-describedby</code>.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox" aria-invalid="true"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the financing terms</span></span></label></div><figcaption><strong>Don't</strong>Rely on a red border alone to show what went wrong.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Code</th></tr></thead>
+      <tbody>
+        <tr><td>Set</td><td>Checkbox / Checkbox with Label</td><td><code>input.aec-checkbox</code>, inside <code>label.aec-control</code> with <code>.aec-form-label</code></td></tr>
+        <tr><td>state</td><td>checked / indeterminate</td><td><code>checked</code> / <code>input.indeterminate = true</code></td></tr>
+        <tr><td>state</td><td>hover / pressed</td><td><code>:hover</code> / <code>:active</code></td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>disabled</code></td></tr>
+        <tr><td>error</td><td>true</td><td><code>aria-invalid="true"</code></td></tr>
+        <tr><td>focus-ring</td><td>true</td><td><code>:focus-visible</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -115,6 +218,8 @@ figma: 3769-50171
 </div>
 <script>
   document.querySelectorAll('[data-demo-ind]').forEach(function (i) { i.indeterminate = true; });
+  // The state matrix is built on DOMContentLoaded; indeterminate has no HTML attribute, so set it once the page has loaded.
+  window.addEventListener('load', function () { document.querySelectorAll('[data-matrix-indeterminate]').forEach(function (i) { i.indeterminate = true; }); });
   (function () {
     var all = document.getElementById('cb-all'); if (!all) return;
     var kids = Array.prototype.slice.call(document.querySelectorAll('[data-demo-child]'));

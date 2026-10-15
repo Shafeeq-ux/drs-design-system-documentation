@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Text field · DRS Design System</title>
-<meta name="description" content="Text fields let people enter and edit short text, such as a name, email, ZIP code or VIN. Includes dropdown (select) fields.">
+<meta name="description" content="Text fields let people enter and edit short text, such as a name, email, ZIP code or VIN. Covers standard and material styles, dropdowns, states, sizing, content and accessibility.">
 <meta name="theme-color" content="#262626">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -28,10 +29,12 @@
 
   <div class="doc-intro">
     <p>There are two published styles. <strong>Standard</strong> has the label above an outlined box and is the default for forms. <strong>Material</strong> has a floating label inside a filled box, for compact layouts. Both support prefix and suffix content, icons, assistive text and a dropdown type.</p>
+    <p>Use a text field when people need to type an answer. If there are only a few options to choose from, use <a href="radio.html">radio buttons</a> or a dropdown instead.</p>
   </div>
 
   <section class="doc-section">
     <h2 id="standard">Standard</h2>
+    <p>The label sits above the box, so it stays visible while people type. Use this style for checkout and credit application forms.</p>
     <div class="doc-example" data-label="Standard text field">
       <div class="doc-example-preview is-stretch">
         <div class="aec-field" style="max-width:400px">
@@ -57,6 +60,7 @@
     </div>
 
     <h3 class="doc-h3" id="affixes">Prefix, suffix and icons</h3>
+    <p>Use a prefix or suffix for a unit, such as <em>$</em> or <em>miles</em>, so people don't have to type it. Use a leading icon only when it helps people recognise the field.</p>
     <div class="doc-example" data-label="Prefix, suffix and icon">
       <div class="doc-example-preview is-stretch">
         <div class="aec-field" style="max-width:400px">
@@ -77,7 +81,7 @@
 
   <section class="doc-section">
     <h2 id="material">Material</h2>
-    <p>The label sits inside the box as a placeholder and floats up when the field has focus or a value. The input needs <code>placeholder=" "</code> and must come <em>before</em> its label in the markup.</p>
+    <p>The label sits inside the box as a placeholder and floats up when the field has focus or a value. The input needs <code>placeholder=" "</code> and must come <em>before</em> its label in the markup. Don't mix standard and material fields in one form.</p>
     <div class="doc-example" data-label="Material filled">
       <div class="doc-example-preview is-stretch">
         <div class="aec-field aec-field--material" style="max-width:400px">
@@ -92,15 +96,17 @@
 
   <section class="doc-section">
     <h2 id="states">States</h2>
-    <div class="doc-cards" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
-      <div class="doc-state"><span class="doc-state-label">Prompt (empty)</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st1">Label</label><div class="aec-field__box"><input class="aec-field__input" id="st1" placeholder="Placeholder"></div></div></div>
-      <div class="doc-state"><span class="doc-state-label">Filled</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st2">Label</label><div class="aec-field__box"><input class="aec-field__input" id="st2" value="Value"></div></div></div>
-      <div class="doc-state"><span class="doc-state-label">Hover</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st3">Label</label><div class="aec-field__box" style="border-color:var(--aec-color-action-border-hover)"><input class="aec-field__input" id="st3" value="Value"></div></div></div>
-      <div class="doc-state"><span class="doc-state-label">Active</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st4">Label</label><div class="aec-field__box" style="border-color:var(--aec-color-action-border-active)"><input class="aec-field__input" id="st4" value="Value"></div></div></div>
-      <div class="doc-state"><span class="doc-state-label">Error</span><div class="aec-field aec-field--error" style="width:100%"><label class="aec-field__label" for="st5">Label</label><div class="aec-field__box"><input class="aec-field__input" id="st5" value="Value" aria-invalid="true" aria-describedby="st5-e"></div><p class="aec-field__help aec-field__help--error" id="st5-e"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Enter a valid value</p></div></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st6">Label</label><div class="aec-field__box"><input class="aec-field__input" id="st6" value="Value" disabled></div></div></div>
+    <p>Every field has default (empty), hover, focus, filled, error and disabled states. The colours come from the active brand's input tokens (<code>--aec-input-standard-outlined-color-*</code> and <code>--aec-input-material-filled-color-*</code>), so switch the brand in the header to see how each one changes. Focus changes the border to the active colour. Keyboard focus also adds a 2px <code>focus/default</code> ring outside the box.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,filled,error,disabled" aria-label="Text field states">
+      <template data-row="Standard"><div class="aec-field" style="width:200px"><label class="aec-field__label">Email</label><div class="aec-field__box" data-state-el><input class="aec-field__input" placeholder="name@example.com" data-fill="sam@example.com"></div></div></template>
+      <template data-row="With prefix"><div class="aec-field" style="width:200px"><label class="aec-field__label">Down payment</label><div class="aec-field__box" data-state-el><span class="aec-field__affix aec-field__affix--prefix">$</span><input class="aec-field__input" placeholder="0" data-fill="5,000"></div></div></template>
+      <template data-row="With icon"><div class="aec-field" style="width:200px"><label class="aec-field__label">ZIP code</label><div class="aec-field__box" data-state-el><span class="aec-icon aec-icon--start" style="--aec-icon-src:url(/assets/icons/location-pin.svg)" aria-hidden="true"></span><input class="aec-field__input" placeholder="48226" data-fill="48226"></div></div></template>
+      <template data-row="Material"><div class="aec-field aec-field--material" style="width:200px"><div class="aec-field__box" data-state-el><div class="aec-field__float"><input class="aec-field__input" placeholder=" " data-fill="Rivera"><label class="aec-field__label">Last name</label></div></div></div></template>
     </div>
+    <p class="doc-small doc-muted">In the material row, the label floats when the field has a value or real keyboard focus. The forced focus column shows the border only.</p>
+
     <h3 class="doc-h3" id="assistive">Assistive text</h3>
+    <p>Assistive text sits below the box. Use the default type for hints, and the error, success and warning types for feedback. Feedback types always have an icon, so they don't rely on colour alone.</p>
     <div class="doc-example" data-label="Assistive text types">
       <div class="doc-example-preview is-col">
         <p class="aec-field__help">Default: helper text</p>
@@ -109,43 +115,116 @@
         <p class="aec-field__help aec-field__help--warning"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span>Warning: This dealer is 80 miles away</p>
       </div>
     </div>
+    <div class="doc-example" data-label="Error with message">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-field aec-field--error" style="max-width:400px">
+          <label class="aec-field__label" for="tf-vin">VIN</label>
+          <div class="aec-field__box"><input class="aec-field__input" id="tf-vin" value="1GCUYDED5" aria-invalid="true" aria-describedby="tf-vin-error"></div>
+          <p class="aec-field__help aec-field__help--error" id="tf-vin-error"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Enter all 17 characters of the VIN</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="anatomy">Anatomy</h2>
     <div class="doc-anatomy">
       <div class="doc-anatomy-stage" style="padding:32px 24px">
-        <div class="aec-field" style="width:100%"><span class="aec-field__label">Label <span class="aec-field__required">*</span></span><div class="aec-field__box"><span class="aec-field__affix aec-field__affix--prefix">$</span><input class="aec-field__input" value="Value" tabindex="-1" aria-label="Example"></div><p class="aec-field__help">Assistive text</p></div>
-        <span class="doc-anatomy-pin" style="left:8px;top:28px">1</span>
-        <span class="doc-anatomy-pin" style="left:8px;top:60px">2</span>
-        <span class="doc-anatomy-pin" style="left:62px;top:84px">3</span>
-        <span class="doc-anatomy-pin" style="left:120px;top:56px">4</span>
-        <span class="doc-anatomy-pin" style="left:8px;bottom:6px">5</span>
+        <div class="aec-field" id="tf-anat" style="width:100%"><span class="aec-field__label" id="tf-anat-label">Label <span class="aec-field__required">*</span></span><div class="aec-field__box" id="tf-anat-box"><span class="aec-field__affix aec-field__affix--prefix" id="tf-anat-affix">$</span><input class="aec-field__input" id="tf-anat-input" value="Value" tabindex="-1" aria-label="Example"></div><p class="aec-field__help aec-field__help--error" id="tf-anat-help"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Assistive text</p></div>
+        <span class="doc-anatomy-pin" style="left:0;top:31px">1</span>
+        <span class="doc-anatomy-pin" style="left:0;top:69px">2</span>
+        <span class="doc-anatomy-pin" style="left:54px;top:69px">3</span>
+        <span class="doc-anatomy-pin" style="left:136px;top:69px">4</span>
+        <span class="doc-anatomy-pin" style="left:0;top:107px">5</span>
       </div>
       <ol>
-        <li><span><strong>Label</strong>body-3 (12/20). A red <code>*</code> marks required fields.</span></li>
-        <li><span><strong>Box</strong>48px tall, 4px radius, 1px <code>border/default</code>.</span></li>
-        <li><span><strong>Prefix / suffix (optional)</strong>Text, icon or select, separated by a 1px divider.</span></li>
-        <li><span><strong>Value</strong>body-1 (16/24), 16px side padding.</span></li>
-        <li><span><strong>Assistive text (optional)</strong>body-3, with a 16px icon for error, success and warning.</span></li>
+        <li><span><strong>Label</strong><span data-measure="#tf-anat-label" data-prop="font-size"></span> / <span data-measure="#tf-anat-label" data-prop="line-height"></span> <span data-measure="#tf-anat-label" data-prop="font-family"></span>, <span data-measure="#tf-anat" data-prop="gap"></span> above the box. A red <code>*</code> marks required fields.</span></li>
+        <li><span><strong>Box</strong><span data-measure="#tf-anat-box" data-prop="height"></span> tall, <span data-measure="#tf-anat-box" data-prop="border-radius"></span> corners and a <span data-measure="#tf-anat-box" data-prop="border-width"></span> border in this brand.</span></li>
+        <li><span><strong>Prefix / suffix (optional)</strong>Text, icon or select, <span data-measure="#tf-anat-affix" data-prop="font-size"></span>, separated from the value by a divider.</span></li>
+        <li><span><strong>Value</strong><span data-measure="#tf-anat-input" data-prop="font-size"></span> / <span data-measure="#tf-anat-input" data-prop="line-height"></span>, with <span data-measure="#tf-anat-input" data-prop="padding-left"></span> side padding.</span></li>
+        <li><span><strong>Assistive text (optional)</strong><span data-measure="#tf-anat-help" data-prop="font-size"></span>, with a <span data-measure="#tf-anat-help" data-prop="icon-size"></span> icon for error, success and warning.</span></li>
       </ol>
     </div>
   </section>
 
   <section class="doc-section">
+    <h2 id="sizes">Size and spacing</h2>
+    <p>Text fields come in one size. The blue marks are measured from the real fields in the active brand, so they change when you switch brands. Standard and material can have different heights and corners in the same brand.</p>
+    <div class="doc-spec" data-spec="height,radius,border">
+      <div class="aec-field" style="width:320px"><span class="aec-field__label">Standard</span><div class="aec-field__box" id="tf-spec-box" data-spec-target><input class="aec-field__input" id="tf-spec-input" value="Value" tabindex="-1" aria-label="Standard example"></div></div>
+      <div class="aec-field aec-field--material" style="width:320px"><div class="aec-field__box" id="tf-spec-mbox" data-spec-target><div class="aec-field__float"><input class="aec-field__input" id="tf-spec-minput" placeholder=" " value="Value" tabindex="-1" aria-label="Material example"><span class="aec-field__label" id="tf-spec-mlabel">Material</span></div></div></div>
+    </div>
+    <div class="doc-spec" data-spec="padding">
+      <div class="aec-field" style="width:320px"><div class="aec-field__box"><input class="aec-field__input" id="tf-spec-pad" value="Value padding" tabindex="-1" aria-label="Padding example" data-spec-target></div></div>
+      <div class="aec-field" style="width:320px"><div class="aec-field__box"><input class="aec-field__input" value="32,000" tabindex="-1" aria-label="Suffix example"><span class="aec-field__affix aec-field__affix--suffix" id="tf-spec-affix" data-spec-target>miles</span></div></div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Style</th><th>Height</th><th>Corners</th><th>Border</th><th>Value padding</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Standard</td><td data-measure="#tf-spec-box" data-prop="height"></td><td data-measure="#tf-spec-box" data-prop="border-radius"></td><td data-measure="#tf-spec-box" data-prop="border-width"></td><td data-measure="#tf-spec-input" data-prop="padding-left"></td><td><code>--drp-input-standard-outlined-container-bg-large-*</code></td></tr>
+        <tr><td>Material</td><td data-measure="#tf-spec-mbox" data-prop="height"></td><td data-measure="#tf-spec-mbox" data-prop="border-radius"></td><td data-measure="#tf-spec-mbox" data-prop="border-width"></td><td data-measure="#tf-spec-minput" data-prop="padding-left"></td><td><code>--drp-input-material-filled-container-bg-large-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Text</th><th>Size</th><th>Line height</th><th>Weight</th><th>Font</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Standard label</td><td data-measure="#tf-anat-label" data-prop="font-size"></td><td data-measure="#tf-anat-label" data-prop="line-height"></td><td data-measure="#tf-anat-label" data-prop="font-weight"></td><td data-measure="#tf-anat-label" data-prop="font-family"></td><td><code>--drp-input-standard-outlined-typography-label-*</code></td></tr>
+        <tr><td>Standard value</td><td data-measure="#tf-spec-input" data-prop="font-size"></td><td data-measure="#tf-spec-input" data-prop="line-height"></td><td data-measure="#tf-spec-input" data-prop="font-weight"></td><td data-measure="#tf-spec-input" data-prop="font-family"></td><td><code>--drp-input-standard-outlined-typography-*</code></td></tr>
+        <tr><td>Prefix / suffix</td><td data-measure="#tf-spec-affix" data-prop="font-size"></td><td data-measure="#tf-spec-affix" data-prop="line-height"></td><td data-measure="#tf-spec-affix" data-prop="font-weight"></td><td data-measure="#tf-spec-affix" data-prop="font-family"></td><td><code>--drp-input-standard-outlined-prefix-typography-*</code></td></tr>
+        <tr><td>Material value</td><td data-measure="#tf-spec-minput" data-prop="font-size"></td><td data-measure="#tf-spec-minput" data-prop="line-height"></td><td data-measure="#tf-spec-minput" data-prop="font-weight"></td><td data-measure="#tf-spec-minput" data-prop="font-family"></td><td><code>--drp-input-material-filled-typography-*</code></td></tr>
+        <tr><td>Material label (floated)</td><td data-measure="#tf-spec-mlabel" data-prop="font-size"></td><td data-measure="#tf-spec-mlabel" data-prop="line-height"></td><td data-measure="#tf-spec-mlabel" data-prop="font-weight"></td><td data-measure="#tf-spec-mlabel" data-prop="font-family"></td><td><code>--drp-input-material-filled-typography-label-*</code></td></tr>
+        <tr><td>Assistive text</td><td data-measure="#tf-anat-help" data-prop="font-size"></td><td data-measure="#tf-anat-help" data-prop="line-height"></td><td data-measure="#tf-anat-help" data-prop="font-weight"></td><td data-measure="#tf-anat-help" data-prop="font-family"></td><td><code>--drp-assistive-text-typography-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <p>Colours come from <code>--aec-input-standard-outlined-color-*</code>, <code>--aec-input-material-filled-color-*</code> and <code>--aec-assistive-text-color-*</code>. Fields fill the width of their container. Set a <code>max-width</code> that suits the expected answer, as shown below.</p>
+  </section>
+
+  <section class="doc-section">
     <h2 id="usage">Usage</h2>
-    <div class="doc-dd">
-      <div class="doc-dd-card"><div class="doc-dd-preview"><div class="aec-field" style="width:100%"><span class="aec-field__label">Phone number</span><div class="aec-field__box"><input class="aec-field__input" tabindex="-1" placeholder="(555) 555-0123" aria-label="Phone"></div></div></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Always show a visible label, and use the placeholder only for an example format.</div></div>
-      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><div class="aec-field" style="width:100%"><div class="aec-field__box"><input class="aec-field__input" tabindex="-1" placeholder="Phone number" aria-label="Phone"></div></div></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use the placeholder as the label. It disappears as soon as people start typing.</div></div>
+    <h3 id="dodont-labels">Labels and hints</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Phone number</span><div class="aec-field__box"><input class="aec-field__input" placeholder="(555) 555-0123" aria-label="Phone number"></div></div></div><figcaption><strong>Do</strong>Always show a visible label. Use the placeholder only for an example format.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-field"><div class="aec-field__box"><input class="aec-field__input" placeholder="Phone number" aria-label="Phone number"></div></div></div><figcaption><strong>Don't</strong>Use the placeholder as the label. It disappears as soon as people start typing.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Date of birth</span><div class="aec-field__box"><input class="aec-field__input" aria-label="Date of birth"></div><p class="aec-field__help">For example, 04/23/1985</p></div></div><figcaption><strong>Do</strong>Put format hints in helper text below the field, where they stay visible.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Date of birth</span><div class="aec-field__box"><input class="aec-field__input" placeholder="MM/DD/YYYY" aria-label="Date of birth"></div></div></div><figcaption><strong>Don't</strong>Hide essential instructions in the placeholder. People forget them once they type.</figcaption></figure>
+    </div>
+
+    <h3 id="dodont-width">Field width</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><div class="aec-field" style="width:120px"><span class="aec-field__label">ZIP code</span><div class="aec-field__box"><input class="aec-field__input" value="48226" aria-label="ZIP code"></div></div><div class="aec-field" style="width:100%"><span class="aec-field__label">Street address</span><div class="aec-field__box"><input class="aec-field__input" value="1200 Woodward Ave" aria-label="Street address"></div></div></div><figcaption><strong>Do</strong>Match the width to the expected answer. A short field tells people a short answer is needed.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><div class="aec-field" style="width:100%"><span class="aec-field__label">ZIP code</span><div class="aec-field__box"><input class="aec-field__input" value="48226" aria-label="ZIP code"></div></div><div class="aec-field" style="width:120px"><span class="aec-field__label">VIN</span><div class="aec-field__box"><input class="aec-field__input" value="1GCUYDED5RZ123456" aria-label="VIN"></div></div></div><figcaption><strong>Don't</strong>Make every field full width, or so narrow that the answer is cut off.</figcaption></figure>
+    </div>
+
+    <h3 id="dodont-affix">Units and read-only values</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Down payment</span><div class="aec-field__box"><span class="aec-field__affix aec-field__affix--prefix">$</span><input class="aec-field__input" value="5,000" aria-label="Down payment"></div></div></div><figcaption><strong>Do</strong>Show units as a prefix or suffix, so people only type the number.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Down payment</span><div class="aec-field__box"><input class="aec-field__input" placeholder="Enter amount in $" aria-label="Down payment"></div></div></div><figcaption><strong>Don't</strong>Ask people to type the unit or symbol themselves.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><div><p class="aec-body-3" style="margin:0;color:var(--aec-color-text-subtle)">VIN</p><p class="aec-body-1" style="margin:0">1GCUYDED5RZ123456</p></div></div><figcaption><strong>Do</strong>Show values people can't change as plain text, with a label.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">VIN</span><div class="aec-field__box"><input class="aec-field__input" value="1GCUYDED5RZ123456" aria-label="VIN" disabled></div></div></div><figcaption><strong>Don't</strong>Use a disabled field to show a read-only value. It's hard to read and is skipped by keyboard users.</figcaption></figure>
     </div>
     <ul>
-      <li>Match the field's width to the expected input, for example a short width for ZIP code.</li>
       <li>Use the right <code>type</code>, <code>inputmode</code> and <code>autocomplete</code> so mobile keyboards and autofill work.</li>
       <li>Validate when the field loses focus or the form is submitted, not on every keystroke.</li>
-      <li>Write error messages that say how to fix the problem: <em>Enter a 17-character VIN</em>, not <em>Invalid VIN</em>.</li>
+      <li>Keep the value people typed when you show an error, so they can correct it.</li>
+      <li>Use one style per form. Standard is the default; use material only for compact layouts such as a filter bar.</li>
     </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>Write in sentence case. Brands that show uppercase labels apply it through their typography tokens.</p>
+    <ul>
+      <li><strong>Labels</strong> are short nouns that say what to enter: <em>Email address</em>, <em>ZIP code</em>. Don't end them with a colon.</li>
+      <li><strong>Placeholders</strong> are optional examples of the format, such as <em>name@example.com</em>. Never put the only instructions there.</li>
+      <li><strong>Helper text</strong> explains why you need the information or what format to use, in one short sentence.</li>
+      <li><strong>Error messages</strong> say what went wrong and how to fix it, without blame: <em>Enter a 5-digit ZIP code</em>, not <em>Invalid ZIP</em>.</li>
+    </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-field aec-field--error"><span class="aec-field__label">ZIP code</span><div class="aec-field__box"><input class="aec-field__input" value="482" aria-label="ZIP code" aria-invalid="true"></div><p class="aec-field__help aec-field__help--error"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Enter a 5-digit ZIP code</p></div></div><figcaption><strong>Do</strong>Say how to fix the problem.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-field aec-field--error"><span class="aec-field__label">ZIP code</span><div class="aec-field__box"><input class="aec-field__input" value="482" aria-label="ZIP code" aria-invalid="true"></div><p class="aec-field__help aec-field__help--error"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Error: invalid input!</p></div></div><figcaption><strong>Don't</strong>Write vague or technical errors that don't help people move on.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Email address</span><div class="aec-field__box"><input class="aec-field__input" aria-label="Email address"></div></div></div><figcaption><strong>Do</strong>Keep labels to a few words.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Please enter your email address here:</span><div class="aec-field__box"><input class="aec-field__input" aria-label="Email address"></div></div></div><figcaption><strong>Don't</strong>Write instructions in the label or end it with a colon.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
@@ -153,17 +232,71 @@
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Labels <span class="doc-wcag">WCAG 1.3.1 · 3.3.2</span></h3><p>Every input needs a <code>&lt;label for&gt;</code>. Required fields also get the <code>required</code> attribute. The visual <code>*</code> is <code>aria-hidden</code>.</p></div>
       <div class="doc-a11y-item"><h3>Errors <span class="doc-wcag">WCAG 3.3.1</span></h3><p>Set <code>aria-invalid="true"</code> and connect the message with <code>aria-describedby</code>. Errors are shown with an icon and text, not colour alone.</p></div>
-      <div class="doc-a11y-item"><h3>Focus <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Focus turns the border <code>primary/default</code> and adds the 2px focus ring for keyboard users.</p></div>
+      <div class="doc-a11y-item"><h3>Focus <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Focus changes the border to the brand's active colour and adds the 2px focus ring for keyboard users.</p></div>
       <div class="doc-a11y-item"><h3>Input purpose <span class="doc-wcag">WCAG 1.3.5</span></h3><p>Use <code>autocomplete</code> values (<code>given-name</code>, <code>email</code>, <code>postal-code</code>, <code>tel</code>) on personal-data fields.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Fields are native inputs, so Tab and Shift+Tab move between them. Dropdowns use a native <code>&lt;select&gt;</code>, so arrow keys and type-ahead work. Don't add a positive <code>tabindex</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Helper text <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Connect helper text with <code>aria-describedby</code> so screen readers read it after the label. When an error appears, add the error's id to the same attribute.</p></div>
     </div>
+
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Labels, values and assistive text need at least 4.5:1 against their background. These ratios are measured live in the active brand. Disabled fields are exempt. Placeholder text should also reach 4.5:1, but the browser doesn't expose its colour, so check it in the brand file (<code>--aec-input-*-color-text-prompt</code>).</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Standard label</td><td><div class="aec-field"><span class="aec-field__label" data-contrast-sample>Email address</span></div></td><td data-contrast-result></td></tr>
+        <tr><td>Standard value</td><td><div class="aec-field" style="width:200px"><div class="aec-field__box"><input class="aec-field__input" value="sam@example.com" tabindex="-1" aria-label="Value example" data-contrast-sample></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Material value</td><td><div class="aec-field aec-field--material" style="width:200px"><div class="aec-field__box"><div class="aec-field__float"><input class="aec-field__input" placeholder=" " value="Rivera" tabindex="-1" aria-label="Material value example" data-contrast-sample><span class="aec-field__label">Last name</span></div></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Material label</td><td><div class="aec-field aec-field--material" style="width:200px"><div class="aec-field__box"><div class="aec-field__float"><input class="aec-field__input" placeholder=" " value="Rivera" tabindex="-1" aria-label="Material label example"><span class="aec-field__label" data-contrast-sample>Last name</span></div></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Helper text</td><td><p class="aec-field__help" data-contrast-sample>We'll send your receipt here.</p></td><td data-contrast-result></td></tr>
+        <tr><td>Error text</td><td><p class="aec-field__help aec-field__help--error" data-contrast-sample><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Enter a 5-digit ZIP code</p></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The box border shows people where to type, so it needs at least 3:1 against the page. So do the focus border and focus ring.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Border, default</td><td><div class="aec-field" style="width:200px"><div class="aec-field__box" data-contrast-sample data-contrast-mode="border"><input class="aec-field__input" value="Value" tabindex="-1" aria-label="Default border example"></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Border, focus</td><td><div class="aec-field" style="width:200px"><div class="aec-field__box is-focus" data-contrast-sample data-contrast-mode="border"><input class="aec-field__input" value="Value" tabindex="-1" aria-label="Focus border example"></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Border, error</td><td><div class="aec-field aec-field--error" style="width:200px"><div class="aec-field__box" data-contrast-sample data-contrast-mode="border"><input class="aec-field__input" value="Value" tabindex="-1" aria-label="Error border example"></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><div class="aec-field" style="width:200px"><div class="aec-field__box is-focus" data-contrast-sample data-contrast-mode="focus"><input class="aec-field__input" value="Value" tabindex="-1" aria-label="Focus ring example"></div></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <p class="doc-small doc-muted">Material fields are marked by their filled background rather than a border. If the fill is close to the page colour in a brand, keep the floating label visible so the field can still be found.</p>
+
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-field aec-field--error"><span class="aec-field__label">Email address</span><div class="aec-field__box"><input class="aec-field__input" value="sam@example" aria-label="Email address" aria-invalid="true"></div><p class="aec-field__help aec-field__help--error"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Enter an email address like name@example.com</p></div></div><figcaption><strong>Do</strong>Show errors with an icon and a message, connected with <code>aria-describedby</code>.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-field aec-field--error"><span class="aec-field__label">Email address</span><div class="aec-field__box"><input class="aec-field__input" value="sam@example" aria-label="Email address"></div></div></div><figcaption><strong>Don't</strong>Show an error with a red border alone. Some people can't see the colour change.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Social Security number</span><div class="aec-field__box"><input class="aec-field__input" aria-label="Social Security number"></div><p class="aec-field__help">We use this only to check your credit.</p></div></div><figcaption><strong>Do</strong>Put important information in visible helper text.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-field"><span class="aec-field__label">Social Security number <span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span></span><div class="aec-field__box"><input class="aec-field__input" aria-label="Social Security number"></div></div></div><figcaption><strong>Don't</strong>Hide it behind an info icon that only works on hover.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class or attribute</th></tr></thead>
+      <tbody>
+        <tr><td>style</td><td>standard / material</td><td><code>.aec-field</code> / <code>.aec-field.aec-field--material</code> (with <code>.aec-field__float</code>)</td></tr>
+        <tr><td>type</td><td>text / dropdown</td><td><code>&lt;input class="aec-field__input"&gt;</code> / <code>&lt;select class="aec-field__input"&gt;</code> + <code>.aec-icon--end</code></td></tr>
+        <tr><td>state</td><td>hover / active / error / disabled</td><td><code>:hover</code> / <code>:focus-within</code> / <code>.aec-field--error</code> or <code>aria-invalid="true"</code> / <code>disabled</code></td></tr>
+        <tr><td>prefix / suffix</td><td>true</td><td><code>.aec-field__affix--prefix</code> / <code>.aec-field__affix--suffix</code></td></tr>
+        <tr><td>left-icon / right-icon</td><td>true</td><td><code>.aec-icon.aec-icon--start</code> / <code>.aec-icon--end</code> inside <code>.aec-field__box</code></td></tr>
+        <tr><td>assistive text</td><td>default / error / success / warning</td><td><code>.aec-field__help</code> + <code>--error</code> / <code>--success</code> / <code>--warning</code></td></tr>
+        <tr><td>required</td><td>true</td><td><code>required</code> + <code>.aec-field__required</code> in the label</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
     <ul class="doc-small">
-      <li>Standard uses a 4px radius and Material uses 8px.</li>
+      <li>In the base Figma library, Standard uses a 4px radius and Material uses 8px.</li>
       <li>Material Outlined, Material Plain and Standard Filled exist in Figma as hidden sets and aren't documented here.</li>
       <li>The disabled prefix text colour #cccdd1 has no token. The code uses <code>text/disabled</code>.</li>
+      <li>Figma has no keyboard focus ring for fields. The code adds the 2px <code>focus/default</code> ring.</li>
     </ul>
   </section>
 </div>
@@ -172,6 +305,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

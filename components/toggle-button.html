@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -32,7 +33,7 @@
 
   <section class="doc-section">
     <h2 id="toggle">Toggle button</h2>
-    <p>A blue outline that fills when pressed. Use it for an independent on/off filter, such as <em>Electric only</em>.</p>
+    <p>An outlined button that fills with the primary colour when it is on. Use it for an independent on/off filter, such as <em>Electric only</em>.</p>
     <div class="doc-example" data-label="Toggle buttons">
       <div class="doc-example-preview">
         <button class="aec-toggle" type="button" aria-pressed="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Electric</button>
@@ -65,41 +66,145 @@
 
   <section class="doc-section">
     <h2 id="states">States</h2>
-    <div class="doc-states">
-      <div class="doc-state"><span class="doc-state-label">Default</span><button class="aec-toggle" aria-pressed="false" tabindex="-1">Label</button></div>
-      <div class="doc-state"><span class="doc-state-label">Hover</span><button class="aec-toggle" aria-pressed="false" tabindex="-1" style="border-color:var(--aec-color-primary-hover);color:var(--aec-color-primary-hover)">Label</button></div>
-      <div class="doc-state"><span class="doc-state-label">Selected</span><button class="aec-toggle" aria-pressed="true" tabindex="-1">Label</button></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled</span><button class="aec-toggle" aria-pressed="false" disabled>Label</button></div>
-      <div class="doc-state"><span class="doc-state-label">Group item</span><button class="aec-toggle-group__item" tabindex="-1" style="flex:none">Label</button></div>
-      <div class="doc-state"><span class="doc-state-label">Group hover</span><button class="aec-toggle-group__item" tabindex="-1" style="flex:none;border-color:var(--aec-color-action-border-hover);color:var(--aec-color-text-default)">Label</button></div>
-      <div class="doc-state"><span class="doc-state-label">Group selected</span><button class="aec-toggle-group__item" aria-pressed="true" tabindex="-1" style="flex:none">Label</button></div>
-      <div class="doc-state"><span class="doc-state-label">Group disabled</span><button class="aec-toggle-group__item" disabled style="flex:none">Label</button></div>
+    <p>Toggle buttons and group items have default, hover, focus, pressed and disabled states, both when off and when on. The colours come from the brand's toggle tokens (<code>--drp-toggle-button-color-option-1-*</code> and <code>--aec-toggle-group-tab-item-color-option-1-*</code>), so switch the brand in the header to see how each one changes. Focus adds a 2px <code>focus/default</code> ring, 2px outside the button.</p>
+    <h3 id="states-toggle">Toggle button</h3>
+    <div class="doc-state-matrix" data-states="default,hover,focus,pressed,disabled" aria-label="Toggle button states">
+      <template data-row="Off"><button class="aec-toggle" type="button" aria-pressed="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Electric</button></template>
+      <template data-row="On"><button class="aec-toggle" type="button" aria-pressed="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Electric</button></template>
+      <template data-row="Off · medium"><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="false">AWD</button></template>
+    </div>
+    <h3 id="states-group">Group item</h3>
+    <p>A selected group item doesn't change on hover or press, because pressing it again does nothing.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,pressed,disabled" aria-label="Toggle group item states">
+      <template data-row="Unselected"><div class="aec-toggle-group aec-toggle-group--hug" role="radiogroup" aria-label="Loan term"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" data-state-el>48 mo</button></div></template>
+      <template data-row="Selected"><div class="aec-toggle-group aec-toggle-group--hug" role="radiogroup" aria-label="Loan term"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true" data-state-el>60 mo</button></div></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <button class="aec-toggle is-focus" id="toggle-anatomy" type="button" tabindex="-1" aria-pressed="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offers.svg)" aria-hidden="true"></span>Offers <span class="aec-toggle__badge">3</span></button>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 91px);top:45px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 50px);top:6px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 11px);top:6px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 28px);top:6px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 62px);top:84px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong><span data-measure="#toggle-anatomy" data-prop="height"></span> tall with <span data-measure="#toggle-anatomy" data-prop="border-radius"></span> corners and a <span data-measure="#toggle-anatomy" data-prop="border-width"></span> border in this brand. It fills when the toggle is on.</span></li>
+        <li><span><strong>Icon (optional)</strong><span data-measure="#toggle-anatomy" data-prop="icon-size"></span>, <span data-measure="#toggle-anatomy" data-prop="gap"></span> from the label.</span></li>
+        <li><span><strong>Label</strong><span data-measure="#toggle-anatomy" data-prop="font-size"></span> <span data-measure="#toggle-anatomy" data-prop="font-family"></span>, weight <span data-measure="#toggle-anatomy" data-prop="font-weight"></span>. The letter case (<span data-measure="#toggle-anatomy" data-prop="text-transform"></span>) comes from the brand.</span></li>
+        <li><span><strong>Count (optional)</strong><code>.aec-toggle__badge</code>, for the number of results the filter adds.</span></li>
+        <li><span><strong>Focus ring</strong>2px <code>focus/default</code>, shown only on keyboard focus.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <p>Two sizes. Large is the default. The blue marks are measured from the real components in the active brand, so they change when you switch brands.</p>
+    <div class="doc-spec" data-spec="height,padding,gap,radius,border">
+      <button class="aec-toggle" id="toggle-lg" type="button" tabindex="-1" aria-pressed="false" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Large</button>
+      <button class="aec-toggle aec-toggle--md" id="toggle-md" type="button" tabindex="-1" aria-pressed="false" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Medium</button>
+      <div class="aec-toggle-group aec-toggle-group--hug" role="radiogroup" aria-label="Group size large"><button class="aec-toggle-group__item" id="tg-lg" type="button" role="radio" aria-checked="false" tabindex="-1" data-spec-target>Group large</button></div>
+      <div class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Group size medium"><button class="aec-toggle-group__item" id="tg-md" type="button" role="radio" aria-checked="false" tabindex="-1" data-spec-target>Group medium</button></div>
     </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Size</th><th>Toggle</th><th>Group</th><th>Height</th><th>Label</th></tr></thead>
+      <thead><tr><th>Size</th><th>Class</th><th>Height</th><th>Side padding</th><th>Text</th><th>Corners</th><th>Border</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Large (default)</td><td>—</td><td>—</td><td>48px</td><td>16px</td></tr>
-        <tr><td>Medium</td><td><code>.aec-toggle--md</code></td><td><code>.aec-toggle-group--md</code></td><td>40px</td><td>14px</td></tr>
+        <tr><td>Toggle large (default)</td><td>—</td><td data-measure="#toggle-lg" data-prop="height"></td><td data-measure="#toggle-lg" data-prop="padding-left"></td><td data-measure="#toggle-lg" data-prop="font-size"></td><td data-measure="#toggle-lg" data-prop="border-radius"></td><td data-measure="#toggle-lg" data-prop="border-width"></td><td><code>--drp-toggle-button-container-bg-large-*</code></td></tr>
+        <tr><td>Toggle medium</td><td><code>.aec-toggle--md</code></td><td data-measure="#toggle-md" data-prop="height"></td><td data-measure="#toggle-md" data-prop="padding-left"></td><td data-measure="#toggle-md" data-prop="font-size"></td><td data-measure="#toggle-md" data-prop="border-radius"></td><td data-measure="#toggle-md" data-prop="border-width"></td><td><code>--drp-toggle-button-container-bg-medium-*</code></td></tr>
+        <tr><td>Group large (default)</td><td>—</td><td data-measure="#tg-lg" data-prop="height"></td><td data-measure="#tg-lg" data-prop="padding-left"></td><td data-measure="#tg-lg" data-prop="font-size"></td><td data-measure="#tg-lg" data-prop="border-radius"></td><td data-measure="#tg-lg" data-prop="border-width"></td><td><code>--drp-toggle-group-typography-large-*</code></td></tr>
+        <tr><td>Group medium</td><td><code>.aec-toggle-group--md</code></td><td data-measure="#tg-md" data-prop="height"></td><td data-measure="#tg-md" data-prop="padding-left"></td><td data-measure="#tg-md" data-prop="font-size"></td><td data-measure="#tg-md" data-prop="border-radius"></td><td data-measure="#tg-md" data-prop="border-width"></td><td><code>--drp-toggle-group-typography-small-*</code></td></tr>
       </tbody>
     </table></div>
+    <h3 id="group-spacing">Group spacing</h3>
+    <p>Items in a group sit <span data-measure="#tg-spacing" data-prop="gap"></span> apart (<code>--aec-spacing-selectable-gap-m</code>). Separate toggle buttons used as filters should use the same gap.</p>
+    <div class="doc-spec" data-spec="gap">
+      <div class="aec-toggle-group aec-toggle-group--hug" id="tg-spacing" role="radiogroup" aria-label="Trim" data-spec-target><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true" tabindex="-1">LT</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" tabindex="-1">RS</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" tabindex="-1">Premier</button></div>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
-    <ul>
-      <li>Use a group for two to five short, mutually exclusive options that people compare side by side. For more options, use a select or radio buttons.</li>
-      <li>Keep labels to one or two words, all about the same length.</li>
-      <li>A group always has one option selected. Don't use it for actions.</li>
-    </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-toggle-group" role="radiogroup" aria-label="Loan term"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">36 mo</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">48 mo</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">60 mo</button></div></div><figcaption><strong>Do</strong>Use a group for two to five short options that people compare side by side.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-toggle-group" role="radiogroup" aria-label="Loan term"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">24</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">36</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">48</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">60</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">72</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">84</button></div></div><figcaption><strong>Don't</strong>Squeeze six or more options into a group. Use a select or radio buttons.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><button class="aec-toggle" type="button" aria-pressed="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Electric</button><button class="aec-toggle" type="button" aria-pressed="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/drive-train.svg)" aria-hidden="true"></span>AWD</button></div><figcaption><strong>Do</strong>Use separate toggle buttons for filters that can be on at the same time.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-toggle-group aec-toggle-group--hug" role="radiogroup" aria-label="Actions"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">Save</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Share</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Print</button></div></div><figcaption><strong>Don't</strong>Use a group for actions. Each option is a choice, not a command. Use <a href="button.html">buttons</a>.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-toggle-group aec-toggle-group--hug" role="radiogroup" aria-label="Delivery"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">Pick up</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Home delivery</button></div></div><figcaption><strong>Do</strong>Always have one option selected in a group. Pick the most common one as the default.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-toggle-group aec-toggle-group--hug" role="radiogroup" aria-label="Delivery"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Pick up</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Home delivery</button></div></div><figcaption><strong>Don't</strong>Show a group with nothing selected. It looks like a set of buttons.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="true">Electric</button><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="false">Hybrid</button><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="false">Gas</button></div><figcaption><strong>Do</strong>Use one size for every toggle in a row.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><button class="aec-toggle" type="button" aria-pressed="true">Electric</button><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="false">Hybrid</button><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="false">Gas</button></div><figcaption><strong>Don't</strong>Mix large and medium toggles in one row.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>Keep labels to one or two words, in sentence case, and about the same length. Use the same unit for every option.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Annual mileage"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">10,000 mi</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">12,000 mi</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">15,000 mi</button></div></div><figcaption><strong>Do</strong>Write every option the same way, with the same unit.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Annual mileage"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">10k</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">12,000 miles</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">15K mi</button></div></div><figcaption><strong>Don't</strong>Mix formats. People have to work out whether the options are comparable.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Toggle state <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Single toggles use <code>aria-pressed</code>. Groups use <code>role="radiogroup"</code> with <code>role="radio"</code> and <code>aria-checked</code>, plus an <code>aria-label</code> on the group.</p></div>
-      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>In a group, Tab moves to the selected item, and the arrow keys and Home/End change the selection (<code>components.js</code>).</p></div>
-      <div class="doc-a11y-item"><h3>Not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>A selected group item gets a thicker border and darker text as well as the colour change.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>A single toggle is reached with Tab and switched with Enter or Space. In a group, Tab moves to the selected item, and the arrow keys and Home/End change the selection (<code>components.js</code>).</p></div>
+      <div class="doc-a11y-item"><h3>Not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>A selected group item gets a thicker border as well as the colour change. A toggle that is on is filled, not just recoloured.</p></div>
+      <div class="doc-a11y-item"><h3>Keep the label <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Don't change a toggle's label when it switches on. The pressed state already tells screen reader users that it is on.</p></div>
+      <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Toggles and group items show a 2px <code>focus/default</code> ring on <code>:focus-visible</code>. Don't remove it.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Labels need at least 4.5:1 against their background. These ratios are measured live in the active brand. Disabled items are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Variant</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Toggle off</td><td><button class="aec-toggle aec-toggle--md" type="button" tabindex="-1" aria-pressed="false" data-contrast-sample>AWD</button></td><td data-contrast-result></td></tr>
+        <tr><td>Toggle on</td><td><button class="aec-toggle aec-toggle--md" type="button" tabindex="-1" aria-pressed="true" data-contrast-sample>Electric</button></td><td data-contrast-result></td></tr>
+        <tr><td>Group item</td><td><div class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Loan term sample"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" tabindex="-1" data-contrast-sample>48 mo</button></div></td><td data-contrast-result></td></tr>
+        <tr><td>Group item selected</td><td><div class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Loan term sample selected"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true" tabindex="-1" data-contrast-sample>60 mo</button></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>Borders show where each option is, so they need at least 3:1 against the page.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Toggle border</td><td><button class="aec-toggle aec-toggle--md" type="button" tabindex="-1" aria-pressed="false" data-contrast-sample data-contrast-mode="border">AWD</button></td><td data-contrast-result></td></tr>
+        <tr><td>Group item border</td><td><div class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Border sample"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" tabindex="-1" data-contrast-sample data-contrast-mode="border">48 mo</button></div></td><td data-contrast-result></td></tr>
+        <tr><td>Selected group item border</td><td><div class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Selected border sample"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true" tabindex="-1" data-contrast-sample data-contrast-mode="border">60 mo</button></div></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><button class="aec-toggle aec-toggle--md is-focus" type="button" tabindex="-1" aria-pressed="false" data-contrast-sample data-contrast-mode="focus">AWD</button></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><button class="aec-toggle" type="button" aria-pressed="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Electric</button></div><figcaption><strong>Do</strong>Keep the label "Electric" and set <code>aria-pressed="true"</code>. A screen reader says "Electric, toggle button, pressed".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><button class="aec-toggle" type="button" aria-pressed="true">Hide electric</button></div><figcaption><strong>Don't</strong>Change the label to the next action. It contradicts the pressed state.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>Toggle Button Option 1</td><td>—</td><td><code>.aec-toggle</code></td></tr>
+        <tr><td>selected</td><td>true</td><td><code>aria-pressed="true"</code></td></tr>
+        <tr><td>size</td><td>large / medium</td><td>(none) / <code>.aec-toggle--md</code></td></tr>
+        <tr><td>Toggle Button Group / tab-item Option 1</td><td>—</td><td><code>.aec-toggle-group</code> + <code>.aec-toggle-group__item</code></td></tr>
+        <tr><td>group selected</td><td>true</td><td><code>role="radio"</code> + <code>aria-checked="true"</code></td></tr>
+        <tr><td>group size</td><td>large / medium</td><td>(none) / <code>.aec-toggle-group--md</code></td></tr>
+        <tr><td>group width</td><td>fill / hug</td><td>(none) / <code>.aec-toggle-group--hug</code></td></tr>
+        <tr><td>state</td><td>hover / pressed</td><td><code>:hover</code> / <code>:active</code></td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>disabled</code></td></tr>
+        <tr><td>badge</td><td>true</td><td>child <code>.aec-toggle__badge</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -117,6 +222,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

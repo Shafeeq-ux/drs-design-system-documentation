@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -26,81 +27,166 @@
   <p class="doc-lead">A compact button that shows only an icon. Use it for common, recognisable actions such as close, edit, share or more options.</p>
   <div class="doc-meta"><span>3 Figma component sets · 216 variants</span><span><code>.aec-icon-btn</code></span></div>
 
+  <div class="doc-intro">
+    <p>An icon button does the same job as a <a href="button.html">button</a>, but saves space by dropping the label. It comes in three emphasis colours (<strong>primary, neutral, inverse</strong>), three styles (<strong>plain, filled, outline</strong>), three sizes and two shapes. Because there is no visible label, only use it for actions people already recognise, and always give it an accessible name.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="variants">Variants</h2>
+    <p>Plain is the default style. Use filled or outline when the button needs to stand out from busy content, such as a vehicle image.</p>
     <div class="doc-variants">
-      <div class="doc-variant"><div><h3>Primary</h3><p>Blue. Use it for an action that relates to the main task.</p></div>
+      <div class="doc-variant"><div><h3 id="variant-primary">Primary</h3><p>Uses the brand's primary colour. Use it for an action that relates to the main task.</p></div>
         <div class="doc-variant-demo">
           <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" type="button" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button>
           <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--outline" type="button" aria-label="Edit"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button>
           <button class="aec-icon-btn aec-icon-btn--primary" type="button" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button>
         </div></div>
-      <div class="doc-variant"><div><h3>Neutral</h3><p>Dark grey. The default for utility actions such as close and more options.</p></div>
+      <div class="doc-variant"><div><h3 id="variant-neutral">Neutral</h3><p>Uses the neutral ink colour. The default for utility actions such as close and more options.</p></div>
         <div class="doc-variant-demo">
           <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--filled" type="button" aria-label="Search"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/search.svg)" aria-hidden="true"></span></button>
           <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Filter"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/sliders-horizontal-sort.svg)" aria-hidden="true"></span></button>
           <button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
         </div></div>
-      <div class="doc-variant"><div><h3>Inverse</h3><p>For dark surfaces.</p></div>
+      <div class="doc-variant"><div><h3 id="variant-inverse">Inverse</h3><p>For dark surfaces such as the header, hero banners and image overlays.</p></div>
         <div class="doc-variant-demo is-inverse">
           <button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--filled" type="button" aria-label="Menu"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/hamburger.svg)" aria-hidden="true"></span></button>
           <button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--outline" type="button" aria-label="Save"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span></button>
           <button class="aec-icon-btn aec-icon-btn--inverse" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
         </div></div>
     </div>
-  </section>
-
-  <section class="doc-section">
-    <h2 id="shape-size">Shape and size</h2>
-    <p>Rectangle (8px radius) is the default. Circle (<code>--circle</code>) suits floating actions and image overlays.</p>
-    <div class="doc-example" data-label="Sizes and shapes">
+    <div class="doc-example" data-label="Rectangle and circle">
       <div class="doc-example-preview">
-        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline aec-icon-btn--lg" type="button" aria-label="Previous"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
-        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Previous"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
-        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline aec-icon-btn--sm" type="button" aria-label="Previous"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
-        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle aec-icon-btn--lg" type="button" aria-label="Next"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
-        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle" type="button" aria-label="Next"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
-        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle aec-icon-btn--sm" type="button" aria-label="Next"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
       </div>
     </div>
-    <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Size</th><th>Class</th><th>Box</th><th>Icon</th></tr></thead>
-      <tbody>
-        <tr><td>Large</td><td><code>.aec-icon-btn--lg</code></td><td>48×48</td><td>24px</td></tr>
-        <tr><td>Medium (default)</td><td>—</td><td>40×40</td><td>24px</td></tr>
-        <tr><td>Small</td><td><code>.aec-icon-btn--sm</code></td><td>24×24</td><td>16px</td></tr>
-      </tbody>
-    </table></div>
+    <p>Rectangle is the default shape. Add <code>.aec-icon-btn--circle</code> for floating actions and image overlays, such as gallery arrows.</p>
   </section>
 
   <section class="doc-section">
     <h2 id="states">States</h2>
-    <div class="doc-states">
-      <div class="doc-state"><span class="doc-state-label">Default</span><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></div>
-      <div class="doc-state"><span class="doc-state-label">Hover / pressed</span><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" style="background:var(--aec-color-primary-hover)" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></div>
-      <div class="doc-state"><span class="doc-state-label">Focus</span><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled</span><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" disabled aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></div>
-      <div class="doc-state"><span class="doc-state-label">Outline disabled</span><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" disabled aria-label="Edit"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button></div>
+    <p>Every emphasis and style has default, hover, focus, pressed and disabled states. The colours come from the same tokens as the text button (<code>--drp-button-contained-color-&lt;emphasis&gt;-&lt;style&gt;-&lt;state&gt;-*</code>), so switch the brand in the header to see how each one changes. Focus adds a 2px <code>focus/default</code> ring, 2px outside the button.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,pressed,disabled" aria-label="Icon button states">
+      <template data-row="Primary plain"><button class="aec-icon-btn aec-icon-btn--primary" type="button" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Primary filled"><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" type="button" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Primary outline"><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--outline" type="button" aria-label="Edit"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Neutral plain"><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Neutral filled"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--filled" type="button" aria-label="Search"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/search.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Neutral outline"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Filter"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/sliders-horizontal-sort.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Inverse plain" data-dark><button class="aec-icon-btn aec-icon-btn--inverse" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Inverse filled" data-dark><button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--filled" type="button" aria-label="Menu"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/hamburger.svg)" aria-hidden="true"></span></button></template>
+      <template data-row="Inverse outline" data-dark><button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--outline" type="button" aria-label="Save"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span></button></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--outline aec-icon-btn--lg is-focus" id="ib-anatomy" type="button" tabindex="-1" aria-label="Edit"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 50px);top:45px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 11px);top:6px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 28px);top:84px">3</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong><span data-measure="#ib-anatomy" data-prop="width"></span> × <span data-measure="#ib-anatomy" data-prop="height"></span> at this size, with <span data-measure="#ib-anatomy" data-prop="border-radius"></span> corners and a <span data-measure="#ib-anatomy" data-prop="border-width"></span> border in this brand. The border is only visible in the outline style.</span></li>
+        <li><span><strong>Icon</strong><span data-measure="#ib-anatomy" data-prop="icon-size"></span>, centred. It takes the button's icon colour token for each state.</span></li>
+        <li><span><strong>Focus ring</strong>2px <code>focus/default</code>, shown only on keyboard focus.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <p>Three sizes. Medium is the default. The blue marks are measured from the real buttons in the active brand, so they change when you switch brands.</p>
+    <div class="doc-spec is-row" data-spec="height,width,icon,radius,border">
+      <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline aec-icon-btn--lg" id="ib-lg" type="button" tabindex="-1" aria-label="Share" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button>
+      <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" id="ib-md" type="button" tabindex="-1" aria-label="Share" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button>
+      <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline aec-icon-btn--sm" id="ib-sm" type="button" tabindex="-1" aria-label="Share" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button>
+      <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle" id="ib-circle" type="button" tabindex="-1" aria-label="Next photo" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Class</th><th>Width</th><th>Height</th><th>Icon</th><th>Corners</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Large</td><td><code>.aec-icon-btn--lg</code></td><td data-measure="#ib-lg" data-prop="width"></td><td data-measure="#ib-lg" data-prop="height"></td><td data-measure="#ib-lg" data-prop="icon-size"></td><td data-measure="#ib-lg" data-prop="border-radius"></td><td><code>--drp-button-contained-icon-container-rect-bg-large-*</code></td></tr>
+        <tr><td>Medium (default)</td><td>—</td><td data-measure="#ib-md" data-prop="width"></td><td data-measure="#ib-md" data-prop="height"></td><td data-measure="#ib-md" data-prop="icon-size"></td><td data-measure="#ib-md" data-prop="border-radius"></td><td><code>--drp-button-contained-icon-container-rect-bg-medium-*</code></td></tr>
+        <tr><td>Small</td><td><code>.aec-icon-btn--sm</code></td><td data-measure="#ib-sm" data-prop="width"></td><td data-measure="#ib-sm" data-prop="height"></td><td data-measure="#ib-sm" data-prop="icon-size"></td><td data-measure="#ib-sm" data-prop="border-radius"></td><td><code>--drp-button-contained-icon-container-rect-bg-small-*</code></td></tr>
+        <tr><td>Circle (any size)</td><td><code>.aec-icon-btn--circle</code></td><td data-measure="#ib-circle" data-prop="width"></td><td data-measure="#ib-circle" data-prop="height"></td><td data-measure="#ib-circle" data-prop="icon-size"></td><td data-measure="#ib-circle" data-prop="border-radius"></td><td><code>--drp-button-contained-icon-container-circle-bg-medium-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <p>Icon buttons in a row, such as a toolbar or gallery controls, sit <span data-measure="#ib-group" data-prop="gap"></span> apart when wrapped in <code>.aec-btn-group</code>.</p>
+    <div class="doc-spec" data-spec="gap">
+      <div class="aec-btn-group" id="ib-group" data-spec-target><button class="aec-icon-btn aec-icon-btn--neutral" type="button" tabindex="-1" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" type="button" tabindex="-1" aria-label="Save vehicle"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" type="button" tabindex="-1" aria-label="More options"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/dots-three-vertical.svg)" aria-hidden="true"></span></button></div>
     </div>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
-    <div class="doc-dd">
-      <div class="doc-dd-card"><div class="doc-dd-preview"><button class="aec-icon-btn aec-icon-btn--neutral" tabindex="-1" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" tabindex="-1" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Use universally understood icons, and add a <a href="tooltip.html">tooltip</a> with the action name.</div></div>
-      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" tabindex="-1" aria-label="Apply"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/apply-credit.svg)" aria-hidden="true"></span></button></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use an icon button for a primary or unfamiliar action such as <em>Apply for credit</em>. Use a labelled <a href="button.html">button</a>.</div></div>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Do</strong>Use icons that people understand without a label, and add a <a href="tooltip.html">tooltip</a> with the action name.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" type="button" aria-label="Apply for credit"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/apply-credit.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Don't</strong>Use an icon button for a main or unfamiliar action such as <em>Apply for credit</em>. Use a labelled <a href="button.html">button</a>.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-btn-group"><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Save vehicle"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Download quote"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/download.svg)" aria-hidden="true"></span></button></div></div><figcaption><strong>Do</strong>Use one emphasis and style for every icon button in a toolbar.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-btn-group"><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" type="button" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Save vehicle"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--primary" type="button" aria-label="Download quote"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/download.svg)" aria-hidden="true"></span></button></div></div><figcaption><strong>Don't</strong>Mix filled, outline and plain buttons in one row. It suggests a hierarchy that isn't there.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-dark"><button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--circle aec-icon-btn--filled" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--circle aec-icon-btn--filled" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Do</strong>Use the inverse emphasis on dark surfaces and vehicle images.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-dark"><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Don't</strong>Put neutral or primary icon buttons on a dark surface. The icon disappears.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-btn-group"><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Edit trade-in"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Remove trade-in"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trash-simple.svg)" aria-hidden="true"></span></button></div></div><figcaption><strong>Do</strong>Use the medium or large size on touch screens, and keep the standard gap between buttons.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div style="display:flex;gap:0"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Edit trade-in"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Remove trade-in"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trash-simple.svg)" aria-hidden="true"></span></button></div></div><figcaption><strong>Don't</strong>Pack small icon buttons tightly together, especially when one of them is destructive.</figcaption></figure>
     </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
-      <div class="doc-a11y-item"><h3>Accessible name <span class="doc-wcag">WCAG 4.1.2 · 1.1.1</span></h3><p>Every icon button needs <code>aria-label</code>, such as <code>aria-label="Close"</code>. Mark the icon itself <code>aria-hidden="true"</code>.</p></div>
-      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>The small size (24px) meets the minimum, but on touch screens use 40px or 48px.</p></div>
-      <div class="doc-a11y-item"><h3>Toggles <span class="doc-wcag">WCAG 4.1.2</span></h3><p>For an on/off action such as <em>Save vehicle</em>, add <code>aria-pressed</code> and keep the same label.</p></div>
+      <div class="doc-a11y-item"><h3>Accessible name <span class="doc-wcag">WCAG 4.1.2 · 1.1.1</span></h3><p>Every icon button needs <code>aria-label</code>, such as <code>aria-label="Close"</code>. Mark the icon itself <code>aria-hidden="true"</code>. Make the name specific when there are several on a page, for example <code>aria-label="Remove trade-in"</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>The small size (<span data-measure="#ib-sm" data-prop="height"></span> in this brand) meets the 24×24px minimum only if it has space around it. On touch screens use medium or large.</p></div>
+      <div class="doc-a11y-item"><h3>Toggles <span class="doc-wcag">WCAG 4.1.2</span></h3><p>For an on/off action such as <em>Save vehicle</em>, add <code>aria-pressed</code> and keep the same label. Swap the icon (for example <code>save</code> to <code>saved</code>) so the state is visible too.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Use a real <code>&lt;button type="button"&gt;</code>. It is reached with Tab and activated with Enter or Space, with no extra script.</p></div>
+      <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Every icon button shows a 2px <code>focus/default</code> ring on <code>:focus-visible</code>. Don't remove it.</p></div>
     </div>
+    <h3 id="contrast">Icon contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The icon is the only thing that tells people what the button does, so it needs at least 3:1 against its background. These ratios are measured live from the buttons below in the active brand. Disabled buttons are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Variant</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Primary plain</td><td><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--sm" style="font-size:24px" type="button" tabindex="-1" aria-label="Share" data-contrast-sample><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Primary filled</td><td><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--sm" style="font-size:24px" type="button" tabindex="-1" aria-label="Add" data-contrast-sample><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Neutral plain</td><td><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" style="font-size:24px" type="button" tabindex="-1" aria-label="Close" data-contrast-sample><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Neutral filled</td><td><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--filled aec-icon-btn--sm" style="font-size:24px" type="button" tabindex="-1" aria-label="Search" data-contrast-sample><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/search.svg)" aria-hidden="true"></span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Inverse plain</td><td style="background:var(--aec-color-bg-inverse)"><button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--sm" style="font-size:24px" type="button" tabindex="-1" aria-label="Close" data-contrast-sample><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Border and focus contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Primary outline border</td><td><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--outline aec-icon-btn--sm" type="button" tabindex="-1" aria-label="Edit" data-contrast-sample data-contrast-mode="border"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Neutral outline border</td><td><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline aec-icon-btn--sm" type="button" tabindex="-1" aria-label="Filter" data-contrast-sample data-contrast-mode="border"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/sliders-horizontal-sort.svg)" aria-hidden="true"></span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm is-focus" type="button" tabindex="-1" aria-label="Close" data-contrast-sample data-contrast-mode="focus"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Save vehicle" aria-pressed="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/saved.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Do</strong>Keep the label "Save vehicle" and set <code>aria-pressed="true"</code>. A screen reader says "Save vehicle, toggle button, pressed".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Unsave"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/saved.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Don't</strong>Change the label to describe the next action. People can't tell what state the vehicle is in.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>Set</td><td>Primary / Neutral / Inverse</td><td><code>.aec-icon-btn--primary</code> / <code>--neutral</code> / <code>--inverse</code></td></tr>
+        <tr><td>style</td><td>plain / filled / outline</td><td>(none) / <code>.aec-icon-btn--filled</code> / <code>.aec-icon-btn--outline</code></td></tr>
+        <tr><td>size</td><td>large / medium / small</td><td><code>.aec-icon-btn--lg</code> / (none) / <code>.aec-icon-btn--sm</code></td></tr>
+        <tr><td>shape</td><td>rectangle / circle</td><td>(none) / <code>.aec-icon-btn--circle</code></td></tr>
+        <tr><td>state</td><td>hover / pressed</td><td><code>:hover</code> / <code>:active</code></td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>disabled</code> or <code>aria-disabled="true"</code></td></tr>
+        <tr><td>focus-ring</td><td>true</td><td><code>:focus-visible</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -117,6 +203,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

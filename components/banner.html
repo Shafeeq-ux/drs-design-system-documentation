@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -26,8 +27,22 @@
   <p class="doc-lead">A compact strip with an icon and a short, neutral message, shown across the top of a page or section.</p>
   <div class="doc-meta"><span>2 Figma variants</span><span><code>.aec-banner</code></span></div>
 
+  <div class="doc-intro">
+    <p>A banner shares useful context that doesn't need a response, such as a delivery estimate or a current offer. Banners are <strong>neutral</strong>: they have no success, warning, error or info colours. When a message has a status, use an <a href="alert.html">alert</a>. To confirm an action someone just took, use a <a href="snackbar.html">snackbar</a>.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="variants">Variants</h2>
+    <p>Banners have one style. The title is always shown; the description and close button are optional. Change the icon to suit the message.</p>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3 id="variant-title">Title only</h3><p>A single fact, such as the vehicle's status.</p></div>
+        <div class="doc-variant-demo"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">This vehicle is in transit to your dealer.</p></div></div></div></div></div>
+      <div class="doc-variant"><div><h3 id="variant-description">Title and description</h3><p>A fact plus one short detail. They sit on one line from 768px up and stack on mobile.</p></div>
+        <div class="doc-variant-demo"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/in-transit.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Estimated arrival: Nov 12</p><p class="aec-banner__message">We'll email you when it's ready.</p></div></div></div></div></div>
+      <div class="doc-variant"><div><h3 id="variant-dismissible">Dismissible</h3><p>For promotions and other messages people can safely hide.</p></div>
+        <div class="doc-variant-demo"><div class="aec-banner" data-aec-dismissable><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">0% APR on select models.</p></div></div><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" data-aec-dismiss><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div></div></div>
+    </div>
+
     <div class="doc-example" data-label="Banner">
       <div class="doc-example-preview is-stretch">
         <div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">This vehicle is in transit to your dealer.</p></div></div></div>
@@ -36,44 +51,131 @@
           <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" data-aec-dismiss><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
       </div>
     </div>
-    <p>From 768px up, the title and description sit on one line. On mobile they stack, and the padding drops to 12/16px.</p>
+    <p>From 768px up, the title and description sit on one line. On mobile they stack and the vertical padding gets smaller. At your current screen width the padding is <span data-measure="#banner-spec" data-prop="padding-top"></span> top and bottom and <span data-measure="#banner-spec" data-prop="padding-left"></span> at the sides.</p>
   </section>
 
   <section class="doc-section">
-    <h2 id="spec">Specification</h2>
+    <h2 id="states">Interactive states</h2>
+    <p>The banner itself isn't interactive. Only the optional close button has states. Focus adds the 2px <code>focus/default</code> ring.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,pressed" aria-label="Banner close button states">
+      <template data-row="Close button"><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-banner" id="banner-anatomy"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/in-transit.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title" id="banner-anatomy-title">Arrives Nov 12</p><p class="aec-banner__message" id="banner-anatomy-message">We'll email you.</p></div></div>
+          <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+        <span class="doc-anatomy-pin" style="left:4px;bottom:10px">1</span>
+        <span class="doc-anatomy-pin" style="left:22px;top:6px">2</span>
+        <span class="doc-anatomy-pin" style="left:30%;top:6px">3</span>
+        <span class="doc-anatomy-pin" style="left:60%;bottom:6px">4</span>
+        <span class="doc-anatomy-pin" style="right:4px;top:6px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong>A <code>--aec-banner-color-bg</code> surface with <span data-measure="#banner-anatomy" data-prop="border-radius"></span> corners in this brand. The border is <span data-measure="#banner-anatomy" data-prop="border-width"></span>; most brands have none.</span></li>
+        <li><span><strong>Icon</strong><span data-measure="#banner-anatomy" data-prop="icon-size"></span>, in <code>--aec-banner-color-icon</code>. Choose one that fits the message.</span></li>
+        <li><span><strong>Title</strong><span data-measure="#banner-anatomy-title" data-prop="font-size"></span> <span data-measure="#banner-anatomy-title" data-prop="font-family"></span>, weight <span data-measure="#banner-anatomy-title" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Description (optional)</strong><span data-measure="#banner-anatomy-message" data-prop="font-size"></span>, weight <span data-measure="#banner-anatomy-message" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Close button (optional)</strong>A small neutral <a href="icon-button.html">icon button</a>, labelled <em>Dismiss</em>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Spacing</h2>
+    <p>The blue marks are measured from the real banner in the active brand and at your current screen width. The pink mark is the space between the content and the close button.</p>
+    <div class="doc-spec" data-spec="padding,padding-y,gap,radius,border,icon">
+      <div class="aec-banner" id="banner-spec" data-spec-target><div class="aec-banner__body" id="banner-spec-body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span><div class="aec-banner__content" id="banner-spec-content"><p class="aec-banner__title" id="banner-spec-title">0% APR on select models.</p><p class="aec-banner__message" id="banner-spec-message">Ends Dec 2.</p></div></div>
+        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+    </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <thead><tr><th>Part</th><th>Value</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Surface</td><td><code>bg/variant</code>, no border, <code>border-radius-default</code> (8px)</td></tr>
-        <tr><td>Padding</td><td>16px (desktop) · 12/16px (mobile)</td></tr>
-        <tr><td>Icon</td><td>16px, <code>icon/default</code>, 8px from the text</td></tr>
-        <tr><td>Title</td><td>body-2 bold, <code>text/default</code></td></tr>
-        <tr><td>Description</td><td>body-3, <code>text/subtle</code></td></tr>
-        <tr><td>Close (optional)</td><td>Small neutral icon button</td></tr>
+        <tr><td>Side padding</td><td data-measure="#banner-spec" data-prop="padding-left"></td><td><code>--aec-spacing-container-padding-s</code></td></tr>
+        <tr><td>Top and bottom padding</td><td data-measure="#banner-spec" data-prop="padding-top"></td><td><code>--aec-spacing-container-padding-s</code> from 768px up; a smaller fixed value on mobile</td></tr>
+        <tr><td>Content to close button</td><td data-measure="#banner-spec" data-prop="gap"></td><td><code>--aec-spacing-container-gap-m</code></td></tr>
+        <tr><td>Icon to text</td><td data-measure="#banner-spec-body" data-prop="gap"></td><td><code>--aec-spacing-container-gap-s</code></td></tr>
+        <tr><td>Title to description</td><td data-measure="#banner-spec-content" data-prop="gap"></td><td><code>--aec-spacing-container-gap-s</code> (one line) · <code>--aec-spacing-container-gap-xs</code> (stacked)</td></tr>
+        <tr><td>Corners</td><td data-measure="#banner-spec" data-prop="border-radius"></td><td><code>--drp-banner-container-bg-border-radius</code></td></tr>
+        <tr><td>Border</td><td data-measure="#banner-spec" data-prop="border-width"></td><td><code>--drp-banner-container-bg-border-*-width</code>, <code>--aec-banner-color-border</code></td></tr>
+        <tr><td>Icon</td><td data-measure="#banner-spec" data-prop="icon-size"></td><td><code>--aec-banner-color-icon</code> (colour)</td></tr>
+        <tr><td>Title text</td><td><span data-measure="#banner-spec-title" data-prop="font-size"></span> / <span data-measure="#banner-spec-title" data-prop="line-height"></span></td><td><code>--drp-banner-typography-title-*</code></td></tr>
+        <tr><td>Description text</td><td><span data-measure="#banner-spec-message" data-prop="font-size"></span> / <span data-measure="#banner-spec-message" data-prop="line-height"></span></td><td><code>--drp-banner-typography-description-*</code></td></tr>
+        <tr><td>Shadow</td><td>—</td><td><code>--drp-banner-container-bg-box-shadow</code></td></tr>
       </tbody>
     </table></div>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/in-transit.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">This vehicle is in transit to your dealer.</p></div></div></div></div><figcaption><strong>Do</strong>Use a banner for neutral context that needs no response.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Your payment failed.</p></div></div></div></div><figcaption><strong>Don't</strong>Use a banner for an error. Use an error <a href="alert.html">alert</a> so the status is clear.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">0% APR on select models.</p><p class="aec-banner__message">Ends Dec 2.</p></div></div></div></div><figcaption><strong>Do</strong>Show one banner per page region.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">0% APR on select models.</p></div></div></div><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/in-transit.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Arrives Nov 12.</p></div></div></div><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Prices exclude tax.</p></div></div></div></div><figcaption><strong>Don't</strong>Stack banners. People stop reading after the first one.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/in-transit.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Estimated arrival: Nov 12</p><p class="aec-banner__message">We'll email you.</p></div></div></div></div><figcaption><strong>Do</strong>Keep it to one line on desktop.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/in-transit.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Your vehicle has left the factory and is now on its way to the dealer, where it will be inspected and cleaned before pickup.</p></div></div></div></div><figcaption><strong>Don't</strong>Write a paragraph. Put details on the page, not in the banner.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-banner" data-aec-dismissable><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Free home delivery this month.</p></div></div><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div></div><figcaption><strong>Do</strong>Let people dismiss promotions.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-banner" data-aec-dismissable><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Monthly payment excludes tax and fees.</p></div></div><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div></div><figcaption><strong>Don't</strong>Put terms people need to understand a price in a banner they can close. Show them next to the price.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
     <ul>
-      <li>Banners are neutral and have no status colours. For success, warning or error, use an <a href="alert.html">alert</a>.</li>
-      <li>Show at most one banner per page region, and keep the message to one line on desktop.</li>
+      <li><strong>Title:</strong> lead with the key fact, for example <em>Estimated arrival: Nov 12</em>. Write it in sentence case.</li>
+      <li><strong>Description:</strong> optional. One short detail or the next thing that will happen. Use a full stop if it's a sentence.</li>
+      <li>Avoid attention-grabbing words such as "Important" or "Attention". If something is urgent, it isn't a banner.</li>
+      <li>Banners don't have an action. If people need to act, use an <a href="alert.html">alert</a> with a link, or put a button on the page.</li>
     </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/time.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Your quote is valid until Nov 30.</p></div></div></div></div><figcaption><strong>Do</strong>State the fact plainly.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/time.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Attention!</p><p class="aec-banner__message">Please note your quote has an expiry date.</p></div></div></div></div><figcaption><strong>Don't</strong>Use a generic title and hide the fact in the description.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Landmark <span class="doc-wcag">WCAG 1.3.1</span></h3><p>A site-wide banner can be wrapped in <code>&lt;aside aria-label="Announcement"&gt;</code>. If it's added after the page loads, give it <code>role="status"</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Decorative icon <span class="doc-wcag">WCAG 1.1.1</span></h3><p>The icon repeats the message, so give it <code>aria-hidden="true"</code>. The title must make sense without it.</p></div>
+      <div class="doc-a11y-item"><h3>Dismissing <span class="doc-wcag">WCAG 2.1.1</span></h3><p>The close button is a labelled icon button. When the banner is removed, move focus to the next element so keyboard users don't lose their place.</p></div>
     </div>
+    <h3 id="contrast">Contrast <span class="doc-wcag">WCAG 1.4.3 · 1.4.11</span></h3>
+    <p>Text needs at least 4.5:1 against the banner background, and the icon needs 3:1. These ratios are measured live in the active brand. The bar in the last row is a sample of the icon colour.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Title</td><td><div class="aec-banner"><p class="aec-banner__title" data-contrast-sample>Estimated arrival: Nov 12</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Description</td><td><div class="aec-banner"><p class="aec-banner__message" data-contrast-sample>We'll email you when it's ready.</p></div></td><td data-contrast-result></td></tr>
+        <tr><td>Icon</td><td><div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><span data-contrast-sample data-contrast-mode="border" style="align-self:center;width:24px;border-top:4px solid var(--aec-banner-color-icon)" aria-hidden="true"></span></div></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Class or attribute</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td><code>.aec-banner</code></td><td>No status modifiers.</td></tr>
+        <tr><td>Icon and text wrapper</td><td><code>.aec-banner__body</code></td><td>Holds the icon and <code>.aec-banner__content</code>.</td></tr>
+        <tr><td>Title</td><td><code>.aec-banner__title</code></td><td>Required.</td></tr>
+        <tr><td>Description</td><td><code>.aec-banner__message</code></td><td>Optional.</td></tr>
+        <tr><td>Close</td><td><code>.aec-icon-btn--neutral.aec-icon-btn--sm</code> + <code>data-aec-dismiss</code></td><td>Direct child of the banner. Add <code>data-aec-dismissable</code> to the banner.</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
     <ul class="doc-small">
-      <li>Banner has an 8px radius, while Alert and Tooltip are square and Snackbar is 4px. Consider aligning these.</li>
+      <li>Banner has an 8px radius in Figma, while Alert and Tooltip are square and Snackbar is 4px. The brand token <code>--drp-banner-container-bg-border-radius</code> differs by brand and, for DRS Base, doesn't match the Figma value. Consider aligning these.</li>
       <li>The border style is set but has a stroke weight of 0. The page also holds loose Avenir font-specimen layers.</li>
+      <li>The smaller mobile padding has no brand token. In code the vertical mobile padding is a fixed value, so it doesn't re-theme.</li>
     </ul>
   </section>
 </div>
@@ -82,6 +184,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

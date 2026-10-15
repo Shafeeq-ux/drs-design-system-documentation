@@ -26,11 +26,13 @@
           '<div><dt>Button</dt><dd>' + esc(b.button.radius) + ' corners' + (b.button.case && b.button.case !== 'none' ? ', ' + esc(b.button.case) : '') + '</dd></div>' +
           '<div><dt>Fonts</dt><dd>' + esc(fonts) + '</dd></div>' +
           '<div><dt>Tokens</dt><dd>' + b.tokens.toLocaleString() + '</dd></div>' +
+          (b.icons ? '<div><dt>Icons</dt><dd>' + esc(b.icons.font) + ' · ' + b.icons.count + ' glyphs</dd></div>' : '') +
         '</dl>' +
         '<div class="bt-dl">' +
           '<a class="aec-btn aec-btn--primary aec-btn--sm" href="' + base + '.css" download="' + b.id + '.css">' + b.id + '.css</a>' +
           '<a class="aec-btn aec-btn--primary aec-btn--outline aec-btn--sm" href="' + base + '.vars.css" download="' + b.id + '.vars.css">.vars.css</a>' +
           '<a class="aec-btn aec-btn--primary aec-btn--outline aec-btn--sm" href="' + base + '.json" download="' + b.id + '.json">.json</a>' +
+          (b.icons ? '<a class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" href="' + ROOT + 'downloads/icons/' + b.icons.zip + '" download><span class="aec-icon aec-icon--16" data-icon="download" aria-hidden="true"></span>Icon font .zip</a>' : '') +
         '</div>' +
         '<div class="bt-links"><button type="button" class="aec-link aec-link--sm" data-preview-brand="' + b.id + '">Preview site in ' + esc(b.name) + '</button><a class="aec-link aec-link--sm" href="theme-builder.html?from=' + b.id + '">Edit in Theme builder</a></div>' +
       '</article>';

@@ -43,6 +43,7 @@ const shell = ({ title, description, figma, figmaFile, scripts, styles, body, ba
 <link rel="stylesheet" href="${base}css/components.css">
 <link rel="stylesheet" href="${base}css/patterns.css">
 <link rel="stylesheet" href="${base}css/brand-components.css">
+<link rel="stylesheet" href="${base}css/brand-icons.css">
 <link rel="stylesheet" href="${base}css/docs.css">
 ${styles.map(s => `<link rel="stylesheet" href="${base}css/${s}">`).join('\n')}
 </head>
@@ -54,6 +55,7 @@ ${body.trim()}
 <script src="${base}js/brands-data.js"></script>
 <script src="${base}js/main.js"></script>
 <script src="${base}js/components.js"></script>
+<script src="${base}js/doc-kit.js"></script>
 ${scripts.map(s => `<script src="${base}js/${s}"></script>`).join('\n')}
 </body>
 </html>

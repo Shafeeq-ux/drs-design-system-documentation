@@ -138,8 +138,8 @@ code { font-family: var(--aec-font-family-mono); font-size: 0.875em; background:
 /* ---------- Example (preview + code) ---------- */
 .doc-example { border: 1px solid var(--doc-line); border-radius: 12px; overflow: hidden; margin: 16px 0 24px; background: var(--aec-color-bg-default); }
 .doc-example-preview { padding: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; background-image: radial-gradient(circle, #e9ecef 1px, transparent 1px); background-size: 16px 16px; }
-.doc-example-preview.is-col { flex-direction: column; align-items: flex-start; }
-.doc-example-preview.is-stretch { align-items: stretch; flex-direction: column; }
+.doc-example-preview.is-col { flex-direction: column; flex-wrap: nowrap; align-items: flex-start; }
+.doc-example-preview.is-stretch { align-items: stretch; flex-direction: column; flex-wrap: nowrap; }
 .doc-example-preview.is-inverse { background: var(--aec-color-inverse-bg-default); background-image: none; }
 .doc-example-preview.is-plain { background-image: none; background: var(--doc-surface-2); }
 .doc-example-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 8px 6px 16px; border-top: 1px solid var(--doc-line); background: var(--doc-surface-2); font-size: 13px; color: var(--aec-color-text-subtle); }
@@ -282,9 +282,9 @@ a.doc-card:hover { border-color: var(--aec-color-primary-default); box-shadow: v
 
 .doc-team { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 16px 0 24px; }
 .doc-person { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border: 1px solid var(--doc-line); border-radius: 12px; }
-.doc-person-avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+.doc-person-avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff !important; font-family: "DM Sans", system-ui, sans-serif; font-weight: 700; font-size: 14px; flex-shrink: 0; }
 .doc-person strong { display: block; font-size: 15px; line-height: 22px; }
-.doc-person span { font-size: 13px; color: var(--aec-color-text-subtle); }
+.doc-person > div > span { display: block; font-size: 13px; color: var(--aec-color-text-subtle); }
 
 /* ---------- Pager & footer ---------- */
 .doc-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 64px; }
@@ -385,3 +385,84 @@ a.doc-card:hover { border-color: var(--aec-color-primary-default); box-shadow: v
 /* Docs chrome keeps its own type so it stays stable in every brand; page content follows the brand */
 .doc-header, .doc-sidebar, .doc-pager, .doc-footer, .doc-example-bar, .doc-meta, .doc-toast { font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
 .doc-header-end, .doc-search { min-width: 0; }
+
+/* ---------- Docs kit: state matrix ---------- */
+.doc-state-matrix { margin: 16px 0 24px; overflow-x: auto; border: 1px solid var(--doc-line); border-radius: 12px; background: #fff; }
+.doc-state-grid { display: grid; min-width: max-content; }
+.doc-state-row { display: grid; grid-template-columns: 140px repeat(var(--cols), minmax(132px, 1fr)); border-bottom: 1px solid var(--doc-line); }
+.doc-state-row:last-child { border-bottom: 0; }
+.doc-state-head { background: var(--doc-surface-2); font: 600 12px/16px 'DM Sans', system-ui, sans-serif; color: #555; }
+.doc-state-head > span { padding: 10px 12px; }
+.doc-state-name { display: flex; align-items: center; padding: 12px; font: 600 13px/18px 'DM Sans', system-ui, sans-serif; color: #262626; background: var(--doc-surface-2); border-right: 1px solid var(--doc-line); position: sticky; left: 0; z-index: 1; }
+.doc-state-cell { display: flex; align-items: center; justify-content: center; min-height: 88px; padding: 16px 12px; background: var(--aec-color-bg-default); }
+.doc-state-cell.is-dark { background: var(--aec-color-bg-inverse); }
+.doc-state-demo { display: flex; align-items: center; justify-content: center; max-width: 100%; }
+
+/* ---------- Docs kit: spec marks ---------- */
+.doc-spec { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 64px; padding: 48px 120px 48px 72px; margin: 16px 0; border: 1px solid var(--doc-line); border-radius: 12px; background: var(--aec-color-bg-default); background-image: linear-gradient(rgba(34, 99, 227, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 99, 227, .05) 1px, transparent 1px); background-size: 8px 8px; overflow: hidden; }
+.doc-spec-mark { position: absolute; pointer-events: none; z-index: 2; }
+.doc-spec-mark::after { content: attr(data-label); position: absolute; white-space: nowrap; font: 600 11px/14px 'DM Sans', system-ui, sans-serif; color: #fff; background: #1d64f2; padding: 1px 5px; border-radius: 4px; }
+.doc-spec-mark.is-v { border-left: 1px solid #1d64f2; }
+.doc-spec-mark.is-v::before, .doc-spec-mark.is-h::before { content: ""; position: absolute; border: 0 solid #1d64f2; }
+.doc-spec-mark.is-v::before { left: -4px; top: 0; bottom: 0; width: 7px; border-top-width: 1px; border-bottom-width: 1px; }
+.doc-spec-mark.is-h { border-top: 1px solid #1d64f2; }
+.doc-spec-mark.is-h::before { top: -4px; left: 0; right: 0; height: 7px; border-left-width: 1px; border-right-width: 1px; }
+.doc-spec-mark.is-fill { background: rgba(29, 100, 242, .22); box-shadow: inset 0 0 0 1px rgba(29, 100, 242, .55); }
+.doc-spec-mark.is-gap { background: rgba(236, 72, 153, .25); box-shadow: inset 0 0 0 1px rgba(236, 72, 153, .7); }
+.doc-spec-mark.is-gap::after { background: #db2777; }
+.doc-spec-mark.is-outline { box-shadow: 0 0 0 1px #1d64f2; }
+.doc-spec-mark.is-out-left::after { right: 8px; top: 50%; transform: translateY(-50%); }
+.doc-spec-mark.is-out-top::after { left: 50%; bottom: calc(100% + 4px); transform: translateX(-50%); }
+.doc-spec-mark.is-out-bottom::after { left: 50%; top: calc(100% + 4px); transform: translateX(-50%); }
+.doc-spec-mark.is-out-right::after { left: calc(100% + 6px); top: 50%; transform: translateY(-50%); }
+.doc-spec-mark.is-tag::after { left: 0; top: 0; background: #262626; }
+.doc-spec.is-row { flex-direction: row; flex-wrap: wrap; gap: 64px 140px; }
+@media (max-width: 640px) { .doc-spec { padding: 44px 16px 44px 56px; align-items: flex-start; } }
+.doc-spec-caption { flex-basis: 100%; margin: 4px 0 0; text-align: center; font: 500 12px/16px 'DM Sans', system-ui, sans-serif; color: #666; }
+
+/* ---------- Docs kit: do / don't ---------- */
+.doc-dodont { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; margin: 16px 0 24px; }
+.doc-do, .doc-dont { margin: 0; display: flex; flex-direction: column; border: 1px solid var(--doc-line); border-radius: 12px; overflow: hidden; background: #fff; }
+.doc-do { border-top: 4px solid #2d871b; }
+.doc-dont { border-top: 4px solid #d64022; }
+.doc-dodont-preview { flex: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; min-height: 140px; padding: 24px 20px; background: var(--aec-color-bg-default); }
+.doc-dodont-preview.is-stack { flex-direction: column; align-items: stretch; }
+.doc-dodont-preview.is-dark { background: var(--aec-color-bg-inverse); }
+.doc-do figcaption, .doc-dont figcaption { padding: 12px 16px 14px; border-top: 1px solid var(--doc-line); font: 400 14px/21px 'DM Sans', system-ui, sans-serif; color: #333; }
+.doc-do figcaption strong, .doc-dont figcaption strong { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; font-size: 13px; letter-spacing: .02em; text-transform: uppercase; }
+.doc-do figcaption strong { color: #2d6e1f; }
+.doc-dont figcaption strong { color: #b5341a; }
+.doc-do figcaption strong::before, .doc-dont figcaption strong::before { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; color: #fff; font-size: 11px; line-height: 1; }
+.doc-do figcaption strong::before { content: "✓"; background: #2d871b; }
+.doc-dont figcaption strong::before { content: "✕"; background: #d64022; }
+.doc-contrast { white-space: nowrap; }
+.doc-contrast.is-fail { color: #b5341a; }
+
+/* ---------- Icons page ---------- */
+.doc-icon .aec-icon { --aec-icon-size: var(--icon-size, 24px); width: var(--icon-size, 24px); height: var(--icon-size, 24px); font-size: var(--icon-size, 24px); color: var(--aec-color-icon-default); }
+.doc-icon:hover .aec-icon { color: inherit; }
+.doc-icon .doc-icon-name { font-size: 11px; line-height: 16px; color: var(--aec-color-text-subtle); text-align: center; word-break: break-word; }
+.doc-icon .doc-icon-code { font: 10px/14px ui-monospace, Menlo, monospace; color: #999; }
+.doc-icon-compare td { text-align: center; background: var(--aec-color-bg-default); color: var(--aec-color-icon-default); }
+.doc-icon-downloads { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+.doc-icon-dl { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--doc-line); border-radius: 12px; background: #fff; font-family: 'DM Sans', system-ui, sans-serif; }
+.doc-icon-dl > div:nth-child(2) { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.doc-icon-dl strong { font-size: 15px; color: #262626; }
+.doc-icon-dl-glyphs { display: flex; gap: 6px; color: #262626; }
+.doc-icon-dl .doc-btn { white-space: nowrap; }
+
+/* ---------- Component cards with live thumbnails ---------- */
+.doc-card.has-thumb { position: relative; }
+.doc-card.has-thumb:hover, .doc-card.has-thumb:focus-within { border-color: var(--aec-color-primary-default); box-shadow: var(--aec-box-shadow-m); }
+.doc-card.has-thumb h3 a { color: inherit; text-decoration: none; }
+.doc-card.has-thumb h3 a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.doc-card.has-thumb h3 a:focus-visible { outline: none; }
+.doc-card.has-thumb:has(h3 a:focus-visible) { outline: 2px solid var(--aec-color-focus-default); outline-offset: 2px; }
+.doc-thumb { background: var(--aec-color-bg-default); padding: 12px; gap: 8px; flex-wrap: wrap; pointer-events: none; font-family: var(--aec-font-family-base); color: var(--aec-color-text-default); }
+.doc-thumb .aec-btn--sm { min-width: 0; }
+
+/* Long token names in prose wrap instead of pushing the page sideways (code in tables still scrolls with the table) */
+.doc-content :is(p, li, dd, figcaption, h3, .doc-a11y-item, .doc-callout) code { white-space: normal; overflow-wrap: anywhere; }
+.doc-content :not(pre) > code { white-space: normal; overflow-wrap: anywhere; }
+.doc-content .doc-table td code { white-space: nowrap; }
+.doc-anatomy-stage { overflow: hidden; }

@@ -29,7 +29,11 @@ js/brand-core.js        brand token engine (parse, tokens, serialise) shared by 
 js/theme-builder.js     Theme builder tool (brands/theme-builder.html, preview frame in src/static/brands/frame.html)
 src/pages/**            page content fragments (front matter + HTML)
 *.html, components/, foundations/, get-started/   generated pages      ← do not edit
-assets/icons/           196 icons (24px masters) + icons.json
+assets/icons/           196 SVG icons (fallback) + icons.json
+assets/iconfonts/<id>/  brand icon fonts (.woff/.ttf); sources in tokens/brands/icons/<id>/ (IcoMoon style.css + selection.json)
+downloads/icons/        brand icon font zips (IcoMoon exports)
+css/brand-icons.css     generated: @font-face per brand + .aec-icon glyph swap (scripts/brand-icons.mjs)
+js/doc-kit.js           docs helpers: state matrix, live spec marks, live measurements, live contrast, do/don't
 assets/illustrations/   20 illustrations + illustrations.json
 assets/patterns/        generic pattern art (car-angle upload placeholders)
 specs/                  per-component specs extracted from Figma (not deployed); specs/patterns/ for patterns
@@ -64,6 +68,8 @@ Framework preset: *Other*. Build command: empty. Output directory: `.` (already 
 - Each brand is merged over the default brand, so a partial file still renders.
 - Brand fonts are licensed and not served; `brands.json` maps each to a Google Fonts substitute used in the font stacks.
 - Map a new component to brand tokens in `scripts/brand-bridge.mjs`.
+- Icons: `<span class="aec-icon" data-icon="car">` (or the legacy `--aec-icon-src` SVG URL) renders the brand's icon-font glyph.
+- Docs: use `.doc-state-matrix`, `.doc-spec`, `data-measure`, `data-contrast-table` and `.doc-dodont` (see js/doc-kit.js) — never hard-code brand values.
 
 ## Conventions
 

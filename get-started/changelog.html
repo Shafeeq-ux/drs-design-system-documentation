@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -24,6 +25,18 @@
   <p class="doc-eyebrow">Get started</p>
   <h1>Changelog</h1>
   <p class="doc-lead">Notable changes to tokens, components and this site.</p>
+
+  <section class="doc-section">
+    <h2 id="v1-3-0">v1.3.0 <span class="doc-pill is-done">Docs depth &amp; icon fonts</span></h2>
+    <ul>
+      <li>Brand icon fonts: each brand's IcoMoon font replaces the SVG icons across the site, and the glyph follows the brand. The <a href="../foundations/icons.html">Icons</a> page lets you browse each brand's set, compare glyphs across brands and download each font as a zip (also listed on <a href="../brands/tokens.html">Brand tokens</a>). New markup: <code>&lt;span class="aec-icon" data-icon="car"&gt;</code>.</li>
+      <li>Component pages now have live state matrices (default, hover, focus, pressed, disabled, loading and more), blue spacing marks and size tables measured from the real components, do and don't guidance, and contrast tables calculated for the active brand.</li>
+      <li>New static state classes <code>.is-hover</code>, <code>.is-pressed</code>, <code>.is-focus</code> and <code>.is-loading</code> (or <code>aria-busy="true"</code>) for showing states in docs and prototypes.</li>
+      <li>The Overview page shows live component thumbnails, and the Team avatars meet contrast.</li>
+      <li>The token docs now explain the two layers in the brand files: <code>--aec-*</code> custom properties, and <code>.drp-*</code> classes for typography and component metrics.</li>
+      <li>For designers lists only the two libraries in use: the design foundation and the components library.</li>
+    </ul>
+  </section>
 
   <section class="doc-section">
     <h2 id="v1-2-0">v1.2.0 <span class="doc-pill is-done">Multi-brand</span></h2>
@@ -62,6 +75,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

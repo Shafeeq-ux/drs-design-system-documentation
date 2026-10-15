@@ -1,6 +1,6 @@
 ---
 title: Modal & sheet
-description: Modals and sheets focus attention on a task or message in a layer that blocks the page behind it.
+description: Modals and sheets focus attention on a task or message, such as confirming a change to the deal, in a layer that blocks the page behind it.
 figma: 3769-50205
 ---
 <div class="doc-content">
@@ -8,6 +8,10 @@ figma: 3769-50205
   <h1>Modal &amp; sheet</h1>
   <p class="doc-lead">Focuses attention on a task or message in a layer that blocks the page behind it. It comes in three forms: a centred modal, a right sheet and a bottom sheet.</p>
   <div class="doc-meta"><span>9 Figma variants</span><span><code>dialog.aec-modal</code></span></div>
+
+  <div class="doc-intro">
+    <p>A modal interrupts. Nothing else on the page can be used until it is closed, so use one only when the person must deal with something now: confirming that they want to remove a trade-in, or a short task such as choosing delivery. Use a <strong>right sheet</strong> for supporting detail that people read next to the page, such as a payment breakdown. On small screens a modal opens as a <strong>bottom sheet</strong>. For messages that don't need an answer, use a <a href="snackbar.html">snackbar</a> or an <a href="alert.html">alert</a>.</p>
+  </div>
 
   <section class="doc-section">
     <h2 id="demo">Try it</h2>
@@ -44,31 +48,69 @@ figma: 3769-50205
   </section>
 
   <section class="doc-section">
+    <h2 id="types">Types</h2>
+    <p>Choose the type by what the content is for. Modals and sheets have no interactive states of their own. The buttons inside them follow the <a href="button.html">button</a> states.</p>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3>Modal</h3><p>Centred on the page. For confirmations and short, focused tasks. Small suits a message and two buttons, medium a short form, large a comparison.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" type="button" data-aec-open="demo-modal">Open modal</button></div></div>
+      <div class="doc-variant"><div><h3>Right sheet</h3><p>Slides in from the right and fills the height of the screen. For supporting detail that relates to the page, such as a payment breakdown or vehicle specs.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" type="button" data-aec-open="demo-right">Open right sheet</button></div></div>
+      <div class="doc-variant"><div><h3>Bottom sheet</h3><p>Slides up from the bottom, full width. For quick choices on mobile. On screens narrower than 768px, every modal opens as a bottom sheet.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" type="button" data-aec-open="demo-bottom">Open bottom sheet</button></div></div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Type</th><th>Class</th><th>Widths (sm / md / lg)</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Modal</td><td><code>.aec-modal</code> + <code>--sm</code> / <code>--lg</code></td><td>464 / 624 / 860px</td><td><code>--drp-dialog-container-bg-*</code>, <code>--aec-dialog-color-*</code></td></tr>
+        <tr><td>Right sheet</td><td><code>.aec-modal--right-sheet</code> + <code>--md</code> / <code>--lg</code></td><td>480 / 768 / 1024px, full height</td><td><code>--drp-drawer-container-right-bg-*</code>, <code>--aec-drawer-color-*</code></td></tr>
+        <tr><td>Bottom sheet</td><td><code>.aec-modal--bottom-sheet</code></td><td>Full width, up to 90% of the viewport height</td><td><code>--drp-drawer-container-bottom-bg-*</code>, <code>--aec-drawer-color-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <p>The widths are layout sizes and are the same in every brand. Each one shrinks to fit narrow screens.</p>
+  </section>
+
+  <section class="doc-section">
     <h2 id="anatomy">Anatomy</h2>
-    <div class="doc-example" data-label="Modal markup">
-      <div class="doc-example-preview is-plain" style="justify-content:center">
-        <div class="aec-modal aec-modal--sm is-static" role="dialog" aria-labelledby="st-title">
-          <div class="aec-modal__header"><h2 class="aec-modal__title" id="st-title">Title goes here</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
-          <div class="aec-modal__body"><p>Content slot. Body-1 text, form fields or a summary.</p></div>
-          <div class="aec-modal__footer"><button class="aec-btn aec-btn--secondary aec-btn--outline" type="button">Cancel</button><button class="aec-btn aec-btn--primary" type="button">Confirm</button></div>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-modal aec-modal--sm is-static" id="md-anatomy" role="dialog" aria-labelledby="st-title" style="width:100%;max-width:340px">
+          <div class="aec-modal__header" id="md-anatomy-header"><h3 class="aec-modal__title" id="st-title">Title goes here</h3><button class="aec-icon-btn aec-icon-btn--neutral" type="button" tabindex="-1" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+          <div class="aec-modal__body" id="md-anatomy-body"><p>Content slot. Text, form fields or a summary.</p></div>
+          <div class="aec-modal__footer"><button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" type="button" tabindex="-1">Cancel</button><button class="aec-btn aec-btn--primary aec-btn--sm" type="button" tabindex="-1">Confirm</button></div>
         </div>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 176px);top:150px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 150px);top:24px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 176px);top:53px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 160px);top:96px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 182px);bottom:56px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Surface</strong><code>--aec-dialog-color-bg</code>, with <span data-measure="#md-anatomy" data-prop="border-radius"></span> corners and a <span data-measure="#md-anatomy" data-prop="border-width"></span> border in this brand. A backdrop (<code>backdrop/default</code>) covers the page.</span></li>
+        <li><span><strong>Title</strong><span data-measure="#st-title" data-prop="font-size"></span> <span data-measure="#st-title" data-prop="font-family"></span>, weight <span data-measure="#st-title" data-prop="font-weight"></span>. It names the dialog.</span></li>
+        <li><span><strong>Close button</strong>A neutral <a href="icon-button.html">icon button</a> with <code>aria-label="Close"</code>.</span></li>
+        <li><span><strong>Body</strong>The content slot. It scrolls when the content is longer than the screen.</span></li>
+        <li><span><strong>Footer (CTA bar)</strong>The actions, with the primary action last. Optional for sheets that only show information.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Spacing</h2>
+    <p>The blue marks are measured from a real small modal in the active brand, so they change when you switch brands. On screens narrower than 768px, the padding drops to <code>--aec-spacing-container-padding-s</code> and footer buttons fill the width.</p>
+    <div class="doc-spec" data-spec="height,padding,padding-y,gap">
+      <div class="aec-modal aec-modal--sm is-static" id="md-spec" aria-hidden="true" style="max-width:100%">
+        <div class="aec-modal__header" id="md-spec-header" data-spec-target><span class="aec-modal__title">Remove trade-in?</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" tabindex="-1" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+        <div class="aec-modal__body" id="md-spec-body" data-spec-target><p>Your trade-in will be removed from this deal.</p><p>Your monthly payment will go up by about $236.</p></div>
+        <div class="aec-modal__footer" id="md-spec-footer" data-spec-target><button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" tabindex="-1">Keep trade-in</button><button class="aec-btn aec-btn--destructive" type="button" tabindex="-1">Remove</button></div>
       </div>
     </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Part</th><th>Desktop</th><th>Mobile (&lt; 768px)</th></tr></thead>
+      <thead><tr><th>Part</th><th>Height</th><th>Side padding</th><th>Top padding</th><th>Bottom padding</th><th>Gap</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Header</td><td>64px minimum height, padding 24/24/16, heading-4 title, 24px close icon, 1px bottom divider</td><td>16px padding</td></tr>
-        <tr><td>Body</td><td>24px padding and gap, scrolls when content is long</td><td>16px</td></tr>
-        <tr><td>Footer (CTA bar)</td><td>24px padding, 8px gap, buttons aligned right</td><td>16px, buttons fill the width</td></tr>
-        <tr><td>Surface</td><td colspan="2"><code>bg/default</code>, square corners, <code>shadow/2xl</code>, backdrop <code>backdrop/default</code></td></tr>
-      </tbody>
-    </table></div>
-    <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Type</th><th>Class</th><th>Widths (sm / md / lg)</th></tr></thead>
-      <tbody>
-        <tr><td>Modal</td><td><code>.aec-modal</code> + <code>--sm</code> / <code>--lg</code></td><td>464 / 624 / 860px</td></tr>
-        <tr><td>Right sheet</td><td><code>.aec-modal--right-sheet</code></td><td>480 / 768 / 1024px, full height</td></tr>
-        <tr><td>Bottom sheet</td><td><code>.aec-modal--bottom-sheet</code></td><td>Full width, up to 90% of the viewport height. Modals become bottom sheets on mobile.</td></tr>
+        <tr><td>Header</td><td data-measure="#md-spec-header" data-prop="height"></td><td data-measure="#md-spec-header" data-prop="padding-left"></td><td data-measure="#md-spec-header" data-prop="padding-top"></td><td data-measure="#md-spec-header" data-prop="padding-bottom"></td><td data-measure="#md-spec-header" data-prop="gap"></td><td><code>--aec-spacing-container-padding-*</code>, <code>--drp-typography-heading-4-*</code></td></tr>
+        <tr><td>Body</td><td>Fits content</td><td data-measure="#md-spec-body" data-prop="padding-left"></td><td data-measure="#md-spec-body" data-prop="padding-top"></td><td data-measure="#md-spec-body" data-prop="padding-bottom"></td><td data-measure="#md-spec-body" data-prop="gap"></td><td><code>--aec-spacing-container-padding-*</code>, <code>--aec-spacing-container-gap-*</code></td></tr>
+        <tr><td>Footer</td><td data-measure="#md-spec-footer" data-prop="height"></td><td data-measure="#md-spec-footer" data-prop="padding-left"></td><td data-measure="#md-spec-footer" data-prop="padding-top"></td><td data-measure="#md-spec-footer" data-prop="padding-bottom"></td><td data-measure="#md-spec-footer" data-prop="gap"></td><td><code>--aec-spacing-container-padding-*</code>, <code>--aec-spacing-container-gap-s</code></td></tr>
+        <tr><td>Surface</td><td>—</td><td colspan="4">Width <span data-measure="#md-spec" data-prop="width"></span> (small), corners <span data-measure="#md-spec" data-prop="border-radius"></span>, border <span data-measure="#md-spec" data-prop="border-width"></span></td><td><code>--drp-dialog-container-bg-*</code>, <code>--aec-dialog-color-*</code>, <code>--aec-dialog-box-shadow</code></td></tr>
       </tbody>
     </table></div>
   </section>
@@ -80,24 +122,109 @@ figma: 3769-50205
       <li>Use a right sheet for supporting detail that people compare with the page, such as a payment breakdown.</li>
       <li>Don't stack modals, and don't open them without a user action.</li>
     </ul>
+    <h3 id="dodont-usage">Do / don't: usage</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__header"><span class="aec-modal__title">Remove trade-in?</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div><div class="aec-modal__body"><p>Your monthly payment will go up by about $236.</p></div><div class="aec-modal__footer"><button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" type="button">Keep trade-in</button><button class="aec-btn aec-btn--destructive aec-btn--sm" type="button">Remove</button></div></div>
+      </div><figcaption><strong>Do</strong>Use one main action, last in the footer. Make it destructive when it removes something.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__header"><span class="aec-modal__title">Remove trade-in?</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div><div class="aec-modal__body"><p>Your monthly payment will go up by about $236.</p></div><div class="aec-modal__footer"><button class="aec-btn aec-btn--primary aec-btn--sm" type="button">Remove</button><button class="aec-btn aec-btn--primary aec-btn--sm" type="button">Keep trade-in</button></div></div>
+      </div><figcaption><strong>Don't</strong>Use two primary buttons, or a primary colour for a destructive action.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__header"><span class="aec-modal__title">Choose delivery</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div><div class="aec-modal__body"><p>Home delivery is free within 50 miles.</p></div><div class="aec-modal__footer"><button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" type="button">Cancel</button><button class="aec-btn aec-btn--primary aec-btn--sm" type="button">Confirm</button></div></div>
+      </div><figcaption><strong>Do</strong>Always give people a way out: a close button and a cancel action.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__header"><span class="aec-modal__title">Choose delivery</span></div><div class="aec-modal__body"><p>Home delivery is free within 50 miles.</p></div><div class="aec-modal__footer"><button class="aec-btn aec-btn--primary aec-btn--sm" type="button">Confirm</button></div></div>
+      </div><figcaption><strong>Don't</strong>Remove the close button so the only way out is to agree.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__header"><span class="aec-modal__title">Payment breakdown</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div><div class="aec-modal__body"><p>MSRP $48,395 · Offers −$2,000 · Trade-in −$14,200</p></div></div>
+      </div><figcaption><strong>Do</strong>Leave out the footer when there is nothing to confirm, as in a payment breakdown sheet.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__header"><span class="aec-modal__title">Credit application</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div><div class="aec-modal__body"><p>Step 1 of 6: Personal details, address history, employment, income, co-applicant, review…</p></div></div>
+      </div><figcaption><strong>Don't</strong>Put a long, multi-step task in a modal. Give it its own page.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>Write the title as the question or task, in sentence case, in a few words. The body says what will happen, with the numbers that matter. Button labels repeat the verb from the title, so people can choose without reading the body again.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__header"><span class="aec-modal__title">Remove trade-in?</span></div><div class="aec-modal__body"><p>Your monthly payment will go up by about $236.</p></div></div>
+      </div><figcaption><strong>Do</strong>Ask a specific question and say what will change.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__header"><span class="aec-modal__title">Are you sure?</span></div><div class="aec-modal__body"><p>This action can't be undone.</p></div></div>
+      </div><figcaption><strong>Don't</strong>Use a vague title. People can't tell what they are agreeing to.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__footer" style="border-top:0"><button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" type="button">Keep trade-in</button><button class="aec-btn aec-btn--destructive aec-btn--sm" type="button">Remove</button></div></div>
+      </div><figcaption><strong>Do</strong>Label each action with what it does.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview">
+        <div class="aec-modal is-static" style="width:100%;max-width:340px"><div class="aec-modal__footer" style="border-top:0"><button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" type="button">No</button><button class="aec-btn aec-btn--destructive aec-btn--sm" type="button">Yes</button></div></div>
+      </div><figcaption><strong>Don't</strong>Use "Yes" and "No". People have to reread the title to know which is which.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Native dialog <span class="doc-wcag">WCAG 2.4.3 · 2.1.2</span></h3><p>Built on <code>&lt;dialog&gt;</code> with <code>showModal()</code>. Focus is trapped in the dialog, the page behind is inert, Esc closes it, and focus returns to the trigger afterwards.</p></div>
-      <div class="doc-a11y-item"><h3>Name <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Point <code>aria-labelledby</code> at the title.</p></div>
+      <div class="doc-a11y-item"><h3>Name <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Point <code>aria-labelledby</code> at the title. If the body is a short message, point <code>aria-describedby</code> at it too, so it is read out when the dialog opens.</p></div>
+      <div class="doc-a11y-item"><h3>Initial focus <span class="doc-wcag">WCAG 2.4.3</span></h3><p>Focus moves to the first focusable element, usually the close button. For a destructive confirmation, put <code>autofocus</code> on the safe action, such as "Keep trade-in", so Enter doesn't remove anything by mistake.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab and Shift+Tab cycle through the controls inside the dialog only. Esc closes it, the same as the close button.</p></div>
       <div class="doc-a11y-item"><h3>Closing</h3><p>Clicking the backdrop closes the dialog, except when it has <code>data-static</code>. Use that for forms with unsaved changes.</p></div>
+      <div class="doc-a11y-item"><h3>Motion <span class="doc-wcag">WCAG 2.3.3</span></h3><p>The open animation is turned off when people ask for reduced motion.</p></div>
+    </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Text needs at least 4.5:1 against the dialog surface. These ratios are measured live in the active brand. For button contrast, see <a href="button.html#contrast">Button</a>.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Title</td><td><div class="aec-modal is-static" style="width:220px;box-shadow:none" aria-hidden="true"><div class="aec-modal__header"><span class="aec-modal__title" data-contrast-sample>Remove trade-in?</span></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Body text</td><td><div class="aec-modal is-static" style="width:220px;box-shadow:none" aria-hidden="true"><div class="aec-modal__body"><p data-contrast-sample>Your payment will go up.</p></div></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>Focus rings need at least 3:1. The surface edge and dividers are decorative, because the backdrop and shadow already separate the dialog from the page.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Surface border (decorative)</td><td><div class="aec-modal is-static" style="width:120px;height:40px;box-shadow:none" aria-hidden="true" data-contrast-sample data-contrast-mode="border"></div></td><td data-contrast-result></td></tr>
+        <tr><td>Footer divider (decorative)</td><td><div class="aec-modal is-static" style="width:220px;box-shadow:none" aria-hidden="true"><div class="aec-modal__footer" data-contrast-sample data-contrast-mode="border"><button class="aec-btn aec-btn--primary aec-btn--sm" type="button" tabindex="-1">Confirm</button></div></div></td><td data-contrast-result></td></tr>
+        <tr><td>Close button focus ring</td><td><div class="aec-modal is-static" style="width:220px;box-shadow:none" aria-hidden="true"><div class="aec-modal__header"><span class="aec-modal__title">Title</span><button class="aec-icon-btn aec-icon-btn--neutral is-focus" type="button" tabindex="-1" aria-label="Close" data-contrast-sample data-contrast-mode="focus"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><code>&lt;dialog class="aec-modal" aria-labelledby=&quot;remove-title&quot;&gt;</code></div><figcaption><strong>Do</strong>Name the dialog from its visible title. A screen reader says "Remove trade-in?, dialog".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><code>&lt;div class="aec-modal" style="display:flex"&gt;</code></div><figcaption><strong>Don't</strong>Build a dialog from a plain <code>&lt;div&gt;</code>. Focus escapes to the page behind and Esc does nothing.</figcaption></figure>
     </div>
   </section>
 
   <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class or attribute</th></tr></thead>
+      <tbody>
+        <tr><td>Type</td><td>modal / right sheet / bottom sheet</td><td><code>dialog.aec-modal</code> / <code>.aec-modal--right-sheet</code> / <code>.aec-modal--bottom-sheet</code></td></tr>
+        <tr><td>Size</td><td>sm / md / lg</td><td><code>.aec-modal--sm</code> / (none) or <code>--md</code> / <code>.aec-modal--lg</code></td></tr>
+        <tr><td>Header</td><td>—</td><td><code>.aec-modal__header</code> &gt; <code>.aec-modal__title</code> + close <code>.aec-icon-btn[data-aec-close]</code></td></tr>
+        <tr><td>Content</td><td>slot</td><td><code>.aec-modal__body</code></td></tr>
+        <tr><td>CTA bar</td><td>slot</td><td><code>.aec-modal__footer</code></td></tr>
+        <tr><td>—</td><td>open / close</td><td><code>[data-aec-open="id"]</code> on the trigger / <code>[data-aec-close]</code> inside</td></tr>
+        <tr><td>—</td><td>no backdrop close</td><td><code>data-static</code> on the <code>&lt;dialog&gt;</code></td></tr>
+        <tr><td>—</td><td>docs preview</td><td><code>.aec-modal.is-static</code> shows a modal in the page flow</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
-    <ul class="doc-small">
-      <li>The content and footer are placeholder slots in Figma.</li>
-      <li>The header divider uses #d2d2d2 or #dedede, neither of which is a token. The code uses <code>border/default</code>.</li>
-      <li>Figma has no shadow or backdrop. The code adds <code>shadow/2xl</code> and <code>backdrop/default</code>.</li>
-      <li>The 20px bold title has no text style. The code uses heading-4.</li>
-    </ul>
+    <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><div><p><strong>Differences found in the Figma library, for the design team to review:</strong></p>
+      <ul style="margin:8px 0 0;padding-left:18px">
+        <li>The content and footer are placeholder slots in Figma.</li>
+        <li>The header divider uses #d2d2d2 or #dedede, neither of which is a token. The code uses <code>border/default</code>.</li>
+        <li>Figma has no shadow or backdrop. The code adds a shadow and <code>backdrop/default</code>.</li>
+        <li>The 20px bold title has no text style. The code uses heading-4.</li>
+      </ul></div></div>
   </section>
 </div>

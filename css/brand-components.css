@@ -518,20 +518,24 @@
 [data-brand] .aec-btn .aec-icon {
   color: var(--_ic, currentColor);
 }
-[data-brand] .aec-btn:hover {
+[data-brand] .aec-btn:hover,
+[data-brand] .aec-btn.is-hover {
   background: var(--_bg-h, var(--_bg));
   border-color: var(--_bd-h, var(--_bd));
   color: var(--_fg-h, var(--_fg));
 }
-[data-brand] .aec-btn:hover .aec-icon {
+[data-brand] .aec-btn:hover .aec-icon,
+[data-brand] .aec-btn.is-hover .aec-icon {
   color: var(--_ic-h, var(--_ic, currentColor));
 }
-[data-brand] .aec-btn:active {
+[data-brand] .aec-btn:active,
+[data-brand] .aec-btn.is-pressed {
   background: var(--_bg-a, var(--_bg-h));
   border-color: var(--_bd-a, var(--_bd-h));
   color: var(--_fg-a, var(--_fg-h));
 }
-[data-brand] .aec-btn:active .aec-icon {
+[data-brand] .aec-btn:active .aec-icon,
+[data-brand] .aec-btn.is-pressed .aec-icon {
   color: var(--_ic-a, var(--_ic-h, currentColor));
 }
 [data-brand] .aec-btn:disabled,
@@ -736,12 +740,14 @@
   border-color: var(--_bd);
   color: var(--_ic, var(--_fg));
 }
-[data-brand] .aec-icon-btn:hover {
+[data-brand] .aec-icon-btn:hover,
+[data-brand] .aec-icon-btn.is-hover {
   background: var(--_bg-h, var(--_bg));
   border-color: var(--_bd-h, var(--_bd));
   color: var(--_ic-h, var(--_fg-h));
 }
-[data-brand] .aec-icon-btn:active {
+[data-brand] .aec-icon-btn:active,
+[data-brand] .aec-icon-btn.is-pressed {
   background: var(--_bg-a, var(--_bg-h));
   border-color: var(--_bd-a, var(--_bd-h));
   color: var(--_ic-a, var(--_fg-a));
@@ -767,10 +773,13 @@
   color: var(--aec-link-color-primary-icon-default);
 }
 [data-brand] .aec-link:hover,
-[data-brand] .aec-link:active {
+[data-brand] .aec-link.is-hover,
+[data-brand] .aec-link:active,
+[data-brand] .aec-link.is-pressed {
   color: var(--aec-link-color-primary-text-hover);
 }
-[data-brand] .aec-link:hover .aec-icon {
+[data-brand] .aec-link:hover .aec-icon,
+[data-brand] .aec-link.is-hover .aec-icon {
   color: var(--aec-link-color-primary-icon-hover);
 }
 [data-brand] .aec-link--lg {
@@ -793,7 +802,9 @@
   color: var(--aec-link-color-neutral-text-default);
 }
 [data-brand] .aec-link--neutral:hover,
-[data-brand] .aec-link--neutral:active {
+[data-brand] .aec-link--neutral.is-hover,
+[data-brand] .aec-link--neutral:active,
+[data-brand] .aec-link--neutral.is-pressed {
   color: var(--aec-link-color-neutral-text-hover);
 }
 [data-brand] .aec-link--neutral .aec-icon {
@@ -803,7 +814,9 @@
   color: var(--aec-link-color-inverse-text-default);
 }
 [data-brand] .aec-link--inverse:hover,
-[data-brand] .aec-link--inverse:active {
+[data-brand] .aec-link--inverse.is-hover,
+[data-brand] .aec-link--inverse:active,
+[data-brand] .aec-link--inverse.is-pressed {
   color: var(--aec-link-color-inverse-text-hover);
 }
 [data-brand] .aec-link--inverse .aec-icon {
@@ -892,20 +905,24 @@
 [data-brand] .aec-toggle .aec-icon {
   color: var(--_ic, currentColor);
 }
-[data-brand] .aec-toggle:hover {
+[data-brand] .aec-toggle:hover,
+[data-brand] .aec-toggle.is-hover {
   background: var(--_bg-h, var(--_bg));
   border-color: var(--_bd-h, var(--_bd));
   color: var(--_fg-h, var(--_fg));
 }
-[data-brand] .aec-toggle:hover .aec-icon {
+[data-brand] .aec-toggle:hover .aec-icon,
+[data-brand] .aec-toggle.is-hover .aec-icon {
   color: var(--_ic-h, var(--_ic, currentColor));
 }
-[data-brand] .aec-toggle:active {
+[data-brand] .aec-toggle:active,
+[data-brand] .aec-toggle.is-pressed {
   background: var(--_bg-a, var(--_bg-h));
   border-color: var(--_bd-a, var(--_bd-h));
   color: var(--_fg-a, var(--_fg-h));
 }
-[data-brand] .aec-toggle:active .aec-icon {
+[data-brand] .aec-toggle:active .aec-icon,
+[data-brand] .aec-toggle.is-pressed .aec-icon {
   color: var(--_ic-a, var(--_ic-h, currentColor));
 }
 [data-brand] .aec-toggle:disabled,
@@ -938,12 +955,14 @@
   text-transform: var(--drp-toggle-group-typography-small-text-transform);
   letter-spacing: var(--drp-toggle-group-typography-small-letter-spacing);
 }
-[data-brand] .aec-toggle-group__item:hover {
+[data-brand] .aec-toggle-group__item:hover,
+[data-brand] .aec-toggle-group__item.is-hover {
   background: var(--aec-toggle-group-tab-item-color-option-1-bg-hover);
   border-color: var(--aec-toggle-group-tab-item-color-option-1-border-hover);
   color: var(--aec-toggle-group-tab-item-color-option-1-text-hover);
 }
-[data-brand] .aec-toggle-group__item:active {
+[data-brand] .aec-toggle-group__item:active,
+[data-brand] .aec-toggle-group__item.is-pressed {
   background: var(--aec-toggle-group-tab-item-color-option-1-bg-active);
   border-color: var(--aec-toggle-group-tab-item-color-option-1-border-active);
   color: var(--aec-toggle-group-tab-item-color-option-1-text-active);
@@ -1141,12 +1160,14 @@
 [data-brand] .aec-chip--selectable .aec-icon {
   color: var(--aec-chip-selectable-color-icon-default);
 }
-[data-brand] .aec-chip--selectable:hover {
+[data-brand] .aec-chip--selectable:hover,
+[data-brand] .aec-chip--selectable.is-hover {
   background: var(--aec-chip-selectable-color-bg-hover);
   border-color: var(--aec-chip-selectable-color-border-hover);
   color: var(--aec-chip-selectable-color-text-hover);
 }
-[data-brand] .aec-chip--selectable:active {
+[data-brand] .aec-chip--selectable:active,
+[data-brand] .aec-chip--selectable.is-pressed {
   background: var(--aec-chip-selectable-color-bg-active);
   border-color: var(--aec-chip-selectable-color-border-active);
   color: var(--aec-chip-selectable-color-text-active);
@@ -1174,10 +1195,17 @@
   border-color: var(--aec-chip-selectable-color-inverse-border-default);
   color: var(--aec-chip-selectable-color-inverse-text-default);
 }
-[data-brand] .aec-chip--inverse.aec-chip--selectable:hover {
+[data-brand] .aec-chip--inverse.aec-chip--selectable:hover,
+[data-brand] .aec-chip--inverse.aec-chip--selectable.is-hover {
   background: var(--aec-chip-selectable-color-inverse-bg-hover);
   border-color: var(--aec-chip-selectable-color-inverse-border-hover);
   color: var(--aec-chip-selectable-color-inverse-text-hover);
+}
+[data-brand] .aec-chip--inverse.aec-chip--selectable:active,
+[data-brand] .aec-chip--inverse.aec-chip--selectable.is-pressed {
+  background: var(--aec-chip-selectable-color-inverse-bg-active);
+  border-color: var(--aec-chip-selectable-color-inverse-border-active);
+  color: var(--aec-chip-selectable-color-inverse-text-active);
 }
 [data-brand] .aec-chip--inverse.aec-chip--selectable[aria-pressed="true"] {
   background: var(--aec-chip-selectable-color-inverse-bg-selected-default);
@@ -1231,7 +1259,8 @@
 [data-brand] .aec-chip--input .aec-chip__remove {
   color: var(--aec-chip-dismissable-color-icon-default);
 }
-[data-brand] .aec-chip--input:hover {
+[data-brand] .aec-chip--input:hover,
+[data-brand] .aec-chip--input.is-hover {
   background: var(--aec-chip-dismissable-color-bg-hover);
   border-color: var(--aec-chip-dismissable-color-border-hover);
   color: var(--aec-chip-dismissable-color-text-hover);
@@ -1246,13 +1275,30 @@
   border-color: var(--aec-chip-dismissable-color-inverse-border-default);
   color: var(--aec-chip-dismissable-color-inverse-text-default);
 }
-[data-brand] .aec-chip--inverse.aec-chip--input:hover {
+[data-brand] .aec-chip--inverse.aec-chip--input:hover,
+[data-brand] .aec-chip--inverse.aec-chip--input.is-hover {
   background: var(--aec-chip-dismissable-color-inverse-bg-hover);
   border-color: var(--aec-chip-dismissable-color-inverse-border-hover);
   color: var(--aec-chip-dismissable-color-inverse-text-hover);
 }
 [data-brand] .aec-chip--inverse .aec-chip__remove {
   color: var(--aec-chip-dismissable-color-inverse-icon-default);
+}
+[data-brand] .aec-chip__remove:hover,
+[data-brand] .aec-chip__remove.is-hover {
+  color: var(--aec-chip-dismissable-color-icon-hover);
+}
+[data-brand] .aec-chip--inverse .aec-chip__remove:hover,
+[data-brand] .aec-chip--inverse .aec-chip__remove.is-hover {
+  color: var(--aec-chip-dismissable-color-inverse-icon-hover);
+}
+[data-brand] .aec-chip--inverse.aec-chip--input[aria-disabled="true"] {
+  background: var(--aec-chip-dismissable-color-inverse-bg-disabled);
+  border-color: var(--aec-chip-dismissable-color-inverse-border-disabled);
+  color: var(--aec-chip-dismissable-color-inverse-text-disabled);
+}
+[data-brand] .aec-chip--input[aria-disabled="true"] .aec-chip__remove {
+  color: var(--aec-chip-dismissable-color-icon-disabled);
 }
 /* Checkbox — .drp-checkbox-container + --aec-checkbox-color-*; the mark is a masked ::before so it takes the icon colour */
 [data-brand] .aec-checkbox {
@@ -1276,12 +1322,14 @@
   mask: var(--_mk) center / 70% no-repeat;
   pointer-events: none;
 }
-[data-brand] .aec-checkbox:hover:not(:disabled) {
+[data-brand] .aec-checkbox:hover:not(:disabled),
+[data-brand] .aec-checkbox.is-hover:not(:disabled) {
   background-color: var(--aec-checkbox-color-bg-hover);
   border-color: var(--aec-checkbox-color-border-hover);
   --_ck: var(--aec-checkbox-color-icon-hover);
 }
-[data-brand] .aec-checkbox:active:not(:disabled) {
+[data-brand] .aec-checkbox:active:not(:disabled),
+[data-brand] .aec-checkbox.is-pressed:not(:disabled) {
   background-color: var(--aec-checkbox-color-bg-active);
   border-color: var(--aec-checkbox-color-border-active);
   --_ck: var(--aec-checkbox-color-icon-active);
@@ -1292,10 +1340,29 @@
   border-color: var(--aec-checkbox-color-selected-border-default);
   --_ck: var(--aec-checkbox-color-selected-icon-default);
 }
-[data-brand] .aec-checkbox:checked:hover:not(:disabled) {
+[data-brand] .aec-checkbox:checked:hover:not(:disabled),
+[data-brand] .aec-checkbox:checked.is-hover:not(:disabled) {
   background-color: var(--aec-checkbox-color-selected-bg-hover);
   border-color: var(--aec-checkbox-color-selected-border-hover);
   --_ck: var(--aec-checkbox-color-selected-icon-hover);
+}
+[data-brand] .aec-checkbox:checked:active:not(:disabled),
+[data-brand] .aec-checkbox:checked.is-pressed:not(:disabled) {
+  background-color: var(--aec-checkbox-color-selected-bg-active);
+  border-color: var(--aec-checkbox-color-selected-border-active);
+  --_ck: var(--aec-checkbox-color-selected-icon-active);
+}
+[data-brand] .aec-checkbox:indeterminate:hover:not(:disabled),
+[data-brand] .aec-checkbox:indeterminate.is-hover:not(:disabled) {
+  background-color: var(--aec-checkbox-color-intermediate-bg-hover);
+  border-color: var(--aec-checkbox-color-intermediate-border-hover);
+  --_ck: var(--aec-checkbox-color-intermediate-icon-hover);
+}
+[data-brand] .aec-checkbox:indeterminate:active:not(:disabled),
+[data-brand] .aec-checkbox:indeterminate.is-pressed:not(:disabled) {
+  background-color: var(--aec-checkbox-color-intermediate-bg-active);
+  border-color: var(--aec-checkbox-color-intermediate-border-active);
+  --_ck: var(--aec-checkbox-color-intermediate-icon-active);
 }
 [data-brand] .aec-checkbox:indeterminate {
   background-image: none;
@@ -1320,7 +1387,11 @@
   border-color: var(--aec-checkbox-color-intermediate-border-disabled);
   --_ck: var(--aec-checkbox-color-intermediate-icon-disabled);
 }
-[data-brand] .aec-checkbox[aria-invalid="true"] {
+[data-brand] .aec-checkbox[aria-invalid="true"]:not(:disabled),
+[data-brand] .aec-checkbox[aria-invalid="true"]:hover:not(:disabled),
+[data-brand] .aec-checkbox[aria-invalid="true"].is-hover:not(:disabled),
+[data-brand] .aec-checkbox[aria-invalid="true"]:active:not(:disabled),
+[data-brand] .aec-checkbox[aria-invalid="true"].is-pressed:not(:disabled) {
   border-color: var(--aec-color-error-default);
 }
 [data-brand] .aec-table .aec-checkbox {
@@ -1340,7 +1411,8 @@
   background-color: var(--aec-radio-color-bg-default);
   border-color: var(--aec-radio-color-border-default);
 }
-[data-brand] .aec-radio:hover:not(:disabled) {
+[data-brand] .aec-radio:hover:not(:disabled),
+[data-brand] .aec-radio.is-hover:not(:disabled) {
   background-color: var(--aec-radio-color-bg-hover);
   border-color: var(--aec-radio-color-border-hover);
 }
@@ -1352,6 +1424,11 @@
 [data-brand] .aec-radio:disabled {
   background-color: var(--aec-radio-color-bg-disabled);
   border-color: var(--aec-radio-color-border-disabled);
+}
+[data-brand] .aec-radio[aria-invalid="true"]:not(:disabled),
+[data-brand] .aec-radio[aria-invalid="true"]:hover:not(:disabled),
+[data-brand] .aec-radio[aria-invalid="true"].is-hover:not(:disabled) {
+  border-color: var(--aec-color-error-default);
 }
 [data-brand] .aec-radio:disabled:checked {
   background-color: var(--aec-radio-color-selected-bg-disabled);
@@ -1377,18 +1454,21 @@
   background: var(--aec-switch-color-handle-bg-default);
   box-shadow: 0 0 0 var(--aec-switch-handle-border-width) var(--aec-switch-color-handle-border-default);
 }
-[data-brand] .aec-switch:hover:not(:disabled) {
+[data-brand] .aec-switch:hover:not(:disabled),
+[data-brand] .aec-switch.is-hover:not(:disabled) {
   background-color: var(--aec-switch-color-track-bg-hover);
   border-color: var(--aec-switch-color-track-border-hover);
 }
-[data-brand] .aec-switch:hover:not(:disabled):not(:checked)::before {
+[data-brand] .aec-switch:hover:not(:disabled):not(:checked)::before,
+[data-brand] .aec-switch.is-hover:not(:disabled):not(:checked)::before {
   background: var(--aec-switch-color-handle-bg-hover);
 }
 [data-brand] .aec-switch:checked {
   background-color: var(--aec-switch-color-track-selected-bg-default);
   border-color: var(--aec-switch-color-track-selected-border-default);
 }
-[data-brand] .aec-switch:checked:hover:not(:disabled) {
+[data-brand] .aec-switch:checked:hover:not(:disabled),
+[data-brand] .aec-switch:checked.is-hover:not(:disabled) {
   background-color: var(--aec-switch-color-track-selected-bg-hover);
   border-color: var(--aec-switch-color-track-selected-border-hover);
 }
@@ -1421,11 +1501,13 @@
   background: var(--aec-input-standard-outlined-color-bg-default);
   border-color: var(--aec-input-standard-outlined-color-border-default);
 }
-[data-brand] .aec-field__box:hover {
+[data-brand] .aec-field__box:hover,
+[data-brand] .aec-field__box.is-hover {
   background: var(--aec-input-standard-outlined-color-bg-hover);
   border-color: var(--aec-input-standard-outlined-color-border-hover);
 }
-[data-brand] .aec-field__box:focus-within {
+[data-brand] .aec-field__box:focus-within,
+[data-brand] .aec-field__box.is-focus {
   background: var(--aec-input-standard-outlined-color-bg-active);
   border-color: var(--aec-input-standard-outlined-color-border-active);
 }
@@ -1464,11 +1546,13 @@
   background: var(--aec-input-material-filled-color-bg-default);
   border-color: var(--aec-input-material-filled-color-border-default);
 }
-[data-brand] .aec-field--material .aec-field__box:hover {
+[data-brand] .aec-field--material .aec-field__box:hover,
+[data-brand] .aec-field--material .aec-field__box.is-hover {
   background: var(--aec-input-material-filled-color-bg-hover);
   border-color: var(--aec-input-material-filled-color-border-hover);
 }
-[data-brand] .aec-field--material .aec-field__box:focus-within {
+[data-brand] .aec-field--material .aec-field__box:focus-within,
+[data-brand] .aec-field--material .aec-field__box.is-focus {
   background: var(--aec-input-material-filled-color-bg-active);
   border-color: var(--aec-input-material-filled-color-border-active);
 }
@@ -1532,6 +1616,7 @@
   color: var(--aec-input-material-filled-color-label-prompt);
 }
 [data-brand] .aec-field--material .aec-field__float:focus-within .aec-field__label,
+[data-brand] .aec-field--material .aec-field__float.is-focus .aec-field__label,
 [data-brand] .aec-field--material .aec-field__input:not(:placeholder-shown) + .aec-field__label,
 [data-brand] .aec-field--material select.aec-field__input + .aec-field__label {
   font-family: var(--drp-input-material-filled-typography-label-font-family);
@@ -1573,12 +1658,14 @@
   height: var(--drp-tab-underlined-inside-tab-container-bg-large-height);
   border-bottom-width: var(--drp-tab-underlined-inside-container-border-bottom-width);
 }
-[data-brand] .aec-tabs .aec-tab:hover {
+[data-brand] .aec-tabs .aec-tab:hover,
+[data-brand] .aec-tabs .aec-tab.is-hover {
   background: var(--aec-tabbar-underlined-inside-tab-item-color-bg-hover);
   color: var(--aec-tabbar-underlined-inside-tab-item-color-text-hover);
   border-bottom-color: var(--aec-tabbar-underlined-inside-tab-item-color-border-hover);
 }
-[data-brand] .aec-tabs .aec-tab:active {
+[data-brand] .aec-tabs .aec-tab:active,
+[data-brand] .aec-tabs .aec-tab.is-pressed {
   background: var(--aec-tabbar-underlined-inside-tab-item-color-bg-active);
   color: var(--aec-tabbar-underlined-inside-tab-item-color-text-active);
   border-bottom-color: var(--aec-tabbar-underlined-inside-tab-item-color-border-active);
@@ -1621,12 +1708,14 @@
   height: var(--drp-tab-underlined-inset-tab-container-bg-large-height);
   padding: var(--drp-tab-underlined-inset-container-padding);
 }
-[data-brand] .aec-tabs--inset .aec-tab:hover {
+[data-brand] .aec-tabs--inset .aec-tab:hover,
+[data-brand] .aec-tabs--inset .aec-tab.is-hover {
   background: var(--aec-tabbar-underlined-inset-tab-item-color-bg-hover);
   color: var(--aec-tabbar-underlined-inset-tab-item-color-text-hover);
   border-bottom-color: var(--aec-tabbar-underlined-inset-tab-item-color-border-hover);
 }
-[data-brand] .aec-tabs--inset .aec-tab:active {
+[data-brand] .aec-tabs--inset .aec-tab:active,
+[data-brand] .aec-tabs--inset .aec-tab.is-pressed {
   background: var(--aec-tabbar-underlined-inset-tab-item-color-bg-active);
   color: var(--aec-tabbar-underlined-inset-tab-item-color-text-active);
   border-bottom-color: var(--aec-tabbar-underlined-inset-tab-item-color-border-active);
@@ -1661,11 +1750,13 @@
   border-radius: var(--drp-tab-contained-container-bg-border-radius);
   padding: var(--drp-tab-contained-container-bg-padding);
 }
-[data-brand] .aec-tabs--contained .aec-tab:hover {
+[data-brand] .aec-tabs--contained .aec-tab:hover,
+[data-brand] .aec-tabs--contained .aec-tab.is-hover {
   background: var(--aec-tabbar-contained-tab-item-color-bg-hover);
   color: var(--aec-tabbar-contained-tab-item-color-text-hover);
 }
-[data-brand] .aec-tabs--contained .aec-tab:active {
+[data-brand] .aec-tabs--contained .aec-tab:active,
+[data-brand] .aec-tabs--contained .aec-tab.is-pressed {
   background: var(--aec-tabbar-contained-tab-item-color-bg-active);
   color: var(--aec-tabbar-contained-tab-item-color-text-active);
 }
@@ -1696,11 +1787,13 @@
   height: var(--drp-tab-segment-tab-container-bg-medium-height);
   padding: var(--drp-tab-segment-container-bg-padding);
 }
-[data-brand] .aec-tabs--segment .aec-tab:hover {
+[data-brand] .aec-tabs--segment .aec-tab:hover,
+[data-brand] .aec-tabs--segment .aec-tab.is-hover {
   background: var(--aec-tabbar-segment-tab-item-color-bg-hover);
   color: var(--aec-tabbar-segment-tab-item-color-text-hover);
 }
-[data-brand] .aec-tabs--segment .aec-tab:active {
+[data-brand] .aec-tabs--segment .aec-tab:active,
+[data-brand] .aec-tabs--segment .aec-tab.is-pressed {
   background: var(--aec-tabbar-segment-tab-item-color-bg-active);
   color: var(--aec-tabbar-segment-tab-item-color-text-active);
 }
@@ -1730,12 +1823,14 @@
   padding: var(--drp-tab-stacked-container-bg-padding);
   height: var(--drp-tab-stacked-tab-container-bg-medium-height);
 }
-[data-brand] .aec-tabs--stacked .aec-tab:hover {
+[data-brand] .aec-tabs--stacked .aec-tab:hover,
+[data-brand] .aec-tabs--stacked .aec-tab.is-hover {
   background: var(--aec-tabbar-stacked-tab-item-color-bg-hover);
   color: var(--aec-tabbar-stacked-tab-item-color-text-hover);
   border-color: var(--aec-tabbar-stacked-tab-item-color-border-hover);
 }
-[data-brand] .aec-tabs--stacked .aec-tab:active {
+[data-brand] .aec-tabs--stacked .aec-tab:active,
+[data-brand] .aec-tabs--stacked .aec-tab.is-pressed {
   background: var(--aec-tabbar-stacked-tab-item-color-bg-active);
   color: var(--aec-tabbar-stacked-tab-item-color-text-active);
   border-color: var(--aec-tabbar-stacked-tab-item-color-border-active);
@@ -1766,12 +1861,14 @@
   height: var(--drp-tab-vertical-container-height);
   border-right-width: var(--drp-tab-vertical-container-bg-border-right-width);
 }
-[data-brand] .aec-tabs--vertical .aec-tab:hover {
+[data-brand] .aec-tabs--vertical .aec-tab:hover,
+[data-brand] .aec-tabs--vertical .aec-tab.is-hover {
   background: var(--aec-tabbar-vertical-tab-item-color-bg-hover);
   color: var(--aec-tabbar-vertical-tab-item-color-text-hover);
   border-right-color: var(--aec-tabbar-vertical-tab-item-color-border-hover);
 }
-[data-brand] .aec-tabs--vertical .aec-tab:active {
+[data-brand] .aec-tabs--vertical .aec-tab:active,
+[data-brand] .aec-tabs--vertical .aec-tab.is-pressed {
   background: var(--aec-tabbar-vertical-tab-item-color-bg-active);
   color: var(--aec-tabbar-vertical-tab-item-color-text-active);
   border-right-color: var(--aec-tabbar-vertical-tab-item-color-border-active);
@@ -1806,7 +1903,8 @@
 [data-brand] .aec-accordion__trigger::after {
   background: var(--aec-accordion-color-icon-default);
 }
-[data-brand] .aec-accordion__trigger:hover {
+[data-brand] .aec-accordion__trigger:hover,
+[data-brand] .aec-accordion__trigger.is-hover {
   background: var(--aec-accordion-color-bg-hover);
   color: var(--aec-accordion-color-text-hover);
 }
@@ -2060,6 +2158,11 @@
   letter-spacing: var(--drp-tooltip-typography-title-letter-spacing);
   color: var(--aec-tooltip-color-dark-title);
 }
+[data-brand] .aec-tooltip--sm {
+  padding: 8px 12px;
+  font-size: var(--aec-typography-body-3-font-size);
+  line-height: var(--aec-typography-body-3-line-height);
+}
 [data-brand] .aec-tooltip--light {
   --_bg: var(--aec-tooltip-color-white-bg);
   color: var(--aec-tooltip-color-white-body);
@@ -2079,10 +2182,12 @@
 [data-brand] .aec-breadcrumbs a {
   color: var(--aec-breadcrumb-color-text-default);
 }
-[data-brand] .aec-breadcrumbs a:hover {
+[data-brand] .aec-breadcrumbs a:hover,
+[data-brand] .aec-breadcrumbs a.is-hover {
   color: var(--aec-breadcrumb-color-text-hover);
 }
-[data-brand] .aec-breadcrumbs a:active {
+[data-brand] .aec-breadcrumbs a:active,
+[data-brand] .aec-breadcrumbs a.is-pressed {
   color: var(--aec-breadcrumb-color-text-active);
 }
 [data-brand] .aec-breadcrumbs [aria-current="page"] {
@@ -2111,11 +2216,13 @@
   color: var(--aec-list-item-color-text-default);
 }
 [data-brand] .aec-menu__item:hover,
+[data-brand] .aec-menu__item.is-hover,
 [data-brand] .aec-menu__item:focus-visible {
   background: var(--aec-list-item-color-bg-hover);
   color: var(--aec-list-item-color-text-hover);
 }
-[data-brand] .aec-menu__item:active {
+[data-brand] .aec-menu__item:active,
+[data-brand] .aec-menu__item.is-pressed {
   background: var(--aec-list-item-color-bg-active);
   color: var(--aec-list-item-color-text-active);
 }
@@ -2232,3 +2339,91 @@
   background: var(--aec-card-color-bg-default);
   border-color: var(--aec-card-color-border-default);
 }
+/* Static state classes (.is-focus, .is-loading) used by the docs state matrices */
+[data-brand] .aec-snackbar__action:hover,
+[data-brand] .aec-snackbar__action.is-hover {
+  color: var(--aec-color-primary-hover);
+}
+[data-brand] .aec-snackbar__close:hover,
+[data-brand] .aec-snackbar__close.is-hover {
+  color: var(--aec-color-icon-default);
+}
+[data-brand] .is-focus:is(.aec-snackbar__action, .aec-snackbar__close, .aec-btn, .aec-icon-btn, .aec-link, .aec-toggle, .aec-toggle-group__item, .aec-chip--selectable, .aec-chip__remove, .aec-tab, .aec-checkbox, .aec-radio, .aec-switch, .aec-menu__item, .aec-pagination__item, .aec-breadcrumbs a) {
+  outline: 2px solid var(--aec-color-focus-default);
+  outline-offset: 2px;
+}
+[data-brand] .aec-slider.is-focus::-webkit-slider-thumb,
+[data-brand] .aec-slider.is-focus::-moz-range-thumb {
+  outline: 2px solid var(--aec-color-focus-default);
+  outline-offset: 2px;
+}
+[data-brand] .aec-accordion__trigger.is-focus {
+  outline: 2px solid var(--aec-color-focus-default);
+  outline-offset: -2px;
+}
+[data-brand] .aec-field__box.is-focus {
+  outline: 2px solid var(--aec-color-focus-default);
+  outline-offset: 3px;
+}
+[data-brand] .aec-btn.is-loading,
+[data-brand] .aec-btn[aria-busy="true"] {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+[data-brand] .aec-btn.is-loading .aec-icon,
+[data-brand] .aec-btn[aria-busy="true"] .aec-icon {
+  visibility: hidden;
+}
+[data-brand] .aec-btn.is-loading::after,
+[data-brand] .aec-btn[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--_fg, currentColor);
+  border-right-color: transparent;
+  animation: aec-spin .8s linear infinite;
+}
+
+/* Brand typography classes — the same names as the brand files (.drp-typography-*), driven by --drp-typography-* tokens */
+[data-brand] .drp-typography-body-1-regular { font-family: var(--drp-typography-body-1-regular-font-family); font-size: var(--drp-typography-body-1-regular-font-size); line-height: var(--drp-typography-body-1-regular-line-height); font-weight: var(--drp-typography-body-1-regular-font-weight); letter-spacing: var(--drp-typography-body-1-regular-letter-spacing); text-transform: var(--drp-typography-body-1-regular-text-transform); text-decoration: var(--drp-typography-body-1-regular-text-decoration); text-indent: var(--drp-typography-body-1-regular-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-1-medium { font-family: var(--drp-typography-body-1-medium-font-family); font-size: var(--drp-typography-body-1-medium-font-size); line-height: var(--drp-typography-body-1-medium-line-height); font-weight: var(--drp-typography-body-1-medium-font-weight); letter-spacing: var(--drp-typography-body-1-medium-letter-spacing); text-transform: var(--drp-typography-body-1-medium-text-transform); text-decoration: var(--drp-typography-body-1-medium-text-decoration); text-indent: var(--drp-typography-body-1-medium-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-1-bold { font-family: var(--drp-typography-body-1-bold-font-family); font-size: var(--drp-typography-body-1-bold-font-size); line-height: var(--drp-typography-body-1-bold-line-height); font-weight: var(--drp-typography-body-1-bold-font-weight); letter-spacing: var(--drp-typography-body-1-bold-letter-spacing); text-transform: var(--drp-typography-body-1-bold-text-transform); text-decoration: var(--drp-typography-body-1-bold-text-decoration); text-indent: var(--drp-typography-body-1-bold-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-1-link { font-family: var(--drp-typography-body-1-link-font-family); font-size: var(--drp-typography-body-1-link-font-size); line-height: var(--drp-typography-body-1-link-line-height); font-weight: var(--drp-typography-body-1-link-font-weight); letter-spacing: var(--drp-typography-body-1-link-letter-spacing); text-transform: var(--drp-typography-body-1-link-text-transform); text-decoration: var(--drp-typography-body-1-link-text-decoration); text-indent: var(--drp-typography-body-1-link-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-1-all-caps { font-family: var(--drp-typography-body-1-all-caps-font-family); font-size: var(--drp-typography-body-1-all-caps-font-size); line-height: var(--drp-typography-body-1-all-caps-line-height); font-weight: var(--drp-typography-body-1-all-caps-font-weight); letter-spacing: var(--drp-typography-body-1-all-caps-letter-spacing); text-transform: var(--drp-typography-body-1-all-caps-text-transform); text-decoration: var(--drp-typography-body-1-all-caps-text-decoration); text-indent: var(--drp-typography-body-1-all-caps-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-1-list { font-family: var(--drp-typography-body-1-list-font-family); font-size: var(--drp-typography-body-1-list-font-size); line-height: var(--drp-typography-body-1-list-line-height); font-weight: var(--drp-typography-body-1-list-font-weight); letter-spacing: var(--drp-typography-body-1-list-letter-spacing); text-transform: var(--drp-typography-body-1-list-text-transform); text-decoration: var(--drp-typography-body-1-list-text-decoration); text-indent: var(--drp-typography-body-1-list-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-2-regular { font-family: var(--drp-typography-body-2-regular-font-family); font-size: var(--drp-typography-body-2-regular-font-size); line-height: var(--drp-typography-body-2-regular-line-height); font-weight: var(--drp-typography-body-2-regular-font-weight); letter-spacing: var(--drp-typography-body-2-regular-letter-spacing); text-transform: var(--drp-typography-body-2-regular-text-transform); text-decoration: var(--drp-typography-body-2-regular-text-decoration); text-indent: var(--drp-typography-body-2-regular-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-2-medium { font-family: var(--drp-typography-body-2-medium-font-family); font-size: var(--drp-typography-body-2-medium-font-size); line-height: var(--drp-typography-body-2-medium-line-height); font-weight: var(--drp-typography-body-2-medium-font-weight); letter-spacing: var(--drp-typography-body-2-medium-letter-spacing); text-transform: var(--drp-typography-body-2-medium-text-transform); text-decoration: var(--drp-typography-body-2-medium-text-decoration); text-indent: var(--drp-typography-body-2-medium-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-2-bold { font-family: var(--drp-typography-body-2-bold-font-family); font-size: var(--drp-typography-body-2-bold-font-size); line-height: var(--drp-typography-body-2-bold-line-height); font-weight: var(--drp-typography-body-2-bold-font-weight); letter-spacing: var(--drp-typography-body-2-bold-letter-spacing); text-transform: var(--drp-typography-body-2-bold-text-transform); text-decoration: var(--drp-typography-body-2-bold-text-decoration); text-indent: var(--drp-typography-body-2-bold-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-2-link { font-family: var(--drp-typography-body-2-link-font-family); font-size: var(--drp-typography-body-2-link-font-size); line-height: var(--drp-typography-body-2-link-line-height); font-weight: var(--drp-typography-body-2-link-font-weight); letter-spacing: var(--drp-typography-body-2-link-letter-spacing); text-transform: var(--drp-typography-body-2-link-text-transform); text-decoration: var(--drp-typography-body-2-link-text-decoration); text-indent: var(--drp-typography-body-2-link-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-2-all-caps { font-family: var(--drp-typography-body-2-all-caps-font-family); font-size: var(--drp-typography-body-2-all-caps-font-size); line-height: var(--drp-typography-body-2-all-caps-line-height); font-weight: var(--drp-typography-body-2-all-caps-font-weight); letter-spacing: var(--drp-typography-body-2-all-caps-letter-spacing); text-transform: var(--drp-typography-body-2-all-caps-text-transform); text-decoration: var(--drp-typography-body-2-all-caps-text-decoration); text-indent: var(--drp-typography-body-2-all-caps-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-2-list { font-family: var(--drp-typography-body-2-list-font-family); font-size: var(--drp-typography-body-2-list-font-size); line-height: var(--drp-typography-body-2-list-line-height); font-weight: var(--drp-typography-body-2-list-font-weight); letter-spacing: var(--drp-typography-body-2-list-letter-spacing); text-transform: var(--drp-typography-body-2-list-text-transform); text-decoration: var(--drp-typography-body-2-list-text-decoration); text-indent: var(--drp-typography-body-2-list-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-3-regular { font-family: var(--drp-typography-body-3-regular-font-family); font-size: var(--drp-typography-body-3-regular-font-size); line-height: var(--drp-typography-body-3-regular-line-height); font-weight: var(--drp-typography-body-3-regular-font-weight); letter-spacing: var(--drp-typography-body-3-regular-letter-spacing); text-transform: var(--drp-typography-body-3-regular-text-transform); text-decoration: var(--drp-typography-body-3-regular-text-decoration); text-indent: var(--drp-typography-body-3-regular-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-3-medium { font-family: var(--drp-typography-body-3-medium-font-family); font-size: var(--drp-typography-body-3-medium-font-size); line-height: var(--drp-typography-body-3-medium-line-height); font-weight: var(--drp-typography-body-3-medium-font-weight); letter-spacing: var(--drp-typography-body-3-medium-letter-spacing); text-transform: var(--drp-typography-body-3-medium-text-transform); text-decoration: var(--drp-typography-body-3-medium-text-decoration); text-indent: var(--drp-typography-body-3-medium-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-3-bold { font-family: var(--drp-typography-body-3-bold-font-family); font-size: var(--drp-typography-body-3-bold-font-size); line-height: var(--drp-typography-body-3-bold-line-height); font-weight: var(--drp-typography-body-3-bold-font-weight); letter-spacing: var(--drp-typography-body-3-bold-letter-spacing); text-transform: var(--drp-typography-body-3-bold-text-transform); text-decoration: var(--drp-typography-body-3-bold-text-decoration); text-indent: var(--drp-typography-body-3-bold-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-3-link { font-family: var(--drp-typography-body-3-link-font-family); font-size: var(--drp-typography-body-3-link-font-size); line-height: var(--drp-typography-body-3-link-line-height); font-weight: var(--drp-typography-body-3-link-font-weight); letter-spacing: var(--drp-typography-body-3-link-letter-spacing); text-transform: var(--drp-typography-body-3-link-text-transform); text-decoration: var(--drp-typography-body-3-link-text-decoration); text-indent: var(--drp-typography-body-3-link-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-3-all-caps { font-family: var(--drp-typography-body-3-all-caps-font-family); font-size: var(--drp-typography-body-3-all-caps-font-size); line-height: var(--drp-typography-body-3-all-caps-line-height); font-weight: var(--drp-typography-body-3-all-caps-font-weight); letter-spacing: var(--drp-typography-body-3-all-caps-letter-spacing); text-transform: var(--drp-typography-body-3-all-caps-text-transform); text-decoration: var(--drp-typography-body-3-all-caps-text-decoration); text-indent: var(--drp-typography-body-3-all-caps-text-indent); margin: 0; }
+[data-brand] .drp-typography-body-3-list { font-family: var(--drp-typography-body-3-list-font-family); font-size: var(--drp-typography-body-3-list-font-size); line-height: var(--drp-typography-body-3-list-line-height); font-weight: var(--drp-typography-body-3-list-font-weight); letter-spacing: var(--drp-typography-body-3-list-letter-spacing); text-transform: var(--drp-typography-body-3-list-text-transform); text-decoration: var(--drp-typography-body-3-list-text-decoration); text-indent: var(--drp-typography-body-3-list-text-indent); margin: 0; }
+[data-brand] .drp-typography-button-large { font-family: var(--drp-typography-button-large-font-family); font-size: var(--drp-typography-button-large-font-size); line-height: var(--drp-typography-button-large-line-height); font-weight: var(--drp-typography-button-large-font-weight); letter-spacing: var(--drp-typography-button-large-letter-spacing); text-transform: var(--drp-typography-button-large-text-transform); text-decoration: var(--drp-typography-button-large-text-decoration); text-indent: var(--drp-typography-button-large-text-indent); margin: 0; }
+[data-brand] .drp-typography-button-medium { font-family: var(--drp-typography-button-medium-font-family); font-size: var(--drp-typography-button-medium-font-size); line-height: var(--drp-typography-button-medium-line-height); font-weight: var(--drp-typography-button-medium-font-weight); letter-spacing: var(--drp-typography-button-medium-letter-spacing); text-transform: var(--drp-typography-button-medium-text-transform); text-decoration: var(--drp-typography-button-medium-text-decoration); text-indent: var(--drp-typography-button-medium-text-indent); margin: 0; }
+[data-brand] .drp-typography-button-small { font-family: var(--drp-typography-button-small-font-family); font-size: var(--drp-typography-button-small-font-size); line-height: var(--drp-typography-button-small-line-height); font-weight: var(--drp-typography-button-small-font-weight); letter-spacing: var(--drp-typography-button-small-letter-spacing); text-transform: var(--drp-typography-button-small-text-transform); text-decoration: var(--drp-typography-button-small-text-decoration); text-indent: var(--drp-typography-button-small-text-indent); margin: 0; }
+[data-brand] .drp-typography-heading-1 { font-family: var(--drp-typography-heading-1-font-family); font-size: var(--drp-typography-heading-1-font-size); line-height: var(--drp-typography-heading-1-line-height); font-weight: var(--drp-typography-heading-1-font-weight); letter-spacing: var(--drp-typography-heading-1-letter-spacing); text-transform: var(--drp-typography-heading-1-text-transform); text-decoration: var(--drp-typography-heading-1-text-decoration); text-indent: var(--drp-typography-heading-1-text-indent); margin: 0; }
+[data-brand] .drp-typography-heading-2 { font-family: var(--drp-typography-heading-2-font-family); font-size: var(--drp-typography-heading-2-font-size); line-height: var(--drp-typography-heading-2-line-height); font-weight: var(--drp-typography-heading-2-font-weight); letter-spacing: var(--drp-typography-heading-2-letter-spacing); text-transform: var(--drp-typography-heading-2-text-transform); text-decoration: var(--drp-typography-heading-2-text-decoration); text-indent: var(--drp-typography-heading-2-text-indent); margin: 0; }
+[data-brand] .drp-typography-heading-3 { font-family: var(--drp-typography-heading-3-font-family); font-size: var(--drp-typography-heading-3-font-size); line-height: var(--drp-typography-heading-3-line-height); font-weight: var(--drp-typography-heading-3-font-weight); letter-spacing: var(--drp-typography-heading-3-letter-spacing); text-transform: var(--drp-typography-heading-3-text-transform); text-decoration: var(--drp-typography-heading-3-text-decoration); text-indent: var(--drp-typography-heading-3-text-indent); margin: 0; }
+[data-brand] .drp-typography-heading-4 { font-family: var(--drp-typography-heading-4-font-family); font-size: var(--drp-typography-heading-4-font-size); line-height: var(--drp-typography-heading-4-line-height); font-weight: var(--drp-typography-heading-4-font-weight); letter-spacing: var(--drp-typography-heading-4-letter-spacing); text-transform: var(--drp-typography-heading-4-text-transform); text-decoration: var(--drp-typography-heading-4-text-decoration); text-indent: var(--drp-typography-heading-4-text-indent); margin: 0; }
+[data-brand] .drp-typography-heading-5 { font-family: var(--drp-typography-heading-5-font-family); font-size: var(--drp-typography-heading-5-font-size); line-height: var(--drp-typography-heading-5-line-height); font-weight: var(--drp-typography-heading-5-font-weight); letter-spacing: var(--drp-typography-heading-5-letter-spacing); text-transform: var(--drp-typography-heading-5-text-transform); text-decoration: var(--drp-typography-heading-5-text-decoration); text-indent: var(--drp-typography-heading-5-text-indent); margin: 0; }
+[data-brand] .drp-typography-heading-6 { font-family: var(--drp-typography-heading-6-font-family); font-size: var(--drp-typography-heading-6-font-size); line-height: var(--drp-typography-heading-6-line-height); font-weight: var(--drp-typography-heading-6-font-weight); letter-spacing: var(--drp-typography-heading-6-letter-spacing); text-transform: var(--drp-typography-heading-6-text-transform); text-decoration: var(--drp-typography-heading-6-text-decoration); text-indent: var(--drp-typography-heading-6-text-indent); margin: 0; }
+[data-brand] .drp-typography-display-1 { font-family: var(--drp-typography-display-1-font-family); font-size: var(--drp-typography-display-1-font-size); line-height: var(--drp-typography-display-1-line-height); font-weight: var(--drp-typography-display-1-font-weight); letter-spacing: var(--drp-typography-display-1-letter-spacing); text-transform: var(--drp-typography-display-1-text-transform); text-decoration: var(--drp-typography-display-1-text-decoration); text-indent: var(--drp-typography-display-1-text-indent); margin: 0; }
+[data-brand] .drp-typography-display-2 { font-family: var(--drp-typography-display-2-font-family); font-size: var(--drp-typography-display-2-font-size); line-height: var(--drp-typography-display-2-line-height); font-weight: var(--drp-typography-display-2-font-weight); letter-spacing: var(--drp-typography-display-2-letter-spacing); text-transform: var(--drp-typography-display-2-text-transform); text-decoration: var(--drp-typography-display-2-text-decoration); text-indent: var(--drp-typography-display-2-text-indent); margin: 0; }
+[data-brand] .drp-typography-mobile-heading-1 { font-family: var(--drp-typography-mobile-heading-1-font-family); font-size: var(--drp-typography-mobile-heading-1-font-size); line-height: var(--drp-typography-mobile-heading-1-line-height); font-weight: var(--drp-typography-mobile-heading-1-font-weight); letter-spacing: var(--drp-typography-mobile-heading-1-letter-spacing); text-transform: var(--drp-typography-mobile-heading-1-text-transform); text-decoration: var(--drp-typography-mobile-heading-1-text-decoration); text-indent: var(--drp-typography-mobile-heading-1-text-indent); margin: 0; }
+[data-brand] .drp-typography-mobile-heading-2 { font-family: var(--drp-typography-mobile-heading-2-font-family); font-size: var(--drp-typography-mobile-heading-2-font-size); line-height: var(--drp-typography-mobile-heading-2-line-height); font-weight: var(--drp-typography-mobile-heading-2-font-weight); letter-spacing: var(--drp-typography-mobile-heading-2-letter-spacing); text-transform: var(--drp-typography-mobile-heading-2-text-transform); text-decoration: var(--drp-typography-mobile-heading-2-text-decoration); text-indent: var(--drp-typography-mobile-heading-2-text-indent); margin: 0; }
+[data-brand] .drp-typography-mobile-heading-3 { font-family: var(--drp-typography-mobile-heading-3-font-family); font-size: var(--drp-typography-mobile-heading-3-font-size); line-height: var(--drp-typography-mobile-heading-3-line-height); font-weight: var(--drp-typography-mobile-heading-3-font-weight); letter-spacing: var(--drp-typography-mobile-heading-3-letter-spacing); text-transform: var(--drp-typography-mobile-heading-3-text-transform); text-decoration: var(--drp-typography-mobile-heading-3-text-decoration); text-indent: var(--drp-typography-mobile-heading-3-text-indent); margin: 0; }
+[data-brand] .drp-typography-mobile-heading-4 { font-family: var(--drp-typography-mobile-heading-4-font-family); font-size: var(--drp-typography-mobile-heading-4-font-size); line-height: var(--drp-typography-mobile-heading-4-line-height); font-weight: var(--drp-typography-mobile-heading-4-font-weight); letter-spacing: var(--drp-typography-mobile-heading-4-letter-spacing); text-transform: var(--drp-typography-mobile-heading-4-text-transform); text-decoration: var(--drp-typography-mobile-heading-4-text-decoration); text-indent: var(--drp-typography-mobile-heading-4-text-indent); margin: 0; }
+[data-brand] .drp-typography-mobile-heading-5 { font-family: var(--drp-typography-mobile-heading-5-font-family); font-size: var(--drp-typography-mobile-heading-5-font-size); line-height: var(--drp-typography-mobile-heading-5-line-height); font-weight: var(--drp-typography-mobile-heading-5-font-weight); letter-spacing: var(--drp-typography-mobile-heading-5-letter-spacing); text-transform: var(--drp-typography-mobile-heading-5-text-transform); text-decoration: var(--drp-typography-mobile-heading-5-text-decoration); text-indent: var(--drp-typography-mobile-heading-5-text-indent); margin: 0; }
+[data-brand] .drp-typography-mobile-heading-6 { font-family: var(--drp-typography-mobile-heading-6-font-family); font-size: var(--drp-typography-mobile-heading-6-font-size); line-height: var(--drp-typography-mobile-heading-6-line-height); font-weight: var(--drp-typography-mobile-heading-6-font-weight); letter-spacing: var(--drp-typography-mobile-heading-6-letter-spacing); text-transform: var(--drp-typography-mobile-heading-6-text-transform); text-decoration: var(--drp-typography-mobile-heading-6-text-decoration); text-indent: var(--drp-typography-mobile-heading-6-text-indent); margin: 0; }
+[data-brand] .drp-typography-mobile-display-1 { font-family: var(--drp-typography-mobile-display-1-font-family); font-size: var(--drp-typography-mobile-display-1-font-size); line-height: var(--drp-typography-mobile-display-1-line-height); font-weight: var(--drp-typography-mobile-display-1-font-weight); letter-spacing: var(--drp-typography-mobile-display-1-letter-spacing); text-transform: var(--drp-typography-mobile-display-1-text-transform); text-decoration: var(--drp-typography-mobile-display-1-text-decoration); text-indent: var(--drp-typography-mobile-display-1-text-indent); margin: 0; }
+[data-brand] .drp-typography-mobile-display-2 { font-family: var(--drp-typography-mobile-display-2-font-family); font-size: var(--drp-typography-mobile-display-2-font-size); line-height: var(--drp-typography-mobile-display-2-line-height); font-weight: var(--drp-typography-mobile-display-2-font-weight); letter-spacing: var(--drp-typography-mobile-display-2-letter-spacing); text-transform: var(--drp-typography-mobile-display-2-text-transform); text-decoration: var(--drp-typography-mobile-display-2-text-decoration); text-indent: var(--drp-typography-mobile-display-2-text-indent); margin: 0; }

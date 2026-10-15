@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -46,18 +47,32 @@
 
   <section class="doc-section">
     <h2 id="tokens">2. Use tokens</h2>
-    <p>Every Figma style is a CSS custom property with the <code>--aec-</code> prefix. The names match Figma, so a value in a design file maps straight to code.</p>
+    <p>Each brand file in <code>tokens/brands/source/</code> has <strong>two kinds of token</strong>. Not everything is a <code>--aec-</code> variable.</p>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Figma</th><th>CSS</th></tr></thead>
+      <thead><tr><th>Layer</th><th>Looks like</th><th>Holds</th></tr></thead>
       <tbody>
-        <tr><td>Colour style <code>primary/default</code></td><td><code>var(--aec-color-primary-default)</code></td></tr>
-        <tr><td>Text style <code>heading/3</code></td><td><code>.aec-heading-3</code> or <code>--aec-typography-heading-3-*</code></td></tr>
-        <tr><td>Effect style <code>shadow/m</code></td><td><code>var(--aec-box-shadow-m)</code></td></tr>
-        <tr><td>Token <code>spacing.container.padding.m</code></td><td><code>var(--aec-spacing-container-padding-m)</code></td></tr>
-        <tr><td>Token <code>border.radius.default</code></td><td><code>var(--aec-border-radius-default)</code></td></tr>
+        <tr><td><strong>CSS custom properties</strong>, in a <code>body { … }</code> block</td><td><code>--aec-color-primary-default</code><br><code>--aec-chip-selectable-color-bg-selected-default</code><br><code>--aec-switch-container-width</code></td><td>Semantic colours, component colours and states, font families and weights, spacing, radius, breakpoints, and some component metrics (switch, radio, slider, notification)</td></tr>
+        <tr><td><strong><code>.drp-*</code> classes</strong> with fixed values</td><td><code>.drp-typography-heading-1 { font: 700 26px/36px "Chevy Sans"; … }</code><br><code>.drp-button-contained-container-bg-large { height: 48px; padding: 0 24px; border-radius: 8px; }</code><br><code>.drp-button-contained-color-primary-filled:hover { … }</code></td><td>All typography (type scale and component text), component sizes, padding, gaps, corners and border widths, and button, link and toggle colours per state. Responsive type sizes sit in <code>@media (min-width: 768px)</code> and <code>(min-width: 1025px)</code> blocks.</td></tr>
       </tbody>
     </table></div>
-    <p>The raw values are also published as JSON at <a href="../tokens/chevrolet.json"><code>tokens/chevrolet.json</code></a>, for Style Dictionary or other tooling.</p>
+    <h3 id="tokens-use">Three ways to consume them</h3>
+    <ol>
+      <li><strong>Drop-in classes.</strong> Load the brand file as delivered and put the <code>.drp-*</code> classes on your elements, for example <code>class="drp-typography-heading-2"</code> or <code>class="drp-button-contained-container-bg-large drp-button-contained-color-primary-filled drp-button-contained-typography-large"</code>. Disabled uses the extra class <code>.drp-disabled</code>, and icons inside buttons use <code>.drp-icon</code>.</li>
+      <li><strong>Custom properties.</strong> Use the <code>.vars.css</code> download (or <code>css/brands/&lt;id&gt;.css</code> on this site). Every <code>.drp-*</code> value becomes a variable: the class name without <code>drp-</code>, plus the property. <code>.drp-button-contained-container-bg-large { height }</code> becomes <code>--drp-button-contained-container-bg-large-height</code>. A <code>font</code> shorthand splits into <code>-font-weight</code>, <code>-font-size</code>, <code>-line-height</code> and <code>-font-family</code>. States are added to the name, as in <code>…-primary-filled-hover-background-color</code>, <code>…-disabled-color</code> and <code>…-icon-color</code>.</li>
+      <li><strong>The <code>.aec-*</code> components.</strong> <code>css/brand-components.css</code> already maps both layers onto every component. Typography uses the brand file's own class names, <code>.drp-typography-heading-1</code>, <code>.drp-typography-body-2-regular</code> and so on, which follow the nearest <code>[data-brand]</code>. The <code>.aec-heading-*</code> and <code>.aec-body-*</code> classes are older aliases.</li>
+    </ol>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma</th><th>Brand file</th><th>On this site</th></tr></thead>
+      <tbody>
+        <tr><td>Colour <code>primary/default</code></td><td><code>--aec-color-primary-default</code></td><td><code>var(--aec-color-primary-default)</code></td></tr>
+        <tr><td>Text style <code>heading/3</code></td><td><code>.drp-typography-heading-3</code></td><td><code>.aec-heading-3</code> or <code>--drp-typography-heading-3-font-size</code> …</td></tr>
+        <tr><td>Button, large, container</td><td><code>.drp-button-contained-container-bg-large</code></td><td><code>--drp-button-contained-container-bg-large-height</code> …</td></tr>
+        <tr><td>Chip selected background</td><td><code>--aec-chip-selectable-color-bg-selected-default</code></td><td>the same variable</td></tr>
+        <tr><td>Effect <code>shadow/m</code></td><td><code>--aec-box-shadow-m</code></td><td><code>var(--aec-box-shadow-m)</code></td></tr>
+        <tr><td>Icon <code>car</code></td><td>the brand icon font (<code>.icon-car</code>)</td><td><code>&lt;span class="aec-icon" data-icon="car"&gt;</code>. See <a href="../foundations/icons.html">Icons</a>.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Browse and compare every token, and download each brand as <code>.css</code>, <code>.vars.css</code> or <code>.json</code>, on <a href="../brands/tokens.html">Brand tokens</a>. The original Figma foundation values are also in <a href="../tokens/chevrolet.json"><code>tokens/chevrolet.json</code></a>. They are used only as fallbacks.</p>
   </section>
 
   <section class="doc-section">
@@ -96,6 +111,7 @@ npm run dev</code></pre>
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

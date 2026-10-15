@@ -25,7 +25,7 @@
   function famName(v) { return B.firstFamily(v); }
 
   /* ------------------------------------------------------------------ State */
-  var S = { from: R.default, original: null, work: null, list: [], map: {}, origMap: {}, name: '', id: '', undo: [], redo: [], scope: 'changes', fmt: 'vars', spec: '', width: '' };
+  var S = { icons: '', from: R.default, original: null, work: null, list: [], map: {}, origMap: {}, name: '', id: '', undo: [], redo: [], scope: 'changes', fmt: 'vars', spec: '', width: '' };
   var sources = {};
 
   function loadSource(id) {
@@ -153,6 +153,11 @@
       select('tb-w-h', 'Heading weight', opt(['300', '400', '500', '600', '700', '800', '900'], first(RE.wHeading))) +
       select('tb-body-size', 'Body text size', opt([['16', '16 / 14 / 12 px'], ['18', '18 / 16 / 14 px']], bodySize >= 17 ? '18' : '16')) +
       '</fieldset>';
+    var IC = window.DRS_ICONS;
+    if (IC) {
+      var cur = S.icons || (IC.brands[S.from] ? S.from : R.default);
+      html += '<fieldset class="tb-group"><legend>Icons</legend>' + select('tb-icons', 'Icon set', R.brands.filter(function (b) { return IC.brands[b.id]; }).map(function (b) { return '<option value="' + b.id + '"' + (b.id === cur ? ' selected' : '') + '>' + esc(b.name) + ' (' + IC.brands[b.id].font + ')</option>'; }).join(''), 'Icons come from an icon font, not tokens. The export lists the chosen set in brand.icons.') + '</fieldset>';
+    }
     html += '<fieldset class="tb-group"><legend>Size</legend>' +
       select('tb-h-btn', 'Large button height', opt(['40', '44', '48', '52', '56'].map(function (x) { return [x + 'px', x + 'px']; }), first(RE.hBtn))) +
       select('tb-h-input', 'Input height', opt(['40', '44', '48', '56'].map(function (x) { return [x + 'px', x + 'px']; }), first(RE.hInput))) +
@@ -196,6 +201,7 @@
       (t.id === 'tb-f-body' ? S.list.filter(isBodyFam) : matching(fam)).forEach(function (tok) { o[tok.key] = /^["']/.test(tok.value) ? '"' + name + '"' : name; });
       applyChanges(o); return;
     }
+    if (t.id === 'tb-icons') { S.icons = t.value; refresh(); return; }
     if (t.id === 'tb-bw') return applyChanges(setAll(RE.bwBtn, t.value));
     if (t.id === 'tb-case-btn') return applyChanges(setAll(RE.caseBtn, t.value));
     if (t.id === 'tb-case-h') return applyChanges(setAll(RE.caseHeading, t.value));
@@ -310,7 +316,7 @@
   }
   function paintFrame(k, model, list) {
     var doc = frameDoc(k); if (!doc || !ready[k]) return;
-    doc.getElementById('tb-theme').textContent = B.runtimeCSS(list || B.tokens(model), { scope: '[data-brand="tb"]', fonts: FONTS });
+    doc.getElementById('tb-theme').textContent = B.runtimeCSS(list || B.tokens(model), { scope: '[data-brand="tb"]', fonts: FONTS }) + iconCSS(k === 'work' ? S.icons : '');
     fontLinks(doc, list || B.tokens(model));
     var main = doc.getElementById('specimen');
     if (!main.hasAttribute('data-filled')) {
@@ -319,6 +325,11 @@
     }
     [].forEach.call(main.querySelectorAll('[data-specimen]'), function (s) { s.hidden = !!S.spec && s.getAttribute('data-specimen') !== S.spec; });
     fit(k);
+  }
+  function iconCSS(choice) {
+    var IC = window.DRS_ICONS; if (!IC) return '';
+    var id = choice || (IC.brands[S.from] ? S.from : R.default), set = IC.brands[id]; if (!set) return '';
+    return '\n[data-brand="tb"] {\n  --aec-icon-font: "' + set.font + '";\n' + set.icons.map(function (i) { return '  --aec-ig-' + i[0] + ': "\\' + i[1] + '";\n  --aec-if-' + i[0] + ': "' + set.font + '";'; }).join('\n') + '\n}\n';
   }
   function fit(k) {
     var doc = frameDoc(k); if (!doc || !doc.body) return;
@@ -384,7 +395,8 @@
   /* ------------------------------------------------------------------ Export */
   function meta() {
     var fams = {}; S.list.forEach(function (t) { if (/font-family/.test(t.name)) { var f = famName(t.value); fams[f] = (FONTS[f] || {}).google ? 'Google Fonts: ' + FONTS[f].google.split(':')[0].replace(/\+/g, ' ') : ((FONTS[f] || {}).substitute ? 'Substitute: ' + FONTS[f].substitute : 'Provided by the app'); } });
-    return { id: S.id, name: S.name, extends: S.from, generated: new Date().toISOString().slice(0, 10), tool: 'DRS Theme builder', fonts: fams };
+    var IC = window.DRS_ICONS, iconId = S.icons || S.from;
+    return { id: S.id, name: S.name, extends: S.from, icons: IC && IC.brands[iconId] ? { font: IC.brands[iconId].font, zip: IC.brands[iconId].zip } : null, generated: new Date().toISOString().slice(0, 10), tool: 'DRS Theme builder', fonts: fams };
   }
   function header(kind) {
     var ch = Object.keys(changes()).length;
@@ -446,7 +458,7 @@
     return new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).text().then(JSON.parse);
   }
   $('tb-share').addEventListener('click', function () {
-    pack({ v: 1, from: S.from, name: S.name, id: S.id, c: changes() }).then(function (h) {
+    pack({ v: 1, from: S.from, name: S.name, id: S.id, icons: S.icons, c: changes() }).then(function (h) {
       var url = location.origin + location.pathname + '#t=' + h;
       history.replaceState(null, '', '#t=' + h);
       D.copy(url, null, 'Share link');
@@ -463,6 +475,7 @@
       S.name = id === R.default ? 'My brand' : b.name; S.id = id === R.default ? 'my-brand' : b.id;
       $('tb-name').value = S.name; $('tb-id').value = S.id;
       if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+      S.icons = '';
       start(id, B.parse(css));
       status('Started from ' + b.name + '.');
     });
@@ -527,7 +540,7 @@
       drawCode();
       if (!$('tb-p-palette').hidden) drawPalette();
       drawTokens();
-      try { localStorage.setItem('drs-tb-draft', JSON.stringify({ from: S.from, name: S.name, id: S.id, c: changes() })); } catch (e) {}
+      try { localStorage.setItem('drs-tb-draft', JSON.stringify({ from: S.from, name: S.name, id: S.id, icons: S.icons, c: changes() })); } catch (e) {}
     };
     if (now) run(); else rt = setTimeout(run, 60);
   }
@@ -537,15 +550,15 @@
   var hash = (location.hash.match(/#t=([A-Za-z0-9_-]+)/) || [])[1];
   var draft = null; try { draft = JSON.parse(localStorage.getItem('drs-tb-draft') || 'null'); } catch (e) {}
   (hash ? unpack(hash).catch(function () { return null; }) : Promise.resolve(null)).then(function (shared) {
-    var plan = shared ? { from: shared.from, name: shared.name, id: shared.id, c: shared.c, msg: 'Opened a shared theme.' }
+    var plan = shared ? { from: shared.from, name: shared.name, id: shared.id, icons: shared.icons, c: shared.c, msg: 'Opened a shared theme.' }
       : params.get('from') ? { from: params.get('from'), msg: '' }
-      : draft && draft.c && Object.keys(draft.c).length ? { from: draft.from, name: draft.name, id: draft.id, c: draft.c, msg: 'Restored your draft from this browser.' }
+      : draft && draft.c && Object.keys(draft.c).length ? { from: draft.from, name: draft.name, id: draft.id, icons: draft.icons, c: draft.c, msg: 'Restored your draft from this browser.' }
       : { from: R.default, msg: '' };
     if (!D.brandById(plan.from)) plan.from = R.default;
     var b = D.brandById(plan.from);
     S.name = plan.name || (plan.from === R.default ? 'My brand' : b.name);
     S.id = slug(plan.id || (plan.from === R.default ? 'my-brand' : b.id));
-    $('tb-from').value = plan.from; $('tb-name').value = S.name; $('tb-id').value = S.id;
+    $('tb-from').value = plan.from; $('tb-name').value = S.name; $('tb-id').value = S.id; S.icons = plan.icons || '';
     return loadSource(plan.from).then(function (css) {
       start(plan.from, B.parse(css), plan.c);
       if (plan.msg) status(plan.msg);

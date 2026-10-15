@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/patterns.css">
 <link rel="stylesheet" href="css/brand-components.css">
+<link rel="stylesheet" href="css/brand-icons.css">
 <link rel="stylesheet" href="css/docs.css">
 
 </head>
@@ -49,12 +50,12 @@
   <section class="doc-section">
     <h2 id="foundations">Foundations</h2>
     <div class="doc-cards">
-      <a class="doc-card" href="foundations/colour.html"><div class="doc-card-art"><span style="width:36px;height:36px;border-radius:50%;background:#0077d9"></span><span style="width:36px;height:36px;border-radius:50%;background:#262626"></span><span style="width:36px;height:36px;border-radius:50%;background:#2d871b"></span><span style="width:36px;height:36px;border-radius:50%;background:#d64022"></span></div><h3>Colour</h3><p>Semantic tokens for surfaces, text, actions and status.</p></a>
-      <a class="doc-card" href="foundations/typography.html"><div class="doc-card-art"><span class="aec-display-2">Aa</span><span class="aec-body-2">DM Sans</span></div><h3>Typography</h3><p>Display, heading and body styles that scale across breakpoints.</p></a>
-      <a class="doc-card" href="foundations/spacing.html"><div class="doc-card-art"><span style="width:8px;height:40px;background:#0077d9;border-radius:2px"></span><span style="width:16px;height:40px;background:#0077d9;border-radius:2px"></span><span style="width:24px;height:40px;background:#0077d9;border-radius:2px"></span><span style="width:40px;height:40px;background:#0077d9;border-radius:2px"></span></div><h3>Spacing</h3><p>Container and selectable padding, gap and stack.</p></a>
+      <a class="doc-card" href="foundations/colour.html"><div class="doc-card-art"><span style="width:36px;height:36px;border-radius:50%;background:var(--aec-color-primary-default)"></span><span style="width:36px;height:36px;border-radius:50%;background:#262626"></span><span style="width:36px;height:36px;border-radius:50%;background:#2d871b"></span><span style="width:36px;height:36px;border-radius:50%;background:#d64022"></span></div><h3>Colour</h3><p>Semantic tokens for surfaces, text, actions and status.</p></a>
+      <a class="doc-card" href="foundations/typography.html"><div class="doc-card-art"><span class="aec-display-2">Aa</span><span class="aec-body-2">Brand type</span></div><h3>Typography</h3><p>Display, heading and body styles that scale across breakpoints.</p></a>
+      <a class="doc-card" href="foundations/spacing.html"><div class="doc-card-art"><span style="width:8px;height:40px;background:var(--aec-color-primary-default);border-radius:2px"></span><span style="width:16px;height:40px;background:var(--aec-color-primary-default);border-radius:2px"></span><span style="width:24px;height:40px;background:var(--aec-color-primary-default);border-radius:2px"></span><span style="width:40px;height:40px;background:var(--aec-color-primary-default);border-radius:2px"></span></div><h3>Spacing</h3><p>Container and selectable padding, gap and stack.</p></a>
       <a class="doc-card" href="foundations/elevation.html"><div class="doc-card-art"><span style="width:56px;height:40px;background:#fff;border-radius:8px;box-shadow:var(--aec-box-shadow-s)"></span><span style="width:56px;height:40px;background:#fff;border-radius:8px;box-shadow:var(--aec-box-shadow-xl)"></span></div><h3>Elevation</h3><p>Seven shadow levels for layering surfaces.</p></a>
-      <a class="doc-card" href="foundations/border.html"><div class="doc-card-art"><span style="width:40px;height:40px;border:2px solid #0077d9;border-radius:4px"></span><span style="width:40px;height:40px;border:2px solid #0077d9;border-radius:8px"></span><span style="width:40px;height:40px;border:2px solid #0077d9;border-radius:50%"></span></div><h3>Border</h3><p>Corner radius and border width tokens.</p></a>
-      <a class="doc-card" href="foundations/icons.html"><div class="doc-card-art"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/vehicle.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/financing.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/calendar-check.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/delivery.svg)"></span></div><h3>Icons</h3><p>196 icons in five sizes.</p></a>
+      <a class="doc-card" href="foundations/border.html"><div class="doc-card-art"><span style="width:40px;height:40px;border:2px solid var(--aec-color-primary-default);border-radius:4px"></span><span style="width:40px;height:40px;border:2px solid var(--aec-color-primary-default);border-radius:8px"></span><span style="width:40px;height:40px;border:2px solid var(--aec-color-primary-default);border-radius:50%"></span></div><h3>Border</h3><p>Corner radius and border width tokens.</p></a>
+      <a class="doc-card" href="foundations/icons.html"><div class="doc-card-art"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/vehicle.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/financing.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/calendar-check.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/delivery.svg)"></span></div><h3>Icons</h3><p>A brand icon font for every brand, swapped in automatically.</p></a>
     </div>
   </section>
 
@@ -80,7 +81,7 @@
     <p>Created in November 2022 and maintained by:</p>
     <div class="doc-team">
       <div class="doc-person"><span class="doc-person-avatar" style="background:#262626">SR</span><div><strong>Shafeequr Rahman</strong><span>Design</span></div></div>
-      <div class="doc-person"><span class="doc-person-avatar" style="background:#d64022">AA</span><div><strong>Akshit Agarwal</strong><span>Engineering</span></div></div>
+      <div class="doc-person"><span class="doc-person-avatar" style="background:#b5341a">AA</span><div><strong>Akshit Agarwal</strong><span>Engineering</span></div></div>
       <div class="doc-person"><span class="doc-person-avatar" style="background:#00756f">SS</span><div><strong>Shaik Sharif</strong><span>Engineering</span></div></div>
     </div>
   </section>
@@ -90,6 +91,7 @@
 <script src="js/brands-data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/components.js"></script>
+<script src="js/doc-kit.js"></script>
 
 </body>
 </html>

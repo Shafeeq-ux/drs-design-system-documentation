@@ -1,22 +1,106 @@
 {
-  "$comment": "Brand registry. To add a brand: drop <id>.css into tokens/brands/source/, add an entry below, run `npm run build`. The header dropdown, Brand tokens page and Theme builder pick it up automatically.",
+  "$comment": "Brand registry. To add a brand: drop <id>.css into tokens/brands/source/, add an entry below, add its icon font (IcoMoon export: style.css + selection.json in tokens/brands/icons/<id>/, .woff/.ttf in assets/iconfonts/<id>/, zip in downloads/icons/), run `npm run build`. The header dropdown, Brand tokens page and Theme builder pick it up automatically.",
   "default": "base",
   "brands": [
-    { "id": "base", "name": "DRS Base", "file": "base.css", "description": "Neutral DRS foundation. Every brand inherits from it." },
-    { "id": "chevrolet", "name": "Chevrolet", "file": "chevrolet.css", "description": "Blue primary, 8px corners, sentence-case buttons." },
-    { "id": "gmc", "name": "GMC", "file": "gmc.css", "description": "Red accent, square corners, uppercase buttons and headings, heavy weights." },
-    { "id": "buick", "name": "Buick", "file": "buick.css", "description": "Charcoal and copper, 8px buttons, larger 18px body text." },
-    { "id": "cadillac", "name": "Cadillac", "file": "cadillac.css", "description": "Deep indigo, square corners, narrow body face and wide display face." },
-    { "id": "carbravo", "name": "Car Bravo", "file": "carbravo.css", "description": "Currently identical to Chevrolet. It will diverge when its own tokens ship." }
+    {
+      "id": "base",
+      "name": "DRS Base",
+      "file": "base.css",
+      "description": "Neutral DRS foundation. Every brand inherits from it.",
+      "icons": {
+        "font": "drs-sc-icons",
+        "dir": "base",
+        "zip": "drs-sc-icons-v1.0.zip"
+      }
+    },
+    {
+      "id": "chevrolet",
+      "name": "Chevrolet",
+      "file": "chevrolet.css",
+      "description": "Blue primary, 8px corners, sentence-case buttons.",
+      "icons": {
+        "font": "chevy-sc-icons",
+        "dir": "chevrolet",
+        "zip": "chevy-sc-icons-v1.0.zip"
+      }
+    },
+    {
+      "id": "gmc",
+      "name": "GMC",
+      "file": "gmc.css",
+      "description": "Red accent, square corners, uppercase buttons and headings, heavy weights.",
+      "icons": {
+        "font": "gmc-sc-icons",
+        "dir": "gmc",
+        "zip": "gmc-sc-icons-v1.0.zip"
+      }
+    },
+    {
+      "id": "buick",
+      "name": "Buick",
+      "file": "buick.css",
+      "description": "Charcoal and copper, 8px buttons, larger 18px body text.",
+      "icons": {
+        "font": "buick-sc-icons",
+        "dir": "buick",
+        "zip": "buick-sc-icons-v1.0.zip"
+      }
+    },
+    {
+      "id": "cadillac",
+      "name": "Cadillac",
+      "file": "cadillac.css",
+      "description": "Deep indigo, square corners, narrow body face and wide display face.",
+      "icons": {
+        "font": "cadillac-sc-icons",
+        "dir": "cadillac",
+        "zip": "cadillac-sc-icons-v1.0.zip"
+      }
+    },
+    {
+      "id": "carbravo",
+      "name": "Car Bravo",
+      "file": "carbravo.css",
+      "description": "Currently identical to Chevrolet. It will diverge when its own tokens ship.",
+      "icons": {
+        "font": "carbravo-sc-icons",
+        "dir": "carbravo",
+        "zip": "carbravo-sc-icons-v1.0.zip"
+      }
+    }
   ],
   "fonts": {
-    "DM Sans": { "substitute": "DM Sans", "google": "DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000" },
-    "Chevy Sans": { "substitute": "DM Sans", "google": "DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000" },
-    "StratumGMC": { "substitute": "Barlow", "google": "Barlow:wght@300;400;500;600;700;800;900" },
-    "Buick Text": { "substitute": "Figtree", "google": "Figtree:wght@300..900" },
-    "Buick Headline": { "substitute": "Lexend", "google": "Lexend:wght@300..700" },
-    "Cadillac Gothic": { "substitute": "Archivo", "google": "Archivo:wght@300..800" },
-    "Cadillac Gothic Narrow": { "substitute": "Archivo Narrow", "google": "Archivo+Narrow:wght@400..700" },
-    "Cadillac Gothic Wide": { "substitute": "Archivo", "google": "Archivo:wght@300..800" }
+    "DM Sans": {
+      "substitute": "DM Sans",
+      "google": "DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000"
+    },
+    "Chevy Sans": {
+      "substitute": "DM Sans",
+      "google": "DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000"
+    },
+    "StratumGMC": {
+      "substitute": "Barlow",
+      "google": "Barlow:wght@300;400;500;600;700;800;900"
+    },
+    "Buick Text": {
+      "substitute": "Figtree",
+      "google": "Figtree:wght@300..900"
+    },
+    "Buick Headline": {
+      "substitute": "Lexend",
+      "google": "Lexend:wght@300..700"
+    },
+    "Cadillac Gothic": {
+      "substitute": "Archivo",
+      "google": "Archivo:wght@300..800"
+    },
+    "Cadillac Gothic Narrow": {
+      "substitute": "Archivo Narrow",
+      "google": "Archivo+Narrow:wght@400..700"
+    },
+    "Cadillac Gothic Wide": {
+      "substitute": "Archivo",
+      "google": "Archivo:wght@300..800"
+    }
   }
 }

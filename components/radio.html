@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -37,7 +38,7 @@
         <fieldset class="aec-fieldset">
           <legend>How would you like to pay?</legend>
           <div class="aec-choice-list">
-            <label class="aec-control"><input class="aec-radio" type="radio" name="pay" checked><span class="aec-form-label"><span class="aec-form-label__text">Finance</span><span class="aec-form-label__desc">Monthly payments with GM Financial</span></span></label>
+            <label class="aec-control"><input class="aec-radio" type="radio" name="pay" checked><span class="aec-form-label"><span class="aec-form-label__text">Finance</span><span class="aec-form-label__desc">Monthly payments over a fixed term</span></span></label>
             <label class="aec-control"><input class="aec-radio" type="radio" name="pay"><span class="aec-form-label"><span class="aec-form-label__text">Lease</span><span class="aec-form-label__desc">Lower payments, return at end of term</span></span></label>
             <label class="aec-control"><input class="aec-radio" type="radio" name="pay"><span class="aec-form-label"><span class="aec-form-label__text">Cash</span></span></label>
             <label class="aec-control"><input class="aec-radio" type="radio" name="pay" disabled><span class="aec-form-label"><span class="aec-form-label__text">Subscription</span><span class="aec-form-label__desc">Not available in your area</span></span></label>
@@ -58,16 +59,28 @@
         </fieldset>
       </div>
     </div>
+    <h3 class="doc-h3" id="hint">With a hint</h3>
+    <p>Add <code>.aec-fieldset__hint</code> under the legend when the question needs a short explanation. Link it to the group with <code>aria-describedby</code>.</p>
+    <div class="doc-example" data-label="Radio group with hint">
+      <div class="doc-example-preview is-col">
+        <fieldset class="aec-fieldset" aria-describedby="rd-delivery-hint">
+          <legend>How would you like to get your vehicle?</legend>
+          <p class="aec-fieldset__hint" id="rd-delivery-hint">You can change this until the day before delivery.</p>
+          <div class="aec-choice-list">
+            <label class="aec-control"><input class="aec-radio" type="radio" name="delivery" checked><span class="aec-form-label"><span class="aec-form-label__text">Home delivery</span><span class="aec-form-label__desc">Free within 50 miles</span></span></label>
+            <label class="aec-control"><input class="aec-radio" type="radio" name="delivery"><span class="aec-form-label"><span class="aec-form-label__text">Pick up at the dealership</span></span></label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="states">States</h2>
-    <div class="doc-states">
-      <div class="doc-state"><span class="doc-state-label">Unselected</span><input class="aec-radio" type="radio" name="s1" aria-label="Unselected"></div>
-      <div class="doc-state"><span class="doc-state-label">Selected</span><input class="aec-radio" type="radio" name="s2" checked aria-label="Selected"></div>
-      <div class="doc-state"><span class="doc-state-label">Focus</span><input class="aec-radio" type="radio" name="s3" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px" aria-label="Focus"></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled</span><input class="aec-radio" type="radio" name="s4" disabled aria-label="Disabled"></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled selected</span><input class="aec-radio" type="radio" name="s5" disabled checked aria-label="Disabled selected"></div>
+    <p>Each row is a value and each column is an interaction state. The colours come from the active brand's radio tokens (<code>--aec-radio-color-*</code> for unselected and <code>--aec-radio-color-selected-*</code> for selected), so switch the brand in the header to see how each one changes. Focus adds a 2px <code>focus/default</code> ring, 2px outside the ring. Pressed looks the same as hover, so it isn't shown.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,disabled" aria-label="Radio button states">
+      <template data-row="Unselected"><label class="aec-control"><input class="aec-radio" type="radio" name="rd-matrix-a" data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
+      <template data-row="Selected"><label class="aec-control"><input class="aec-radio" type="radio" name="rd-matrix-b" checked data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label></template>
     </div>
   </section>
 
@@ -75,26 +88,73 @@
     <h2 id="anatomy">Anatomy</h2>
     <div class="doc-anatomy">
       <div class="doc-anatomy-stage">
-        <label class="aec-control"><input class="aec-radio" type="radio" checked tabindex="-1" aria-label="Example"><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label>
+        <label class="aec-control" id="rd-anatomy-row"><input class="aec-radio" type="radio" checked tabindex="-1" aria-label="Example" id="rd-anatomy"><span class="aec-form-label"><span class="aec-form-label__text" id="rd-anatomy-label">Label</span></span></label>
         <span class="doc-anatomy-pin" style="left:calc(50% - 52px);top:2px">1</span>
         <span class="doc-anatomy-pin" style="left:calc(50% - 40px);bottom:2px">2</span>
         <span class="doc-anatomy-pin" style="left:calc(50% + 20px);top:2px">3</span>
       </div>
       <ol>
-        <li><span><strong>Ring</strong>24px circle, 1.5px <code>text/default</code> border.</span></li>
-        <li><span><strong>Indicator</strong>16px dot in <code>icon/default</code> when selected.</span></li>
-        <li><span><strong>Label</strong>body-2 (14/22), 8px from the ring.</span></li>
+        <li><span><strong>Ring</strong><span data-measure="#rd-anatomy" data-prop="width"></span> circle with a <span data-measure="#rd-anatomy" data-prop="border-width"></span> border in this brand.</span></li>
+        <li><span><strong>Indicator</strong>A <span data-measure="#rd-probe-indicator" data-prop="width"></span> dot in the selected icon colour (<code>--aec-radio-color-selected-icon-*</code>).</span></li>
+        <li><span><strong>Label</strong><span data-measure="#rd-anatomy-label" data-prop="font-size"></span> / <span data-measure="#rd-anatomy-label" data-prop="line-height"></span> <span data-measure="#rd-anatomy-label" data-prop="font-family"></span> (body-2), <span data-measure="#rd-anatomy-row" data-prop="gap"></span> from the ring.</span></li>
       </ol>
     </div>
+    <p>The label block is shared with checkboxes and switches. See <a href="form-control.html">form control</a>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Size and spacing</h2>
+    <p>There is one size. The blue marks are measured from the real radio button in the active brand, so they change when you switch brands. The row grows on small screens to give a larger touch target, so its height depends on the window width.</p>
+    <div class="doc-spec" data-spec="height,width,border">
+      <input class="aec-radio" type="radio" name="rd-spec" checked tabindex="-1" aria-label="Ring example" id="rd-spec-ring" data-spec-target>
+    </div>
+    <div class="doc-spec" data-spec="height,gap,padding-y">
+      <label class="aec-control" id="rd-spec-row" data-spec-target><input class="aec-radio" type="radio" name="rd-spec-row" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Pick up at the dealership</span></span></label>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Size</th><th>Border</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Ring</td><td data-measure="#rd-spec-ring" data-prop="width"></td><td data-measure="#rd-spec-ring" data-prop="border-width"></td><td><code>--aec-radio-container-*</code></td></tr>
+        <tr><td>Indicator</td><td data-measure="#rd-probe-indicator" data-prop="width"></td><td>—</td><td><code>--aec-radio-indicator-sizing</code></td></tr>
+        <tr><td>Hit area</td><td data-measure="#rd-probe-hit" data-prop="width"></td><td>—</td><td><code>--aec-radio-hit-area-sizing</code></td></tr>
+      </tbody>
+    </table></div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Height</th><th>Vertical padding</th><th>Ring to label</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Row (<code>.aec-control</code>)</td><td data-measure="#rd-spec-row" data-prop="height"></td><td data-measure="#rd-spec-row" data-prop="padding-top"></td><td data-measure="#rd-spec-row" data-prop="gap"></td><td><code>--aec-sizing-selectable-l</code>, <code>--aec-spacing-selectable-gap-m</code></td></tr>
+      </tbody>
+    </table></div>
+    <span id="rd-probe-indicator" aria-hidden="true" style="position:absolute;visibility:hidden;width:var(--aec-radio-indicator-sizing);height:var(--aec-radio-indicator-sizing)"></span>
+    <span id="rd-probe-hit" aria-hidden="true" style="position:absolute;visibility:hidden;width:var(--aec-radio-hit-area-sizing);height:var(--aec-radio-hit-area-sizing)"></span>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
-    <div class="doc-dd">
-      <div class="doc-dd-card"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start;gap:0"><label class="aec-control"><input class="aec-radio" type="radio" name="dd1" checked tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Home delivery</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd1" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Pick up at dealer</span></span></label></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Pre-select the most common or safest option where that helps people.</div></div>
-      <div class="doc-dd-card is-dont"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start;gap:0"><label class="aec-control"><input class="aec-radio" type="radio" name="dd2" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the terms</span></span></label></div>
-        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use a single radio button on its own, because once selected it can't be cleared. Use a checkbox.</div></div>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-radio" type="radio" name="dd1" checked><span class="aec-form-label"><span class="aec-form-label__text">Home delivery</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd1"><span class="aec-form-label"><span class="aec-form-label__text">Pick up at the dealership</span></span></label></div><figcaption><strong>Do</strong>Pre-select the most common or safest option where that helps people.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-radio" type="radio" name="dd2"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the terms</span></span></label></div><figcaption><strong>Don't</strong>Use a single radio button on its own. Once selected it can't be cleared. Use a checkbox.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-radio" type="radio" name="dd3" checked><span class="aec-form-label"><span class="aec-form-label__text">36 months</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd3"><span class="aec-form-label"><span class="aec-form-label__text">48 months</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd3"><span class="aec-form-label"><span class="aec-form-label__text">60 months</span></span></label></div><figcaption><strong>Do</strong>Use radios for a short list where people should compare every option.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-radio" type="radio" name="dd4"><span class="aec-form-label"><span class="aec-form-label__text">Alabama</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd4"><span class="aec-form-label"><span class="aec-form-label__text">Alaska</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd4"><span class="aec-form-label"><span class="aec-form-label__text">Arizona</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd4"><span class="aec-form-label"><span class="aec-form-label__text">Arkansas …</span></span></label></div><figcaption><strong>Don't</strong>Use radios for long lists, such as states. Use a select menu.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-radio" type="radio" name="dd5" checked><span class="aec-form-label"><span class="aec-form-label__text">Excellent</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd5"><span class="aec-form-label"><span class="aec-form-label__text">Good</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd5"><span class="aec-form-label"><span class="aec-form-label__text">Fair</span></span></label></div><figcaption><strong>Do</strong>Order options logically, such as best to worst or shortest to longest.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-radio" type="radio" name="dd6"><span class="aec-form-label"><span class="aec-form-label__text">Good</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd6"><span class="aec-form-label"><span class="aec-form-label__text">Excellent</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd6"><span class="aec-form-label"><span class="aec-form-label__text">Fair</span></span></label></div><figcaption><strong>Don't</strong>List options in a random order that's hard to scan.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><fieldset class="aec-fieldset"><legend>Do you have a trade-in?</legend><div class="aec-choice-list aec-choice-list--row"><label class="aec-control"><input class="aec-radio" type="radio" name="dd7"><span class="aec-form-label"><span class="aec-form-label__text">Yes</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd7"><span class="aec-form-label"><span class="aec-form-label__text">No</span></span></label></div></fieldset></div><figcaption><strong>Do</strong>Put two or three short options in a row.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-choice-list aec-choice-list--row"><label class="aec-control"><input class="aec-radio" type="radio" name="dd8"><span class="aec-form-label"><span class="aec-form-label__text">Finance with monthly payments</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd8"><span class="aec-form-label"><span class="aec-form-label__text">Lease and return at end of term</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd8"><span class="aec-form-label"><span class="aec-form-label__text">Pay in full</span></span></label></div></div><figcaption><strong>Don't</strong>Put long options in a row. They wrap unevenly and are hard to compare.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>The legend asks the question. Each label is one possible answer.</p>
+    <ul>
+      <li>Write the legend as a question or a short instruction, such as <em>How would you like to pay?</em></li>
+      <li>Keep labels short and parallel: start each one the same way and keep them a similar length.</li>
+      <li>Use the description for one line of detail that helps people choose, such as a price or a condition.</li>
+      <li>Make sure the options cover every case. Add <em>Other</em> or <em>I'm not sure</em> if people might not fit any option.</li>
+    </ul>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><fieldset class="aec-fieldset"><legend>How would you like to pay?</legend><div class="aec-choice-list"><label class="aec-control"><input class="aec-radio" type="radio" name="dd9" checked><span class="aec-form-label"><span class="aec-form-label__text">Finance</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd9"><span class="aec-form-label"><span class="aec-form-label__text">Lease</span></span></label></div></fieldset></div><figcaption><strong>Do</strong>Ask a clear question in the legend.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><fieldset class="aec-fieldset"><legend>Payment</legend><div class="aec-choice-list"><label class="aec-control"><input class="aec-radio" type="radio" name="dd10" checked><span class="aec-form-label"><span class="aec-form-label__text">I would like to finance</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd10"><span class="aec-form-label"><span class="aec-form-label__text">Lease</span></span></label></div></fieldset></div><figcaption><strong>Don't</strong>Use a vague legend or labels that don't match in style.</figcaption></figure>
     </div>
   </section>
 
@@ -102,9 +162,53 @@
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Group with a legend <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Wrap the group in <code>&lt;fieldset class="aec-fieldset"&gt;</code> with a <code>&lt;legend&gt;</code> that states the question. Give every radio in the group the same <code>name</code>.</p></div>
-      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves into the group. Arrow keys move between options and select them, which is native browser behaviour.</p></div>
-      <div class="doc-a11y-item"><h3>Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3><p>The <code>text/default</code> ring is 15:1 against white. Disabled controls are exempt.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves into the group, onto the selected option (or the first one if none is selected). Arrow keys move between options and select them, which is native browser behaviour. The whole group is one tab stop.</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>Wrap each radio and its text in <code>&lt;label class="aec-control"&gt;</code> so the whole row is clickable. The row is <span data-measure="#rd-spec-row" data-prop="height"></span> tall at this window width.</p></div>
+      <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>The focused radio shows a 2px <code>focus/default</code> ring on <code>:focus-visible</code>. Don't remove it.</p></div>
+      <div class="doc-a11y-item"><h3>Required groups <span class="doc-wcag">WCAG 3.3.1</span></h3><p>If nothing is selected on submit, show an error message under the legend and link it to the fieldset with <code>aria-describedby</code>.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Legend, label and description text need at least 4.5:1 against the background. These ratios are measured live in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Legend</td><td><fieldset class="aec-fieldset"><legend data-contrast-sample>How would you like to pay?</legend></fieldset></td><td data-contrast-result></td></tr>
+        <tr><td>Label</td><td><span class="aec-form-label"><span class="aec-form-label__text" data-contrast-sample>Finance</span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Description</td><td><span class="aec-form-label"><span class="aec-form-label__desc" data-contrast-sample>Monthly payments over a fixed term</span></span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The ring and the focus ring need at least 3:1 against the page. A selected radio passes if either its ring or its fill reaches 3:1, and the dot needs 3:1 against the fill. The swatches are drawn from the brand's radio tokens. Disabled controls are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Unselected ring</td><td><input class="aec-radio" type="radio" name="rd-ct-a" tabindex="-1" aria-label="Unselected ring" data-contrast-sample data-contrast-mode="border"></td><td data-contrast-result></td></tr>
+        <tr><td>Selected ring</td><td><input class="aec-radio" type="radio" name="rd-ct-b" checked tabindex="-1" aria-label="Selected ring" data-contrast-sample data-contrast-mode="border"></td><td data-contrast-result></td></tr>
+        <tr><td>Selected fill</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;box-sizing:border-box;width:var(--aec-radio-container-sizing);height:var(--aec-radio-container-sizing);border-radius:50%;border:calc(var(--aec-radio-container-sizing) / 2) solid var(--aec-radio-color-selected-bg-default)"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Dot on fill</td><td><span style="display:inline-block;padding:6px;border-radius:50%;background:var(--aec-radio-color-selected-bg-default)"><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;box-sizing:border-box;width:var(--aec-radio-indicator-sizing);height:var(--aec-radio-indicator-sizing);border-radius:50%;border:calc(var(--aec-radio-indicator-sizing) / 2) solid var(--aec-radio-color-selected-icon-default)"></span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><input class="aec-radio is-focus" type="radio" name="rd-ct-c" tabindex="-1" aria-label="Focus ring" data-contrast-sample data-contrast-mode="focus"></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><fieldset class="aec-fieldset"><legend>Who is buying?</legend><div class="aec-choice-list"><label class="aec-control"><input class="aec-radio" type="radio" name="dd11" checked><span class="aec-form-label"><span class="aec-form-label__text">Just me</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd11"><span class="aec-form-label"><span class="aec-form-label__text">Me and a co-applicant</span></span></label></div></fieldset></div><figcaption><strong>Do</strong>Use a <code>&lt;legend&gt;</code>. A screen reader says "Who is buying?, group" before the options.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><span class="aec-body-2"><strong>Who is buying?</strong></span><label class="aec-control"><input class="aec-radio" type="radio" name="dd12" checked><span class="aec-form-label"><span class="aec-form-label__text">Just me</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd12"><span class="aec-form-label"><span class="aec-form-label__text">Me and a co-applicant</span></span></label></div><figcaption><strong>Don't</strong>Use bold text as a heading. People who hear the options won't hear the question.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Code</th></tr></thead>
+      <tbody>
+        <tr><td>Set</td><td>Radio Button / Radio Group with Label</td><td><code>input.aec-radio</code>, inside <code>label.aec-control</code> with <code>.aec-form-label</code></td></tr>
+        <tr><td>selected</td><td>true</td><td><code>checked</code></td></tr>
+        <tr><td>state</td><td>hover</td><td><code>:hover</code></td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>disabled</code></td></tr>
+        <tr><td>focus-ring</td><td>true</td><td><code>:focus-visible</code></td></tr>
+        <tr><td>Group layout</td><td>vertical / horizontal</td><td><code>.aec-choice-list</code> / <code>.aec-choice-list--row</code>, inside <code>fieldset.aec-fieldset</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -113,6 +217,7 @@
       <li>Hover and pressed look the same as default, and there are no selected + hover variants.</li>
       <li>"Radio Group with Label" is a single radio with a label, not a group.</li>
       <li>Selected uses dark grey (<code>icon/default</code>) rather than primary blue, consistent with checkbox and switch.</li>
+      <li>There is no error state for radio buttons in Figma. Show errors with a message under the legend.</li>
     </ul>
   </section>
 </div>
@@ -121,6 +226,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

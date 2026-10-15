@@ -9,6 +9,10 @@ figma: 1992-17724
   <p class="doc-lead">The label block that sits next to a checkbox, radio button or switch: a label, an optional count and an optional description.</p>
   <div class="doc-meta"><span>Figma base component</span><span><code>.aec-control</code> · <code>.aec-form-label</code></span></div>
 
+  <div class="doc-intro">
+    <p>Form control is not used on its own. It is the shared row that makes a <a href="checkbox.html">checkbox</a>, <a href="radio.html">radio button</a> or <a href="switch.html">switch</a> clickable along its whole width, and keeps their labels consistent. <code>.aec-control</code> is the row; <code>.aec-form-label</code> is the text block inside it.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="variants">Variants</h2>
     <div class="doc-example" data-label="Label, count and description">
@@ -19,21 +23,69 @@ figma: 1992-17724
         <label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label aec-form-label--sm"><span class="aec-form-label__text">Small label</span></span></label>
       </div>
     </div>
+    <h3 class="doc-h3" id="layouts">Layouts</h3>
+    <p><code>.aec-control--reverse</code> puts the control after the label. <code>.aec-control--between</code> pushes the control to the far end of a full-width row, which suits settings lists.</p>
+    <div class="doc-example" data-label="Default, reverse and between">
+      <div class="doc-example-preview is-stretch">
+        <label class="aec-control"><input class="aec-checkbox" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Control first (default)</span></span></label>
+        <label class="aec-control aec-control--reverse"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Control after the label</span></span></label>
+        <label class="aec-control aec-control--between" style="max-width:360px"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Control at the end of the row</span></span></label>
+      </div>
+    </div>
   </section>
 
   <section class="doc-section">
-    <h2 id="spec">Specification</h2>
+    <h2 id="states">States</h2>
+    <p>The label block has two states. When its control is disabled, the label, count and description all change to <code>text/disabled</code> and the row shows a not-allowed cursor. Hover, focus and pressed only change the control itself; see each control's page for those.</p>
+    <div class="doc-state-matrix" data-states="default,disabled" aria-label="Form control states">
+      <template data-row="Label only"><label class="aec-control"><input class="aec-checkbox" type="checkbox" data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Protection plan</span></span></label></template>
+      <template data-row="With count"><label class="aec-control"><input class="aec-checkbox" type="checkbox" data-state-el><span class="aec-form-label"><span class="aec-form-label__text">SUV <span class="aec-form-label__count">(24)</span></span></span></label></template>
+      <template data-row="With description"><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Accessories</span><span class="aec-form-label__desc">Floor liners and roof rack</span></span></label></template>
+      <template data-row="Radio"><label class="aec-control"><input class="aec-radio" type="radio" name="fc-matrix" checked data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Home delivery</span></span></label></template>
+      <template data-row="Switch"><label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked data-state-el><span class="aec-form-label"><span class="aec-form-label__text">Show monthly payment</span></span></label></template>
+      <template data-row="Small"><label class="aec-control"><input class="aec-checkbox" type="checkbox" data-state-el><span class="aec-form-label aec-form-label--sm"><span class="aec-form-label__text">Sunroof <span class="aec-form-label__count">(8)</span></span></span></label></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <label class="aec-control" id="fc-anatomy-row"><input class="aec-checkbox" type="checkbox" tabindex="-1" aria-label="Example"><span class="aec-form-label" id="fc-anatomy-block"><span class="aec-form-label__text" id="fc-anatomy-label">Label <span class="aec-form-label__count" id="fc-anatomy-count">(0)</span></span><span class="aec-form-label__desc" id="fc-anatomy-desc">Descriptive text</span></span></label>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 80px);top:2px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 30px);top:2px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 34px);top:2px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 40px);bottom:8px">4</span>
+      </div>
+      <ol>
+        <li><span><strong>Control</strong>A checkbox, radio button or switch, <span data-measure="#fc-anatomy-row" data-prop="gap"></span> from the label.</span></li>
+        <li><span><strong>Label</strong><span data-measure="#fc-anatomy-label" data-prop="font-size"></span> / <span data-measure="#fc-anatomy-label" data-prop="line-height"></span> <span data-measure="#fc-anatomy-label" data-prop="font-family"></span> (body-2), <code>text/default</code>.</span></li>
+        <li><span><strong>Count (optional)</strong>Same size as the label, in <code>text/subtle</code>, <span data-measure="#fc-anatomy-label" data-prop="gap"></span> after the label.</span></li>
+        <li><span><strong>Description (optional)</strong><span data-measure="#fc-anatomy-desc" data-prop="font-size"></span> / <span data-measure="#fc-anatomy-desc" data-prop="line-height"></span> (body-3), <code>text/subtle</code>, <span data-measure="#fc-anatomy-block" data-prop="gap"></span> below the label.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Size and spacing</h2>
+    <p>Two label sizes. Medium is the default. The blue marks are measured from the real rows in the active brand. The row is taller on small screens to give a larger touch target, so its height depends on the window width.</p>
+    <div class="doc-spec" data-spec="height,gap,padding-y">
+      <label class="aec-control" id="fc-spec-md" data-spec-target><input class="aec-checkbox" type="checkbox" tabindex="-1"><span class="aec-form-label" id="fc-spec-md-block"><span class="aec-form-label__text" id="fc-spec-md-label">Medium label <span class="aec-form-label__count">(12)</span></span><span class="aec-form-label__desc" id="fc-spec-md-desc">Description</span></span></label>
+      <label class="aec-control" id="fc-spec-sm" data-spec-target><input class="aec-checkbox" type="checkbox" tabindex="-1"><span class="aec-form-label aec-form-label--sm" id="fc-spec-sm-block"><span class="aec-form-label__text" id="fc-spec-sm-label">Small label <span class="aec-form-label__count">(12)</span></span><span class="aec-form-label__desc" id="fc-spec-sm-desc">Description</span></span></label>
+    </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Part</th><th>Medium (default)</th><th>Small (<code>--sm</code>)</th></tr></thead>
+      <thead><tr><th>Part</th><th>Medium (default)</th><th>Small (<code>.aec-form-label--sm</code>)</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Label</td><td>body-2 · 14/22 · <code>text/default</code></td><td>body-3 · 12/20</td></tr>
-        <tr><td>Count</td><td>Same size as the label · <code>text/subtle</code></td><td>Same size as the label</td></tr>
-        <tr><td>Description</td><td>body-3 · 12/20 · <code>text/subtle</code></td><td>body-3</td></tr>
-        <tr><td>Label → description</td><td colspan="2">4px · <code>--aec-spacing-container-gap-xs</code></td></tr>
-        <tr><td>Control → label</td><td colspan="2">8px · <code>--aec-spacing-selectable-gap-m</code></td></tr>
-        <tr><td>Row height</td><td colspan="2">48px on mobile (12px vertical padding) · 40px from 768px (8px)</td></tr>
+        <tr><td>Label size</td><td data-measure="#fc-spec-md-label" data-prop="font-size"></td><td data-measure="#fc-spec-sm-label" data-prop="font-size"></td><td><code>--drp-typography-body-2-regular-*</code> / <code>--drp-typography-body-3-regular-*</code></td></tr>
+        <tr><td>Label line height</td><td data-measure="#fc-spec-md-label" data-prop="line-height"></td><td data-measure="#fc-spec-sm-label" data-prop="line-height"></td><td><code>--drp-typography-body-2-regular-line-height</code> / <code>--drp-typography-body-3-regular-line-height</code></td></tr>
+        <tr><td>Description size</td><td data-measure="#fc-spec-md-desc" data-prop="font-size"></td><td data-measure="#fc-spec-sm-desc" data-prop="font-size"></td><td><code>--drp-typography-body-3-regular-*</code></td></tr>
+        <tr><td>Label to description</td><td data-measure="#fc-spec-md-block" data-prop="gap"></td><td data-measure="#fc-spec-sm-block" data-prop="gap"></td><td><code>--aec-spacing-container-gap-xs</code></td></tr>
+        <tr><td>Control to label</td><td data-measure="#fc-spec-md" data-prop="gap"></td><td data-measure="#fc-spec-sm" data-prop="gap"></td><td><code>--aec-spacing-selectable-gap-m</code></td></tr>
+        <tr><td>Row minimum height</td><td data-measure="#fc-row-probe" data-prop="height"></td><td data-measure="#fc-row-probe" data-prop="height"></td><td><code>--aec-sizing-selectable-l</code> (mobile)</td></tr>
+        <tr><td>Row vertical padding</td><td data-measure="#fc-spec-md" data-prop="padding-top"></td><td data-measure="#fc-spec-sm" data-prop="padding-top"></td><td>—</td></tr>
       </tbody>
     </table></div>
+    <div style="position:absolute;visibility:hidden" aria-hidden="true"><label class="aec-control" id="fc-row-probe"><input class="aec-checkbox" type="checkbox" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Row</span></span></label></div>
   </section>
 
   <section class="doc-section">
@@ -49,10 +101,67 @@ figma: 1992-17724
   </section>
 
   <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Add roof rack</span></span></label></div><figcaption><strong>Do</strong>Put the control and its text inside one <code>&lt;label class="aec-control"&gt;</code>, so the whole row is clickable.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><input class="aec-checkbox" type="checkbox" aria-label="Add roof rack"><span class="aec-body-2">Add roof rack</span></div><figcaption><strong>Don't</strong>Put loose text next to the control. Only the control itself can be clicked.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">SUV <span class="aec-form-label__count">(24)</span></span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Truck <span class="aec-form-label__count">(9)</span></span></span></label></div><figcaption><strong>Do</strong>Use the count in filters, to show how many vehicles each option returns.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the terms <span class="aec-form-label__count">(0)</span></span></span></label></div><figcaption><strong>Don't</strong>Leave the count on outside filters. Figma turns it on by default.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label aec-form-label--sm"><span class="aec-form-label__text">Sunroof <span class="aec-form-label__count">(8)</span></span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label aec-form-label--sm"><span class="aec-form-label__text">Heated seats <span class="aec-form-label__count">(31)</span></span></span></label></div><figcaption><strong>Do</strong>Use the small size for dense lists, such as filter panels, and use it for the whole list.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label aec-form-label--sm"><span class="aec-form-label__text">Sunroof</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Heated seats</span></span></label></div><figcaption><strong>Don't</strong>Mix label sizes in one group.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Protection plan</span><span class="aec-form-label__desc">Covers parts and labour for 5 years</span></span></label></div><figcaption><strong>Do</strong>Keep the description to one short line.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Protection plan</span><span class="aec-form-label__desc">Covers parts and labour for 5 years or 60,000 miles, whichever comes first. Excludes tyres, brake pads, wiper blades and other wear items. Read the full terms before you buy.</span></span></label></div><figcaption><strong>Don't</strong>Put long terms in the description. Link to them instead.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li><strong>Label:</strong> a few words in sentence case, with no full stop. Say what the option is or what happens when it's selected.</li>
+      <li><strong>Count:</strong> a number in brackets, such as "(24)". Only use it where it helps people narrow results.</li>
+      <li><strong>Description:</strong> one line of helper text that helps people decide, such as what's included, a price or why the option is unavailable.</li>
+      <li>Keep links out of the label. Clicking the label toggles the control, so a link inside it is easy to hit by mistake. Put links in the description or after the group.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Label in name <span class="doc-wcag">WCAG 2.5.3</span></h3><p>Because the input sits inside the <code>&lt;label&gt;</code>, the label text, count and description all become the control's accessible name. For long descriptions, move them out of the label and reference them with <code>aria-describedby</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>The whole row is the click target. It is <span data-measure="#fc-spec-md" data-prop="height"></span> tall at this window width, and taller on small screens.</p></div>
+      <div class="doc-a11y-item"><h3>Disabled text</h3><p>Disabled labels are exempt from contrast rules, but say why an option is unavailable in the description.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Text needs at least 4.5:1 against the background. These ratios are measured live in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Label</td><td><span class="aec-form-label"><span class="aec-form-label__text" data-contrast-sample>Protection plan</span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Count</td><td><span class="aec-form-label"><span class="aec-form-label__text"><span class="aec-form-label__count" data-contrast-sample>(24)</span></span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Description</td><td><span class="aec-form-label"><span class="aec-form-label__desc" data-contrast-sample>Covers parts and labour</span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Small label</td><td><span class="aec-form-label aec-form-label--sm"><span class="aec-form-label__text" data-contrast-sample>Sunroof</span></span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the financing terms</span></span></label><a class="aec-link" href="#accessibility">Read the financing terms</a></div><figcaption><strong>Do</strong>Put links outside the label.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the <a class="aec-link" href="#accessibility">financing terms</a></span></span></label></div><figcaption><strong>Don't</strong>Put a link inside the label. People toggle the box when they mean to open the link.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>Row</td><td>—</td><td><code>label.aec-control</code></td></tr>
+        <tr><td>Label block</td><td>—</td><td><code>.aec-form-label</code> › <code>.aec-form-label__text</code></td></tr>
+        <tr><td>Count</td><td>true</td><td><code>.aec-form-label__count</code> inside the text</td></tr>
+        <tr><td>Description</td><td>true</td><td><code>.aec-form-label__desc</code></td></tr>
+        <tr><td>Size</td><td>medium / small</td><td>(none) / <code>.aec-form-label--sm</code></td></tr>
+        <tr><td>Control position</td><td>left / right / far right</td><td>(none) / <code>.aec-control--reverse</code> / <code>.aec-control--between</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">

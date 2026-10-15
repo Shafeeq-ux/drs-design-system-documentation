@@ -160,6 +160,7 @@ R('.aec-chip--selectable:disabled', { background: CS('bg-disabled'), 'border-col
 R('.aec-chip--selectable:disabled[aria-pressed="true"]', { background: CS('bg-selected-disabled'), 'border-color': CS('border-selected-disabled'), color: CS('text-selected-disabled') });
 R('.aec-chip--inverse.aec-chip--selectable', { background: CS('inverse-bg-default'), 'border-color': CS('inverse-border-default'), color: CS('inverse-text-default') });
 R('.aec-chip--inverse.aec-chip--selectable:hover', { background: CS('inverse-bg-hover'), 'border-color': CS('inverse-border-hover'), color: CS('inverse-text-hover') });
+R('.aec-chip--inverse.aec-chip--selectable:active', { background: CS('inverse-bg-active'), 'border-color': CS('inverse-border-active'), color: CS('inverse-text-active') });
 R('.aec-chip--inverse.aec-chip--selectable[aria-pressed="true"]', { background: CS('inverse-bg-selected-default'), 'border-color': CS('inverse-border-selected-default'), color: CS('inverse-text-selected-default') });
 R('.aec-chip--inverse.aec-chip--selectable:disabled', { background: CS('inverse-bg-disabled'), 'border-color': CS('inverse-border-disabled'), color: CS('inverse-text-disabled') });
 
@@ -173,6 +174,10 @@ R('.aec-chip--input[aria-disabled="true"]', { background: CD('bg-disabled'), 'bo
 R('.aec-chip--inverse.aec-chip--input', { background: CD('inverse-bg-default'), 'border-color': CD('inverse-border-default'), color: CD('inverse-text-default') });
 R('.aec-chip--inverse.aec-chip--input:hover', { background: CD('inverse-bg-hover'), 'border-color': CD('inverse-border-hover'), color: CD('inverse-text-hover') });
 R('.aec-chip--inverse .aec-chip__remove', { color: CD('inverse-icon-default') });
+R('.aec-chip__remove:hover', { color: CD('icon-hover') });
+R('.aec-chip--inverse .aec-chip__remove:hover', { color: CD('inverse-icon-hover') });
+R('.aec-chip--inverse.aec-chip--input[aria-disabled="true"]', { background: CD('inverse-bg-disabled'), 'border-color': CD('inverse-border-disabled'), color: CD('inverse-text-disabled') });
+R('.aec-chip--input[aria-disabled="true"] .aec-chip__remove', { color: CD('icon-disabled') });
 
 /* ------------------------------------------------------------------ Checkbox / radio / switch */
 C('Checkbox — .drp-checkbox-container + --aec-checkbox-color-*; the mark is a masked ::before so it takes the icon colour');
@@ -185,11 +190,14 @@ R('.aec-checkbox:hover:not(:disabled)', { 'background-color': CB('bg-hover'), 'b
 R('.aec-checkbox:active:not(:disabled)', { 'background-color': CB('bg-active'), 'border-color': CB('border-active'), '--_ck': CB('icon-active') });
 R('.aec-checkbox:checked', { 'background-image': 'none', 'background-color': CB('selected-bg-default'), 'border-color': CB('selected-border-default'), '--_ck': CB('selected-icon-default') });
 R('.aec-checkbox:checked:hover:not(:disabled)', { 'background-color': CB('selected-bg-hover'), 'border-color': CB('selected-border-hover'), '--_ck': CB('selected-icon-hover') });
+R('.aec-checkbox:checked:active:not(:disabled)', { 'background-color': CB('selected-bg-active'), 'border-color': CB('selected-border-active'), '--_ck': CB('selected-icon-active') });
+R('.aec-checkbox:indeterminate:hover:not(:disabled)', { 'background-color': CB('intermediate-bg-hover'), 'border-color': CB('intermediate-border-hover'), '--_ck': CB('intermediate-icon-hover') });
+R('.aec-checkbox:indeterminate:active:not(:disabled)', { 'background-color': CB('intermediate-bg-active'), 'border-color': CB('intermediate-border-active'), '--_ck': CB('intermediate-icon-active') });
 R('.aec-checkbox:indeterminate', { 'background-image': 'none', 'background-color': CB('intermediate-bg-default'), 'border-color': CB('intermediate-border-default'), '--_ck': CB('intermediate-icon-default'), '--_mk': DASH });
 R('.aec-checkbox:disabled', { 'background-image': 'none', 'background-color': CB('bg-disabled'), 'border-color': CB('border-disabled'), '--_ck': CB('icon-disabled') });
 R('.aec-checkbox:disabled:checked', { 'background-color': CB('selected-bg-disabled'), 'border-color': CB('selected-border-disabled'), '--_ck': CB('selected-icon-disabled') });
 R('.aec-checkbox:disabled:indeterminate', { 'background-color': CB('intermediate-bg-disabled'), 'border-color': CB('intermediate-border-disabled'), '--_ck': CB('intermediate-icon-disabled') });
-R('.aec-checkbox[aria-invalid="true"]', { 'border-color': a('color-error-default') });
+R('.aec-checkbox[aria-invalid="true"]:not(:disabled), .aec-checkbox[aria-invalid="true"]:hover:not(:disabled), .aec-checkbox[aria-invalid="true"]:active:not(:disabled)', { 'border-color': a('color-error-default') });
 R('.aec-table .aec-checkbox', { width: '20px', height: '20px' });
 R('.aec-checkbox, .aec-radio', { 'border-style': 'solid' });
 
@@ -200,6 +208,7 @@ R('.aec-radio', { width: a('radio-container-sizing'), height: a('radio-container
 R('.aec-radio:hover:not(:disabled)', { 'background-color': RD('bg-hover'), 'border-color': RD('border-hover') });
 R('.aec-radio:checked', { 'background-color': RD('selected-bg-default'), 'border-color': RD('selected-border-default'), 'background-image': DOT(RD('selected-icon-default')) });
 R('.aec-radio:disabled', { 'background-color': RD('bg-disabled'), 'border-color': RD('border-disabled') });
+R('.aec-radio[aria-invalid="true"]:not(:disabled), .aec-radio[aria-invalid="true"]:hover:not(:disabled)', { 'border-color': a('color-error-default') });
 R('.aec-radio:disabled:checked', { 'background-color': RD('selected-bg-disabled'), 'border-color': RD('selected-border-disabled'), 'background-image': DOT(RD('selected-icon-disabled')) });
 
 C('Switch — --aec-switch-*');
@@ -319,6 +328,7 @@ R('.aec-snackbar--inverse', { background: a('color-bg-inverse'), color: a('color
 C('Tooltip');
 R('.aec-tooltip', { '--_bg': a('tooltip-color-dark-bg'), color: a('tooltip-color-dark-body'), padding: d('tooltip-container-padding'), gap: d('tooltip-container-gap'), 'border-radius': d('tooltip-container-border-radius'), 'box-shadow': d('tooltip-container-bg-box-shadow'), ...T('tooltip-typography') });
 R('.aec-tooltip__title', { ...T('tooltip-typography-title'), color: a('tooltip-color-dark-title') });
+R('.aec-tooltip--sm', { padding: '8px 12px', 'font-size': a('typography-body-3-font-size'), 'line-height': a('typography-body-3-line-height') });
 R('.aec-tooltip--light', { '--_bg': a('tooltip-color-white-bg'), color: a('tooltip-color-white-body') });
 R('.aec-tooltip--light .aec-tooltip__title', { color: a('tooltip-color-white-title') });
 
@@ -367,12 +377,33 @@ R('.aec-slider:disabled::-moz-range-thumb', { 'border-color': SL('handle-border-
 C('Card (patterns)');
 R('.aec-card', { 'border-radius': d('card-container-bg-border-radius'), 'border-width': d('card-container-bg-border-width'), background: a('card-color-bg-default'), 'border-color': a('card-color-border-default') });
 
+/* ------------------------------------------------------------------ Forced states for documentation */
+C('Static state classes (.is-focus, .is-loading) used by the docs state matrices');
+R('.aec-snackbar__action:hover', { color: a('color-primary-hover') });
+R('.aec-snackbar__close:hover', { color: a('color-icon-default') });
+R('.is-focus:is(.aec-snackbar__action, .aec-snackbar__close, .aec-btn, .aec-icon-btn, .aec-link, .aec-toggle, .aec-toggle-group__item, .aec-chip--selectable, .aec-chip__remove, .aec-tab, .aec-checkbox, .aec-radio, .aec-switch, .aec-menu__item, .aec-pagination__item, .aec-breadcrumbs a)', { outline: `2px solid ${a('color-focus-default')}`, 'outline-offset': '2px' });
+R('.aec-slider.is-focus::-webkit-slider-thumb, .aec-slider.is-focus::-moz-range-thumb', { outline: `2px solid ${a('color-focus-default')}`, 'outline-offset': '2px' });
+R('.aec-accordion__trigger.is-focus', { outline: `2px solid ${a('color-focus-default')}`, 'outline-offset': '-2px' });
+R('.aec-field__box.is-focus', { outline: `2px solid ${a('color-focus-default')}`, 'outline-offset': '3px' });
+R('.aec-btn.is-loading, .aec-btn[aria-busy="true"]', { position: 'relative', color: 'transparent', 'pointer-events': 'none' });
+R('.aec-btn.is-loading .aec-icon, .aec-btn[aria-busy="true"] .aec-icon', { visibility: 'hidden' });
+R('.aec-btn.is-loading::after, .aec-btn[aria-busy="true"]::after', { content: '""', position: 'absolute', inset: '0', margin: 'auto', width: '18px', height: '18px', 'border-radius': '50%', border: '2px solid var(--_fg, currentColor)', 'border-right-color': 'transparent', animation: 'aec-spin .8s linear infinite' });
+
 /* ------------------------------------------------------------------ Output */
 export function bridgeCSS() {
   const out = ['/*', ' * DRS brand bridge — GENERATED by scripts/build-brands.mjs from scripts/brand-bridge.mjs. Do not edit by hand.', ' * Maps brand tokens (css/brands/<id>.css) onto the .aec-* components. Requires a [data-brand] ancestor.', ' */', ''];
   for (const [sel, body] of rules) {
     if (sel === null) { out.push(`/* ${body} */`); continue; }
-    const scoped = sel.split(/,(?![^(]*\))/).map(s => `[data-brand] ${s.trim()}`).join(',\n');
+    // Every :hover / :active rule also gets a static .is-hover / .is-pressed twin, so docs can show states side by side
+    const parts = sel.split(/,(?![^(]*\))/).map(s => s.trim());
+    const all = [];
+    for (const s of parts) {
+      all.push(s);
+      if (s.includes(':hover')) all.push(s.replace(/:hover/g, '.is-hover'));
+      if (s.includes(':active')) all.push(s.replace(/:active/g, '.is-pressed'));
+      if (s.includes(':focus-within')) all.push(s.replace(/:focus-within/g, '.is-focus'));
+    }
+    const scoped = all.map(s => `[data-brand] ${s}`).join(',\n');
     out.push(`${scoped} {`);
     for (const [k, v] of Object.entries(body)) out.push(`  ${k}: ${v};`);
     out.push('}');

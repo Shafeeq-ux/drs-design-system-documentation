@@ -1,6 +1,6 @@
 ---
 title: Avatar
-description: Avatars represent a person — the shopper, a co-applicant or a dealer contact — with initials, an icon or a photo.
+description: Avatars represent a person, such as the shopper, a co-applicant or a dealer contact, with initials, a user icon or a photo.
 figma: 3769-50184
 ---
 <div class="doc-content">
@@ -9,46 +9,108 @@ figma: 3769-50184
   <p class="doc-lead">Represents a person, such as the shopper, a co-applicant or a dealer contact, with initials, a user icon or a photo.</p>
   <div class="doc-meta"><span>21 Figma variants</span><span><code>.aec-avatar</code></span></div>
 
+  <div class="doc-intro">
+    <p>An avatar is a small picture of a person. It helps people tell who is who, for example the main applicant and a co-applicant on a finance application, or which dealer contact sent a message. It shows <strong>initials</strong>, a <strong>user icon</strong> or a <strong>photo</strong>, in four colours (<strong>neutral, outline, primary, inverse</strong>) and three sizes. Avatars aren't interactive on their own. To make one open something, put it inside a button, as the <a href="header.html">header</a> does.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="variants">Variants</h2>
     <div class="doc-variants">
-      <div class="doc-variant"><div><h3>Neutral</h3><p>The default. A subtle grey background with initials or an icon.</p></div>
+      <div class="doc-variant"><div><h3>Neutral</h3><p>The default. A subtle grey background with initials or an icon. Outline adds a ring for use on tinted surfaces.</p></div>
         <div class="doc-variant-demo"><span class="aec-avatar" aria-hidden="true">AM</span><span class="aec-avatar" role="img" aria-label="Guest"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span><span class="aec-avatar aec-avatar--outline" aria-hidden="true">JR</span></div></div>
       <div class="doc-variant"><div><h3>Emphasis</h3><p>Primary or inverse, to highlight the signed-in user or the main applicant.</p></div>
-        <div class="doc-variant-demo"><span class="aec-avatar aec-avatar--primary" aria-hidden="true">T</span><span class="aec-avatar aec-avatar--primary"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span><span class="aec-avatar aec-avatar--inverse" aria-hidden="true">SK</span><span class="aec-avatar aec-avatar--inverse"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span></div></div>
-      <div class="doc-variant"><div><h3>Image</h3><p>A photo, cropped to a circle.</p></div>
+        <div class="doc-variant-demo"><span class="aec-avatar aec-avatar--primary" aria-hidden="true">T</span><span class="aec-avatar aec-avatar--primary" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span><span class="aec-avatar aec-avatar--inverse" aria-hidden="true">SK</span><span class="aec-avatar aec-avatar--inverse" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span></div></div>
+      <div class="doc-variant"><div><h3>Image</h3><p>A photo, cropped to the avatar shape.</p></div>
         <div class="doc-variant-demo"><span class="aec-avatar aec-avatar--lg"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23c3cfd9'/%3E%3Ccircle cx='20' cy='16' r='7' fill='%23ffffff'/%3E%3Cpath d='M6 40c2-9 8-13 14-13s12 4 14 13z' fill='%23ffffff'/%3E%3C/svg%3E" alt="Dana Lee"></span></div></div>
     </div>
   </section>
 
   <section class="doc-section">
-    <h2 id="sizes">Sizes</h2>
-    <div class="doc-example" data-label="Sizes">
-      <div class="doc-example-preview">
-        <span class="aec-avatar aec-avatar--primary aec-avatar--sm" aria-hidden="true">AM</span>
-        <span class="aec-avatar aec-avatar--primary" aria-hidden="true">AM</span>
-        <span class="aec-avatar aec-avatar--primary aec-avatar--lg" aria-hidden="true">AM</span>
-      </div>
-    </div>
+    <h2 id="variant-grid">Variant grid</h2>
+    <p>Avatars have no interactive states, so here is every colour at every size. The colours come from semantic tokens and the sizes from the active brand's avatar tokens, so switch the brand to see them change.</p>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Size</th><th>Class</th><th>Box</th><th>Initials</th><th>Icon</th></tr></thead>
+      <thead><tr><th>Variant</th><th>Class</th><th>Small</th><th>Medium</th><th>Large</th></tr></thead>
       <tbody>
-        <tr><td>Small</td><td><code>.aec-avatar--sm</code></td><td>24px</td><td>10px demi</td><td>12px</td></tr>
-        <tr><td>Medium (default)</td><td>—</td><td>32px</td><td>12px demi</td><td>16px</td></tr>
-        <tr><td>Large</td><td><code>.aec-avatar--lg</code></td><td>40px</td><td>14px demi</td><td>24px</td></tr>
+        <tr><td>Neutral initials</td><td>—</td><td><span class="aec-avatar aec-avatar--sm" aria-hidden="true">AM</span></td><td><span class="aec-avatar" aria-hidden="true">AM</span></td><td><span class="aec-avatar aec-avatar--lg" aria-hidden="true">AM</span></td></tr>
+        <tr><td>Neutral icon</td><td>—</td><td><span class="aec-avatar aec-avatar--sm" id="av-icon-sm" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span></td><td><span class="aec-avatar" id="av-icon-md" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span></td><td><span class="aec-avatar aec-avatar--lg" id="av-icon-lg" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span></td></tr>
+        <tr><td>Outline</td><td><code>.aec-avatar--outline</code></td><td><span class="aec-avatar aec-avatar--outline aec-avatar--sm" aria-hidden="true">JR</span></td><td><span class="aec-avatar aec-avatar--outline" aria-hidden="true">JR</span></td><td><span class="aec-avatar aec-avatar--outline aec-avatar--lg" aria-hidden="true">JR</span></td></tr>
+        <tr><td>Primary</td><td><code>.aec-avatar--primary</code></td><td><span class="aec-avatar aec-avatar--primary aec-avatar--sm" aria-hidden="true">TL</span></td><td><span class="aec-avatar aec-avatar--primary" aria-hidden="true">TL</span></td><td><span class="aec-avatar aec-avatar--primary aec-avatar--lg" aria-hidden="true">TL</span></td></tr>
+        <tr><td>Inverse</td><td><code>.aec-avatar--inverse</code></td><td><span class="aec-avatar aec-avatar--inverse aec-avatar--sm" aria-hidden="true">SK</span></td><td><span class="aec-avatar aec-avatar--inverse" aria-hidden="true">SK</span></td><td><span class="aec-avatar aec-avatar--inverse aec-avatar--lg" aria-hidden="true">SK</span></td></tr>
       </tbody>
     </table></div>
   </section>
 
   <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <span class="aec-avatar aec-avatar--primary aec-avatar--lg" id="av-anatomy" aria-hidden="true">DL</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 44px);top:22px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 22px);top:22px">2</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong><span data-measure="#av-anatomy" data-prop="width"></span> × <span data-measure="#av-anatomy" data-prop="height"></span> at the large size in this brand. The shape comes from the brand's avatar corner token, and photos are cropped to it.</span></li>
+        <li><span><strong>Content</strong>Initials in <span data-measure="#av-anatomy" data-prop="font-size"></span> <span data-measure="#av-anatomy" data-prop="font-family"></span>, weight <span data-measure="#av-anatomy" data-prop="font-weight"></span>, always <span data-measure="#av-anatomy" data-prop="text-transform"></span>. It can also be the user icon or an <code>&lt;img&gt;</code>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <p>Three sizes. Medium is the default. The blue marks are measured from the real avatars in the active brand, so they change when you switch brands.</p>
+    <div class="doc-spec is-row" data-spec="height,width">
+      <span class="aec-avatar aec-avatar--primary aec-avatar--sm" id="av-sm" aria-hidden="true" data-spec-target>AM</span>
+      <span class="aec-avatar aec-avatar--primary" id="av-md" aria-hidden="true" data-spec-target>AM</span>
+      <span class="aec-avatar aec-avatar--primary aec-avatar--lg" id="av-lg" aria-hidden="true" data-spec-target>AM</span>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Class</th><th>Box</th><th>Initials</th><th>Weight</th><th>Icon</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Small</td><td><code>.aec-avatar--sm</code></td><td data-measure="#av-sm" data-prop="height"></td><td data-measure="#av-sm" data-prop="font-size"></td><td data-measure="#av-sm" data-prop="font-weight"></td><td data-measure="#av-icon-sm" data-prop="icon-size"></td><td><code>--drp-avatar-container-bg-small-*</code>, <code>--drp-avatar-typography-small-*</code></td></tr>
+        <tr><td>Medium (default)</td><td>—</td><td data-measure="#av-md" data-prop="height"></td><td data-measure="#av-md" data-prop="font-size"></td><td data-measure="#av-md" data-prop="font-weight"></td><td data-measure="#av-icon-md" data-prop="icon-size"></td><td><code>--drp-avatar-container-bg-medium-*</code>, <code>--drp-avatar-typography-medium-*</code></td></tr>
+        <tr><td>Large</td><td><code>.aec-avatar--lg</code></td><td data-measure="#av-lg" data-prop="height"></td><td data-measure="#av-lg" data-prop="font-size"></td><td data-measure="#av-lg" data-prop="font-weight"></td><td data-measure="#av-icon-lg" data-prop="icon-size"></td><td><code>--drp-avatar-container-bg-large-*</code>, <code>--drp-avatar-typography-large-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <p>Colours come from semantic tokens: neutral uses <code>bg/variant</code> and <code>text/subtle</code>, primary uses <code>primary/default</code> and <code>primary/on-default</code>, and inverse uses <code>bg/inverse</code> and <code>text/inverse</code>.</p>
+  </section>
+
+  <section class="doc-section">
     <h2 id="usage">Usage</h2>
     <ul>
-      <li>Use one or two initials, from the first and last name.</li>
       <li>Fall back to the user icon when no name is known, for example for a guest shopper.</li>
       <li>Combine an avatar with a <a href="badge.html">badge</a> dot to show unread messages from a dealer.</li>
+      <li>Use one size for all avatars in a list or group.</li>
     </ul>
     <div class="doc-example" data-label="Avatar with badge">
       <div class="doc-example-preview"><span class="aec-badge-anchor"><span class="aec-avatar aec-avatar--lg aec-avatar--inverse" aria-hidden="true">DL</span><span class="aec-badge aec-badge--dot"><span class="aec-visually-hidden">New message</span></span></span></div>
+    </div>
+    <h3 id="dodont-usage">Do / don't: usage</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-avatar" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span><span class="aec-body-2">Guest</span></div><figcaption><strong>Do</strong>Use the user icon when you don't know the person's name.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-avatar" aria-hidden="true">?</span><span class="aec-avatar" aria-hidden="true">NA</span></div><figcaption><strong>Don't</strong>Show placeholder letters or symbols. "NA" reads like real initials.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-avatar" aria-hidden="true">AM</span><span class="aec-avatar" aria-hidden="true">JR</span><span class="aec-avatar" aria-hidden="true">DL</span></div><figcaption><strong>Do</strong>Use one size and one colour for avatars in a group.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg aec-avatar--primary" aria-hidden="true">AM</span><span class="aec-avatar aec-avatar--sm" aria-hidden="true">JR</span><span class="aec-avatar aec-avatar--inverse" aria-hidden="true">DL</span></div><figcaption><strong>Don't</strong>Mix sizes and colours in a group. It suggests a difference that isn't there.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start">
+        <span style="display:flex;align-items:center;gap:8px"><span class="aec-avatar aec-avatar--primary" aria-hidden="true">AM</span><span class="aec-body-2">Alex Morgan · Applicant</span></span>
+        <span style="display:flex;align-items:center;gap:8px"><span class="aec-avatar" aria-hidden="true">JR</span><span class="aec-body-2">Jordan Reyes · Co-applicant</span></span>
+      </div><figcaption><strong>Do</strong>Use the primary colour for one person, such as the main applicant, and say their role in text.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:flex-start">
+        <span style="display:flex;align-items:center;gap:8px"><span class="aec-avatar aec-avatar--primary" aria-hidden="true">AM</span><span class="aec-body-2">Alex Morgan</span></span>
+        <span style="display:flex;align-items:center;gap:8px"><span class="aec-avatar aec-avatar--inverse" aria-hidden="true">JR</span><span class="aec-body-2">Jordan Reyes</span></span>
+      </div><figcaption><strong>Don't</strong>Use avatar colour to show a status, such as approved or declined. Use a <a href="chip.html">chip</a> instead.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23c3cfd9'/%3E%3Ccircle cx='20' cy='16' r='7' fill='%23ffffff'/%3E%3Cpath d='M6 40c2-9 8-13 14-13s12 4 14 13z' fill='%23ffffff'/%3E%3C/svg%3E" alt=""></span><span class="aec-body-2">Dana Lee, sales consultant</span></div><figcaption><strong>Do</strong>Use a photo only when the person has added one, such as a dealer contact's profile.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/car.svg)" aria-hidden="true"></span></span><span class="aec-body-2">Dana Lee, sales consultant</span></div><figcaption><strong>Don't</strong>Put other icons, such as a car or a logo, in an avatar. Avatars are for people.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>Initials are the first letter of the first name and the first letter of the last name. The avatar shows them in capitals, so pass them in as they are. For a single name, use one letter. Don't add punctuation.</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg" aria-hidden="true">AM</span><span class="aec-body-2">Alex Morgan</span></div><figcaption><strong>Do</strong>Use two initials, from the first and last name.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg" aria-hidden="true">AJM</span><span class="aec-body-2">Alex James Morgan</span></div><figcaption><strong>Don't</strong>Use three or more letters. They don't fit at small sizes.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg" aria-hidden="true">T</span><span class="aec-body-2">Taylor</span></div><figcaption><strong>Do</strong>Use one initial when only one name is known.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg" aria-hidden="true">A.M.</span></div><figcaption><strong>Don't</strong>Add full stops or other punctuation.</figcaption></figure>
     </div>
   </section>
 
@@ -56,16 +118,49 @@ figma: 3769-50184
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Text alternatives <span class="doc-wcag">WCAG 1.1.1</span></h3><p>When the person's name is shown next to the avatar, hide the avatar (<code>aria-hidden="true"</code>, or <code>alt=""</code> on an image). When it appears alone, give it the name: <code>alt="Dana Lee"</code> or <code>role="img" aria-label="Dana Lee"</code>.</p></div>
-      <div class="doc-a11y-item"><h3>Contrast <span class="doc-wcag">WCAG 1.4.3</span></h3><p>All token pairs meet AA: <code>text/subtle</code> on <code>bg/variant</code> is 5.13:1 and white on <code>primary/default</code> is 4.53:1.</p></div>
+      <div class="doc-a11y-item"><h3>Not a control <span class="doc-wcag">WCAG 4.1.2</span></h3><p>An avatar is a picture, not a button. If it opens a menu or a profile, wrap it in a <code>&lt;button&gt;</code> and name the button, for example <code>aria-label="Account, Alex Morgan"</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Don't rely on colour <span class="doc-wcag">WCAG 1.4.1</span></h3><p>Avatar colour alone must not carry meaning. Say roles and statuses in text.</p></div>
+    </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Initials need at least 4.5:1 against the avatar background. These ratios are measured live from the avatars below in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Variant</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Neutral</td><td><span class="aec-avatar" aria-hidden="true" data-contrast-sample>AM</span></td><td data-contrast-result></td></tr>
+        <tr><td>Outline</td><td><span class="aec-avatar aec-avatar--outline" aria-hidden="true" data-contrast-sample>JR</span></td><td data-contrast-result></td></tr>
+        <tr><td>Primary</td><td><span class="aec-avatar aec-avatar--primary" aria-hidden="true" data-contrast-sample>TL</span></td><td data-contrast-result></td></tr>
+        <tr><td>Inverse</td><td><span class="aec-avatar aec-avatar--inverse" aria-hidden="true" data-contrast-sample>SK</span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-avatar" aria-hidden="true">DL</span><span class="aec-body-2">Dana Lee</span></div><figcaption><strong>Do</strong>Hide the avatar when the name is next to it. A screen reader says "Dana Lee" once.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-avatar" role="img" aria-label="Dana Lee">DL</span><span class="aec-body-2">Dana Lee</span></div><figcaption><strong>Don't</strong>Label it as well. A screen reader says "Dana Lee, image, Dana Lee".</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg" role="img" aria-label="Guest"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span></div><figcaption><strong>Do</strong>Name an avatar that appears on its own, such as <code>aria-label="Guest"</code>.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><span class="aec-avatar aec-avatar--lg">DL</span></div><figcaption><strong>Don't</strong>Leave lone initials unlabelled. A screen reader just says "DL", with no context.</figcaption></figure>
     </div>
   </section>
 
   <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>Type</td><td>initial / icon / image</td><td>text / child <code>.aec-icon</code> / child <code>&lt;img&gt;</code></td></tr>
+        <tr><td>Emphasis</td><td>neutral / primary / inverse</td><td>(none) / <code>.aec-avatar--primary</code> / <code>.aec-avatar--inverse</code></td></tr>
+        <tr><td>Outlined</td><td>true</td><td><code>.aec-avatar--outline</code></td></tr>
+        <tr><td>Size</td><td>small / medium / large</td><td><code>.aec-avatar--sm</code> / (none) / <code>.aec-avatar--lg</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
-    <ul class="doc-small">
-      <li>Most variants use legacy, off-palette colours (#494dac indigo, #f1f1f3, #787987, #242529). The code maps them to tokens: primary → <code>primary/default</code>, emphasis neutral → <code>bg/inverse</code>, neutral → <code>bg/variant</code> with <code>text/subtle</code>.</li>
-      <li>Only the medium neutral-initial variant uses styles: an outlined ring, available here as <code>--outline</code>.</li>
-      <li>Initials weights vary (bold and semibold). The code uses demi throughout.</li>
-    </ul>
+    <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><div><p><strong>Differences found in the Figma library, for the design team to review:</strong></p>
+      <ul style="margin:8px 0 0;padding-left:18px">
+        <li>Most variants use legacy, off-palette colours (#494dac indigo, #f1f1f3, #787987, #242529). The code maps them to tokens: primary → <code>primary/default</code>, emphasis neutral → <code>bg/inverse</code>, neutral → <code>bg/variant</code> with <code>text/subtle</code>.</li>
+        <li>Only the medium neutral-initial variant uses styles: an outlined ring, available here as <code>--outline</code>.</li>
+        <li>Initials weights vary (bold and semibold). The code takes the weight from the brand's avatar typography tokens, the same at every size.</li>
+      </ul></div></div>
   </section>
 </div>

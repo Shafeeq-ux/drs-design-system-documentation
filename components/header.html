@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Header · DRS Design System</title>
-<meta name="description" content="The global page header with the brand logo, dealership name and account menu.">
+<meta name="description" content="The global app header, with the brand logo, the dealership name and the shopper's account menu.">
 <meta name="theme-color" content="#262626">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -26,15 +27,19 @@
   <p class="doc-lead">The app's top bar, with the brand logo, the dealership name and the shopper's account menu.</p>
   <div class="doc-meta"><span>Web and mobile</span><span><code>.aec-header</code></span></div>
 
+  <div class="doc-intro">
+    <p>The header tells shoppers whose checkout they are in and gives them a way into their account. It has three parts: a <strong>logo slot</strong> for the OEM or dealer logo, the <strong>dealership name</strong> and an <strong>account button</strong> that opens a <a href="menu.html">menu</a>. It appears once, at the top of every checkout page. This page documents the product header, <code>.aec-header</code>, not the header of this documentation site.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="default">Default</h2>
     <div class="doc-example" data-label="Header">
       <div class="doc-example-preview is-stretch is-plain" style="padding:16px">
         <header class="aec-header">
           <a class="aec-header__brand" href="#default">
-            <span class="aec-header__logo"><svg viewBox="0 0 94 20" width="94" height="20" role="img" aria-label="Brand logo"><rect width="94" height="20" rx="3" fill="#e6e6e6"/><text x="47" y="14" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#666">LOGO</text></svg></span>
+            <span class="aec-header__logo"><svg viewBox="0 0 94 20" width="94" height="20" role="img" aria-label="Brand logo"><rect x="0.5" y="0.5" width="93" height="19" rx="3" style="fill:none;stroke:currentColor;opacity:.4"/><text x="47" y="14" text-anchor="middle" font-size="10" font-weight="700" style="fill:currentColor">LOGO</text></svg></span>
             <span class="aec-header__divider" aria-hidden="true"></span>
-            <span class="aec-header__dealer">Riverside Chevrolet</span>
+            <span class="aec-header__dealer">Riverside Motors</span>
           </a>
           <div class="aec-header__actions">
             <div class="aec-menu-anchor">
@@ -49,37 +54,154 @@
         </header>
       </div>
     </div>
+    <p>The logo is a placeholder. Each OEM or dealer supplies its own.</p>
   </section>
 
   <section class="doc-section">
-    <h2 id="spec">Specification</h2>
+    <h2 id="variants">Variants</h2>
+    <p>The header has no visual variants. What changes is the content of the account button and how much room the dealer name has. The colours come from the active brand's <code>--aec-header-color-*</code> tokens, so some brands use a dark header. Switch the brand to see it.</p>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3>Signed in</h3><p>The account button shows the shopper's initials in an outline <a href="avatar.html">avatar</a>, with a caret.</p></div>
+        <div class="doc-variant-demo"><div class="aec-header" style="width:100%"><span class="aec-header__brand"><span class="aec-header__dealer">Riverside Motors</span></span><span class="aec-header__actions"><button class="aec-header__account" type="button" tabindex="-1" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></span></div></div></div>
+      <div class="doc-variant"><div><h3>Guest</h3><p>Before the shopper signs in, the avatar shows the user icon.</p></div>
+        <div class="doc-variant-demo"><div class="aec-header" style="width:100%"><span class="aec-header__brand"><span class="aec-header__dealer">Riverside Motors</span></span><span class="aec-header__actions"><button class="aec-header__account" type="button" tabindex="-1" aria-label="Account, guest"><span class="aec-avatar aec-avatar--outline" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></span></div></div></div>
+      <div class="doc-variant"><div><h3>Long dealer name</h3><p>The name stays on one line and ends with an ellipsis when there isn't room.</p></div>
+        <div class="doc-variant-demo"><div class="aec-header" style="width:100%;max-width:300px"><span class="aec-header__brand"><span class="aec-header__dealer">Riverside Motors of Greater Springfield</span></span><span class="aec-header__actions"><button class="aec-header__account" type="button" tabindex="-1" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></span></div></div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <p>The account button is the only interactive part. On hover it gets a <code>bg/variant</code> background. On keyboard focus it shows a 2px <code>focus/default</code> ring, 2px outside the button. While the menu is open it has <code>aria-expanded="true"</code>. Hover or tab to the account button in the example above to see them. The docs can't show these states side by side yet, because the button has no static state classes.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-header" id="hdr-anatomy" style="width:100%;max-width:400px">
+          <span class="aec-header__brand" id="hdr-anatomy-brand">
+            <span class="aec-header__logo"><svg viewBox="0 0 94 20" width="94" height="20" aria-hidden="true"><rect x="0.5" y="0.5" width="93" height="19" rx="3" style="fill:none;stroke:currentColor;opacity:.4"/><text x="47" y="14" text-anchor="middle" font-size="10" font-weight="700" style="fill:currentColor">LOGO</text></svg></span>
+            <span class="aec-header__divider" aria-hidden="true"></span>
+            <span class="aec-header__dealer" id="hdr-anatomy-dealer">Riverside Motors</span>
+          </span>
+          <span class="aec-header__actions"><button class="aec-header__account" id="hdr-anatomy-account" type="button" tabindex="-1" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></span>
+        </div>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 224px);top:49px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 148px);top:14px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 89px);top:14px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 20px);top:14px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 143px);top:14px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Bar</strong><span data-measure="#hdr-anatomy" data-prop="height"></span> tall, <code>--aec-header-color-bg-default</code>, with a <span data-measure="#hdr-anatomy" data-prop="border-bottom-width"></span> bottom border (<code>--aec-header-color-border-default</code>).</span></li>
+        <li><span><strong>Logo slot</strong>The OEM or dealer logo, scaled to a fixed height.</span></li>
+        <li><span><strong>Divider</strong>A short vertical rule, <code>border/default</code>.</span></li>
+        <li><span><strong>Dealer name</strong><span data-measure="#hdr-anatomy-dealer" data-prop="font-size"></span> <span data-measure="#hdr-anatomy-dealer" data-prop="font-family"></span>, weight <span data-measure="#hdr-anatomy-dealer" data-prop="font-weight"></span>, <span data-measure="#hdr-anatomy-dealer" data-prop="text-transform"></span>. It truncates on one line.</span></li>
+        <li><span><strong>Account button</strong><span data-measure="#hdr-anatomy-account" data-prop="height"></span> tall. An outline avatar and a caret, <code>--aec-header-color-icon-default</code>. The caret is hidden on mobile.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Size and spacing</h2>
+    <p>The blue marks are measured from a real header in the active brand. The side padding is <code>--aec-spacing-container-padding-s</code> on mobile and <code>--aec-spacing-container-padding-m</code> from 768px, so it also changes with the screen width.</p>
+    <div class="doc-spec" data-spec="height,padding">
+      <div class="aec-header" id="hdr-spec" style="width:100%;max-width:480px" data-spec-target>
+        <span class="aec-header__brand"><span class="aec-header__logo"><svg viewBox="0 0 94 20" width="94" height="20" aria-hidden="true"><rect x="0.5" y="0.5" width="93" height="19" rx="3" style="fill:none;stroke:currentColor;opacity:.4"/><text x="47" y="14" text-anchor="middle" font-size="10" font-weight="700" style="fill:currentColor">LOGO</text></svg></span><span class="aec-header__divider" aria-hidden="true"></span><span class="aec-header__dealer">Riverside Motors</span></span>
+        <span class="aec-header__actions"><button class="aec-header__account" type="button" tabindex="-1" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></span>
+      </div>
+    </div>
+    <div class="doc-spec" data-spec="height,padding,gap">
+      <button class="aec-header__account" id="hdr-spec-account" type="button" tabindex="-1" aria-label="Account, Alex Morgan" data-spec-target><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button>
+    </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Part</th><th>Desktop (≥ 768px)</th><th>Mobile</th></tr></thead>
+      <thead><tr><th>Part</th><th>Height</th><th>Side padding</th><th>Top padding</th><th>Gap</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Bar</td><td>56px tall, padding 8/24px, <code>bg/default</code>, 1px bottom <code>border/default</code></td><td>Padding 8/16px</td></tr>
-        <tr><td>Logo</td><td colspan="2">A slot for the OEM or dealer logo, 20px tall</td></tr>
-        <tr><td>Divider</td><td colspan="2">1×16px, <code>border/default</code></td></tr>
-        <tr><td>Dealer name</td><td colspan="2">body-3 bold, all caps, <code>text/default</code>, truncates</td></tr>
-        <tr><td>Account</td><td>Outline avatar with initials (24px) and a caret</td><td>Avatar only</td></tr>
+        <tr><td>Bar</td><td data-measure="#hdr-spec" data-prop="height"></td><td data-measure="#hdr-spec" data-prop="padding-left"></td><td data-measure="#hdr-spec" data-prop="padding-top"></td><td data-measure="#hdr-spec" data-prop="gap"></td><td><code>--aec-header-color-*</code>, <code>--aec-spacing-container-padding-*</code></td></tr>
+        <tr><td>Logo, divider and name</td><td data-measure="#hdr-anatomy-brand" data-prop="height"></td><td>—</td><td>—</td><td data-measure="#hdr-anatomy-brand" data-prop="gap"></td><td><code>border/default</code>, <code>--drp-typography-body-3-regular-*</code></td></tr>
+        <tr><td>Account button</td><td data-measure="#hdr-spec-account" data-prop="height"></td><td data-measure="#hdr-spec-account" data-prop="padding-left"></td><td>—</td><td data-measure="#hdr-spec-account" data-prop="gap"></td><td><code>--aec-header-color-icon-default</code>, <code>--drp-avatar-*</code></td></tr>
       </tbody>
     </table></div>
+    <p>The header has no size tokens of its own. Only its colours come from the brand's header tokens.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <ul>
+      <li>Use one header, at the top of every checkout page, including on mobile.</li>
+      <li>Keep it to the logo, the dealer name and the account button. Put navigation and steps in the page, for example in <a href="tabs.html">tabs</a> or <a href="breadcrumbs.html">breadcrumbs</a>.</li>
+      <li>Link the logo and dealer name to the start of the checkout or the dealer's home page.</li>
+    </ul>
+    <h3 id="dodont-usage">Do / don't: usage</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-header"><span class="aec-header__brand"><span class="aec-header__dealer">Riverside Motors</span></span><span class="aec-header__actions"><button class="aec-header__account" type="button" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></span></div></div><figcaption><strong>Do</strong>Keep the header simple: who the dealer is and the shopper's account.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-header"><span class="aec-header__brand"><span class="aec-header__dealer">Riverside Motors</span></span><span class="aec-header__actions"><button class="aec-btn aec-btn--primary aec-btn--sm" type="button">Get $500 off</button><button class="aec-header__account" type="button" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span></button></span></div></div><figcaption><strong>Don't</strong>Add promotions or calls to action. They pull people out of the checkout.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-header" style="max-width:260px;margin:auto;width:100%"><span class="aec-header__brand"><span class="aec-header__dealer">Riverside Motors of Greater Springfield</span></span><span class="aec-header__actions"><button class="aec-header__account" type="button" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span></button></span></div></div><figcaption><strong>Do</strong>Let a long dealer name truncate. The full name can go in the page footer.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-header" style="max-width:260px;margin:auto;width:100%;height:auto"><span class="aec-header__brand"><span class="aec-header__dealer" style="white-space:normal">Riverside Motors of Greater Springfield</span></span><span class="aec-header__actions"><button class="aec-header__account" type="button" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span></button></span></div></div><figcaption><strong>Don't</strong>Wrap the name onto more lines. The header grows and pushes the page down.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-header"><span class="aec-header__brand"><span class="aec-header__logo"><svg viewBox="0 0 94 20" width="94" height="20" aria-hidden="true"><rect x="0.5" y="0.5" width="93" height="19" rx="3" style="fill:none;stroke:currentColor;opacity:.4"/><text x="47" y="14" text-anchor="middle" font-size="10" font-weight="700" style="fill:currentColor">LOGO</text></svg></span><span class="aec-header__divider" aria-hidden="true"></span><span class="aec-header__dealer">Riverside Motors</span></span></div></div><figcaption><strong>Do</strong>Use the logo slot at its set height, with the logo's own proportions.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-header"><span class="aec-header__brand"><span class="aec-header__logo"><svg viewBox="0 0 94 20" width="94" height="20" preserveAspectRatio="none" style="width:160px;height:36px" aria-hidden="true"><rect x="0.5" y="0.5" width="93" height="19" rx="3" style="fill:none;stroke:currentColor;opacity:.4"/><text x="47" y="14" text-anchor="middle" font-size="10" font-weight="700" style="fill:currentColor">LOGO</text></svg></span><span class="aec-header__divider" aria-hidden="true"></span><span class="aec-header__dealer">Riverside Motors</span></span></div></div><figcaption><strong>Don't</strong>Stretch or enlarge the logo to fill the bar.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Landmark <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Use a single <code>&lt;header&gt;</code> landmark and put a "Skip to content" link before it.</p></div>
-      <div class="doc-a11y-item"><h3>Account button <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The account button opens a <a href="menu.html">menu</a> and needs a name that includes the person, such as "Account, Alex Morgan".</p></div>
+      <div class="doc-a11y-item"><h3>Account button <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The account button opens a <a href="menu.html">menu</a> and needs a name that includes the person, such as "Account, Alex Morgan". Give it <code>aria-haspopup="menu"</code>, <code>aria-controls</code> and an <code>aria-expanded</code> state that matches the menu.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Enter, Space or the down arrow opens the menu and moves focus to the first item. Arrow keys move between items, and Esc closes the menu and returns focus to the button.</p></div>
+      <div class="doc-a11y-item"><h3>Logo <span class="doc-wcag">WCAG 1.1.1</span></h3><p>Give the logo the brand name as its text alternative. When the logo and dealer name are one link, the link's name is both, for example "Brand logo, Riverside Motors".</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>The account button is <span data-measure="#hdr-spec-account" data-prop="height"></span> tall in this brand, more than the 24×24px minimum.</p></div>
+    </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>The dealer name needs at least 4.5:1 against the header. These ratios are measured live in the active brand, including brands with a dark header.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Dealer name</td><td><div class="aec-header" style="width:220px"><span class="aec-header__dealer" data-contrast-sample>Riverside Motors</span></div></td><td data-contrast-result></td></tr>
+        <tr><td>Avatar initials</td><td><div class="aec-header" style="width:220px"><span class="aec-header__account"><span class="aec-avatar aec-avatar--outline" aria-hidden="true" data-contrast-sample>AM</span></span></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The account icon and the focus ring need at least 3:1 against the header. The bottom border is decorative.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Account caret</td><td><div class="aec-header" style="width:220px"><span class="aec-header__account" data-contrast-sample data-contrast-mode="border"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></span></div></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><div class="aec-header" style="width:220px"><span class="aec-header__account" data-contrast-sample data-contrast-mode="focus"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span></span></div></td><td data-contrast-result></td></tr>
+        <tr><td>Bottom border (decorative)</td><td style="background:var(--aec-header-color-bg-default)"><span style="display:block;width:160px;border-top:var(--aec-border-width-10) solid var(--aec-header-color-border-default)" data-contrast-sample data-contrast-mode="border"></span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><button class="aec-header__account" type="button" aria-label="Account, Alex Morgan"><span class="aec-avatar aec-avatar--outline" aria-hidden="true">AM</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Do</strong>Name the account button with the person. A screen reader says "Account, Alex Morgan, menu button".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><button class="aec-header__account" type="button"><span class="aec-avatar aec-avatar--outline">AM</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Don't</strong>Rely on the initials. A screen reader only says "AM, button".</figcaption></figure>
     </div>
   </section>
 
   <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>Header</td><td>—</td><td><code>header.aec-header</code></td></tr>
+        <tr><td>Logo</td><td>image</td><td><code>.aec-header__brand</code> &gt; <code>.aec-header__logo</code> (<code>&lt;img&gt;</code> or <code>&lt;svg&gt;</code>)</td></tr>
+        <tr><td>Divider</td><td>—</td><td><code>.aec-header__divider</code></td></tr>
+        <tr><td>Dealership name</td><td>text</td><td><code>.aec-header__dealer</code></td></tr>
+        <tr><td>Profile</td><td>—</td><td><code>.aec-header__actions</code> &gt; <code>button.aec-header__account</code> with an outline <code>.aec-avatar</code></td></tr>
+        <tr><td>Web / Mobile</td><td>true</td><td>responsive at 768px, no class</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
-    <ul class="doc-small">
-      <li>The logo in Figma is a raster image. Treat it as a slot that changes per OEM or dealer. This site shows a neutral placeholder.</li>
-      <li>The <code>Web</code> and <code>Mobile</code> booleans overlap. The code uses one responsive breakpoint at 768px.</li>
-      <li>The profile initials are 9px. The code uses the outline <a href="avatar.html">avatar</a> at its small size.</li>
-    </ul>
+    <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><div><p><strong>Differences found in the Figma library, for the design team to review:</strong></p>
+      <ul style="margin:8px 0 0;padding-left:18px">
+        <li>The logo in Figma is a raster image. Treat it as a slot that changes per OEM or dealer. This site shows a neutral placeholder.</li>
+        <li>The <code>Web</code> and <code>Mobile</code> booleans overlap. The code uses one responsive breakpoint at 768px.</li>
+        <li>The profile initials are 9px. The code uses the outline <a href="avatar.html">avatar</a>.</li>
+      </ul></div></div>
   </section>
 </div>
 </main>
@@ -87,6 +209,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

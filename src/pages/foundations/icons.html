@@ -1,21 +1,23 @@
 ---
 title: Icons
-description: The DRS icon library — 196 icons available at 12, 16, 24, 32 and 40px.
+description: Brand icon fonts for every DRS brand. Browse, search and copy icons, compare them across brands and download each brand's icon font.
 figma: 1821-11060
-scripts: foundations.js
+scripts: icons-data.js, foundations.js
 ---
 <div class="doc-content">
   <p class="doc-eyebrow">Foundations</p>
   <h1>Icons</h1>
-  <p class="doc-lead">196 icons covering vehicles, financing, documents, delivery and core UI. Each one is drawn at five sizes in Figma: 12, 16, 24, 32 and 40px.</p>
-  <div class="doc-meta"><span>196 icons</span><span>SVG · currentColor</span></div>
+  <p class="doc-lead">Each brand has its own icon font, built in IcoMoon. Icon names are shared across brands, but each brand draws its own glyphs. Switch the brand, and every icon on the site switches with it.</p>
+  <div class="doc-meta"><span data-icon-total>Icon fonts</span><span>Icon font · currentColor</span><span><code>data-icon</code></span></div>
 
   <section class="doc-section">
     <h2 id="library">Library</h2>
-    <p>Search by name and click an icon to copy its name. The SVGs on this site are the 24px masters, and they scale cleanly to other sizes.</p>
+    <p>Search by name and select an icon to copy its markup. By default the grid uses the brand chosen in the header. Pick another brand to browse its set.</p>
     <div class="doc-icons-toolbar">
       <label class="aec-visually-hidden" for="icon-search">Search icons</label>
-      <input id="icon-search" type="search" placeholder="Search icons, e.g. car, calendar, payment">
+      <input id="icon-search" type="search" placeholder="Search icons, e.g. car, calendar, payment" autocomplete="off">
+      <label class="doc-small" for="icon-brand">Brand</label>
+      <select id="icon-brand" class="doc-btn" style="height:40px"><option value="">Site brand</option></select>
       <label class="doc-small" for="icon-size">Size</label>
       <select id="icon-size" class="doc-btn" style="height:40px">
         <option value="16">16px</option><option value="24" selected>24px</option><option value="32">32px</option><option value="40">40px</option>
@@ -26,26 +28,51 @@ scripts: foundations.js
   </section>
 
   <section class="doc-section">
-    <h2 id="usage">Usage</h2>
-    <p>Icons are drawn with a CSS mask, so they inherit <code>color</code>. Set the colour with an icon token and the size with a size modifier.</p>
-<pre><code>&lt;span class="aec-icon aec-icon--24" style="--aec-icon-src:url(/assets/icons/calendar-check.svg)" aria-hidden="true"&gt;&lt;/span&gt;
+    <h2 id="compare">Same name, every brand</h2>
+    <p>The same markup renders a different glyph in each brand.</p>
+    <div class="doc-table-wrap" data-icon-compare></div>
+  </section>
 
-/* or inline the SVG — fills use currentColor */
+  <section class="doc-section">
+    <h2 id="downloads">Downloads</h2>
+    <p>Each zip is the IcoMoon export for that brand. It contains the font in TTF, WOFF, EOT and SVG formats, <code>style.css</code> with an <code>.icon-&lt;name&gt;</code> class for every glyph, <code>selection.json</code> to re-import into IcoMoon, and a demo page.</p>
+    <div class="doc-icon-downloads" data-icon-downloads></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <p>Name the icon with <code>data-icon</code>. The glyph and font come from the nearest <code>[data-brand]</code>, so the same markup is correct in every brand. Icons inherit <code>color</code>. Set the size with a size modifier.</p>
+<pre><code>&lt;span class="aec-icon aec-icon--24" data-icon="calendar-check" aria-hidden="true"&gt;&lt;/span&gt;
+
+/* colour with an icon token */
 .my-icon { color: var(--aec-color-icon-variant); }</code></pre>
+    <p>Existing markup that points at an SVG still works. <code>style="--aec-icon-src:url(/assets/icons/car.svg)"</code> is swapped for the brand glyph automatically, and it falls back to the SVG when no font has that icon.</p>
+    <p>Apps that use the IcoMoon export directly can load the brand's <code>style.css</code> from the zip and use its classes, for example <code>&lt;i class="icon-car" aria-hidden="true"&gt;&lt;/i&gt;</code>. That approach loads one brand at a time.</p>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Size</th><th>Use for</th></tr></thead>
+      <thead><tr><th>Size</th><th>Class</th><th>Use for</th></tr></thead>
       <tbody>
-        <tr><td>12px</td><td>Inside chips, badges and dense tables</td></tr>
-        <tr><td>16px</td><td>Inside buttons, links and inputs</td></tr>
-        <tr><td>24px</td><td>Default: icon buttons, navigation, list items</td></tr>
-        <tr><td>32px / 40px</td><td>Feature tiles, empty states and step indicators</td></tr>
+        <tr><td>12px</td><td><code>.aec-icon--12</code></td><td>Inside chips, badges and dense tables</td></tr>
+        <tr><td>16px</td><td><code>.aec-icon--16</code></td><td>Inside buttons, links and inputs</td></tr>
+        <tr><td>24px</td><td><code>.aec-icon--24</code> (default)</td><td>Icon buttons, navigation, list items</td></tr>
+        <tr><td>32px / 40px</td><td><code>.aec-icon--32</code> / <code>.aec-icon--40</code></td><td>Feature tiles, empty states and step indicators</td></tr>
       </tbody>
     </table></div>
+    <h3 class="doc-h3" id="tokens">How it works</h3>
+    <p>Each brand file defines a pair of custom properties per icon: <code>--aec-ig-&lt;name&gt;</code> (the glyph) and <code>--aec-if-&lt;name&gt;</code> (the font). If a brand doesn't have an icon, it uses the DRS Base glyph. <code>css/brand-icons.css</code> loads the six fonts and swaps the glyph in. The fonts are only downloaded when a brand that uses them is shown.</p>
     <h3 class="doc-h3" id="a11y">Accessibility</h3>
     <ul>
       <li>Decorative icons next to text get <code>aria-hidden="true"</code>.</li>
       <li>An icon-only control needs an accessible name, for example <code>aria-label="Close"</code>.</li>
       <li>Meaningful icons must meet 3:1 contrast with their background (WCAG 1.4.11).</li>
+      <li>Icon fonts are hidden from screen readers by <code>aria-hidden</code>. Never put meaning only in the glyph.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Notes</h2>
+    <ul class="doc-small" data-icon-notes>
+      <li>Icon names keep the casing from IcoMoon (for example <code>Browser</code> and <code>VideoCamera</code>). This site normalises them to lowercase with hyphens, such as <code>browser</code> and <code>videocamera</code>.</li>
+      <li>Chevrolet and Car Bravo share the same brand tokens, but their icon fonts are different.</li>
     </ul>
   </section>
 </div>

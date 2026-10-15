@@ -9,6 +9,10 @@ figma: 3769-50192
   <p class="doc-lead">Shows a short hint or explanation when someone hovers over or focuses an element, for example what <em>Destination freight</em> includes.</p>
   <div class="doc-meta"><span>Dark and light · 9 placements</span><span><code>.aec-tooltip</code></span></div>
 
+  <div class="doc-intro">
+    <p>A tooltip adds a little extra detail. It's never the only place important information appears, because touch-screen users often can't open it and many people never try. Tooltips come in two styles, <strong>dark</strong> and <strong>light</strong>, each with an optional title. They have no status colours: for a status message, use an <a href="alert.html">alert</a>.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="variants">Variants</h2>
     <p>Hover over or tab to the triggers below.</p>
@@ -24,11 +28,21 @@ figma: 3769-50192
         </span>
       </div>
     </div>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3 id="variant-dark">Dark</h3><p>The default. Stands out on white and light grey pages.</p></div>
+        <div class="doc-variant-demo"><span class="aec-tooltip is-static" data-arrow="none">Covers shipping to your dealer.</span></div></div>
+      <div class="doc-variant"><div><h3 id="variant-dark-title">Dark with title</h3><p>Add <code>.aec-tooltip__title</code>, with an optional icon, when the hint has a heading.</p></div>
+        <div class="doc-variant-demo"><span class="aec-tooltip is-static" data-arrow="none"><span class="aec-tooltip__title"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span>Offers applied</span>Includes a $1,500 loyalty bonus.</span></div></div>
+      <div class="doc-variant"><div><h3 id="variant-light">Light</h3><p><code>.aec-tooltip--light</code>. Use it on dark or image backgrounds, where a dark tooltip would disappear.</p></div>
+        <div class="doc-variant-demo is-inverse"><span class="aec-tooltip aec-tooltip--light is-static" data-arrow="none"><span class="aec-tooltip__title">Offers applied</span>Includes a $1,500 loyalty bonus.</span></div></div>
+      <div class="doc-variant"><div><h3 id="variant-small">Small</h3><p><code>.aec-tooltip--sm</code>. A narrower tooltip for one-word names of icon buttons. Compare its padding and text with the default in <a href="#spacing">Spacing</a>.</p></div>
+        <div class="doc-variant-demo"><span class="aec-tooltip aec-tooltip--sm is-static" data-arrow="none">Share</span></div></div>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="placement">Placement</h2>
-    <p>Set <code>data-placement</code> to <code>top</code> (the default), <code>bottom</code>, <code>left</code> or <code>right</code>. Add <code>-start</code> or <code>-end</code> to top and bottom to align the tooltip to the trigger's edge. <code>data-arrow="none"</code> removes the pointer.</p>
+    <p>Set <code>data-placement</code> to <code>top</code> (the default), <code>bottom</code>, <code>left</code> or <code>right</code>. Add <code>-start</code> or <code>-end</code> to top and bottom to align the tooltip to the trigger's edge. <code>data-arrow="none"</code> removes the pointer. Choose the placement that keeps the tooltip on screen and doesn't cover what the person is reading.</p>
     <div class="doc-cards" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:56px 24px;padding:24px 8px 40px">
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span class="aec-tooltip is-static aec-tooltip--sm">Top (default)</span><span class="doc-small doc-muted" style="margin-top:12px">top</span></div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span class="doc-small doc-muted" style="margin-bottom:12px">bottom</span><span class="aec-tooltip is-static aec-tooltip--sm" data-placement="bottom">Bottom</span></div>
@@ -38,26 +52,84 @@ figma: 3769-50192
   </section>
 
   <section class="doc-section">
+    <h2 id="behaviour">Behaviour</h2>
+    <p>A tooltip has two states: hidden and shown. It shows when the trigger is hovered or receives keyboard focus, stays open while the pointer is over the tooltip, and hides on mouse-out, blur or Esc. The trigger keeps its own hover, focus and pressed states, documented on its page (for example <a href="icon-button.html">icon button</a>).</p>
+  </section>
+
+  <section class="doc-section">
     <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage" style="padding-bottom:40px">
+        <span class="aec-tooltip is-static" id="tip-anatomy"><span class="aec-tooltip__title" id="tip-anatomy-title"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span>Offers applied</span><span id="tip-anatomy-body">Includes a $1,500 loyalty bonus.</span></span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 150px);bottom:40px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 120px);top:12px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 30px);top:12px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 100px);bottom:40px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 14px);bottom:6px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong><span data-measure="#tip-anatomy" data-prop="padding-left"></span> padding, <span data-measure="#tip-anatomy" data-prop="border-radius"></span> corners and a shadow in this brand. Up to <span data-measure="#tip-anatomy" data-prop="max-width"></span> wide.</span></li>
+        <li><span><strong>Title icon (optional)</strong><span data-measure="#tip-anatomy-title" data-prop="icon-size"></span>, the same colour as the title.</span></li>
+        <li><span><strong>Title (optional)</strong><span data-measure="#tip-anatomy-title" data-prop="font-size"></span> <span data-measure="#tip-anatomy-title" data-prop="font-family"></span>, weight <span data-measure="#tip-anatomy-title" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Description</strong><span data-measure="#tip-anatomy" data-prop="font-size"></span> on a <span data-measure="#tip-anatomy" data-prop="line-height"></span> line height, weight <span data-measure="#tip-anatomy" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Pointer</strong>The same colour as the container, pointing at the trigger.</span></li>
+      </ol>
+    </div>
     <div class="doc-table-wrap"><table class="doc-table">
       <thead><tr><th>Part</th><th>Dark</th><th>Light</th></tr></thead>
       <tbody>
-        <tr><td>Body</td><td><code>bg/inverse</code></td><td><code>bg/default</code></td></tr>
-        <tr><td>Title (optional)</td><td>body-2 bold, <code>text/inverse</code>, optional 16px icon</td><td>body-2 bold, <code>text/default</code></td></tr>
-        <tr><td>Description</td><td>body-2, <code>text/inverse</code></td><td>body-2, <code>text/subtle</code></td></tr>
-        <tr><td>Pointer</td><td colspan="2">16×8px, the same colour as the body</td></tr>
-        <tr><td>Spacing</td><td colspan="2">16px padding (<code>container-padding-s</code>), 8px gap (<code>container-gap-s</code>)</td></tr>
-        <tr><td>Size and elevation</td><td colspan="2">Maximum width 384px (360px on mobile), square corners, <code>shadow/l</code></td></tr>
+        <tr><td>Container and pointer</td><td><code>--aec-tooltip-color-dark-bg</code></td><td><code>--aec-tooltip-color-white-bg</code></td></tr>
+        <tr><td>Title</td><td><code>--aec-tooltip-color-dark-title</code></td><td><code>--aec-tooltip-color-white-title</code></td></tr>
+        <tr><td>Description</td><td><code>--aec-tooltip-color-dark-body</code></td><td><code>--aec-tooltip-color-white-body</code></td></tr>
+        <tr><td>Border (not yet used)</td><td><code>--aec-tooltip-color-dark-border</code></td><td><code>--aec-tooltip-color-white-border</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Spacing</h2>
+    <p>The blue marks are measured from the real tooltip in the active brand, so they change when you switch brands.</p>
+    <div class="doc-spec is-row" data-spec="padding,padding-y,radius,width">
+      <span class="aec-tooltip is-static" id="tip-spec" data-spec-target><span class="aec-tooltip__title" id="tip-spec-title"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span>Offers applied</span>Includes a loyalty bonus.</span>
+      <span class="aec-tooltip aec-tooltip--sm is-static" id="tip-spec-sm" data-spec-target>Share</span>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Default</th><th>Small</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Side padding</td><td data-measure="#tip-spec" data-prop="padding-left"></td><td data-measure="#tip-spec-sm" data-prop="padding-left"></td><td><code>--drp-tooltip-container-padding</code></td></tr>
+        <tr><td>Top and bottom padding</td><td data-measure="#tip-spec" data-prop="padding-top"></td><td data-measure="#tip-spec-sm" data-prop="padding-top"></td><td><code>--drp-tooltip-container-padding</code></td></tr>
+        <tr><td>Title to description</td><td data-measure="#tip-spec" data-prop="gap"></td><td>—</td><td><code>--drp-tooltip-container-gap</code></td></tr>
+        <tr><td>Icon to title</td><td data-measure="#tip-spec-title" data-prop="gap"></td><td>—</td><td><code>--aec-spacing-container-gap-s</code></td></tr>
+        <tr><td>Corners</td><td data-measure="#tip-spec" data-prop="border-radius"></td><td data-measure="#tip-spec-sm" data-prop="border-radius"></td><td><code>--drp-tooltip-container-border-radius</code></td></tr>
+        <tr><td>Maximum width</td><td data-measure="#tip-spec" data-prop="max-width"></td><td data-measure="#tip-spec-sm" data-prop="max-width"></td><td>Fixed in the component CSS (default and small), narrower on small screens</td></tr>
+        <tr><td>Description text</td><td><span data-measure="#tip-spec" data-prop="font-size"></span> / <span data-measure="#tip-spec" data-prop="line-height"></span></td><td><span data-measure="#tip-spec-sm" data-prop="font-size"></span> / <span data-measure="#tip-spec-sm" data-prop="line-height"></span></td><td><code>--drp-tooltip-typography-*</code></td></tr>
+        <tr><td>Title text</td><td><span data-measure="#tip-spec-title" data-prop="font-size"></span> / <span data-measure="#tip-spec-title" data-prop="line-height"></span></td><td>—</td><td><code>--drp-tooltip-typography-title-*</code></td></tr>
+        <tr><td>Shadow</td><td colspan="2">—</td><td><code>--drp-tooltip-container-bg-box-shadow</code></td></tr>
       </tbody>
     </table></div>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-tooltip is-static">Covers shipping the vehicle to your dealer.</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="About destination freight"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Do</strong>Use a tooltip to explain a term in one short sentence.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-tooltip is-static">Destination freight is the cost of shipping your vehicle from the factory to the dealer. It's set by the manufacturer, is the same everywhere and can't be negotiated. It doesn't include delivery to your home.</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="About destination freight"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Don't</strong>Write a paragraph. Use an expandable section or a modal for longer content.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:flex-start"><span class="aec-body-2">$489/mo for 60 months</span><span class="aec-body-3" style="color:var(--aec-color-text-subtle)">Excludes tax, title and registration.</span></div><figcaption><strong>Do</strong>Show information people need to decide on the page itself.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-tooltip is-static">Excludes tax, title and registration.</span><span class="aec-body-2">$489/mo for 60 months <span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg);--aec-icon-size:16px" aria-hidden="true"></span></span></div><figcaption><strong>Don't</strong>Hide essential terms in a tooltip. Many people never open it, and it's hard to reach on touch screens.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-tooltip aec-tooltip--sm is-static">Share</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Do</strong>Name icon-only buttons with a tooltip that matches the <code>aria-label</code>.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-tooltip aec-tooltip--sm is-static">Save deal</span><button class="aec-btn aec-btn--primary aec-btn--md" type="button">Save deal</button></div><figcaption><strong>Don't</strong>Repeat a visible label. It adds noise and nothing new.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-tooltip is-static">Credit tiers are based on your score.</span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="About credit tiers"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Do</strong>Keep tooltips as plain text. Put links on the page.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack" style="align-items:center"><span class="aec-tooltip is-static">Credit tiers are based on your score. <a class="aec-link aec-link--inverse" href="#usage">Learn more</a></span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="About credit tiers"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span></button></div><figcaption><strong>Don't</strong>Put links or buttons in a tooltip. People can't reliably reach them before it closes.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
     <ul>
-      <li>Keep tooltips to one or two short sentences. For longer or interactive content, such as links, use a modal or an expandable section.</li>
-      <li>Never hide information people need to complete a task inside a tooltip.</li>
-      <li>Every icon button should have a tooltip that repeats its accessible name.</li>
+      <li><strong>Description:</strong> one or two short sentences. Explain, don't repeat. Use a full stop when it's a sentence.</li>
+      <li><strong>Title:</strong> optional. Use it only when the tooltip groups a few facts, such as the offers applied to a price. Two or three words, no full stop.</li>
+      <li><strong>Icon-button names:</strong> one or two words, starting with a verb where possible, such as <em>Share</em> or <em>Edit trade-in</em>. No full stop.</li>
+      <li>Write in sentence case and plain English. Spell out terms such as APR the first time they appear on the page, not only in a tooltip.</li>
     </ul>
   </section>
 
@@ -67,7 +139,44 @@ figma: 3769-50192
       <div class="doc-a11y-item"><h3>Role and relationship <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The tooltip has <code>role="tooltip"</code> and an <code>id</code>, and the trigger points to it with <code>aria-describedby</code>.</p></div>
       <div class="doc-a11y-item"><h3>Hover and focus <span class="doc-wcag">WCAG 1.4.13</span></h3><p>The tooltip shows on hover and on keyboard focus, stays visible while the pointer is over it, and can be dismissed with Esc (<code>components.js</code>).</p></div>
       <div class="doc-a11y-item"><h3>Focusable trigger <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Only put tooltips on focusable elements, such as buttons and links, so keyboard users can reach them.</p></div>
+      <div class="doc-a11y-item"><h3>Touch screens</h3><p>Hover doesn't exist on touch screens. Make sure the page still makes sense if the tooltip is never seen.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Tooltip text needs at least 4.5:1 against the tooltip. These ratios are measured live in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Style and part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Dark title</td><td><span class="aec-tooltip is-static" data-arrow="none"><span class="aec-tooltip__title" data-contrast-sample>Offers applied</span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Dark description</td><td><span class="aec-tooltip is-static" data-arrow="none" data-contrast-sample>Covers shipping to your dealer.</span></td><td data-contrast-result></td></tr>
+        <tr><td>Light title</td><td><span class="aec-tooltip aec-tooltip--light is-static" data-arrow="none"><span class="aec-tooltip__title" data-contrast-sample>Offers applied</span></span></td><td data-contrast-result></td></tr>
+        <tr><td>Light description</td><td><span class="aec-tooltip aec-tooltip--light is-static" data-arrow="none" data-contrast-sample>Covers shipping to your dealer.</span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Surface contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>WCAG doesn't require a visible edge around a tooltip when its text is readable. These ratios show how well each surface stands out from a white page. A low ratio is why the light tooltip is meant for dark backgrounds and otherwise relies on its shadow. The bars are samples of each surface colour.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Surface</th><th>Sample</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Dark surface on the page</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;width:48px;border-top:8px solid var(--aec-tooltip-color-dark-bg)" aria-hidden="true"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Light surface on the page</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;width:48px;border-top:8px solid var(--aec-tooltip-color-white-bg)" aria-hidden="true"></span></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class or attribute</th></tr></thead>
+      <tbody>
+        <tr><td>Set</td><td>Dark / Light</td><td>(none) / <code>.aec-tooltip--light</code></td></tr>
+        <tr><td>Arrow (dark) / pointer (light)</td><td>top, bottom, left, right, start, end</td><td><code>data-placement</code></td></tr>
+        <tr><td>Arrow</td><td>none</td><td><code>data-arrow="none"</code></td></tr>
+        <tr><td>Title</td><td>true</td><td>child <code>.aec-tooltip__title</code>, with an optional <code>.aec-icon</code></td></tr>
+        <tr><td>—</td><td>Small (code only)</td><td><code>.aec-tooltip--sm</code></td></tr>
+        <tr><td>Wrapper</td><td>—</td><td><code>.aec-tooltip-anchor</code> around the trigger and tooltip</td></tr>
+        <tr><td>Always shown</td><td>—</td><td><code>.is-static</code> (docs) or <code>.is-open</code></td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
@@ -75,7 +184,8 @@ figma: 3769-50192
     <ul class="doc-small">
       <li>The placement property is called <code>Arrow</code> in the dark set and <code>pointer</code> in the light set, with values in a different order. The code uses <code>data-placement</code> for both.</li>
       <li>The shadow is a raw effect, but its values match <code>shadow/l</code> exactly.</li>
-      <li>The light tooltip has no border, so on white backgrounds it is separated only by its shadow.</li>
+      <li>The light tooltip has no border, so on white backgrounds it is separated only by its shadow. Border tokens exist (<code>--aec-tooltip-color-*-border</code>) but the component doesn't use them.</li>
+      <li>Code: the brand tooltip tokens override the padding and text size of <code>.aec-tooltip--sm</code>, so in most brands the small tooltip only differs in maximum width. The design team should decide whether a small size is needed.</li>
     </ul>
   </section>
 </div>

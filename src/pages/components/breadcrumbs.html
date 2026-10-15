@@ -1,6 +1,6 @@
 ---
 title: Breadcrumbs
-description: Breadcrumbs show where the current page sits in the site and let people move back up a level.
+description: Breadcrumbs show where the current page sits in the site and let people move back up a level. Covers states, anatomy, spacing, content and accessibility.
 figma: 3769-50215
 ---
 <div class="doc-content">
@@ -8,6 +8,10 @@ figma: 3769-50215
   <h1>Breadcrumbs</h1>
   <p class="doc-lead">Shows where the current page sits in the site hierarchy and lets people move back up a level.</p>
   <div class="doc-meta"><span>2 Figma component sets</span><span><code>.aec-breadcrumbs</code></span></div>
+
+  <div class="doc-intro">
+    <p>A breadcrumb trail lists the pages above the current one, from the top level down. Each ancestor is a link, and the last item is the current page, which isn't a link. Use breadcrumbs on shopping and content pages that sit two or more levels deep. Don't use them in linear flows such as checkout; use a <a href="progress.html">progress</a> stepper there.</p>
+  </div>
 
   <section class="doc-section">
     <h2 id="default">Default</h2>
@@ -36,23 +40,78 @@ figma: 3769-50215
   </section>
 
   <section class="doc-section">
-    <h2 id="spec">Specification</h2>
+    <h2 id="states">States</h2>
+    <p>Ancestor links have default, hover and pressed states. The colours come from the active brand's breadcrumb tokens (<code>--aec-breadcrumb-color-text-*</code>), so switch the brand in the header to compare them. On real hover the link is also underlined, so it isn't shown by colour alone. Keyboard focus adds a 2px <code>focus/default</code> ring. The current page has no interactive states.</p>
+    <div class="doc-state-matrix" data-states="default,hover,pressed" aria-label="Breadcrumb link states">
+      <template data-row="Ancestor link"><div class="aec-breadcrumbs"><ol><li><a href="#states" data-state-el>Trucks</a></li></ol></div></template>
+      <template data-row="Before current page"><div class="aec-breadcrumbs"><ol><li><a href="#states" data-state-el>Trucks</a></li><li><span aria-current="page">Silverado 1500</span></li></ol></div></template>
+    </div>
+    <p class="doc-small doc-muted">The forced hover column shows the colour change only. The underline appears on real hover.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy-stage" style="border:1px solid var(--doc-line);border-radius:12px;margin:16px 0 0;padding:40px 16px">
+        <nav class="aec-breadcrumbs" aria-label="Anatomy example" style="flex:none"><ol id="bc-anat-list">
+          <li><a href="#anatomy" id="bc-anat-link" tabindex="-1">Shop</a></li>
+          <li><a href="#anatomy" tabindex="-1">Trucks</a></li>
+          <li id="bc-anat-item"><span aria-current="page" id="bc-anat-current">Silverado 1500</span></li>
+        </ol></nav>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 81px);top:14px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 56px);top:74px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 52px);top:14px">3</span>
+    </div>
+    <div class="doc-anatomy" style="grid-template-columns:minmax(0,1fr);margin-top:8px">
+      <ol>
+        <li><span><strong>Ancestor link</strong><span data-measure="#bc-anat-link" data-prop="font-size"></span> <span data-measure="#bc-anat-link" data-prop="font-family"></span>, weight <span data-measure="#bc-anat-link" data-prop="font-weight"></span>, in the default breadcrumb text colour.</span></li>
+        <li><span><strong>Separator</strong>A chevron drawn in CSS in the breadcrumb icon colour, <span data-measure="#bc-anat-item" data-prop="gap"></span> from the label.</span></li>
+        <li><span><strong>Current page</strong>Weight <span data-measure="#bc-anat-current" data-prop="font-weight"></span>, in the selected text colour. It isn't a link and has <code>aria-current="page"</code>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Spacing</h2>
+    <p>Breadcrumbs come in one size. The blue marks are measured from a real trail in the active brand.</p>
+    <div class="doc-spec" data-spec="height,gap">
+      <nav class="aec-breadcrumbs" aria-label="Spacing example" style="flex:none"><ol id="bc-spec-list" data-spec-target><li><a href="#spacing" tabindex="-1">Shop</a></li><li><a href="#spacing" tabindex="-1">Trucks</a></li><li><span aria-current="page">Silverado 1500</span></li></ol></nav>
+    </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Part</th><th>Default</th><th>Hover</th><th>Pressed</th></tr></thead>
+      <thead><tr><th>Part</th><th>Text</th><th>Line height</th><th>Weight</th><th>Font</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Ancestor link</td><td>body-3, <code>text/subtle</code></td><td><code>primary/default</code>, underlined</td><td><code>primary/hover</code></td></tr>
-        <tr><td>Current page</td><td colspan="3">body-3 bold, <code>text/default</code>, not a link</td></tr>
-        <tr><td>Separator</td><td colspan="3">12px chevron, <code>icon/variant</code>, 4px gap</td></tr>
+        <tr><td>Ancestor link</td><td data-measure="#bc-anat-link" data-prop="font-size"></td><td data-measure="#bc-anat-link" data-prop="line-height"></td><td data-measure="#bc-anat-link" data-prop="font-weight"></td><td data-measure="#bc-anat-link" data-prop="font-family"></td><td><code>--drp-breadcrumb-typography-small-default-*</code>, <code>--aec-breadcrumb-color-text-default</code> / <code>-hover</code> / <code>-active</code></td></tr>
+        <tr><td>Current page</td><td data-measure="#bc-anat-current" data-prop="font-size"></td><td data-measure="#bc-anat-current" data-prop="line-height"></td><td data-measure="#bc-anat-current" data-prop="font-weight"></td><td data-measure="#bc-anat-current" data-prop="font-family"></td><td><code>--drp-breadcrumb-typography-small-selected-*</code>, <code>--aec-breadcrumb-color-text-selected</code></td></tr>
+        <tr><td>Separator</td><td colspan="4">Chevron, <span data-measure="#bc-spec-list" data-prop="gap"></span> between items</td><td><code>--aec-breadcrumb-color-icon-default</code>, <code>--aec-spacing-selectable-gap-s</code></td></tr>
       </tbody>
     </table></div>
+    <p>Place breadcrumbs at the top of the page, above the page title. The trail wraps onto a second line when it doesn't fit.</p>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-breadcrumbs"><ol><li><a href="#usage">Shop</a></li><li><a href="#usage">Trucks</a></li><li><span aria-current="page">Silverado 1500</span></li></ol></div></div><figcaption><strong>Do</strong>End with the current page as plain text.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-breadcrumbs"><ol><li><a href="#usage">Shop</a></li><li><a href="#usage">Trucks</a></li><li><a href="#usage">Silverado 1500</a></li></ol></div></div><figcaption><strong>Don't</strong>Make the current page a link. It reloads the page people are already on.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-breadcrumbs"><ol><li><a href="#usage">Home</a></li><li><button class="aec-breadcrumbs__more" type="button" aria-label="Show 3 more levels">…</button></li><li><a href="#usage">Build &amp; price</a></li><li><span aria-current="page">Review deal</span></li></ol></div></div><figcaption><strong>Do</strong>Collapse the middle of long trails, keeping the first and last levels.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview" style="max-width:320px;margin:auto"><div class="aec-breadcrumbs"><ol><li><a href="#usage">Home</a></li><li><a href="#usage">Shop</a></li><li><a href="#usage">Trucks</a></li><li><a href="#usage">Full-size</a></li><li><a href="#usage">Silverado 1500</a></li><li><a href="#usage">Build &amp; price</a></li><li><span aria-current="page">Review deal</span></li></ol></div></div><figcaption><strong>Don't</strong>Show every level when the trail wraps onto several lines.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-breadcrumbs"><ol><li><a href="#usage">Shop</a></li><li><a href="#usage">SUVs</a></li><li><span aria-current="page">2025 Equinox</span></li></ol></div></div><figcaption><strong>Do</strong>Use breadcrumbs to show where a page sits in the site.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-breadcrumbs"><ol><li><a href="#usage">Trade-in</a></li><li><a href="#usage">Credit</a></li><li><span aria-current="page">Payment</span></li></ol></div></div><figcaption><strong>Don't</strong>Use breadcrumbs for checkout steps. They show hierarchy, not progress.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-breadcrumbs"><ol><li><a href="#usage">Shop</a></li><li><a href="#usage">Trucks</a></li><li><span aria-current="page">Silverado 1500</span></li></ol></div></div><figcaption><strong>Do</strong>Use the same name as each page's title.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><div class="aec-breadcrumbs"><ol><li><a href="#usage">Back</a></li><li><a href="#usage">Cat. 2</a></li><li><span aria-current="page">Veh. details</span></li></ol></div></div><figcaption><strong>Don't</strong>Abbreviate, or use labels that don't match the pages.</figcaption></figure>
+    </div>
     <ul>
-      <li>Use breadcrumbs on pages two or more levels deep. Don't use them on the home page or in linear flows like checkout. Use a stepper there.</li>
-      <li>Place them at the top of the page, above the page title.</li>
+      <li>Use breadcrumbs on pages two or more levels deep. Don't use them on the home page.</li>
       <li>On mobile, consider showing only a back link to the parent page.</li>
+      <li>Breadcrumbs are a secondary aid. Keep the main navigation as well.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Use the page title for each crumb, in sentence case.</li>
+      <li>Keep each crumb short. If a title is long, shorten it consistently across the site.</li>
+      <li>Don't add a separate "You are here" label. The trail and the landmark name explain it.</li>
     </ul>
   </section>
 
@@ -61,6 +120,36 @@ figma: 3769-50215
     <div class="doc-a11y">
       <div class="doc-a11y-item"><h3>Landmark <span class="doc-wcag">WCAG 1.3.1 · 2.4.8</span></h3><p>Wrap the list in <code>&lt;nav aria-label="Breadcrumb"&gt;</code> and use an ordered list. Mark the current page with <code>aria-current="page"</code>.</p></div>
       <div class="doc-a11y-item"><h3>Separators</h3><p>Separators are drawn in CSS, so screen readers don't announce them.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Each ancestor is a normal link, so Tab moves through them and Enter follows them. The "…" button opens with Enter or Space. After it expands, move focus to the first revealed link so keyboard users don't lose their place.</p></div>
+      <div class="doc-a11y-item"><h3>Collapsed levels <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Give the "…" button an <code>aria-label</code> that says what it does, such as "Show 2 more levels".</p></div>
+      <div class="doc-a11y-item"><h3>Links not by colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>The trail's position and separators show that crumbs are links, and hover adds an underline.</p></div>
+    </div>
+
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Breadcrumb text is small, so it needs at least 4.5:1 against the page. These ratios are measured live in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Ancestor link</td><td><div class="aec-breadcrumbs"><ol><li><a href="#contrast" tabindex="-1" data-contrast-sample>Trucks</a></li></ol></div></td><td data-contrast-result></td></tr>
+        <tr><td>Ancestor link, hover</td><td><div class="aec-breadcrumbs"><ol><li><a href="#contrast" class="is-hover" tabindex="-1" data-contrast-sample>Trucks</a></li></ol></div></td><td data-contrast-result></td></tr>
+        <tr><td>Ancestor link, pressed</td><td><div class="aec-breadcrumbs"><ol><li><a href="#contrast" class="is-pressed" tabindex="-1" data-contrast-sample>Trucks</a></li></ol></div></td><td data-contrast-result></td></tr>
+        <tr><td>Current page</td><td><div class="aec-breadcrumbs"><ol><li><span aria-current="page" data-contrast-sample>Silverado 1500</span></li></ol></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The focus ring needs at least 3:1 against the page. Separators are decorative.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Focus ring</td><td><div class="aec-breadcrumbs"><ol><li><a href="#non-text-contrast" tabindex="-1" data-contrast-sample data-contrast-mode="focus">Trucks</a></li></ol></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview"><div class="aec-breadcrumbs"><ol><li><a href="#a11y-dodont">Shop</a></li><li><a href="#a11y-dodont">Trucks</a></li><li><span aria-current="page">Silverado 1500</span></li></ol></div></div><figcaption><strong>Do</strong>Use the built-in separators, which screen readers skip.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview"><p class="aec-body-3" style="margin:0"><a href="#a11y-dodont">Shop</a> / <a href="#a11y-dodont">Trucks</a> / Silverado 1500</p></div><figcaption><strong>Don't</strong>Type separators as text. Screen readers read out every "slash".</figcaption></figure>
     </div>
   </section>
 
@@ -70,6 +159,7 @@ figma: 3769-50215
       <li>The current-page crumb has hover and pressed states in Figma. In code it isn't a link.</li>
       <li>In the <code>5+</code> variant, the last crumb is medium weight instead of bold.</li>
       <li>Figma shows no underline on hover. The code adds one so links aren't shown by colour alone.</li>
+      <li>The brand files define <code>--aec-breadcrumb-color-text-disabled</code>, but there's no disabled crumb in code. Crumbs are always links or the current page.</li>
     </ul>
   </section>
 </div>

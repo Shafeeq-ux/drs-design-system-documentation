@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -45,6 +46,7 @@
 
   <section class="doc-section">
     <h2 id="range">Range</h2>
+    <p>A range slider has two handles inside <code>.aec-range</code>. The handles can't cross: <code>data-min-gap</code> sets the smallest distance between them.</p>
     <div class="doc-example" data-label="Range slider">
       <div class="doc-example-preview is-stretch">
         <div class="aec-slider-field" role="group" aria-labelledby="rg-title">
@@ -62,39 +64,155 @@
 
   <section class="doc-section">
     <h2 id="states">States</h2>
-    <div class="doc-cards">
-      <div class="doc-state"><span class="doc-state-label">Default</span><input class="aec-slider" type="range" value="40" aria-label="Default"></div>
-      <div class="doc-state"><span class="doc-state-label">Disabled</span><input class="aec-slider" type="range" value="40" disabled aria-label="Disabled"></div>
+    <p>The track and handle colours come from the active brand's slider tokens (<code>--aec-slider-color-track-*</code> and <code>--aec-slider-color-handle-*</code>), so switch the brand in the header to see how they change. When disabled, the selected track and handle turn grey and the cursor shows not-allowed. Keyboard focus adds a 2px <code>focus/default</code> ring around the handle; try it by tabbing to the examples above. Hover and pressed look the same as default.</p>
+    <div class="doc-state-matrix" data-states="default,disabled" aria-label="Slider states">
+      <template data-row="Single value"><div style="width:200px"><input class="aec-slider" type="range" min="0" max="100" value="40" aria-label="Single value" style="--_pct:40%" data-state-el></div></template>
+      <template data-row="Range"><div style="width:200px"><div class="aec-range"><input class="aec-slider" type="range" min="0" max="100" value="25" aria-label="Minimum" style="--_from:25%;--_pct:70%" data-state-el><input class="aec-slider" type="range" min="0" max="100" value="70" aria-label="Maximum"></div></div></template>
     </div>
   </section>
 
   <section class="doc-section">
     <h2 id="anatomy">Anatomy</h2>
-    <ol>
-      <li><strong>Title</strong>: body-1 bold, <code>text/default</code>.</li>
-      <li><strong>Value (optional)</strong>: body-2 in a <code>bg/variant</code> pill.</li>
-      <li><strong>Track</strong>: 4px, <code>border/default</code>.</li>
-      <li><strong>Selected track</strong>: <code>primary/default</code>, or <code>bg/disabled</code> when disabled.</li>
-      <li><strong>Handle</strong>: a 24px white circle with a 1px <code>primary/default</code> border and <code>shadow/s</code>.</li>
-      <li><strong>Min / max labels (optional)</strong>: body-3, <code>text/subtle</code>.</li>
-    </ol>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-slider-field" style="width:280px">
+          <div class="aec-slider-field__head"><label class="aec-slider-field__title" for="sl-anatomy" id="sl-anatomy-title">Down payment</label><output class="aec-slider-field__value" data-for="sl-anatomy" id="sl-anatomy-value">$6,000</output></div>
+          <input class="aec-slider" type="range" id="sl-anatomy" min="0" max="20000" step="500" value="6000" data-format="${v}" tabindex="-1">
+          <div class="aec-slider-field__minmax" aria-hidden="true" id="sl-anatomy-minmax"><span>$0</span><span>$20,000</span></div>
+        </div>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 172px);top:34px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 150px);top:34px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 172px);top:71px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 62px);top:96px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 172px);top:107px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Title</strong><span data-measure="#sl-anatomy-title" data-prop="font-size"></span> / <span data-measure="#sl-anatomy-title" data-prop="line-height"></span> <span data-measure="#sl-anatomy-title" data-prop="font-family"></span>, weight <span data-measure="#sl-anatomy-title" data-prop="font-weight"></span> (body-1 bold), <code>text/default</code>.</span></li>
+        <li><span><strong>Value (optional)</strong><span data-measure="#sl-anatomy-value" data-prop="font-size"></span> (body-2) in a <code>bg/variant</code> pill with <span data-measure="#sl-anatomy-value" data-prop="border-radius"></span> corners.</span></li>
+        <li><span><strong>Track</strong><span data-measure="#sl-probe-track" data-prop="height"></span> tall. The part before the handle uses the selected track colour; the rest uses the default track colour.</span></li>
+        <li><span><strong>Handle</strong>A <span data-measure="#sl-probe-handle" data-prop="width"></span> circle with a <span data-measure="#sl-probe-handle" data-prop="border-width"></span> border and <code>shadow/s</code>.</span></li>
+        <li><span><strong>Min / max labels (optional)</strong><span data-measure="#sl-anatomy-minmax" data-prop="font-size"></span> (body-3), <code>text/subtle</code>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Size and spacing</h2>
+    <p>There is one size. The slider fills its container, up to the field's maximum width. The blue marks are measured from the real parts in the active brand. The track and handle are drawn by the browser, so their values are read from the brand's slider tokens.</p>
+    <div class="doc-spec" data-spec="height,width">
+      <input class="aec-slider" type="range" min="0" max="100" value="40" tabindex="-1" aria-label="Hit area example" id="sl-spec-input" style="width:240px" data-spec-target>
+    </div>
+    <div class="doc-spec" data-spec="height,padding,radius">
+      <output class="aec-slider-field__value" id="sl-spec-value" data-spec-target>$6,000</output>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Width</th><th>Height</th><th>Corners</th><th>Border</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Handle</td><td data-measure="#sl-probe-handle" data-prop="width"></td><td data-measure="#sl-probe-handle" data-prop="height"></td><td>Round</td><td data-measure="#sl-probe-handle" data-prop="border-width"></td><td><code>--aec-slider-handle-*</code></td></tr>
+        <tr><td>Track</td><td>Fills the field</td><td data-measure="#sl-probe-track" data-prop="height"></td><td data-measure="#sl-probe-track" data-prop="border-radius"></td><td>—</td><td><code>--aec-slider-track-*</code></td></tr>
+        <tr><td>Hit area (token)</td><td data-measure="#sl-probe-hit" data-prop="width"></td><td data-measure="#sl-probe-hit" data-prop="height"></td><td>—</td><td>—</td><td><code>--aec-slider-hit-area-*</code></td></tr>
+        <tr><td>Input row</td><td>Fills the field</td><td data-measure="#sl-spec-input" data-prop="height"></td><td>—</td><td>—</td><td><code>.aec-slider</code></td></tr>
+        <tr><td>Value pill</td><td>Fits the value</td><td data-measure="#sl-spec-value" data-prop="height"></td><td data-measure="#sl-spec-value" data-prop="border-radius"></td><td>—</td><td><code>--aec-border-radius-default</code>, <code>--drp-typography-body-2-regular-*</code></td></tr>
+      </tbody>
+    </table></div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Spacing</th><th>Value</th><th>Tokens</th></tr></thead>
+      <tbody>
+        <tr><td>Between title row, slider and labels</td><td data-measure="#sl-anatomy-field" data-prop="gap"></td><td><code>--aec-spacing-container-gap-m</code></td></tr>
+        <tr><td>Value pill side padding</td><td data-measure="#sl-spec-value" data-prop="padding-left"></td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <div aria-hidden="true" style="position:absolute;visibility:hidden">
+      <span id="sl-probe-handle" style="display:block;box-sizing:border-box;width:var(--aec-slider-handle-width);height:var(--aec-slider-handle-height);border:var(--aec-slider-handle-border-width) solid transparent"></span>
+      <span id="sl-probe-track" style="display:block;height:var(--aec-slider-track-height);border-radius:var(--aec-slider-track-border-radius)"></span>
+      <span id="sl-probe-hit" style="display:block;width:var(--aec-slider-hit-area-width);height:var(--aec-slider-hit-area-height)"></span>
+      <div class="aec-slider-field" id="sl-anatomy-field"><span>a</span><span>b</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Down payment</span><output class="aec-slider-field__value">$6,000</output></div><input class="aec-slider" type="range" min="0" max="20000" step="500" value="6000" aria-label="Down payment"><div class="aec-slider-field__minmax"><span>$0</span><span>$20,000</span></div></div></div><figcaption><strong>Do</strong>Show the current value and the minimum and maximum.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Down payment</span></div><input class="aec-slider" type="range" min="0" max="20000" step="500" value="6000" aria-label="Down payment"></div></div><figcaption><strong>Don't</strong>Leave people guessing what value they've picked.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Down payment</span><output class="aec-slider-field__value">$6,500</output></div><input class="aec-slider" type="range" min="0" max="20000" step="500" value="6500" aria-label="Down payment"></div></div><figcaption><strong>Do</strong>Use a step that matches how people think about the value, such as $500.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Down payment</span><output class="aec-slider-field__value">$6,137</output></div><input class="aec-slider" type="range" min="0" max="20000" step="1" value="6137" aria-label="Down payment"></div></div><figcaption><strong>Don't</strong>Use a step of 1 on a wide range. Every small move gives an odd number.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Down payment</span></div><input class="aec-slider" type="range" min="0" max="20000" step="500" value="6000" aria-label="Down payment"><div class="aec-field"><div class="aec-field__box"><input class="aec-field__input" type="text" inputmode="numeric" value="$6,000" aria-label="Down payment amount"></div></div></div></div><figcaption><strong>Do</strong>Pair the slider with a text field when people need an exact amount.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Loan payoff amount</span><output class="aec-slider-field__value">$14,250</output></div><input class="aec-slider" type="range" min="0" max="50000" step="50" value="14250" aria-label="Loan payoff amount"></div></div><figcaption><strong>Don't</strong>Use a slider alone for a precise figure, such as a trade-in payoff.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Price range</span><span class="aec-slider-field__values"><output class="aec-slider-field__value">$30,000</output> to <output class="aec-slider-field__value">$55,000</output></span></div><div class="aec-range"><input class="aec-slider" type="range" min="20000" max="80000" step="1000" value="30000" aria-label="Minimum price"><input class="aec-slider" type="range" min="20000" max="80000" step="1000" value="55000" aria-label="Maximum price"></div></div></div><figcaption><strong>Do</strong>Use a range slider to filter between two values.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Exterior colour</span><output class="aec-slider-field__value">Red</output></div><input class="aec-slider" type="range" min="0" max="5" step="1" value="2" aria-label="Exterior colour"></div></div><figcaption><strong>Don't</strong>Use a slider for options that aren't on a scale. Use radio buttons or chips.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Write the title as a short noun phrase that names the value, such as <em>Down payment</em> or <em>Price range</em>.</li>
+      <li>Format the value the way people read it, with the currency symbol and thousands separators. Set it with <code>data-format</code>, for example <code>${v}</code>.</li>
+      <li>Use the min and max labels to show the ends of the range. For a range slider, <em>Min</em> and <em>Max</em> are enough when the values are shown above.</li>
+      <li>If the slider changes a total elsewhere, such as the monthly payment, show that result close to the slider.</li>
+    </ul>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
-      <div class="doc-a11y-item"><h3>Native range input <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Built on <code>&lt;input type="range"&gt;</code>. Arrow keys, Page Up/Down and Home/End all work. <code>components.js</code> sets <code>aria-valuetext</code> to the formatted value, such as "$6,000".</p></div>
+      <div class="doc-a11y-item"><h3>Native range input <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Built on <code>&lt;input type="range"&gt;</code>. <code>components.js</code> sets <code>aria-valuetext</code> to the formatted value, such as "$6,000", so screen readers don't read a bare number.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves to each handle. Arrow keys move by one step, Page Up and Page Down by a larger step, and Home and End jump to the ends.</p></div>
       <div class="doc-a11y-item"><h3>Labels <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Label single sliders with <code>&lt;label for&gt;</code>. Range sliders need an <code>aria-label</code> on each handle ("Minimum price", "Maximum price") and a group label.</p></div>
       <div class="doc-a11y-item"><h3>Focus <span class="doc-wcag">WCAG 2.4.7</span></h3><p>The handle shows a 2px focus ring. This is added in code, because Figma has no focus state.</p></div>
       <div class="doc-a11y-item"><h3>Dragging <span class="doc-wcag">WCAG 2.5.7</span></h3><p>Provide a non-drag alternative, such as a text field or the keyboard, for setting an exact value.</p></div>
+      <div class="doc-a11y-item"><h3>Announce results <span class="doc-wcag">WCAG 4.1.3</span></h3><p>If moving the slider updates a price elsewhere, announce the new total through an <code>aria-live="polite"</code> region once the value settles.</p></div>
     </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Text needs at least 4.5:1 against its background. These ratios are measured live in the active brand.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Title</td><td><span class="aec-slider-field__title" data-contrast-sample>Down payment</span></td><td data-contrast-result></td></tr>
+        <tr><td>Value</td><td><output class="aec-slider-field__value" data-contrast-sample>$6,000</output></td><td data-contrast-result></td></tr>
+        <tr><td>Min / max labels</td><td><div class="aec-slider-field__minmax"><span data-contrast-sample>$20,000</span></div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>The handle and the selected track need at least 3:1 against the page so people can see where the value is. The handle passes if either its border or its fill reaches 3:1. The swatches are drawn from the brand's slider tokens. The unselected track is shown for reference; the handle and selected track carry the state.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Handle border</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;box-sizing:border-box;width:var(--aec-slider-handle-width);height:var(--aec-slider-handle-height);border-radius:var(--aec-slider-handle-border-radius);border:var(--aec-slider-handle-border-width) solid var(--aec-slider-color-handle-border-default);background:var(--aec-slider-color-handle-bg-default)"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Handle fill</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;box-sizing:border-box;width:var(--aec-slider-handle-width);height:var(--aec-slider-handle-height);border-radius:var(--aec-slider-handle-border-radius);border:calc(var(--aec-slider-handle-height) / 2) solid var(--aec-slider-color-handle-bg-default)"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Selected track</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;width:64px;border-top:var(--aec-slider-track-height) solid var(--aec-slider-color-track-bg-selected)"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Unselected track</td><td><span data-contrast-sample data-contrast-mode="border" style="display:inline-block;width:64px;border-top:var(--aec-slider-track-height) solid var(--aec-slider-color-track-bg-default)"></span></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><input class="aec-slider" type="range" min="0" max="100" value="40" tabindex="-1" aria-label="Focus ring" style="width:96px" data-contrast-sample data-contrast-mode="focus"></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Price range</span></div><div class="aec-range"><input class="aec-slider" type="range" min="20000" max="80000" step="1000" value="30000" aria-label="Minimum price"><input class="aec-slider" type="range" min="20000" max="80000" step="1000" value="55000" aria-label="Maximum price"></div></div></div><figcaption><strong>Do</strong>Name each handle. A screen reader says "Minimum price, $30,000, slider".</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack"><div class="aec-slider-field"><div class="aec-slider-field__head"><span class="aec-slider-field__title">Price range</span></div><div class="aec-range"><input class="aec-slider" type="range" min="20000" max="80000" step="1000" value="30000"><input class="aec-slider" type="range" min="20000" max="80000" step="1000" value="55000"></div></div></div><figcaption><strong>Don't</strong>Leave the handles unnamed. People hear "slider" twice and can't tell them apart.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Code</th></tr></thead>
+      <tbody>
+        <tr><td>Set</td><td>Slider / Range Slider</td><td><code>input.aec-slider[type=range]</code> / two of them inside <code>.aec-range</code></td></tr>
+        <tr><td>Field</td><td>—</td><td><code>.aec-slider-field</code> with <code>__head</code>, <code>__title</code>, <code>__value</code>, <code>__values</code>, <code>__minmax</code></td></tr>
+        <tr><td>Value label</td><td>true</td><td><code>output.aec-slider-field__value[data-for="input-id"]</code>, kept in sync by <code>components.js</code></td></tr>
+        <tr><td>Value format</td><td>—</td><td><code>data-format="${v}"</code> on the input</td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>disabled</code></td></tr>
+        <tr><td>focus-ring</td><td>true</td><td><code>:focus-visible</code> (code only)</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
     <ul class="doc-small">
       <li>The handle's hover and pressed states look the same as default, and there is no focus state.</li>
-      <li>The titles and values use Inter and Avenir Next instead of Chevy Sans. The code uses the system font throughout.</li>
+      <li>The titles and values use Inter and Avenir Next instead of the brand font. The code uses the brand's base font (<code>--aec-font-family-base</code>) throughout.</li>
       <li>The disabled state doesn't dim the title.</li>
     </ul>
   </section>
@@ -104,6 +222,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>

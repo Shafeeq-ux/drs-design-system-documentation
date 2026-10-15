@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Accordion · DRS Design System</title>
-<meta name="description" content="Accordions show and hide sections of related content so people can expand only what they need.">
+<meta name="description" content="Accordions show and hide sections of related content, such as FAQs or protection plan details, so people can expand only what they need.">
 <meta name="theme-color" content="#262626">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/patterns.css">
 <link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-icons.css">
 <link rel="stylesheet" href="../css/docs.css">
 
 </head>
@@ -26,8 +27,13 @@
   <p class="doc-lead">Shows and hides sections of related content, so people can expand only what they need, for example FAQs or the details of a protection plan.</p>
   <div class="doc-meta"><span>8 Figma variants</span><span><code>.aec-accordion</code></span></div>
 
+  <div class="doc-intro">
+    <p>An accordion is a stack of headings. Each heading is a button that opens or closes the section below it. Use it to shorten long pages of optional detail, such as FAQs, coverage terms or a list of documents. Don't use it to hide anything people need to make a decision. To switch between parallel views of the same thing, use <a href="tabs.html">tabs</a>.</p>
+  </div>
+
   <section class="doc-section">
     <h2 id="default">Default</h2>
+    <p>Each item has a trigger and a panel. A trigger can have a leading icon and a short meta label, such as a count, before the chevron.</p>
     <div class="doc-example" data-label="Accordion">
       <div class="doc-example-preview is-stretch">
         <div class="aec-accordion" style="max-width:640px">
@@ -41,7 +47,7 @@
           </div>
           <div class="aec-accordion__item">
             <h3 class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false" aria-controls="acc-3"><span class="aec-accordion__title">Can I return the vehicle?</span></button></h3>
-            <div class="aec-accordion__panel" id="acc-3" role="region" aria-label="Can I return the vehicle?"><p>Yes, within 3 days or 150 miles under the Chevy exchange policy.</p></div>
+            <div class="aec-accordion__panel" id="acc-3" role="region" aria-label="Can I return the vehicle?"><p>Yes, within 3 days or 150 miles under the dealer's exchange policy.</p></div>
           </div>
           <div class="aec-accordion__item">
             <h3 class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false" disabled><span class="aec-accordion__title">Subscription options (coming soon)</span></button></h3>
@@ -53,45 +59,209 @@
   </section>
 
   <section class="doc-section">
-    <h2 id="spec">Specification</h2>
+    <h2 id="states">States</h2>
+    <p>Each trigger is either collapsed or expanded, and both can be hovered, focused or disabled. The colours come from the active brand's accordion tokens: <code>--aec-accordion-color-*</code> for collapsed and <code>--aec-accordion-color-selected-*</code> for expanded. Switch the brand in the header to see how each one changes. Focus adds a 2px <code>focus/default</code> ring inside the trigger. There is no separate pressed style, so it isn't shown.</p>
+    <div class="doc-state-matrix" data-states="default,hover,focus,disabled" aria-label="Accordion trigger states">
+      <template data-row="Collapsed"><button class="aec-accordion__trigger" type="button" aria-expanded="false" style="width:260px"><span class="aec-accordion__title">Trade-in</span></button></template>
+      <template data-row="Expanded"><button class="aec-accordion__trigger" type="button" aria-expanded="true" style="width:260px"><span class="aec-accordion__title">Trade-in</span></button></template>
+      <template data-row="With icon and meta"><button class="aec-accordion__trigger" type="button" aria-expanded="false" style="width:260px"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true"></span><span class="aec-accordion__title">Documents</span><span class="aec-accordion__meta">3 items</span></button></template>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <div class="aec-accordion" style="width:100%;max-width:340px">
+          <div class="aec-accordion__item" id="acc-anatomy-item">
+            <div class="aec-accordion__heading"><button class="aec-accordion__trigger" id="acc-anatomy" type="button" tabindex="-1" aria-expanded="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true"></span><span class="aec-accordion__title">Documents</span><span class="aec-accordion__meta" id="acc-anatomy-meta">3 items</span></button></div>
+            <div class="aec-accordion__panel" id="acc-anatomy-panel"><p>Driver's licence, proof of insurance and proof of residence.</p></div>
+          </div>
+        </div>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 196px);top:49px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 153px);top:12px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 100px);top:12px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 80px);top:12px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 136px);top:12px">5</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 170px);bottom:30px">6</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 140px);bottom:22px">7</span>
+      </div>
+      <ol>
+        <li><span><strong>Trigger</strong>At least <span data-measure="#acc-anatomy" data-prop="height"></span> tall in this brand. The whole row is the button.</span></li>
+        <li><span><strong>Leading icon (optional)</strong><span data-measure="#acc-anatomy" data-prop="icon-size"></span>, <code>icon/default</code>.</span></li>
+        <li><span><strong>Title</strong><span data-measure="#acc-anatomy" data-prop="font-size"></span> <span data-measure="#acc-anatomy" data-prop="font-family"></span>, weight <span data-measure="#acc-anatomy" data-prop="font-weight"></span>.</span></li>
+        <li><span><strong>Meta (optional)</strong>A short count or status, <span data-measure="#acc-anatomy-meta" data-prop="font-size"></span>, <code>text/subtle</code>.</span></li>
+        <li><span><strong>Chevron</strong>Points down when collapsed and turns over when expanded.</span></li>
+        <li><span><strong>Panel</strong>The content, <span data-measure="#acc-anatomy-panel" data-prop="font-size"></span> <code>text/subtle</code>. It is hidden while collapsed.</span></li>
+        <li><span><strong>Divider</strong>A <span data-measure="#acc-anatomy-item" data-prop="border-bottom-width"></span> line between items, <code>--aec-accordion-color-border-default</code>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spacing">Size and spacing</h2>
+    <p>There is one size. The blue marks are measured from the real trigger and panel in the active brand, so they change when you switch brands.</p>
+    <div class="doc-spec" data-spec="height,padding,padding-y,gap,icon">
+      <button class="aec-accordion__trigger" id="acc-spec-trigger" type="button" tabindex="-1" aria-expanded="false" style="width:340px" data-spec-target><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true"></span><span class="aec-accordion__title">Documents</span><span class="aec-accordion__meta">3 items</span></button>
+    </div>
+    <div class="doc-spec" data-spec="padding">
+      <div class="aec-accordion__panel" id="acc-spec-panel" style="width:340px" data-spec-target><p>Driver's licence, proof of insurance and proof of residence.</p></div>
+    </div>
     <div class="doc-table-wrap"><table class="doc-table">
-      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <thead><tr><th>Part</th><th>Height</th><th>Side padding</th><th>Top padding</th><th>Bottom padding</th><th>Gap</th><th>Text</th><th>Tokens</th></tr></thead>
       <tbody>
-        <tr><td>Header</td><td>48px minimum height, padding 12/16px, body-1 bold, <code>text/default</code></td></tr>
-        <tr><td>Divider</td><td>1px <code>border/default</code> between items</td></tr>
-        <tr><td>Chevron</td><td>24px, <code>icon/default</code>, rotates 180° when open</td></tr>
-        <tr><td>Hover</td><td><code>bg/variant</code></td></tr>
-        <tr><td>Leading icon (optional)</td><td>24px</td></tr>
-        <tr><td>Panel</td><td>Padding 0/16/16px, body-2, <code>text/subtle</code></td></tr>
-        <tr><td>Disabled</td><td><code>text/disabled</code>, <code>icon/disabled</code></td></tr>
+        <tr><td>Trigger</td><td data-measure="#acc-spec-trigger" data-prop="height"></td><td data-measure="#acc-spec-trigger" data-prop="padding-left"></td><td data-measure="#acc-spec-trigger" data-prop="padding-top"></td><td data-measure="#acc-spec-trigger" data-prop="padding-bottom"></td><td data-measure="#acc-spec-trigger" data-prop="gap"></td><td data-measure="#acc-spec-trigger" data-prop="font-size"></td><td><code>--drp-accordion-container-bg-*</code>, <code>--aec-accordion-color-*</code></td></tr>
+        <tr><td>Panel</td><td>Fits content</td><td data-measure="#acc-spec-panel" data-prop="padding-left"></td><td data-measure="#acc-spec-panel" data-prop="padding-top"></td><td data-measure="#acc-spec-panel" data-prop="padding-bottom"></td><td>—</td><td data-measure="#acc-spec-panel" data-prop="font-size"></td><td><code>--aec-spacing-container-padding-s</code>, <code>--drp-typography-body-2-regular-*</code></td></tr>
+        <tr><td>Divider</td><td data-measure="#acc-anatomy-item" data-prop="border-bottom-width"></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><code>--drp-accordion-container-bg-border-bottom-width</code>, <code>--aec-accordion-color-border-default</code></td></tr>
       </tbody>
     </table></div>
+    <p>The trigger grows taller when a long title wraps. The accordion fills the width of its container.</p>
   </section>
 
   <section class="doc-section">
     <h2 id="usage">Usage</h2>
     <ul>
-      <li>Write headers as clear questions or labels, so people can tell what's inside without opening it.</li>
+      <li>Use an accordion for optional, secondary detail that would make the page long, such as FAQs or plan terms.</li>
       <li>Don't hide critical information, such as pricing or required steps, in a collapsed section.</li>
       <li>For switching between parallel views, use <a href="tabs.html">tabs</a>.</li>
     </ul>
+    <h3 id="dodont-usage">Do / don't: usage</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack">
+        <p class="aec-body-2" style="margin:0"><strong>$489/mo</strong> for 60 months</p>
+        <div class="aec-accordion"><div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Payment breakdown</span></button></div></div></div>
+      </div><figcaption><strong>Do</strong>Show the key figure on the page and put the supporting detail in the accordion.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion"><div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Monthly payment</span></button></div></div></div>
+      </div><figcaption><strong>Don't</strong>Hide the price or a required step behind a collapsed heading.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion">
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Powertrain coverage</span></button></div></div>
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Roadside assistance</span></button></div></div>
+        </div>
+      </div><figcaption><strong>Do</strong>Keep one level of sections. Split long content into more items instead.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion">
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="true"><span class="aec-accordion__title">Coverage</span></button></div>
+            <div class="aec-accordion__panel"><div class="aec-accordion"><div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Powertrain</span></button></div></div></div></div>
+          </div>
+        </div>
+      </div><figcaption><strong>Don't</strong>Nest an accordion inside another. People lose track of where they are.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion">
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true"></span><span class="aec-accordion__title">Documents</span></button></div></div>
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/insurance-card.svg)" aria-hidden="true"></span><span class="aec-accordion__title">Insurance</span></button></div></div>
+        </div>
+      </div><figcaption><strong>Do</strong>Use leading icons on every item in a group, or on none.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion">
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true"></span><span class="aec-accordion__title">Documents</span></button></div></div>
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Insurance</span></button></div></div>
+        </div>
+      </div><figcaption><strong>Don't</strong>Mix items with and without icons. The titles no longer line up.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion">
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Which documents do I need?</span></button></div></div>
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Can I return the vehicle?</span></button></div></div>
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">How long does delivery take?</span></button></div></div>
+        </div>
+      </div><figcaption><strong>Do</strong>Use an accordion for three or more related sections.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion">
+          <div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="true"><span class="aec-accordion__title">Delivery</span></button></div>
+            <div class="aec-accordion__panel"><p>Free within 50 miles.</p></div></div>
+        </div>
+      </div><figcaption><strong>Don't</strong>Collapse a single short line. Just show it.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <p>The heading is all people see before they open a section, so it must say what's inside. Write headings as short questions or plain labels, in sentence case. Keep them to one line on mobile where you can. Use the meta label only for a short count or status, such as "3 items" or "Complete".</p>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion"><div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">What does the protection plan cover?</span></button></div></div></div>
+      </div><figcaption><strong>Do</strong>Say exactly what the section answers.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion"><div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">More information</span></button></div></div></div>
+      </div><figcaption><strong>Don't</strong>Use vague headings. People have to open them to find out.</figcaption></figure>
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion"><div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Documents</span><span class="aec-accordion__meta">2 of 3 uploaded</span></button></div></div></div>
+      </div><figcaption><strong>Do</strong>Use the meta label for a short count or status.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion"><div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">DOCUMENTS YOU WILL NEED TO BRING WITH YOU TO THE DEALERSHIP ON THE DAY OF DELIVERY</span></button></div></div></div>
+      </div><figcaption><strong>Don't</strong>Write long headings or set them in capitals.</figcaption></figure>
+    </div>
   </section>
 
   <section class="doc-section">
     <h2 id="accessibility">Accessibility</h2>
     <div class="doc-a11y">
-      <div class="doc-a11y-item"><h3>Structure <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Each trigger is a <code>&lt;button&gt;</code> inside a heading at the right level. Its <code>aria-expanded</code> state and <code>aria-controls</code> point to the panel.</p></div>
-      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves between headers, and Enter or Space toggles a section. Focus shows a 2px inset ring.</p></div>
+      <div class="doc-a11y-item"><h3>Structure <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Each trigger is a <code>&lt;button&gt;</code> inside a heading at the right level for the page. Its <code>aria-expanded</code> state and <code>aria-controls</code> point to the panel.</p></div>
+      <div class="doc-a11y-item"><h3>State <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Keep <code>aria-expanded</code> in step with the panel: <code>"true"</code> when it is open, <code>"false"</code> when it is hidden. A screen reader says "Trade-in, button, collapsed". Hide closed panels with <code>hidden</code>, not just visually.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves between triggers, and Enter or Space toggles a section. Focus shows a 2px inset ring. Opening a section doesn't move focus.</p></div>
+      <div class="doc-a11y-item"><h3>Panels <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Give each panel <code>role="region"</code> and a label that matches its heading, so it shows up as a landmark. Leave the role out when there are more than six items, to avoid too many landmarks.</p></div>
+      <div class="doc-a11y-item"><h3>Disabled sections</h3><p>Use <code>disabled</code> on the trigger and say why in the title, for example "(coming soon)". Disabled triggers are skipped by Tab.</p></div>
+    </div>
+    <h3 id="contrast">Text contrast <span class="doc-wcag">WCAG 1.4.3</span></h3>
+    <p>Text needs at least 4.5:1 against its background. These ratios are measured live in the active brand. Disabled triggers are exempt.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Title, collapsed</td><td><button class="aec-accordion__trigger" type="button" tabindex="-1" aria-expanded="false" data-contrast-sample><span class="aec-accordion__title">Trade-in</span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Title, hover</td><td><button class="aec-accordion__trigger is-hover" type="button" tabindex="-1" aria-expanded="false" data-contrast-sample><span class="aec-accordion__title">Trade-in</span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Title, expanded</td><td><button class="aec-accordion__trigger" type="button" tabindex="-1" aria-expanded="true" data-contrast-sample><span class="aec-accordion__title">Trade-in</span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Meta label</td><td><button class="aec-accordion__trigger" type="button" tabindex="-1" aria-expanded="false"><span class="aec-accordion__title">Documents</span><span class="aec-accordion__meta" data-contrast-sample>3 items</span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Panel text</td><td><div class="aec-accordion__panel" data-contrast-sample>Free within 50 miles.</div></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="non-text-contrast">Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3>
+    <p>Icons and focus rings need at least 3:1 against what's around them. The divider is decorative, because the triggers are labelled, so it can be lighter.</p>
+    <div class="doc-table-wrap"><table class="doc-table" data-contrast-table>
+      <thead><tr><th>Part</th><th>Example</th><th>Contrast</th></tr></thead>
+      <tbody>
+        <tr><td>Leading icon</td><td><button class="aec-accordion__trigger" type="button" tabindex="-1" aria-expanded="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true" data-contrast-sample data-contrast-mode="border"></span><span class="aec-accordion__title">Documents</span></button></td><td data-contrast-result></td></tr>
+        <tr><td>Divider (decorative)</td><td><div class="aec-accordion" style="padding-top:12px" data-contrast-sample data-contrast-mode="border"></div></td><td data-contrast-result></td></tr>
+        <tr><td>Focus ring</td><td><button class="aec-accordion__trigger is-focus" type="button" tabindex="-1" aria-expanded="false" data-contrast-sample data-contrast-mode="focus"><span class="aec-accordion__title">Trade-in</span></button></td><td data-contrast-result></td></tr>
+      </tbody>
+    </table></div>
+    <h3 id="a11y-dodont">Do / don't</h3>
+    <div class="doc-dodont">
+      <figure class="doc-do"><div class="doc-dodont-preview is-stack">
+        <div class="aec-accordion"><div class="aec-accordion__item"><div class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false"><span class="aec-accordion__title">Can I return the vehicle?</span></button></div></div></div>
+      </div><figcaption><strong>Do</strong>Make the whole row a button inside a heading. People can find sections with the heading list.</figcaption></figure>
+      <figure class="doc-dont"><div class="doc-dodont-preview is-stack">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span class="aec-body-1"><strong>Can I return the vehicle?</strong></span><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Expand"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button></div>
+      </div><figcaption><strong>Don't</strong>Use a bare chevron button next to plain text. Its name, "Expand", doesn't say what opens.</figcaption></figure>
     </div>
   </section>
 
   <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class or attribute</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td>—</td><td><code>.aec-accordion</code>, add <code>data-single</code> for one open section</td></tr>
+        <tr><td>Item</td><td>—</td><td><code>.aec-accordion__item</code></td></tr>
+        <tr><td>Header</td><td>—</td><td><code>.aec-accordion__heading</code> (a heading) &gt; <code>button.aec-accordion__trigger</code></td></tr>
+        <tr><td>expand</td><td>on / off</td><td><code>aria-expanded="true"</code> / <code>"false"</code></td></tr>
+        <tr><td>Title</td><td>—</td><td><code>.aec-accordion__title</code></td></tr>
+        <tr><td>Leading icon</td><td>true</td><td>child <code>.aec-icon</code> before the title</td></tr>
+        <tr><td>Meta</td><td>—</td><td><code>.aec-accordion__meta</code> after the title</td></tr>
+        <tr><td>Content</td><td>—</td><td><code>.aec-accordion__panel</code> with an <code>id</code> matching <code>aria-controls</code></td></tr>
+        <tr><td>state</td><td>hover / disabled</td><td><code>:hover</code> / <code>disabled</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
     <h2 id="figma-notes">Figma notes</h2>
-    <ul class="doc-small">
-      <li>All 8 Figma variants look identical: no hover, pressed or disabled styling, and <code>expand=on</code> has no panel. The states above are proposed in code using tokens.</li>
-      <li>The title uses Avenir LT Pro Heavy in pure black (#000). The code uses body-1 bold with <code>text/default</code>.</li>
-      <li>The divider is #dedede. The code uses <code>border/default</code>.</li>
-    </ul>
+    <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><div><p><strong>Differences found in the Figma library, for the design team to review:</strong></p>
+      <ul style="margin:8px 0 0;padding-left:18px">
+        <li>All 8 Figma variants look identical: no hover, pressed or disabled styling, and <code>expand=on</code> has no panel. The states above are proposed in code using tokens.</li>
+        <li>The title uses Avenir LT Pro Heavy in pure black (#000). The code uses body-1 bold with the accordion text tokens.</li>
+        <li>The divider is #dedede. The code uses <code>--aec-accordion-color-border-default</code>.</li>
+      </ul></div></div>
   </section>
 </div>
 </main>
@@ -99,6 +269,7 @@
 <script src="../js/brands-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/components.js"></script>
+<script src="../js/doc-kit.js"></script>
 
 </body>
 </html>
