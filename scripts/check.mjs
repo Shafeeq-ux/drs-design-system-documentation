@@ -3,7 +3,7 @@ import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const skip = new Set(['node_modules', 'src', 'specs', 'scripts', '.claude', '.git']);
+const skip = new Set(['_site', '.github', 'node_modules', 'src', 'specs', 'scripts', '.claude', '.git']);
 const pages = (function walk(d) { return readdirSync(d).flatMap(f => { const p = join(d, f); if (skip.has(f)) return []; return statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') ? [p] : []; }); })(root);
 let bad = 0;
 for (const page of pages) {

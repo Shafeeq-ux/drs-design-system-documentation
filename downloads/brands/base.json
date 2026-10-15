@@ -5,7 +5,7 @@
     "name": "DRS Base",
     "description": "Neutral DRS foundation. Every brand inherits from it.",
     "source": "base.css",
-    "generated": "2026-10-14"
+    "generated": "2026-10-15"
   },
   "tokens": {
     "--aec-accordion-color-bg-default": "#ffffff",

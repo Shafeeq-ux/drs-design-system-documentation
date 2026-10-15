@@ -5,7 +5,7 @@
     "name": "Buick",
     "description": "Charcoal and copper, 8px buttons, larger 18px body text.",
     "source": "buick.css",
-    "generated": "2026-10-14"
+    "generated": "2026-10-15"
   },
   "tokens": {
     "--aec-accordion-color-bg-default": "#ffffff",

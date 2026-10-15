@@ -5,7 +5,7 @@
     "name": "Car Bravo",
     "description": "Currently identical to Chevrolet. It will diverge when its own tokens ship.",
     "source": "carbravo.css",
-    "generated": "2026-10-14"
+    "generated": "2026-10-15"
   },
   "tokens": {
     "--aec-accordion-color-bg-default": "#FFFFFF",

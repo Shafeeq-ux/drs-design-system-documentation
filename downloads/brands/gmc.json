@@ -5,7 +5,7 @@
     "name": "GMC",
     "description": "Red accent, square corners, uppercase buttons and headings, heavy weights.",
     "source": "gmc.css",
-    "generated": "2026-10-14"
+    "generated": "2026-10-15"
   },
   "tokens": {
     "--aec-accordion-color-bg-default": "#ffffff",
