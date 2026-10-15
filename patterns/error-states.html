@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Error & empty states · DRS Design System</title>
+<meta name="description" content="Full-section empty, error and success states with an illustration, message and actions, plus the loading screen.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="2865-111774" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Feedback</p>
+  <h1>Error &amp; empty states</h1>
+  <p class="doc-lead">Fills a section when there's nothing to show, something failed to load, or a submission succeeded. It has an illustration, a short message and one or two actions.</p>
+  <div class="doc-meta"><span>Default · Success · Error</span><span><code>.aec-empty</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-example" data-label="Error state">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px">
+        <div class="aec-empty aec-empty--error" role="alert">
+          <img class="aec-empty__art" src="../assets/illustrations/app-error-illustration.svg" alt="">
+          <div><h3 class="aec-empty__title">Oops! Something went wrong</h3><p class="aec-empty__text">We're having trouble loading funding options. Please try again.</p></div>
+          <div class="aec-empty__actions"><button class="aec-btn aec-btn--standard" type="button">Retry</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="doc-example" data-label="Success and empty">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px;flex-direction:row;flex-wrap:wrap;align-items:stretch">
+        <div class="aec-empty aec-empty--success" role="status" style="flex:1 1 300px">
+          <img class="aec-empty__art" src="../assets/illustrations/documents-illustration.svg" alt="">
+          <div><h3 class="aec-empty__title">Submitted successfully</h3><p class="aec-empty__text">Your documents were sent to the dealer.</p></div>
+          <div class="aec-empty__actions"><button class="aec-btn aec-btn--primary" type="button">Continue</button></div>
+        </div>
+        <div class="aec-empty" style="flex:1 1 300px">
+          <img class="aec-empty__art" src="../assets/illustrations/no-results-found-illustration.svg" alt="">
+          <div><h3 class="aec-empty__title">No accessories yet</h3><p class="aec-empty__text">Add accessories to personalise your vehicle.</p></div>
+          <div class="aec-empty__actions"><button class="aec-btn aec-btn--standard" type="button">Browse accessories</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="loading">Loading screen</h2>
+    <div class="doc-example" data-label="Loading screen">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px">
+        <div class="aec-loading" role="status"><span class="aec-spinner aec-spinner--lg" aria-hidden="true"></span><span>Calculating your trade-in estimate. Please wait.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Desktop</th><th>Mobile</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td>Padding 64px top and bottom, 24px gap, centred</td><td>Padding 32px, 32px gap</td></tr>
+        <tr><td>Illustration</td><td>200px. Swappable, from the <a href="../foundations/illustrations.html">illustration library</a>.</td><td>160px</td></tr>
+        <tr><td>Title</td><td colspan="2">heading-4: <code>text/default</code> (default), <code>success/default</code> or <code>error/default</code></td></tr>
+        <tr><td>Description</td><td colspan="2">body-2, <code>text/variant</code></td></tr>
+        <tr><td>Actions</td><td colspan="2">A standard button, with an optional primary</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Say what happened and what to do next ("Please try again"). Don't blame the user.</li>
+      <li>Use a primary action for the way forward and a standard action for alternatives.</li>
+      <li>Illustrations are decorative. Give them <code>alt=""</code>.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The copy is still placeholder ("Button" and " Description" with a leading space).</li>
+      <li>The loading screen's text layer is named "Please enter your email to continue", a copy-paste leftover.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

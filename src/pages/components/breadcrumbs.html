@@ -1,0 +1,75 @@
+---
+title: Breadcrumbs
+description: Breadcrumbs show where the current page sits in the site and let people move back up a level.
+figma: 3769-50215
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Navigation</p>
+  <h1>Breadcrumbs</h1>
+  <p class="doc-lead">Shows where the current page sits in the site hierarchy and lets people move back up a level.</p>
+  <div class="doc-meta"><span>2 Figma component sets</span><span><code>.aec-breadcrumbs</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="default">Default</h2>
+    <div class="doc-example" data-label="Breadcrumbs">
+      <div class="doc-example-preview is-col">
+        <nav class="aec-breadcrumbs" aria-label="Breadcrumb"><ol>
+          <li><a href="#default">Shop</a></li>
+          <li><a href="#default">Trucks</a></li>
+          <li><span aria-current="page">2025 Silverado 1500</span></li>
+        </ol></nav>
+      </div>
+    </div>
+    <h3 class="doc-h3" id="collapsed">Collapsed</h3>
+    <p>With more than four levels, collapse the middle levels into "…". The button reveals them.</p>
+    <div class="doc-example" data-label="Collapsed breadcrumbs">
+      <div class="doc-example-preview is-col">
+        <nav class="aec-breadcrumbs" aria-label="Breadcrumb"><ol>
+          <li><a href="#collapsed">Home</a></li>
+          <li><button class="aec-breadcrumbs__more" type="button" aria-label="Show 2 more levels" onclick="var li=this.closest('li');li.insertAdjacentHTML('afterend','<li><a href=&quot;#collapsed&quot;>Shop</a></li><li><a href=&quot;#collapsed&quot;>Trucks</a></li>');li.remove()">…</button></li>
+          <li><a href="#collapsed">Silverado 1500</a></li>
+          <li><a href="#collapsed">Build &amp; price</a></li>
+          <li><span aria-current="page">Review deal</span></li>
+        </ol></nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Default</th><th>Hover</th><th>Pressed</th></tr></thead>
+      <tbody>
+        <tr><td>Ancestor link</td><td>body-3, <code>text/subtle</code></td><td><code>primary/default</code>, underlined</td><td><code>primary/hover</code></td></tr>
+        <tr><td>Current page</td><td colspan="3">body-3 bold, <code>text/default</code>, not a link</td></tr>
+        <tr><td>Separator</td><td colspan="3">12px chevron, <code>icon/variant</code>, 4px gap</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <ul>
+      <li>Use breadcrumbs on pages two or more levels deep. Don't use them on the home page or in linear flows like checkout. Use a stepper there.</li>
+      <li>Place them at the top of the page, above the page title.</li>
+      <li>On mobile, consider showing only a back link to the parent page.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Landmark <span class="doc-wcag">WCAG 1.3.1 · 2.4.8</span></h3><p>Wrap the list in <code>&lt;nav aria-label="Breadcrumb"&gt;</code> and use an ordered list. Mark the current page with <code>aria-current="page"</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Separators</h3><p>Separators are drawn in CSS, so screen readers don't announce them.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The current-page crumb has hover and pressed states in Figma. In code it isn't a link.</li>
+      <li>In the <code>5+</code> variant, the last crumb is medium weight instead of bold.</li>
+      <li>Figma shows no underline on hover. The code adds one so links aren't shown by colour alone.</li>
+    </ul>
+  </section>
+</div>

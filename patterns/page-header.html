@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page header · DRS Design System</title>
+<meta name="description" content="The title block at the top of each checkout step, plus the welcome header and filter bar.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="44-86734" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Navigation</p>
+  <h1>Page header</h1>
+  <p class="doc-lead">The title block at the top of every checkout step, such as "Trade-In Vehicle" or "Accessories". It can include a back link, a step counter, a summary or skip action, and a message chip.</p>
+  <div class="doc-meta"><span>In-page Header · Welcome Header · Filter</span><span><code>.aec-page-header</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="default">In-page header</h2>
+    <div class="doc-example" data-label="Page header with back link and stepper">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-page-header">
+          <a class="aec-page-header__back" href="#default"><span class="aec-page-header__back-icon"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span></span>Back to trade-in</a>
+          <div class="aec-page-header__main">
+            <div class="aec-page-header__titles"><h2 class="aec-page-header__title">Vehicle condition</h2><p class="aec-page-header__desc">Answer a few questions so we can estimate your trade-in value.</p></div>
+            <div class="aec-page-header__aside">
+              <div class="aec-stepper" role="img" aria-label="Step 2 of 4"><ol class="aec-stepper__dots"><li class="is-done"></li><li class="is-current"></li><li></li><li></li></ol><span class="aec-stepper__label">Step <b>2/4</b></span></div>
+              <a class="aec-link aec-link--neutral" href="#default">Skip<span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/arrow-right.svg)" aria-hidden="true"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="doc-example" data-label="Page header with summary and message chip">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-page-header">
+          <div class="aec-page-header__main">
+            <div class="aec-page-header__titles"><h2 class="aec-page-header__title">Plans &amp; Services</h2><p class="aec-page-header__desc">Protect your new vehicle with GM-backed plans.</p></div>
+            <div class="aec-page-header__aside">
+              <div class="aec-page-header__summary"><strong>$52/mo</strong><span>Total: $3,044, 4 Plans</span><a class="aec-link" href="#default">View details</a></div>
+            </div>
+          </div>
+          <span class="aec-msg-chip"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span>Inclusive of installation charges</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="welcome">Welcome header</h2>
+    <p>The greeting at the top of the first page.</p>
+    <div class="doc-example" data-label="Welcome header">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-welcome">
+          <h1 class="aec-welcome__title">Welcome aboard <em>John!</em></h1>
+          <p class="aec-welcome__text">Customize, protect and secure your <b>2025 Blazer EV SS</b>, and collaborate with <b>Riverside Chevrolet</b>, all under one roof.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="filter">Filter bar</h2>
+    <p>The row under a header on list pages, with tabs on the left and an info chip or pricing dropdown on the right.</p>
+    <div class="doc-example" data-label="Filter bar">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-filter-bar">
+          <div class="aec-tabs aec-tabs--inset" style="flex:1 1 280px;max-width:360px">
+            <div class="aec-tabs__list" role="tablist" aria-label="Accessory type">
+              <button class="aec-tab" role="tab" id="ft-a" aria-selected="true" aria-controls="fp-a">Individual</button>
+              <button class="aec-tab" role="tab" id="ft-b" aria-selected="false" aria-controls="fp-b">Packages</button>
+            </div>
+            <div class="aec-tabs__panel aec-visually-hidden" role="tabpanel" id="fp-a" aria-labelledby="ft-a">Individual accessories</div>
+            <div class="aec-tabs__panel aec-visually-hidden" role="tabpanel" id="fp-b" aria-labelledby="ft-b" hidden>Accessory packages</div>
+          </div>
+          <span class="aec-row">
+            <span class="aec-chip aec-chip--info aec-chip--sm">Prices include installation</span>
+            <div class="aec-menu-anchor">
+              <button class="aec-dropdown-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="price-menu">Pricing: <b data-menu-value>Per month</b><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button>
+              <div class="aec-menu" id="price-menu" role="menu" aria-label="Pricing" hidden style="left:auto;right:0;min-width:180px">
+                <button class="aec-menu__item" role="menuitemradio" aria-checked="true" type="button"><span class="aec-menu__label">Per month</span></button>
+                <button class="aec-menu__item" role="menuitemradio" aria-checked="false" type="button"><span class="aec-menu__label">Total price</span></button>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Desktop</th><th>Mobile</th></tr></thead>
+      <tbody>
+        <tr><td>Title</td><td>heading-3, <code>text/default</code></td><td>heading-4</td></tr>
+        <tr><td>Description</td><td colspan="2">body-2, <code>text/variant</code>, 4px below the title</td></tr>
+        <tr><td>Back link</td><td colspan="2">32px <code>bg/variant</code> square with a 16px arrow, plus a body-2 medium label</td></tr>
+        <tr><td>Right cluster</td><td>Right-aligned with a 16px gap: <a href="stepper.html">stepper</a>, neutral link, summary</td><td>Wraps below the title</td></tr>
+        <tr><td>Message chip</td><td colspan="2">32px, <code>bg/variant</code>, 4px radius, body-3</td></tr>
+        <tr><td>Welcome</td><td colspan="2">heading-2 with the name in <code>primary/default</code>, body-2 text, 1px bottom divider</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Headings <span class="doc-wcag">WCAG 1.3.1 · 2.4.6</span></h3><p>The step title is the page's main heading (<code>h1</code>), or <code>h2</code> when a welcome header sits above it. The back link names its destination.</p></div>
+      <div class="doc-a11y-item"><h3>Stepper text <span class="doc-wcag">WCAG 1.1.1</span></h3><p>Give the dot stepper <code>role="img"</code> with <code>aria-label="Step 2 of 4"</code>.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>On mobile, Figma shows the title twice: in the 24px bar next to the menu button and again as a 20px section title.</li>
+      <li>The description is bound to <code>body/2/regular</code> but drawn in Medium. The code follows the style.</li>
+      <li>The welcome header divider uses #e4e4e7. The code uses <code>border/default</code>.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

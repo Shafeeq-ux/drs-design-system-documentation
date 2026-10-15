@@ -1,0 +1,58 @@
+---
+title: Spacing
+description: Container and selectable spacing tokens (padding, gap, stack) for the DRS Chevrolet foundation.
+figma: 3769-50158
+scripts: foundations.js
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Foundations</p>
+  <h1>Spacing</h1>
+  <p class="doc-lead">Spacing tokens are grouped by what they space. <strong>Container</strong> tokens are for layout regions and cards. <strong>Selectable</strong> tokens are for interactive controls.</p>
+  <div class="doc-meta"><span>30 tokens</span><span>Base unit 4px</span></div>
+
+  <section class="doc-section">
+    <h2 id="model">Padding, gap and stack</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Property</th><th>Use for</th><th>CSS</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Padding</strong></td><td>Space inside an element, between its edge and its content</td><td><code>padding</code></td></tr>
+        <tr><td><strong>Gap</strong></td><td>Horizontal space between items in a row</td><td><code>gap</code> / <code>column-gap</code></td></tr>
+        <tr><td><strong>Stack</strong></td><td>Vertical space between stacked items or sections</td><td><code>row-gap</code> / <code>margin-block</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="container">Container</h2>
+    <h3 class="doc-h3">Padding</h3>
+    <div class="doc-tokens-list" data-spacing="container.padding"></div>
+    <h3 class="doc-h3">Gap</h3>
+    <div class="doc-tokens-list" data-spacing="container.gap"></div>
+    <h3 class="doc-h3">Stack</h3>
+    <div class="doc-tokens-list" data-spacing="container.stack"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="selectable">Selectable</h2>
+    <p>For buttons, chips, inputs and list items. The standard control height is <code>--aec-sizing-selectable-l</code> (48px).</p>
+    <h3 class="doc-h3">Padding</h3>
+    <div class="doc-tokens-list" data-spacing="selectable.padding"></div>
+    <h3 class="doc-h3">Gap</h3>
+    <div class="doc-tokens-list" data-spacing="selectable.gap"></div>
+    <h3 class="doc-h3">Stack</h3>
+    <div class="doc-tokens-list" data-spacing="selectable.stack"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+<pre><code>.offer-card {
+  padding: var(--aec-spacing-container-padding-m);
+  display: grid;
+  row-gap: var(--aec-spacing-container-stack-s);
+}
+.offer-card__actions {
+  display: flex;
+  gap: var(--aec-spacing-selectable-gap-l);
+}</code></pre>
+  </section>
+</div>

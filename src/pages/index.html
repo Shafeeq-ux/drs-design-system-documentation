@@ -1,0 +1,70 @@
+---
+title: Overview
+description: DRS Design System — the multi-brand design foundation for Digital Retail Secure Checkout. Tokens, components and guidelines in HTML and CSS for every GM brand.
+figma: 0-1
+---
+<div class="doc-content">
+  <section class="doc-hero">
+    <p class="doc-eyebrow" style="color:#f2bc18">DR 2.0 · Secure Checkout</p>
+    <h1>DRS Design System</h1>
+    <p>One set of foundations, components and guidelines for the digital retail experience across every brand. Brand tokens change the colour, shape and type. The components stay the same. You are viewing <strong data-brand-name>DRS Base</strong>.</p>
+    <div class="doc-hero-actions">
+      <a class="aec-btn aec-btn--primary" href="get-started/developers.html">Start building</a>
+      <a class="aec-btn aec-btn--inverse aec-btn--outline" href="brands/index.html">Compare brands</a>
+      <a class="aec-btn aec-btn--inverse aec-btn--plain" href="brands/theme-builder.html">Theme builder</a>
+    </div>
+    <svg class="doc-hero-bowtie" viewBox="0 0 240 240" aria-hidden="true"><rect x="20" y="20" width="96" height="96" rx="20" fill="#f2bc18"/><rect x="124" y="20" width="96" height="96" rx="48" fill="#ffffff" opacity=".9"/><rect x="20" y="124" width="96" height="96" rx="48" fill="#ffffff" opacity=".9"/><rect x="124" y="124" width="96" height="96" rx="20" fill="#0077d9"/></svg>
+  </section>
+
+  <div class="doc-stats">
+    <div class="doc-stat"><strong>6</strong><span>Brands</span></div>
+    <div class="doc-stat"><strong>34</strong><span>Pattern pages</span></div>
+    <div class="doc-stat"><strong>26</strong><span>Components</span></div>
+    <div class="doc-stat"><strong>196</strong><span>Icons</span></div>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="about">About</h2>
+    <p>The DRS (Digital Retail Secure checkout) design system brings together the components, styles and design decisions used across the vehicle purchase flow: vehicle selection, trade-in, financing, protection plans and delivery. A shared source of truth streamlines design work, improves collaboration between design and engineering, and keeps every screen consistent and accessible.</p>
+    <p>Use the brand menu in the header to switch every page between DRS Base, Chevrolet, GMC, Buick, Cadillac and Car Bravo. Start with <a href="foundations/colour.html">Foundations</a> to learn the tokens, then explore the components. Use <a href="brands/tokens.html">Brand tokens</a> to download a brand.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="foundations">Foundations</h2>
+    <div class="doc-cards">
+      <a class="doc-card" href="foundations/colour.html"><div class="doc-card-art"><span style="width:36px;height:36px;border-radius:50%;background:#0077d9"></span><span style="width:36px;height:36px;border-radius:50%;background:#262626"></span><span style="width:36px;height:36px;border-radius:50%;background:#2d871b"></span><span style="width:36px;height:36px;border-radius:50%;background:#d64022"></span></div><h3>Colour</h3><p>Semantic tokens for surfaces, text, actions and status.</p></a>
+      <a class="doc-card" href="foundations/typography.html"><div class="doc-card-art"><span class="aec-display-2">Aa</span><span class="aec-body-2">DM Sans</span></div><h3>Typography</h3><p>Display, heading and body styles that scale across breakpoints.</p></a>
+      <a class="doc-card" href="foundations/spacing.html"><div class="doc-card-art"><span style="width:8px;height:40px;background:#0077d9;border-radius:2px"></span><span style="width:16px;height:40px;background:#0077d9;border-radius:2px"></span><span style="width:24px;height:40px;background:#0077d9;border-radius:2px"></span><span style="width:40px;height:40px;background:#0077d9;border-radius:2px"></span></div><h3>Spacing</h3><p>Container and selectable padding, gap and stack.</p></a>
+      <a class="doc-card" href="foundations/elevation.html"><div class="doc-card-art"><span style="width:56px;height:40px;background:#fff;border-radius:8px;box-shadow:var(--aec-box-shadow-s)"></span><span style="width:56px;height:40px;background:#fff;border-radius:8px;box-shadow:var(--aec-box-shadow-xl)"></span></div><h3>Elevation</h3><p>Seven shadow levels for layering surfaces.</p></a>
+      <a class="doc-card" href="foundations/border.html"><div class="doc-card-art"><span style="width:40px;height:40px;border:2px solid #0077d9;border-radius:4px"></span><span style="width:40px;height:40px;border:2px solid #0077d9;border-radius:8px"></span><span style="width:40px;height:40px;border:2px solid #0077d9;border-radius:50%"></span></div><h3>Border</h3><p>Corner radius and border width tokens.</p></a>
+      <a class="doc-card" href="foundations/icons.html"><div class="doc-card-art"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/vehicle.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/financing.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/calendar-check.svg)"></span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/delivery.svg)"></span></div><h3>Icons</h3><p>196 icons in five sizes.</p></a>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="components">Components</h2>
+    <p>Each component page covers variants, states, anatomy, sizing, content guidelines and accessibility, with code you can copy.</p>
+    <div class="doc-cards" data-component-cards></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="patterns">Patterns</h2>
+    <p>Larger, composite components for the checkout flow, from the <strong>DR 2.0 – SC GM Chevy Components</strong> library: the page template, navigation, side sheets, the Mathbox, about 50 checkout cards, forms, the calendar and confirmation screens. <a href="patterns/index.html">Browse patterns</a>.</p>
+    <div class="doc-cards">
+      <a class="doc-card" href="patterns/templates.html"><h3>Page template</h3><p>Header, left navigation, 12/8/4-column grid, summary rail and bottom bar.</p></a>
+      <a class="doc-card" href="patterns/side-sheets.html"><h3>Side sheets</h3><p>Item details with a navigation rail and a price + Add footer.</p></a>
+      <a class="doc-card" href="patterns/mathbox.html"><h3>Mathbox</h3><p>The persistent vehicle and payment summary.</p></a>
+      <a class="doc-card" href="patterns/cards.html"><h3>Checkout cards</h3><p>Product, finance, payment, trade-in, delivery and document cards.</p></a>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="team">Team</h2>
+    <p>Created in November 2022 and maintained by:</p>
+    <div class="doc-team">
+      <div class="doc-person"><span class="doc-person-avatar" style="background:#262626">SR</span><div><strong>Shafeequr Rahman</strong><span>Design</span></div></div>
+      <div class="doc-person"><span class="doc-person-avatar" style="background:#d64022">AA</span><div><strong>Akshit Agarwal</strong><span>Engineering</span></div></div>
+      <div class="doc-person"><span class="doc-person-avatar" style="background:#00756f">SS</span><div><strong>Shaik Sharif</strong><span>Engineering</span></div></div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About patterns · DRS Design System</title>
+<meta name="description" content="Patterns are larger, composite components for the Chevrolet digital retail checkout, built from the foundation tokens and components.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="27-1522" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns</p>
+  <h1>About patterns</h1>
+  <p class="doc-lead">Patterns are larger components assembled from the foundation: page shells, navigation, sheets, cards and checkout screens. They come from the <strong>DR 2.0 – SC GM Chevy Components</strong> Figma library.</p>
+  <div class="doc-meta"><span>Status: in progress</span><span><code>css/patterns.css</code></span></div>
+
+  <div class="doc-intro">
+    <p>Every pattern is built from the foundation's <a href="../foundations/colour.html">tokens</a> and <a href="../components/button.html">components</a>. A side-sheet footer, for example, is a price block plus a <a href="../components/button.html">button</a>, and a finance offer card is a <a href="../components/chip.html">chip</a>, a price table and a <a href="../components/toggle-button.html">toggle button</a>. Add <code>patterns.css</code> after <code>components.css</code> to use them.</p>
+  </div>
+
+<pre><code>&lt;link rel="stylesheet" href="/css/tokens.css"&gt;
+&lt;link rel="stylesheet" href="/css/components.css"&gt;
+&lt;link rel="stylesheet" href="/css/patterns.css"&gt;
+&lt;script src="/js/components.js" defer&gt;&lt;/script&gt;</code></pre>
+
+  <section class="doc-section">
+    <h2 id="catalogue">Catalogue</h2>
+    <div class="doc-cards" data-pattern-cards></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="conventions">Conventions</h2>
+    <ul>
+      <li><strong>Image slots.</strong> Vehicle photos, dealer logos, lender logos and trade-in provider logos are content, not part of the system. They appear as grey <code>.aec-img-slot</code> placeholders.</li>
+      <li><strong>Responsive.</strong> Figma draws separate Web, Tablet and Mobile variants. In code, one responsive pattern covers all of them, mostly with container queries, so a pattern adapts to the width of the column it sits in.</li>
+      <li><strong>Sample copy.</strong> Demo text and prices are illustrative.</li>
+      <li><strong>Figma notes.</strong> As on the component pages, each pattern ends with the inconsistencies found in the library.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="team">Team</h2>
+    <div class="doc-team">
+      <div class="doc-person"><span class="doc-person-avatar" style="background:#262626">SR</span><div><strong>Shafeequr Rahman</strong><span>Design</span></div></div>
+      <div class="doc-person"><span class="doc-person-avatar" style="background:#0077d9">MN</span><div><strong>Mohamed Noohu</strong><span>Design</span></div></div>
+      <div class="doc-person"><span class="doc-person-avatar" style="background:#2d871b">WF</span><div><strong>Wasim Fasil</strong><span>Design</span></div></div>
+      <div class="doc-person"><span class="doc-person-avatar" style="background:#d64022">PJ</span><div><strong>Palash Jain</strong><span>Design</span></div></div>
+    </div>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

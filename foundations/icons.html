@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icons · DRS Design System</title>
+<meta name="description" content="The DRS icon library — 196 icons available at 12, 16, 24, 32 and 40px.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="1821-11060">
+<div class="doc-content">
+  <p class="doc-eyebrow">Foundations</p>
+  <h1>Icons</h1>
+  <p class="doc-lead">196 icons covering vehicles, financing, documents, delivery and core UI. Each one is drawn at five sizes in Figma: 12, 16, 24, 32 and 40px.</p>
+  <div class="doc-meta"><span>196 icons</span><span>SVG · currentColor</span></div>
+
+  <section class="doc-section">
+    <h2 id="library">Library</h2>
+    <p>Search by name and click an icon to copy its name. The SVGs on this site are the 24px masters, and they scale cleanly to other sizes.</p>
+    <div class="doc-icons-toolbar">
+      <label class="aec-visually-hidden" for="icon-search">Search icons</label>
+      <input id="icon-search" type="search" placeholder="Search icons, e.g. car, calendar, payment">
+      <label class="doc-small" for="icon-size">Size</label>
+      <select id="icon-size" class="doc-btn" style="height:40px">
+        <option value="16">16px</option><option value="24" selected>24px</option><option value="32">32px</option><option value="40">40px</option>
+      </select>
+      <span class="doc-icon-count" id="icon-count" aria-live="polite"></span>
+    </div>
+    <div class="doc-icon-grid" data-icon-grid></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <p>Icons are drawn with a CSS mask, so they inherit <code>color</code>. Set the colour with an icon token and the size with a size modifier.</p>
+<pre><code>&lt;span class="aec-icon aec-icon--24" style="--aec-icon-src:url(/assets/icons/calendar-check.svg)" aria-hidden="true"&gt;&lt;/span&gt;
+
+/* or inline the SVG — fills use currentColor */
+.my-icon { color: var(--aec-color-icon-variant); }</code></pre>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Use for</th></tr></thead>
+      <tbody>
+        <tr><td>12px</td><td>Inside chips, badges and dense tables</td></tr>
+        <tr><td>16px</td><td>Inside buttons, links and inputs</td></tr>
+        <tr><td>24px</td><td>Default: icon buttons, navigation, list items</td></tr>
+        <tr><td>32px / 40px</td><td>Feature tiles, empty states and step indicators</td></tr>
+      </tbody>
+    </table></div>
+    <h3 class="doc-h3" id="a11y">Accessibility</h3>
+    <ul>
+      <li>Decorative icons next to text get <code>aria-hidden="true"</code>.</li>
+      <li>An icon-only control needs an accessible name, for example <code>aria-label="Close"</code>.</li>
+      <li>Meaningful icons must meet 3:1 contrast with their background (WCAG 1.4.11).</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/foundations.js"></script>
+</body>
+</html>

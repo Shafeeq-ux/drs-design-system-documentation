@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card anatomy · DRS Design System</title>
+<meta name="description" content="The shared card shell and parts — media, chips, title, content, price detail and card button — that every checkout card is built from.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="228-105161" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Checkout</p>
+  <h1>Card anatomy</h1>
+  <p class="doc-lead">About 50 checkout cards share one set of parts. Learn the shell once, and product, finance, payment, trade-in, delivery and document cards are all variations of it.</p>
+  <div class="doc-meta"><span>Figma Card page · base parts</span><span><code>.aec-card</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage" style="padding:16px">
+        <article class="aec-card" style="width:260px">
+          <div class="aec-img-slot aec-card__media">Media</div>
+          <div class="aec-card__chips"><span class="aec-chip aec-chip--sm aec-chip--overlay">Upload proof</span></div>
+          <div class="aec-card__body"><h3 class="aec-card__title">Title</h3><p class="aec-card__text">This is a sample description.</p><a class="aec-link aec-link--sm aec-card__cta" href="#anatomy">More details</a></div>
+          <div class="aec-card__footer"><div class="aec-card-price"><span class="aec-card-price__value">$53.00</span></div><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="false" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span><span class="aec-toggle__label">Add</span></button></div>
+        </article>
+        <span class="doc-anatomy-pin" style="left:24px;top:40px">1</span>
+        <span class="doc-anatomy-pin" style="right:24px;top:40px">2</span>
+        <span class="doc-anatomy-pin" style="left:24px;top:170px">3</span>
+        <span class="doc-anatomy-pin" style="left:24px;bottom:30px">4</span>
+        <span class="doc-anatomy-pin" style="right:24px;bottom:30px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Media</strong><code>.aec-card__media</code>: a product image (3-column 244×141 or 2-column 379×213) or a 40px icon. Vehicle and product photos are image slots.</span></li>
+        <li><span><strong>Chips</strong><code>.aec-card__chips</code>, top right: dark overlay chips such as Upload proof, ID required or Conflicting offer.</span></li>
+        <li><span><strong>Body</strong>Body-1 bold title, body-2 <code>text/subtle</code> description, styled list or bullets, and a small link CTA.</span></li>
+        <li><span><strong>Price detail</strong><code>.aec-card-price</code>: Price, Price &amp; total, Month &amp; miles, or a loading skeleton.</span></li>
+        <li><span><strong>Card button</strong>A <a href="../components/toggle-button.html">toggle button</a> that switches between "Add" and "Added". Alternatives are a <code>Free</code> tag, a spinner, or "Contact dealer".</span></li>
+      </ol>
+    </div>
+    <p>The shell is <code>bg/default</code> with a 1px <code>border/default</code> border, square corners and no shadow. Padding is 16px. The footer divider is inset 16px.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="aec-card-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+      <article class="aec-card"><div class="aec-card__body"><span class="doc-state-label">Default</span><h3 class="aec-card__title">Title</h3></div><div class="aec-card__footer"><div class="aec-card-price"><span class="aec-card-price__value">$53.00</span></div><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="false" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span>Add</button></div></article>
+      <article class="aec-card is-selected"><div class="aec-card__body"><span class="doc-state-label">Selected</span><h3 class="aec-card__title">Title</h3></div><div class="aec-card__footer"><div class="aec-card-price"><span class="aec-card-price__value">$53.00</span></div><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="true" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/check.svg)" aria-hidden="true"></span>Added</button></div></article>
+      <article class="aec-card"><div class="aec-card__body"><span class="doc-state-label">Price loading</span><h3 class="aec-card__title">Title</h3></div><div class="aec-card__footer"><span class="aec-skeleton" style="width:96px;height:24px" aria-hidden="true"></span><span class="aec-toggle aec-toggle--md" style="border-color:var(--aec-color-border-default);width:72px" role="status" aria-label="Loading price"><span class="aec-spinner aec-spinner--sm"></span></span></div></article>
+      <article class="aec-card"><div class="aec-card__body"><span class="doc-state-label">Free</span><h3 class="aec-card__title">Title</h3></div><div class="aec-card__footer"><div class="aec-card-price"><span class="aec-card-price__value">$0</span></div><span class="aec-free-tag">Free</span></div></article>
+      <article class="aec-card is-disabled"><div class="aec-card__body"><span class="doc-state-label">Disabled / conflict</span><h3 class="aec-card__title">Title</h3></div><div class="aec-card__footer"><div class="aec-card-price"><span class="aec-card-price__value">$53.00</span></div><button class="aec-toggle aec-toggle--md" type="button" disabled><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span>Add</button></div></article>
+      <article class="aec-card" aria-busy="true"><div class="aec-card__body"><span class="doc-state-label">Loading</span><span class="aec-skeleton" style="height:20px;width:70%"></span><span class="aec-skeleton" style="height:14px"></span><span class="aec-skeleton" style="height:14px;width:85%"></span></div></article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="price">Price detail</h2>
+    <div class="doc-example" data-label="Price detail variants">
+      <div class="doc-example-preview" style="gap:40px">
+        <div class="aec-card-price"><span class="aec-card-price__value">$53.00</span></div>
+        <div class="aec-card-price"><span class="aec-card-price__value">$53 off</span></div>
+        <div class="aec-card-price"><span class="aec-card-price__value">$53.00 <small>/mo.</small></span><span>Total price: $420.00</span></div>
+        <div class="aec-card-price"><span>12 mo. | 5,000 mi. <a class="aec-link" href="#price">Edit</a></span><span class="aec-card-price__value">$53.00 <small>/mo. • Total $810.00</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="responsive">Responsive</h2>
+    <p>Put cards in <code>.aec-card-grid</code>. When the grid is narrower than 560px, product cards switch to the mobile layout automatically, with a 128px media column on the left. This uses a container query, so it works in narrow columns as well as on phones.</p>
+    <div class="doc-example" data-label="Narrow container">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-card-grid" style="max-width:400px">
+          <article class="aec-card aec-card--product"><div class="aec-img-slot aec-card__media">Image</div><div class="aec-card__chips"><span class="aec-chip aec-chip--sm aec-chip--overlay">Conflicting offer</span></div><div class="aec-card__body"><h3 class="aec-card__title">All-Weather Floor Liners</h3><a class="aec-link aec-link--sm aec-card__cta" href="#responsive">More details</a></div><div class="aec-card__footer"><div class="aec-card-price"><span class="aec-card-price__value">$189.00</span></div><button class="aec-toggle aec-toggle--md" type="button" aria-pressed="false" data-on="Added" data-off="Add" data-icon-on="check" data-icon-off="add" data-select-card><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span><span class="aec-toggle__label">Add</span></button></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="families">Card families</h2>
+    <div class="doc-cards">
+      <a class="doc-card" href="card-products.html"><h3>Product cards</h3><p>Protection plans, packages, rebates, accessories, chargers, subscriptions.</p></a>
+      <a class="doc-card" href="card-finance.html"><h3>Finance cards</h3><p>Lender offers, financing options, credit application status.</p></a>
+      <a class="doc-card" href="card-payment.html"><h3>Payment cards</h3><p>Saved cards, payment method, processing result, payment summary.</p></a>
+      <a class="doc-card" href="card-trade-in.html"><h3>Trade-in cards</h3><p>Trade-in vehicle, valuation, photo upload, garage.</p></a>
+      <a class="doc-card" href="card-delivery.html"><h3>Delivery &amp; scheduling</h3><p>Delivery method, appointment tiles, scheduling summary.</p></a>
+      <a class="doc-card" href="card-documents.html"><h3>Document cards</h3><p>Upload tiles, document summary, signing list.</p></a>
+      <a class="doc-card" href="card-other.html"><h3>Other cards</h3><p>Summary rows, upload toast, OTP, conflict and more.</p></a>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Structure <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Each card is an <code>&lt;article&gt;</code> with a heading. Lists of cards are grids of articles, not one big link.</p></div>
+      <div class="doc-a11y-item"><h3>Add / Added <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The card button is a toggle with <code>aria-pressed</code>. Add <code>data-select-card</code> to also highlight the card. If several cards share the label "Add", connect each button to its card title with <code>aria-describedby</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Overlay chips <span class="doc-wcag">WCAG 1.4.3</span></h3><p>White text on <code>backdrop/default</code> over a photo stays readable on any image.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Cards use radius 0 almost everywhere. The exceptions are payment method (new), payment summary and credit application (8px) and upload image (4px).</li>
+      <li>The selected border is inconsistent: rebates, chargers and subscriptions turn <code>action/bg/default</code>, while plans, packages and accessories keep <code>border/default</code>. The code highlights every selected card.</li>
+      <li>Card chips are the information chip in Figma, but they render as dark overlays. The code adds <code>.aec-chip--overlay</code>.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

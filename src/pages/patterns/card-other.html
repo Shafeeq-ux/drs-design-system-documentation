@@ -1,0 +1,132 @@
+---
+title: Other cards
+description: Summary rows, vehicle info, contact dealership, communication preference, OTP verification, conflict resolution, mobile inspection, password conditions and captcha.
+figma: 228-105251
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Checkout</p>
+  <h1>Other cards</h1>
+  <p class="doc-lead">Smaller building blocks from the Card page: collapsed-step summaries, the vehicle info card, dealer contact, OTP verification, conflict resolution and form helpers.</p>
+  <div class="doc-meta"><span>13 Figma sets</span></div>
+
+  <section class="doc-section">
+    <h2 id="summary">Summary row</h2>
+    <p>Shows a completed step on the review page as one line, with an Edit action.</p>
+    <div class="doc-example" data-label="Summary rows">
+      <div class="doc-example-preview is-col is-stretch">
+        <article class="aec-card aec-row-card aec-row-card--shadow"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trade-in.svg)" aria-hidden="true"></span><div class="aec-row-card__body" style="flex-direction:row;flex-wrap:wrap;gap:8px;align-items:baseline"><h3 class="aec-row-card__title" style="font-size:var(--aec-typography-heading-6-font-size)">Trade-in</h3><span class="aec-row-card__text">2019 Equinox LT, $10,000.00</span></div><a class="aec-link aec-link--neutral" href="#summary">Edit</a></article>
+        <article class="aec-card aec-row-card aec-row-card--shadow"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/protection-plans.svg)" aria-hidden="true"></span><div class="aec-row-card__body" style="flex-direction:row;flex-wrap:wrap;gap:8px;align-items:baseline"><h3 class="aec-row-card__title" style="font-size:var(--aec-typography-heading-6-font-size)">Plans &amp; services</h3><span class="aec-row-card__text">4 selected, $52/mo</span></div><a class="aec-link aec-link--neutral" href="#summary">Edit</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="vehicle">Vehicle info</h2>
+    <div class="doc-example" data-label="Vehicle info card">
+      <div class="doc-example-preview is-stretch">
+        <article class="aec-card aec-row-card" style="padding:24px;align-items:flex-start">
+          <div class="aec-row-card__body" style="gap:12px">
+            <h3 class="aec-row-card__title aec-row-card__title--lg">2025 Blazer EV <span style="font-weight:400">SS AWD</span></h3>
+            <span class="aec-body-3 aec-medium">Purchase price: $60,190</span>
+            <span><span class="aec-heading-3">$1,069</span> <span class="aec-body-1 aec-medium">/mo est. loan</span></span>
+            <span class="aec-body-3 aec-text-subtle">48 months • 5.99% APR • $2,000 down payment</span>
+            <a class="aec-link aec-link--neutral" href="#vehicle">Vehicle details</a>
+          </div>
+          <span class="aec-img-slot" style="width:300px;max-width:100%;aspect-ratio:300/146;border-radius:4px">Vehicle image</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="contact">Contact dealership and communication</h2>
+    <div class="doc-example" data-label="Contact and communication preference">
+      <div class="doc-example-preview is-col is-stretch">
+        <article class="aec-card aec-row-card" style="align-items:stretch;padding:16px;gap:24px">
+          <div class="aec-dealer__details"><h3 class="aec-option-card__title" style="color:var(--aec-color-text-subtle)">Riverside Chevrolet</h3>
+            <span class="aec-dealer__row"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/location-pin.svg)" aria-hidden="true"></span>8200 Auto Dr, Riverside, CA 92504</span>
+            <span class="aec-dealer__row"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/email.svg)" aria-hidden="true"></span><a class="aec-link" href="mailto:sales@example.com">sales@example.com</a></span>
+            <span class="aec-dealer__row"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/phone.svg)" aria-hidden="true"></span>(951) 400-5219</span></div>
+          <span class="aec-img-slot aec-dealer__map" style="flex:0 1 226px">Map</span>
+        </article>
+        <fieldset class="aec-fieldset" style="padding-bottom:16px;border-bottom:1px solid var(--aec-color-border-default)"><legend style="font-size:var(--aec-typography-heading-6-font-size);color:var(--aec-color-text-subtle)">I prefer to communicate via:</legend>
+          <div class="aec-choice-list aec-choice-list--row"><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Text</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Call</span></span></label><label class="aec-control"><input class="aec-checkbox" type="checkbox" checked><span class="aec-form-label"><span class="aec-form-label__text">Email</span></span></label></div></fieldset>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="otp">Phone verification (OTP)</h2>
+    <div class="doc-example" data-label="OTP verification">
+      <div class="doc-example-preview is-col">
+        <p class="aec-body-1 aec-medium">Enter the code we sent to (555) 555-1234</p>
+        <fieldset class="aec-fieldset"><legend class="aec-body-3" style="font-weight:400;color:var(--aec-color-text-variant)">Enter verification code</legend>
+          <div class="aec-otp" id="otp-demo"><input aria-label="Digit 1" inputmode="numeric" maxlength="1" autocomplete="one-time-code"><input aria-label="Digit 2" inputmode="numeric" maxlength="1"><input aria-label="Digit 3" inputmode="numeric" maxlength="1"><input aria-label="Digit 4" inputmode="numeric" maxlength="1"><input aria-label="Digit 5" inputmode="numeric" maxlength="1"><input aria-label="Digit 6" inputmode="numeric" maxlength="1"></div></fieldset>
+        <p class="aec-body-3" id="otp-msg" aria-live="polite">Type any 6 digits. “123456” shows the success state.</p>
+        <button class="aec-link aec-link--neutral" type="button">Resend code</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="conflict">Conflict resolution</h2>
+    <p>Appears inline when a protection selection conflicts with a package, or when adding products would complete a package.</p>
+    <div class="doc-example" data-label="Conflict resolution">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-conflict" role="alertdialog" aria-labelledby="cr-t">
+          <div class="aec-row" style="justify-content:space-between;align-items:flex-start"><h3 class="aec-conflict__title" id="cr-t" style="font-size:var(--aec-typography-heading-4-font-size)">This selection will remove the "Preferred" package</h3><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+          <dl class="aec-summary__grid" style="padding:0"><div><dt style="font-weight:400;color:var(--aec-color-text-subtle)">Selected protection package</dt><dd style="color:var(--aec-color-text-default)">— Preferred</dd></div><div><dt style="font-weight:400;color:var(--aec-color-text-subtle)">New selection, individual plan</dt><dd style="color:var(--aec-color-text-default)">+ ThreeForOne Protection</dd></div></dl>
+          <div class="aec-btn-group" style="justify-content:flex-end;padding-top:16px;border-top:1px solid var(--aec-color-border-default)"><button class="aec-btn aec-btn--standard aec-btn--sm" type="button">Cancel</button><button class="aec-btn aec-btn--primary" type="button">Confirm</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="helpers">Helpers</h2>
+    <div class="doc-example" data-label="Mobile inspection, password conditions, captcha">
+      <div class="doc-example-preview" style="align-items:flex-start;flex-wrap:wrap;gap:32px">
+        <article class="aec-card aec-row-card" style="max-width:520px"><div class="aec-row-card__body"><h3 class="aec-row-card__title" style="font-size:var(--aec-typography-body-2-font-size)">Upload photos from your phone</h3><p class="aec-row-card__text aec-body-3">Scan the QR code and continue. Take photos and videos in good lighting.</p></div><span class="aec-qr" role="img" aria-label="QR code placeholder"></span></article>
+        <div class="aec-stack" style="gap:8px">
+          <div class="aec-field" style="width:240px"><label class="aec-field__label" for="pw">Password</label><div class="aec-field__box"><input class="aec-field__input" id="pw" type="password" autocomplete="new-password" aria-describedby="pw-rules"></div></div>
+          <ul class="aec-checks" id="pw-rules"><li data-rule="len">Minimum 8 characters</li><li data-rule="up">At least one uppercase letter (A–Z)</li><li data-rule="num">At least one number or special character</li></ul>
+        </div>
+        <div class="aec-captcha"><label class="aec-row"><input class="aec-checkbox" type="checkbox">I'm not a robot</label><span class="aec-img-slot aec-captcha__logo">captcha</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Password rules <span class="doc-wcag">WCAG 3.3.2 · 1.4.1</span></h3><p>Link the rules to the field with <code>aria-describedby</code>. A met rule changes its text colour and gets a filled dot, so it doesn't rely on colour alone.</p></div>
+      <div class="doc-a11y-item"><h3>Captcha</h3><p>Use the provider's accessible widget. The placeholder here is not functional.</p></div>
+      <div class="doc-a11y-item"><h3>QR code <span class="doc-wcag">WCAG 1.1.1</span></h3><p>Offer a link or SMS alternative next to the QR code for people who can't scan it.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Copy typos: "Preffered" and "At 1 number or special character". Set names with trailing spaces: "Conflict Resolution ".</li>
+      <li>The Summary row uses five stacked raw shadows (about <code>shadow/s</code>). The reCAPTCHA logo and QR code are third-party or generated assets.</li>
+      <li>The OTP success variant points to a misnamed base variant ("Fasle").</li>
+    </ul>
+  </section>
+</div>
+<script>
+(function () {
+  var otp = document.getElementById('otp-demo'), msg = document.getElementById('otp-msg');
+  otp.addEventListener('input', function () {
+    var v = Array.prototype.map.call(otp.querySelectorAll('input'), function (i) { return i.value; }).join('');
+    otp.classList.remove('is-success', 'is-error');
+    if (v.length === 6) { var ok = v === '123456'; otp.classList.add(ok ? 'is-success' : 'is-error'); msg.textContent = ok ? 'Phone number verified.' : 'That code is incorrect. Try again or resend the code.'; msg.style.color = ok ? 'var(--aec-color-success-default)' : 'var(--aec-color-error-default)'; }
+  });
+  var pw = document.getElementById('pw');
+  pw.addEventListener('input', function () {
+    var v = pw.value, r = { len: v.length >= 8, up: /[A-Z]/.test(v), num: /[\d\W]/.test(v) };
+    document.querySelectorAll('#pw-rules li').forEach(function (li) { li.classList.toggle('is-met', r[li.dataset.rule]); });
+  });
+})();
+</script>

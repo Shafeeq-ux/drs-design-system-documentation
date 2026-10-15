@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live session · DRS Design System</title>
+<meta name="description" content="The live personal-session banner and the floating session toolbar used when shopping with the dealer in real time.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="228-105852" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Feedback</p>
+  <h1>Live session</h1>
+  <p class="doc-lead">When a dealer starts a Live Personal Session, a banner invites the shopper to join. During the session, a dark toolbar holds the session tools.</p>
+  <div class="doc-meta"><span>Live Banner · Live toolbar</span><span><code>.aec-live-banner</code> · <code>.aec-live-bar</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="banner">Live banner</h2>
+    <div class="doc-example" data-label="Live banner">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-live-banner" role="status" data-aec-dismissable>
+          <div class="aec-live-banner__lead">
+            <span class="aec-live-banner__badge"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/video-camera.svg)" aria-hidden="true"></span></span>
+            <div><p class="aec-live-banner__title">Live Personal Session Active</p><p class="aec-live-banner__text">Your dealer is online. Join the Live Personal Session now.</p></div>
+          </div>
+          <div class="aec-live-banner__actions">
+            <button class="aec-link aec-link--inverse" type="button" data-aec-dismiss>Dismiss</button>
+            <button class="aec-btn aec-btn--inverse aec-btn--md" type="button">Join now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="toolbar">Session toolbar</h2>
+    <p>Docked to the right edge on desktop (vertical) and to the bottom on mobile (horizontal). The tools are toggle buttons.</p>
+    <div class="doc-example" data-label="Live toolbar">
+      <div class="doc-example-preview" style="justify-content:space-around;align-items:center">
+        <div class="aec-live-bar" role="toolbar" aria-label="Live session tools" aria-orientation="vertical">
+          <button class="aec-live-bar__tool" type="button" aria-pressed="true" aria-label="Camera"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/video-camera.svg)" aria-hidden="true"></span></button>
+          <button class="aec-live-bar__tool" type="button" aria-pressed="false" aria-label="Share screen"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/monitor.svg)" aria-hidden="true"></span></button>
+          <button class="aec-live-bar__tool" type="button" aria-pressed="false" aria-label="Chat"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/sms.svg)" aria-hidden="true"></span></button>
+          <button class="aec-live-bar__tool" type="button" aria-pressed="false" aria-label="Documents"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true"></span></button>
+          <button class="aec-live-bar__tool" type="button" aria-pressed="false" aria-label="Call"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/phone.svg)" aria-hidden="true"></span></button>
+          <button class="aec-live-bar__tool aec-live-bar__tool--end" type="button" aria-label="Leave session"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+        </div>
+        <div class="aec-live-bar aec-live-bar--horizontal" role="toolbar" aria-label="Live session tools (mobile)">
+          <button class="aec-live-bar__tool" type="button" aria-pressed="true" aria-label="Camera"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/video-camera.svg)" aria-hidden="true"></span></button>
+          <button class="aec-live-bar__tool" type="button" aria-pressed="false" aria-label="Share screen"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/monitor.svg)" aria-hidden="true"></span></button>
+          <button class="aec-live-bar__tool" type="button" aria-pressed="false" aria-label="Chat"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/sms.svg)" aria-hidden="true"></span></button>
+          <button class="aec-live-bar__tool aec-live-bar__tool--end" type="button" aria-label="Leave session"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Banner</td><td><code>success/default</code> background, 16px padding, <code>shadow/l</code>, square corners. A 48px white badge with a 32px icon, a heading-5 title and body-2 text in <code>text/inverse</code>. Actions are an inverse link and an inverse button.</td></tr>
+        <tr><td>Toolbar</td><td><code>dark-grey/strong</code>, 8px padding, 16px gap, <code>shadow/s</code>. 4px radius on the side facing the screen.</td></tr>
+        <tr><td>Tool</td><td>32px, 4px radius, <code>inverse/icon/default</code>. Active tools use <code>backdrop/default</code> with a 1px <code>inverse/border/variant</code> ring.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Toolbar <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>role="toolbar"</code> with an <code>aria-label</code>. Each tool needs an <code>aria-label</code> and <code>aria-pressed</code> for its on/off state.</p></div>
+      <div class="doc-a11y-item"><h3>Banner timing <span class="doc-wcag">WCAG 2.2.1</span></h3><p>The invitation stays until the shopper joins or dismisses it.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Active tools are darker, which gives low contrast. The code adds a 1px ring.</li>
+      <li>Tool icons are black by default in Figma. On the dark bar they need <code>icon/inverse</code>.</li>
+      <li>The tool icons and their meanings aren't named in Figma. The tools shown here are illustrative.</li>
+      <li>The banner shadow is a raw effect (0 4 4, 25%). The code uses <code>shadow/l</code>.</li>
+    </ul>
+  </section>
+</div>
+<script>
+document.querySelectorAll('.aec-live-bar__tool[aria-pressed]').forEach(function (b) { b.addEventListener('click', function () { b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); }); });
+</script>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

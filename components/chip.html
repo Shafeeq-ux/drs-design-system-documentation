@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chip · DRS Design System</title>
+<meta name="description" content="Chips are compact elements for status labels, filters and removable selections.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50187">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Data display</p>
+  <h1>Chip</h1>
+  <p class="doc-lead">Compact elements for showing status, filtering a list and representing removable selections.</p>
+  <div class="doc-meta"><span>6 Figma component sets</span><span><code>.aec-chip</code></span></div>
+
+  <div class="doc-intro">
+    <p>There are four kinds of chip. <strong>Information</strong> and <strong>plain</strong> chips are static labels. <strong>Selectable</strong> chips toggle filters. <strong>Dismissable</strong> chips show a chosen value that can be removed. All chips have square corners.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="information">Information</h2>
+    <p>A status label, such as <em>In stock</em>, <em>Pending signature</em> or <em>Offer expired</em>. It is subtle by default. Add <code>--filled</code> for stronger emphasis.</p>
+    <div class="doc-example" data-label="Information chips">
+      <div class="doc-example-preview is-col">
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="aec-chip aec-chip--info">New</span>
+          <span class="aec-chip aec-chip--info aec-chip--success"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/check-circle.svg)" aria-hidden="true"></span>Approved</span>
+          <span class="aec-chip aec-chip--info aec-chip--warning">Pending signature</span>
+          <span class="aec-chip aec-chip--info aec-chip--error">Offer expired</span>
+          <span class="aec-chip aec-chip--info aec-chip--grey">Used</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="aec-chip aec-chip--info aec-chip--filled">New</span>
+          <span class="aec-chip aec-chip--info aec-chip--success aec-chip--filled">Approved</span>
+          <span class="aec-chip aec-chip--info aec-chip--warning aec-chip--filled">Pending signature</span>
+          <span class="aec-chip aec-chip--info aec-chip--error aec-chip--filled">Offer expired</span>
+          <span class="aec-chip aec-chip--info aec-chip--grey aec-chip--filled">Used</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+          <span class="aec-chip aec-chip--info aec-chip--sm">Small · 24</span>
+          <span class="aec-chip aec-chip--info">Medium · 32</span>
+          <span class="aec-chip aec-chip--info aec-chip--lg">Large · 40</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="plain">Plain</h2>
+    <p>A status shown as an icon and coloured text, with no container. Use it in dense lists and tables.</p>
+    <div class="doc-example" data-label="Plain chips">
+      <div class="doc-example-preview">
+        <span class="aec-chip-plain"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span>In review</span>
+        <span class="aec-chip-plain aec-chip-plain--success"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span>Verified</span>
+        <span class="aec-chip-plain aec-chip-plain--warning"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span>Action needed</span>
+        <span class="aec-chip-plain aec-chip-plain--error"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Declined</span>
+        <span class="aec-chip-plain aec-chip-plain--grey"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-skip.svg)" aria-hidden="true"></span>Skipped</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="selectable">Selectable</h2>
+    <p>A filter that toggles on and off. Selected chips turn dark. Use it for vehicle filters such as body style or fuel type.</p>
+    <div class="doc-example" data-label="Selectable chips">
+      <div class="doc-example-preview is-col">
+        <div class="aec-chip-list" role="group" aria-label="Body style">
+          <button class="aec-chip aec-chip--selectable" type="button" aria-pressed="true">SUV</button>
+          <button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">Truck</button>
+          <button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Electric</button>
+          <button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">Offers <span class="aec-badge">2</span></button>
+          <button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false" disabled>Van</button>
+        </div>
+        <div class="aec-chip-list" role="group" aria-label="Seats">
+          <button class="aec-chip aec-chip--selectable aec-chip--sm" type="button" aria-pressed="false">2 seats</button>
+          <button class="aec-chip aec-chip--selectable aec-chip--sm" type="button" aria-pressed="true">5 seats</button>
+          <button class="aec-chip aec-chip--selectable aec-chip--sm" type="button" aria-pressed="false">7+ seats</button>
+        </div>
+      </div>
+    </div>
+    <div class="doc-example" data-label="Selectable chips — inverse">
+      <div class="doc-example-preview is-inverse">
+        <div class="aec-chip-list" role="group" aria-label="Colour">
+          <button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" aria-pressed="true">Black</button>
+          <button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" aria-pressed="false">Summit White</button>
+          <button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" aria-pressed="false">Radiant Red</button>
+          <button class="aec-chip aec-chip--selectable aec-chip--inverse" type="button" aria-pressed="false" disabled>Sterling Grey</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="dismissable">Dismissable</h2>
+    <p>Shows a chosen value, such as an applied filter, that can be removed with the close button.</p>
+    <div class="doc-example" data-label="Dismissable chips">
+      <div class="doc-example-preview">
+        <ul class="aec-chip-list" aria-label="Applied filters">
+          <li class="aec-chip aec-chip--input" data-aec-dismissable>Silverado<button class="aec-chip__remove" type="button" data-aec-dismiss aria-label="Remove Silverado"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li>
+          <li class="aec-chip aec-chip--input" data-aec-dismissable>Under $50,000<button class="aec-chip__remove" type="button" data-aec-dismiss aria-label="Remove Under $50,000"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li>
+          <li class="aec-chip aec-chip--input aec-chip--sm" data-aec-dismissable>2024<button class="aec-chip__remove" type="button" data-aec-dismiss aria-label="Remove 2024"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li>
+          <li class="aec-chip aec-chip--input aec-chip--lg" data-aec-dismissable>Detroit, MI<button class="aec-chip__remove" type="button" data-aec-dismiss aria-label="Remove Detroit, MI"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li>
+          <li class="aec-chip aec-chip--input" aria-disabled="true">Locked<button class="aec-chip__remove" type="button" tabindex="-1" aria-label="Remove Locked" disabled><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">Selectable states</h2>
+    <div class="doc-states">
+      <div class="doc-state"><span class="doc-state-label">Default</span><span class="aec-chip aec-chip--selectable">Label</span></div>
+      <div class="doc-state"><span class="doc-state-label">Hover</span><span class="aec-chip aec-chip--selectable" style="background:var(--aec-color-bg-variant);border-color:var(--aec-color-border-variant);color:var(--aec-color-text-default)">Label</span></div>
+      <div class="doc-state"><span class="doc-state-label">Pressed</span><span class="aec-chip aec-chip--selectable" style="background:var(--aec-color-bg-variant);border-color:var(--aec-color-action-border-active);color:var(--aec-color-text-default)">Label</span></div>
+      <div class="doc-state"><span class="doc-state-label">Selected</span><span class="aec-chip aec-chip--selectable" aria-pressed="true">Label</span></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><button class="aec-chip aec-chip--selectable" disabled>Label</button></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled selected</span><button class="aec-chip aec-chip--selectable" aria-pressed="true" disabled>Label</button></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview"><span class="aec-chip aec-chip--info aec-chip--success">Approved</span></div><div class="doc-dd-body"><div class="doc-dd-label">Do</div>Keep status labels to one or two words, and match the colour to the meaning.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><span class="aec-chip aec-chip--info aec-chip--error">Popular</span></div><div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use status colours for decoration. Red means a problem.</div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Filter state <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Selectable chips are <code>&lt;button aria-pressed&gt;</code>. Wrap a set in <code>role="group"</code> with an <code>aria-label</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Remove buttons <span class="doc-wcag">WCAG 2.4.6</span></h3><p>Each close button needs a specific name, such as <code>aria-label="Remove Silverado"</code>. After a chip is removed, focus moves to the next chip.</p></div>
+      <div class="doc-a11y-item"><h3>Status is not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>The status word carries the meaning. Plain chips also add an icon.</p></div>
+      <div class="doc-a11y-item"><h3>Contrast <span class="doc-wcag">WCAG 1.4.3</span></h3><p>Filled chips all pass AA. Subtle chips don't: primary is 4.00:1, success 3.78:1 and error 3.76:1 on their subtle backgrounds. Warning is only 2.87:1, so the code darkens subtle warning text to #7a5a1e (5.43:1). Until darker <code>on-subtle</code> tokens exist, use filled chips wherever the status text is essential.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Inverse selectable chip, disabled and selected: the background and text are both #666666, so the label can't be read. The code uses <code>inverse/text/variant</code> for the text.</li>
+      <li>Dismissable <em>active</em> looks the same as hover. Selectable <em>pressed</em> adds a blue border.</li>
+      <li>The <code>*/on-subtle</code> colours are below 4.5:1 on their <code>*/subtle</code> backgrounds (warning 2.87, error 3.76, success 3.78, primary 4.00). Proposal: darker on-subtle tokens, for example warning #7a5a1e.</li>
+      <li>Chips have square corners, while buttons are rounded to 8px. Check that this difference is intended.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

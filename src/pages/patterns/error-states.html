@@ -1,0 +1,79 @@
+---
+title: Error & empty states
+description: Full-section empty, error and success states with an illustration, message and actions, plus the loading screen.
+figma: 2865-111774
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Feedback</p>
+  <h1>Error &amp; empty states</h1>
+  <p class="doc-lead">Fills a section when there's nothing to show, something failed to load, or a submission succeeded. It has an illustration, a short message and one or two actions.</p>
+  <div class="doc-meta"><span>Default · Success · Error</span><span><code>.aec-empty</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-example" data-label="Error state">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px">
+        <div class="aec-empty aec-empty--error" role="alert">
+          <img class="aec-empty__art" src="../assets/illustrations/app-error-illustration.svg" alt="">
+          <div><h3 class="aec-empty__title">Oops! Something went wrong</h3><p class="aec-empty__text">We're having trouble loading funding options. Please try again.</p></div>
+          <div class="aec-empty__actions"><button class="aec-btn aec-btn--standard" type="button">Retry</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="doc-example" data-label="Success and empty">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px;flex-direction:row;flex-wrap:wrap;align-items:stretch">
+        <div class="aec-empty aec-empty--success" role="status" style="flex:1 1 300px">
+          <img class="aec-empty__art" src="../assets/illustrations/documents-illustration.svg" alt="">
+          <div><h3 class="aec-empty__title">Submitted successfully</h3><p class="aec-empty__text">Your documents were sent to the dealer.</p></div>
+          <div class="aec-empty__actions"><button class="aec-btn aec-btn--primary" type="button">Continue</button></div>
+        </div>
+        <div class="aec-empty" style="flex:1 1 300px">
+          <img class="aec-empty__art" src="../assets/illustrations/no-results-found-illustration.svg" alt="">
+          <div><h3 class="aec-empty__title">No accessories yet</h3><p class="aec-empty__text">Add accessories to personalise your vehicle.</p></div>
+          <div class="aec-empty__actions"><button class="aec-btn aec-btn--standard" type="button">Browse accessories</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="loading">Loading screen</h2>
+    <div class="doc-example" data-label="Loading screen">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px">
+        <div class="aec-loading" role="status"><span class="aec-spinner aec-spinner--lg" aria-hidden="true"></span><span>Calculating your trade-in estimate. Please wait.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Desktop</th><th>Mobile</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td>Padding 64px top and bottom, 24px gap, centred</td><td>Padding 32px, 32px gap</td></tr>
+        <tr><td>Illustration</td><td>200px. Swappable, from the <a href="../foundations/illustrations.html">illustration library</a>.</td><td>160px</td></tr>
+        <tr><td>Title</td><td colspan="2">heading-4: <code>text/default</code> (default), <code>success/default</code> or <code>error/default</code></td></tr>
+        <tr><td>Description</td><td colspan="2">body-2, <code>text/variant</code></td></tr>
+        <tr><td>Actions</td><td colspan="2">A standard button, with an optional primary</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Say what happened and what to do next ("Please try again"). Don't blame the user.</li>
+      <li>Use a primary action for the way forward and a standard action for alternatives.</li>
+      <li>Illustrations are decorative. Give them <code>alt=""</code>.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The copy is still placeholder ("Button" and " Description" with a leading space).</li>
+      <li>The loading screen's text layer is named "Please enter your email to continue", a copy-paste leftover.</li>
+    </ul>
+  </section>
+</div>

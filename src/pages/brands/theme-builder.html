@@ -1,0 +1,110 @@
+---
+title: Theme builder
+description: Create a new DRS brand or edit an existing one. Change colours, shape and type, preview every component live, check contrast, then export CSS and JSON for developers.
+scripts: brand-core.js, brand-specimens.js, theme-builder.js
+styles: brand-tools.css
+---
+<div class="doc-content is-wide">
+  <p class="doc-eyebrow">Brands</p>
+  <h1>Theme builder</h1>
+  <p class="doc-lead">Start from any brand, adjust the tokens and watch every component update. Then download a brand file your developers can drop straight into <code>tokens/brands/source/</code>.</p>
+  <div class="doc-meta"><span>Quick controls · Palette · All tokens</span><span>Exports .css · .vars.css · .json</span></div>
+
+  <div class="tb" data-theme-builder>
+    <div class="tb-top">
+      <label class="bt-control"><span>Start from</span><select id="tb-from"></select></label>
+      <label class="bt-control"><span>Brand name</span><input id="tb-name" autocomplete="off" spellcheck="false"></label>
+      <label class="bt-control"><span>File name</span><input id="tb-id" autocomplete="off" spellcheck="false" pattern="[a-z0-9-]+" aria-describedby="tb-id-help"></label>
+      <div class="tb-top-actions">
+        <button type="button" class="doc-btn" id="tb-undo" disabled>Undo</button>
+        <button type="button" class="doc-btn" id="tb-redo" disabled>Redo</button>
+        <label class="doc-btn tb-import">Import file<input type="file" id="tb-import" accept=".css,.json,text/css,application/json"></label>
+        <button type="button" class="doc-btn" id="tb-reset">Reset</button>
+      </div>
+      <p class="doc-small doc-muted tb-status" id="tb-id-help" aria-live="polite"></p>
+    </div>
+
+    <div class="tb-body">
+      <aside class="tb-panel" aria-label="Theme controls">
+        <div class="tb-tabs" role="tablist" aria-label="Controls">
+          <button type="button" role="tab" id="tb-t-quick" aria-controls="tb-p-quick" aria-selected="true">Quick</button>
+          <button type="button" role="tab" id="tb-t-palette" aria-controls="tb-p-palette" aria-selected="false" tabindex="-1">Palette</button>
+          <button type="button" role="tab" id="tb-t-tokens" aria-controls="tb-p-tokens" aria-selected="false" tabindex="-1">All tokens</button>
+        </div>
+        <div class="tb-tabpanel" role="tabpanel" id="tb-p-quick" aria-labelledby="tb-t-quick" tabindex="0"></div>
+        <div class="tb-tabpanel" role="tabpanel" id="tb-p-palette" aria-labelledby="tb-t-palette" tabindex="0" hidden>
+          <p class="doc-small doc-muted">Every colour used in this theme, most used first. Changing a colour updates every token that uses it.</p>
+          <div id="tb-palette" class="tb-palette"></div>
+        </div>
+        <div class="tb-tabpanel" role="tabpanel" id="tb-p-tokens" aria-labelledby="tb-t-tokens" tabindex="0" hidden>
+          <label class="bt-control"><span>Search tokens</span><input type="search" id="tb-tok-q" placeholder="name or value" autocomplete="off"></label>
+          <div class="tb-tok-filters">
+            <label class="bt-control"><span>Group</span><select id="tb-tok-g"><option value="">All groups</option></select></label>
+            <label class="bt-check"><input type="checkbox" id="tb-tok-changed"> Changed only</label>
+          </div>
+          <p class="doc-small doc-muted" id="tb-tok-count"></p>
+          <div id="tb-tok-list" class="tb-tok-list"></div>
+          <button type="button" class="doc-btn" id="tb-tok-more" hidden>Show more</button>
+        </div>
+      </aside>
+
+      <section class="tb-stage" aria-label="Live preview">
+        <div class="tb-stage-bar">
+          <label class="bt-control"><span>Show</span><select id="tb-spec"><option value="">All components</option></select></label>
+          <div class="tb-seg" role="radiogroup" aria-label="Preview width" id="tb-vp">
+            <button type="button" role="radio" aria-checked="true" data-w="">Fluid</button>
+            <button type="button" role="radio" aria-checked="false" data-w="1024">Desktop</button>
+            <button type="button" role="radio" aria-checked="false" data-w="768">Tablet</button>
+            <button type="button" role="radio" aria-checked="false" data-w="375">Mobile</button>
+          </div>
+          <label class="bt-check"><input type="checkbox" id="tb-compare"> Compare with original</label>
+        </div>
+        <div class="tb-frames" id="tb-frames">
+          <figure class="tb-frame"><figcaption id="tb-cap-work">Your theme</figcaption><div class="tb-frame-box"><iframe id="tb-frame-work" title="Preview of your theme" src="frame.html" loading="eager"></iframe></div></figure>
+          <figure class="tb-frame" id="tb-frame-orig-wrap" hidden><figcaption id="tb-cap-orig">Original</figcaption><div class="tb-frame-box"><iframe id="tb-frame-orig" title="Preview of the original brand" src="frame.html" loading="eager"></iframe></div></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="tb-section" aria-labelledby="tb-a11y-h">
+      <h2 id="tb-a11y-h">Contrast checks</h2>
+      <p class="doc-small doc-muted">WCAG 2.2 AA: 4.5:1 for text, 3:1 for large text and component boundaries. These update as you edit.</p>
+      <div class="doc-table-wrap" id="tb-a11y"></div>
+    </section>
+
+    <section class="tb-section" aria-labelledby="tb-export-h">
+      <h2 id="tb-export-h">Export</h2>
+      <div class="tb-export-bar">
+        <div class="tb-seg" role="radiogroup" aria-label="What to export" id="tb-scope">
+          <button type="button" role="radio" aria-checked="true" data-scope="changes">Changed tokens only</button>
+          <button type="button" role="radio" aria-checked="false" data-scope="full">Full brand</button>
+        </div>
+        <span class="doc-small doc-muted" id="tb-changes" aria-live="polite">No changes yet</span>
+      </div>
+      <div class="tb-dl">
+        <button type="button" class="aec-btn aec-btn--primary aec-btn--sm" data-dl="source">Download .css</button>
+        <button type="button" class="aec-btn aec-btn--primary aec-btn--outline aec-btn--sm" data-dl="vars">Download .vars.css</button>
+        <button type="button" class="aec-btn aec-btn--primary aec-btn--outline aec-btn--sm" data-dl="json">Download .json</button>
+        <button type="button" class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--sm" id="tb-share">Copy share link</button>
+      </div>
+      <div class="tb-code-tabs" role="tablist" aria-label="Code format">
+        <button type="button" role="tab" aria-selected="true" data-fmt="vars" id="tb-ct-vars" aria-controls="tb-code-panel">CSS variables</button>
+        <button type="button" role="tab" aria-selected="false" data-fmt="source" id="tb-ct-source" aria-controls="tb-code-panel" tabindex="-1">Drop-in CSS</button>
+        <button type="button" role="tab" aria-selected="false" data-fmt="json" id="tb-ct-json" aria-controls="tb-code-panel" tabindex="-1">JSON</button>
+      </div>
+      <div id="tb-code-panel" role="tabpanel" aria-labelledby="tb-ct-vars">
+        <pre class="tb-code"><code data-raw id="tb-code"></code></pre>
+      </div>
+    </section>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="handoff">Hand off to developers</h2>
+    <ol>
+      <li>Choose <strong>Full brand</strong> and download <code>&lt;file name&gt;.css</code>. For a new brand, this file goes in <code>tokens/brands/source/</code> and is registered in <code>tokens/brands/brands.json</code>. See <a href="index.html#add">Add a brand</a>.</li>
+      <li>To change a few tokens in an existing brand, choose <strong>Changed tokens only</strong> and share the <code>.vars.css</code> or <code>.json</code> file, or copy the share link. The link opens this tool with your edits applied.</li>
+      <li>Brand fonts are not included. The export lists the font family names. If you picked a Google font, its name is in the JSON under <code>brand.fonts</code>.</li>
+    </ol>
+    <p class="doc-small doc-muted">Your work is saved in this browser as a draft. The share link carries only your changes, compressed in the part of the URL after <code>#</code>, which is never sent to a server.</p>
+  </section>
+</div>

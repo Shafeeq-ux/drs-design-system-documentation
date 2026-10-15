@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand tokens · DRS Design System</title>
+<meta name="description" content="Every token for every DRS brand. Download a brand as drop-in CSS, CSS custom properties or JSON, and compare values across brands.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+<link rel="stylesheet" href="../css/brand-tools.css">
+</head>
+<body>
+<main>
+<div class="doc-content is-wide">
+  <p class="doc-eyebrow">Brands</p>
+  <h1>Brand tokens</h1>
+  <p class="doc-lead">Download the complete token set for any brand, or browse and compare every token across brands.</p>
+  <div class="doc-meta"><span>CSS · CSS variables · JSON</span><span><code>tokens/brands/source/</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="downloads">Downloads</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>File</th><th>Use it when</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;brand&gt;.css</code></td><td>Your app already uses the <code>.drp-*</code> classes. This is the brand file as delivered: the classes plus the <code>--aec-*</code> variables on <code>body</code>.</td></tr>
+        <tr><td><code>&lt;brand&gt;.vars.css</code></td><td>You want every token as a CSS custom property on <code>:root</code>, including each <code>.drp-*</code> value, with breakpoint overrides in <code>@media</code> blocks.</td></tr>
+        <tr><td><code>&lt;brand&gt;.json</code></td><td>You need the tokens for a build tool, Style Dictionary, native apps or tests. Semantic tokens are under <code>tokens</code>, component tokens under <code>components</code> and breakpoint overrides under <code>media</code>.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="bt-cards" data-brand-downloads></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="explorer">Token explorer</h2>
+    <p>Search across all brands. A highlighted cell means the value differs from DRS Base. Select a token name to copy it.</p>
+    <div class="bt-controls">
+      <label class="bt-control bt-control--grow"><span>Search</span><input type="search" data-tx-search placeholder="e.g. primary, button-contained, radius" autocomplete="off"></label>
+      <label class="bt-control"><span>Group</span><select data-tx-group><option value="">All groups</option></select></label>
+      <label class="bt-control"><span>Layer</span><select data-tx-layer><option value="">All layers</option><option value="var">Semantic &amp; component variables (--aec)</option><option value="class">Component classes (--drp)</option></select></label>
+      <label class="bt-control"><span>Breakpoint</span><select data-tx-media><option value="">All</option><option value="base">Base</option></select></label>
+      <label class="bt-check"><input type="checkbox" data-tx-diff> Only tokens that differ between brands</label>
+    </div>
+    <p class="doc-small doc-muted" data-tx-count aria-live="polite">Loading tokens…</p>
+    <div class="bt-table-wrap" data-tx-table></div>
+    <p><button type="button" class="doc-btn" data-tx-more hidden>Show more</button></p>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/brand-core.js"></script>
+<script src="../js/brand-tokens.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Form control · DRS Design System</title>
+<meta name="description" content="The label block — label, optional count and description — placed next to checkboxes, radios and switches.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="1992-17724">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Form control</h1>
+  <p class="doc-lead">The label block that sits next to a checkbox, radio button or switch: a label, an optional count and an optional description.</p>
+  <div class="doc-meta"><span>Figma base component</span><span><code>.aec-control</code> · <code>.aec-form-label</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-example" data-label="Label, count and description">
+      <div class="doc-example-preview is-col">
+        <label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">Label only</span></span></label>
+        <label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">With count <span class="aec-form-label__count">(24)</span></span></span></label>
+        <label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">With description</span><span class="aec-form-label__desc">Helper text explains the option in more detail.</span></span></label>
+        <label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label aec-form-label--sm"><span class="aec-form-label__text">Small label</span></span></label>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Medium (default)</th><th>Small (<code>--sm</code>)</th></tr></thead>
+      <tbody>
+        <tr><td>Label</td><td>body-2 · 14/22 · <code>text/default</code></td><td>body-3 · 12/20</td></tr>
+        <tr><td>Count</td><td>Same size as the label · <code>text/subtle</code></td><td>Same size as the label</td></tr>
+        <tr><td>Description</td><td>body-3 · 12/20 · <code>text/subtle</code></td><td>body-3</td></tr>
+        <tr><td>Label → description</td><td colspan="2">4px · <code>--aec-spacing-container-gap-xs</code></td></tr>
+        <tr><td>Control → label</td><td colspan="2">8px · <code>--aec-spacing-selectable-gap-m</code></td></tr>
+        <tr><td>Row height</td><td colspan="2">48px on mobile (12px vertical padding) · 40px from 768px (8px)</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="markup">Markup</h2>
+<pre><code>&lt;label class="aec-control"&gt;
+  &lt;input class="aec-checkbox" type="checkbox" name="plan"&gt;
+  &lt;span class="aec-form-label"&gt;
+    &lt;span class="aec-form-label__text"&gt;Protection plan &lt;span class="aec-form-label__count"&gt;(3)&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="aec-form-label__desc"&gt;Covers parts and labour for 5 years&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/label&gt;</code></pre>
+    <p>Modifiers: <code>.aec-control--reverse</code> puts the control after the label. <code>.aec-control--between</code> pushes the control to the far end of a full-width row.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Label in name <span class="doc-wcag">WCAG 2.5.3</span></h3><p>Because the input sits inside the <code>&lt;label&gt;</code>, the label text, count and description all become the control's accessible name. For long descriptions, move them out of the label and reference them with <code>aria-describedby</code>.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>This is a hidden base component in Figma (<code>.form control label</code>).</li>
+      <li>In the small size, the count stays at 14px while the label drops to 12px. The code scales both.</li>
+      <li><code>Count</code> is on by default in Figma, so instances show "(0)" unless it's turned off.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Footers · DRS Design System</title>
+<meta name="description" content="End-of-form action rows, the sticky bottom navigation bar with price summary, and the mobile sticky CTA.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="2046-374466" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Navigation</p>
+  <h1>Footers</h1>
+  <p class="doc-lead">Action rows that move the shopper forward: the inline footer at the end of a form, the sticky bottom navigation bar with the price summary, and a full-width mobile call to action.</p>
+  <div class="doc-meta"><span>Inline footer · Bottom Navigation Bar · Mobile bottom button</span><span><code>.aec-form-footer</code> · <code>.aec-bottom-bar</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="inline">Inline footer</h2>
+    <p>Sits at the end of the page content, below a 1px divider. On desktop, Back is on the left and Continue on the right. On mobile, the buttons stack full width with the primary action first.</p>
+    <div class="doc-example" data-label="Inline footer">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-form-footer">
+          <button class="aec-btn aec-btn--neutral aec-btn--plain aec-form-footer__start" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Back</button>
+          <button class="aec-btn aec-btn--primary" type="button">Continue</button>
+        </div>
+      </div>
+    </div>
+    <h3 class="doc-h3" id="consent">With consent</h3>
+    <div class="doc-example" data-label="Payment consent footer">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-form-footer aec-form-footer--consent">
+          <label class="aec-control aec-form-footer__start"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the payment terms and authorise this charge.</span></span></label>
+          <button class="aec-btn aec-btn--primary" type="button">Pay $500.00</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="bottom-bar">Bottom navigation bar</h2>
+    <p>Sticks to the bottom of the content column. On desktop it holds the next-step button. Below 1280px, where the Mathbox rail is hidden, it also shows the vehicle and price. It can include a Skip action and the segmented progress bar.</p>
+    <div class="doc-example" data-label="Bottom bar — desktop">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px">
+        <div class="aec-bottom-bar" style="position:relative">
+          <ol class="aec-progress-steps" aria-hidden="true"><li class="is-done"></li><li class="is-done"></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+          <span class="aec-bottom-bar__step">Step 1 / 3</span>
+          <div class="aec-bottom-bar__actions">
+            <button class="aec-btn aec-btn--neutral aec-btn--plain aec-btn--md" type="button">Skip</button>
+            <button class="aec-btn aec-btn--primary aec-btn--md" type="button">Continue<span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-right.svg)" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="doc-example" data-label="Bottom bar — tablet, with summary">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px">
+        <div class="aec-bottom-bar">
+          <div class="aec-bottom-bar__summary">
+            <span class="aec-img-slot aec-bottom-bar__thumb" style="border-radius:4px"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/car.svg)" aria-hidden="true"></span></span>
+            <span class="aec-bottom-bar__vehicle"><span>2025 Blazer EV</span><span>SS AWD</span></span>
+            <span class="aec-bottom-bar__price aec-price">$364.81<small>/mo</small></span>
+          </div>
+          <div class="aec-bottom-bar__actions"><button class="aec-btn aec-btn--primary aec-btn--md" type="button">Continue<span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-right.svg)" aria-hidden="true"></span></button></div>
+        </div>
+      </div>
+    </div>
+    <div class="doc-example" data-label="Bottom bar — mobile">
+      <div class="doc-example-preview is-plain" style="justify-content:center">
+        <div class="aec-bottom-bar aec-bottom-bar--stacked" style="width:375px;max-width:100%">
+          <div class="aec-bottom-bar__summary">
+            <span class="aec-img-slot aec-bottom-bar__thumb" style="border-radius:4px"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/car.svg)" aria-hidden="true"></span></span>
+            <span class="aec-bottom-bar__vehicle"><span>2025 Blazer EV SS AWD</span></span>
+            <span class="aec-bottom-bar__price aec-price">$364.81/mo</span>
+          </div>
+          <div class="aec-bottom-bar__actions"><button class="aec-btn aec-btn--secondary aec-btn--plain" type="button">Skip</button><button class="aec-btn aec-btn--primary" type="button">Continue</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sticky-cta">Mobile bottom button</h2>
+    <p>A single full-width dark call to action pinned to the bottom of the screen on mobile.</p>
+    <div class="doc-example" data-label="Mobile bottom button">
+      <div class="doc-example-preview is-plain" style="justify-content:center">
+        <div class="aec-sticky-cta" style="width:375px;max-width:100%;position:relative"><button class="aec-btn aec-btn--neutral" type="button">View payment options</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Pattern</th><th>Spec</th></tr></thead>
+      <tbody>
+        <tr><td>Inline footer</td><td>24px top padding, 1px top <code>border/default</code>, 8px gap, 48px buttons</td></tr>
+        <tr><td>Bottom bar</td><td>64px tall, padding 8/24px, <code>bg/default</code>, 1px top border, sticky. Summary thumbnail 48px (32px on mobile), price heading-5.</td></tr>
+        <tr><td>Bottom bar, mobile</td><td>112px total: a 48px summary row and a 64px action row</td></tr>
+        <tr><td>Mobile button</td><td>A full-width neutral filled 48px button with 16px padding</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Sticky content <span class="doc-wcag">WCAG 2.4.11</span></h3><p>Make sure the sticky bar never hides focused elements. The page template adds bottom padding equal to the bar's height.</p></div>
+      <div class="doc-a11y-item"><h3>Button order <span class="doc-wcag">WCAG 1.3.2 · 2.4.3</span></h3><p>On desktop, keep Back before Continue in the DOM, and use CSS for the mobile reordering. This keeps the focus order logical.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>On desktop and tablet, the bottom-bar primary button is the plain (text) style in Figma. The code uses a filled medium button so the main action stands out. Confirm with design.</li>
+      <li>The hidden copy in the bottom bar is Acura sample content ("2023 RDX A-Spec®").</li>
+      <li>In the mobile payment footer, the divider is on the bottom. In the other variants it is on the top.</li>
+      <li>"Mobile bottom button" has a desktop variant that is empty by default.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

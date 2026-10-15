@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Trade-in-illustration",
+    "file": "trade-in-illustration.svg",
+    "nodeId": "2266:1340"
+  },
+  {
+    "name": "Rebates-illustration",
+    "file": "rebates-illustration.svg",
+    "nodeId": "2266:1427"
+  },
+  {
+    "name": "Delivery-illustration",
+    "file": "delivery-illustration.svg",
+    "nodeId": "2266:1466"
+  },
+  {
+    "name": "Charger-illustration",
+    "file": "charger-illustration.svg",
+    "nodeId": "2266:1504"
+  },
+  {
+    "name": "Protection Plans-illustration",
+    "file": "protection-plans-illustration.svg",
+    "nodeId": "2266:1542"
+  },
+  {
+    "name": "Subscriptions-illustration",
+    "file": "subscriptions-illustration.svg",
+    "nodeId": "2266:1580"
+  },
+  {
+    "name": "Schedule Delivery-illustration",
+    "file": "schedule-delivery-illustration.svg",
+    "nodeId": "2266:1606"
+  },
+  {
+    "name": "Signature-illustration",
+    "file": "signature-illustration.svg",
+    "nodeId": "2266:1648"
+  },
+  {
+    "name": "Financing-illustration",
+    "file": "financing-illustration.svg",
+    "nodeId": "2266:1751"
+  },
+  {
+    "name": "Documents-illustration",
+    "file": "documents-illustration.svg",
+    "nodeId": "2266:1814"
+  },
+  {
+    "name": "Payment-illustration",
+    "file": "payment-illustration.svg",
+    "nodeId": "2266:1857"
+  },
+  {
+    "name": "Accessories-illustration",
+    "file": "accessories-illustration.svg",
+    "nodeId": "2266:1876"
+  },
+  {
+    "name": "Credit Application-illustration",
+    "file": "credit-application-illustration.svg",
+    "nodeId": "2440:5462"
+  },
+  {
+    "name": "OTP failed-illustration",
+    "file": "otp-failed-illustration.svg",
+    "nodeId": "2468:13179"
+  },
+  {
+    "name": "Id Verify-illustration",
+    "file": "id-verify-illustration.svg",
+    "nodeId": "2468:13178"
+  },
+  {
+    "name": "vehicle-not-available-illustration",
+    "file": "vehicle-not-available-illustration.svg",
+    "nodeId": "3109:4437"
+  },
+  {
+    "name": "app-error-illustration",
+    "file": "app-error-illustration.svg",
+    "nodeId": "3109:4436"
+  },
+  {
+    "name": "Status-icon",
+    "file": "status-icon.svg",
+    "nodeId": "2733:3973"
+  },
+  {
+    "name": "no-results-found-illustration",
+    "file": "no-results-found-illustration.svg",
+    "nodeId": "3303:240"
+  },
+  {
+    "name": "404-illustration",
+    "file": "404-illustration.svg",
+    "nodeId": "3303:239"
+  }
+]

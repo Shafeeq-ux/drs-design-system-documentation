@@ -1,0 +1,115 @@
+---
+title: In-store
+description: Patterns for the dealership tablet and kiosk experience — funding options, segment cards, vehicle search results, vehicle overview, help and resources.
+figma: 2934-147373
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Media &amp; screens</p>
+  <h1>In-store</h1>
+  <p class="doc-lead">Patterns for the in-store experience on a 1024px dealership tablet or kiosk: payment configuration, vehicle search results and vehicle detail sections.</p>
+  <div class="doc-meta"><span>Funding opt · Segment control · VSR card · Vehicle show</span></div>
+
+  <section class="doc-section">
+    <h2 id="funding">Funding options</h2>
+    <p>Pick Cash, Finance or Lease. Each segment shows its monthly price. Then set the deposit and term.</p>
+    <div class="doc-example" data-label="Funding options">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-stack" style="gap:24px;max-width:760px">
+          <div class="aec-segment-cards" role="radiogroup" aria-label="Payment type" data-aec-radiogroup>
+            <button class="aec-segment-cards__item" type="button" role="radio" aria-checked="false"><span>Cash</span><strong>$33,399</strong></button>
+            <button class="aec-segment-cards__item" type="button" role="radio" aria-checked="true"><span>Finance</span><strong>$612/mo</strong></button>
+            <button class="aec-segment-cards__item" type="button" role="radio" aria-checked="false"><span>Lease</span><strong>$523/mo</strong></button>
+          </div>
+          <p class="aec-row aec-body-3"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span>Not sure which payment type to choose? <a class="aec-link aec-link--sm" href="#funding">Compare options</a></p>
+          <fieldset class="aec-question"><legend style="font-size:var(--aec-typography-heading-6-font-size);color:var(--aec-color-text-subtle)">Your cash deposit</legend>
+            <div class="aec-row" style="flex-wrap:wrap;gap:16px">
+              <div class="aec-field" style="width:164px"><label class="aec-visually-hidden" for="dep">Deposit amount</label><div class="aec-field__box"><span class="aec-field__affix aec-field__affix--prefix">$</span><input class="aec-field__input" id="dep" inputmode="numeric" placeholder="Enter amount"></div></div>
+              <div class="aec-chip-list" role="group" aria-label="Quick amounts"><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="true">$2,000</button><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">$3,000</button><button class="aec-chip aec-chip--selectable" type="button" aria-pressed="false">$4,000</button></div>
+            </div></fieldset>
+          <div class="aec-slider-field" style="max-width:none"><div class="aec-slider-field__head"><label class="aec-slider-field__title" for="term">Term</label><output class="aec-slider-field__value" data-for="term">48 months</output></div><input class="aec-slider" type="range" id="term" min="12" max="72" step="12" value="48" data-format="{v} months"><div class="aec-slider-field__minmax" aria-hidden="true"><span>12 months</span><span>72 months</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="vsr">Vehicle search result</h2>
+    <div class="doc-example" data-label="VSR cards">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-card-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
+          <article class="aec-card aec-card--hover aec-vsr">
+            <div class="aec-vehicle-image"><span class="aec-img-slot">Vehicle photo</span><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--circle aec-vehicle-image__nav aec-vehicle-image__nav--prev" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--circle aec-vehicle-image__nav aec-vehicle-image__nav--next" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button></div>
+            <div class="aec-vsr__body">
+              <div class="aec-vsr__tags"><span>Available now</span><span class="aec-sep">•</span><span>New</span></div>
+              <h3 class="aec-vsr__name">2025 Chevrolet Blazer EV SS</h3>
+              <span class="aec-body-2">Riverside Chevrolet <span class="aec-body-3 aec-text-subtle">(21.1 mi)</span></span>
+              <span><span class="aec-text-subtle">VIN:</span> 3G1FJ3456L1234575 <span class="aec-sep">•</span> <span class="aec-text-subtle">Stock:</span> A23X45Z</span>
+              <div class="aec-vsr__price"><span>Dealer price</span><strong>$47,600</strong></div>
+            </div>
+          </article>
+          <article class="aec-card aec-card--hover aec-vsr is-selected">
+            <div class="aec-vehicle-image"><span class="aec-img-slot">Vehicle photo</span></div>
+            <div class="aec-vsr__body">
+              <div class="aec-vsr__tags"><span>In transit</span><span class="aec-sep">•</span><span>New</span></div>
+              <h3 class="aec-vsr__name">2025 Chevrolet Equinox RS</h3>
+              <span class="aec-body-2">Riverside Chevrolet <span class="aec-body-3 aec-text-subtle">(21.1 mi)</span></span>
+              <span><span class="aec-text-subtle">VIN:</span> 3GNAXKEG5RL102233 <span class="aec-sep">•</span> <span class="aec-text-subtle">Stock:</span> B11R02</span>
+              <div class="aec-vsr__price"><span>Dealer price</span><strong>$36,400</strong></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="vdp">Vehicle details</h2>
+    <div class="doc-example" data-label="Vehicle details header and overview">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-vdp-header">
+          <div class="aec-row" style="justify-content:space-between;flex-wrap:wrap"><h2>2025 Blazer EV SS</h2><a class="aec-link aec-link--sm aec-link--neutral" href="#vdp"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Browse other vehicles</a></div>
+          <div class="aec-vdp-header__meta">24,200 miles <span class="aec-sep">•</span> Riverside Chevrolet <span class="aec-sep">•</span> <span>VIN:</span> 3G1FJ3456L1234575 <span class="aec-sep">•</span> <span>Stock:</span> A23X45Z</div>
+        </div>
+        <dl class="aec-overview">
+          <div><span class="aec-row-card__icon"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/engine-ev.svg)" aria-hidden="true"></span></span><span><dt>Engine</dt><dd>Dual-motor electric</dd></span></div>
+          <div><span class="aec-row-card__icon"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/transmission.svg)" aria-hidden="true"></span></span><span><dt>Transmission</dt><dd>Single-speed</dd></span></div>
+          <div><span class="aec-row-card__icon"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/drive-train.svg)" aria-hidden="true"></span></span><span><dt>Drivetrain</dt><dd>All-wheel drive</dd></span></div>
+          <div><span class="aec-row-card__icon"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/speedometer.svg)" aria-hidden="true"></span></span><span><dt>Range</dt><dd>Up to 303 mi (est.)</dd></span></div>
+          <div><span class="aec-row-card__icon"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/vehicle-history-report.svg)" aria-hidden="true"></span></span><span><dt>Vehicle history report</dt><dd><a class="aec-link aec-link--sm" href="#vdp">View report</a></dd></span></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="help">Help, switchers and gallery header</h2>
+    <div class="doc-example" data-label="Help & resources and switcher">
+      <div class="doc-example-preview" style="flex-wrap:wrap;align-items:flex-start;gap:32px">
+        <aside class="aec-help" aria-label="Help and resources">
+          <div class="aec-img-slot aec-help__video" style="border-radius:4px"><button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--filled aec-icon-btn--circle" type="button" aria-label="Play introduction video"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/video-camera.svg)" aria-hidden="true"></span></button></div>
+          <div class="aec-help__item"><span><span class="aec-icon aec-icon--24" style="--aec-icon-src:url(/assets/icons/storefront.svg)" aria-hidden="true"></span></span><span><b>One-stop shop</b><small>Trade-in, add-ons, signing and payment, all right here.</small></span></div>
+          <div class="aec-help__item"><span><span class="aec-icon aec-icon--24" style="--aec-icon-src:url(/assets/icons/online-support.svg)" aria-hidden="true"></span></span><span><b>Live sessions</b><small>A sales concierge is available at every step.</small></span></div>
+          <div class="aec-help__item"><span><span class="aec-icon aec-icon--24" style="--aec-icon-src:url(/assets/icons/camera.svg)" aria-hidden="true"></span></span><span><b>Vehicle walkthroughs</b><small>Every detail, inside and out, on your screen.</small></span></div>
+          <hr class="aec-divider"><a class="aec-link aec-link--neutral" href="#help">FAQs</a>
+        </aside>
+        <div class="aec-stack">
+          <div class="aec-switcher" role="radiogroup" aria-label="Image source" data-aec-radiogroup><button type="button" role="radio" aria-checked="true">Dealership</button><button type="button" role="radio" aria-checked="false">OEM</button></div>
+          <div class="aec-tabs aec-tabs--segment" style="min-width:320px"><div class="aec-tabs__list" role="tablist" aria-label="Trade-in lookup"><button class="aec-tab" role="tab" id="lk-p" aria-selected="true" aria-controls="lk-pp">Licence plate</button><button class="aec-tab" role="tab" id="lk-v" aria-selected="false" aria-controls="lk-vp">VIN</button></div>
+            <div class="aec-tabs__panel" role="tabpanel" id="lk-pp" aria-labelledby="lk-p"><div class="aec-field"><label class="aec-field__label" for="plate">Licence plate number</label><div class="aec-field__box"><input class="aec-field__input" id="plate"></div></div></div>
+            <div class="aec-tabs__panel" role="tabpanel" id="lk-vp" aria-labelledby="lk-v" hidden><div class="aec-field"><label class="aec-field__label" for="vin2">VIN</label><div class="aec-field__box"><input class="aec-field__input" id="vin2" maxlength="17"></div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The currency is inconsistent (₤ and € in a US file), and "What is PCP?" is UK finance wording. These are template leftovers, so the code uses $ and neutral copy.</li>
+      <li>The sample vehicles are Acura and Hyundai models.</li>
+      <li>Raw colours with no token: #141414 and #3c3c3c (gallery header), #d9d9d9, #040404 at 50% (help video), and #bfbfc1 (VSR separator).</li>
+      <li>The vehicle details header separators use <code>text/inverse</code>, which makes them invisible on a light background.</li>
+    </ul>
+  </section>
+</div>

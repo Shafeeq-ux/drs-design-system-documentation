@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misc · DRS Design System</title>
+<meta name="description" content="Page titles, loading and concierge frames, designer placeholders, third-party embed frames and the data-table cell kit.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="6175-21149" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Media &amp; screens</p>
+  <h1>Misc</h1>
+  <p class="doc-lead">Smaller pieces from the Misc page: hero page titles, content frames for loading and concierge sessions, and frames for embedded third-party content.</p>
+  <div class="doc-meta"><span>Titles · frames · placeholders</span></div>
+
+  <section class="doc-section">
+    <h2 id="titles">Page titles</h2>
+    <p>Large white titles on dark hero backgrounds, for example "Offers listing". They are 56px on desktop, 48px on tablet and 40px on mobile.</p>
+    <div class="doc-example" data-label="Page title">
+      <div class="doc-example-preview is-inverse"><h2 class="aec-page-title">Offers listing</h2></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="frames">Content frames</h2>
+    <div class="doc-example" data-label="Loading, concierge and embed frames">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <div class="aec-loading" role="status" style="min-height:220px;padding:40px 16px"><span class="aec-spinner aec-spinner--lg" aria-hidden="true"></span><span>Calculating your trade-in estimate. Please wait.</span></div>
+        <div class="aec-loading" style="min-height:220px;padding:40px 16px;background:var(--aec-color-bg-variant);color:var(--aec-color-text-variant)">Concierge session</div>
+        <div class="aec-loading" style="min-height:220px;padding:40px 16px;background:var(--aec-color-bg-variant);border-radius:4px"><span class="aec-heading-5" style="color:var(--aec-color-text-variant)">Embedded content</span><span class="aec-body-3">Third-party iFrame</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="table-kit">Data-table cell kit</h2>
+    <p>The Figma section includes an unpublished kit of table cells: text, numbers (default, blue, green, red), icons, ratings, user, tags and buttons, in rows of 1–5 columns. Build these with the foundation <a href="../components/table.html">table</a>.</p>
+    <div class="doc-example" data-label="Table with rich cells">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-table-wrap"><table class="aec-table aec-table--sm">
+          <thead><tr><th scope="col">Dealer</th><th scope="col">Rating</th><th scope="col" class="aec-num">Price</th><th scope="col">Status</th><th scope="col"><span class="aec-visually-hidden">Actions</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="aec-row"><span class="aec-avatar aec-avatar--sm aec-avatar--inverse" aria-hidden="true">RC</span>Riverside Chevrolet</span></td><td>★★★★☆ <span class="aec-text-subtle">4.6</span></td><td class="aec-num" style="color:var(--aec-color-success-default)">$47,600</td><td><span class="aec-chip aec-chip--info aec-chip--success aec-chip--sm">In stock</span></td><td><button class="aec-btn aec-btn--primary aec-btn--inline" type="button">View</button></td></tr>
+            <tr><td><span class="aec-row"><span class="aec-avatar aec-avatar--sm" aria-hidden="true">GC</span>Gilroy Chevrolet</span></td><td>★★★★★ <span class="aec-text-subtle">4.9</span></td><td class="aec-num" style="color:var(--aec-color-error-default)">$49,250</td><td><span class="aec-chip aec-chip--info aec-chip--warning aec-chip--sm">In transit</span></td><td><button class="aec-btn aec-btn--primary aec-btn--inline" type="button">View</button></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Titles use raw sizes (56, 48 and 40px) with no text style. The closest are the display styles.</li>
+      <li>The loading screen's text layer is named "Please enter your email to continue".</li>
+      <li>The "Acura- iFrame" frame and the designer "Replace with page content" placeholder are design-time only.</li>
+      <li>The <code>_cell-*</code> table kit is unpublished.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

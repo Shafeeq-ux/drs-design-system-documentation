@@ -1,0 +1,1036 @@
+{
+  "icons": [
+    {
+      "name": "accessories",
+      "figma": "Accessories",
+      "file": "assets/icons/accessories.svg"
+    },
+    {
+      "name": "accessories-dark",
+      "figma": "AccessoriesDark",
+      "file": "assets/icons/accessories-dark.svg"
+    },
+    {
+      "name": "account-round",
+      "figma": "AccountRound",
+      "file": "assets/icons/account-round.svg"
+    },
+    {
+      "name": "add",
+      "figma": "Add",
+      "file": "assets/icons/add.svg"
+    },
+    {
+      "name": "add-circle",
+      "figma": "AddCircle",
+      "file": "assets/icons/add-circle.svg"
+    },
+    {
+      "name": "added",
+      "figma": "Added",
+      "file": "assets/icons/added.svg"
+    },
+    {
+      "name": "apply-credit",
+      "figma": "ApplyCredit",
+      "file": "assets/icons/apply-credit.svg"
+    },
+    {
+      "name": "arrow-left",
+      "figma": "ArrowLeft",
+      "file": "assets/icons/arrow-left.svg"
+    },
+    {
+      "name": "arrow-right",
+      "figma": "ArrowRight",
+      "file": "assets/icons/arrow-right.svg"
+    },
+    {
+      "name": "asterisks-underline",
+      "figma": "AsterisksUnderline",
+      "file": "assets/icons/asterisks-underline.svg"
+    },
+    {
+      "name": "automatic",
+      "figma": "Automatic",
+      "file": "assets/icons/automatic.svg"
+    },
+    {
+      "name": "bank",
+      "figma": "Bank",
+      "file": "assets/icons/bank.svg"
+    },
+    {
+      "name": "battery",
+      "figma": "Battery",
+      "file": "assets/icons/battery.svg"
+    },
+    {
+      "name": "battery1",
+      "figma": "Battery1",
+      "file": "assets/icons/battery1.svg"
+    },
+    {
+      "name": "battery-vertical",
+      "figma": "BatteryVertical",
+      "file": "assets/icons/battery-vertical.svg"
+    },
+    {
+      "name": "bell-simple",
+      "figma": "BellSimple",
+      "file": "assets/icons/bell-simple.svg"
+    },
+    {
+      "name": "calendar-blank",
+      "figma": "CalendarBlank",
+      "file": "assets/icons/calendar-blank.svg"
+    },
+    {
+      "name": "calendar-check",
+      "figma": "CalendarCheck",
+      "file": "assets/icons/calendar-check.svg"
+    },
+    {
+      "name": "calendar-error",
+      "figma": "CalendarError",
+      "file": "assets/icons/calendar-error.svg"
+    },
+    {
+      "name": "calendar-error1",
+      "figma": "CalendarError1",
+      "file": "assets/icons/calendar-error1.svg"
+    },
+    {
+      "name": "camera",
+      "figma": "Camera",
+      "file": "assets/icons/camera.svg"
+    },
+    {
+      "name": "car",
+      "figma": "Car",
+      "file": "assets/icons/car.svg"
+    },
+    {
+      "name": "caret-circle-down",
+      "figma": "CaretCircleDown",
+      "file": "assets/icons/caret-circle-down.svg"
+    },
+    {
+      "name": "caret-circle-up",
+      "figma": "CaretCircleUp",
+      "file": "assets/icons/caret-circle-up.svg"
+    },
+    {
+      "name": "caret-down",
+      "figma": "CaretDown",
+      "file": "assets/icons/caret-down.svg"
+    },
+    {
+      "name": "caret-down-filled",
+      "figma": "CaretDownFilled",
+      "file": "assets/icons/caret-down-filled.svg"
+    },
+    {
+      "name": "caret-left",
+      "figma": "CaretLeft",
+      "file": "assets/icons/caret-left.svg"
+    },
+    {
+      "name": "caret-right",
+      "figma": "CaretRight",
+      "file": "assets/icons/caret-right.svg"
+    },
+    {
+      "name": "caret-up",
+      "figma": "CaretUp",
+      "file": "assets/icons/caret-up.svg"
+    },
+    {
+      "name": "caret-up-filled",
+      "figma": "CaretUpFilled",
+      "file": "assets/icons/caret-up-filled.svg"
+    },
+    {
+      "name": "charge",
+      "figma": "Charge",
+      "file": "assets/icons/charge.svg"
+    },
+    {
+      "name": "chargers",
+      "figma": "Chargers",
+      "file": "assets/icons/chargers.svg"
+    },
+    {
+      "name": "chargers-dark",
+      "figma": "ChargersDark",
+      "file": "assets/icons/chargers-dark.svg"
+    },
+    {
+      "name": "check",
+      "figma": "Check",
+      "file": "assets/icons/check.svg"
+    },
+    {
+      "name": "check-circle",
+      "figma": "CheckCircle",
+      "file": "assets/icons/check-circle.svg"
+    },
+    {
+      "name": "chevron-circle-left",
+      "figma": "ChevronCircleLeft",
+      "file": "assets/icons/chevron-circle-left.svg"
+    },
+    {
+      "name": "chevron-circle-right",
+      "figma": "ChevronCircleRight",
+      "file": "assets/icons/chevron-circle-right.svg"
+    },
+    {
+      "name": "clock",
+      "figma": "Clock",
+      "file": "assets/icons/clock.svg"
+    },
+    {
+      "name": "close",
+      "figma": "Close",
+      "file": "assets/icons/close.svg"
+    },
+    {
+      "name": "co-applicant",
+      "figma": "CoApplicant",
+      "file": "assets/icons/co-applicant.svg"
+    },
+    {
+      "name": "compare-vehicles",
+      "figma": "CompareVehicles",
+      "file": "assets/icons/compare-vehicles.svg"
+    },
+    {
+      "name": "concierge-service",
+      "figma": "ConciergeService",
+      "file": "assets/icons/concierge-service.svg"
+    },
+    {
+      "name": "contact-us",
+      "figma": "ContactUs",
+      "file": "assets/icons/contact-us.svg"
+    },
+    {
+      "name": "copy",
+      "figma": "Copy",
+      "file": "assets/icons/copy.svg"
+    },
+    {
+      "name": "create-account",
+      "figma": "CreateAccount",
+      "file": "assets/icons/create-account.svg"
+    },
+    {
+      "name": "create-alert",
+      "figma": "CreateAlert",
+      "file": "assets/icons/create-alert.svg"
+    },
+    {
+      "name": "create-alert1",
+      "figma": "CreateAlert1",
+      "file": "assets/icons/create-alert1.svg"
+    },
+    {
+      "name": "currency",
+      "figma": "Currency",
+      "file": "assets/icons/currency.svg"
+    },
+    {
+      "name": "current-location-selector",
+      "figma": "CurrentLocationSelector",
+      "file": "assets/icons/current-location-selector.svg"
+    },
+    {
+      "name": "deductible-for-repairs",
+      "figma": "DeductibleForRepairs",
+      "file": "assets/icons/deductible-for-repairs.svg"
+    },
+    {
+      "name": "delivery",
+      "figma": "Delivery",
+      "file": "assets/icons/delivery.svg"
+    },
+    {
+      "name": "delivery-dark",
+      "figma": "DeliveryDark",
+      "file": "assets/icons/delivery-dark.svg"
+    },
+    {
+      "name": "delivery-mode",
+      "figma": "DeliveryMode",
+      "file": "assets/icons/delivery-mode.svg"
+    },
+    {
+      "name": "delivery-mode-dark",
+      "figma": "DeliveryModeDark",
+      "file": "assets/icons/delivery-mode-dark.svg"
+    },
+    {
+      "name": "desktop",
+      "figma": "Desktop",
+      "file": "assets/icons/desktop.svg"
+    },
+    {
+      "name": "document",
+      "figma": "Document",
+      "file": "assets/icons/document.svg"
+    },
+    {
+      "name": "documents",
+      "figma": "Documents",
+      "file": "assets/icons/documents.svg"
+    },
+    {
+      "name": "documents-dark",
+      "figma": "DocumentsDark",
+      "file": "assets/icons/documents-dark.svg"
+    },
+    {
+      "name": "dots-three-vertical",
+      "figma": "DotsThreeVertical",
+      "file": "assets/icons/dots-three-vertical.svg"
+    },
+    {
+      "name": "download",
+      "figma": "Download",
+      "file": "assets/icons/download.svg"
+    },
+    {
+      "name": "drive-train",
+      "figma": "DriveTrain",
+      "file": "assets/icons/drive-train.svg"
+    },
+    {
+      "name": "drive-train1",
+      "figma": "DriveTrain1",
+      "file": "assets/icons/drive-train1.svg"
+    },
+    {
+      "name": "drive-train2",
+      "figma": "DriveTrain2",
+      "file": "assets/icons/drive-train2.svg"
+    },
+    {
+      "name": "drive-train3",
+      "figma": "DriveTrain3",
+      "file": "assets/icons/drive-train3.svg"
+    },
+    {
+      "name": "edit",
+      "figma": "Edit",
+      "file": "assets/icons/edit.svg"
+    },
+    {
+      "name": "edit-filled",
+      "figma": "EditFilled",
+      "file": "assets/icons/edit-filled.svg"
+    },
+    {
+      "name": "electric",
+      "figma": "Electric",
+      "file": "assets/icons/electric.svg"
+    },
+    {
+      "name": "email",
+      "figma": "Email",
+      "file": "assets/icons/email.svg"
+    },
+    {
+      "name": "engine",
+      "figma": "Engine",
+      "file": "assets/icons/engine.svg"
+    },
+    {
+      "name": "engine-ev",
+      "figma": "EngineEv",
+      "file": "assets/icons/engine-ev.svg"
+    },
+    {
+      "name": "envelope-plain",
+      "figma": "EnvelopePlain",
+      "file": "assets/icons/envelope-plain.svg"
+    },
+    {
+      "name": "envelope-simple1",
+      "figma": "EnvelopeSimple1",
+      "file": "assets/icons/envelope-simple1.svg"
+    },
+    {
+      "name": "esign-pending",
+      "figma": "EsignPending",
+      "file": "assets/icons/esign-pending.svg"
+    },
+    {
+      "name": "excellent",
+      "figma": "Excellent",
+      "file": "assets/icons/excellent.svg"
+    },
+    {
+      "name": "exchange-policy",
+      "figma": "ExchangePolicy",
+      "file": "assets/icons/exchange-policy.svg"
+    },
+    {
+      "name": "expand",
+      "figma": "Expand",
+      "file": "assets/icons/expand.svg"
+    },
+    {
+      "name": "expand-collapse",
+      "figma": "ExpandCollapse",
+      "file": "assets/icons/expand-collapse.svg"
+    },
+    {
+      "name": "exterior",
+      "figma": "Exterior",
+      "file": "assets/icons/exterior.svg"
+    },
+    {
+      "name": "eye-slash",
+      "figma": "EyeSlash",
+      "file": "assets/icons/eye-slash.svg"
+    },
+    {
+      "name": "eye-viewed",
+      "figma": "EyeViewed",
+      "file": "assets/icons/eye-viewed.svg"
+    },
+    {
+      "name": "facebook",
+      "figma": "Facebook",
+      "file": "assets/icons/facebook.svg"
+    },
+    {
+      "name": "filled-chevron-circle-right",
+      "figma": "FilledChevronCircleRight",
+      "file": "assets/icons/filled-chevron-circle-right.svg"
+    },
+    {
+      "name": "filled-star",
+      "figma": "FilledStar",
+      "file": "assets/icons/filled-star.svg"
+    },
+    {
+      "name": "financing",
+      "figma": "Financing",
+      "file": "assets/icons/financing.svg"
+    },
+    {
+      "name": "financing-dark",
+      "figma": "FinancingDark",
+      "file": "assets/icons/financing-dark.svg"
+    },
+    {
+      "name": "fuel",
+      "figma": "Fuel",
+      "file": "assets/icons/fuel.svg"
+    },
+    {
+      "name": "fuel-economy",
+      "figma": "FuelEconomy",
+      "file": "assets/icons/fuel-economy.svg"
+    },
+    {
+      "name": "fuel-type",
+      "figma": "FuelType",
+      "file": "assets/icons/fuel-type.svg"
+    },
+    {
+      "name": "funnel",
+      "figma": "Funnel",
+      "file": "assets/icons/funnel.svg"
+    },
+    {
+      "name": "funnel1",
+      "figma": "Funnel1",
+      "file": "assets/icons/funnel1.svg"
+    },
+    {
+      "name": "grid",
+      "figma": "Grid",
+      "file": "assets/icons/grid.svg"
+    },
+    {
+      "name": "hamburger",
+      "figma": "Hamburger",
+      "file": "assets/icons/hamburger.svg"
+    },
+    {
+      "name": "house-line",
+      "figma": "HouseLine",
+      "file": "assets/icons/house-line.svg"
+    },
+    {
+      "name": "house-line1",
+      "figma": "HouseLine1",
+      "file": "assets/icons/house-line1.svg"
+    },
+    {
+      "name": "hydrogen-fuel",
+      "figma": "HydrogenFuel",
+      "file": "assets/icons/hydrogen-fuel.svg"
+    },
+    {
+      "name": "hydrogen-fuel1",
+      "figma": "HydrogenFuel1",
+      "file": "assets/icons/hydrogen-fuel1.svg"
+    },
+    {
+      "name": "hydrogen-fuel2",
+      "figma": "HydrogenFuel2",
+      "file": "assets/icons/hydrogen-fuel2.svg"
+    },
+    {
+      "name": "in-transit",
+      "figma": "InTransit",
+      "file": "assets/icons/in-transit.svg"
+    },
+    {
+      "name": "info",
+      "figma": "Info",
+      "file": "assets/icons/info.svg"
+    },
+    {
+      "name": "instagram",
+      "figma": "Instagram",
+      "file": "assets/icons/instagram.svg"
+    },
+    {
+      "name": "insurance-card",
+      "figma": "InsuranceCard",
+      "file": "assets/icons/insurance-card.svg"
+    },
+    {
+      "name": "interior",
+      "figma": "Interior",
+      "file": "assets/icons/interior.svg"
+    },
+    {
+      "name": "limited-warranty",
+      "figma": "LimitedWarranty",
+      "file": "assets/icons/limited-warranty.svg"
+    },
+    {
+      "name": "link-share",
+      "figma": "LinkShare",
+      "file": "assets/icons/link-share.svg"
+    },
+    {
+      "name": "location",
+      "figma": "Location",
+      "file": "assets/icons/location.svg"
+    },
+    {
+      "name": "location-border",
+      "figma": "LocationBorder",
+      "file": "assets/icons/location-border.svg"
+    },
+    {
+      "name": "location-pin",
+      "figma": "LocationPin",
+      "file": "assets/icons/location-pin.svg"
+    },
+    {
+      "name": "location-pin1",
+      "figma": "LocationPin1",
+      "file": "assets/icons/location-pin1.svg"
+    },
+    {
+      "name": "logo",
+      "figma": "Logo",
+      "file": "assets/icons/logo.svg"
+    },
+    {
+      "name": "maintenance",
+      "figma": "Maintenance",
+      "file": "assets/icons/maintenance.svg"
+    },
+    {
+      "name": "map-pin",
+      "figma": "MapPin",
+      "file": "assets/icons/map-pin.svg"
+    },
+    {
+      "name": "minus-circle",
+      "figma": "MinusCircle",
+      "file": "assets/icons/minus-circle.svg"
+    },
+    {
+      "name": "money",
+      "figma": "Money",
+      "file": "assets/icons/money.svg"
+    },
+    {
+      "name": "money1",
+      "figma": "Money1",
+      "file": "assets/icons/money1.svg"
+    },
+    {
+      "name": "monitor",
+      "figma": "Monitor",
+      "file": "assets/icons/monitor.svg"
+    },
+    {
+      "name": "more-info",
+      "figma": "MoreInfo",
+      "file": "assets/icons/more-info.svg"
+    },
+    {
+      "name": "more-link",
+      "figma": "MoreLink",
+      "file": "assets/icons/more-link.svg"
+    },
+    {
+      "name": "navigation-cross",
+      "figma": "NavigationCross",
+      "file": "assets/icons/navigation-cross.svg"
+    },
+    {
+      "name": "notification",
+      "figma": "Notification",
+      "file": "assets/icons/notification.svg"
+    },
+    {
+      "name": "offer",
+      "figma": "Offer",
+      "file": "assets/icons/offer.svg"
+    },
+    {
+      "name": "offer-filled",
+      "figma": "OfferFilled",
+      "file": "assets/icons/offer-filled.svg"
+    },
+    {
+      "name": "offers",
+      "figma": "Offers",
+      "file": "assets/icons/offers.svg"
+    },
+    {
+      "name": "offers-applied",
+      "figma": "OffersApplied",
+      "file": "assets/icons/offers-applied.svg"
+    },
+    {
+      "name": "offers-dark",
+      "figma": "OffersDark",
+      "file": "assets/icons/offers-dark.svg"
+    },
+    {
+      "name": "offers-plain",
+      "figma": "OffersPlain",
+      "file": "assets/icons/offers-plain.svg"
+    },
+    {
+      "name": "online-support",
+      "figma": "OnlineSupport",
+      "file": "assets/icons/online-support.svg"
+    },
+    {
+      "name": "outlined-star",
+      "figma": "OutlinedStar",
+      "file": "assets/icons/outlined-star.svg"
+    },
+    {
+      "name": "path",
+      "figma": "Path",
+      "file": "assets/icons/path.svg"
+    },
+    {
+      "name": "payment",
+      "figma": "Payment",
+      "file": "assets/icons/payment.svg"
+    },
+    {
+      "name": "payment-dark",
+      "figma": "PaymentDark",
+      "file": "assets/icons/payment-dark.svg"
+    },
+    {
+      "name": "personal-info",
+      "figma": "PersonalInfo",
+      "file": "assets/icons/personal-info.svg"
+    },
+    {
+      "name": "personal-info-dark",
+      "figma": "PersonalInfoDark",
+      "file": "assets/icons/personal-info-dark.svg"
+    },
+    {
+      "name": "phone",
+      "figma": "Phone",
+      "file": "assets/icons/phone.svg"
+    },
+    {
+      "name": "phone2",
+      "figma": "Phone2",
+      "file": "assets/icons/phone2.svg"
+    },
+    {
+      "name": "pinterest",
+      "figma": "Pinterest",
+      "file": "assets/icons/pinterest.svg"
+    },
+    {
+      "name": "placeholder",
+      "figma": "Placeholder",
+      "file": "assets/icons/placeholder.svg"
+    },
+    {
+      "name": "privacy-choice",
+      "figma": "PrivacyChoice",
+      "file": "assets/icons/privacy-choice.svg"
+    },
+    {
+      "name": "protection-plan",
+      "figma": "ProtectionPlan",
+      "file": "assets/icons/protection-plan.svg"
+    },
+    {
+      "name": "protection-plans",
+      "figma": "ProtectionPlans",
+      "file": "assets/icons/protection-plans.svg"
+    },
+    {
+      "name": "protection-plans-dark",
+      "figma": "ProtectionPlansDark",
+      "file": "assets/icons/protection-plans-dark.svg"
+    },
+    {
+      "name": "road-test",
+      "figma": "RoadTest",
+      "file": "assets/icons/road-test.svg"
+    },
+    {
+      "name": "sales-appointment",
+      "figma": "SalesAppointment",
+      "file": "assets/icons/sales-appointment.svg"
+    },
+    {
+      "name": "sand-clock",
+      "figma": "SandClock",
+      "file": "assets/icons/sand-clock.svg"
+    },
+    {
+      "name": "save",
+      "figma": "Save",
+      "file": "assets/icons/save.svg"
+    },
+    {
+      "name": "saved",
+      "figma": "Saved",
+      "file": "assets/icons/saved.svg"
+    },
+    {
+      "name": "schedule-test-drive",
+      "figma": "ScheduleTestDrive",
+      "file": "assets/icons/schedule-test-drive.svg"
+    },
+    {
+      "name": "search",
+      "figma": "Search",
+      "file": "assets/icons/search.svg"
+    },
+    {
+      "name": "share",
+      "figma": "Share",
+      "file": "assets/icons/share.svg"
+    },
+    {
+      "name": "share2",
+      "figma": "Share2",
+      "file": "assets/icons/share2.svg"
+    },
+    {
+      "name": "shield-check",
+      "figma": "ShieldCheck",
+      "file": "assets/icons/shield-check.svg"
+    },
+    {
+      "name": "signature",
+      "figma": "Signature",
+      "file": "assets/icons/signature.svg"
+    },
+    {
+      "name": "signature1",
+      "figma": "Signature1",
+      "file": "assets/icons/signature1.svg"
+    },
+    {
+      "name": "signature-dark",
+      "figma": "SignatureDark",
+      "file": "assets/icons/signature-dark.svg"
+    },
+    {
+      "name": "sliders-horizontal-sort",
+      "figma": "SlidersHorizontalSort",
+      "file": "assets/icons/sliders-horizontal-sort.svg"
+    },
+    {
+      "name": "sms",
+      "figma": "Sms",
+      "file": "assets/icons/sms.svg"
+    },
+    {
+      "name": "sort-by",
+      "figma": "SortBy",
+      "file": "assets/icons/sort-by.svg"
+    },
+    {
+      "name": "special-lease-offers",
+      "figma": "SpecialLeaseOffers",
+      "file": "assets/icons/special-lease-offers.svg"
+    },
+    {
+      "name": "speedometer",
+      "figma": "Speedometer",
+      "file": "assets/icons/speedometer.svg"
+    },
+    {
+      "name": "state-error",
+      "figma": "StateError",
+      "file": "assets/icons/state-error.svg"
+    },
+    {
+      "name": "state-skip",
+      "figma": "StateSkip",
+      "file": "assets/icons/state-skip.svg"
+    },
+    {
+      "name": "state-success",
+      "figma": "StateSuccess",
+      "file": "assets/icons/state-success.svg"
+    },
+    {
+      "name": "storefront",
+      "figma": "Storefront",
+      "file": "assets/icons/storefront.svg"
+    },
+    {
+      "name": "subscriptions",
+      "figma": "Subscriptions",
+      "file": "assets/icons/subscriptions.svg"
+    },
+    {
+      "name": "subscriptions2",
+      "figma": "Subscriptions2",
+      "file": "assets/icons/subscriptions2.svg"
+    },
+    {
+      "name": "subscriptions-dark",
+      "figma": "SubscriptionsDark",
+      "file": "assets/icons/subscriptions-dark.svg"
+    },
+    {
+      "name": "subscriptions-dark2",
+      "figma": "SubscriptionsDark2",
+      "file": "assets/icons/subscriptions-dark2.svg"
+    },
+    {
+      "name": "text-sms",
+      "figma": "TextSms",
+      "file": "assets/icons/text-sms.svg"
+    },
+    {
+      "name": "thumbsdown",
+      "figma": "Thumbsdown",
+      "file": "assets/icons/thumbsdown.svg"
+    },
+    {
+      "name": "thumbsup",
+      "figma": "Thumbsup",
+      "file": "assets/icons/thumbsup.svg"
+    },
+    {
+      "name": "tiktok",
+      "figma": "Tiktok",
+      "file": "assets/icons/tiktok.svg"
+    },
+    {
+      "name": "time",
+      "figma": "Time",
+      "file": "assets/icons/time.svg"
+    },
+    {
+      "name": "time1",
+      "figma": "Time1",
+      "file": "assets/icons/time1.svg"
+    },
+    {
+      "name": "timer",
+      "figma": "Timer",
+      "file": "assets/icons/timer.svg"
+    },
+    {
+      "name": "tow-truck",
+      "figma": "TowTruck",
+      "file": "assets/icons/tow-truck.svg"
+    },
+    {
+      "name": "trade-in",
+      "figma": "TradeIn",
+      "file": "assets/icons/trade-in.svg"
+    },
+    {
+      "name": "trade-in1",
+      "figma": "TradeIn1",
+      "file": "assets/icons/trade-in1.svg"
+    },
+    {
+      "name": "trade-in-new",
+      "figma": "TradeInNew",
+      "file": "assets/icons/trade-in-new.svg"
+    },
+    {
+      "name": "tradein",
+      "figma": "Tradein",
+      "file": "assets/icons/tradein.svg"
+    },
+    {
+      "name": "tradein-card",
+      "figma": "TradeinCard",
+      "file": "assets/icons/tradein-card.svg"
+    },
+    {
+      "name": "tradein-dark",
+      "figma": "TradeinDark",
+      "file": "assets/icons/tradein-dark.svg"
+    },
+    {
+      "name": "transmission",
+      "figma": "Transmission",
+      "file": "assets/icons/transmission.svg"
+    },
+    {
+      "name": "trash-simple",
+      "figma": "TrashSimple",
+      "file": "assets/icons/trash-simple.svg"
+    },
+    {
+      "name": "twitter",
+      "figma": "Twitter",
+      "file": "assets/icons/twitter.svg"
+    },
+    {
+      "name": "under-vehicle",
+      "figma": "UnderVehicle",
+      "file": "assets/icons/under-vehicle.svg"
+    },
+    {
+      "name": "upload-documents",
+      "figma": "UploadDocuments",
+      "file": "assets/icons/upload-documents.svg"
+    },
+    {
+      "name": "upload-simple",
+      "figma": "UploadSimple",
+      "file": "assets/icons/upload-simple.svg"
+    },
+    {
+      "name": "user",
+      "figma": "User",
+      "file": "assets/icons/user.svg"
+    },
+    {
+      "name": "veh-condition-excellent",
+      "figma": "VehConditionExcellent",
+      "file": "assets/icons/veh-condition-excellent.svg"
+    },
+    {
+      "name": "vehicle",
+      "figma": "Vehicle",
+      "file": "assets/icons/vehicle.svg"
+    },
+    {
+      "name": "vehicle-dark",
+      "figma": "VehicleDark",
+      "file": "assets/icons/vehicle-dark.svg"
+    },
+    {
+      "name": "vehicle-history-report",
+      "figma": "VehicleHistoryReport",
+      "file": "assets/icons/vehicle-history-report.svg"
+    },
+    {
+      "name": "video-camera",
+      "figma": "VideoCamera",
+      "file": "assets/icons/video-camera.svg"
+    },
+    {
+      "name": "warning",
+      "figma": "Warning",
+      "file": "assets/icons/warning.svg"
+    },
+    {
+      "name": "work",
+      "figma": "Work",
+      "file": "assets/icons/work.svg"
+    },
+    {
+      "name": "x-circle",
+      "figma": "XCircle",
+      "file": "assets/icons/x-circle.svg"
+    },
+    {
+      "name": "youtube",
+      "figma": "Youtube",
+      "file": "assets/icons/youtube.svg"
+    }
+  ],
+  "system": [
+    {
+      "name": "16px-caret-right",
+      "figma": "16px/caret-right",
+      "file": "assets/icons/system/16px-caret-right.svg"
+    },
+    {
+      "name": "check-circle-24px",
+      "figma": "check-circle-24px",
+      "file": "assets/icons/system/check-circle-24px.svg"
+    },
+    {
+      "name": "checkbox-intermediate",
+      "figma": "checkbox-intermediate",
+      "file": "assets/icons/system/checkbox-intermediate.svg"
+    },
+    {
+      "name": "checkbox-tick",
+      "figma": "checkbox-tick",
+      "file": "assets/icons/system/checkbox-tick.svg"
+    },
+    {
+      "name": "close",
+      "figma": "close",
+      "file": "assets/icons/system/close.svg"
+    },
+    {
+      "name": "dropdown-arrow",
+      "figma": "dropdown-arrow",
+      "file": "assets/icons/system/dropdown-arrow.svg"
+    },
+    {
+      "name": "info-16px",
+      "figma": "info-16px",
+      "file": "assets/icons/system/info-16px.svg"
+    },
+    {
+      "name": "info-24px",
+      "figma": "info-24px",
+      "file": "assets/icons/system/info-24px.svg"
+    },
+    {
+      "name": "radio-selected",
+      "figma": "radio-selected",
+      "file": "assets/icons/system/radio-selected.svg"
+    },
+    {
+      "name": "warning-24px",
+      "figma": "warning-24px",
+      "file": "assets/icons/system/warning-24px.svg"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+---
+title: Signature sheet
+description: The e-signing step — create a signature, accept the electronic signature disclosure, then sign each contract document.
+figma: 479-62708
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Overlays</p>
+  <h1>Signature sheet</h1>
+  <p class="doc-lead">The e-signing step of checkout. It has three full-screen screens: create a signature, accept the electronic signature disclosure, and sign each contract document.</p>
+  <div class="doc-meta"><span>Signing · Add Sign · Disclosure</span><span><code>.aec-sign</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="create">1. Create your signature</h2>
+    <p>The shopper types their full name and initials, then draws, picks a style or uploads a signature.</p>
+    <div class="doc-example" data-label="Create signature" data-no-code>
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-sign-create">
+          <div class="aec-sign-create__names">
+            <div class="aec-field"><label class="aec-field__label" for="sg-name">Full name</label><div class="aec-field__box"><input class="aec-field__input" id="sg-name" value="John Freeman" autocomplete="name"></div></div>
+            <div class="aec-field"><label class="aec-field__label" for="sg-init">Initials</label><div class="aec-field__box"><input class="aec-field__input" id="sg-init" value="JF" maxlength="4"></div></div>
+          </div>
+          <div class="aec-tabs aec-tabs--inset">
+            <div class="aec-tabs__list" role="tablist" aria-label="Signature method">
+              <button class="aec-tab" role="tab" id="sm-d" aria-selected="true" aria-controls="sm-dp">Draw</button>
+              <button class="aec-tab" role="tab" id="sm-s" aria-selected="false" aria-controls="sm-sp">Choose a style</button>
+              <button class="aec-tab" role="tab" id="sm-u" aria-selected="false" aria-controls="sm-up">Upload</button>
+            </div>
+            <div class="aec-tabs__panel" role="tabpanel" id="sm-dp" aria-labelledby="sm-d">
+              <div class="aec-sign-create__pads">
+                <div class="aec-sign-pad"><div class="aec-sign-pad__head"><span id="pad1-l">Draw your signature</span><button class="aec-link aec-link--sm" type="button" data-aec-clear="pad1">Clear</button></div><canvas id="pad1" data-aec-signature role="img" aria-labelledby="pad1-l" tabindex="0"></canvas></div>
+                <div class="aec-sign-pad"><div class="aec-sign-pad__head"><span id="pad2-l">Draw your initials</span><button class="aec-link aec-link--sm" type="button" data-aec-clear="pad2">Clear</button></div><canvas id="pad2" data-aec-signature role="img" aria-labelledby="pad2-l" tabindex="0"></canvas></div>
+              </div>
+            </div>
+            <div class="aec-tabs__panel" role="tabpanel" id="sm-sp" aria-labelledby="sm-s" hidden>
+              <fieldset class="aec-fieldset"><legend class="aec-visually-hidden">Signature style</legend><div class="aec-stack" style="gap:12px">
+                <label class="aec-sign-style"><input class="aec-radio" type="radio" name="sgs" checked><span class="aec-sign-style__ink" style="font-family:'Segoe Script','Brush Script MT',cursive">John Freeman</span><span class="aec-sign-style__meta">Initials JF<br>07AH60037MK9255F</span></label>
+                <label class="aec-sign-style"><input class="aec-radio" type="radio" name="sgs"><span class="aec-sign-style__ink" style="font-family:Georgia,serif;font-style:italic">John Freeman</span><span class="aec-sign-style__meta">Initials JF<br>07AH60037MK9255F</span></label>
+                <label class="aec-sign-style"><input class="aec-radio" type="radio" name="sgs"><span class="aec-sign-style__ink" style="font-family:'Lucida Handwriting','Comic Sans MS',cursive">John Freeman</span><span class="aec-sign-style__meta">Initials JF<br>07AH60037MK9255F</span></label>
+              </div></fieldset>
+            </div>
+            <div class="aec-tabs__panel" role="tabpanel" id="sm-up" aria-labelledby="sm-u" hidden>
+              <label class="aec-sign-pad__area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;text-align:center;padding:16px">
+                <span class="aec-icon aec-icon--32" style="--aec-icon-src:url(/assets/icons/upload-simple.svg)" aria-hidden="true"></span>
+                <span class="aec-body-2">Click here or drag and drop your file to upload</span>
+                <span class="aec-body-3 aec-text-subtle">PNG, JPEG, JPG or PDF</span>
+                <input type="file" accept=".png,.jpg,.jpeg,.pdf" class="aec-visually-hidden">
+              </label>
+            </div>
+          </div>
+          <label class="aec-control"><input class="aec-checkbox" type="checkbox" id="sg-consent"><span class="aec-form-label"><span class="aec-form-label__text">I agree that this electronic signature is the legal equivalent of my handwritten signature.</span></span></label>
+          <hr class="aec-divider">
+          <div style="display:flex;justify-content:flex-end"><button class="aec-btn aec-btn--primary" type="button" id="sg-submit" disabled>Submit &amp; continue</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="disclosure">2. Electronic signature disclosure</h2>
+    <p>A document preview with an acknowledgement footer. The primary action stays disabled until the box is checked.</p>
+    <div class="doc-example" data-label="Acknowledgement footer">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:0">
+        <div class="aec-sign__footer aec-sign__footer--ack">
+          <label class="aec-control"><input class="aec-checkbox" type="checkbox"><span class="aec-form-label"><span class="aec-form-label__text">I have read and agree to the Electronic Signature Disclosure.</span><span class="aec-form-label__desc">Please contact the dealership for more information.</span></span></label>
+          <span class="aec-btn-group"><button class="aec-btn aec-btn--standard" type="button">Contact dealership</button><button class="aec-btn aec-btn--primary" type="button" disabled>Agree &amp; continue</button></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="signing">3. Signing</h2>
+    <p>Documents are listed on the left with each party's status, the document is in the middle with its signature fields, and the footer shows overall progress. Click a "Sign here" field to sign it.</p>
+    <div class="doc-example" data-label="Signing screen" data-no-code>
+      <div class="doc-example-preview is-plain" style="display:block;padding:16px">
+        <div class="aec-sign" style="height:620px;border:1px solid var(--aec-color-border-default)">
+          <div class="aec-sign__header"><h2>Documents to be signed</h2><a class="aec-link aec-link--sm aec-link--neutral" href="#create"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span>Edit signature</a></div>
+          <div class="aec-sign__body">
+            <ul class="aec-sign__docs" aria-label="Documents">
+              <li><button class="aec-sign__doc" type="button"><span class="aec-sign__doc-title"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg);color:var(--aec-color-success-default)" aria-hidden="true"></span>Credit application</span><ul class="aec-sign__parties"><li class="is-done">Buyer: 1 of 1 signed</li></ul></button></li>
+              <li><button class="aec-sign__doc" type="button" aria-current="true"><span class="aec-sign__doc-title"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/esign-pending.svg);color:var(--aec-color-primary-default)" aria-hidden="true"></span>Retail installment contract</span><ul class="aec-sign__parties"><li class="is-active">Buyer: 0 of 2 signed</li><li>Co-buyer: 0 of 2 signed</li></ul></button></li>
+              <li><button class="aec-sign__doc" type="button"><span class="aec-sign__doc-title"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/document.svg)" aria-hidden="true"></span>Odometer statement</span><ul class="aec-sign__parties"><li>Buyer: 0 of 1 signed</li></ul></button></li>
+            </ul>
+            <div class="aec-sign__stage">
+              <div class="aec-sign__doc-head"><h3>Contract <span class="aec-chip aec-chip--info aec-chip--warning aec-chip--sm">To be signed</span></h3><a class="aec-link aec-link--sm" href="#signing">Status of other participants</a></div>
+              <div class="aec-sign__page">
+                <div class="aec-sign__line" style="width:60%"></div><div class="aec-sign__line"></div><div class="aec-sign__line"></div><div class="aec-sign__line" style="width:80%"></div><div class="aec-sign__line"></div><div class="aec-sign__line" style="width:45%"></div>
+                <button class="aec-sign__field" type="button" id="sig-field" aria-label="Sign here: buyer signature">Click to sign</button>
+              </div>
+              <div style="display:flex;justify-content:flex-end;padding-bottom:24px"><button class="aec-btn aec-btn--primary aec-btn--md" type="button">Next</button></div>
+            </div>
+          </div>
+          <div class="aec-sign__footer"><span>Applicant: <b>Jonathan Edwards</b></span><span id="sig-count">Total signatures: 09 of 32 completed</span><button class="aec-btn aec-btn--primary" type="button">Proceed</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Header</td><td>72px, heading-5, "Edit signature" neutral link. It can include a live-session status and Join / Stop / Leave buttons.</td></tr>
+        <tr><td>Document list</td><td>256px, <code>bg/variant</code>. Items have a 16px status icon, a body-2 bold title and indented party rows (12px status circles, body-3). The current item gets a 4px <code>primary/default</code> bar.</td></tr>
+        <tr><td>Stage</td><td><code>bg/variant</code>, padding 24/40. White page with <code>shadow/m</code>. Signature fields are dashed <code>primary/default</code> boxes with a "Sign here" flag.</td></tr>
+        <tr><td>Footer</td><td>80px, padding 16/40: applicant, signature count, primary "Proceed". The acknowledgement variant is <code>bg/variant</code> with a checkbox.</td></tr>
+        <tr><td>Status chip</td><td><a href="../components/chip.html">Information chip</a>: To be signed, In signing (7/9), Signed, Waiting, Expired</td></tr>
+        <tr><td>Mobile</td><td>The document list is hidden and the footer stacks with a full-width Proceed button.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Drawing alternative <span class="doc-wcag">WCAG 2.5.7 · 2.1.1</span></h3><p>Drawing needs a pointer, so always offer a keyboard-friendly alternative ("Choose a style" or typed name). Don't make drawing the only option.</p></div>
+      <div class="doc-a11y-item"><h3>Signature fields <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Each field is a button whose name says what is signed and by whom, such as "Sign here: buyer signature". The signature count updates in a polite live region.</p></div>
+      <div class="doc-a11y-item"><h3>Consent <span class="doc-wcag">WCAG 3.3.4</span></h3><p>Legal commitments need an explicit checkbox and a chance to review before submitting.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Legacy styles are still bound: "Overlay &amp; BG/Background White" and "Dividers &amp; Borders/Divider Light &amp; Input Border".</li>
+      <li>The document list text uses raw 14 bold and 12 regular instead of text styles.</li>
+      <li>Copy typos: "Please draw you signature" and "Please draw you initials". Placeholder "Heading" and "Title" text remains in the nav items.</li>
+    </ul>
+  </section>
+</div>
+<script>
+(function () {
+  var f = document.getElementById('sig-field'), count = document.getElementById('sig-count'); count.setAttribute('aria-live', 'polite');
+  f.addEventListener('click', function () { if (f.classList.contains('is-signed')) return; f.classList.add('is-signed'); f.textContent = (document.getElementById('sg-name').value || 'John Freeman'); f.setAttribute('aria-label', 'Signed: buyer signature'); count.textContent = 'Total signatures: 10 of 32 completed'; });
+  var consent = document.getElementById('sg-consent'), submit = document.getElementById('sg-submit');
+  function upd() { submit.disabled = !consent.checked; }
+  consent.addEventListener('change', upd);
+})();
+</script>

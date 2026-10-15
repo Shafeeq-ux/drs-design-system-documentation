@@ -1,0 +1,115 @@
+---
+title: Mathbox
+description: The persistent vehicle and payment summary panel — vehicle, price, payment type, deal summary and dealer contact — shown beside every checkout step.
+figma: 6516-90005
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Checkout</p>
+  <h1>Mathbox</h1>
+  <p class="doc-lead">The "math box" is the persistent summary of the vehicle and the deal. It sits in the right rail at 1280px and up, and opens as a sheet on tablet and mobile.</p>
+  <div class="doc-meta"><span>Web · Tablet · In-store · Mobile</span><span><code>.aec-mathbox</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="panel">Panel</h2>
+    <div class="doc-example" data-label="Mathbox">
+      <div class="doc-example-preview is-plain" style="justify-content:center">
+        <aside class="aec-mathbox" aria-label="Deal summary">
+          <div class="aec-mathbox__card">
+            <div class="aec-mathbox__media"><span class="aec-img-slot">Vehicle image</span><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Share vehicle"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button></div>
+            <div class="aec-mathbox__details">
+              <h2 class="aec-mathbox__name">2025 Blazer EV <span>SS AWD</span></h2>
+              <div class="aec-mathbox__meta"><span>Stock#:</span> A23X45Z <span class="aec-sep">•</span> <span>VIN:</span> 3G1FJ3456L1234575</div>
+              <div class="aec-mathbox__meta"><span>Dealer price:</span> $48,500.00</div>
+              <a class="aec-link" href="#panel">Vehicle details</a>
+            </div>
+            <div class="aec-mathbox__payment">
+              <div class="aec-mathbox__payment-head"><span class="aec-chip aec-chip--info aec-chip--grey aec-chip--sm">Finance</span><a class="aec-link" href="#panel">Customize</a></div>
+              <span class="aec-mathbox__amount">$364.81 <small>/mo.</small></span>
+              <span class="aec-mathbox__terms">72 mo. <span class="aec-sep">•</span> 5.9% APR <span class="aec-sep">•</span> $2,500 down payment</span>
+              <p class="aec-mathbox__foot">Subject to credit approval</p>
+            </div>
+          </div>
+          <ul class="aec-mathbox__summary" aria-label="Deal items">
+            <li><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trade-in.svg)" aria-hidden="true"></span><span><b>Trade-In Vehicle</b> <em>(1 vehicle)</em></span><span class="aec-price is-credit">−$5,000.00</span></li>
+            <li><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offers.svg)" aria-hidden="true"></span><span><b>Special Offers &amp; GM Rewards™</b> <em>(3 applied)</em></span><span class="aec-price is-credit">−$720.00</span></li>
+            <li><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/accessories.svg)" aria-hidden="true"></span><span><b>Accessories</b> <em>(2 products)</em></span><span class="aec-price">$720.00</span></li>
+            <li><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/protection-plans.svg)" aria-hidden="true"></span><span><b>Plans &amp; Services</b> <em>(4 selected)</em></span><span class="aec-price">$720.00</span></li>
+          </ul>
+          <div class="aec-mathbox__dealer"><div><b>RIVERSIDE CHEVROLET</b><span>8200 Auto Dr, Riverside, CA 92504</span><a class="aec-link aec-link--sm" href="tel:+19514005219">(951) 400-5219</a></div><button class="aec-chat-fab" type="button" aria-label="Chat with the dealer"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/online-support.svg)" aria-hidden="true"></span></button></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="payment-types">Payment type block</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Type</th><th>Amount</th><th>Terms</th><th>Footnote</th></tr></thead>
+      <tbody>
+        <tr><td>Finance</td><td>$364.81 /mo.</td><td>72 mo. • 5.9% APR • $2,500 down payment</td><td>Subject to credit approval</td></tr>
+        <tr><td>Lease</td><td>$523 /mo.</td><td>48 mo. • 12,000 miles/yr. • $3,343.62 due at signing</td><td>$0 security deposit. Subject to credit approval.</td></tr>
+        <tr><td>Cash</td><td>$33,399.29</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="status">Reservation and timer</h2>
+    <p>Status parts that can be placed above the vehicle card. They exist in Figma, but none of the default variants place them.</p>
+    <div class="doc-example" data-label="Reservation status">
+      <div class="doc-example-preview is-col" style="max-width:420px">
+        <div class="aec-status-bar" role="status"><span>Reserved</span><span>Submit credit app in <b>1h 30m</b></span></div>
+        <div class="aec-status-bar aec-status-bar--warning" role="status"><span>Reserved</span><span>Submit credit app in <b>30m</b></span></div>
+        <div class="aec-status-bar aec-status-bar--error" role="status"><span>Vehicle reservation expired</span><button class="aec-btn aec-btn--standard aec-btn--sm" type="button">Reserve again for $100</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sheet">Tablet and mobile sheet</h2>
+    <p>Below 1280px the rail is hidden. The <a href="footers.html#bottom-bar">bottom bar</a> shows the vehicle and monthly price, and tapping it opens the Mathbox in a <a href="side-sheets.html">side sheet</a> titled "Vehicle details".</p>
+    <div class="doc-example" data-no-code><div class="doc-example-preview"><button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-open="mb-sheet">Open vehicle details</button></div></div>
+    <dialog class="aec-modal aec-modal--right-sheet aec-sheet aec-sheet--sm" id="mb-sheet" aria-labelledby="mb-sheet-t">
+      <div class="aec-sheet__header"><div class="aec-sheet__titles"><h2 class="aec-sheet__title" id="mb-sheet-t">Vehicle details</h2></div><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-sheet__main" style="overflow-y:auto;background:var(--aec-color-bg-variant)">
+        <div class="aec-mathbox aec-mathbox--sheet">
+          <div class="aec-mathbox__card"><div class="aec-mathbox__media"><span class="aec-img-slot">Vehicle image</span></div><div class="aec-mathbox__details"><h3 class="aec-mathbox__name">2025 Blazer EV <span>SS AWD</span></h3><div class="aec-mathbox__meta"><span>Purchase price:</span> $60,895</div></div>
+            <div class="aec-mathbox__payment"><div class="aec-mathbox__payment-head"><span class="aec-chip aec-chip--info aec-chip--grey aec-chip--sm">Lease</span><a class="aec-link" href="#sheet">Customize</a></div><span class="aec-mathbox__amount">$523 <small>/mo.</small></span><span class="aec-mathbox__terms">48 mo. <span class="aec-sep">•</span> 12,000 miles/yr. <span class="aec-sep">•</span> $3,343.62 due at signing</span></div></div>
+          <button class="aec-btn aec-btn--standard" type="button">Reserve for $500</button>
+        </div>
+      </div>
+    </dialog>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Panel</td><td>362px, <code>bg/variant</code>, 24px padding, 16px gap</td></tr>
+        <tr><td>Vehicle card</td><td><code>bg/default</code>. Image slot 282×146 with a share icon button. Name heading-5, meta body-3 medium (labels <code>text/variant</code>), "Vehicle details" link.</td></tr>
+        <tr><td>Payment</td><td>Grey information chip with a Customize link, heading-3 amount, body-3 terms with <code>text/disabled</code> bullets</td></tr>
+        <tr><td>Summary rows</td><td>16px icon, body-3 bold title with a medium qualifier, bold amount. Credits are <code>success/default</code> with a minus sign.</td></tr>
+        <tr><td>Dealer footer</td><td>1px <code>border/default</code>, body-3. A 48px <code>primary/default</code> chat button.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Landmark <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Render the panel as <code>&lt;aside aria-label="Deal summary"&gt;</code>. Announce total changes politely when items are added or removed.</p></div>
+      <div class="doc-a11y-item"><h3>Credits <span class="doc-wcag">WCAG 1.4.1</span></h3><p>Show credits with a minus sign, not just green colour.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The minus sign on credit rows is an empty glyph in Figma. The code shows "−". Confirm with design.</li>
+      <li><code>success/on-subtle</code> isn't in the token list, so it maps to <code>success/default</code>. The chat button uses raw #0077d9 (= <code>primary/default</code>).</li>
+      <li>The "Hide" variant is 0×0.</li>
+    </ul>
+  </section>
+</div>

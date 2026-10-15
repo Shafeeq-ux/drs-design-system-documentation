@@ -1,0 +1,32 @@
+---
+title: Border
+description: Corner radius and border width tokens for the DRS Chevrolet foundation.
+figma: 3769-50157
+scripts: foundations.js
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Foundations</p>
+  <h1>Border</h1>
+  <p class="doc-lead">A small set of radii and widths keeps every surface and control consistent.</p>
+  <div class="doc-meta"><span>Radius: 5 tokens</span><span>Width: 8 tokens</span></div>
+
+  <section class="doc-section">
+    <h2 id="radius">Radius</h2>
+    <p><code>default</code> (8px) is used for buttons, inputs and cards. <code>rounded-rect</code> (4px) is for small elements and focus rings. <code>rounded</code> makes pills and circles.</p>
+    <div class="doc-tokens-list" data-radius></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="width">Width</h2>
+    <p><code>default</code> (1px) is for dividers and input outlines. 2px (<code>border-width-20</code>) is for outline buttons and selected states.</p>
+    <div class="doc-tokens-list" data-width></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="focus">Focus</h2>
+    <p>Focus rings use <code>--aec-color-focus-default</code> with <code>--aec-border-radius-focus</code>. Interactive components show a 2px ring, offset by 2px, when focused from the keyboard.</p>
+    <div class="doc-example" data-no-code><div class="doc-example-preview">
+      <span style="display:inline-flex;height:48px;padding:0 24px;align-items:center;border-radius:8px;background:var(--aec-color-primary-default);color:#fff;font-weight:600;outline:2px solid var(--aec-color-focus-default);outline-offset:2px">Focused button</span>
+    </div></div>
+  </section>
+</div>

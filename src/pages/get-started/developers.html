@@ -1,0 +1,75 @@
+---
+title: For developers
+description: How to use the DRS Chevrolet tokens and component CSS in your project.
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Get started</p>
+  <h1>For developers</h1>
+  <p class="doc-lead">The system ships as three plain CSS files and one small optional script. There is no framework and no build step.</p>
+
+  <section class="doc-section">
+    <h2 id="install">1. Add the files</h2>
+    <p>Link the font, the tokens, one or more brand files and the components, in that order. Then set <code>data-brand</code> on <code>&lt;html&gt;</code>, or on any element. <code>components.js</code> adds behaviour to tabs, accordions, modals, menus, tooltips, sliders and dismissable chips.</p>
+<pre><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap"&gt;
+
+&lt;link rel="stylesheet" href="https://YOUR-DEPLOYMENT.vercel.app/css/tokens.css"&gt;
+&lt;link rel="stylesheet" href="https://YOUR-DEPLOYMENT.vercel.app/css/brands/chevrolet.css"&gt;
+&lt;link rel="stylesheet" href="https://YOUR-DEPLOYMENT.vercel.app/css/components.css"&gt;
+&lt;link rel="stylesheet" href="https://YOUR-DEPLOYMENT.vercel.app/css/patterns.css"&gt;
+&lt;link rel="stylesheet" href="https://YOUR-DEPLOYMENT.vercel.app/css/brand-components.css"&gt;
+&lt;script src="https://YOUR-DEPLOYMENT.vercel.app/js/components.js" defer&gt;&lt;/script&gt;
+
+&lt;html lang="en" data-brand="chevrolet"&gt;</code></pre>
+    <p>Brand ids: <span data-brand-ids>base, chevrolet, gmc, buick, cadillac, carbravo</span>. For the raw token files (drop-in <code>.drp-*</code> classes, CSS variables or JSON), see <a href="../brands/tokens.html">Brand tokens</a>.</p>
+    <p>For production, copy the files into your own repo rather than hot-linking them, and pin to a release from the <a href="changelog.html">changelog</a>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="tokens">2. Use tokens</h2>
+    <p>Every Figma style is a CSS custom property with the <code>--aec-</code> prefix. The names match Figma, so a value in a design file maps straight to code.</p>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma</th><th>CSS</th></tr></thead>
+      <tbody>
+        <tr><td>Colour style <code>primary/default</code></td><td><code>var(--aec-color-primary-default)</code></td></tr>
+        <tr><td>Text style <code>heading/3</code></td><td><code>.aec-heading-3</code> or <code>--aec-typography-heading-3-*</code></td></tr>
+        <tr><td>Effect style <code>shadow/m</code></td><td><code>var(--aec-box-shadow-m)</code></td></tr>
+        <tr><td>Token <code>spacing.container.padding.m</code></td><td><code>var(--aec-spacing-container-padding-m)</code></td></tr>
+        <tr><td>Token <code>border.radius.default</code></td><td><code>var(--aec-border-radius-default)</code></td></tr>
+      </tbody>
+    </table></div>
+    <p>The raw values are also published as JSON at <a href="../tokens/chevrolet.json"><code>tokens/chevrolet.json</code></a>, for Style Dictionary or other tooling.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="components">3. Use components</h2>
+    <p>Components are BEM-style classes with the <code>.aec-</code> prefix. A block is modified with <code>--modifier</code> classes:</p>
+<pre><code>&lt;button class="aec-btn aec-btn--primary"&gt;Continue&lt;/button&gt;
+&lt;button class="aec-btn aec-btn--primary aec-btn--outline"&gt;Save for later&lt;/button&gt;
+&lt;button class="aec-btn aec-btn--secondary aec-btn--plain"&gt;Cancel&lt;/button&gt;</code></pre>
+    <p>States use native attributes wherever possible (<code>disabled</code>, <code>aria-pressed</code>, <code>aria-selected</code>, <code>aria-expanded</code>, <code>aria-invalid</code>, <code>:checked</code>), so the right state is announced to assistive technology.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="breakpoints">Breakpoints</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Name</th><th>Min width</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile</td><td>0</td><td>Base styles, mobile type scale</td></tr>
+        <tr><td>Tablet</td><td>768px</td><td>Desktop type scale switches on</td></tr>
+        <tr><td>Desktop</td><td>1025px</td><td>Layout breakpoint</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="contributing">Working on this site</h2>
+<pre><code># rebuild tokens.css and every page from src/
+npm run build
+
+# local preview at http://localhost:4321
+npm run dev</code></pre>
+    <p>Change token values in <code>tokens/chevrolet.json</code> and page content in <code>src/pages/</code>, then rebuild. Don't edit the generated <code>css/tokens.css</code> or root-level <code>.html</code> files by hand.</p>
+  </section>
+</div>

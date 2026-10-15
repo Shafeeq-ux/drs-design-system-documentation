@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery · DRS Design System</title>
+<meta name="description" content="Vehicle media — the dark full-screen gallery, single-image lightbox, vehicle image with arrows and the success top banner.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3388-80030" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Media &amp; screens</p>
+  <h1>Gallery</h1>
+  <p class="doc-lead">Ways to show vehicle photos: an image with arrows on cards and pages, a dark "all photos" gallery, and a single-image lightbox.</p>
+  <div class="doc-meta"><span>Gallery · Gallery Preview · Vehicle Image · Top banner</span><span><code>.aec-gallery</code> · <code>.aec-vehicle-image</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="vehicle-image">Vehicle image</h2>
+    <p>A 16:9 image slot with inverse previous/next icon buttons overlaid.</p>
+    <div class="doc-example" data-label="Vehicle image">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-vehicle-image" style="max-width:658px" role="group" aria-roledescription="carousel" aria-label="Vehicle photos">
+          <span class="aec-img-slot">Vehicle photo 1 of 32</span>
+          <button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--filled aec-vehicle-image__nav aec-vehicle-image__nav--prev" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
+          <button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--filled aec-vehicle-image__nav aec-vehicle-image__nav--next" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="lightbox">Lightbox (gallery preview)</h2>
+    <div class="doc-example" data-label="Gallery preview">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:0">
+        <div class="aec-gallery">
+          <div class="aec-gallery__bar">
+            <h3 class="aec-gallery__title"><button class="aec-icon-btn aec-icon-btn--inverse" type="button" aria-label="Back"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span></button>2025 Blazer EV SS AWD</h3>
+            <div class="aec-gallery__actions">
+              <button class="aec-btn aec-btn--inverse aec-btn--inline" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/schedule-test-drive.svg)" aria-hidden="true"></span>Schedule appointment</button>
+              <button class="aec-btn aec-btn--inverse aec-btn--inline" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span>Save</button>
+              <button class="aec-btn aec-btn--inverse aec-btn--inline" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span>Share</button>
+              <button class="aec-icon-btn aec-icon-btn--inverse" type="button" aria-label="Close gallery"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+            </div>
+          </div>
+          <div class="aec-viewer__stage"><button class="aec-viewer__nav" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button><span class="aec-img-slot aec-viewer__image" style="background:#3a3a3a;color:#b3b3b3">Vehicle photo</span><button class="aec-viewer__nav" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button></div>
+          <div class="aec-gallery__footer"><button class="aec-gallery__all" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/grid.svg)" aria-hidden="true"></span>Show all images</button><span aria-live="polite"><b>1</b> of 32</span></div>
+        </div>
+      </div>
+    </div>
+    <p>The full gallery uses the same dark bar above a vertical stack of all photos, centred and up to 1280px wide. On mobile, the action buttons collapse into a more menu.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="banner">Success top banner</h2>
+    <div class="doc-example" data-label="Top banner">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:0">
+        <div class="aec-hero-success" role="status">
+          <span class="aec-hero-success__check"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/check.svg)" aria-hidden="true"></span></span>
+          <div><h2 class="aec-hero-success__title">All set!</h2><p class="aec-hero-success__text">You're one step closer to your 2025 Blazer EV SS AWD! We'll be in touch shortly to finalise your purchase.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Carousel <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Label the arrows ("Previous photo") and announce the position ("1 of 32") in a polite live region. Vehicle photos need meaningful <code>alt</code> text, such as "Front three-quarter view, Summit White".</p></div>
+      <div class="doc-a11y-item"><h3>Lightbox <span class="doc-wcag">WCAG 2.1.2</span></h3><p>Open the gallery as a modal dialog. Esc closes it and ← and → change the photo.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The banner green (#41b473) has no token. The code uses <code>success/default</code>.</li>
+      <li>The gallery uses <code>inverse/bg/overlay</code>, <code>inverse/border/default</code> and <code>inverse/text/default</code>, which aren't in the token list. The sample title is Acura ("2024 RDX A-Spec").</li>
+      <li>The "Desktop 1920" variant is 1440 wide.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

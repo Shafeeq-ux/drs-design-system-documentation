@@ -1,0 +1,89 @@
+---
+title: Calendar
+description: Date and time-slot picker for scheduling test drives, delivery and service appointments.
+figma: 5742-51202
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Forms</p>
+  <h1>Calendar</h1>
+  <p class="doc-lead">Pick a date from the month grid, then a time slot grouped by morning and afternoon. Used for test drives, delivery and first-service appointments.</p>
+  <div class="doc-meta"><span>Date + time</span><span><code>.aec-calendar</code> · <code>[data-aec-calendar]</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="demo">Date and time</h2>
+    <div class="doc-example" data-label="Calendar" data-no-code>
+      <div class="doc-example-preview">
+        <div class="aec-calendar">
+          <div class="aec-calendar__date" data-aec-calendar id="cal-demo"></div>
+          <div class="aec-calendar__time">
+            <h4 id="cal-day" aria-live="polite">Select a date</h4>
+            <p class="aec-calendar__part">Morning</p>
+            <div class="aec-calendar__slots aec-toggle-group aec-toggle-group--md" role="radiogroup" aria-label="Morning slots">
+              <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">9:00 AM</button>
+              <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">10:00 AM</button>
+              <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">11:00 AM</button>
+            </div>
+            <p class="aec-calendar__part">Afternoon</p>
+            <div class="aec-calendar__slots aec-toggle-group aec-toggle-group--md" role="radiogroup" aria-label="Afternoon slots">
+              <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">12:30 PM</button>
+              <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">2:00 PM</button>
+              <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" disabled>3:30 PM</button>
+              <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">5:00 PM</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<pre><code>&lt;div class="aec-calendar"&gt;
+  &lt;div class="aec-calendar__date" data-aec-calendar data-min="2026-11-10" data-value="2026-11-12"&gt;&lt;/div&gt;
+  &lt;div class="aec-calendar__time"&gt;…time-slot radio groups…&lt;/div&gt;
+&lt;/div&gt;
+
+// components.js renders the month and fires an event on selection
+el.addEventListener('aec:change', e =&gt; console.log(e.detail.value)); // "2026-11-12"</code></pre>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td>8px radius, 1px <code>border/default</code>, <code>bg/default</code>. The date panel (16px padding) and time panel (160px) sit side by side, and stack below 560px.</td></tr>
+        <tr><td>Header</td><td>body-1 bold month and year, with previous/next icon buttons</td></tr>
+        <tr><td>Weekdays</td><td>Monday first, body-3 <code>text/subtle</code></td></tr>
+        <tr><td>Day</td><td>40×40px, 8px radius. Hover <code>bg/variant</code>. Selected <code>primary/default</code> with white text. Past dates <code>text/disabled</code>. Today has a 1px ring.</td></tr>
+        <tr><td>Time slots</td><td>48px toggle group items in a column. The selected slot is filled <code>primary/default</code>.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>The arrow keys move by day or week, Page Up/Down by month, and Home/End to the start or end of the week. Enter or Space selects a day. Only one day is in the tab order.</p></div>
+      <div class="doc-a11y-item"><h3>Names <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Each day button's name is the full date ("Thursday, November 12, 2026") and it uses <code>aria-selected</code>. Today has <code>aria-current="date"</code>. The month title is announced when it changes.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The sample data disagrees: the header says "June 2025", the time column "Thu, February 8" and the base header "February 2023".</li>
+      <li>Day cells have no hover state and there is no "today" marker. The code adds both.</li>
+      <li>A loose "No slots available" frame exists on the page. Use an <a href="error-states.html">empty state</a> for it.</li>
+    </ul>
+  </section>
+</div>
+<script>
+(function () {
+  var d = new Date(); d.setHours(0, 0, 0, 0);
+  var iso = function (x) { return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0'); };
+  var cal = document.getElementById('cal-demo'); var sel = new Date(d); sel.setDate(d.getDate() + 2);
+  cal.dataset.min = iso(d); cal.dataset.value = iso(sel);
+  var label = document.getElementById('cal-day');
+  function show(x) { label.textContent = x.toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric' }); }
+  show(sel);
+  cal.addEventListener('aec:change', function (e) { show(e.detail.date); });
+})();
+</script>

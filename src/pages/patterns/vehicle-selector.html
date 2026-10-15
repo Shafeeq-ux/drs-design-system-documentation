@@ -1,0 +1,93 @@
+---
+title: Vehicle selector
+description: Year → make → model selection for identifying a trade-in vehicle, as a dropdown panel on desktop and a bottom sheet on mobile.
+figma: 6092-11793
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Forms</p>
+  <h1>Vehicle selector</h1>
+  <p class="doc-lead">Identifies a trade-in vehicle in three steps (year, then make, then model) in a panel under the "Make and model" field. On mobile it opens as a bottom sheet.</p>
+  <div class="doc-meta"><span>Year · Search · Make · Model</span><span><code>.aec-picker</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="demo">Try it</h2>
+    <div class="doc-example" data-label="Vehicle selector" data-no-code>
+      <div class="doc-example-preview" style="min-height:440px;align-items:flex-start">
+        <div class="aec-picker" id="ymm">
+          <div class="aec-field"><label class="aec-field__label" for="ymm-in">Make and model <span class="aec-field__required" aria-hidden="true">*</span></label>
+            <div class="aec-field__box"><input class="aec-field__input" id="ymm-in" readonly placeholder="Select year, make and model" aria-haspopup="listbox" aria-expanded="false" aria-controls="ymm-panel"><span class="aec-icon aec-icon--end" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></div></div>
+          <div class="aec-picker__panel" id="ymm-panel" hidden>
+            <div class="aec-picker__crumbs" aria-live="polite" id="ymm-crumbs">Select registration year</div>
+            <div id="ymm-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Panel</td><td>Up to 375px wide, 12px padding, 4px radius, 1px <code>border/default</code>, <code>shadow/s</code>, scrolls at 328px</td></tr>
+        <tr><td>Year step</td><td>A 4-column grid of 48px tiles</td></tr>
+        <tr><td>Make and model steps</td><td>Full-width, left-aligned 48px tiles with a 4px gap</td></tr>
+        <tr><td>Search</td><td>Typing filters the current step, for example "202" shows 2020–2025</td></tr>
+        <tr><td>Mobile</td><td><a href="bottom-sheets.html">Bottom sheet</a> titled "Select registration year" or "Select make and model"</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Step announcements <span class="doc-wcag">WCAG 4.1.3</span></h3><p>The breadcrumb line ("2023 › Chevrolet") is a polite live region, so each step change is announced.</p></div>
+      <div class="doc-a11y-item"><h3>Alternative input</h3><p>Always offer VIN or licence-plate lookup as an alternative to browsing.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The option labels are placeholders. The prop "Add address manually" was copied from the Address dropdown.</li>
+      <li>The mobile scrim is 60% black. The token is 52%.</li>
+      <li>No selected or hover states are drawn. The code relies on the toggle group.</li>
+    </ul>
+  </section>
+</div>
+<script>
+(function () {
+  var data = { Chevrolet: ['Blazer EV', 'Bolt EUV', 'Equinox', 'Silverado 1500', 'Tahoe', 'Traverse'], GMC: ['Acadia', 'Canyon', 'Sierra 1500', 'Yukon'], Buick: ['Enclave', 'Encore GX', 'Envision'], Cadillac: ['Escalade', 'Lyriq', 'XT5'], Ford: ['Escape', 'F-150', 'Mustang Mach-E'] };
+  var input = document.getElementById('ymm-in'), panel = document.getElementById('ymm-panel'), body = document.getElementById('ymm-body'), crumbs = document.getElementById('ymm-crumbs');
+  var state = {};
+  function tiles(list, grid) {
+    return '<div class="' + (grid ? 'aec-option-grid' : 'aec-picker__list aec-toggle-group') + '" role="listbox" aria-label="Options">' + list.map(function (v) {
+      return '<button type="button" class="' + (grid ? 'aec-option-grid__opt' : 'aec-toggle-group__item') + '" role="option" aria-selected="false" data-v="' + v + '">' + v + '</button>';
+    }).join('') + '</div>';
+  }
+  function step() {
+    if (!state.year) { crumbs.textContent = 'Select registration year'; var ys = []; for (var y = 2026; y >= 2007; y--) ys.push(y); body.innerHTML = tiles(ys, true); }
+    else if (!state.make) { crumbs.textContent = state.year + ' › Select make'; body.innerHTML = tiles(Object.keys(data)); }
+    else { crumbs.textContent = state.year + ' › ' + state.make + ' › Select model'; body.innerHTML = tiles(data[state.make]); }
+    var f = body.querySelector('button'); if (f) f.focus();
+  }
+  function open() { panel.hidden = false; input.setAttribute('aria-expanded', 'true'); state = {}; step(); }
+  function close() { panel.hidden = true; input.setAttribute('aria-expanded', 'false'); }
+  input.addEventListener('click', open);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); open(); } });
+  body.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (!state.year) state.year = b.dataset.v; else if (!state.make) state.make = b.dataset.v; else { input.value = state.year + ' ' + state.make + ' ' + b.dataset.v; close(); input.focus(); return; }
+    step();
+  });
+  panel.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { close(); input.focus(); return; }
+    var btns = Array.prototype.slice.call(body.querySelectorAll('button')), i = btns.indexOf(document.activeElement); if (i < 0) return;
+    var cols = body.querySelector('.aec-option-grid') ? 4 : 1, d = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: cols, ArrowUp: -cols }[e.key];
+    if (d) { e.preventDefault(); (btns[i + d] || btns[i]).focus(); }
+  });
+  document.addEventListener('click', function (e) { if (!document.getElementById('ymm').contains(e.target)) close(); });
+})();
+</script>

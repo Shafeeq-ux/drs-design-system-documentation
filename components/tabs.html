@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabs · DRS Design System</title>
+<meta name="description" content="Tabs switch between related views on the same page, in six visual styles.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50222">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Navigation</p>
+  <h1>Tabs</h1>
+  <p class="doc-lead">Switches between related views on the same page without leaving it, for example Finance, Lease and Cash.</p>
+  <div class="doc-meta"><span>6 styles</span><span><code>.aec-tabs</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="underline">Underlined</h2>
+    <p>The default. Text tabs with an underline beneath each label (Figma: <em>Underlined – Inside</em>).</p>
+    <div class="doc-example" data-label="Underlined tabs">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-tabs">
+          <div class="aec-tabs__list" role="tablist" aria-label="Payment type">
+            <button class="aec-tab" role="tab" id="t1-a" aria-selected="true" aria-controls="p1-a">Finance</button>
+            <button class="aec-tab" role="tab" id="t1-b" aria-selected="false" aria-controls="p1-b">Lease</button>
+            <button class="aec-tab" role="tab" id="t1-c" aria-selected="false" aria-controls="p1-c">Cash</button>
+            <button class="aec-tab" role="tab" id="t1-d" aria-selected="false" aria-controls="p1-d" disabled>Subscribe</button>
+          </div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p1-a" aria-labelledby="t1-a" tabindex="0">Estimated $612/mo for 60 months at 5.9% APR.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p1-b" aria-labelledby="t1-b" tabindex="0" hidden>Estimated $489/mo for 36 months, 10,000 miles/yr.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p1-c" aria-labelledby="t1-c" tabindex="0" hidden>Total price $46,395 after offers.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p1-d" aria-labelledby="t1-d" tabindex="0" hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="inset">Inset</h2>
+    <p>Full-width tabs with a 4px indicator (Figma: <em>Underlined – Inset</em>). Use it for section-level navigation.</p>
+    <div class="doc-example" data-label="Inset tabs">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-tabs aec-tabs--inset">
+          <div class="aec-tabs__list" role="tablist" aria-label="Vehicle details">
+            <button class="aec-tab" role="tab" id="t2-a" aria-selected="true" aria-controls="p2-a">Overview</button>
+            <button class="aec-tab" role="tab" id="t2-b" aria-selected="false" aria-controls="p2-b">Specs</button>
+            <button class="aec-tab" role="tab" id="t2-c" aria-selected="false" aria-controls="p2-c">Features</button>
+          </div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p2-a" aria-labelledby="t2-a" tabindex="0">5.3L V8 · 4WD · Summit White</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p2-b" aria-labelledby="t2-b" tabindex="0" hidden>Towing up to 13,300 lbs.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p2-c" aria-labelledby="t2-c" tabindex="0" hidden>Super Cruise, 13.4" touchscreen.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="contained">Contained, segment and stacked</h2>
+    <p>Button-style tabs for switching between compact views. <strong>Contained</strong> puts a pill inside a bordered track, <strong>segment</strong> is a joined control, and <strong>stacked</strong> uses separate bordered buttons.</p>
+    <div class="doc-example" data-label="Contained, segment and stacked tabs">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-tabs aec-tabs--contained">
+          <div class="aec-tabs__list" role="tablist" aria-label="Contained example">
+            <button class="aec-tab" role="tab" id="t3-a" aria-selected="true" aria-controls="p3-a">Monthly</button>
+            <button class="aec-tab" role="tab" id="t3-b" aria-selected="false" aria-controls="p3-b">Total</button>
+          </div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p3-a" aria-labelledby="t3-a" tabindex="0">$612 / month</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p3-b" aria-labelledby="t3-b" tabindex="0" hidden>$36,720 total</div>
+        </div>
+        <div class="aec-tabs aec-tabs--segment">
+          <div class="aec-tabs__list" role="tablist" aria-label="Segment example">
+            <button class="aec-tab" role="tab" id="t4-a" aria-selected="false" aria-controls="p4-a">New</button>
+            <button class="aec-tab" role="tab" id="t4-b" aria-selected="true" aria-controls="p4-b">Used</button>
+            <button class="aec-tab" role="tab" id="t4-c" aria-selected="false" aria-controls="p4-c">Certified</button>
+          </div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p4-a" aria-labelledby="t4-a" tabindex="0" hidden>124 new vehicles</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p4-b" aria-labelledby="t4-b" tabindex="0">58 used vehicles</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p4-c" aria-labelledby="t4-c" tabindex="0" hidden>21 certified vehicles</div>
+        </div>
+        <div class="aec-tabs aec-tabs--stacked">
+          <div class="aec-tabs__list" role="tablist" aria-label="Stacked example">
+            <button class="aec-tab" role="tab" id="t5-a" aria-selected="true" aria-controls="p5-a">Exterior</button>
+            <button class="aec-tab" role="tab" id="t5-b" aria-selected="false" aria-controls="p5-b">Interior</button>
+            <button class="aec-tab" role="tab" id="t5-c" aria-selected="false" aria-controls="p5-c">Wheels</button>
+          </div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p5-a" aria-labelledby="t5-a" tabindex="0">Choose an exterior colour.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p5-b" aria-labelledby="t5-b" tabindex="0" hidden>Choose an interior.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p5-c" aria-labelledby="t5-c" tabindex="0" hidden>Choose wheels.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="vertical">Vertical</h2>
+    <p>Side navigation for settings or multi-section forms. It stacks above the content on small screens.</p>
+    <div class="doc-example" data-label="Vertical tabs">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-tabs aec-tabs--vertical">
+          <div class="aec-tabs__list" role="tablist" aria-label="Account" aria-orientation="vertical">
+            <button class="aec-tab" role="tab" id="t6-a" aria-selected="true" aria-controls="p6-a">Personal info</button>
+            <button class="aec-tab" role="tab" id="t6-b" aria-selected="false" aria-controls="p6-b">Co-applicant</button>
+            <button class="aec-tab" role="tab" id="t6-c" aria-selected="false" aria-controls="p6-c">Documents</button>
+            <button class="aec-tab" role="tab" id="t6-d" aria-selected="false" aria-controls="p6-d">Payment</button>
+          </div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p6-a" aria-labelledby="t6-a" tabindex="0">Name, email and phone number.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p6-b" aria-labelledby="t6-b" tabindex="0" hidden>Add a co-applicant to your credit application.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p6-c" aria-labelledby="t6-c" tabindex="0" hidden>Upload your licence and insurance.</div>
+          <div class="aec-tabs__panel" role="tabpanel" id="p6-d" aria-labelledby="t6-d" tabindex="0" hidden>Choose a payment method.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Style reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Style</th><th>Class</th><th>Selected</th><th>Use for</th></tr></thead>
+      <tbody>
+        <tr><td>Underlined</td><td>(default)</td><td><code>primary/default</code> text and 2px underline</td><td>Content sections</td></tr>
+        <tr><td>Inset</td><td><code>--inset</code></td><td>4px <code>primary/default</code> bar</td><td>Full-width section navigation</td></tr>
+        <tr><td>Contained</td><td><code>--contained</code></td><td><code>primary/default</code> pill</td><td>Two or three compact views</td></tr>
+        <tr><td>Segment</td><td><code>--segment</code></td><td><code>primary/default</code> fill</td><td>Filters such as New / Used</td></tr>
+        <tr><td>Stacked</td><td><code>--stacked</code></td><td><code>primary/default</code> fill</td><td>Configurator steps</td></tr>
+        <tr><td>Vertical</td><td><code>--vertical</code></td><td><code>bg/variant</code> with a 2px right bar</td><td>Settings and multi-section forms</td></tr>
+      </tbody>
+    </table></div>
+    <p>Add <code>.aec-tabs--md</code> for 14px labels and <code>.aec-tabs--fill</code> to stretch underlined tabs across the width.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Roles <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>role="tablist"</code>, <code>tab</code> and <code>tabpanel</code>. Each tab has <code>aria-selected</code> and <code>aria-controls</code>, and each panel has <code>aria-labelledby</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves into the tab list. Arrow keys move between tabs and activate them (up and down for vertical tabs), and Home/End jump to the first or last tab. Tab again moves into the panel.</p></div>
+      <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Tabs show a 2px inset focus ring. This is added in code, because Figma has no focus state.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Medium tab items mix three typefaces (Avenir LT Pro, Avenir Next and Chevy Sans), and some medium labels are all caps. The code uses one family in sentence case.</li>
+      <li>Inset tab labels are demi and one size smaller than the other styles, and their disabled text uses <code>bg/disabled</code>.</li>
+      <li>Hover and active look the same in the contained, segment and vertical styles.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+---
+title: Elevation
+description: Seven shadow levels from none to 2xl for layering surfaces in the DRS Chevrolet foundation.
+figma: 3769-50156
+scripts: foundations.js
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Foundations</p>
+  <h1>Elevation</h1>
+  <p class="doc-lead">Shadows show how far a surface sits above the page. The higher the surface, the larger and softer the shadow.</p>
+  <div class="doc-meta"><span>7 levels</span><span>Prefix <code>--aec-box-shadow-</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="levels">Levels</h2>
+    <p>Click a card to copy its token.</p>
+    <div class="doc-shadow-grid" data-shadows></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="guidance">Guidance</h2>
+    <ul>
+      <li>Use elevation to show layering, such as a menu over content or a modal over the page. Don't use it for decoration.</li>
+      <li>Increase elevation by one level on hover for clickable cards (for example <code>s</code> → <code>m</code>).</li>
+      <li>Pair modals with <code>--aec-color-backdrop-default</code> behind them.</li>
+    </ul>
+<pre><code>.menu { box-shadow: var(--aec-box-shadow-l); }
+.modal { box-shadow: var(--aec-box-shadow-2xl); }</code></pre>
+  </section>
+</div>

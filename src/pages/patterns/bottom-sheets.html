@@ -1,0 +1,77 @@
+---
+title: Bottom sheets
+description: Mobile bottom sheets for quick tasks — year selection in the credit application and “Where is my VIN?” in trade-in.
+figma: 5741-48899
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Overlays</p>
+  <h1>Bottom sheets</h1>
+  <p class="doc-lead">Mobile helper sheets that slide up from the bottom of the screen for a quick task, then return the shopper to the form.</p>
+  <div class="doc-meta"><span>Financing · Trade-in</span><span><code>dialog.aec-modal--bottom-sheet</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="financing">Year selection (financing)</h2>
+    <p>Used in the credit application for questions like "When did you start working here?". The years are a grid of selectable tiles.</p>
+    <div class="doc-example" data-no-code><div class="doc-example-preview"><button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-open="bs-year">Open year selection</button></div></div>
+    <dialog class="aec-modal aec-modal--bottom-sheet" id="bs-year" aria-labelledby="bs-year-t" style="max-width:480px;margin-inline:auto">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="bs-year-t" style="font-size:var(--aec-typography-heading-5-font-size)">When did you start working here?</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body">
+        <div class="aec-field"><label class="aec-field__label" for="bs-year-in">Year <span class="aec-field__required" aria-hidden="true">*</span></label><div class="aec-field__box"><input class="aec-field__input" id="bs-year-in" inputmode="numeric" readonly value="2014" required></div></div>
+        <div class="aec-option-grid" role="radiogroup" aria-label="Year" id="bs-years"></div>
+      </div>
+      <div class="aec-modal__footer"><button class="aec-btn aec-btn--primary" type="button" data-aec-close>Done</button></div>
+    </dialog>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="vin">Where is my VIN? (trade-in)</h2>
+    <p>The mobile form of the <a href="rich-tooltip.html">rich tooltip</a>.</p>
+    <div class="doc-example" data-no-code><div class="doc-example-preview"><button class="aec-link" type="button" data-aec-open="bs-vin">Where is my VIN?</button></div></div>
+    <dialog class="aec-modal aec-modal--bottom-sheet" id="bs-vin" aria-labelledby="bs-vin-t" style="max-width:480px;margin-inline:auto">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="bs-vin-t" style="font-size:var(--aec-typography-heading-5-font-size)">Where is my VIN?</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body">
+        <div class="aec-img-slot" style="height:205px;border-radius:8px"><span class="aec-icon aec-icon--40" style="--aec-icon-src:url(/assets/icons/car.svg)" aria-hidden="true"></span></div>
+        <div><p class="aec-body-2 aec-medium" style="color:var(--aec-color-text-default)">Where to find VIN?</p><p class="aec-body-3">The Vehicle Identification Number (VIN) is usually at the base of the windshield or on the driver's door jamb.</p></div>
+      </div>
+    </dialog>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Sheet</td><td>Full width, anchored to the bottom, up to 90% of the viewport height, over <code>backdrop/default</code></td></tr>
+        <tr><td>Header</td><td>56px, heading-5, close icon button, 1px bottom divider</td></tr>
+        <tr><td>Content</td><td>Padding 16/24/24, 24px gap</td></tr>
+        <tr><td>Year tile</td><td>48px tall, 4 per row, body-2 <code>text/subtle</code>. Selected: <code>bg/variant</code> with bold <code>text/default</code>.</td></tr>
+        <tr><td>Footer</td><td>A price slot or a Done button</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Dialog <span class="doc-wcag">WCAG 2.4.3</span></h3><p>Bottom sheets are modal dialogs, so focus is trapped and Esc or the close button returns focus to the field.</p></div>
+      <div class="doc-a11y-item"><h3>Year grid <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The grid is a radio group: the arrow keys move between years and the selection updates the field.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The footer primary button has an empty label in Figma.</li>
+      <li>"When did start working here?" is missing "you".</li>
+      <li>Bottom sheets have square tops, while Dialog – Share and Switch vehicle use a 16px top radius. The code uses 16px for mobile dialogs.</li>
+    </ul>
+  </section>
+</div>
+<script>
+(function () {
+  var g = document.getElementById('bs-years'), input = document.getElementById('bs-year-in');
+  for (var y = 2025; y >= 2006; y--) g.insertAdjacentHTML('beforeend', '<button class="aec-option-grid__opt" type="button" role="radio" aria-checked="' + (y === 2014) + '" value="' + y + '">' + y + '</button>');
+  g.addEventListener('aec:change', function (e) { input.value = e.detail.value; });
+})();
+</script>

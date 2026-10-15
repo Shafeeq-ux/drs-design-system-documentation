@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-brand="tb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theme preview · DRS Theme builder</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/brand-tools.css">
+<style id="tb-theme"></style>
+<style>
+  html, body { margin: 0; background: var(--aec-color-bg-default); }
+  body { padding: 24px; font-family: var(--aec-font-family-base); color: var(--aec-color-text-default); font-size: var(--aec-typography-body-1-font-size); line-height: var(--aec-typography-body-1-line-height); }
+  @media (max-width: 600px) { body { padding: 16px; } }
+</style>
+</head>
+<body>
+<!-- The Theme builder (brands/theme-builder.html) writes the theme into #tb-theme and the specimens into #specimen. -->
+<main id="specimen" class="sp-stack" aria-label="Component preview"></main>
+<script src="../js/components.js"></script>
+<script>document.addEventListener('click', function (e) { var a = e.target.closest('a[href="#"]'); if (a) e.preventDefault(); });</script>
+</body>
+</html>

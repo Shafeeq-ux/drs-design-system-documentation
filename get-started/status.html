@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Component status · DRS Design System</title>
+<meta name="description" content="Delivery status of every DRS Chevrolet foundation and component, in Figma and on this site.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3956-56584">
+<div class="doc-content">
+  <p class="doc-eyebrow">Get started</p>
+  <h1>Component status</h1>
+  <p class="doc-lead">What is ready in Figma and what is documented here. Figma status comes from the ✅ and 🚧 markers on the library's pages.</p>
+
+  <section class="doc-section">
+    <div class="doc-table-wrap"><table class="doc-table doc-status-table">
+      <thead><tr><th>Item</th><th>Category</th><th>Figma</th><th>This site</th></tr></thead>
+      <tbody id="status-rows"></tbody>
+    </table></div>
+  </section>
+</div>
+<script>
+(function () {
+  var D = 'done', W = 'wip', T = 'todo';
+  var rows = [
+    ['Colour','Foundation',D,D,'foundations/colour.html'],['Typography','Foundation',D,D,'foundations/typography.html'],['Elevation','Foundation',D,D,'foundations/elevation.html'],['Border','Foundation',D,D,'foundations/border.html'],['Spacing','Foundation',D,D,'foundations/spacing.html'],['Sizing','Foundation',W,T],['Grid system','Foundation',W,T],
+    ['Button','Inputs',D,D,'components/button.html'],['Icon button','Inputs',D,D,'components/icon-button.html'],['Button group','Inputs',W,T],['Checkbox','Inputs',D,D,'components/checkbox.html'],['Floating action button','Inputs',W,T],['Form control','Inputs',D,D,'components/form-control.html'],['Menu','Inputs',D,D,'components/menu.html'],['Radio button','Inputs',D,D,'components/radio.html'],['Rating','Inputs',W,T],['Slider','Inputs',D,D,'components/slider.html'],['Switch','Inputs',D,D,'components/switch.html'],['Text area','Inputs',W,T],['Text field','Inputs',D,D,'components/text-field.html'],['Toggle button','Inputs',D,D,'components/toggle-button.html'],['Date & time pickers','Inputs',W,T],
+    ['Avatar','Data display',D,D,'components/avatar.html'],['Badge','Data display',D,D,'components/badge.html'],['Chip','Data display',D,D,'components/chip.html'],['Divider','Data display',W,T],['List','Data display',W,T],['Tooltip','Data display',D,D,'components/tooltip.html'],['Table','Data display',D,D,'components/table.html'],
+    ['Alert','Feedback',D,D,'components/alert.html'],['Banner','Feedback',D,D,'components/banner.html'],['Backdrop','Feedback',W,T],['Progress','Feedback',W,W,'components/progress.html'],['Skeleton','Feedback',W,T],['Snackbar','Feedback',D,D,'components/snackbar.html'],['Modal','Feedback',D,D,'components/modal.html'],
+    ['Accordion','Surfaces',D,D,'components/accordion.html'],['App bar','Surfaces',W,T],['Card','Surfaces',W,T],
+    ['Bottom navigation','Navigation',W,T],['Breadcrumbs','Navigation',D,D,'components/breadcrumbs.html'],['Drawer','Navigation',W,T],['Header','Navigation',D,D,'components/header.html'],['Link','Navigation',D,D,'components/link.html'],['Pagination','Navigation',W,W,'components/pagination.html'],['Speed dial','Navigation',W,T],['Stepper','Navigation',W,T],['Tabs','Navigation',D,D,'components/tabs.html'],
+    ['Icons','Library',D,D,'foundations/icons.html'],['Illustrations','Library',D,D,'foundations/illustrations.html'],['Images','Library',W,T]
+  ];
+  var label = { done: 'Ready', wip: 'In progress', todo: 'Not started' };
+  var pill = function (s) { return '<span class="doc-pill is-' + s + '">' + label[s] + '</span>'; };
+  document.getElementById('status-rows').innerHTML = rows.map(function (r) {
+    var name = r[4] ? '<a href="../' + r[4] + '">' + r[0] + '</a>' : r[0];
+    return '<tr><td>' + name + '</td><td>' + r[1] + '</td><td>' + pill(r[2]) + '</td><td>' + pill(r[3]) + '</td></tr>';
+  }).join('');
+})();
+</script>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

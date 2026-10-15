@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trade-in cards · DRS Design System</title>
+<meta name="description" content="Trade-in vehicle row, collapsible trade-in summary with valuation and acknowledgement, photo upload, add trade-in and garage cards.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="228-106132" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Checkout</p>
+  <h1>Trade-in cards</h1>
+  <p class="doc-lead">Cards for the Trade-In step: add a vehicle, show its estimated value, apply it to the deal and upload photos for a more accurate offer.</p>
+  <div class="doc-meta"><span>6 Figma sets</span><span><code>.aec-row-card</code> · <code>.aec-valuation</code> · <code>.aec-photo-prompt</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="add">Add a trade-in</h2>
+    <div class="doc-example" data-label="Add trade-in and garage">
+      <div class="doc-example-preview is-stretch">
+        <article class="aec-card aec-row-card" style="max-width:477px"><h3 class="aec-row-card__title" style="flex:1;font-size:var(--aec-typography-heading-6-font-size)">Do you have a vehicle to trade in?</h3><button class="aec-btn aec-btn--standard aec-btn--sm" type="button">Add vehicle</button></article>
+        <article class="aec-card aec-row-card">
+          <span class="aec-img-slot aec-row-card__thumb"></span>
+          <div class="aec-row-card__body"><h3 class="aec-row-card__title aec-row-card__title--lg">2019 Chevrolet Equinox LT</h3><p class="aec-row-card__text">VIN 1GNSKTKL3MR102994 • Purchased Jan 12, 2019</p></div>
+          <div class="aec-row-card__aside"><button class="aec-btn aec-btn--standard aec-btn--sm" type="button">Trade in</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="summary">Trade-in summary</h2>
+    <p>The vehicle row (on <code>bg/variant</code>) followed by the valuation. The shopper must accept the acknowledgement before "Apply trade-in" is enabled. Once applied, the button reads "✓ Trade-in applied" and the card border turns blue.</p>
+    <div class="doc-example" data-label="Trade-in summary">
+      <div class="doc-example-preview is-stretch">
+        <article class="aec-card" id="ti-card">
+          <div class="aec-row-card aec-row-card--tinted" style="border:0">
+            <span class="aec-img-slot aec-row-card__thumb" style="background:var(--aec-color-bg-default)"></span>
+            <div class="aec-row-card__body"><h3 class="aec-row-card__title aec-row-card__title--lg">2019 Chevrolet Equinox LT</h3><p class="aec-row-card__text">VIN 1GNSKTKL3MR102994 • 24,000 miles</p><p class="aec-row-card__text"><b>Amount owed:</b> <span class="aec-trade-owed">−$2,000.00</span></p></div>
+            <div class="aec-row-card__aside"><button class="aec-btn aec-btn--primary aec-btn--plain aec-btn--sm" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span>Edit vehicle</button><button class="aec-btn aec-btn--destructive aec-btn--plain aec-btn--sm" type="button" style="padding-inline:0"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trash-simple.svg)" aria-hidden="true"></span>Delete vehicle</button></div>
+          </div>
+          <div class="aec-card__body" style="gap:16px">
+            <div class="aec-valuation">
+              <div class="aec-valuation__top"><span class="aec-img-slot aec-valuation__logo">Valuation logo</span><div class="aec-valuation__value"><span>Estimated trade-in value</span><strong>$5,000.00</strong></div><button class="aec-btn aec-btn--primary" type="button" id="ti-apply" disabled>Apply trade-in</button></div>
+              <label class="aec-control"><input class="aec-checkbox" type="checkbox" id="ti-ack"><span class="aec-form-label"><span class="aec-form-label__text">I acknowledge that the trade-in value is only an estimate based on the information I provided. The final value will be determined by the dealer.</span></span></label>
+            </div>
+            <p class="aec-disclaimer">The value shown is based on the customer's data. The estimated trade-in value is subject to vehicle inspection and verification by the dealer.</p>
+            <div class="aec-photo-prompt">
+              <div class="aec-photo-prompt__head">
+                <span class="aec-photo-prompt__icon"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/tradein.svg)" aria-hidden="true"></span></span>
+                <div class="aec-photo-prompt__text"><b>Get a more accurate trade-in value by uploading vehicle photos <span style="font-weight:400;color:var(--aec-color-text-variant)">(0/14 uploaded)</span></b><small>Detailed photos help us assess your vehicle better.</small></div>
+                <button class="aec-btn aec-btn--primary aec-btn--plain aec-btn--sm" type="button" aria-expanded="false" aria-controls="ti-photos" id="ti-photos-btn">Upload <span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button>
+              </div>
+              <div id="ti-photos" hidden class="aec-stack">
+                <div class="aec-photo-section"><h4>Exterior <small>(JPEG, PNG, WEBP · 15 MB per image)</small></h4>
+                  <div class="aec-upload-grid" data-upload-grid="exterior"></div></div>
+                <div class="aec-photo-section"><h4>Interior</h4>
+                  <div class="aec-upload-grid" data-upload-grid="interior"></div></div>
+                <p class="aec-disclaimer">You won't be able to add photos after you submit your personal information.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="collapsed">Collapsed trade-in</h2>
+    <p>On the review page the trade-in collapses to one row showing the guaranteed value. It expands into the summary above.</p>
+    <div class="doc-example" data-label="Trade-in info (collapsed)">
+      <div class="doc-example-preview is-stretch">
+        <article class="aec-card aec-row-card" style="padding:8px 16px">
+          <span class="aec-img-slot aec-row-card__thumb aec-row-card__thumb--sm"></span>
+          <div class="aec-row-card__body"><h3 class="aec-row-card__title aec-row-card__title--lg">2019 Chevrolet Equinox LT</h3><span class="aec-row-card__text">VIN 1GNSKTKL3MR102994 • 23,000 miles</span></div>
+          <div class="aec-row-card__aside"><div class="aec-row-card__split"><span class="aec-row-card__value">$10,000.00</span><span class="aec-row-card__label">Guaranteed trade-in value</span></div><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Expand trade-in" aria-expanded="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-circle-down.svg)" aria-hidden="true"></span></button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="photo-tile">Photo upload tile</h2>
+    <p>Each tile shows a line drawing of the required angle. Drop a file on it or click to browse. A selected image replaces the drawing.</p>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>State</th><th>Look</th></tr></thead>
+      <tbody>
+        <tr><td>Empty</td><td>Body-2 medium label, car-angle drawing, "Drag &amp; drop or <u>browse</u>"</td></tr>
+        <tr><td>Drag over</td><td><code>primary/default</code> border on a <code>primary/subtle</code> background</td></tr>
+        <tr><td>Uploading</td><td>Spinner with "Uploading file / Please wait…"</td></tr>
+        <tr><td>Added</td><td>The photo fills the slot, with a green check and a more menu (Re-upload, Delete)</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Upload tiles <span class="doc-wcag">WCAG 2.1.1 · 4.1.2</span></h3><p>Each tile contains a real <code>&lt;input type="file"&gt;</code> labelled with the angle, so it works with the keyboard and screen readers. Dragging and dropping is an extra, not the only way.</p></div>
+      <div class="doc-a11y-item"><h3>Disabled until acknowledged</h3><p>Explain why "Apply trade-in" is disabled. The checkbox text sits directly above the button.</p></div>
+      <div class="doc-a11y-item"><h3>Money owed</h3><p>Show the amount owed with a minus sign and a label, not just red text.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>"Trad-in photo upload" (set name typo). The upload counts don't agree (0/32 and 1/12).</li>
+      <li>The Card – Trade-In row uses a <code>bg/variant</code> fill with no border, while the cards around it are white with a border.</li>
+      <li>There is a trailing space in the VIN text layers, and the mileage copy is inconsistent.</li>
+      <li>Valuation provider logos (KBB, Black Book, JD Power) and vehicle photos are image slots. The car-angle line drawings come from the Figma file (<code>assets/patterns/card-upload/</code>).</li>
+    </ul>
+  </section>
+</div>
+<script>
+(function () {
+  var ack = document.getElementById('ti-ack'), apply = document.getElementById('ti-apply'), card = document.getElementById('ti-card');
+  ack.addEventListener('change', function () { apply.disabled = !ack.checked; });
+  apply.addEventListener('click', function () { var on = !card.classList.contains('is-selected'); card.classList.toggle('is-selected', on); apply.classList.toggle('aec-btn--outline', on); apply.textContent = on ? '✓ Trade-in applied' : 'Apply trade-in'; ack.disabled = on; });
+  var btn = document.getElementById('ti-photos-btn'), panel = document.getElementById('ti-photos');
+  btn.addEventListener('click', function () { var open = panel.hidden; panel.hidden = !open; btn.setAttribute('aria-expanded', String(open)); });
+  var sets = { exterior: [['Front', 'front'], ['Rear', 'rear'], ['Driver side', 'driver-side'], ['Passenger side', 'passenger-side'], ['Front left wheel', 'front-left-wheel'], ['Front right wheel', 'front-right-wheel'], ['Rear left wheel', 'rear-left-wheel'], ['Rear right wheel', 'rear-right-wheel'], ['Other', 'other']], interior: [['Dashboard', 'dashboard'], ['Odometer', 'odometer'], ['Interior (front)', 'interior-front'], ['Interior (back)', 'interior-back']] };
+  document.querySelectorAll('[data-upload-grid]').forEach(function (g) {
+    sets[g.getAttribute('data-upload-grid')].forEach(function (s, i) {
+      var id = 'up-' + s[1];
+      g.insertAdjacentHTML('beforeend', '<div class="aec-upload-tile"><span class="aec-upload-tile__label" id="' + id + '-l">' + s[0] + '</span><img class="aec-upload-tile__art" src="../assets/patterns/card-upload/car-' + s[1] + '-img.svg" alt=""><span>Drag &amp; drop or <u>browse</u></span><input type="file" accept="image/*" aria-labelledby="' + id + '-l"></div>');
+    });
+  });
+  document.querySelectorAll('.aec-upload-tile').forEach(function (t) {
+    var input = t.querySelector('input'), img = t.querySelector('img');
+    ['dragenter', 'dragover'].forEach(function (e) { t.addEventListener(e, function (ev) { ev.preventDefault(); t.classList.add('is-dragover'); }); });
+    ['dragleave', 'drop'].forEach(function (e) { t.addEventListener(e, function () { t.classList.remove('is-dragover'); }); });
+    t.addEventListener('drop', function (ev) { ev.preventDefault(); if (ev.dataTransfer.files[0]) show(ev.dataTransfer.files[0]); });
+    input.addEventListener('change', function () { if (input.files[0]) show(input.files[0]); });
+    function show(f) { if (!/^image\//.test(f.type)) return; img.src = URL.createObjectURL(f); t.classList.add('is-added'); }
+  });
+})();
+</script>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+---
+title: Banner
+description: Banners show a short, neutral message across the top of a page or section.
+figma: 4911-57297
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Feedback</p>
+  <h1>Banner</h1>
+  <p class="doc-lead">A compact strip with an icon and a short, neutral message, shown across the top of a page or section.</p>
+  <div class="doc-meta"><span>2 Figma variants</span><span><code>.aec-banner</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-example" data-label="Banner">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">This vehicle is in transit to your dealer.</p></div></div></div>
+        <div class="aec-banner"><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/in-transit.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">Estimated arrival: Nov 12</p><p class="aec-banner__message">We'll email you when it's ready for pickup.</p></div></div></div>
+        <div class="aec-banner" data-aec-dismissable><div class="aec-banner__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span><div class="aec-banner__content"><p class="aec-banner__title">0% APR for 60 months on select 2025 models.</p><p class="aec-banner__message">Offer ends Dec 2.</p></div></div>
+          <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" data-aec-dismiss><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </div>
+    <p>From 768px up, the title and description sit on one line. On mobile they stack, and the padding drops to 12/16px.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Surface</td><td><code>bg/variant</code>, no border, <code>border-radius-default</code> (8px)</td></tr>
+        <tr><td>Padding</td><td>16px (desktop) · 12/16px (mobile)</td></tr>
+        <tr><td>Icon</td><td>16px, <code>icon/default</code>, 8px from the text</td></tr>
+        <tr><td>Title</td><td>body-2 bold, <code>text/default</code></td></tr>
+        <tr><td>Description</td><td>body-3, <code>text/subtle</code></td></tr>
+        <tr><td>Close (optional)</td><td>Small neutral icon button</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <ul>
+      <li>Banners are neutral and have no status colours. For success, warning or error, use an <a href="alert.html">alert</a>.</li>
+      <li>Show at most one banner per page region, and keep the message to one line on desktop.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Landmark <span class="doc-wcag">WCAG 1.3.1</span></h3><p>A site-wide banner can be wrapped in <code>&lt;aside aria-label="Announcement"&gt;</code>. If it's added after the page loads, give it <code>role="status"</code>.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Banner has an 8px radius, while Alert and Tooltip are square and Snackbar is 4px. Consider aligning these.</li>
+      <li>The border style is set but has a stroke weight of 0. The page also holds loose Avenir font-specimen layers.</li>
+    </ul>
+  </section>
+</div>

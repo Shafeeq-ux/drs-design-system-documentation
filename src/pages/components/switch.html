@@ -1,0 +1,88 @@
+---
+title: Switch
+description: A switch turns a single setting on or off, with immediate effect.
+figma: 3769-50176
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Switch</h1>
+  <p class="doc-lead">Turns a single setting on or off, with immediate effect.</p>
+  <div class="doc-meta"><span>2 Figma component sets</span><span><code>.aec-switch</code></span></div>
+
+  <div class="doc-intro">
+    <p>Use a switch when a change applies straight away, without a save step, for example <em>Show monthly price</em>. If the choice is only applied when a form is submitted, use a <a href="checkbox.html">checkbox</a>.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-example" data-label="Switch with label">
+      <div class="doc-example-preview is-col">
+        <label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Show monthly payment</span></span></label>
+        <label class="aec-control"><input class="aec-switch" type="checkbox" role="switch"><span class="aec-form-label"><span class="aec-form-label__text">Include tax and fees</span><span class="aec-form-label__desc">Estimated for ZIP 48226</span></span></label>
+        <label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" disabled><span class="aec-form-label"><span class="aec-form-label__text">Apply loyalty bonus</span></span></label>
+      </div>
+    </div>
+    <h3 class="doc-h3" id="position">Label position</h3>
+    <p>In settings lists, put the label first and the switch at the end of the row, with <code>.aec-control--between</code>.</p>
+    <div class="doc-example" data-label="Label first">
+      <div class="doc-example-preview is-stretch">
+        <label class="aec-control aec-control--between" style="max-width:360px"><input class="aec-switch" type="checkbox" role="switch" checked><span class="aec-form-label"><span class="aec-form-label__text">Notifications</span></span></label>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="doc-states">
+      <div class="doc-state"><span class="doc-state-label">Off</span><input class="aec-switch" type="checkbox" role="switch" aria-label="Off"></div>
+      <div class="doc-state"><span class="doc-state-label">On</span><input class="aec-switch" type="checkbox" role="switch" checked aria-label="On"></div>
+      <div class="doc-state"><span class="doc-state-label">Focus</span><input class="aec-switch" type="checkbox" role="switch" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px" aria-label="Focus"></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled off</span><input class="aec-switch" type="checkbox" role="switch" disabled aria-label="Disabled off"></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled on</span><input class="aec-switch" type="checkbox" role="switch" disabled checked aria-label="Disabled on"></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <label class="aec-control"><input class="aec-switch" type="checkbox" role="switch" checked tabindex="-1" aria-label="Example"><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 64px);top:2px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 26px);bottom:2px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 30px);top:2px">3</span>
+      </div>
+      <ol>
+        <li><span><strong>Track</strong>48×24px, fully rounded, 1px <code>secondary/default</code> border. Filled when on.</span></li>
+        <li><span><strong>Handle</strong>20px circle with <code>shadow/s</code>. Dark when off, white when on.</span></li>
+        <li><span><strong>Label</strong>body-2, 8px from the track.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Name the setting, not the action: <em>Show monthly payment</em>, not <em>Turn on monthly payment</em>.</li>
+      <li>Don't add "On" or "Off" text next to the switch. The state is already shown visually and announced.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Role <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>&lt;input type="checkbox" role="switch"&gt;</code>. Screen readers then announce "switch, on" or "switch, off".</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Space toggles the switch. Focus shows the 2px ring around the track.</p></div>
+      <div class="doc-a11y-item"><h3>Not by colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>The handle's position shows the state as well as the fill.</p></div>
+      <div class="doc-a11y-item"><h3>Announce changes <span class="doc-wcag">WCAG 4.1.3</span></h3><p>If the switch updates content elsewhere, such as prices, announce the change through an <code>aria-live="polite"</code> region.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>"On" is dark (<code>secondary/default</code>), not primary blue.</li>
+      <li>The handle shadow is a raw effect, not an effect style. The code uses <code>shadow/s</code>.</li>
+      <li>The track border is 1px here, but checkbox and radio use 1.5px.</li>
+    </ul>
+  </section>
+</div>

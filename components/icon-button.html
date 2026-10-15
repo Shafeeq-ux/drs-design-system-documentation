@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icon button · DRS Design System</title>
+<meta name="description" content="A compact, icon-only button for common actions such as close, edit, share or more options.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50169">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Icon button</h1>
+  <p class="doc-lead">A compact button that shows only an icon. Use it for common, recognisable actions such as close, edit, share or more options.</p>
+  <div class="doc-meta"><span>3 Figma component sets · 216 variants</span><span><code>.aec-icon-btn</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3>Primary</h3><p>Blue. Use it for an action that relates to the main task.</p></div>
+        <div class="doc-variant-demo">
+          <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" type="button" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button>
+          <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--outline" type="button" aria-label="Edit"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button>
+          <button class="aec-icon-btn aec-icon-btn--primary" type="button" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button>
+        </div></div>
+      <div class="doc-variant"><div><h3>Neutral</h3><p>Dark grey. The default for utility actions such as close and more options.</p></div>
+        <div class="doc-variant-demo">
+          <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--filled" type="button" aria-label="Search"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/search.svg)" aria-hidden="true"></span></button>
+          <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Filter"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/sliders-horizontal-sort.svg)" aria-hidden="true"></span></button>
+          <button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+        </div></div>
+      <div class="doc-variant"><div><h3>Inverse</h3><p>For dark surfaces.</p></div>
+        <div class="doc-variant-demo is-inverse">
+          <button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--filled" type="button" aria-label="Menu"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/hamburger.svg)" aria-hidden="true"></span></button>
+          <button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--outline" type="button" aria-label="Save"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span></button>
+          <button class="aec-icon-btn aec-icon-btn--inverse" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+        </div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="shape-size">Shape and size</h2>
+    <p>Rectangle (8px radius) is the default. Circle (<code>--circle</code>) suits floating actions and image overlays.</p>
+    <div class="doc-example" data-label="Sizes and shapes">
+      <div class="doc-example-preview">
+        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline aec-icon-btn--lg" type="button" aria-label="Previous"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" type="button" aria-label="Previous"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline aec-icon-btn--sm" type="button" aria-label="Previous"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle aec-icon-btn--lg" type="button" aria-label="Next"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle" type="button" aria-label="Next"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
+        <button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled aec-icon-btn--circle aec-icon-btn--sm" type="button" aria-label="Next"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Class</th><th>Box</th><th>Icon</th></tr></thead>
+      <tbody>
+        <tr><td>Large</td><td><code>.aec-icon-btn--lg</code></td><td>48×48</td><td>24px</td></tr>
+        <tr><td>Medium (default)</td><td>—</td><td>40×40</td><td>24px</td></tr>
+        <tr><td>Small</td><td><code>.aec-icon-btn--sm</code></td><td>24×24</td><td>16px</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="doc-states">
+      <div class="doc-state"><span class="doc-state-label">Default</span><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></div>
+      <div class="doc-state"><span class="doc-state-label">Hover / pressed</span><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" style="background:var(--aec-color-primary-hover)" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></div>
+      <div class="doc-state"><span class="doc-state-label">Focus</span><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px" aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" disabled aria-label="Add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span></button></div>
+      <div class="doc-state"><span class="doc-state-label">Outline disabled</span><button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--outline" disabled aria-label="Edit"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span></button></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview"><button class="aec-icon-btn aec-icon-btn--neutral" tabindex="-1" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button><button class="aec-icon-btn aec-icon-btn--neutral" tabindex="-1" aria-label="Share"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span></button></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Use universally understood icons, and add a <a href="tooltip.html">tooltip</a> with the action name.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><button class="aec-icon-btn aec-icon-btn--primary aec-icon-btn--filled" tabindex="-1" aria-label="Apply"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/apply-credit.svg)" aria-hidden="true"></span></button></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use an icon button for a primary or unfamiliar action such as <em>Apply for credit</em>. Use a labelled <a href="button.html">button</a>.</div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Accessible name <span class="doc-wcag">WCAG 4.1.2 · 1.1.1</span></h3><p>Every icon button needs <code>aria-label</code>, such as <code>aria-label="Close"</code>. Mark the icon itself <code>aria-hidden="true"</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>The small size (24px) meets the minimum, but on touch screens use 40px or 48px.</p></div>
+      <div class="doc-a11y-item"><h3>Toggles <span class="doc-wcag">WCAG 4.1.2</span></h3><p>For an on/off action such as <em>Save vehicle</em>, add <code>aria-pressed</code> and keep the same label.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The Figma default variant is <code>medium / plain / rectangle</code>, and the code uses the same defaults.</li>
+      <li>Neutral filled and outline go back to the default colour when pressed. The code keeps the hover colour.</li>
+      <li>Primary disabled outline and plain use #c3cfd9 for the icon, but Neutral uses <code>icon/disabled</code> (#b3b3b3).</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

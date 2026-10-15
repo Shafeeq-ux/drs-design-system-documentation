@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle button · DRS Design System</title>
+<meta name="description" content="Toggle buttons and segmented groups let people switch an option on, or choose one option from a small set.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50180">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Toggle button</h1>
+  <p class="doc-lead">A button that stays pressed, or a segmented group of them for choosing one option from a small set, such as a loan term or vehicle trim.</p>
+  <div class="doc-meta"><span>Figma Option 1</span><span><code>.aec-toggle</code> · <code>.aec-toggle-group</code></span></div>
+
+  <div class="doc-intro">
+    <p>Figma has three competing explorations (Options 1–3). This site implements <strong>Option 1</strong>, the newest set and the only one with icons on by default. See the <a href="#figma-notes">Figma notes</a>.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="toggle">Toggle button</h2>
+    <p>A blue outline that fills when pressed. Use it for an independent on/off filter, such as <em>Electric only</em>.</p>
+    <div class="doc-example" data-label="Toggle buttons">
+      <div class="doc-example-preview">
+        <button class="aec-toggle" type="button" aria-pressed="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/electric.svg)" aria-hidden="true"></span>Electric</button>
+        <button class="aec-toggle" type="button" aria-pressed="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/drive-train.svg)" aria-hidden="true"></span>AWD</button>
+        <button class="aec-toggle" type="button" aria-pressed="false">Offers <span class="aec-toggle__badge">3</span></button>
+        <button class="aec-toggle" type="button" aria-pressed="false" disabled>Hybrid</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="group">Toggle button group</h2>
+    <p>A segmented control for picking exactly one option. By default the items share a 500px maximum width equally. Add <code>.aec-toggle-group--hug</code> so items size to their content.</p>
+    <div class="doc-example" data-label="Toggle button group">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-toggle-group" role="radiogroup" aria-label="Loan term">
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">36 mo</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">48 mo</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">60 mo</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">72 mo</button>
+        </div>
+        <div class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Annual mileage">
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">10,000 mi</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">12,000 mi</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" disabled>15,000 mi</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="doc-states">
+      <div class="doc-state"><span class="doc-state-label">Default</span><button class="aec-toggle" aria-pressed="false" tabindex="-1">Label</button></div>
+      <div class="doc-state"><span class="doc-state-label">Hover</span><button class="aec-toggle" aria-pressed="false" tabindex="-1" style="border-color:var(--aec-color-primary-hover);color:var(--aec-color-primary-hover)">Label</button></div>
+      <div class="doc-state"><span class="doc-state-label">Selected</span><button class="aec-toggle" aria-pressed="true" tabindex="-1">Label</button></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><button class="aec-toggle" aria-pressed="false" disabled>Label</button></div>
+      <div class="doc-state"><span class="doc-state-label">Group item</span><button class="aec-toggle-group__item" tabindex="-1" style="flex:none">Label</button></div>
+      <div class="doc-state"><span class="doc-state-label">Group hover</span><button class="aec-toggle-group__item" tabindex="-1" style="flex:none;border-color:var(--aec-color-action-border-hover);color:var(--aec-color-text-default)">Label</button></div>
+      <div class="doc-state"><span class="doc-state-label">Group selected</span><button class="aec-toggle-group__item" aria-pressed="true" tabindex="-1" style="flex:none">Label</button></div>
+      <div class="doc-state"><span class="doc-state-label">Group disabled</span><button class="aec-toggle-group__item" disabled style="flex:none">Label</button></div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Toggle</th><th>Group</th><th>Height</th><th>Label</th></tr></thead>
+      <tbody>
+        <tr><td>Large (default)</td><td>—</td><td>—</td><td>48px</td><td>16px</td></tr>
+        <tr><td>Medium</td><td><code>.aec-toggle--md</code></td><td><code>.aec-toggle-group--md</code></td><td>40px</td><td>14px</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <ul>
+      <li>Use a group for two to five short, mutually exclusive options that people compare side by side. For more options, use a select or radio buttons.</li>
+      <li>Keep labels to one or two words, all about the same length.</li>
+      <li>A group always has one option selected. Don't use it for actions.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Toggle state <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Single toggles use <code>aria-pressed</code>. Groups use <code>role="radiogroup"</code> with <code>role="radio"</code> and <code>aria-checked</code>, plus an <code>aria-label</code> on the group.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>In a group, Tab moves to the selected item, and the arrow keys and Home/End change the selection (<code>components.js</code>).</p></div>
+      <div class="doc-a11y-item"><h3>Not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>A selected group item gets a thicker border and darker text as well as the colour change.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The Toggle Button, tab item and group each exist in three options. Decide which one ships, then remove the others.</li>
+      <li>In Option 2, selected and unselected look the same. In Option 3, disabled doesn't grey out the label.</li>
+      <li>The tab-item masters are 24px tall but stretch to 40 or 48px inside groups.</li>
+      <li>The code adds a 1px inner shadow to selected group items so they stand out more.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

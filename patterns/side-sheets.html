@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Side sheets · DRS Design System</title>
+<meta name="description" content="Right side sheets in three widths with an optional navigation rail, scrolling content and a price + action footer; payment options and document preview layouts.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="529-52006" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Overlays</p>
+  <h1>Side sheets</h1>
+  <p class="doc-lead">A right-hand panel that shows the details of one checkout item, such as a rebate, accessory, protection plan or trade-in, and lets the shopper add it to the deal.</p>
+  <div class="doc-meta"><span>Small 532 · Default 768 · Large 1024</span><span><code>dialog.aec-sheet</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="demo">Try it</h2>
+    <div class="doc-example" data-no-code>
+      <div class="doc-example-preview">
+        <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-open="sheet-sm">Small</button>
+        <button class="aec-btn aec-btn--primary" type="button" data-aec-open="sheet-md">Default</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-open="sheet-lg">Large with navigation</button>
+      </div>
+    </div>
+
+    <dialog class="aec-modal aec-modal--right-sheet aec-sheet aec-sheet--sm" id="sheet-sm" aria-labelledby="sheet-sm-t">
+      <div class="aec-sheet__header"><div class="aec-sheet__titles"><h2 class="aec-sheet__title" id="sheet-sm-t">Home Charging Kit</h2></div><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-sheet__main"><div class="aec-sheet__content">
+        <div class="aec-img-slot" style="aspect-ratio:16/9;border-radius:8px"><span class="aec-icon aec-icon--40" style="--aec-icon-src:url(/assets/icons/charge.svg)" aria-hidden="true"></span></div>
+        <h3>Free AC wall-mounted charger</h3>
+        <p>Charge up to 7× faster than a standard outlet. Includes a $500 installation credit with a certified electrician.</p>
+        <p class="aec-body-3">Installation availability varies by region. See dealer for details.</p>
+      </div></div>
+      <div class="aec-sheet__footer"><div class="aec-price-block"><span class="aec-price-block__value">$0</span><span class="aec-price-block__unit">with purchase</span></div><div class="aec-sheet__actions"><button class="aec-toggle" type="button" aria-pressed="false" data-on="Added" data-off="Add" data-icon-on="check" data-icon-off="add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span><span class="aec-toggle__label">Add</span></button></div></div>
+    </dialog>
+
+    <dialog class="aec-modal aec-modal--right-sheet aec-sheet" id="sheet-md" aria-labelledby="sheet-md-t">
+      <div class="aec-sheet__header"><div class="aec-sheet__titles"><h2 class="aec-sheet__title" id="sheet-md-t">First Responders Program</h2><p class="aec-sheet__subtitle">Rebate</p></div><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-sheet__main"><div class="aec-sheet__content">
+        <span class="aec-chip aec-chip--info aec-chip--success aec-chip--sm" style="align-self:flex-start">Eligible</span>
+        <h3>$500 bonus cash</h3>
+        <p>Available to active and retired police officers, firefighters, EMTs and 911 dispatchers. Proof of eligibility is required before delivery.</p>
+        <div class="aec-field"><label class="aec-field__label" for="badge-id">Badge or employee ID</label><div class="aec-field__box"><input class="aec-field__input" id="badge-id" placeholder="e.g. 48213"></div></div>
+        <div class="aec-notice aec-notice--slim aec-notice--info"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><p class="aec-notice__text">You can upload proof later in Documents.</p></div>
+      </div></div>
+      <div class="aec-sheet__footer"><div class="aec-price-block"><span class="aec-price-block__label">Savings:</span><span class="aec-price-block__value">−$500</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" role="img" aria-label="Applied before tax"></span></div><div class="aec-sheet__actions"><button class="aec-toggle" type="button" aria-pressed="false" data-on="Added" data-off="Add" data-icon-on="check" data-icon-off="add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span><span class="aec-toggle__label">Add</span></button></div></div>
+    </dialog>
+
+    <dialog class="aec-modal aec-modal--right-sheet aec-sheet aec-sheet--lg" id="sheet-lg" aria-labelledby="sheet-lg-t">
+      <div class="aec-sheet__header"><div class="aec-sheet__titles"><h2 class="aec-sheet__title" id="sheet-lg-t">Plans &amp; Services</h2></div><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-sheet__main">
+        <div class="aec-sheet-nav" role="tablist" aria-orientation="vertical" aria-label="Plans">
+          <button class="aec-sheet-nav__item" role="tab" id="sn-1" aria-selected="true" aria-controls="sp-1"><span class="aec-img-slot aec-sheet-nav__thumb"></span><span class="aec-sheet-nav__label">GM Care Near New</span></button>
+          <button class="aec-sheet-nav__item" role="tab" id="sn-2" aria-selected="false" aria-controls="sp-2"><span class="aec-img-slot aec-sheet-nav__thumb"></span><span class="aec-sheet-nav__label">Tire &amp; Wheel</span></button>
+          <button class="aec-sheet-nav__item" role="tab" id="sn-3" aria-selected="false" aria-controls="sp-3"><span class="aec-img-slot aec-sheet-nav__thumb"></span><span class="aec-sheet-nav__label">Paint Protection</span></button>
+          <button class="aec-sheet-nav__item" role="tab" id="sn-4" aria-selected="false" aria-controls="sp-4"><span class="aec-img-slot aec-sheet-nav__thumb"></span><span class="aec-sheet-nav__label">GAP Coverage</span></button>
+        </div>
+        <div class="aec-sheet__content" role="tabpanel" id="sp-1" aria-labelledby="sn-1">
+          <div class="aec-img-slot" style="aspect-ratio:16/9;border-radius:8px">Video / image</div>
+          <h3>GM Care Near New</h3>
+          <a class="aec-link" href="#demo"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/document.svg)" aria-hidden="true"></span>Product brochure (2.9 MB)</a>
+          <p>Covers more than 1,400 components after the factory warranty ends, with $0 deductible options and roadside assistance.</p>
+        </div>
+        <div class="aec-sheet__content" role="tabpanel" id="sp-2" aria-labelledby="sn-2" hidden><h3>Tire &amp; Wheel</h3><p>Repair or replacement for road-hazard damage to tires and wheels.</p></div>
+        <div class="aec-sheet__content" role="tabpanel" id="sp-3" aria-labelledby="sn-3" hidden><h3>Paint Protection</h3><p>Protects exterior paint from environmental damage.</p></div>
+        <div class="aec-sheet__content" role="tabpanel" id="sp-4" aria-labelledby="sn-4" hidden><h3>GAP Coverage</h3><p>Covers the difference between your loan balance and the vehicle's value.</p></div>
+      </div>
+      <div class="aec-sheet-pager"><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Previous plan"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/chevron-circle-left.svg)" aria-hidden="true"></span></button><div><strong>GM Care Near New</strong><span>1/4</span></div><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Next plan"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/chevron-circle-right.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-sheet__footer"><div class="aec-price-block"><span class="aec-price-block__value">$48.67</span><span class="aec-price-block__unit">/mo.</span><span class="aec-price-block__sep">•</span><span class="aec-price-block__meta">Total price: $3,044.00</span></div><div class="aec-sheet__actions"><button class="aec-toggle" type="button" aria-pressed="true" data-on="Added" data-off="Add" data-icon-on="check" data-icon-off="add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/check.svg)" aria-hidden="true"></span><span class="aec-toggle__label">Added</span></button></div></div>
+    </dialog>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-example" data-label="Side sheet shell">
+      <div class="doc-example-preview is-plain" style="display:block;padding:16px">
+        <div class="aec-modal aec-sheet is-static" role="dialog" aria-labelledby="st-sheet-t" style="width:100%;max-width:640px;height:440px">
+          <div class="aec-sheet__header"><div class="aec-sheet__titles"><h2 class="aec-sheet__title" id="st-sheet-t">Title</h2></div><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+          <div class="aec-sheet__main"><div class="aec-sheet__content"><div class="aec-img-slot" style="flex:1;border-radius:8px">Content slot (scrolls)</div></div></div>
+          <div class="aec-sheet__footer"><div class="aec-price-block"><span class="aec-price-block__value">$48.67</span><span class="aec-price-block__unit">/mo.</span></div><div class="aec-sheet__actions"><button class="aec-toggle" type="button" aria-pressed="false" data-on="Added" data-off="Add" data-icon-on="check" data-icon-off="add"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/add.svg)" aria-hidden="true"></span><span class="aec-toggle__label">Add</span></button></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Spec</th></tr></thead>
+      <tbody>
+        <tr><td>Overlay</td><td><code>backdrop/default</code>. The sheet is anchored right, full height, with no radius.</td></tr>
+        <tr><td>Header</td><td>56px, padding 16/24, heading-5 title with an optional body-3 subtitle, neutral close icon button, 1px bottom <code>border/default</code></td></tr>
+        <tr><td>Navigation rail (optional)</td><td>256px, <code>bg/variant</code>. 68px rows with a 64×36 thumbnail or 16px icon. The selected row is white with a 4px <code>primary/default</code> left bar.</td></tr>
+        <tr><td>Content</td><td>Scrolls. 24px padding and gap (16/24 on mobile).</td></tr>
+        <tr><td>Footer</td><td>72px (80px on mobile), padding 16/24, 1px top border. A price slot on the left and actions on the right, usually a <a href="../components/toggle-button.html">toggle button</a> for Add / Added.</td></tr>
+        <tr><td>Widths</td><td>532 (<code>--sm</code>), 768 (default), 1024 (<code>--lg</code>, 256 nav + 768 content). Full width below 1024px.</td></tr>
+        <tr><td>Mobile</td><td>The navigation rail becomes a previous/next pager above the footer.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="price">Price slot</h2>
+    <p>The left side of the footer shows one of six price layouts.</p>
+    <div class="doc-example" data-label="Price slot variants">
+      <div class="doc-example-preview is-col">
+        <div class="aec-price-block"><span class="aec-price-block__value">$48.67</span><span class="aec-price-block__unit">/mo.</span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span></div>
+        <div class="aec-price-block"><span class="aec-price-block__label">Total cart value:</span><span class="aec-price-block__value">$1,000*</span></div>
+        <div class="aec-price-block"><span class="aec-price-block__value">$48.67</span><span class="aec-price-block__unit">/mo.</span><span class="aec-price-block__sep">•</span><span class="aec-price-block__meta">Total price: $3,044.00</span></div>
+        <div class="aec-price-block aec-price-block--stacked"><span class="aec-price-block__meta">12 months | 5,000 miles <a class="aec-link aec-link--sm" href="#price">Edit</a></span><span><span class="aec-price-block__value" style="font-size:var(--aec-typography-heading-5-font-size)">$36.99</span><span class="aec-price-block__unit">/mo. • Total $810.00</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="conflict">Conflict resolution</h2>
+    <p>When an added item conflicts with something already selected, a panel slides up from the bottom of the sheet with the add and remove changes and the net price change.</p>
+    <div class="doc-example" data-label="Conflict panel">
+      <div class="doc-example-preview is-stretch is-plain">
+        <div class="aec-conflict" role="alertdialog" aria-labelledby="cf-t" aria-describedby="cf-d">
+          <div><h3 class="aec-conflict__title" id="cf-t">Confirm selection</h3><p class="aec-body-2 aec-text-subtle" id="cf-d" style="margin:4px 0 0">This package already includes wheels. Adding it replaces your individual selection.</p></div>
+          <ul class="aec-conflict__rows">
+            <li><span class="aec-chip aec-chip--info aec-chip--success aec-chip--sm">Add</span><span>Package 1: Wheels, splash guards, floor liners</span><span class="aec-price">$1,280</span></li>
+            <li><span class="aec-chip aec-chip--info aec-chip--error aec-chip--sm">Remove</span><span>19-in Glint Black Alloy Wheels</span><span class="aec-price">−$280</span></li>
+          </ul>
+          <div class="aec-conflict__net"><span>Net price change:</span><span class="aec-price">+$1,000</span></div>
+          <div class="aec-btn-group" style="justify-content:flex-end"><button class="aec-btn aec-btn--standard" type="button">Cancel</button><button class="aec-btn aec-btn--primary" type="button">Confirm</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="payment-options">Payment options layout</h2>
+    <p>The Large sheet without the rail. The payment type form (Cash, Finance or Lease tabs) sits on the left and the live payment summary on the right. Below 1024px they stack.</p>
+    <div class="doc-example" data-label="Payment options content">
+      <div class="doc-example-preview is-stretch">
+        <div style="display:flex;flex-wrap:wrap;gap:24px">
+          <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:24px">
+            <div class="aec-tabs aec-tabs--inset">
+              <div class="aec-tabs__list" role="tablist" aria-label="Payment type">
+                <button class="aec-tab" role="tab" id="po-c" aria-selected="false" aria-controls="po-cp">Cash</button>
+                <button class="aec-tab" role="tab" id="po-f" aria-selected="true" aria-controls="po-fp">Finance</button>
+                <button class="aec-tab" role="tab" id="po-l" aria-selected="false" aria-controls="po-lp">Lease</button>
+              </div>
+              <div class="aec-tabs__panel" role="tabpanel" id="po-cp" aria-labelledby="po-c" hidden>Pay the full price upfront.</div>
+              <div class="aec-tabs__panel" role="tabpanel" id="po-fp" aria-labelledby="po-f">
+                <div class="aec-stack">
+                  <div class="aec-slider-field"><div class="aec-slider-field__head"><label class="aec-slider-field__title" for="po-score">Credit score</label><output class="aec-slider-field__value" data-for="po-score">690</output></div><input class="aec-slider" type="range" id="po-score" min="300" max="850" step="10" value="690"><div class="aec-slider-field__minmax" aria-hidden="true"><span>300</span><span>850</span></div></div>
+                  <fieldset class="aec-fieldset"><legend>Term</legend>
+                    <div class="aec-toggle-group aec-toggle-group--md" role="radiogroup" aria-label="Term"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">36 mo</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">48 mo</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">60 mo</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">72 mo</button></div></fieldset>
+                </div>
+              </div>
+              <div class="aec-tabs__panel" role="tabpanel" id="po-lp" aria-labelledby="po-l" hidden>Lease terms.</div>
+            </div>
+          </div>
+          <div style="flex:1 1 280px;border:1px solid var(--aec-color-border-default);border-radius:8px;overflow:hidden">
+            <div class="aec-vehicle-strip" style="border-radius:0"><span class="aec-img-slot aec-vehicle-strip__img"></span><span class="aec-vehicle-strip__body"><strong>2025 Blazer EV SS AWD</strong>24,200 miles · Riverside Chevrolet (21.1 mi)</span></div>
+            <table class="aec-diff-table" style="margin:0 16px;width:calc(100% - 32px)"><tbody><tr><th>MSRP – Total vehicle price</th><td>$34,999.00</td></tr><tr><th>Discount</th><td>−$2,000.00</td></tr><tr><th>Dealer price</th><td>$32,999.00</td></tr><tr><th>Est. monthly payment</th><td>$612/mo</td></tr></tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="doc-preview">Document preview</h2>
+    <p>The full-screen sheet used in the Upload documents step. The rail lists the documents, and each uploaded image is a card with a more-options menu and a status footer. An image-viewer mode (dark lightbox with previous/next) is used for vehicle photos.</p>
+    <div class="doc-example" data-label="Document card and viewer">
+      <div class="doc-example-preview is-col is-stretch">
+        <div class="aec-doc-card" style="max-width:520px">
+          <div class="aec-img-slot aec-doc-card__media">Driver's licence – back</div>
+          <div class="aec-doc-card__menu aec-menu-anchor">
+            <button class="aec-icon-btn" type="button" aria-label="More options" aria-haspopup="menu" aria-expanded="false" aria-controls="doc-menu"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/dots-three-vertical.svg)" aria-hidden="true"></span></button>
+            <div class="aec-menu" id="doc-menu" role="menu" aria-label="Document" hidden style="left:auto;right:0;min-width:160px"><button class="aec-menu__item" role="menuitem" type="button">Re-upload</button><button class="aec-menu__item" role="menuitem" type="button">Delete</button></div>
+          </div>
+          <div class="aec-doc-card__footer"><span>Drivers License – Back</span><span class="aec-chip-plain aec-chip-plain--success aec-chip-plain--sm"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span>Uploaded</span></div>
+        </div>
+        <div class="aec-viewer" style="border-radius:8px;overflow:hidden">
+          <div class="aec-viewer__bar"><h3 class="aec-viewer__title">Front view – 1</h3><button class="aec-icon-btn aec-icon-btn--inverse" type="button" aria-label="Close viewer"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+          <div class="aec-viewer__stage"><button class="aec-viewer__nav" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button><div class="aec-img-slot aec-viewer__image" style="background:#3a3a3a;color:#b3b3b3">Photo</div><button class="aec-viewer__nav" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button></div>
+          <div class="aec-viewer__thumbs"><button type="button" aria-current="true" aria-label="Photo 1"></button><button type="button" aria-label="Photo 2"></button><button type="button" aria-label="Photo 3"></button><button type="button" aria-label="Photo 4"></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Dialog <span class="doc-wcag">WCAG 2.4.3 · 4.1.2</span></h3><p>Sheets are a native <code>&lt;dialog&gt;</code> opened with <code>showModal()</code>, so focus is trapped, Esc closes the sheet and focus returns to the trigger. Name the dialog with <code>aria-labelledby</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Navigation rail <span class="doc-wcag">WCAG 2.1.1</span></h3><p>The rail is a vertical tab list. ↑ and ↓ move between items and each item controls a content panel.</p></div>
+      <div class="doc-a11y-item"><h3>Add / Added <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The footer toggle uses <code>aria-pressed</code>. Announce the price change in a polite live region.</p></div>
+      <div class="doc-a11y-item"><h3>Conflict panel</h3><p>Use <code>role="alertdialog"</code> and move focus to it, because the shopper must decide before continuing.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The header master uses heading-3, but every instance overrides it to heading-5. The code uses heading-5.</li>
+      <li>The conflict scrim (#0f0f0f at 40%) has no token.</li>
+      <li>Payment options is built on a hidden base named "… old". Its Summary types exist only on mobile.</li>
+      <li>Doc preview has an "Acura" axis, a leftover brand name for the image-viewer mode.</li>
+      <li>Bottom sheets and mobile payment options use the Web footer variant (16/24 padding).</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

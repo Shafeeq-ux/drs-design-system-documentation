@@ -1,0 +1,120 @@
+---
+title: Delivery & scheduling
+description: Delivery method cards (home delivery, dealership pickup), delivery confirmation lines, appointment tiles, pending-items panel and scheduling summary.
+figma: 280-21037
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Checkout</p>
+  <h1>Delivery &amp; scheduling</h1>
+  <p class="doc-lead">Choose home delivery or dealership pickup, book an appointment, and confirm what's been scheduled.</p>
+  <div class="doc-meta"><span>5 Figma sets</span><span><code>.aec-option-card</code> · <code>.aec-tile</code> · <code>.aec-confirm-line</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="method">Delivery method</h2>
+    <div class="doc-example" data-label="Delivery method cards">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-card-grid aec-card-grid--wide" role="radiogroup" aria-label="Delivery method" data-aec-radiogroup data-select-card>
+          <article class="aec-card aec-card--hover aec-option-card is-selected">
+            <div class="aec-option-card__body" style="gap:8px">
+              <span class="aec-icon aec-icon--40" style="--aec-icon-src:url(/assets/icons/house-line.svg)" aria-hidden="true"></span>
+              <h3 class="aec-option-card__title">Home delivery</h3><p class="aec-option-card__text">A delivery fee may apply.</p>
+              <div class="aec-option-card__address">
+                <span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/location-pin.svg)" aria-hidden="true"></span>3208 Johnston Rd, Pleasanton, CA 94588 (89 miles) <a class="aec-link aec-link--sm" href="#method">Edit</a></span>
+                <span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/email.svg)" aria-hidden="true"></span>john.freeman@example.com</span>
+                <span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/phone.svg)" aria-hidden="true"></span>(951) 555-0168</span>
+              </div>
+            </div>
+            <div class="aec-option-card__footer"><div class="aec-card-price"><span class="aec-card-price__value">$249.00</span></div><button class="aec-btn aec-btn--primary aec-btn--md" type="button" role="radio" aria-checked="true" data-on="Selected" data-off="Select" data-off-class="aec-btn--outline"><span class="aec-toggle__label">Selected</span></button></div>
+          </article>
+          <article class="aec-card aec-card--hover aec-option-card">
+            <div class="aec-option-card__body" style="gap:8px">
+              <span class="aec-icon aec-icon--40" style="--aec-icon-src:url(/assets/icons/storefront.svg)" aria-hidden="true"></span>
+              <h3 class="aec-option-card__title">Dealership pickup</h3><p class="aec-option-card__text">Pick up your vehicle from the dealership.</p>
+              <div class="aec-option-card__address">
+                <span><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/location-pin.svg)" aria-hidden="true"></span>Riverside Chevrolet, 8200 Auto Dr, Riverside, CA 92504</span>
+              </div>
+            </div>
+            <div class="aec-option-card__footer"><span class="aec-free-tag">Free</span><button class="aec-btn aec-btn--primary aec-btn--outline aec-btn--md" type="button" role="radio" aria-checked="false" data-on="Selected" data-off="Select" data-off-class="aec-btn--outline"><span class="aec-toggle__label">Select</span></button></div>
+          </article>
+        </div>
+        <div class="aec-card-grid aec-card-grid--wide">
+          <article class="aec-card aec-option-card">
+            <div class="aec-option-card__body" style="gap:8px"><span class="aec-icon aec-icon--40" style="--aec-icon-src:url(/assets/icons/house-line.svg)" aria-hidden="true"></span><h3 class="aec-option-card__title">Home delivery</h3><p class="aec-option-card__text">A delivery fee may apply.</p>
+              <div class="aec-option-card__empty"><a class="aec-link" href="#method">Add your address</a></div></div>
+            <div class="aec-option-card__footer"><div class="aec-card-price"><span class="aec-card-price__value">$249.00</span></div><button class="aec-btn aec-btn--primary aec-btn--outline aec-btn--md" type="button" disabled>Select</button></div>
+          </article>
+          <article class="aec-card aec-option-card is-disabled">
+            <div class="aec-option-card__body" style="gap:8px"><span class="aec-icon aec-icon--40" style="--aec-icon-src:url(/assets/icons/house-line.svg);opacity:.5" aria-hidden="true"></span><h3 class="aec-option-card__title">Home delivery</h3><p class="aec-option-card__text">A delivery fee may apply.</p>
+              <div class="aec-notice aec-notice--slim aec-notice--warning" style="margin-top:16px"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><p class="aec-notice__text">Delivery isn't available for this address</p></div></div>
+            <div class="aec-option-card__footer"><span class="aec-skeleton" style="width:80px;height:24px" aria-hidden="true"></span><button class="aec-btn aec-btn--primary aec-btn--outline aec-btn--md" type="button" disabled>Select</button></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="confirm">Confirmation line</h2>
+    <div class="doc-example" data-label="Delivery selected">
+      <div class="doc-example-preview is-col is-stretch">
+        <div class="aec-confirm-line"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/house-line.svg)" aria-hidden="true"></span><div class="aec-confirm-line__body"><strong>You've selected home delivery</strong><span>3208 Johnston Rd, Pleasanton, CA 94588 (89 miles)</span></div></div>
+        <div class="aec-confirm-line"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/storefront.svg)" aria-hidden="true"></span><div class="aec-confirm-line__body"><strong>You've selected in-store pickup</strong><span>Riverside Chevrolet • 8200 Auto Dr, Riverside, CA 92504</span></div><a class="aec-link" href="#confirm">Contact dealer</a></div>
+        <div class="aec-confirm-line" style="border:0;padding:0"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/calendar-check.svg)" aria-hidden="true"></span><div class="aec-confirm-line__body"><strong>Select a date and time</strong><span>Choose a convenient date and time for us to deliver your vehicle.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="appointment">Appointment tiles</h2>
+    <div class="doc-example" data-label="Appointment type tiles">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-tile-group" role="radiogroup" aria-label="Appointment type" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
+          <button class="aec-tile" type="button" role="radio" aria-checked="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/schedule-test-drive.svg)" aria-hidden="true"></span><strong>Test drive</strong><span>Take a drive in the 2025 Blazer EV</span></button>
+          <button class="aec-tile" type="button" role="radio" aria-checked="false"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/sales-appointment.svg)" aria-hidden="true"></span><strong>Sales appointment</strong><span>Meet a specialist at the dealership</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="summary">Scheduling summary and to-dos</h2>
+    <div class="doc-example" data-label="Scheduling summary and pending items">
+      <div class="doc-example-preview is-stretch" style="flex-direction:row;flex-wrap:wrap;align-items:flex-start">
+        <article class="aec-card" style="flex:1 1 420px">
+          <div class="aec-card__body" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding:24px">
+            <div class="aec-stack" style="gap:6px"><h3 class="aec-heading-4">Your order</h3><span class="aec-body-1">2025 Blazer EV • SS AWD</span><span class="aec-body-3 aec-text-subtle">Purchase price: $52,392.00</span><span class="aec-body-1">$1,069 /mo est. loan</span><span class="aec-body-3 aec-text-subtle">49 months • 4% APR • $4,000 down payment</span><a class="aec-link aec-link--neutral" href="#summary">Payment summary</a></div>
+            <div class="aec-stack" style="gap:6px"><h3 class="aec-heading-4">Home delivery</h3><span class="aec-body-1">Fri, Nov 8, 2026</span><span class="aec-body-3 aec-text-subtle">3208 Johnston Rd, Pleasanton, CA 94588</span><span class="aec-body-3 aec-text-subtle">(951) 555-0168</span><a class="aec-link aec-link--neutral" href="#summary">Reschedule</a></div>
+          </div>
+        </article>
+        <aside class="aec-todo" aria-labelledby="todo-t">
+          <h3 id="todo-t">A few things to complete…</h3>
+          <p>Please upload these documents to complete your purchase.</p>
+          <ul>
+            <li><a href="#summary"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/upload-simple.svg)" aria-hidden="true"></span>Proof of insurance <span>(Upload)</span></a></li>
+            <li><a href="#summary"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/upload-simple.svg)" aria-hidden="true"></span>Proof of residence <span>(Upload)</span></a></li>
+            <li><a href="#summary"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/upload-simple.svg)" aria-hidden="true"></span>Employment proof <span>(Upload)</span></a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>One choice <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Delivery method and appointment type are radio groups, with Select/Selected or tile buttons as the radios. The arrow keys move between options.</p></div>
+      <div class="doc-a11y-item"><h3>Unavailable options</h3><p>Explain why an option is unavailable in text next to it, such as "Delivery isn't available for this address".</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>"Schedule Delivery-" is actually a pending-documents panel ("Few things to complete…"). The code calls it <code>.aec-todo</code>.</li>
+      <li>The pickup copy differs between variants ("Pick up your vehicle…" and "Pick your vehicle…"). The appointment tile mentions "2021 RDX", which is Acura sample data.</li>
+      <li>There are no mobile variants. The cards stack in the responsive grid.</li>
+      <li>The selected border in the appointment tile is a hidden overlay. The code uses <code>action/border/active</code>.</li>
+    </ul>
+  </section>
+</div>

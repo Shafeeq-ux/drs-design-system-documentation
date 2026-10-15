@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accordion · DRS Design System</title>
+<meta name="description" content="Accordions show and hide sections of related content so people can expand only what they need.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50208">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Surfaces</p>
+  <h1>Accordion</h1>
+  <p class="doc-lead">Shows and hides sections of related content, so people can expand only what they need, for example FAQs or the details of a protection plan.</p>
+  <div class="doc-meta"><span>8 Figma variants</span><span><code>.aec-accordion</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="default">Default</h2>
+    <div class="doc-example" data-label="Accordion">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-accordion" style="max-width:640px">
+          <div class="aec-accordion__item">
+            <h3 class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="true" aria-controls="acc-1"><span class="aec-accordion__title">What does the protection plan cover?</span></button></h3>
+            <div class="aec-accordion__panel" id="acc-1" role="region" aria-label="What does the protection plan cover?"><p>Parts and labour for covered components for 5 years or 60,000 miles, plus roadside assistance and rental car reimbursement.</p></div>
+          </div>
+          <div class="aec-accordion__item">
+            <h3 class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false" aria-controls="acc-2"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true"></span><span class="aec-accordion__title">Which documents do I need?</span><span class="aec-accordion__meta">3 items</span></button></h3>
+            <div class="aec-accordion__panel" id="acc-2" role="region" aria-label="Which documents do I need?"><p>A valid driver's licence, proof of insurance and proof of residence.</p></div>
+          </div>
+          <div class="aec-accordion__item">
+            <h3 class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false" aria-controls="acc-3"><span class="aec-accordion__title">Can I return the vehicle?</span></button></h3>
+            <div class="aec-accordion__panel" id="acc-3" role="region" aria-label="Can I return the vehicle?"><p>Yes, within 3 days or 150 miles under the Chevy exchange policy.</p></div>
+          </div>
+          <div class="aec-accordion__item">
+            <h3 class="aec-accordion__heading"><button class="aec-accordion__trigger" type="button" aria-expanded="false" disabled><span class="aec-accordion__title">Subscription options (coming soon)</span></button></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>Add <code>data-single</code> to <code>.aec-accordion</code> so that only one section can be open at a time.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Header</td><td>48px minimum height, padding 12/16px, body-1 bold, <code>text/default</code></td></tr>
+        <tr><td>Divider</td><td>1px <code>border/default</code> between items</td></tr>
+        <tr><td>Chevron</td><td>24px, <code>icon/default</code>, rotates 180° when open</td></tr>
+        <tr><td>Hover</td><td><code>bg/variant</code></td></tr>
+        <tr><td>Leading icon (optional)</td><td>24px</td></tr>
+        <tr><td>Panel</td><td>Padding 0/16/16px, body-2, <code>text/subtle</code></td></tr>
+        <tr><td>Disabled</td><td><code>text/disabled</code>, <code>icon/disabled</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <ul>
+      <li>Write headers as clear questions or labels, so people can tell what's inside without opening it.</li>
+      <li>Don't hide critical information, such as pricing or required steps, in a collapsed section.</li>
+      <li>For switching between parallel views, use <a href="tabs.html">tabs</a>.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Structure <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Each trigger is a <code>&lt;button&gt;</code> inside a heading at the right level. Its <code>aria-expanded</code> state and <code>aria-controls</code> point to the panel.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves between headers, and Enter or Space toggles a section. Focus shows a 2px inset ring.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>All 8 Figma variants look identical: no hover, pressed or disabled styling, and <code>expand=on</code> has no panel. The states above are proposed in code using tokens.</li>
+      <li>The title uses Avenir LT Pro Heavy in pure black (#000). The code uses body-1 bold with <code>text/default</code>.</li>
+      <li>The divider is #dedede. The code uses <code>border/default</code>.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Left navigation · DRS Design System</title>
+<meta name="description" content="The checkout journey navigation — greeting, step list with status, dealer legal footer — with desktop, icon-rail and mobile drawer modes.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="9067-7870" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Navigation</p>
+  <h1>Left navigation</h1>
+  <p class="doc-lead">Lists the steps of the deal, from Welcome to Schedule Delivery. It shows where the shopper is, which steps are done and which aren't available yet.</p>
+  <div class="doc-meta"><span>Web · Tablet rail · Mobile drawer</span><span><code>.aec-sidenav</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="desktop">Desktop</h2>
+    <div class="doc-example" data-label="Left navigation">
+      <div class="doc-example-preview is-plain" style="align-items:stretch">
+        <nav class="aec-sidenav" aria-label="Checkout steps" style="min-height:640px">
+          <div class="aec-sidenav__top">
+            <div class="aec-sidenav__greet"><span class="aec-sidenav__greet-text">Let’s get started <strong>Andrew</strong></span><button class="aec-sidenav__toggle" type="button" aria-label="Collapse navigation"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/expand-collapse.svg)" aria-hidden="true"></span></button></div>
+            <ul class="aec-sidenav__list">
+              <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/house-line.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Welcome</span><span class="aec-icon aec-sidenav__status aec-sidenav__status--done" style="--aec-icon-src:url(/assets/icons/check-circle.svg)" role="img" aria-label="Completed"></span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop" aria-current="page"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trade-in.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Trade-In Vehicle</span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offers.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Special Offers &amp; GM Rewards™</span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/accessories.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Accessories</span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/protection-plans.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Plans &amp; Services</span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/delivery.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Delivery Options</span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/apply-credit.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Credit Application</span></a>
+                <ul class="aec-sidenav__sub">
+                  <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-sidenav__label">Personal information</span></a></li>
+                  <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-sidenav__label">Employment</span></a></li>
+                </ul></li>
+              <li><a class="aec-sidenav__item" href="#desktop"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/documents.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Documents</span></a></li>
+              <li><a class="aec-sidenav__item" aria-disabled="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/signature.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Signature</span><span class="aec-icon aec-sidenav__status" style="--aec-icon-src:url(/assets/icons/info.svg)" role="img" aria-label="Complete earlier steps first"></span></a></li>
+              <li><a class="aec-sidenav__item" aria-disabled="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/payment.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Payment</span><span class="aec-icon aec-sidenav__status" style="--aec-icon-src:url(/assets/icons/info.svg)" role="img" aria-label="Complete earlier steps first"></span></a></li>
+            </ul>
+          </div>
+          <div class="aec-sidenav__footer">
+            <a href="#desktop">Dealer Privacy Statement</a>
+            <a href="#desktop">Your Privacy Choices</a>
+            <strong>Sales and Pricing Disclosures</strong>
+            <p>This information is intended as an estimate and is not a sales contract. It is not a final representation of your pricing.</p>
+          </div>
+        </nav>
+        <nav class="aec-sidenav aec-sidenav--rail" aria-label="Checkout steps (rail)">
+          <div class="aec-sidenav__top">
+            <div class="aec-sidenav__greet"><button class="aec-sidenav__toggle" type="button" aria-label="Expand navigation"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/hamburger.svg)" aria-hidden="true"></span></button></div>
+            <ul class="aec-sidenav__list">
+              <li><a class="aec-sidenav__item" href="#desktop" aria-label="Welcome"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/house-line.svg)" aria-hidden="true"></span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop" aria-current="page" aria-label="Trade-In Vehicle"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trade-in.svg)" aria-hidden="true"></span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop" aria-label="Special Offers"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offers.svg)" aria-hidden="true"></span></a></li>
+              <li><a class="aec-sidenav__item" href="#desktop" aria-label="Accessories"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/accessories.svg)" aria-hidden="true"></span></a></li>
+              <li><a class="aec-sidenav__item" aria-disabled="true" aria-label="Signature (not available yet)"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/signature.svg)" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="mobile">Mobile drawer</h2>
+    <p>On mobile the navigation is hidden. A 40px <code>primary/subtle</code> menu button in the <a href="page-header.html">page header</a> opens it as a drawer over <code>backdrop/default</code>.</p>
+    <div class="doc-example" data-no-code>
+      <div class="doc-example-preview">
+        <button class="aec-sidenav__toggle" type="button" style="background:var(--aec-color-primary-subtle)" data-aec-open="nav-drawer" aria-label="Open navigation"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/hamburger.svg)" aria-hidden="true"></span></button>
+        <span class="aec-body-2">Open the drawer</span>
+      </div>
+    </div>
+    <dialog class="aec-modal aec-drawer" id="nav-drawer" aria-label="Checkout steps">
+      <nav class="aec-sidenav" aria-label="Checkout steps">
+        <div class="aec-sidenav__top">
+          <div class="aec-sidenav__greet"><span class="aec-sidenav__greet-text">Let’s get started <strong>Andrew</strong></span><button class="aec-sidenav__toggle" type="button" aria-label="Close navigation" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+          <ul class="aec-sidenav__list">
+            <li><a class="aec-sidenav__item" href="#mobile" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/house-line.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Welcome</span></a></li>
+            <li><a class="aec-sidenav__item" href="#mobile" aria-current="page" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trade-in.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Trade-In Vehicle</span></a></li>
+            <li><a class="aec-sidenav__item" href="#mobile" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offers.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Special Offers</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </dialog>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td>216px, <code>bg/default</code>, 1px right <code>border/default</code>, 24px top padding</td></tr>
+        <tr><td>Greeting</td><td>body-2 bold. The name is <code>primary/default</code>.</td></tr>
+        <tr><td>Item</td><td>40px tall, 24px icon, body-2 bold, <code>text/variant</code></td></tr>
+        <tr><td>Hover</td><td><code>bg/variant</code>, <code>text/default</code></td></tr>
+        <tr><td>Current</td><td><code>bg/variant</code>, <code>text/default</code>, 2px right <code>primary/default</code> bar</td></tr>
+        <tr><td>Disabled</td><td><code>text/disabled</code> with a 16px info status icon</td></tr>
+        <tr><td>Sub-item</td><td>Indented 52px, same states as items</td></tr>
+        <tr><td>Footer</td><td><code>bg/variant</code>, body-3, <code>text/subtle</code>, dealer legal links</td></tr>
+        <tr><td>Rail (tablet)</td><td>64px, icon only, menu button on <code>primary/subtle</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Landmark and current step <span class="doc-wcag">WCAG 1.3.1 · 4.1.2</span></h3><p>Use <code>&lt;nav aria-label="Checkout steps"&gt;</code> and mark the current item with <code>aria-current="page"</code>. Status icons need a text alternative, such as "Completed".</p></div>
+      <div class="doc-a11y-item"><h3>Unavailable steps</h3><p>Locked steps use <code>aria-disabled="true"</code> without an <code>href</code>, and the status icon explains why ("Complete earlier steps first").</p></div>
+      <div class="doc-a11y-item"><h3>Rail labels <span class="doc-wcag">WCAG 2.4.4</span></h3><p>Icon-only rail items need an <code>aria-label</code>. Add a <a href="../components/tooltip.html">tooltip</a> on hover for sighted users.</p></div>
+      <div class="doc-a11y-item"><h3>Drawer <span class="doc-wcag">WCAG 2.4.3</span></h3><p>The mobile drawer is a <code>&lt;dialog&gt;</code>, so focus is trapped while it's open and returns to the menu button when it closes.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The nav component is 216px wide but its items are 238px. The templates use both widths.</li>
+      <li>Hover looks the same as default. The code adds a <code>bg/variant</code> hover.</li>
+      <li>The disabled-item info icon has no tooltip in the spec.</li>
+      <li>"Card - Nav" items are an older style and aren't used by this nav.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

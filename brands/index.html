@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-brand · DRS Design System</title>
+<meta name="description" content="One set of DRS components, re-themed per brand through tokens. Switch brands, compare them side by side and see how the token layers fit together.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+<link rel="stylesheet" href="../css/brand-tools.css">
+</head>
+<body>
+<main>
+<div class="doc-content is-wide">
+  <p class="doc-eyebrow">Brands</p>
+  <h1>Multi-brand</h1>
+  <p class="doc-lead">Every DRS component reads its colour, shape, size and type from brand tokens. Change the brand and the same markup re-themes. No component code changes.</p>
+  <div class="doc-meta"><span data-brand-count>Brands</span><span>~3,600 tokens per brand</span><span><code>data-brand</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="switch">Switch the whole site</h2>
+    <p>Use the brand menu in the header, or pick one below. The choice applies to every page and is remembered in this browser. Add <code>?brand=gmc</code> to a URL to share a page in a specific brand.</p>
+    <div class="bc-switch" data-brand-buttons role="group" aria-label="Site brand"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="compare">Same components, every brand</h2>
+    <p>Each panel below renders identical HTML. Only the <code>data-brand</code> attribute on the panel differs.</p>
+    <div class="bc-filter" role="group" aria-label="Specimen" data-specimen-filter></div>
+    <div class="bc-grid" data-brand-compare aria-live="polite"><p class="doc-muted">Loading brands…</p></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="how">How brand tokens work</h2>
+    <div class="bc-layers">
+      <div class="bc-layer"><span class="bc-layer-n">1</span><h3>Brand file</h3><p><code>tokens/brands/source/&lt;brand&gt;.css</code> is exported from Figma variables. It contains <code>.drp-*</code> classes (component sizes, typography and button colours) and a block of <code>--aec-*</code> custom properties (semantic and component colours).</p></div>
+      <div class="bc-layer"><span class="bc-layer-n">2</span><h3>Runtime tokens</h3><p><code>npm run build</code> converts every class value into a custom property (for example <code>--drp-button-contained-container-bg-large-border-radius</code>). It merges the brand over DRS Base so nothing is missing, then scopes the result to <code>[data-brand="&lt;brand&gt;"]</code>.</p></div>
+      <div class="bc-layer"><span class="bc-layer-n">3</span><h3>Components</h3><p><code>brand-components.css</code> maps those tokens onto the <code>.aec-*</code> components. A button's colour comes from emphasis × style × state, its size and corners from the size tokens, and its font and case from the button typography tokens.</p></div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Token layer</th><th>Example</th><th>Drives</th></tr></thead>
+      <tbody>
+        <tr><td>Semantic colour</td><td><code>--aec-color-primary-default</code></td><td>Links, focus rings, spinners, the docs accent and anything else that uses the primary colour</td></tr>
+        <tr><td>Component colour</td><td><code>--aec-chip-selectable-color-bg-selected-default</code></td><td>One state of one component</td></tr>
+        <tr><td>Component metric</td><td><code>--drp-input-standard-outlined-container-bg-large-height</code></td><td>Heights, padding, gaps, corner radius and border widths</td></tr>
+        <tr><td>Component type</td><td><code>--drp-button-contained-typography-large-text-transform</code></td><td>Font, size, weight and letter case per component</td></tr>
+        <tr><td>Type scale</td><td><code>--aec-typography-heading-1-font-size</code></td><td>The <code>.aec-heading-*</code>, <code>.aec-body-*</code> and <code>.aec-display-*</code> styles, per breakpoint</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="code">Use a brand in code</h2>
+    <p>Load the base tokens, one or more brand files and the component CSS, then set the brand on any element. The brand applies to everything inside that element.</p>
+<pre><code>&lt;link rel="stylesheet" href="css/tokens.css"&gt;
+&lt;link rel="stylesheet" href="css/brands/gmc.css"&gt;
+&lt;link rel="stylesheet" href="css/components.css"&gt;
+&lt;link rel="stylesheet" href="css/brand-components.css"&gt;
+
+&lt;html data-brand="gmc"&gt;
+  …
+  &lt;!-- one section in another brand --&gt;
+  &lt;div data-brand="cadillac"&gt;&lt;button class="aec-btn aec-btn--primary"&gt;Reserve&lt;/button&gt;&lt;/div&gt;
+&lt;/html&gt;</code></pre>
+    <p>Teams that consume the original classes can keep using the drop-in brand files, such as <code>&lt;button class="drp-button-contained-container-bg-large drp-button-contained-color-primary-filled drp-button-contained-typography-large"&gt;</code>. Download them from <a href="tokens.html">Brand tokens</a>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="fonts">Brand fonts</h2>
+    <p>Brand typefaces are licensed and are not served from this public site. Each family falls back to a free Google Fonts substitute. On a machine that has the real font installed, the real font is used.</p>
+    <div class="doc-table-wrap" data-font-table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="add">Add a brand</h2>
+    <ol>
+      <li>Create the tokens. Export them from Figma, or design them in the <a href="theme-builder.html">Theme builder</a> and download <code>&lt;id&gt;.css</code>.</li>
+      <li>Save the file as <code>tokens/brands/source/&lt;id&gt;.css</code>.</li>
+      <li>Add <code>{ "id": "&lt;id&gt;", "name": "…", "file": "&lt;id&gt;.css" }</code> to <code>tokens/brands/brands.json</code>. Add any new fonts with a public substitute.</li>
+      <li>Run <code>npm run build</code>. The header menu, this page, Brand tokens and the Theme builder pick up the new brand automatically.</li>
+    </ol>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Token notes</h2>
+    <ul class="doc-small">
+      <li><code>carbravo.css</code> is byte-for-byte identical to <code>chevrolet.css</code>, so Car Bravo looks the same as Chevrolet for now.</li>
+      <li>Twelve selectors such as <code>.drp-typography-mobile-heading-1 regular</code> contain a space, so in the original files they match nothing. They are kept here as <code>--drp-typography-mobile-heading-1-regular-*</code>.</li>
+      <li>Some colour tokens have the value <code>none</code> (for example the selected border of selectable chips). They are treated as <code>transparent</code>, and <code>box-shadow: 0</code> is treated as <code>none</code>.</li>
+      <li>DRS Base has no <code>mobile-*</code> heading styles, so its headings use the same size at every breakpoint below 768px.</li>
+      <li>The weekly calendar classes in <code>base.css</code> use fixed colours rather than tokens, so they don't change with the brand.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/brand-specimens.js"></script>
+<script src="../js/brand-compare.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snackbar · DRS Design System</title>
+<meta name="description" content="Snackbars briefly confirm the result of an action with a message that disappears on its own.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50202">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Feedback</p>
+  <h1>Snackbar</h1>
+  <p class="doc-lead">Briefly confirms the result of an action, such as <em>Vehicle saved</em>, with a message that disappears on its own.</p>
+  <div class="doc-meta"><span>4 Figma variants</span><span><code>.aec-snackbar</code> · <code>AEC.snackbar()</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="demo">Try it</h2>
+    <div class="doc-example" data-label="Trigger a snackbar">
+      <div class="doc-example-preview">
+        <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-snackbar="Vehicle saved to your garage" data-aec-snackbar-action="View">Save vehicle</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" data-aec-snackbar="Link copied">Copy link</button>
+      </div>
+    </div>
+<pre><code>// JavaScript API (components.js)
+AEC.snackbar({
+  message: 'Vehicle saved to your garage',
+  action: 'View',
+  onAction: () =&gt; location.assign('/garage'),
+  timeout: 6000 // ms, default 6000
+});</code></pre>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-example" data-label="Static snackbars" data-no-code>
+      <div class="doc-example-preview is-col">
+        <div class="aec-snackbar is-static"><span class="aec-snackbar__msg">For in-transit inventory</span><button class="aec-snackbar__action" type="button">Learn more</button></div>
+        <div class="aec-snackbar aec-snackbar--multiline is-static"><span class="aec-snackbar__msg">Your deal was sent to Bill Brown Chevrolet. A specialist will contact you within one business day.</span><button class="aec-snackbar__action" type="button">View deal</button></div>
+      </div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Surface</td><td><code>bg/variant</code>, <code>border-radius-rounded-rect</code> (4px), <code>shadow/m</code></td></tr>
+        <tr><td>Size</td><td>Maximum width 384px (360px on mobile), minimum height 56px</td></tr>
+        <tr><td>Padding and gap</td><td>16px · 16px</td></tr>
+        <tr><td>Message</td><td>body-2, <code>text/default</code></td></tr>
+        <tr><td>Action (optional)</td><td>Primary link, body-2</td></tr>
+        <tr><td>Position</td><td>Bottom centre, 24px from the edge</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <ul>
+      <li>Use a snackbar for low-priority confirmations. Don't use it for errors that need action. Use an <a href="alert.html">alert</a> instead.</li>
+      <li>Keep the message to one short sentence, with at most one action.</li>
+      <li>Show one snackbar at a time.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Status messages <span class="doc-wcag">WCAG 4.1.3</span></h3><p>Snackbars are rendered in a <code>role="status"</code>, <code>aria-live="polite"</code> region, so screen readers announce them without moving focus.</p></div>
+      <div class="doc-a11y-item"><h3>Timing <span class="doc-wcag">WCAG 2.2.1</span></h3><p>The timer pauses on hover, and each snackbar has a close button. Never put the only way to do something inside a snackbar.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The snackbar is light (<code>bg/variant</code>), where most systems use a dark one. An <code>.aec-snackbar--inverse</code> option is also available in code.</li>
+      <li>Figma has no close icon. The code adds one so people can dismiss the snackbar (WCAG 2.2.1).</li>
+      <li>The component description was copied from Tooltip by mistake.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

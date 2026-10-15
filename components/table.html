@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Table · DRS Design System</title>
+<meta name="description" content="Tables organise data into rows and columns so it can be scanned and compared.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="2665-4743">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Data display</p>
+  <h1>Table</h1>
+  <p class="doc-lead">Organises data into rows and columns so it can be scanned and compared, for example a payment breakdown or saved deals.</p>
+  <div class="doc-meta"><span>Legacy Figma component, remapped</span><span><code>.aec-table</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="default">Default</h2>
+    <div class="doc-example" data-label="Table">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-table-wrap" role="region" aria-labelledby="tbl-cap" tabindex="0">
+          <table class="aec-table">
+            <caption id="tbl-cap" class="aec-visually-hidden">Saved deals</caption>
+            <thead><tr>
+              <th scope="col" style="width:40px"><input class="aec-checkbox" type="checkbox" aria-label="Select all deals"></th>
+              <th scope="col" aria-sort="ascending"><button class="aec-table__sort" type="button">Vehicle</button></th>
+              <th scope="col">Status</th>
+              <th scope="col">Type</th>
+              <th scope="col" class="aec-num"><button class="aec-table__sort" type="button">Monthly</button></th>
+            </tr></thead>
+            <tbody>
+              <tr><td><input class="aec-checkbox" type="checkbox" aria-label="Select 2025 Equinox"></td><td>2025 Equinox LT</td><td><span class="aec-chip aec-chip--info aec-chip--success aec-chip--sm">Approved</span></td><td>Finance</td><td class="aec-num">$489</td></tr>
+              <tr aria-selected="true"><td><input class="aec-checkbox" type="checkbox" checked aria-label="Select 2025 Silverado"></td><td>2025 Silverado 1500</td><td><span class="aec-chip aec-chip--info aec-chip--warning aec-chip--sm">Pending</span></td><td>Lease</td><td class="aec-num">$612</td></tr>
+              <tr><td><input class="aec-checkbox" type="checkbox" aria-label="Select 2024 Blazer EV"></td><td>2024 Blazer EV</td><td><span class="aec-chip aec-chip--info aec-chip--grey aec-chip--sm">Draft</span></td><td>Cash</td><td class="aec-num">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Density</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Class</th><th>Row height</th></tr></thead>
+      <tbody>
+        <tr><td>Small</td><td><code>.aec-table--sm</code></td><td>40px</td></tr>
+        <tr><td>Default</td><td>—</td><td>48px (header 46px)</td></tr>
+        <tr><td>Large</td><td><code>.aec-table--lg</code></td><td>56px</td></tr>
+      </tbody>
+    </table></div>
+    <p>Add <code>.aec-table--bordered</code> to put borders on every cell.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <ul>
+      <li><strong>Header</strong>: <code>bg/variant</code>, body-2 demi, <code>text/subtle</code>, with optional sort buttons.</li>
+      <li><strong>Cell</strong>: body-2, <code>text/default</code>, padding 12/8px (16px at the outer edges), 1px <code>border/default</code> row dividers.</li>
+      <li><strong>Selected row</strong>: <code>primary/subtle</code>.</li>
+      <li><strong>Numbers</strong>: right-aligned with tabular figures (<code>.aec-num</code>).</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Semantics <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Use a real <code>&lt;table&gt;</code> with a <code>&lt;caption&gt;</code> and <code>scope</code> on header cells. Sorted columns use <code>aria-sort</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Scrolling <span class="doc-wcag">WCAG 1.4.10</span></h3><p>Wide tables scroll inside <code>.aec-table-wrap</code>. Give the wrapper <code>tabindex="0"</code> and a label so keyboard users can scroll it.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>This is a legacy component, with an off-palette grey scale (#f1f1f3, #60616c, #e4e4e7), <code>Space/Padding/*</code> variables and an older checkbox. The code maps it to current tokens and uses the current <a href="checkbox.html">checkbox</a>.</li>
+      <li>The size order is inconsistent: Small controls are taller than Default ones.</li>
+      <li>Figma has no hover or selected row states. The code adds them.</li>
+      <li>There are typos in Figma ("Checkbox Dropdawn", "Expended").</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+---
+title: Finance cards
+description: Lender offer cards, financing option cards, financing summary tables and credit application status cards.
+figma: 228-105934
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Checkout</p>
+  <h1>Finance cards</h1>
+  <p class="doc-lead">Cards for the financing step: choose a lender offer, pick how to finance, and track the credit application.</p>
+  <div class="doc-meta"><span>7 Figma sets</span><span><code>.aec-offer</code> · <code>.aec-option-card</code> · <code>.aec-row-card</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="offers">Lender offer</h2>
+    <p>One lender offer, showing monthly payment, down payment, term and APR, with the previous values below each. Selecting one gives it a 2px blue border and a filled "Selected" button. Below 520px the details become a 2×2 grid.</p>
+    <div class="doc-example" data-label="Finance offer cards">
+      <div class="doc-example-preview is-stretch" role="radiogroup" aria-label="Lender offers" data-aec-radiogroup data-select-card>
+        <article class="aec-card aec-card--hover aec-offer is-selected">
+          <div class="aec-offer__head"><span class="aec-img-slot aec-offer__logo">Logo</span><h3 class="aec-offer__name">GM Financial<span class="aec-offer__by">Selected by dealer</span></h3><button class="aec-btn aec-btn--primary aec-btn--md" type="button" role="radio" aria-checked="true" data-on="Selected" data-off="Select" data-off-class="aec-btn--outline"><span class="aec-toggle__label">Selected</span></button></div>
+          <dl class="aec-offer__details">
+            <div><dt>Monthly payment</dt><dd>$396.00<small>was $420.00</small></dd></div>
+            <div><dt>Down payment</dt><dd>$3,800.00<small>was $4,500.00</small></dd></div>
+            <div><dt>Term</dt><dd>72 months<small>was 84 months</small></dd></div>
+            <div><dt>APR</dt><dd>4.5%<small>was 4.99%</small></dd></div>
+          </dl>
+        </article>
+        <article class="aec-card aec-card--hover aec-offer">
+          <div class="aec-offer__head"><span class="aec-img-slot aec-offer__logo">Logo</span><h3 class="aec-offer__name">Lender name</h3><button class="aec-btn aec-btn--primary aec-btn--outline aec-btn--md" type="button" role="radio" aria-checked="false" data-on="Selected" data-off="Select" data-off-class="aec-btn--outline"><span class="aec-toggle__label">Select</span></button></div>
+          <dl class="aec-offer__details">
+            <div><dt>Monthly payment</dt><dd>$420.00</dd></div>
+            <div><dt>Down payment</dt><dd>$4,500.00</dd></div>
+            <div><dt>Term</dt><dd>84 months</dd></div>
+            <div><dt>APR</dt><dd>4.99%</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="options">Financing options</h2>
+    <p>Option cards inside "Select your financing option", shown side by side. Hover adds <code>shadow/l</code>. Selecting a card highlights its border.</p>
+    <div class="doc-example" data-label="Financing info cards">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-toggle-group aec-toggle-group--md" role="radiogroup" aria-label="Applicant" style="max-width:320px"><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">Buyer</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Co-buyer</button></div>
+        <div class="aec-card-grid aec-card-grid--wide">
+          <article class="aec-card aec-card--hover aec-option-card is-selected">
+            <div class="aec-option-card__icon"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/apply-credit.svg)" aria-hidden="true"></span></div>
+            <div class="aec-option-card__body"><h3 class="aec-option-card__title">Get started with credit application</h3><p class="aec-option-card__text">This takes you to our credit application for further processing.</p><a class="aec-link aec-link--sm aec-link--neutral" href="#options">Terms &amp; conditions</a></div>
+            <div class="aec-option-card__footer"><span class="aec-option-card__label">Start credit application</span><button class="aec-btn aec-btn--primary aec-btn--outline aec-btn--md" type="button">Start</button></div>
+          </article>
+          <article class="aec-card aec-card--hover aec-option-card">
+            <div class="aec-option-card__icon"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/bank.svg)" aria-hidden="true"></span></div>
+            <div class="aec-option-card__body"><h3 class="aec-option-card__title">I have my own financing</h3><p class="aec-option-card__text">Use a pre-approval from your bank or credit union.</p></div>
+            <div class="aec-option-card__footer"><span class="aec-option-card__label">Add lender details</span><button class="aec-btn aec-btn--primary aec-btn--md" type="button">Continue</button></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="status">Status rows</h2>
+    <p>Single-line cards that summarise a finance task: credit application status, identity verification and pre-selected offers.</p>
+    <div class="doc-example" data-label="Finance status rows">
+      <div class="doc-example-preview is-stretch">
+        <article class="aec-card aec-row-card aec-row-card--rounded">
+          <span class="aec-row-card__icon aec-row-card__icon--outline"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/apply-credit.svg)" aria-hidden="true"></span></span>
+          <div class="aec-row-card__body"><h3 class="aec-row-card__title">Apply for financing</h3><span class="aec-row-card__label">Financing type: Credit application with co-buyer</span></div>
+          <div class="aec-row-card__aside"><span class="aec-chip aec-chip--info aec-chip--success aec-chip--sm">Completed</span></div>
+        </article>
+        <article class="aec-card aec-row-card">
+          <span class="aec-row-card__icon"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/shield-check.svg)" aria-hidden="true"></span><span class="aec-row-card__badge"></span></span>
+          <div class="aec-row-card__body"><h3 class="aec-row-card__title">Your identity verification is successful</h3><p class="aec-row-card__text">Please continue with your credit application.</p></div>
+          <div class="aec-row-card__aside"><div><span class="aec-row-card__label">Verification expires in</span><strong class="aec-body-2 aec-bold">5h : 15m</strong></div></div>
+        </article>
+        <article class="aec-card aec-row-card">
+          <span class="aec-row-card__icon" style="width:56px;height:56px"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offers-applied.svg)" aria-hidden="true"></span></span>
+          <div class="aec-row-card__body"><h3 class="aec-row-card__title">Government offers are pre-selected for you</h3><p class="aec-row-card__text">All government offers are applied for your convenience.</p></div>
+          <div class="aec-row-card__aside"><div><span class="aec-row-card__label">Total savings</span><span class="aec-row-card__value" style="font-size:var(--aec-typography-heading-6-font-size)">$1,000.00</span></div></div>
+        </article>
+        <article class="aec-card aec-row-card">
+          <span class="aec-row-card__icon aec-row-card__icon--outline"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/user.svg)" aria-hidden="true"></span></span>
+          <div class="aec-row-card__body"><span class="aec-row-card__label">Financing type:</span><h3 class="aec-row-card__title" style="font-size:var(--aec-typography-heading-6-font-size)">I have my own financing</h3></div>
+          <div class="aec-row-card__body aec-row-card__split"><span class="aec-row-card__label">Application type:</span><h3 class="aec-row-card__title" style="font-size:var(--aec-typography-heading-6-font-size)">With co-buyer</h3></div>
+          <div class="aec-row-card__aside"><button class="aec-btn aec-btn--standard aec-btn--sm" type="button" data-aec-snackbar="Reminder email sent to the co-buyer">Send reminder email</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="summary">Financing summary</h2>
+    <div class="doc-example" data-label="Financing summary table">
+      <div class="doc-example-preview is-stretch">
+        <section class="aec-summary" aria-labelledby="fs-t">
+          <div class="aec-summary__head"><h3 class="aec-summary__title" id="fs-t">Financing</h3><span class="aec-chip-plain aec-chip-plain--success aec-chip-plain--sm">Approved</span><a class="aec-link aec-link--neutral" href="#summary">Edit</a></div>
+          <dl class="aec-summary__grid">
+            <div><dt>Lender</dt><dd>GM Financial</dd></div><div><dt>Term</dt><dd>72 months</dd></div><div><dt>APR</dt><dd>4.5%</dd></div>
+            <div><dt>Monthly payment</dt><dd>$396.00</dd></div><div><dt>Down payment</dt><dd>$3,800.00</dd></div><div><dt>Amount financed</dt><dd>$28,400.00</dd></div>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Offer selection <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The offer list is a <code>radiogroup</code>, and each Select button is a <code>radio</code> with <code>aria-checked</code>. Offer details use a description list (<code>&lt;dl&gt;</code>).</p></div>
+      <div class="doc-a11y-item"><h3>Previous values</h3><p>Say "was $420.00" in words, rather than relying on strikethrough or colour.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The Financing info hover state binds its border to <code>bg/variant</code>, which looks like a mistake. The code keeps <code>border/default</code> and adds a shadow.</li>
+      <li>The summary status text uses <code>success/on-subtle</code>, which isn't in the token list. It maps to <code>success/default</code>.</li>
+      <li>Lender logos (for example Bank of America) are image slots.</li>
+    </ul>
+  </section>
+</div>

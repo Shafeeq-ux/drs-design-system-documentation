@@ -1,0 +1,166 @@
+---
+title: Modals & dialogs
+description: Checkout dialogs built on the modal — confirm your deal, modify payments, share vehicle, reserve vehicle, switch vehicle, login OTP and contact dealership.
+figma: 6575-25527
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Overlays</p>
+  <h1>Modals &amp; dialogs</h1>
+  <p class="doc-lead">Content built on the foundation <a href="../components/modal.html">modal</a> for focused checkout decisions: confirming a deal, changing how add-ons are paid, sharing, reserving or switching a vehicle, signing in and contacting the dealer.</p>
+  <div class="doc-meta"><span>Modal · 12 content types · 5 dialogs</span><span><code>dialog.aec-modal.aec-dialog</code></span></div>
+
+  <div class="doc-intro">
+    <p>Figma styles these dialogs inconsistently (radius 0, 4 or 8, with or without a shadow). The code uses one treatment, <code>.aec-dialog</code>: an 8px radius with <code>shadow/l</code> on desktop, and a 16px top radius as a bottom sheet on mobile.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="demo">Try them</h2>
+    <div class="doc-example" data-no-code>
+      <div class="doc-example-preview">
+        <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" data-aec-open="dlg-confirm">Confirm your deal</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" data-aec-open="dlg-modify">Modify payments</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" data-aec-open="dlg-share">Share vehicle</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" data-aec-open="dlg-reserve">Reserve vehicle</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" data-aec-open="dlg-switch">Switch vehicle</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" data-aec-open="dlg-otp">Sign in with OTP</button>
+      </div>
+    </div>
+
+    <dialog class="aec-modal aec-dialog" id="dlg-confirm" aria-labelledby="dlg-confirm-t">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="dlg-confirm-t">Confirm your deal</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body">
+        <p>You've selected the offer from <strong>GM Financial</strong>. Here's how your deal changes:</p>
+        <table class="aec-diff-table"><tbody>
+          <tr><th>Monthly payment</th><td><del>$420.00</del>$396.00</td></tr>
+          <tr><th>Down payment</th><td><del>$4,500.00</del>$3,800.00</td></tr>
+          <tr><th>Term</th><td>84 months</td></tr>
+        </tbody></table>
+        <span class="aec-chip aec-chip--info aec-chip--success aec-chip--sm" style="align-self:flex-start">You save $24/mo</span>
+      </div>
+      <div class="aec-modal__footer"><button class="aec-btn aec-btn--standard" type="button" data-aec-close>Cancel</button><button class="aec-btn aec-btn--primary" type="button" data-aec-close>Confirm</button></div>
+    </dialog>
+
+    <dialog class="aec-modal aec-modal--lg aec-dialog" id="dlg-modify" aria-labelledby="dlg-modify-t" style="width:min(768px,calc(100vw - 32px))">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="dlg-modify-t">Modify payments</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body">
+        <p>Choose how you'd like to pay for each product.</p>
+        <div class="aec-table-wrap"><table class="aec-table">
+          <thead><tr><th scope="col">Products (2)</th><th scope="col" class="aec-num">Price</th><th scope="col">Payment option</th></tr></thead>
+          <tbody>
+            <tr><td><span class="aec-row"><span class="aec-img-slot" style="width:48px;height:32px;border-radius:4px"></span>GardX Vehicle Protection</span></td><td class="aec-num">$130</td><td><fieldset class="aec-fieldset"><legend class="aec-visually-hidden">Pay for GardX</legend><div class="aec-choice-list aec-choice-list--row" style="column-gap:16px"><label class="aec-control" style="padding:0;min-height:0"><input class="aec-radio" type="radio" name="pm1" checked><span class="aec-form-label"><span class="aec-form-label__text">Monthly ($15/mo)</span></span></label><label class="aec-control" style="padding:0;min-height:0"><input class="aec-radio" type="radio" name="pm1"><span class="aec-form-label"><span class="aec-form-label__text">Upfront</span></span></label></div></fieldset></td></tr>
+            <tr><td><span class="aec-row"><span class="aec-img-slot" style="width:48px;height:32px;border-radius:4px"></span>19-in Glint Black Wheels</span></td><td class="aec-num">$178</td><td><fieldset class="aec-fieldset"><legend class="aec-visually-hidden">Pay for wheels</legend><div class="aec-choice-list aec-choice-list--row" style="column-gap:16px"><label class="aec-control" style="padding:0;min-height:0"><input class="aec-radio" type="radio" name="pm2"><span class="aec-form-label"><span class="aec-form-label__text">Monthly ($20/mo)</span></span></label><label class="aec-control" style="padding:0;min-height:0"><input class="aec-radio" type="radio" name="pm2" checked><span class="aec-form-label"><span class="aec-form-label__text">Upfront</span></span></label></div></fieldset></td></tr>
+          </tbody>
+        </table></div>
+        <div class="aec-price-block"><span class="aec-price-block__label">Total monthly payment:</span><span class="aec-price-block__value">$15/mo</span></div>
+      </div>
+      <div class="aec-modal__footer"><button class="aec-btn aec-btn--standard" type="button" data-aec-close>Cancel</button><button class="aec-btn aec-btn--primary" type="button" data-aec-close>Save</button></div>
+    </dialog>
+
+    <dialog class="aec-modal aec-modal--sm aec-dialog" id="dlg-share" aria-labelledby="dlg-share-t">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="dlg-share-t">Share vehicle details</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body">
+        <div class="aec-vehicle-strip"><span class="aec-img-slot aec-vehicle-strip__img"></span><span class="aec-vehicle-strip__body"><strong>2025 Blazer EV</strong>SS AWD<br>Purchase price: $33,392.00</span></div>
+        <div class="aec-tabs aec-tabs--inset">
+          <div class="aec-tabs__list" role="tablist" aria-label="Share method"><button class="aec-tab" role="tab" id="sh-e" aria-selected="true" aria-controls="sh-ep">Email</button><button class="aec-tab" role="tab" id="sh-l" aria-selected="false" aria-controls="sh-lp">Copy link</button></div>
+          <div class="aec-tabs__panel" role="tabpanel" id="sh-ep" aria-labelledby="sh-e"><div class="aec-stack">
+            <div class="aec-field"><label class="aec-field__label" for="sh-name">Recipient full name</label><div class="aec-field__box"><input class="aec-field__input" id="sh-name" autocomplete="off"></div></div>
+            <div class="aec-field"><label class="aec-field__label" for="sh-mail">Email</label><div class="aec-field__box"><input class="aec-field__input" id="sh-mail" type="email" autocomplete="off"></div></div>
+            <button class="aec-btn aec-btn--primary" type="button" data-aec-snackbar="Email sent">Send</button></div></div>
+          <div class="aec-tabs__panel" role="tabpanel" id="sh-lp" aria-labelledby="sh-l" hidden><div class="aec-field"><label class="aec-field__label" for="sh-link">Link</label><div class="aec-field__box"><input class="aec-field__input" id="sh-link" readonly value="https://chevy.example/deal/A23X45Z"><button class="aec-btn aec-btn--primary aec-btn--inline" type="button" style="margin-right:16px" data-aec-snackbar="Link copied">Copy</button></div></div></div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="aec-modal aec-dialog" id="dlg-reserve" aria-labelledby="dlg-reserve-t" style="width:min(512px,calc(100vw - 32px))">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="dlg-reserve-t">Reserve vehicle</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body">
+        <p>You can't continue without reserving this vehicle.</p>
+        <div class="aec-vehicle-strip aec-vehicle-strip--outlined"><span class="aec-img-slot aec-vehicle-strip__img"></span><span class="aec-vehicle-strip__body"><strong>2025 Blazer EV SS AWD</strong>Stock# A23X45Z · Summit White<br><span class="aec-body-2 aec-medium" style="color:var(--aec-color-text-default)">Reserve for $500</span></span></div>
+      </div>
+      <div class="aec-modal__footer"><button class="aec-btn aec-btn--standard" type="button" data-aec-close>Not now</button><button class="aec-btn aec-btn--primary" type="button" data-aec-close>Reserve for $500</button></div>
+    </dialog>
+
+    <dialog class="aec-modal aec-dialog" id="dlg-switch" aria-labelledby="dlg-switch-t" style="width:min(743px,calc(100vw - 32px))">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="dlg-switch-t">Vehicle switch request by dealership</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body">
+        <div class="aec-notice aec-notice--inline aec-notice--warning" style="border-radius:4px"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><div class="aec-notice__body"><p class="aec-notice__title">Your dealer suggested a different vehicle</p><p class="aec-notice__text">The vehicle you selected is no longer available.</p></div></div>
+        <div class="aec-compare">
+          <div class="aec-compare__card"><span class="aec-chip aec-chip--info aec-chip--grey aec-chip--sm" style="align-self:flex-start">Current</span><span class="aec-img-slot"></span><strong>2025 Equinox LT</strong>23,000 miles • $34,500</div>
+          <span class="aec-compare__swap" aria-hidden="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/exchange-policy.svg)"></span></span>
+          <div class="aec-compare__card"><span class="aec-chip aec-chip--info aec-chip--sm" style="align-self:flex-start">Updated</span><span class="aec-img-slot"></span><strong>2025 Equinox RS</strong>12,000 miles • $36,400</div>
+        </div>
+      </div>
+      <div class="aec-modal__footer"><button class="aec-btn aec-btn--primary aec-btn--block" type="button" data-aec-close>Accept &amp; continue</button></div>
+    </dialog>
+
+    <dialog class="aec-modal aec-dialog" id="dlg-otp" aria-labelledby="dlg-otp-t" style="width:min(640px,calc(100vw - 32px))">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="dlg-otp-t">Let's get started</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body">
+        <p>Enter the 6-digit code we sent to <strong>john.freeman@example.com</strong>. <a class="aec-link" href="#demo">Edit</a></p>
+        <fieldset class="aec-fieldset"><legend class="aec-visually-hidden">Verification code</legend>
+          <div class="aec-otp"><input aria-label="Digit 1" inputmode="numeric" maxlength="1" autocomplete="one-time-code"><input aria-label="Digit 2" inputmode="numeric" maxlength="1"><input aria-label="Digit 3" inputmode="numeric" maxlength="1"><input aria-label="Digit 4" inputmode="numeric" maxlength="1"><input aria-label="Digit 5" inputmode="numeric" maxlength="1"><input aria-label="Digit 6" inputmode="numeric" maxlength="1"></div></fieldset>
+        <p class="aec-body-3">Didn't get it? <button class="aec-link aec-link--sm" type="button">Resend code</button></p>
+      </div>
+      <div class="aec-modal__footer"><button class="aec-btn aec-btn--primary" type="button" data-aec-close>Continue</button></div>
+    </dialog>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content-types">Modal content types</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Type</th><th>Width</th><th>Content</th></tr></thead>
+      <tbody>
+        <tr><td>Default (confirm)</td><td>640 / 464 small</td><td>Body-2 confirmation copy, an optional text field or reason text area, and a neutral Edit link</td></tr>
+        <tr><td>Confirm your deal</td><td>768</td><td>Before → after comparison table and a status chip</td></tr>
+        <tr><td>Modify accessories / payments</td><td>768</td><td>Product table with Pay monthly / Pay upfront radios, and the total monthly payment</td></tr>
+        <tr><td>Payment</td><td>768</td><td>Card information (card-brand image slot, last four digits), and billing details with Edit</td></tr>
+        <tr><td>Protection plan (individual, packages)</td><td>640</td><td>Months and miles filters, coverage checkboxes, a radio list of coverage options, and package tabs</td></tr>
+        <tr><td>Share vehicle</td><td>456</td><td>Vehicle strip, Email / Copy link tabs, and a recipient form</td></tr>
+        <tr><td>Login OTP</td><td>640</td><td>Email step, then 6 OTP digits with a resend link and error state</td></tr>
+        <tr><td>Contact dealership / dealer verification pending</td><td>668</td><td><a href="#contact">Dealer card</a> with explanatory copy</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="contact">Contact dealership card</h2>
+    <p>An expandable card used inside dialogs and side sheets. Collapsed, it's a one-line prompt. Expanded, it shows the dealer's details and a map.</p>
+    <div class="doc-example" data-label="Contact dealership">
+      <div class="doc-example-preview is-stretch">
+        <details class="aec-dealer">
+          <summary class="aec-dealer__summary">To enroll, please <span class="aec-link aec-link--sm">contact the dealership</span></summary>
+          <div class="aec-dealer__body">
+            <div class="aec-dealer__details">
+              <span class="aec-dealer__name"><span class="aec-img-slot aec-dealer__logo"></span>Riverside Chevrolet</span>
+              <span class="aec-dealer__row"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/location-pin.svg)" aria-hidden="true"></span>8200 Auto Dr, Riverside, CA 92504</span>
+              <span class="aec-dealer__row"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/email.svg)" aria-hidden="true"></span><a class="aec-link" href="mailto:sales@example.com">sales@example.com</a></span>
+              <span class="aec-dealer__row"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/phone.svg)" aria-hidden="true"></span><a class="aec-link aec-link--neutral" href="tel:+19514005219"><b>(951) 400-5219</b></a></span>
+              <a class="aec-btn aec-btn--primary aec-btn--outline aec-btn--md" style="align-self:flex-start" href="#contact">Get directions</a>
+            </div>
+            <div class="aec-img-slot aec-dealer__map"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/map-pin.svg)" aria-hidden="true"></span></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Focus and naming <span class="doc-wcag">WCAG 2.4.3 · 4.1.2</span></h3><p>Every dialog is a native <code>&lt;dialog&gt;</code> named by its title. Focus starts on the first field, or on the close button for confirmations.</p></div>
+      <div class="doc-a11y-item"><h3>OTP <span class="doc-wcag">WCAG 1.3.5 · 3.3.1</span></h3><p>Label each digit, and put <code>autocomplete="one-time-code"</code> on the first so SMS autofill works. Pasting a full code fills every digit. Show errors in text.</p></div>
+      <div class="doc-a11y-item"><h3>Comparisons <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Old values use <code>&lt;del&gt;</code>, so the before → after change is clear without relying on strikethrough styling.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Contact Dealership exists three times as identical copies (258:89111, 9212:137131 and an unpublished 250:81818). Keep one.</li>
+      <li>Elevation and radius vary: Modal has 0 and no shadow, Share has 8 and <code>shadow/l</code>, Dialog – Share and Reserve have 4 with a border and <code>shadow/l</code>, and Switch has 4 and no shadow.</li>
+      <li>Dialog – Share uses heading-4 for its title. All the others use heading-5.</li>
+      <li>Typos: "delate" and "Peguses". Keyboards (3386:99777) is an iOS device mock and isn't implemented.</li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Button · DRS Design System</title>
+<meta name="description" content="Buttons trigger an action, such as submitting a form, continuing a checkout step or opening a dialog.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50169">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Button</h1>
+  <p class="doc-lead">Triggers an action, such as submitting a form, moving to the next checkout step or opening a dialog.</p>
+  <div class="doc-meta"><span>11 Figma component sets</span><span><code>.aec-btn</code></span></div>
+
+  <div class="doc-intro">
+    <p>A button tells people what will happen when they press it. Buttons come in five emphasis colours (<strong>primary, secondary, neutral, inverse, destructive</strong>), three styles (<strong>filled, outline, plain</strong>) and an <strong>inline</strong> text style. Use buttons for actions. To take someone to another page, use a <a href="link.html">link</a>.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <p>Choose the emphasis by how important the action is, not by how it looks. Use one primary action per view.</p>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3>Primary</h3><p>The main action on the page, for example <em>Continue to payment</em>. Use one per view.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--primary">Continue</button><button class="aec-btn aec-btn--primary aec-btn--outline">Save deal</button><button class="aec-btn aec-btn--primary aec-btn--plain">Edit</button></div></div>
+      <div class="doc-variant"><div><h3>Secondary</h3><p>Strong but neutral actions next to a primary, or the main action where blue would compete with content.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--secondary">Get pre-qualified</button><button class="aec-btn aec-btn--secondary aec-btn--outline">Compare</button><button class="aec-btn aec-btn--secondary aec-btn--plain">Skip</button></div></div>
+      <div class="doc-variant"><div><h3>Neutral</h3><p>Low-emphasis utility actions. It looks the same as secondary, and is kept as its own set for parity with Figma.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--neutral">Apply</button><button class="aec-btn aec-btn--neutral aec-btn--outline">Reset</button><button class="aec-btn aec-btn--neutral aec-btn--plain">Clear</button></div></div>
+      <div class="doc-variant"><div><h3>Standard</h3><p>A white button with a blue outline. Use it on tinted or image backgrounds where an outline alone would disappear.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--standard">View details</button></div></div>
+      <div class="doc-variant"><div><h3>Destructive</h3><p>Actions that remove or cancel something and can't easily be undone, for example <em>Remove trade-in</em>.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--destructive">Remove</button><button class="aec-btn aec-btn--destructive aec-btn--outline">Cancel order</button><button class="aec-btn aec-btn--destructive aec-btn--plain">Delete</button></div></div>
+      <div class="doc-variant"><div><h3>Inverse</h3><p>For dark surfaces such as the header, hero banners and snackbars.</p></div>
+        <div class="doc-variant-demo is-inverse"><button class="aec-btn aec-btn--inverse">Build &amp; price</button><button class="aec-btn aec-btn--inverse aec-btn--outline">Learn more</button><button class="aec-btn aec-btn--inverse aec-btn--plain">Dismiss</button></div></div>
+      <div class="doc-variant"><div><h3>Inline</h3><p>A text-only button inside a sentence, card or table row. It is 24px tall and has no padding.</p></div>
+        <div class="doc-variant-demo"><button class="aec-btn aec-btn--inline">Change vehicle</button><button class="aec-btn aec-btn--secondary aec-btn--inline">View breakdown</button><button class="aec-btn aec-btn--destructive aec-btn--inline">Remove</button></div></div>
+    </div>
+
+    <div class="doc-example" data-label="Primary · filled, outline, plain">
+      <div class="doc-example-preview">
+        <button class="aec-btn aec-btn--primary" type="button">Continue</button>
+        <button class="aec-btn aec-btn--primary aec-btn--outline" type="button">Save deal</button>
+        <button class="aec-btn aec-btn--primary aec-btn--plain" type="button">Edit</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="icons">With icons</h2>
+    <p>Icons are optional, sit on either side of the label (16px) and must reinforce the label, not replace it. Use the <a href="icon-button.html">icon button</a> for icon-only actions.</p>
+    <div class="doc-example" data-label="Leading and trailing icons">
+      <div class="doc-example-preview">
+        <button class="aec-btn aec-btn--primary" type="button">Continue <span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-right.svg)" aria-hidden="true"></span></button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/download.svg)" aria-hidden="true"></span> Download quote</button>
+        <button class="aec-btn aec-btn--primary aec-btn--inline" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span> Edit</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <p>Hover and pressed share one colour in Figma. Keyboard focus adds a 2px <code>focus/default</code> ring, 2px outside the button. Try tabbing to the buttons below.</p>
+    <div class="doc-states">
+      <div class="doc-state"><span class="doc-state-label">Default</span><button class="aec-btn aec-btn--primary">Button</button></div>
+      <div class="doc-state"><span class="doc-state-label">Hover / pressed</span><button class="aec-btn aec-btn--primary" style="background:var(--aec-color-primary-hover)">Button</button></div>
+      <div class="doc-state"><span class="doc-state-label">Focus</span><button class="aec-btn aec-btn--primary" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px">Button</button></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><button class="aec-btn aec-btn--primary" disabled>Button</button></div>
+      <div class="doc-state"><span class="doc-state-label">Outline</span><button class="aec-btn aec-btn--primary aec-btn--outline">Button</button></div>
+      <div class="doc-state"><span class="doc-state-label">Outline hover</span><button class="aec-btn aec-btn--primary aec-btn--outline" style="border-color:var(--aec-color-primary-hover);color:var(--aec-color-primary-hover)">Button</button></div>
+      <div class="doc-state"><span class="doc-state-label">Outline disabled</span><button class="aec-btn aec-btn--primary aec-btn--outline" disabled>Button</button></div>
+      <div class="doc-state"><span class="doc-state-label">Plain disabled</span><button class="aec-btn aec-btn--primary aec-btn--plain" disabled>Button</button></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <button class="aec-btn aec-btn--primary" tabindex="-1" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/edit.svg)" aria-hidden="true"></span> Button <span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-right.svg)" aria-hidden="true"></span></button>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 82px);top:4px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 50px);top:4px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 8px);top:4px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 34px);top:4px">4</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 70px);bottom:2px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Container</strong>48px tall, 8px radius, 24px side padding, 2px border.</span></li>
+        <li><span><strong>Leading icon (optional)</strong>16px, inherits the label colour.</span></li>
+        <li><span><strong>Label</strong>16/24. Demi for primary and standard, medium for the rest.</span></li>
+        <li><span><strong>Trailing icon (optional)</strong>16px. Use it for direction, such as an arrow.</span></li>
+        <li><span><strong>Focus ring</strong>2px <code>focus/default</code>, shown only on keyboard focus.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <p>Large (48px) is the Figma size and the default. Medium and small are added in code for dense layouts. In Figma all three sizes are currently 48px.</p>
+    <div class="doc-example" data-label="Sizes">
+      <div class="doc-example-preview">
+        <button class="aec-btn aec-btn--primary" type="button">Large · 48</button>
+        <button class="aec-btn aec-btn--primary aec-btn--md" type="button">Medium · 40</button>
+        <button class="aec-btn aec-btn--primary aec-btn--sm" type="button">Small · 32</button>
+      </div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Size</th><th>Class</th><th>Height</th><th>Side padding</th><th>Label</th></tr></thead>
+      <tbody>
+        <tr><td>Large (default)</td><td>—</td><td>48px · <code>--aec-sizing-selectable-l</code></td><td>24px · <code>container-padding-m</code></td><td>body-1 (16/24)</td></tr>
+        <tr><td>Medium</td><td><code>.aec-btn--md</code></td><td>40px</td><td>16px · <code>container-padding-s</code></td><td>body-1 (16/24)</td></tr>
+        <tr><td>Small</td><td><code>.aec-btn--sm</code></td><td>32px</td><td>16px · <code>selectable-padding-m</code></td><td>body-2 (14/22)</td></tr>
+      </tbody>
+    </table></div>
+    <p>Add <code>.aec-btn--block</code> to make a button fill its container. This is useful for the sticky action bar on mobile.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="grouping">Grouping</h2>
+    <p>Wrap related buttons in <code>.aec-btn-group</code> (16px gap, <code>selectable-gap-l</code>). Put the primary action last, on the right, on desktop. On mobile, stack full-width buttons with the primary action on top.</p>
+    <div class="doc-example" data-label="Button group">
+      <div class="doc-example-preview">
+        <div class="aec-btn-group">
+          <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button">Back</button>
+          <button class="aec-btn aec-btn--primary" type="button">Continue</button>
+        </div>
+      </div>
+    </div>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview"><button class="aec-btn aec-btn--secondary aec-btn--outline" tabindex="-1">Back</button><button class="aec-btn aec-btn--primary" tabindex="-1">Continue</button></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Pair one primary with a lower-emphasis option.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><button class="aec-btn aec-btn--primary" tabindex="-1">Save</button><button class="aec-btn aec-btn--primary" tabindex="-1">Continue</button></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't place two primary buttons side by side, because people can't tell which is the main action.</div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li><strong>Start with a verb</strong> that describes the outcome: <em>Continue to payment</em>, <em>Schedule test drive</em>.</li>
+      <li><strong>Keep it short</strong>: one to three words when possible.</li>
+      <li><strong>Use sentence case</strong> and no end punctuation.</li>
+      <li><strong>Be specific</strong>: <em>Remove trade-in</em> is clearer than <em>Remove</em> in a confirmation dialog.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Use the right element <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>&lt;button type="button"&gt;</code> for actions and <code>&lt;a href&gt;</code> for navigation. A link styled as a button still needs <code>.aec-btn</code> and an <code>href</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Target size <span class="doc-wcag">WCAG 2.5.8</span></h3><p>The default 48px height exceeds the 24×24px minimum. Inline buttons are 24px tall, so leave space around them.</p></div>
+      <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Every button shows a 2px <code>focus/default</code> ring on <code>:focus-visible</code>. Don't remove it.</p></div>
+      <div class="doc-a11y-item"><h3>Contrast <span class="doc-wcag">WCAG 1.4.3</span></h3><p>White on <code>primary/default</code> is 4.53:1 and white on <code>secondary/default</code> is 15:1. Disabled buttons are exempt, but you should still explain why an action is unavailable.</p></div>
+      <div class="doc-a11y-item"><h3>Disabled buttons</h3><p>Prefer keeping the button enabled and showing validation messages. If you must disable it, use <code>disabled</code>, or <code>aria-disabled="true"</code> if it needs to stay focusable so it can show a tooltip.</p></div>
+      <div class="doc-a11y-item"><h3>Icon-only <span class="doc-wcag">WCAG 1.1.1</span></h3><p>Give decorative icons inside labelled buttons <code>aria-hidden="true"</code>. Icon-only buttons need <code>aria-label</code>.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="reference">Class reference</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Figma property</th><th>Value</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>Set</td><td>Primary / Secondary / Neutral / Inverse / Destructive / Standard</td><td><code>.aec-btn--primary</code> … <code>.aec-btn--standard</code></td></tr>
+        <tr><td>style</td><td>filled / outline / plain</td><td>(none) / <code>.aec-btn--outline</code> / <code>.aec-btn--plain</code></td></tr>
+        <tr><td>Inline Button set</td><td>—</td><td><code>.aec-btn--inline</code> + emphasis</td></tr>
+        <tr><td>size</td><td>large / medium / small</td><td>(none) / <code>.aec-btn--md</code> / <code>.aec-btn--sm</code></td></tr>
+        <tr><td>state</td><td>hover / pressed</td><td><code>:hover</code> / <code>:active</code></td></tr>
+        <tr><td>disabled</td><td>true</td><td><code>disabled</code> or <code>aria-disabled="true"</code></td></tr>
+        <tr><td>focus-ring</td><td>true</td><td><code>:focus-visible</code></td></tr>
+        <tr><td>left-icon / right-icon</td><td>true</td><td>child <code>.aec-icon</code> before/after the label</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><div><p><strong>Differences found in the Figma library, for the design team to review:</strong></p>
+      <ul style="margin:8px 0 0;padding-left:18px">
+        <li>The size variants (large, medium, small) are all 48px tall. The code adds 40px and 32px sizes.</li>
+        <li>Neutral's pressed state goes back to the default colour (#262626). The code uses the hover colour for pressed, as the other sets do.</li>
+        <li>Destructive has no hover change in Figma, so the code doesn't add one either.</li>
+        <li>Button – Standard's description says "dark text with gray border", but the design is blue.</li>
+        <li>Inline Button – Neutral is blue, the same as Primary.</li>
+        <li>Colours in the components are raw hex values, not linked to the colour styles.</li>
+      </ul></div></div>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

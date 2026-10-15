@@ -1,0 +1,222 @@
+{
+  "$meta": {
+    "name": "DR 2.0 – SC GM Chevrolet Design Foundation",
+    "source": "https://www.figma.com/design/ilpJ5K66cGR85o287K4HDD",
+    "prefix": "aec",
+    "note": "Values extracted from the Figma file's local styles and token documentation pages. Figma uses Chevy Sans; the web build uses DM Sans."
+  },
+  "color": {
+    "bg": {
+      "default": { "value": "#ffffff", "group": "Neutral" },
+      "variant": { "value": "#f2f2f2", "group": "Neutral" },
+      "disabled": { "value": "#c3cfd9", "group": "Neutral" },
+      "inverse": { "value": "#262626", "group": "Neutral" }
+    },
+    "border": {
+      "default": { "value": "#e6e6e6", "group": "Neutral" },
+      "variant": { "value": "#b3b3b3", "group": "Neutral" },
+      "disabled": { "value": "#c3cfd9", "group": "Neutral" }
+    },
+    "text": {
+      "default": { "value": "#262626", "group": "Neutral" },
+      "subtle": { "value": "#666666", "group": "Neutral" },
+      "variant": { "value": "#666666", "group": "Neutral" },
+      "disabled": { "value": "#b3b3b3", "group": "Neutral" },
+      "inverse": { "value": "#ffffff", "group": "Neutral" }
+    },
+    "icon": {
+      "default": { "value": "#262626", "group": "Neutral" },
+      "variant": { "value": "#666666", "group": "Neutral" },
+      "disabled": { "value": "#b3b3b3", "group": "Neutral" },
+      "inverse": { "value": "#ffffff", "group": "Neutral" }
+    },
+    "backdrop": {
+      "default": { "value": "rgba(0, 0, 0, 0.52)", "group": "Neutral" },
+      "inverse": { "value": "rgba(255, 255, 255, 0.25)", "group": "Neutral" }
+    },
+    "action": {
+      "bg": {
+        "default": { "value": "#0077d9", "group": "Action", "alias": "color.primary.default" },
+        "hover": { "value": "#005ba6", "group": "Action", "alias": "color.primary.hover" },
+        "active": { "value": "#0077d9", "group": "Action", "alias": "color.primary.default" },
+        "disabled": { "value": "#c3cfd9", "group": "Action" }
+      },
+      "border": {
+        "default": { "value": "#e6e6e6", "group": "Action" },
+        "hover": { "value": "#b3b3b3", "group": "Action" },
+        "active": { "value": "#0077d9", "group": "Action", "alias": "color.primary.default" }
+      },
+      "inverse": {
+        "bg": {
+          "default": { "value": "#ffffff", "group": "Action – inverse" },
+          "hover": { "value": "#e6e6e6", "group": "Action – inverse" },
+          "active": { "value": "#e6e6e6", "group": "Action – inverse" },
+          "disabled": { "value": "#666666", "group": "Action – inverse" }
+        },
+        "border": {
+          "default": { "value": "#e6e6e6", "group": "Action – inverse" },
+          "hover": { "value": "#e6e6e6", "group": "Action – inverse" },
+          "active": { "value": "#e6e6e6", "group": "Action – inverse" }
+        }
+      }
+    },
+    "primary": {
+      "default": { "value": "#0077d9", "group": "Brand" },
+      "hover": { "value": "#005ba6", "group": "Brand" },
+      "subtle": { "value": "#ecf1fc", "group": "Brand" },
+      "on-default": { "value": "#ffffff", "group": "Brand" },
+      "on-subtle": { "value": "#0077d9", "group": "Brand" }
+    },
+    "secondary": {
+      "default": { "value": "#262626", "group": "Brand" },
+      "hover": { "value": "#1a1a1a", "group": "Brand" },
+      "subtle": { "value": "#ecf1fc", "group": "Brand" },
+      "on-default": { "value": "#ffffff", "group": "Brand" },
+      "on-subtle": { "value": "#262626", "group": "Brand" }
+    },
+    "focus": {
+      "default": { "value": "#0077d9", "group": "Brand" }
+    },
+    "success": {
+      "default": { "value": "#2d871b", "group": "Status" },
+      "subtle": { "value": "#e1eddc", "group": "Status" },
+      "on-default": { "value": "#ffffff", "group": "Status" },
+      "on-subtle": { "value": "#2d871b", "group": "Status" }
+    },
+    "warning": {
+      "default": { "value": "#b3842d", "group": "Status" },
+      "subtle": { "value": "#f6ecde", "group": "Status" },
+      "on-default": { "value": "#1a1a1a", "group": "Status" },
+      "on-subtle": { "value": "#b3842d", "group": "Status" }
+    },
+    "error": {
+      "default": { "value": "#d64022", "group": "Status" },
+      "subtle": { "value": "#ffe4db", "group": "Status" },
+      "on-default": { "value": "#ffffff", "group": "Status" },
+      "on-subtle": { "value": "#d64022", "group": "Status" }
+    },
+    "info": {
+      "default": { "value": "#2263e3", "group": "Status" },
+      "subtle": { "value": "#ebf2ff", "group": "Status" },
+      "on-default": { "value": "#ffffff", "group": "Status" },
+      "on-subtle": { "value": "#2263e3", "group": "Status" }
+    },
+    "decoration": {
+      "01": { "value": "#f2bc18", "group": "Decoration" },
+      "02": { "value": "#fff5df", "group": "Decoration" },
+      "03": { "value": "#261e0e", "group": "Decoration" },
+      "04": { "value": "#f25130", "group": "Decoration" },
+      "05": { "value": "#ffe7de", "group": "Decoration" },
+      "06": { "value": "#27140c", "group": "Decoration" }
+    },
+    "inverse": {
+      "bg": {
+        "default": { "value": "#262626", "group": "Inverse" },
+        "variant": { "value": "#1a1a1a", "group": "Inverse" },
+        "disabled": { "value": "#666666", "group": "Inverse" }
+      },
+      "border": {
+        "default": { "value": "#e6e6e6", "group": "Inverse" },
+        "variant": { "value": "#8c8c8c", "group": "Inverse" },
+        "disabled": { "value": "#666666", "group": "Inverse" }
+      },
+      "text": {
+        "default": { "value": "#ffffff", "group": "Inverse" },
+        "variant": { "value": "#b3b3b3", "group": "Inverse" },
+        "disabled": { "value": "#666666", "group": "Inverse" }
+      },
+      "icon": {
+        "default": { "value": "#ffffff", "group": "Inverse" },
+        "variant": { "value": "#b3b3b3", "group": "Inverse" },
+        "disabled": { "value": "#666666", "group": "Inverse" }
+      }
+    },
+    "light-grey": {
+      "weak": { "value": "#d8d8d8", "group": "Greys" },
+      "base": { "value": "#b3b3b3", "group": "Greys" },
+      "strong": { "value": "#8c8c8c", "group": "Greys" }
+    },
+    "dark-grey": {
+      "weak": { "value": "#afafaf", "group": "Greys" },
+      "base": { "value": "#666666", "group": "Greys" },
+      "strong": { "value": "#343434", "group": "Greys" }
+    }
+  },
+  "border": {
+    "radius": {
+      "none": { "value": "0px", "alias": "core.dimension.0" },
+      "rounded-rect": { "value": "4px", "alias": "core.dimension.25" },
+      "default": { "value": "8px", "alias": "core.dimension.50" },
+      "focus": { "value": "4px", "alias": "core.dimension.25" },
+      "rounded": { "value": "384px", "alias": "core.dimension.2400" }
+    },
+    "width": {
+      "none": { "value": "0px", "alias": "core.dimension.0" },
+      "default": { "value": "1px", "alias": "border.width.10" },
+      "focus": { "value": "1px", "alias": "border.width.10" },
+      "10": { "value": "1px", "alias": "core.dimension.6" },
+      "15": { "value": "1.5px" },
+      "20": { "value": "2px", "alias": "core.dimension.12" },
+      "30": { "value": "3px" },
+      "40": { "value": "4px", "alias": "core.dimension.25" }
+    }
+  },
+  "spacing": {
+    "container": {
+      "padding": { "none": "0px", "s": "16px", "m": "24px", "l": "40px" },
+      "gap": { "none": "0px", "xs": "4px", "s": "8px", "m": "16px", "l": "24px" },
+      "stack": { "none": "0px", "xs": "8px", "s": "16px", "m": "24px", "l": "40px", "xl": "64px" }
+    },
+    "selectable": {
+      "padding": { "none": "0px", "s": "8px", "m": "16px", "l": "24px" },
+      "gap": { "none": "0px", "xs": "2px", "s": "4px", "m": "8px", "l": "16px" },
+      "stack": { "none": "0px", "s": "8px", "m": "16px", "l": "24px" }
+    }
+  },
+  "sizing": {
+    "selectable": { "l": "48px" }
+  },
+  "box-shadow": {
+    "none": "0 0 0 0 rgba(0, 0, 0, 0)",
+    "xs": "0 1px 1px 0 rgba(0, 0, 0, 0.05)",
+    "s": "0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.10)",
+    "m": "0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 4px 3px 0 rgba(0, 0, 0, 0.07)",
+    "l": "0 4px 4px 0 rgba(0, 0, 0, 0.10), 0 10px 8px 0 rgba(0, 0, 0, 0.04)",
+    "xl": "0 8px 4px 0 rgba(0, 0, 0, 0.08), 0 20px 12px 0 rgba(0, 0, 0, 0.03)",
+    "2xl": "0 24px 24px 0 rgba(0, 0, 0, 0.15)"
+  },
+  "font": {
+    "family": {
+      "base": "'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+      "mono": "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace"
+    },
+    "weight": {
+      "regular": 400,
+      "medium": 500,
+      "demi": 600,
+      "bold": 700
+    },
+    "figmaWeightMap": {
+      "Chevy Sans Medium": "regular (400)",
+      "Chevy Sans Demi": "demi (600)",
+      "Chevy Sans Bold": "bold (700)"
+    }
+  },
+  "typography": {
+    "display-1": { "desktop": [40, 48, "demi", 0], "mobile": [40, 48, "demi", 0] },
+    "display-2": { "desktop": [32, 40, "demi", 0], "mobile": [32, 40, "demi", 0] },
+    "heading-1": { "desktop": [40, 48, "demi", -1], "mobile": [32, 36, "demi", 0] },
+    "heading-2": { "desktop": [32, 40, "demi", 0], "mobile": [24, 32, "demi", 0] },
+    "heading-3": { "desktop": [24, 30, "bold", 0], "mobile": [20, 28, "demi", 0] },
+    "heading-4": { "desktop": [20, 24, "bold", 0], "mobile": [18, 24, "bold", 0] },
+    "heading-5": { "desktop": [16, 24, "bold", 0], "mobile": [16, 24, "bold", 0] },
+    "heading-6": { "desktop": [14, 22, "bold", 0], "mobile": [14, 22, "bold", 0] },
+    "body-1": { "desktop": [16, 24, "regular", 0] },
+    "body-2": { "desktop": [14, 22, "regular", 0] },
+    "body-3": { "desktop": [12, 20, "regular", 0] }
+  },
+  "breakpoint": {
+    "tablet": "768px",
+    "desktop": "1025px"
+  }
+}

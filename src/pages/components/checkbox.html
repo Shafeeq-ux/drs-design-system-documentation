@@ -1,0 +1,126 @@
+---
+title: Checkbox
+description: Checkboxes turn an option on or off, or let people choose any number of options from a list.
+figma: 3769-50171
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Checkbox</h1>
+  <p class="doc-lead">Lets people turn an option on or off, or choose any number of options from a list.</p>
+  <div class="doc-meta"><span>3 Figma component sets</span><span><code>.aec-checkbox</code></span></div>
+
+  <div class="doc-intro">
+    <p>Use a checkbox when each option is independent, or when a single choice needs explicit consent, such as agreeing to terms. For one choice from a list, use a <a href="radio.html">radio button</a>. For a setting that takes effect immediately, use a <a href="switch.html">switch</a>.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-example" data-label="Checkbox with label">
+      <div class="doc-example-preview is-col">
+        <label class="aec-control">
+          <input class="aec-checkbox" type="checkbox" name="addons" checked>
+          <span class="aec-form-label"><span class="aec-form-label__text">Protection plan <span class="aec-form-label__count">(3)</span></span></span>
+        </label>
+        <label class="aec-control">
+          <input class="aec-checkbox" type="checkbox" name="addons">
+          <span class="aec-form-label"><span class="aec-form-label__text">Accessories</span><span class="aec-form-label__desc">Floor liners, cargo tray and roof rack</span></span>
+        </label>
+        <label class="aec-control">
+          <input class="aec-checkbox" type="checkbox" name="addons" disabled>
+          <span class="aec-form-label"><span class="aec-form-label__text">Extended warranty</span><span class="aec-form-label__desc">Not available for this trim</span></span>
+        </label>
+      </div>
+    </div>
+    <h3 class="doc-h3" id="indeterminate">Indeterminate</h3>
+    <p>Use the indeterminate state for a parent checkbox when some, but not all, of its children are selected. Set it with JavaScript: <code>input.indeterminate = true</code>.</p>
+    <div class="doc-example" data-label="Select all">
+      <div class="doc-example-preview is-col">
+        <label class="aec-control"><input class="aec-checkbox" type="checkbox" id="cb-all" data-demo-indeterminate><span class="aec-form-label"><span class="aec-form-label__text">All documents</span></span></label>
+        <div style="padding-left:32px;display:flex;flex-direction:column">
+          <label class="aec-control"><input class="aec-checkbox" type="checkbox" data-demo-child checked><span class="aec-form-label"><span class="aec-form-label__text">Driver's licence</span></span></label>
+          <label class="aec-control"><input class="aec-checkbox" type="checkbox" data-demo-child><span class="aec-form-label"><span class="aec-form-label__text">Proof of insurance</span></span></label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="doc-states">
+      <div class="doc-state"><span class="doc-state-label">Unchecked</span><input class="aec-checkbox" type="checkbox" aria-label="Unchecked"></div>
+      <div class="doc-state"><span class="doc-state-label">Checked</span><input class="aec-checkbox" type="checkbox" checked aria-label="Checked"></div>
+      <div class="doc-state"><span class="doc-state-label">Indeterminate</span><input class="aec-checkbox" type="checkbox" data-demo-ind aria-label="Indeterminate"></div>
+      <div class="doc-state"><span class="doc-state-label">Focus</span><input class="aec-checkbox" type="checkbox" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px" aria-label="Focus"></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><input class="aec-checkbox" type="checkbox" disabled aria-label="Disabled"></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled checked</span><input class="aec-checkbox" type="checkbox" disabled checked aria-label="Disabled checked"></div>
+      <div class="doc-state"><span class="doc-state-label">Error</span><input class="aec-checkbox" type="checkbox" aria-invalid="true" aria-label="Error"></div>
+    </div>
+    <p class="doc-small doc-muted">The checked state is a white box with a dark check, not a filled box. While the mouse is pressed on an unchecked box, a grey check previews the selection.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <label class="aec-control"><input class="aec-checkbox" type="checkbox" checked tabindex="-1" aria-label="Example"><span class="aec-form-label"><span class="aec-form-label__text">Label <span class="aec-form-label__count">(0)</span></span><span class="aec-form-label__desc">Descriptive text</span></span></label>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 80px);top:2px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 30px);top:2px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 34px);top:2px">3</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 40px);bottom:8px">4</span>
+      </div>
+      <ol>
+        <li><span><strong>Box</strong>24×24px, 1.5px <code>text/default</code> border, 2px radius, check glyph 16px.</span></li>
+        <li><span><strong>Label</strong>body-2 (14/22), <code>text/default</code>.</span></li>
+        <li><span><strong>Count (optional)</strong>For filters, such as "(12)".</span></li>
+        <li><span><strong>Description (optional)</strong>body-3 (12/20), <code>text/subtle</code>.</span></li>
+      </ol>
+    </div>
+    <p>The row is 48px tall on mobile and 40px from 768px up, with an 8px gap between the box and the label. See <a href="form-control.html">form control</a>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start;gap:0"><label class="aec-control"><input class="aec-checkbox" type="checkbox" tabindex="-1" checked><span class="aec-form-label"><span class="aec-form-label__text">Email me updates about my order</span></span></label></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Write labels as positive statements that describe what happens when the box is checked.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start;gap:0"><label class="aec-control"><input class="aec-checkbox" type="checkbox" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Don't send me no updates</span></span></label></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use negative or double-negative labels.</div></div>
+    </div>
+    <ul>
+      <li>Stack options vertically, one per line, so they're easy to scan.</li>
+      <li>Group related checkboxes in a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code>.</li>
+      <li>Don't make a checkbox submit a form or trigger navigation.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Native input <span class="doc-wcag">WCAG 4.1.2</span></h3><p><code>.aec-checkbox</code> styles a real <code>&lt;input type="checkbox"&gt;</code>, so the checked, indeterminate and disabled states are announced automatically.</p></div>
+      <div class="doc-a11y-item"><h3>Label in a target <span class="doc-wcag">WCAG 2.5.8</span></h3><p>Wrap the input and label text in <code>&lt;label class="aec-control"&gt;</code> so the whole row is clickable. Each row is at least 40px tall.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves focus to the box and Space toggles it. Focus shows a 2px ring.</p></div>
+      <div class="doc-a11y-item"><h3>Errors <span class="doc-wcag">WCAG 3.3.1</span></h3><p>For a required consent box, set <code>aria-invalid="true"</code> and link an error message with <code>aria-describedby</code>.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Hover looks the same as default in Figma. Pressed previews a grey check.</li>
+      <li>There are two overlapping label sets, "Checkbox with Label" and "Checkbox with Label new". The code follows "new".</li>
+      <li>In Figma, a disabled row keeps its label in <code>text/default</code>. The code greys the label to <code>text/disabled</code> so the state is clear.</li>
+      <li>The 2px box radius and the #373637 dash colour don't match any token.</li>
+    </ul>
+  </section>
+</div>
+<script>
+  document.querySelectorAll('[data-demo-ind]').forEach(function (i) { i.indeterminate = true; });
+  (function () {
+    var all = document.getElementById('cb-all'); if (!all) return;
+    var kids = Array.prototype.slice.call(document.querySelectorAll('[data-demo-child]'));
+    function sync() { var n = kids.filter(function (k) { return k.checked; }).length; all.checked = n === kids.length; all.indeterminate = n > 0 && n < kids.length; }
+    kids.forEach(function (k) { k.addEventListener('change', sync); });
+    all.addEventListener('change', function () { kids.forEach(function (k) { k.checked = all.checked; }); sync(); });
+    sync();
+  })();
+</script>

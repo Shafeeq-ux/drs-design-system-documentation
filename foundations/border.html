@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Border · DRS Design System</title>
+<meta name="description" content="Corner radius and border width tokens for the DRS Chevrolet foundation.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50157">
+<div class="doc-content">
+  <p class="doc-eyebrow">Foundations</p>
+  <h1>Border</h1>
+  <p class="doc-lead">A small set of radii and widths keeps every surface and control consistent.</p>
+  <div class="doc-meta"><span>Radius: 5 tokens</span><span>Width: 8 tokens</span></div>
+
+  <section class="doc-section">
+    <h2 id="radius">Radius</h2>
+    <p><code>default</code> (8px) is used for buttons, inputs and cards. <code>rounded-rect</code> (4px) is for small elements and focus rings. <code>rounded</code> makes pills and circles.</p>
+    <div class="doc-tokens-list" data-radius></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="width">Width</h2>
+    <p><code>default</code> (1px) is for dividers and input outlines. 2px (<code>border-width-20</code>) is for outline buttons and selected states.</p>
+    <div class="doc-tokens-list" data-width></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="focus">Focus</h2>
+    <p>Focus rings use <code>--aec-color-focus-default</code> with <code>--aec-border-radius-focus</code>. Interactive components show a 2px ring, offset by 2px, when focused from the keyboard.</p>
+    <div class="doc-example" data-no-code><div class="doc-example-preview">
+      <span style="display:inline-flex;height:48px;padding:0 24px;align-items:center;border-radius:8px;background:var(--aec-color-primary-default);color:#fff;font-weight:600;outline:2px solid var(--aec-color-focus-default);outline-offset:2px">Focused button</span>
+    </div></div>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/foundations.js"></script>
+</body>
+</html>

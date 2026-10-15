@@ -1,0 +1,119 @@
+---
+title: Page template
+description: The checkout page shell — top bar, left navigation, 12/8/4-column content grid, summary rail and sticky bottom bar — across eight breakpoints.
+figma: 5607-18706
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Overview</p>
+  <h1>Page template</h1>
+  <p class="doc-lead">The shell every checkout step sits in: a global header, the left navigation, a content column on a responsive grid, the Mathbox summary rail and a sticky bottom bar.</p>
+  <div class="doc-meta"><span>Figma <code>$Base</code> · 9 sizes</span><span><code>.aec-layout</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="demo">Live template</h2>
+    <p>Pick a width to see the layout change. The template uses container queries, so it responds to the width of its container. Used full-page, that is the browser width.</p>
+    <div class="doc-example" data-no-code>
+      <div class="doc-example-bar" style="border-top:0;border-bottom:1px solid var(--doc-line)">
+        <span>Width</span>
+        <span class="aec-toggle-group aec-toggle-group--md aec-toggle-group--hug" role="radiogroup" aria-label="Preview width" id="tpl-widths" style="max-width:none">
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true" value="1440">1440</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" value="1280">1280</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" value="1024">1024</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" value="768">768</button>
+          <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false" value="375">375</button>
+        </span>
+      </div>
+      <div id="tpl-stage" style="overflow:hidden;background:var(--doc-surface-2);padding:16px">
+        <div id="tpl-scale" style="transform-origin:top left">
+          <div class="aec-layout-host" id="tpl-host" style="width:1440px;height:760px;overflow:hidden;outline:1px solid var(--aec-color-border-default);background:#fff">
+            <div class="aec-layout" style="height:100%">
+              <header class="aec-header">
+                <span class="aec-header__brand"><span class="aec-header__logo"><svg viewBox="0 0 94 20" width="94" height="20" role="img" aria-label="Brand logo"><rect width="94" height="20" rx="3" fill="#e6e6e6"/><text x="47" y="14" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#666">LOGO</text></svg></span><span class="aec-header__divider"></span><span class="aec-header__dealer">Riverside Chevrolet</span></span>
+                <span class="aec-header__actions aec-body-3 aec-text-subtle">92504 • CA · Hi, John <span class="aec-avatar aec-avatar--outline aec-avatar--sm" aria-hidden="true">JD</span></span>
+              </header>
+              <nav class="aec-layout__nav aec-sidenav" aria-label="Checkout steps">
+                <div class="aec-sidenav__top">
+                  <div class="aec-sidenav__greet"><span class="aec-sidenav__greet-text">Let’s get started <strong>Andrew</strong></span><button class="aec-sidenav__toggle" type="button" aria-label="Collapse navigation" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/hamburger.svg)" aria-hidden="true"></span></button></div>
+                  <ul class="aec-sidenav__list">
+                    <li><a class="aec-sidenav__item" href="#demo" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/house-line.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Welcome</span></a></li>
+                    <li><a class="aec-sidenav__item" href="#demo" aria-current="page" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trade-in.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Trade-In Vehicle</span></a></li>
+                    <li><a class="aec-sidenav__item" href="#demo" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offers.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Special Offers</span></a></li>
+                    <li><a class="aec-sidenav__item" href="#demo" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/accessories.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Accessories</span></a></li>
+                    <li><a class="aec-sidenav__item" href="#demo" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/protection-plans.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Plans &amp; Services</span></a></li>
+                    <li><a class="aec-sidenav__item" aria-disabled="true" tabindex="-1"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/signature.svg)" aria-hidden="true"></span><span class="aec-sidenav__label">Signature</span></a></li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="aec-layout__main">
+                <div class="aec-layout__content">
+                  <div class="aec-page-header"><div class="aec-page-header__main"><div class="aec-page-header__titles"><h2 class="aec-page-header__title">Trade-In Vehicle</h2><p class="aec-page-header__desc">Tell us about the vehicle you're trading in.</p></div></div></div>
+                  <div class="aec-img-slot" style="height:168px;border-radius:8px">Page content</div>
+                  <div class="aec-img-slot aec-col-half" style="height:120px;border-radius:8px">Half width</div>
+                  <div class="aec-img-slot aec-col-half" style="height:120px;border-radius:8px">Half width</div>
+                </div>
+                <div class="aec-bottom-bar"><div class="aec-bottom-bar__actions"><button class="aec-btn aec-btn--primary aec-btn--md" type="button" tabindex="-1">Continue <span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-right.svg)" aria-hidden="true"></span></button></div></div>
+              </div>
+              <aside class="aec-layout__aside"><div class="aec-stack"><strong class="aec-body-1 aec-bold">2025 Blazer EV SS AWD</strong><span class="aec-body-3 aec-text-subtle">Stock#: A23X45Z</span><div class="aec-img-slot" style="height:150px;border-radius:8px">Vehicle image</div><span class="aec-heading-4">$364.81 <small class="aec-body-2">/mo.</small></span><span class="aec-body-3 aec-text-subtle">72 mo. • 5.9% APR • $2,500 down</span></div></aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="grid">Grid and breakpoints</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Width</th><th>Columns</th><th>Gutter</th><th>Margin</th><th>Left nav</th><th>Summary rail</th></tr></thead>
+      <tbody>
+        <tr><td>≥ 1280 (max 1440, centred)</td><td>12</td><td>16</td><td>40 · <code>container-padding-l</code></td><td>216px</td><td>362px Mathbox</td></tr>
+        <tr><td>1024 – 1279</td><td>8</td><td>16</td><td>32</td><td>238px</td><td>Hidden, summary moves to the bottom bar</td></tr>
+        <tr><td>768 – 1023</td><td>8</td><td>16</td><td>32</td><td>64px icon rail</td><td>Hidden</td></tr>
+        <tr><td>375 – 767</td><td>4</td><td>16</td><td>24 · <code>container-padding-m</code></td><td>Drawer</td><td>Hidden</td></tr>
+        <tr><td>≤ 360</td><td>4</td><td>16</td><td>16 · <code>container-padding-s</code></td><td>Drawer</td><td>Hidden</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>The header is 56px tall at every breakpoint. On screens wider than 1440 it stays full width while the page is centred.</li>
+      <li>The content has 24px top padding (16px on mobile). Its bottom padding clears the sticky 64px bottom bar.</li>
+      <li>Children of <code>.aec-layout__content</code> span the full width by default. <code>.aec-col-half</code> spans half the grid (full width on mobile) and <code>.aec-col-third</code> a third (full width below 1280). Use <code>grid-column: span n</code> for anything else.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="markup">Markup</h2>
+<pre><code>&lt;div class="aec-layout-host"&gt;
+  &lt;div class="aec-layout"&gt;
+    &lt;header class="aec-header"&gt;…&lt;/header&gt;
+    &lt;nav class="aec-layout__nav aec-sidenav" aria-label="Checkout steps"&gt;…&lt;/nav&gt;
+    &lt;main class="aec-layout__main"&gt;
+      &lt;div class="aec-layout__content"&gt;…page content…&lt;/div&gt;
+      &lt;div class="aec-bottom-bar"&gt;…&lt;/div&gt;
+    &lt;/main&gt;
+    &lt;aside class="aec-layout__aside" aria-label="Deal summary"&gt;…Mathbox…&lt;/aside&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The left nav is 216px in some templates (1440, 1920) and 238px in others (1600, 1280, 1024). The code uses 216px at ≥1280 and 238px at 1024–1279, matching the most common frames. Consider standardising on one width.</li>
+      <li>The 32px tablet margin has no spacing token.</li>
+      <li>The 375/360 templates have no navigation entry point or bottom bar. Those come from the <a href="page-header.html">page header</a> and <a href="footers.html">footers</a> patterns.</li>
+    </ul>
+  </section>
+</div>
+<script>
+(function () {
+  var host = document.getElementById('tpl-host'), scale = document.getElementById('tpl-scale'), stage = document.getElementById('tpl-stage');
+  function fit() {
+    var w = parseInt(host.style.width, 10), avail = stage.clientWidth - 32, k = Math.min(1, avail / w);
+    scale.style.transform = 'scale(' + k + ')'; scale.style.width = w + 'px'; scale.style.height = (760 * k) + 'px';
+    host.style.height = (w < 768 ? 812 : 760) + 'px';
+  }
+  document.getElementById('tpl-widths').addEventListener('aec:change', function (e) { host.style.width = e.detail.value + 'px'; fit(); });
+  window.addEventListener('resize', fit); fit();
+})();
+</script>

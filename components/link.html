@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Link · DRS Design System</title>
+<meta name="description" content="Links take people to another page, or to another place on the same page.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50217">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Navigation</p>
+  <h1>Link</h1>
+  <p class="doc-lead">Takes people to another page, or to another place on the same page.</p>
+  <div class="doc-meta"><span>2 Figma component sets</span><span><code>.aec-link</code></span></div>
+
+  <div class="doc-intro">
+    <p>Links are always underlined, so they can be recognised without relying on colour. Use a link for navigation and a <a href="button.html">button</a> for actions. Inside running text, a link inherits the surrounding font size.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <div class="doc-variants">
+      <div class="doc-variant"><div><h3>Primary</h3><p>The default link, in Chevrolet blue. The Figma "brand" style is identical.</p></div>
+        <div class="doc-variant-demo"><a class="aec-link" href="#variants">View offer details</a></div></div>
+      <div class="doc-variant"><div><h3>Neutral</h3><p>For dense content, legal text and footers, where blue would be too loud.</p></div>
+        <div class="doc-variant-demo"><a class="aec-link aec-link--neutral" href="#variants">Terms and conditions</a></div></div>
+      <div class="doc-variant"><div><h3>Inverse</h3><p>For dark surfaces.</p></div>
+        <div class="doc-variant-demo is-inverse"><a class="aec-link aec-link--inverse" href="#variants">Find a dealer</a></div></div>
+    </div>
+    <div class="doc-example" data-label="Links with icons">
+      <div class="doc-example-preview">
+        <a class="aec-link" href="#variants"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/arrow-left.svg)" aria-hidden="true"></span>Back to vehicle</a>
+        <a class="aec-link" href="#variants">Vehicle history report<span class="aec-icon" style="--aec-icon-src:url(/assets/icons/more-link.svg)" aria-hidden="true"></span></a>
+      </div>
+    </div>
+    <h3 class="doc-h3" id="inline">In running text</h3>
+    <div class="doc-example" data-label="Inline link">
+      <div class="doc-example-preview"><p class="aec-body-1" style="max-width:520px">Your estimate includes the <a class="aec-link" href="#inline">loyalty bonus</a> and destination freight. Final pricing is set by the dealer.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sizes">Sizes</h2>
+    <div class="doc-example" data-label="Sizes">
+      <div class="doc-example-preview">
+        <a class="aec-link aec-link--lg" href="#sizes">Large · 16</a>
+        <a class="aec-link" href="#sizes">Medium · 14</a>
+        <a class="aec-link aec-link--sm" href="#sizes">Small · 12</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="doc-states">
+      <div class="doc-state"><span class="doc-state-label">Default</span><a class="aec-link" href="#states">Link</a></div>
+      <div class="doc-state"><span class="doc-state-label">Hover / pressed</span><a class="aec-link" href="#states" style="color:var(--aec-color-primary-hover)">Link</a></div>
+      <div class="doc-state"><span class="doc-state-label">Focus</span><a class="aec-link" href="#states" style="outline:2px solid var(--aec-color-focus-default);outline-offset:4px">Link</a></div>
+      <div class="doc-state"><span class="doc-state-label">Loading</span><span class="aec-link" aria-busy="true"><span class="aec-spinner" role="status" aria-label="Loading"></span></span></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><a class="aec-link" aria-disabled="true">Link</a></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="content">Content</h2>
+    <ul>
+      <li>Make the link text describe the destination: <em>View financing options</em>, not <em>Click here</em>.</li>
+      <li>Add an external-link icon and "(opens in a new tab)" to visually hidden text when a link opens a new tab.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Link purpose <span class="doc-wcag">WCAG 2.4.4</span></h3><p>The text alone, or together with its sentence, should make the destination clear.</p></div>
+      <div class="doc-a11y-item"><h3>Use of colour <span class="doc-wcag">WCAG 1.4.1</span></h3><p>Links stay underlined, so they don't rely on colour to stand out from text.</p></div>
+      <div class="doc-a11y-item"><h3>Disabled links</h3><p>A link can't be truly disabled. Remove the <code>href</code> and add <code>aria-disabled="true"</code>, or better, render plain text.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The <code>brand</code> style is identical to <code>primary</code>, so the code has one primary link.</li>
+      <li>Neutral has no hover colour change. The code thickens the underline on hover instead.</li>
+      <li>The Inverse loading spinner is blue in Figma.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

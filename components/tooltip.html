@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tooltip · DRS Design System</title>
+<meta name="description" content="Tooltips show a short hint or explanation when someone hovers over or focuses an element.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50192">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Data display</p>
+  <h1>Tooltip</h1>
+  <p class="doc-lead">Shows a short hint or explanation when someone hovers over or focuses an element, for example what <em>Destination freight</em> includes.</p>
+  <div class="doc-meta"><span>Dark and light · 9 placements</span><span><code>.aec-tooltip</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="variants">Variants</h2>
+    <p>Hover over or tab to the triggers below.</p>
+    <div class="doc-example" data-label="Dark and light tooltips">
+      <div class="doc-example-preview" style="padding-top:150px;justify-content:center;gap:48px">
+        <span class="aec-tooltip-anchor">
+          <button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="About destination freight" aria-describedby="tip-dark"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span></button>
+          <span class="aec-tooltip" role="tooltip" id="tip-dark">Covers shipping the vehicle from the factory to your dealer.</span>
+        </span>
+        <span class="aec-tooltip-anchor">
+          <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" aria-describedby="tip-light">Why this price?</button>
+          <span class="aec-tooltip aec-tooltip--light" role="tooltip" id="tip-light"><span class="aec-tooltip__title"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/offer.svg)" aria-hidden="true"></span>Offers applied</span>Includes a $1,500 loyalty bonus and $500 conquest cash.</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="placement">Placement</h2>
+    <p>Set <code>data-placement</code> to <code>top</code> (the default), <code>bottom</code>, <code>left</code> or <code>right</code>. Add <code>-start</code> or <code>-end</code> to top and bottom to align the tooltip to the trigger's edge. <code>data-arrow="none"</code> removes the pointer.</p>
+    <div class="doc-cards" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:56px 24px;padding:24px 8px 40px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span class="aec-tooltip is-static aec-tooltip--sm">Top (default)</span><span class="doc-small doc-muted" style="margin-top:12px">top</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span class="doc-small doc-muted" style="margin-bottom:12px">bottom</span><span class="aec-tooltip is-static aec-tooltip--sm" data-placement="bottom">Bottom</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span class="aec-tooltip is-static aec-tooltip--sm aec-tooltip--light" data-placement="top-start">Top start</span><span class="doc-small doc-muted" style="margin-top:12px">top-start</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span class="aec-tooltip is-static aec-tooltip--sm aec-tooltip--light" data-arrow="none">No arrow</span><span class="doc-small doc-muted" style="margin-top:12px">data-arrow="none"</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Dark</th><th>Light</th></tr></thead>
+      <tbody>
+        <tr><td>Body</td><td><code>bg/inverse</code></td><td><code>bg/default</code></td></tr>
+        <tr><td>Title (optional)</td><td>body-2 bold, <code>text/inverse</code>, optional 16px icon</td><td>body-2 bold, <code>text/default</code></td></tr>
+        <tr><td>Description</td><td>body-2, <code>text/inverse</code></td><td>body-2, <code>text/subtle</code></td></tr>
+        <tr><td>Pointer</td><td colspan="2">16×8px, the same colour as the body</td></tr>
+        <tr><td>Spacing</td><td colspan="2">16px padding (<code>container-padding-s</code>), 8px gap (<code>container-gap-s</code>)</td></tr>
+        <tr><td>Size and elevation</td><td colspan="2">Maximum width 384px (360px on mobile), square corners, <code>shadow/l</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <ul>
+      <li>Keep tooltips to one or two short sentences. For longer or interactive content, such as links, use a modal or an expandable section.</li>
+      <li>Never hide information people need to complete a task inside a tooltip.</li>
+      <li>Every icon button should have a tooltip that repeats its accessible name.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Role and relationship <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The tooltip has <code>role="tooltip"</code> and an <code>id</code>, and the trigger points to it with <code>aria-describedby</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Hover and focus <span class="doc-wcag">WCAG 1.4.13</span></h3><p>The tooltip shows on hover and on keyboard focus, stays visible while the pointer is over it, and can be dismissed with Esc (<code>components.js</code>).</p></div>
+      <div class="doc-a11y-item"><h3>Focusable trigger <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Only put tooltips on focusable elements, such as buttons and links, so keyboard users can reach them.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The placement property is called <code>Arrow</code> in the dark set and <code>pointer</code> in the light set, with values in a different order. The code uses <code>data-placement</code> for both.</li>
+      <li>The shadow is a raw effect, but its values match <code>shadow/l</code> exactly.</li>
+      <li>The light tooltip has no border, so on white backgrounds it is separated only by its shadow.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

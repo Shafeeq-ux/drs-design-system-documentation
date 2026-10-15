@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu · DRS Design System</title>
+<meta name="description" content="Menus show a list of options or actions that opens from a button or field, with optional search.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50175">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Menu</h1>
+  <p class="doc-lead">Shows a list of options or actions in a panel that opens from a button or field.</p>
+  <div class="doc-meta"><span>Menu + Menu List item</span><span><code>.aec-menu</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="actions">Action menu</h2>
+    <p>Use <code>role="menu"</code> with <code>menuitem</code> children for commands.</p>
+    <div class="doc-example" data-label="Action menu">
+      <div class="doc-example-preview" style="min-height:300px;align-items:flex-start">
+        <div class="aec-menu-anchor">
+          <button class="aec-btn aec-btn--secondary aec-btn--outline" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-actions">Deal options <span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button>
+          <div class="aec-menu" id="menu-actions" role="menu" aria-label="Deal options" hidden>
+            <button class="aec-menu__item" role="menuitem" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/save.svg)" aria-hidden="true"></span>Save deal</button>
+            <button class="aec-menu__item" role="menuitem" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/share.svg)" aria-hidden="true"></span>Share with co-applicant</button>
+            <button class="aec-menu__item" role="menuitem" type="button"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/download.svg)" aria-hidden="true"></span>Download summary</button>
+            <hr class="aec-menu__divider">
+            <button class="aec-menu__item" role="menuitem" type="button" aria-disabled="true"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/trash-simple.svg)" aria-hidden="true"></span>Delete deal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="select">Selection menu with search</h2>
+    <p>For picking one value, use <code>menuitemradio</code> items. The selected item is bold and gets a blue tick. Turn on search for long lists.</p>
+    <div class="doc-example" data-label="Select menu">
+      <div class="doc-example-preview" style="min-height:420px;align-items:flex-start">
+        <div class="aec-menu-anchor">
+          <button class="aec-btn aec-btn--standard" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-sort">Sort: <span data-menu-value>Lowest price</span> <span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span></button>
+          <div class="aec-menu" id="menu-sort" role="menu" aria-label="Sort by" hidden>
+            <div class="aec-menu__search"><span class="aec-icon aec-icon--16" style="--aec-icon-src:url(/assets/icons/search.svg)" aria-hidden="true"></span><input type="search" placeholder="Search" aria-label="Filter options"></div>
+            <div class="aec-menu__header" role="presentation">Price</div>
+            <button class="aec-menu__item" role="menuitemradio" aria-checked="true" type="button"><span class="aec-menu__label">Lowest price</span></button>
+            <button class="aec-menu__item" role="menuitemradio" aria-checked="false" type="button"><span class="aec-menu__label">Highest price</span></button>
+            <div class="aec-menu__header" role="presentation">Vehicle</div>
+            <button class="aec-menu__item" role="menuitemradio" aria-checked="false" type="button"><span class="aec-menu__text"><span class="aec-menu__label">Lowest mileage</span><span class="aec-menu__desc">Used and certified only</span></span></button>
+            <button class="aec-menu__item" role="menuitemradio" aria-checked="false" type="button"><span class="aec-menu__label">Newest model year</span></button>
+            <button class="aec-menu__item" role="menuitemradio" aria-checked="false" type="button"><span class="aec-menu__label">Nearest dealer</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="items">Item states</h2>
+    <div class="aec-menu" style="position:static;max-width:280px" role="presentation">
+      <div class="aec-menu__header">Header</div>
+      <div class="aec-menu__item">Default</div>
+      <div class="aec-menu__item" style="background:var(--aec-color-bg-variant)">Hover / pressed</div>
+      <div class="aec-menu__item" aria-selected="true">Selected</div>
+      <div class="aec-menu__item" aria-disabled="true">Disabled</div>
+      <div class="aec-menu__item"><span class="aec-menu__text"><span>With description</span><span class="aec-menu__desc">Descriptive text</span></span></div>
+    </div>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Spec</th></tr></thead>
+      <tbody>
+        <tr><td>Container</td><td>Min width 240px, 8px vertical padding, <code>bg/default</code>, 1px <code>border/default</code>, <code>shadow/s</code>, square corners</td></tr>
+        <tr><td>Item</td><td>48px minimum height, 12/24px padding, body-2, 8px gap to icon</td></tr>
+        <tr><td>Hover / pressed</td><td><code>bg/variant</code></td></tr>
+        <tr><td>Selected</td><td><code>bg/variant</code>, bold label, 24px tick in <code>primary/default</code></td></tr>
+        <tr><td>Header</td><td>32px, 4/16px padding, body-3 <code>text/subtle</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Trigger <span class="doc-wcag">WCAG 4.1.2</span></h3><p>The button has <code>aria-haspopup="menu"</code>, <code>aria-expanded</code> and <code>aria-controls</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Enter, Space or ↓ opens the menu and focuses the first item (↑ focuses the last). Arrows and Home/End move between items, Esc closes and returns focus, and Tab closes.</p></div>
+      <div class="doc-a11y-item"><h3>Focus visible <span class="doc-wcag">WCAG 2.4.7</span></h3><p>The focused item gets the hover background and a 3px <code>focus/default</code> bar. Figma has no focus state, so this is added in code.</p></div>
+      <div class="doc-a11y-item"><h3>Form selects</h3><p>For a value submitted with a form, prefer a native <code>&lt;select&gt;</code> styled as a <a href="text-field.html#dropdown">dropdown text field</a>.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The menu border (#dedede) and search divider (#d2d2d2) don't match tokens. The code uses <code>border/default</code>.</li>
+      <li>Description text uses Avenir Next in Figma.</li>
+      <li>Hover, pressed and selected share the same background.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

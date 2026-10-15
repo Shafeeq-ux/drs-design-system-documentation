@@ -1,0 +1,84 @@
+---
+title: Slider
+description: Sliders let people pick a value or a range by dragging along a track — for example down payment or price range.
+figma: 3773-50156
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Slider</h1>
+  <p class="doc-lead">Lets people pick a single value or a range by dragging along a track, for example a down payment or a price range.</p>
+  <div class="doc-meta"><span>2 Figma component sets</span><span><code>.aec-slider</code> · <code>.aec-range</code></span></div>
+
+  <div class="doc-intro">
+    <p>Sliders suit approximate values where people want to explore, such as how a down payment changes the monthly price. When the exact number matters, show the value and offer a <a href="text-field.html">text field</a> as well.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="single">Single value</h2>
+    <div class="doc-example" data-label="Slider">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-slider-field">
+          <div class="aec-slider-field__head"><label class="aec-slider-field__title" for="sl-down">Down payment</label><output class="aec-slider-field__value" data-for="sl-down">$6,000</output></div>
+          <input class="aec-slider" type="range" id="sl-down" min="0" max="20000" step="500" value="6000" data-format="${v}">
+          <div class="aec-slider-field__minmax" aria-hidden="true"><span>$0</span><span>$20,000</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="range">Range</h2>
+    <div class="doc-example" data-label="Range slider">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-slider-field" role="group" aria-labelledby="rg-title">
+          <div class="aec-slider-field__head"><span class="aec-slider-field__title" id="rg-title">Price range</span>
+            <span class="aec-slider-field__values"><output class="aec-slider-field__value" data-for="rg-min">$30,000</output> to <output class="aec-slider-field__value" data-for="rg-max">$55,000</output></span></div>
+          <div class="aec-range" data-min-gap="1000">
+            <input class="aec-slider" type="range" id="rg-min" min="20000" max="80000" step="1000" value="30000" aria-label="Minimum price" data-format="${v}">
+            <input class="aec-slider" type="range" id="rg-max" min="20000" max="80000" step="1000" value="55000" aria-label="Maximum price" data-format="${v}">
+          </div>
+          <div class="aec-slider-field__minmax" aria-hidden="true"><span>Min</span><span>Max</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="doc-cards">
+      <div class="doc-state"><span class="doc-state-label">Default</span><input class="aec-slider" type="range" value="40" aria-label="Default"></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><input class="aec-slider" type="range" value="40" disabled aria-label="Disabled"></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <ol>
+      <li><strong>Title</strong>: body-1 bold, <code>text/default</code>.</li>
+      <li><strong>Value (optional)</strong>: body-2 in a <code>bg/variant</code> pill.</li>
+      <li><strong>Track</strong>: 4px, <code>border/default</code>.</li>
+      <li><strong>Selected track</strong>: <code>primary/default</code>, or <code>bg/disabled</code> when disabled.</li>
+      <li><strong>Handle</strong>: a 24px white circle with a 1px <code>primary/default</code> border and <code>shadow/s</code>.</li>
+      <li><strong>Min / max labels (optional)</strong>: body-3, <code>text/subtle</code>.</li>
+    </ol>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Native range input <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Built on <code>&lt;input type="range"&gt;</code>. Arrow keys, Page Up/Down and Home/End all work. <code>components.js</code> sets <code>aria-valuetext</code> to the formatted value, such as "$6,000".</p></div>
+      <div class="doc-a11y-item"><h3>Labels <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Label single sliders with <code>&lt;label for&gt;</code>. Range sliders need an <code>aria-label</code> on each handle ("Minimum price", "Maximum price") and a group label.</p></div>
+      <div class="doc-a11y-item"><h3>Focus <span class="doc-wcag">WCAG 2.4.7</span></h3><p>The handle shows a 2px focus ring. This is added in code, because Figma has no focus state.</p></div>
+      <div class="doc-a11y-item"><h3>Dragging <span class="doc-wcag">WCAG 2.5.7</span></h3><p>Provide a non-drag alternative, such as a text field or the keyboard, for setting an exact value.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The handle's hover and pressed states look the same as default, and there is no focus state.</li>
+      <li>The titles and values use Inter and Avenir Next instead of Chevy Sans. The code uses the system font throughout.</li>
+      <li>The disabled state doesn't dim the title.</li>
+    </ul>
+  </section>
+</div>

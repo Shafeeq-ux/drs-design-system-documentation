@@ -1,0 +1,152 @@
+---
+title: Text field
+description: Text fields let people enter and edit short text, such as a name, email, ZIP code or VIN. Includes dropdown (select) fields.
+figma: 3769-50178
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Text field</h1>
+  <p class="doc-lead">Lets people enter and edit a short piece of text, such as a name, email, ZIP code or VIN. The same box is used for dropdown selects.</p>
+  <div class="doc-meta"><span>4 published Figma sets</span><span><code>.aec-field</code></span></div>
+
+  <div class="doc-intro">
+    <p>There are two published styles. <strong>Standard</strong> has the label above an outlined box and is the default for forms. <strong>Material</strong> has a floating label inside a filled box, for compact layouts. Both support prefix and suffix content, icons, assistive text and a dropdown type.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="standard">Standard</h2>
+    <div class="doc-example" data-label="Standard text field">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-field" style="max-width:400px">
+          <label class="aec-field__label" for="tf-email">Email address <span class="aec-field__required" aria-hidden="true">*</span></label>
+          <div class="aec-field__box"><input class="aec-field__input" id="tf-email" type="email" placeholder="name@example.com" autocomplete="email" required aria-describedby="tf-email-help"></div>
+          <p class="aec-field__help" id="tf-email-help">We'll send your order confirmation here.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="doc-h3" id="dropdown">Dropdown</h3>
+    <p>Use <code>type=dropdown</code> for a short list of options. It's a native <code>&lt;select&gt;</code> with a trailing caret icon.</p>
+    <div class="doc-example" data-label="Dropdown">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-field" style="max-width:400px">
+          <label class="aec-field__label" for="tf-term">Loan term</label>
+          <div class="aec-field__box">
+            <select class="aec-field__input" id="tf-term"><option>36 months</option><option selected>60 months</option><option>72 months</option></select>
+            <span class="aec-icon aec-icon--end" style="--aec-icon-src:url(/assets/icons/caret-down.svg)" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="doc-h3" id="affixes">Prefix, suffix and icons</h3>
+    <div class="doc-example" data-label="Prefix, suffix and icon">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-field" style="max-width:400px">
+          <label class="aec-field__label" for="tf-down">Down payment</label>
+          <div class="aec-field__box"><span class="aec-field__affix aec-field__affix--prefix">$</span><input class="aec-field__input" id="tf-down" inputmode="numeric" value="5,000"></div>
+        </div>
+        <div class="aec-field" style="max-width:400px">
+          <label class="aec-field__label" for="tf-miles">Current mileage</label>
+          <div class="aec-field__box"><input class="aec-field__input" id="tf-miles" inputmode="numeric" placeholder="e.g. 32,000"><span class="aec-field__affix aec-field__affix--suffix">miles</span></div>
+        </div>
+        <div class="aec-field" style="max-width:400px">
+          <label class="aec-field__label" for="tf-zip">ZIP code</label>
+          <div class="aec-field__box"><span class="aec-icon aec-icon--start" style="--aec-icon-src:url(/assets/icons/location-pin.svg)" aria-hidden="true"></span><input class="aec-field__input" id="tf-zip" inputmode="numeric" autocomplete="postal-code" placeholder="48226"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="material">Material</h2>
+    <p>The label sits inside the box as a placeholder and floats up when the field has focus or a value. The input needs <code>placeholder=" "</code> and must come <em>before</em> its label in the markup.</p>
+    <div class="doc-example" data-label="Material filled">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-field aec-field--material" style="max-width:400px">
+          <div class="aec-field__box"><div class="aec-field__float"><input class="aec-field__input" id="mt-first" placeholder=" " autocomplete="given-name"><label class="aec-field__label" for="mt-first">First name</label></div></div>
+        </div>
+        <div class="aec-field aec-field--material" style="max-width:400px">
+          <div class="aec-field__box"><div class="aec-field__float"><input class="aec-field__input" id="mt-last" placeholder=" " value="Rivera" autocomplete="family-name"><label class="aec-field__label" for="mt-last">Last name</label></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="doc-cards" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
+      <div class="doc-state"><span class="doc-state-label">Prompt (empty)</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st1">Label</label><div class="aec-field__box"><input class="aec-field__input" id="st1" placeholder="Placeholder"></div></div></div>
+      <div class="doc-state"><span class="doc-state-label">Filled</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st2">Label</label><div class="aec-field__box"><input class="aec-field__input" id="st2" value="Value"></div></div></div>
+      <div class="doc-state"><span class="doc-state-label">Hover</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st3">Label</label><div class="aec-field__box" style="border-color:var(--aec-color-action-border-hover)"><input class="aec-field__input" id="st3" value="Value"></div></div></div>
+      <div class="doc-state"><span class="doc-state-label">Active</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st4">Label</label><div class="aec-field__box" style="border-color:var(--aec-color-action-border-active)"><input class="aec-field__input" id="st4" value="Value"></div></div></div>
+      <div class="doc-state"><span class="doc-state-label">Error</span><div class="aec-field aec-field--error" style="width:100%"><label class="aec-field__label" for="st5">Label</label><div class="aec-field__box"><input class="aec-field__input" id="st5" value="Value" aria-invalid="true" aria-describedby="st5-e"></div><p class="aec-field__help aec-field__help--error" id="st5-e"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Enter a valid value</p></div></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><div class="aec-field" style="width:100%"><label class="aec-field__label" for="st6">Label</label><div class="aec-field__box"><input class="aec-field__input" id="st6" value="Value" disabled></div></div></div>
+    </div>
+    <h3 class="doc-h3" id="assistive">Assistive text</h3>
+    <div class="doc-example" data-label="Assistive text types">
+      <div class="doc-example-preview is-col">
+        <p class="aec-field__help">Default: helper text</p>
+        <p class="aec-field__help aec-field__help--error"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>Error: ZIP code must be 5 digits</p>
+        <p class="aec-field__help aec-field__help--success"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span>Success: Address verified</p>
+        <p class="aec-field__help aec-field__help--warning"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span>Warning: This dealer is 80 miles away</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage" style="padding:32px 24px">
+        <div class="aec-field" style="width:100%"><span class="aec-field__label">Label <span class="aec-field__required">*</span></span><div class="aec-field__box"><span class="aec-field__affix aec-field__affix--prefix">$</span><input class="aec-field__input" value="Value" tabindex="-1" aria-label="Example"></div><p class="aec-field__help">Assistive text</p></div>
+        <span class="doc-anatomy-pin" style="left:8px;top:28px">1</span>
+        <span class="doc-anatomy-pin" style="left:8px;top:60px">2</span>
+        <span class="doc-anatomy-pin" style="left:62px;top:84px">3</span>
+        <span class="doc-anatomy-pin" style="left:120px;top:56px">4</span>
+        <span class="doc-anatomy-pin" style="left:8px;bottom:6px">5</span>
+      </div>
+      <ol>
+        <li><span><strong>Label</strong>body-3 (12/20). A red <code>*</code> marks required fields.</span></li>
+        <li><span><strong>Box</strong>48px tall, 4px radius, 1px <code>border/default</code>.</span></li>
+        <li><span><strong>Prefix / suffix (optional)</strong>Text, icon or select, separated by a 1px divider.</span></li>
+        <li><span><strong>Value</strong>body-1 (16/24), 16px side padding.</span></li>
+        <li><span><strong>Assistive text (optional)</strong>body-3, with a 16px icon for error, success and warning.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview"><div class="aec-field" style="width:100%"><span class="aec-field__label">Phone number</span><div class="aec-field__box"><input class="aec-field__input" tabindex="-1" placeholder="(555) 555-0123" aria-label="Phone"></div></div></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Always show a visible label, and use the placeholder only for an example format.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><div class="aec-field" style="width:100%"><div class="aec-field__box"><input class="aec-field__input" tabindex="-1" placeholder="Phone number" aria-label="Phone"></div></div></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use the placeholder as the label. It disappears as soon as people start typing.</div></div>
+    </div>
+    <ul>
+      <li>Match the field's width to the expected input, for example a short width for ZIP code.</li>
+      <li>Use the right <code>type</code>, <code>inputmode</code> and <code>autocomplete</code> so mobile keyboards and autofill work.</li>
+      <li>Validate when the field loses focus or the form is submitted, not on every keystroke.</li>
+      <li>Write error messages that say how to fix the problem: <em>Enter a 17-character VIN</em>, not <em>Invalid VIN</em>.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Labels <span class="doc-wcag">WCAG 1.3.1 · 3.3.2</span></h3><p>Every input needs a <code>&lt;label for&gt;</code>. Required fields also get the <code>required</code> attribute. The visual <code>*</code> is <code>aria-hidden</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Errors <span class="doc-wcag">WCAG 3.3.1</span></h3><p>Set <code>aria-invalid="true"</code> and connect the message with <code>aria-describedby</code>. Errors are shown with an icon and text, not colour alone.</p></div>
+      <div class="doc-a11y-item"><h3>Focus <span class="doc-wcag">WCAG 2.4.7</span></h3><p>Focus turns the border <code>primary/default</code> and adds the 2px focus ring for keyboard users.</p></div>
+      <div class="doc-a11y-item"><h3>Input purpose <span class="doc-wcag">WCAG 1.3.5</span></h3><p>Use <code>autocomplete</code> values (<code>given-name</code>, <code>email</code>, <code>postal-code</code>, <code>tel</code>) on personal-data fields.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Standard uses a 4px radius and Material uses 8px.</li>
+      <li>Material Outlined, Material Plain and Standard Filled exist in Figma as hidden sets and aren't documented here.</li>
+      <li>The disabled prefix text colour #cccdd1 has no token. The code uses <code>text/disabled</code>.</li>
+    </ul>
+  </section>
+</div>

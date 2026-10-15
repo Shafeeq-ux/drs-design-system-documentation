@@ -1,0 +1,111 @@
+---
+title: Form layouts
+description: Question-style form building blocks — text input groups, single-select option tiles, multi-select checkbox tiles and the basic two-column form.
+figma: 3553-8457
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Forms</p>
+  <h1>Form layouts</h1>
+  <p class="doc-lead">Building blocks for the credit application, trade-in and customer information steps. Each question is a bold label followed by text inputs, option tiles or checkbox tiles.</p>
+  <div class="doc-meta"><span>Form - Input · Question v2 · Checkbox v2 · Basic form</span><span><code>.aec-question</code> · <code>.aec-form-grid</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="basic">Basic form</h2>
+    <p>Two columns of labelled <a href="../components/text-field.html">text fields</a>, collapsing to one column on mobile.</p>
+    <div class="doc-example" data-label="Basic form">
+      <div class="doc-example-preview is-stretch">
+        <form class="aec-form-section" onsubmit="return false">
+          <h3 class="aec-form-section__title">Personal information</h3>
+          <div class="aec-form-grid">
+            <div class="aec-field"><label class="aec-field__label" for="bf-first">First name <span class="aec-field__required" aria-hidden="true">*</span></label><div class="aec-field__box"><input class="aec-field__input" id="bf-first" autocomplete="given-name" value="John" required></div></div>
+            <div class="aec-field"><label class="aec-field__label" for="bf-last">Last name <span class="aec-field__required" aria-hidden="true">*</span></label><div class="aec-field__box"><input class="aec-field__input" id="bf-last" autocomplete="family-name" value="Freeman" required></div></div>
+            <div class="aec-field"><label class="aec-field__label" for="bf-phone">Phone number</label><div class="aec-field__box"><input class="aec-field__input" id="bf-phone" type="tel" autocomplete="tel" value="(555) 555-1234"></div></div>
+            <div class="aec-field"><label class="aec-field__label" for="bf-mail">Email</label><div class="aec-field__box"><input class="aec-field__input" id="bf-mail" type="email" autocomplete="email" value="john.freeman@example.com"></div></div>
+            <div class="aec-field"><label class="aec-field__label" for="bf-dob">Date of birth</label><div class="aec-field__box"><input class="aec-field__input" id="bf-dob" autocomplete="bday" placeholder="MM/DD/YYYY"></div></div>
+            <div class="aec-field"><label class="aec-field__label" for="bf-ssn">Social Security number</label><div class="aec-field__box"><input class="aec-field__input" id="bf-ssn" type="password" inputmode="numeric" autocomplete="off" placeholder="•••-••-••••" aria-describedby="bf-ssn-h"></div><p class="aec-field__help" id="bf-ssn-h">Used only for your credit application. It's encrypted.</p></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="single">Single select (Question v2)</h2>
+    <p>Option tiles are <a href="../components/toggle-button.html">toggle group items</a> in a grid: four per row on desktop and two on mobile. The large size stacks them one per row.</p>
+    <div class="doc-example" data-label="Single-select question">
+      <div class="doc-example-preview is-stretch">
+        <fieldset class="aec-question"><legend>What is your previous residence type?</legend>
+          <div class="aec-question__options aec-toggle-group" role="radiogroup" aria-label="Previous residence type" style="display:grid;max-width:none">
+            <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">Own</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Rent</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Family</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Military</button>
+          </div></fieldset>
+        <fieldset class="aec-question"><legend>How will you use this vehicle?</legend>
+          <div class="aec-question__options aec-question__options--stack aec-toggle-group" role="radiogroup" aria-label="Vehicle use" style="display:grid;max-width:none">
+            <button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Personal use</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="true">Business use</button><button class="aec-toggle-group__item" type="button" role="radio" aria-checked="false">Both</button>
+          </div></fieldset>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="multi">Multi select (Checkbox v2)</h2>
+    <div class="doc-example" data-label="Multi-select question">
+      <div class="doc-example-preview is-stretch">
+        <fieldset class="aec-question"><legend>Which features matter most to you?</legend>
+          <div class="aec-question__options">
+            <label class="aec-check-tile"><input class="aec-checkbox" type="checkbox" checked>Range</label><label class="aec-check-tile"><input class="aec-checkbox" type="checkbox">Towing</label><label class="aec-check-tile"><input class="aec-checkbox" type="checkbox" checked>Safety</label><label class="aec-check-tile"><input class="aec-checkbox" type="checkbox">Technology</label>
+            <label class="aec-check-tile"><input class="aec-checkbox" type="checkbox">Comfort</label><label class="aec-check-tile"><input class="aec-checkbox" type="checkbox">Cargo space</label><label class="aec-check-tile"><input class="aec-checkbox" type="checkbox">Fuel economy</label><label class="aec-check-tile"><input class="aec-checkbox" type="checkbox">Price</label>
+          </div></fieldset>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="sentence">Sentence options and input groups</h2>
+    <div class="doc-example" data-label="Sentence option tiles and input group">
+      <div class="doc-example-preview is-stretch">
+        <fieldset class="aec-question"><legend>How would you like to apply?</legend>
+          <div class="aec-stack" style="gap:12px;max-width:360px">
+            <label class="aec-sentence-tile"><input class="aec-radio" type="radio" name="apply" checked>Continue as an individual applicant</label>
+            <label class="aec-sentence-tile"><input class="aec-radio" type="radio" name="apply">Apply with a co-applicant</label>
+          </div></fieldset>
+        <fieldset class="aec-question"><legend>What is your annual income?</legend>
+          <div class="aec-form-grid">
+            <div class="aec-field"><label class="aec-field__label aec-visually-hidden" for="inc-1">Gross annual income</label><div class="aec-field__box"><span class="aec-field__affix aec-field__affix--prefix">$</span><input class="aec-field__input" id="inc-1" inputmode="numeric" placeholder="Gross annual income"></div></div>
+            <div class="aec-field"><label class="aec-field__label aec-visually-hidden" for="inc-2">Other income</label><div class="aec-field__box"><span class="aec-field__affix aec-field__affix--prefix">$</span><input class="aec-field__input" id="inc-2" inputmode="numeric" placeholder="Other income (optional)"></div></div>
+          </div></fieldset>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Question</td><td>body-1 bold <code>text/default</code>, 8px above the options</td></tr>
+        <tr><td>Option tiles</td><td>48px, 8px radius, 1px <code>border/default</code>, 16px gap. Selected tiles take the toggle group's selected style.</td></tr>
+        <tr><td>Checkbox tiles</td><td>48px, 4px radius, 2px <code>border/default</code>. Checked: <code>action/border/active</code>.</td></tr>
+        <tr><td>Input group</td><td>Two 48px fields per row with a 24px gap, stacking on mobile</td></tr>
+        <tr><td>Widths</td><td>628 (web), 590 (tablet), 343 (mobile)</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Questions are fieldsets <span class="doc-wcag">WCAG 1.3.1 · 3.3.2</span></h3><p>Wrap each question in <code>&lt;fieldset&gt;</code> with the question as its <code>&lt;legend&gt;</code>, so every option is announced with its question.</p></div>
+      <div class="doc-a11y-item"><h3>Sensitive data <span class="doc-wcag">WCAG 1.3.5</span></h3><p>Mask Social Security numbers, use <code>autocomplete</code> on personal fields, and explain why the data is needed.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The option copy is placeholder ("Tab Label", "Enter text").</li>
+      <li>The Basic form sample shows an unmasked SSN and a typo ("Freenam"). The code masks the field.</li>
+      <li>The tiles use raw hex (#ffffff, #e6e6e6). The code uses <code>bg/default</code> and <code>border/default</code>.</li>
+    </ul>
+  </section>
+</div>

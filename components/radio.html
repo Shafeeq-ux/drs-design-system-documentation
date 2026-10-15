@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio button · DRS Design System</title>
+<meta name="description" content="Radio buttons let people choose exactly one option from a short list where every option is visible.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50173">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Inputs</p>
+  <h1>Radio button</h1>
+  <p class="doc-lead">Lets people choose exactly one option from a short list, with every option visible.</p>
+  <div class="doc-meta"><span>2 Figma component sets</span><span><code>.aec-radio</code></span></div>
+
+  <div class="doc-intro">
+    <p>Use radio buttons for two to six mutually exclusive options, for example a payment type or delivery method. For longer lists, use a select menu. For a single on/off choice, use a <a href="checkbox.html">checkbox</a> or <a href="switch.html">switch</a>.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="variants">Radio group</h2>
+    <div class="doc-example" data-label="Radio group">
+      <div class="doc-example-preview is-col">
+        <fieldset class="aec-fieldset">
+          <legend>How would you like to pay?</legend>
+          <div class="aec-choice-list">
+            <label class="aec-control"><input class="aec-radio" type="radio" name="pay" checked><span class="aec-form-label"><span class="aec-form-label__text">Finance</span><span class="aec-form-label__desc">Monthly payments with GM Financial</span></span></label>
+            <label class="aec-control"><input class="aec-radio" type="radio" name="pay"><span class="aec-form-label"><span class="aec-form-label__text">Lease</span><span class="aec-form-label__desc">Lower payments, return at end of term</span></span></label>
+            <label class="aec-control"><input class="aec-radio" type="radio" name="pay"><span class="aec-form-label"><span class="aec-form-label__text">Cash</span></span></label>
+            <label class="aec-control"><input class="aec-radio" type="radio" name="pay" disabled><span class="aec-form-label"><span class="aec-form-label__text">Subscription</span><span class="aec-form-label__desc">Not available in your area</span></span></label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <h3 class="doc-h3" id="inline">Inline</h3>
+    <p>For two or three short options, lay them out in a row with <code>.aec-choice-list--row</code>.</p>
+    <div class="doc-example" data-label="Inline radio group">
+      <div class="doc-example-preview">
+        <fieldset class="aec-fieldset">
+          <legend>Do you have a trade-in?</legend>
+          <div class="aec-choice-list aec-choice-list--row">
+            <label class="aec-control"><input class="aec-radio" type="radio" name="trade" checked><span class="aec-form-label"><span class="aec-form-label__text">Yes</span></span></label>
+            <label class="aec-control"><input class="aec-radio" type="radio" name="trade"><span class="aec-form-label"><span class="aec-form-label__text">No</span></span></label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="states">States</h2>
+    <div class="doc-states">
+      <div class="doc-state"><span class="doc-state-label">Unselected</span><input class="aec-radio" type="radio" name="s1" aria-label="Unselected"></div>
+      <div class="doc-state"><span class="doc-state-label">Selected</span><input class="aec-radio" type="radio" name="s2" checked aria-label="Selected"></div>
+      <div class="doc-state"><span class="doc-state-label">Focus</span><input class="aec-radio" type="radio" name="s3" style="outline:2px solid var(--aec-color-focus-default);outline-offset:2px" aria-label="Focus"></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled</span><input class="aec-radio" type="radio" name="s4" disabled aria-label="Disabled"></div>
+      <div class="doc-state"><span class="doc-state-label">Disabled selected</span><input class="aec-radio" type="radio" name="s5" disabled checked aria-label="Disabled selected"></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <div class="doc-anatomy">
+      <div class="doc-anatomy-stage">
+        <label class="aec-control"><input class="aec-radio" type="radio" checked tabindex="-1" aria-label="Example"><span class="aec-form-label"><span class="aec-form-label__text">Label</span></span></label>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 52px);top:2px">1</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% - 40px);bottom:2px">2</span>
+        <span class="doc-anatomy-pin" style="left:calc(50% + 20px);top:2px">3</span>
+      </div>
+      <ol>
+        <li><span><strong>Ring</strong>24px circle, 1.5px <code>text/default</code> border.</span></li>
+        <li><span><strong>Indicator</strong>16px dot in <code>icon/default</code> when selected.</span></li>
+        <li><span><strong>Label</strong>body-2 (14/22), 8px from the ring.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start;gap:0"><label class="aec-control"><input class="aec-radio" type="radio" name="dd1" checked tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Home delivery</span></span></label><label class="aec-control"><input class="aec-radio" type="radio" name="dd1" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">Pick up at dealer</span></span></label></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Pre-select the most common or safest option where that helps people.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start;gap:0"><label class="aec-control"><input class="aec-radio" type="radio" name="dd2" tabindex="-1"><span class="aec-form-label"><span class="aec-form-label__text">I agree to the terms</span></span></label></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't use a single radio button on its own, because once selected it can't be cleared. Use a checkbox.</div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Group with a legend <span class="doc-wcag">WCAG 1.3.1</span></h3><p>Wrap the group in <code>&lt;fieldset class="aec-fieldset"&gt;</code> with a <code>&lt;legend&gt;</code> that states the question. Give every radio in the group the same <code>name</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Keyboard <span class="doc-wcag">WCAG 2.1.1</span></h3><p>Tab moves into the group. Arrow keys move between options and select them, which is native browser behaviour.</p></div>
+      <div class="doc-a11y-item"><h3>Non-text contrast <span class="doc-wcag">WCAG 1.4.11</span></h3><p>The <code>text/default</code> ring is 15:1 against white. Disabled controls are exempt.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Hover and pressed look the same as default, and there are no selected + hover variants.</li>
+      <li>"Radio Group with Label" is a single radio with a label, not a group.</li>
+      <li>Selected uses dark grey (<code>icon/default</code>) rather than primary blue, consistent with checkbox and switch.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

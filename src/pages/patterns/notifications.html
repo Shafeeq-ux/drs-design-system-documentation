@@ -1,0 +1,124 @@
+---
+title: Notifications
+description: Toast, solid banner, inline and slim alert notifications in five kinds — informative, positive, warning, negative and secondary.
+figma: 3921-3231
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Feedback</p>
+  <h1>Notifications</h1>
+  <p class="doc-lead">Status messages in four styles: a floating toast, a solid banner, an inline tinted notice and a slim one-line alert. Each comes in five kinds.</p>
+  <div class="doc-meta"><span>4 Figma sets · 5 kinds</span><span><code>.aec-notice</code></span></div>
+
+  <div class="doc-intro">
+    <p>These extend the foundation <a href="../components/alert.html">alert</a>, <a href="../components/banner.html">banner</a> and <a href="../components/snackbar.html">snackbar</a> with status colours and a 24px status icon, and add the <strong>secondary</strong> kind (grey). Pick the style by how prominent the message should be.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="toast">Toast</h2>
+    <p>A white floating card with a 2px left accent, a coloured title and an optional "Learn more" link. Use it for transient results. It's the status-aware replacement for the snackbar.</p>
+    <div class="doc-example" data-label="Toast notifications">
+      <div class="doc-example-preview is-plain" style="flex-wrap:wrap">
+        <div class="aec-notice aec-notice--toast aec-notice--info" role="status">
+          <span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span>
+          <div class="aec-notice__body"><p class="aec-notice__title">Price updated</p><p class="aec-notice__text">Your dealer adjusted the accessory pricing. Review your monthly payment before you continue.</p></div>
+          <button class="aec-notice__close" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+          <div class="aec-notice__actions"><a class="aec-link aec-link--neutral" href="#toast">Learn more</a></div>
+        </div>
+        <div class="aec-notice aec-notice--toast aec-notice--success" role="status">
+          <span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/check-circle.svg)" aria-hidden="true"></span>
+          <div class="aec-notice__body"><p class="aec-notice__title">Documents uploaded</p><p class="aec-notice__text">We received your driver's licence and proof of insurance.</p></div>
+          <button class="aec-notice__close" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </div>
+    <p>Show toasts live with <code>AEC.toast()</code>:</p>
+    <div class="doc-example" data-no-code>
+      <div class="doc-example-preview">
+        <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" data-demo-toast="success">Show a positive toast</button>
+        <button class="aec-btn aec-btn--secondary aec-btn--outline aec-btn--md" type="button" data-demo-toast="error">Show a negative toast</button>
+      </div>
+    </div>
+<pre><code>AEC.toast({ kind: 'success', title: 'Deal saved', message: 'We emailed you a copy.', action: 'View deal', href: '/deals' });</code></pre>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="solid">Solid banner</h2>
+    <p>High emphasis, with a status-coloured background. Use it for page-level messages that need attention.</p>
+    <div class="doc-example" data-label="Solid banner notifications">
+      <div class="doc-example-preview is-col">
+        <div class="aec-notice aec-notice--solid aec-notice--info" role="status"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-notice__body"><p class="aec-notice__title">Your dealer is reviewing your deal</p></div></div>
+        <div class="aec-notice aec-notice--solid aec-notice--success" role="status"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/check-circle.svg)" aria-hidden="true"></span><div class="aec-notice__body"><p class="aec-notice__title">Credit application approved</p><p class="aec-notice__text">You're approved for up to $52,000.</p></div><div class="aec-notice__actions"><a class="aec-link aec-link--inverse" href="#solid">View terms</a></div></div>
+        <div class="aec-notice aec-notice--solid aec-notice--warning" role="status"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><div class="aec-notice__body"><p class="aec-notice__title">Reservation expires in 2 days</p></div></div>
+        <div class="aec-notice aec-notice--solid aec-notice--error" role="alert"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><div class="aec-notice__body"><p class="aec-notice__title">Payment failed</p><p class="aec-notice__text">Your card was declined. Try another payment method.</p></div><button class="aec-notice__close" type="button" aria-label="Dismiss"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="inline">Inline</h2>
+    <p>A tinted, square notice in the page flow, for example under a form section.</p>
+    <div class="doc-example" data-label="Inline notifications">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-notice aec-notice--inline aec-notice--info"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-notice__body"><p class="aec-notice__title">Trade-in values are estimates</p><p class="aec-notice__text">Your dealer confirms the final value after an inspection.</p></div></div>
+        <div class="aec-notice aec-notice--inline aec-notice--warning"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><div class="aec-notice__body"><p class="aec-notice__title">Some offers can't be combined</p><p class="aec-notice__text">Selecting Conquest Cash removes the Loyalty Bonus.</p></div></div>
+        <div class="aec-notice aec-notice--inline aec-notice--secondary"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><div class="aec-notice__body"><p class="aec-notice__title">Saved automatically</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="slim">Slim alert</h2>
+    <p>A 34px one-line strip with 12px text. It fits under headers and inside cards.</p>
+    <div class="doc-example" data-label="Slim alerts">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-notice aec-notice--slim aec-notice--info"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span><p class="aec-notice__text">Prices are inclusive of installation and labour.</p></div>
+        <div class="aec-notice aec-notice--slim aec-notice--success"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span><p class="aec-notice__text">Proof of insurance uploaded.</p></div>
+        <div class="aec-notice aec-notice--slim aec-notice--warning"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span><p class="aec-notice__text">This plan conflicts with a selected package.</p></div>
+        <div class="aec-notice aec-notice--slim aec-notice--error"><span class="aec-icon aec-notice__icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><p class="aec-notice__text">ID required before signing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="choosing">Choosing a style</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Style</th><th>Class</th><th>Use for</th><th>Shape</th></tr></thead>
+      <tbody>
+        <tr><td>Toast</td><td><code>--toast</code></td><td>Results of an action that disappear on their own</td><td>343px, 8px radius, 2px accent, floating shadow</td></tr>
+        <tr><td>Solid banner</td><td><code>--solid</code></td><td>Important page-level status</td><td>8px radius, filled</td></tr>
+        <tr><td>Inline</td><td><code>--inline</code></td><td>Context inside a section or form</td><td>Square, <code>*/subtle</code> tint</td></tr>
+        <tr><td>Slim alert</td><td><code>--slim</code></td><td>One-line hints next to content</td><td>34px, 4px radius, tint</td></tr>
+      </tbody>
+    </table></div>
+    <p>Kinds: <code>--info</code>, <code>--success</code>, <code>--warning</code>, <code>--error</code>, <code>--secondary</code>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Live regions <span class="doc-wcag">WCAG 4.1.3</span></h3><p>Toasts render in an <code>aria-live="polite"</code> region. Errors that block progress use <code>role="alert"</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Contrast <span class="doc-wcag">WCAG 1.4.3</span></h3><p>White text on <code>warning/default</code> is only 3.4:1, so the solid warning banner uses <code>warning/on-default</code> (#1a1a1a, 5.18:1). Toast and inline warning titles use a darker text colour (#7a5a1e).</p></div>
+      <div class="doc-a11y-item"><h3>Timing <span class="doc-wcag">WCAG 2.2.1</span></h3><p>Toasts stay for 8 seconds, pause while hovered or focused, and always have a close button.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The Banner notification's warning kind uses white text on #b3842d, which fails AA. The code switches it to dark text.</li>
+      <li>The In-page Alert Banner's Information status uses a saturated blue background (#007cc0, bound to <code>decoration/02</code>) with a blue icon. The code uses <code>info/subtle</code> and <code>info/default</code>, like the other statuses.</li>
+      <li>The radius varies: banner and toast 8px, inline 0, slim alert 4px.</li>
+      <li>The shadows are raw effects. The toast shadow (0 30 60, 15%) isn't a token.</li>
+      <li>Negative reuses the Warning glyph. The code uses <code>warning.svg</code> for both, and <code>state-error.svg</code> for slim errors.</li>
+    </ul>
+  </section>
+</div>
+<script>
+document.querySelectorAll('[data-demo-toast]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var ok = b.getAttribute('data-demo-toast') === 'success';
+    AEC.toast(ok ? { kind: 'success', title: 'Deal saved', message: 'We emailed a copy to john@example.com.', action: 'View deal', href: '#toast' } : { kind: 'error', title: 'Upload failed', message: 'The file is larger than 10 MB. Try a smaller photo.' });
+  });
+});
+</script>

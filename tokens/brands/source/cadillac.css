@@ -1,0 +1,4746 @@
+/**
+ * Do not edit directly
+ * Generated on Fri, 21 Nov 2025 06:30:13 GMT
+ */
+
+
+.drp-accordion-container-bg {
+  height: 56px;
+  padding: 0px;
+  border-radius: 0px;
+  border-bottom-width: 1px;
+}
+
+.drp-assistive-text-container-bg {
+  gap: 4px;
+}
+
+.drp-assistive-text-typography {
+  font: 400 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-avatar-container-bg-small {
+  height: 24px;
+  width: 24px;
+  padding: 0px;
+  border-radius: 384px;
+  border-width: 1px;
+}
+
+.drp-avatar-container-bg-medium {
+  height: 32px;
+  width: 32px;
+  padding: 0px;
+  border-radius: 384px;
+  border-width: 1px;
+}
+
+.drp-avatar-container-bg-large {
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  border-radius: 384px;
+  border-width: 1px;
+}
+
+.drp-avatar-typography-small {
+  font: 700 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-avatar-typography-medium {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-avatar-typography-large {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-badge-container-bg-xs {
+  border-radius: 384px;
+  border-width: 1px;
+  height: 8px;
+  width: 8px;
+}
+
+.drp-badge-container-bg-small {
+  height: 16px;
+  padding: 0px 4px;
+  gap: 0px;
+  border-radius: 384px;
+  border-width: 1px;
+}
+
+.drp-badge-container-bg-medium {
+  height: 24px;
+  padding: 0px 4px;
+  gap: 0px;
+  border-radius: 384px;
+  border-width: 1px;
+}
+
+.drp-badge-typography-medium {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-badge-typography-small {
+  font: 700 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-banner-container-inside {
+  padding: 0px;
+  gap: 8px;
+}
+
+.drp-banner-container-bg {
+  border-radius: 0px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+}
+
+.drp-banner-typography-title {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-banner-typography-description {
+  font: 400 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-breadcrumb-container {
+  height: 32px;
+  gap: 4px;
+}
+
+.drp-breadcrumb-typography-small-default {
+  font: 400 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-breadcrumb-typography-small-selected {
+  font: 700 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-button-contained-container-bg-small {
+  height: 48px;
+  padding: 0px 24px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-button-contained-container-bg-medium {
+  height: 48px;
+  padding: 0px 24px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-button-contained-container-bg-large {
+  height: 48px;
+  padding: 0px 24px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-button-contained-typography-small {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-button-contained-typography-medium {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-button-contained-typography-large {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-button-contained-icon-container-rect-bg-small {
+  height: 24px;
+  width: 24px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-button-contained-icon-container-rect-bg-medium {
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-button-contained-icon-container-rect-bg-large {
+  height: 48px;
+  width: 48px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-button-contained-icon-container-circle-bg-small {
+  height: 24px;
+  width: 24px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 384px;
+  border-width: 2px;
+}
+
+.drp-button-contained-icon-container-circle-bg-medium {
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 384px;
+  border-width: 2px;
+}
+
+.drp-button-contained-icon-container-circle-bg-large {
+  height: 48px;
+  width: 48px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 384px;
+  border-width: 2px;
+}
+
+.drp-button-contained-focus {
+  border-radius: 4px;
+}
+
+.drp-button-link-container-bg {
+  height: 24px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 0px;
+}
+
+.drp-button-link-typography-small {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-button-link-typography-medium {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-button-link-typography-large {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-button-link-focus {
+  border-radius: 4px;
+}
+
+.drp-card-container-bg {
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-checkbox-container {
+  height: 24px;
+  width: 24px;
+  border-radius: 2px;
+  border-width: 1px;
+}
+
+.drp-checkbox-hit-area {
+  height: 32px;
+  width: 32px;
+}
+
+.drp-checkbox-typography-small {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-checkbox-typography-large {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-checkbox-focus-ring {
+  border-radius: 8px;
+}
+
+.drp-chip-selectable-container-small {
+  height: 32px;
+  padding: 0px 8px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-chip-selectable-container-medium {
+  height: 40px;
+  padding: 0px 16px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-chip-selectable-container-focus-ring {
+  border-radius: 4px;
+}
+
+.drp-chip-selectable-typography-small {
+  font: 700 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-chip-selectable-typography-large {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-chip-information-container-xs {
+  height: 24px;
+  padding: 0px 8px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-chip-information-container-small {
+  height: 32px;
+  padding: 0px 8px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-chip-information-container-medium {
+  height: 40px;
+  padding: 0px 16px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-chip-information-typography-small {
+  font: 700 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-chip-information-typography-large {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-chip-plain-container {
+  height: 16px;
+  padding: 0px;
+  gap: 4px;
+}
+
+.drp-chip-plain-typography-small {
+  font: 700 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-chip-plain-typography-large {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-chip-dismissable-container-xs {
+  height: 24px;
+  padding: 0px 8px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-chip-dismissable-container-small {
+  height: 32px;
+  padding: 0px 8px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-chip-dismissable-container-medium {
+  height: 40px;
+  padding: 0px 16px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-chip-dismissable-typography-small {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-chip-dismissable-typography-large {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-dialog-container-bg {
+  border-radius: 0px;
+  border-width: 0px;
+}
+
+.drp-drawer-container-left-bg {
+  border-radius: 0px;
+  border-right-width: 1px;
+}
+
+.drp-drawer-container-right-bg {
+  border-radius: 0px;
+  border-left-width: 1px;
+}
+
+.drp-drawer-container-top-bg {
+  border-radius: 0px;
+  border-bottom-width: 1px;
+}
+
+.drp-drawer-container-bottom-bg {
+  border-radius: 0px;
+  border-top-width: 1px;
+}
+
+.drp-form-control-container-description {
+  gap: 4px;
+}
+
+.drp-form-control-container-bg {
+  padding: 12px 0px;
+  gap: 8px;
+}
+
+.drp-form-control-container-small {
+  padding: 2px 0px;
+}
+
+.drp-form-control-container-medium {
+  padding: 1px 0px;
+}
+
+.drp-form-control-typography-description {
+  font: 400 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-form-control-typography-small {
+  font: 400 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-form-control-typography-medium {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-form-control-typography-large {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-standard-outlined-container-bg-large {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.drp-input-standard-outlined-container-bg-small {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-standard-outlined-container {
+  gap: 8px;
+  padding: 0px 16px;
+}
+
+.drp-input-standard-outlined-container-inside {
+  gap: 4px;
+}
+
+.drp-input-standard-outlined-container-assistive-text-inset {
+  gap: 4px;
+}
+
+.drp-input-standard-outlined-container-assistive-text-inside {
+  padding: 0px;
+}
+
+.drp-input-standard-outlined-typography {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-standard-outlined-typography-label {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-standard-outlined-prefix-typography {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-standard-outlined-prefix-container-bg {
+  gap: 16px;
+  padding-right: 0px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  padding-block: 0px;
+  padding-left: 16px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 4px;
+}
+
+.drp-input-standard-outlined-prefix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-standard-outlined-suffix-container-bg {
+  gap: 16px;
+  padding-right: 16px;
+  border-top-left-radius: 0px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  padding-block: 0px;
+  padding-left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0px;
+}
+
+.drp-input-standard-outlined-suffix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-standard-outlined-suffix-typography {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-standard-filled-container-bg-large {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-standard-filled-container-bg-small {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-standard-filled-container {
+  gap: 8px;
+  padding: 0px 8px;
+}
+
+.drp-input-standard-filled-container-inside {
+  gap: 8px;
+}
+
+.drp-input-standard-filled-container-assistive-text-inset {
+  gap: 4px;
+}
+
+.drp-input-standard-filled-container-assistive-text-inside {
+  padding: 0px;
+}
+
+.drp-input-standard-filled-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-standard-filled-typography-label {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-standard-filled-prefix-container-bg {
+  gap: 8px;
+  padding: 0px 8px 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-input-standard-filled-prefix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-standard-filled-prefix-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-standard-filled-suffix-container-bg {
+  gap: 8px;
+  padding: 0px 8px 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-input-standard-filled-suffix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-standard-filled-suffix-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-container-focus-ring {
+  border-radius: 4px;
+}
+
+.drp-input-material-outlined-container-bg-large {
+  gap: 0px;
+  height: 56px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-material-outlined-container-bg-small {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-material-outlined-container {
+  gap: 4px;
+  padding: 0px 8px;
+}
+
+.drp-input-material-outlined-container-inside {
+  gap: 8px;
+}
+
+.drp-input-material-outlined-container-assistive-text-inset {
+  gap: 4px;
+}
+
+.drp-input-material-outlined-container-assistive-text-inside {
+  padding: 0px;
+}
+
+.drp-input-material-outlined-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-outlined-typography-label {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-outlined-prefix-container-bg {
+  gap: 8px;
+  padding: 0px 8px 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-input-material-outlined-prefix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-material-outlined-prefix-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-outlined-suffix-container-bg {
+  gap: 8px;
+  padding: 0px 8px 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-input-material-outlined-suffix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-material-outlined-suffix-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-filled-container-bg-large {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-material-filled-container-bg-small {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-material-filled-container {
+  gap: 8px;
+  padding: 0px 8px;
+}
+
+.drp-input-material-filled-container-label-default {
+  padding: 0px 16px;
+}
+
+.drp-input-material-filled-container-label-active {
+  padding: 4px 4px 0px;
+}
+
+.drp-input-material-filled-container-inside {
+  gap: 8px;
+}
+
+.drp-input-material-filled-container-assistive-text-inset {
+  gap: 4px;
+}
+
+.drp-input-material-filled-container-assistive-text-inside {
+  padding: 0px;
+}
+
+.drp-input-material-filled-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-filled-typography-label {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-filled-prefix-container-bg {
+  gap: 8px;
+  padding: 0px 8px 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-input-material-filled-prefix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-material-filled-prefix-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-filled-suffix-container-bg {
+  gap: 8px;
+  padding: 0px 8px 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-input-material-filled-suffix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-material-filled-suffix-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-plain-container-bg-large {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-material-plain-container-bg-small {
+  gap: 0px;
+  height: 48px;
+  padding: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-input-material-plain-container {
+  gap: 8px;
+  padding: 0px 8px;
+}
+
+.drp-input-material-plain-container-inside {
+  gap: 8px;
+}
+
+.drp-input-material-plain-container-assistive-text-inset {
+  gap: 4px;
+}
+
+.drp-input-material-plain-container-assistive-text-inside {
+  padding: 0px;
+}
+
+.drp-input-material-plain-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-plain-typography-label {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-plain-prefix-container-bg {
+  gap: 8px;
+  padding: 0px 8px 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-input-material-plain-prefix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-material-plain-prefix-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-input-material-plain-suffix-container-bg {
+  gap: 8px;
+  padding: 0px 8px 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-input-material-plain-suffix-container {
+  gap: 8px;
+  padding: 0px;
+}
+
+.drp-input-material-plain-suffix-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-link-container-small {
+  height: 32px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-link-container-medium {
+  height: 32px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-link-container-large {
+  height: 32px;
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-link-container-focus-ring {
+  border-radius: 4px;
+}
+
+.drp-link-typography-small {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: underline;
+}
+
+.drp-link-typography-medium {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: underline;
+}
+
+.drp-link-typography-large {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: underline;
+}
+
+.drp-list-item-container-bg {
+  border-radius: 0px;
+  border-width: 1px;
+  gap: 8px;
+  padding: 12px 24px;
+}
+
+.drp-list-item-container {
+  padding: 2px 0px;
+}
+
+.drp-list-item-container-description {
+  gap: 0px;
+}
+
+.drp-list-item-container-icon {
+  padding: 0px;
+}
+
+.drp-list-item-container-select-icon {
+  padding: 0px;
+}
+
+.drp-list-item-container-sub-header {
+  border-radius: 0px;
+  gap: 8px;
+  border-width: 0px;
+  padding: 4px 16px;
+}
+
+.drp-list-item-typography-default {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-list-item-typography-selected {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-list-item-typography-description {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-list-container-bg {
+  border-radius: 0px;
+  padding: 0px;
+}
+
+.drp-notification-typography-title {
+  font: 700 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-notification-typography-description {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-radio-typography-small {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-radio-typography-large {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-slider-typography-title {
+  font: 700 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-slider-typography-range {
+  font: 400 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-slider-typography-input {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-snackbar-container-bg {
+  padding: 16px;
+  gap: 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.07), 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.drp-snackbar-typography-title {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-switch-typography-small {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-switch-typography-large {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-contained-container-bg {
+  border-radius: 0px;
+  padding: 0px 16px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.drp-tab-contained-container {
+  gap: 8px;
+}
+
+.drp-tab-contained-typography-medium {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-contained-typography-large {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-contained-tab-container-bg-medium {
+  gap: 0px;
+  padding: 4px;
+  height: 40px;
+  border-radius: 0px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.drp-tab-contained-tab-container-bg-large {
+  gap: 0px;
+  padding: 4px;
+  height: 48px;
+  border-radius: 0px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.drp-tab-segment-container-bg {
+  padding: 0px 16px;
+  border-radius: 0px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.drp-tab-segment-container {
+  gap: 8px;
+}
+
+.drp-tab-segment-typography-medium {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-segment-typography-large {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-segment-tab-container-bg-medium {
+  gap: 0px;
+  padding: 0px;
+  height: 40px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-tab-segment-tab-container-bg-large {
+  gap: 0px;
+  padding: 0px;
+  height: 48px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-tab-stacked-container-bg {
+  padding: 0px 16px;
+  border-radius: 0px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.drp-tab-stacked-container {
+  gap: 8px;
+}
+
+.drp-tab-stacked-typography-medium {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-stacked-typography-large {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-stacked-tab-container-bg-medium {
+  gap: 8px;
+  padding: 0px;
+  height: 40px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-tab-stacked-tab-container-bg-large {
+  gap: 8px;
+  padding: 0px;
+  height: 48px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-tab-underlined-inset-container-bg {
+  border-radius: 0px;
+  padding: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+}
+
+.drp-tab-underlined-inset-container {
+  gap: 8px;
+  padding: 0px 16px;
+}
+
+.drp-tab-underlined-inset-container-selected-bg {
+  border-radius: 0px;
+  padding: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 4px;
+  border-left-width: 0px;
+}
+
+.drp-tab-underlined-inset-typography-medium {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-underlined-inset-typography-large {
+  font: 500 14px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-underlined-inset-tab-container-bg-medium {
+  gap: 4px;
+  padding: 0px;
+  height: 40px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-tab-underlined-inset-tab-container-bg-large {
+  gap: 0px;
+  padding: 0px;
+  height: 48px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-tab-underlined-inside-container-bg {
+  padding: 0px;
+}
+
+.drp-tab-underlined-inside-container {
+  gap: 8px;
+  border-radius: 0px;
+  padding: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.drp-tab-underlined-inside-typography-medium {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-underlined-inside-typography-large {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-underlined-inside-tab-container-bg-medium {
+  gap: 24px;
+  padding: 0px;
+  height: 40px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+}
+
+.drp-tab-underlined-inside-tab-container-bg-large {
+  gap: 24px;
+  padding: 0px;
+  height: 48px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+}
+
+.drp-tab-vertical-container-bg {
+  padding: 0px 16px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 2px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-tab-vertical-container {
+  gap: 8px;
+  padding: 0px 8px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.drp-tab-vertical-typography-medium {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-vertical-typography-large {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tab-vertical-tab-container-bg-medium {
+  gap: 16px;
+  padding: 0px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-tab-vertical-tab-container-bg-large {
+  gap: 8px;
+  padding: 0px;
+  height: 48px;
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.drp-toggle-button-container-bg-medium {
+  gap: 8px;
+  padding: 16px;
+  height: 40px;
+  border-radius: 0px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.drp-toggle-button-container-bg-large {
+  gap: 8px;
+  padding: 16px;
+  height: 48px;
+  border-radius: 0px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.drp-toggle-button-typography-small {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-toggle-button-typography-large {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-toggle-group-typography-small {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-toggle-group-typography-large {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tooltip-container-bg {
+  gap: 0px;
+  box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.04), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.drp-tooltip-container {
+  gap: 8px;
+  padding: 16px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+.drp-tooltip-container-title {
+  gap: 8px;
+}
+
+.drp-tooltip-container-link {
+  padding: 0px;
+}
+
+.drp-tooltip-typography {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-tooltip-typography-title {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-1-regular {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-1-medium {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-1-bold {
+  font: 700 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-1-link {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: underline;
+}
+
+.drp-typography-body-1-all-caps {
+  font: 500 16px/24px "Cadillac Gothic Narrow";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-1-list {
+  font: 400 16px/24px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-2-regular {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-2-medium {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-2-bold {
+  font: 700 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-2-link {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: underline;
+}
+
+.drp-typography-body-2-all-caps {
+  font: 500 14px/22px "Cadillac Gothic Narrow";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-2-list {
+  font: 400 14px/22px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-3-regular {
+  font: 400 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-3-medium {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-3-bold {
+  font: 700 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-3-link {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: underline;
+}
+
+.drp-typography-body-3-all-caps {
+  font: 500 12px/20px "Cadillac Gothic Narrow";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-body-3-list {
+  font: 400 12px/20px "Cadillac Gothic Narrow";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-button-large {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-button-medium {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-button-small {
+  font: 500 16px/24px "Cadillac Gothic";
+  text-transform: uppercase;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-heading-1 {
+  font: 700 26px/36px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-heading-2 {
+  font: 700 22px/34px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-heading-3 {
+  font: 700 20px/30px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-heading-4 {
+  font: 700 18px/28px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-heading-5 {
+  font: 700 16px/24px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-heading-6 {
+  font: 700 14px/22px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-display-1 {
+  font: 700 40px/52px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-display-2 {
+  font: 700 32px/40px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-1 {
+  font: 700 32px/36px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-2 {
+  font: 700 24px/32px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-3 {
+  font: 700 20px/28px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-4 {
+  font: 700 18px/24px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-5 {
+  font: 700 16px/24px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-6 {
+  font: 700 14px/22px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-1 regular {
+  font: 400 32px/36px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-2 regular {
+  font: 400 24px/32px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-3 regular {
+  font: 400 20px/28px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-4 regular {
+  font: 400 18px/24px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-5 regular {
+  font: 400 16px/24px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-heading-6 regular {
+  font: 400 14px/22px "Cadillac Gothic";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-display-1 {
+  font: 600 40px/48px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-display-2 {
+  font: 600 32px/40px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-display-1 regular {
+  font: 500 40px/48px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-typography-mobile-display-2 regular {
+  font: 500 32px/40px "Cadillac Gothic Wide";
+  text-transform: none;
+  text-indent: 0px;
+  letter-spacing: 0em;
+  text-decoration: none;
+}
+
+.drp-header-container-bg {
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+}
+
+@media(min-width: 768px) {
+  .drp-typography-heading-1 {
+    font: 700 40px/48px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: -1px;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-2 {
+    font: 700 32px/40px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-3 {
+    font: 700 24px/30px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-4 {
+    font: 700 20px/24px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-5 {
+    font: 700 16px/24px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-6 {
+    font: 700 14px/22px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-1 regular {
+    font: 400 40px/48px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: -1px;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-2 regular {
+    font: 400 32px/40px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-3 regular {
+    font: 400 24px/30px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-4 regular {
+    font: 400 20px/24px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-5 regular {
+    font: 400 16px/24px "Cadillac Gothic Narrow";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-6 regular {
+    font: 400 14px/22px "Cadillac Gothic Narrow";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-display-1 {
+    font: 600 40px/48px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-display-2 {
+    font: 600 32px/40px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-display-1 regular {
+    font: 500 40px/48px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-display-2 regular {
+    font: 500 32px/40px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+}
+
+@media(min-width: 1025px) {
+  .drp-banner-container-inside {
+    padding: 0px;
+    gap: 8px;
+  }
+
+  .drp-banner-container-bg {
+    border-radius: 0px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+  }
+
+  .drp-breadcrumb-container {
+    height: 24px;
+    gap: 4px;
+  }
+
+  .drp-checkbox-hit-area {
+    height: 24px;
+    width: 24px;
+  }
+
+  .drp-form-control-container-bg {
+    padding: 8px 0px;
+    gap: 8px;
+  }
+
+  .drp-link-container-small {
+    height: 24px;
+    padding: 0px;
+    gap: 8px;
+    border-radius: 0px;
+    border-width: 1px;
+  }
+
+  .drp-link-container-medium {
+    height: 24px;
+    padding: 0px;
+    gap: 8px;
+    border-radius: 0px;
+    border-width: 1px;
+  }
+
+  .drp-link-container-large {
+    height: 24px;
+    padding: 0px;
+    gap: 8px;
+    border-radius: 0px;
+    border-width: 1px;
+  }
+
+  .drp-list-container-bg {
+    padding: 8px 0px;
+    border-radius: 0px;
+    border-width: 1px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+    gap: 0px;
+  }
+
+  .drp-tooltip-container {
+    gap: 8px;
+    padding: 16px;
+    border-radius: 0px;
+    border-width: 1px;
+  }
+
+  .drp-typography-heading-1 {
+    font: 700 40px/48px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: -1px;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-2 {
+    font: 700 32px/40px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-3 {
+    font: 700 24px/30px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-4 {
+    font: 700 20px/24px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-5 {
+    font: 700 16px/24px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-6 {
+    font: 700 14px/22px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-1 regular {
+    font: 400 40px/48px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: -1px;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-2 regular {
+    font: 400 32px/40px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-3 regular {
+    font: 400 24px/30px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-4 regular {
+    font: 400 20px/24px "Cadillac Gothic";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-5 regular {
+    font: 400 16px/24px "Cadillac Gothic Narrow";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-heading-6 regular {
+    font: 400 14px/22px "Cadillac Gothic Narrow";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-display-1 {
+    font: 600 40px/48px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-display-2 {
+    font: 600 32px/40px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-display-1 regular {
+    font: 500 40px/48px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+  .drp-typography-display-2 regular {
+    font: 500 32px/40px "Cadillac Gothic Wide";
+    text-transform: none;
+    text-indent: 0px;
+    letter-spacing: 0em;
+    text-decoration: none;
+  }
+
+}
+
+
+.drp-button-contained-color-standard {
+  background-color: #FFFFFF;
+  border-color: #282828;
+  color: #282828;
+}
+
+.drp-button-contained-color-standard .drp-icon {
+  color: #282828;
+}
+
+.drp-button-contained-color-standard:hover {
+  background-color: #282828;
+  border-color: #282828;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-standard:hover .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-standard:active {
+  background-color: #282828;
+  border-color: #282828;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-standard:active .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-standard.drp-disabled {
+  background-color: transparent;
+  border-color: #A3A3A3;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-standard.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-primary-filled {
+  background-color: #171473;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-primary-filled .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-primary-filled:hover {
+  background-color: #211FAB;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-primary-filled:hover .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-primary-filled:active {
+  background-color: #171473;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-primary-filled:active .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-primary-filled.drp-disabled {
+  background-color: #a3a3a3;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-primary-filled.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-primary-outlined {
+  background-color: transparent;
+  border-color: #171473;
+  color: #171473;
+}
+
+.drp-button-contained-color-primary-outlined .drp-icon {
+  color: #171473;
+}
+
+.drp-button-contained-color-primary-outlined:hover {
+  background-color: transparent;
+  border-color: #211FAB;
+  color: #211FAB;
+}
+
+.drp-button-contained-color-primary-outlined:hover .drp-icon {
+  color: #211FAB;
+}
+
+.drp-button-contained-color-primary-outlined:active {
+  background-color: transparent;
+  border-color: #171473;
+  color: #171473;
+}
+
+.drp-button-contained-color-primary-outlined:active .drp-icon {
+  color: #171473;
+}
+
+.drp-button-contained-color-primary-outlined.drp-disabled {
+  background-color: transparent;
+  border-color: #A3A3A3;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-primary-outlined.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-primary-plain {
+  background-color: transparent;
+  border-color: transparent;
+  color: #171473;
+}
+
+.drp-button-contained-color-primary-plain .drp-icon {
+  color: #171473;
+}
+
+.drp-button-contained-color-primary-plain:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #211FAB;
+}
+
+.drp-button-contained-color-primary-plain:hover .drp-icon {
+  color: #211FAB;
+}
+
+.drp-button-contained-color-primary-plain:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #211FAB;
+}
+
+.drp-button-contained-color-primary-plain:active .drp-icon {
+  color: #211FAB;
+}
+
+.drp-button-contained-color-primary-plain.drp-disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-primary-plain.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-secondary-filled {
+  background-color: #505050;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-secondary-filled .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-secondary-filled:hover {
+  background-color: #282828;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-secondary-filled:hover .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-secondary-filled:active {
+  background-color: #505050;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-secondary-filled:active .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-secondary-filled.drp-disabled {
+  background-color: #a3a3a3;
+  border-color: transparent;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-secondary-filled.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-secondary-outlined {
+  background-color: transparent;
+  border-color: #505050;
+  color: #505050;
+}
+
+.drp-button-contained-color-secondary-outlined .drp-icon {
+  color: #505050;
+}
+
+.drp-button-contained-color-secondary-outlined:hover {
+  background-color: transparent;
+  border-color: #282828;
+  color: #282828;
+}
+
+.drp-button-contained-color-secondary-outlined:hover .drp-icon {
+  color: #282828;
+}
+
+.drp-button-contained-color-secondary-outlined:active {
+  background-color: transparent;
+  border-color: #282828;
+  color: #282828;
+}
+
+.drp-button-contained-color-secondary-outlined:active .drp-icon {
+  color: #282828;
+}
+
+.drp-button-contained-color-secondary-outlined.drp-disabled {
+  background-color: transparent;
+  border-color: #A3A3A3;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-secondary-outlined.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-secondary-plain {
+  background-color: transparent;
+  border-color: transparent;
+  color: #505050;
+}
+
+.drp-button-contained-color-secondary-plain .drp-icon {
+  color: #505050;
+}
+
+.drp-button-contained-color-secondary-plain:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #282828;
+}
+
+.drp-button-contained-color-secondary-plain:hover .drp-icon {
+  color: #282828;
+}
+
+.drp-button-contained-color-secondary-plain:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #282828;
+}
+
+.drp-button-contained-color-secondary-plain:active .drp-icon {
+  color: #282828;
+}
+
+.drp-button-contained-color-secondary-plain.drp-disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-secondary-plain.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-destructive-filled {
+  background-color: #B50000;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-destructive-filled .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-destructive-filled:hover {
+  background-color: #B50000;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-destructive-filled:hover .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-destructive-filled:active {
+  background-color: #B50000;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-destructive-filled:active .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-destructive-filled.drp-disabled {
+  background-color: #a3a3a3;
+  border-color: transparent;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-destructive-filled.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-destructive-outlined {
+  background-color: transparent;
+  border-color: #B50000;
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-outlined .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-outlined:hover {
+  background-color: transparent;
+  border-color: #B50000;
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-outlined:hover .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-outlined:active {
+  background-color: transparent;
+  border-color: #B50000;
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-outlined:active .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-outlined.drp-disabled {
+  background-color: transparent;
+  border-color: #A3A3A3;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-destructive-outlined.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-destructive-plain {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-plain .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-plain:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-plain:hover .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-plain:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-plain:active .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-contained-color-destructive-plain.drp-disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-destructive-plain.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-neutral-filled {
+  background-color: #505050;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-neutral-filled .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-neutral-filled:hover {
+  background-color: #282828;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-neutral-filled:hover .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-neutral-filled:active {
+  background-color: #505050;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-neutral-filled:active .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-neutral-filled.drp-disabled {
+  background-color: #a3a3a3;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-neutral-filled.drp-disabled .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-neutral-outlined {
+  background-color: transparent;
+  border-color: #505050;
+  color: #505050;
+}
+
+.drp-button-contained-color-neutral-outlined .drp-icon {
+  color: #505050;
+}
+
+.drp-button-contained-color-neutral-outlined:hover {
+  background-color: transparent;
+  border-color: #282828;
+  color: #282828;
+}
+
+.drp-button-contained-color-neutral-outlined:hover .drp-icon {
+  color: #282828;
+}
+
+.drp-button-contained-color-neutral-outlined:active {
+  background-color: transparent;
+  border-color: #505050;
+  color: #505050;
+}
+
+.drp-button-contained-color-neutral-outlined:active .drp-icon {
+  color: #505050;
+}
+
+.drp-button-contained-color-neutral-outlined.drp-disabled {
+  background-color: transparent;
+  border-color: #a3a3a3;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-neutral-outlined.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-neutral-plain {
+  background-color: transparent;
+  border-color: transparent;
+  color: #505050;
+}
+
+.drp-button-contained-color-neutral-plain .drp-icon {
+  color: #505050;
+}
+
+.drp-button-contained-color-neutral-plain:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #282828;
+}
+
+.drp-button-contained-color-neutral-plain:hover .drp-icon {
+  color: #282828;
+}
+
+.drp-button-contained-color-neutral-plain:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #505050;
+}
+
+.drp-button-contained-color-neutral-plain:active .drp-icon {
+  color: #505050;
+}
+
+.drp-button-contained-color-neutral-plain.drp-disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #8C8C8C;
+}
+
+.drp-button-contained-color-neutral-plain.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-contained-color-inverse-filled {
+  background-color: #FFFFFF;
+  border-color: transparent;
+  color: #1A1A1A;
+}
+
+.drp-button-contained-color-inverse-filled .drp-icon {
+  color: #000000;
+}
+
+.drp-button-contained-color-inverse-filled:hover {
+  background-color: #F2F2F2;
+  border-color: transparent;
+  color: #1A1A1A;
+}
+
+.drp-button-contained-color-inverse-filled:hover .drp-icon {
+  color: #000000;
+}
+
+.drp-button-contained-color-inverse-filled:active {
+  background-color: #F2F2F2;
+  border-color: transparent;
+  color: #1A1A1A;
+}
+
+.drp-button-contained-color-inverse-filled:active .drp-icon {
+  color: #000000;
+}
+
+.drp-button-contained-color-inverse-filled.drp-disabled {
+  background-color: #787878;
+  border-color: transparent;
+  color: #787878;
+}
+
+.drp-button-contained-color-inverse-filled.drp-disabled .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-inverse-outlined {
+  background-color: transparent;
+  border-color: #F2F2F2;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-inverse-outlined .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-inverse-outlined:hover {
+  background-color: transparent;
+  border-color: #F2F2F2;
+  color: #F2F2F2;
+}
+
+.drp-button-contained-color-inverse-outlined:hover .drp-icon {
+  color: #F2F2F2;
+}
+
+.drp-button-contained-color-inverse-outlined:active {
+  background-color: transparent;
+  border-color: #F2F2F2;
+  color: #F2F2F2;
+}
+
+.drp-button-contained-color-inverse-outlined:active .drp-icon {
+  color: #F2F2F2;
+}
+
+.drp-button-contained-color-inverse-outlined.drp-disabled {
+  background-color: transparent;
+  border-color: #787878;
+  color: #787878;
+}
+
+.drp-button-contained-color-inverse-outlined.drp-disabled .drp-icon {
+  color: #787878;
+}
+
+.drp-button-contained-color-inverse-plain {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-inverse-plain .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-contained-color-inverse-plain:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #F2F2F2;
+}
+
+.drp-button-contained-color-inverse-plain:hover .drp-icon {
+  color: #F2F2F2;
+}
+
+.drp-button-contained-color-inverse-plain:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #F2F2F2;
+}
+
+.drp-button-contained-color-inverse-plain:active .drp-icon {
+  color: #F2F2F2;
+}
+
+.drp-button-contained-color-inverse-plain.drp-disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #787878;
+}
+
+.drp-button-contained-color-inverse-plain.drp-disabled .drp-icon {
+  color: #787878;
+}
+
+.drp-button-link-color-primary {
+  color: #171473;
+}
+
+.drp-button-link-color-primary .drp-icon {
+  color: #171473;
+}
+
+.drp-button-link-color-primary:hover {
+  color: #211FAB;
+}
+
+.drp-button-link-color-primary:hover .drp-icon {
+  color: #211FAB;
+}
+
+.drp-button-link-color-primary:active {
+  color: #211FAB;
+}
+
+.drp-button-link-color-primary:active .drp-icon {
+  color: #211FAB;
+}
+
+.drp-button-link-color-primary.drp-disabled {
+  color: #8C8C8C;
+}
+
+.drp-button-link-color-primary.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-link-color-secondary {
+  color: #505050;
+}
+
+.drp-button-link-color-secondary .drp-icon {
+  color: #505050;
+}
+
+.drp-button-link-color-secondary:hover {
+  color: #282828;
+}
+
+.drp-button-link-color-secondary:hover .drp-icon {
+  color: #282828;
+}
+
+.drp-button-link-color-secondary:active {
+  color: #282828;
+}
+
+.drp-button-link-color-secondary:active .drp-icon {
+  color: #282828;
+}
+
+.drp-button-link-color-secondary.drp-disabled {
+  color: #8C8C8C;
+}
+
+.drp-button-link-color-secondary.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-link-color-destructive {
+  color: #B50000;
+}
+
+.drp-button-link-color-destructive .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-link-color-destructive:hover {
+  color: #B50000;
+}
+
+.drp-button-link-color-destructive:hover .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-link-color-destructive:active {
+  color: #B50000;
+}
+
+.drp-button-link-color-destructive:active .drp-icon {
+  color: #B50000;
+}
+
+.drp-button-link-color-destructive.drp-disabled {
+  color: #8C8C8C;
+}
+
+.drp-button-link-color-destructive.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-link-color-neutral {
+  color: #171473;
+}
+
+.drp-button-link-color-neutral .drp-icon {
+  color: #171473;
+}
+
+.drp-button-link-color-neutral:hover {
+  color: #211FAB;
+}
+
+.drp-button-link-color-neutral:hover .drp-icon {
+  color: #211FAB;
+}
+
+.drp-button-link-color-neutral:active {
+  color: #211FAB;
+}
+
+.drp-button-link-color-neutral:active .drp-icon {
+  color: #211FAB;
+}
+
+.drp-button-link-color-neutral.drp-disabled {
+  color: #8C8C8C;
+}
+
+.drp-button-link-color-neutral.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-button-link-color-inverse {
+  color: #FFFFFF;
+}
+
+.drp-button-link-color-inverse .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-button-link-color-inverse:hover {
+  color: #F2F2F2;
+}
+
+.drp-button-link-color-inverse:hover .drp-icon {
+  color: #F2F2F2;
+}
+
+.drp-button-link-color-inverse:active {
+  color: #F2F2F2;
+}
+
+.drp-button-link-color-inverse:active .drp-icon {
+  color: #F2F2F2;
+}
+
+.drp-button-link-color-inverse.drp-disabled {
+  color: #787878;
+}
+
+.drp-button-link-color-inverse.drp-disabled .drp-icon {
+  color: #787878;
+}
+
+.drp-toggle-button-color-option-1 {
+  background-color: #FFFFFF;
+  border-color: #171473;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-1 .drp-icon {
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-1:hover {
+  background-color: #282828;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1:hover .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1:active {
+  background-color: #171473;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1:active .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1.drp-disabled {
+  background-color: #FFFFFF;
+  border-color: #A3A3A3;
+  color: #8C8C8C;
+}
+
+.drp-toggle-button-color-option-1.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-toggle-button-color-option-1-selected {
+  background-color: #171473;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1-selected .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1-selected:hover {
+  background-color: #171473;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1-selected:hover .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1-selected:active {
+  background-color: #171473;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1-selected:active .drp-icon {
+  color: #FFFFFF;
+}
+
+.drp-toggle-button-color-option-1-selected.drp-disabled {
+  background-color: #FFFFFF;
+  border-color: #A3A3A3;
+  color: #8C8C8C;
+}
+
+.drp-toggle-button-color-option-1-selected.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-toggle-button-color-option-2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-2 .drp-icon {
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-2:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #211FAB;
+}
+
+.drp-toggle-button-color-option-2:hover .drp-icon {
+  color: #211FAB;
+}
+
+.drp-toggle-button-color-option-2:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #211FAB;
+}
+
+.drp-toggle-button-color-option-2:active .drp-icon {
+  color: #211FAB;
+}
+
+.drp-toggle-button-color-option-2.drp-disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #8C8C8C;
+}
+
+.drp-toggle-button-color-option-2.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-toggle-button-color-option-2-selected {
+  background-color: transparent;
+  border-color: transparent;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-2-selected .drp-icon {
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-2-selected:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #211FAB;
+}
+
+.drp-toggle-button-color-option-2-selected:hover .drp-icon {
+  color: #211FAB;
+}
+
+.drp-toggle-button-color-option-2-selected:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #211FAB;
+}
+
+.drp-toggle-button-color-option-2-selected:active .drp-icon {
+  color: #211FAB;
+}
+
+.drp-toggle-button-color-option-2-selected.drp-disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #8C8C8C;
+}
+
+.drp-toggle-button-color-option-2-selected.drp-disabled .drp-icon {
+  color: #b3b3b3;
+}
+
+.drp-toggle-button-color-option-3 {
+  background-color: #FFFFFF;
+  border-color: #A0A0A0;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3 .drp-icon {
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3:hover {
+  background-color: #FFFFFF;
+  border-color: #211FAB;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3:hover .drp-icon {
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3:active {
+  background-color: #FFFFFF;
+  border-color: #171473;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3:active .drp-icon {
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3.drp-disabled {
+  background-color: #FFFFFF;
+  border-color: #A3A3A3;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3.drp-disabled .drp-icon {
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3-selected {
+  background-color: #EEEEFD;
+  border-color: #171473;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3-selected .drp-icon {
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3-selected.drp-disabled {
+  background-color: #EEEEFD;
+  border-color: #171473;
+  color: #171473;
+}
+
+.drp-toggle-button-color-option-3-selected.drp-disabled .drp-icon {
+  color: #171473;
+}
+
+body {
+  --aec-accordion-color-bg-default: #FFFFFF;
+  --aec-accordion-color-bg-hover: #FFFFFF;
+  --aec-accordion-color-bg-active: #FFFFFF;
+  --aec-accordion-color-bg-disabled: #a3a3a3;
+  --aec-accordion-color-border-default: #B3B3B3;
+  --aec-accordion-color-border-hover: #B3B3B3;
+  --aec-accordion-color-border-active: #B3B3B3;
+  --aec-accordion-color-border-disabled: #B3B3B3;
+  --aec-accordion-color-text-default: #262626;
+  --aec-accordion-color-text-hover: #1A1A1A;
+  --aec-accordion-color-text-active: #1A1A1A;
+  --aec-accordion-color-text-disabled: #8C8C8C;
+  --aec-accordion-color-icon-default: #666666;
+  --aec-accordion-color-icon-hover: #666666;
+  --aec-accordion-color-icon-active: #666666;
+  --aec-accordion-color-icon-disabled: #b3b3b3;
+  --aec-accordion-color-selected-bg-default: #FFFFFF;
+  --aec-accordion-color-selected-bg-hover: #FFFFFF;
+  --aec-accordion-color-selected-bg-active: #FFFFFF;
+  --aec-accordion-color-selected-bg-disabled: #a3a3a3;
+  --aec-accordion-color-selected-border-default: #B3B3B3;
+  --aec-accordion-color-selected-border-hover: #B3B3B3;
+  --aec-accordion-color-selected-border-active: #B3B3B3;
+  --aec-accordion-color-selected-border-disabled: #B3B3B3;
+  --aec-accordion-color-selected-text-default: #1A1A1A;
+  --aec-accordion-color-selected-text-hover: #1A1A1A;
+  --aec-accordion-color-selected-text-active: #1A1A1A;
+  --aec-accordion-color-selected-text-disabled: #8C8C8C;
+  --aec-accordion-color-selected-icon-default: #000000;
+  --aec-accordion-color-selected-icon-hover: #000000;
+  --aec-accordion-color-selected-icon-active: #000000;
+  --aec-accordion-color-selected-icon-disabled: #b3b3b3;
+  --aec-assistive-text-color-neutral-text: #666666;
+  --aec-assistive-text-color-neutral-icon: #666666;
+  --aec-assistive-text-color-error-text: #B50000;
+  --aec-assistive-text-color-error-icon: #B50000;
+  --aec-assistive-text-color-success-text: #0A7305;
+  --aec-assistive-text-color-success-icon: #0A7305;
+  --aec-assistive-text-color-warning-text: #F5D98F;
+  --aec-assistive-text-color-warning-icon: #F5D98F;
+  --aec-badge-color-primary-bg: #171473;
+  --aec-badge-color-primary-border: transparent;
+  --aec-badge-color-primary-text: #FFFFFF;
+  --aec-badge-color-black-bg: #505050;
+  --aec-badge-color-black-border: transparent;
+  --aec-badge-color-black-text: #FFFFFF;
+  --aec-badge-color-white-bg: #FFFFFF;
+  --aec-badge-color-white-border: transparent;
+  --aec-badge-color-white-text: #1A1A1A;
+  --aec-banner-color-bg: #F2F2F2;
+  --aec-banner-color-border: #D2D2D2;
+  --aec-banner-color-title: #1A1A1A;
+  --aec-banner-color-description: #1A1A1A;
+  --aec-banner-color-icon: #000000;
+  --aec-breadcrumb-color-text-default: #666666;
+  --aec-breadcrumb-color-text-hover: #171473;
+  --aec-breadcrumb-color-text-active: #211FAB;
+  --aec-breadcrumb-color-text-selected: #1A1A1A;
+  --aec-breadcrumb-color-text-selected-hover: #171473;
+  --aec-breadcrumb-color-text-selected-active: #211FAB;
+  --aec-breadcrumb-color-text-disabled: #8C8C8C;
+  --aec-breadcrumb-color-icon-default: #b3b3b3;
+  --aec-card-color-bg-default: #FFFFFF;
+  --aec-card-color-bg-variant: #F2F2F2;
+  --aec-card-color-bg-inverse: #000000;
+  --aec-card-color-bg-disabled: #a3a3a3;
+  --aec-card-color-border-default: #B3B3B3;
+  --aec-card-color-border-variant: #8C8C8C;
+  --aec-card-color-border-inverse: #000000;
+  --aec-checkbox-color-bg-default: #FFFFFF;
+  --aec-checkbox-color-bg-hover: #FFFFFF;
+  --aec-checkbox-color-bg-active: #FFFFFF;
+  --aec-checkbox-color-bg-disabled: #FFFFFF;
+  --aec-checkbox-color-border-default: #505050;
+  --aec-checkbox-color-border-hover: #282828;
+  --aec-checkbox-color-border-active: #282828;
+  --aec-checkbox-color-border-disabled: #A3A3A3;
+  --aec-checkbox-color-icon-default: transparent;
+  --aec-checkbox-color-icon-hover: transparent;
+  --aec-checkbox-color-icon-active: #b3b3b3;
+  --aec-checkbox-color-icon-disabled: transparent;
+  --aec-checkbox-color-selected-bg-default: #171473;
+  --aec-checkbox-color-selected-bg-hover: #211FAB;
+  --aec-checkbox-color-selected-bg-active: #211FAB;
+  --aec-checkbox-color-selected-bg-disabled: #a3a3a3;
+  --aec-checkbox-color-selected-border-default: transparent;
+  --aec-checkbox-color-selected-border-hover: transparent;
+  --aec-checkbox-color-selected-border-active: transparent;
+  --aec-checkbox-color-selected-border-disabled: transparent;
+  --aec-checkbox-color-selected-icon-default: #FFFFFF;
+  --aec-checkbox-color-selected-icon-hover: #FFFFFF;
+  --aec-checkbox-color-selected-icon-active: #FFFFFF;
+  --aec-checkbox-color-selected-icon-disabled: #FFFFFF;
+  --aec-checkbox-color-intermediate-bg-default: #FFFFFF;
+  --aec-checkbox-color-intermediate-bg-hover: #FFFFFF;
+  --aec-checkbox-color-intermediate-bg-active: #FFFFFF;
+  --aec-checkbox-color-intermediate-bg-disabled: #FFFFFF;
+  --aec-checkbox-color-intermediate-border-default: #171473;
+  --aec-checkbox-color-intermediate-border-hover: #211FAB;
+  --aec-checkbox-color-intermediate-border-active: #211FAB;
+  --aec-checkbox-color-intermediate-border-disabled: #A3A3A3;
+  --aec-checkbox-color-intermediate-icon-default: #171473;
+  --aec-checkbox-color-intermediate-icon-hover: #211FAB;
+  --aec-checkbox-color-intermediate-icon-active: #211FAB;
+  --aec-checkbox-color-intermediate-icon-disabled: #b3b3b3;
+  --aec-chip-selectable-color-bg-default: #FFFFFF;
+  --aec-chip-selectable-color-bg-hover: #F2F2F2;
+  --aec-chip-selectable-color-bg-active: #F2F2F2;
+  --aec-chip-selectable-color-bg-disabled: #FFFFFF;
+  --aec-chip-selectable-color-bg-selected-default: #282828;
+  --aec-chip-selectable-color-bg-selected-disabled: #a3a3a3;
+  --aec-chip-selectable-color-border-default: #A0A0A0;
+  --aec-chip-selectable-color-border-hover: #D2D2D2;
+  --aec-chip-selectable-color-border-active: #171473;
+  --aec-chip-selectable-color-border-disabled: #A3A3A3;
+  --aec-chip-selectable-color-border-selected-default: none;
+  --aec-chip-selectable-color-border-selected-disabled: #A3A3A3;
+  --aec-chip-selectable-color-text-default: #666666;
+  --aec-chip-selectable-color-text-hover: #1A1A1A;
+  --aec-chip-selectable-color-text-active: #1A1A1A;
+  --aec-chip-selectable-color-text-disabled: #8C8C8C;
+  --aec-chip-selectable-color-text-selected-default: #FFFFFF;
+  --aec-chip-selectable-color-text-selected-disabled: #FFFFFF;
+  --aec-chip-selectable-color-icon-default: #000000;
+  --aec-chip-selectable-color-icon-hover: #666666;
+  --aec-chip-selectable-color-icon-active: #666666;
+  --aec-chip-selectable-color-icon-disabled: #b3b3b3;
+  --aec-chip-selectable-color-icon-selected-default: #FFFFFF;
+  --aec-chip-selectable-color-icon-selected-disabled: #FFFFFF;
+  --aec-chip-selectable-color-inverse-bg-default: #505050;
+  --aec-chip-selectable-color-inverse-bg-hover: #282828;
+  --aec-chip-selectable-color-inverse-bg-active: #282828;
+  --aec-chip-selectable-color-inverse-bg-disabled: #505050;
+  --aec-chip-selectable-color-inverse-bg-selected-default: #F2F2F2;
+  --aec-chip-selectable-color-inverse-bg-selected-disabled: #787878;
+  --aec-chip-selectable-color-inverse-border-default: #A0A0A0;
+  --aec-chip-selectable-color-inverse-border-hover: #787878;
+  --aec-chip-selectable-color-inverse-border-active: #F2F2F2;
+  --aec-chip-selectable-color-inverse-border-disabled: #787878;
+  --aec-chip-selectable-color-inverse-border-selected-default: none;
+  --aec-chip-selectable-color-inverse-border-selected-disabled: #787878;
+  --aec-chip-selectable-color-inverse-text-default: #D2D2D2;
+  --aec-chip-selectable-color-inverse-text-hover: #FFFFFF;
+  --aec-chip-selectable-color-inverse-text-active: #FFFFFF;
+  --aec-chip-selectable-color-inverse-text-disabled: #8C8C8C;
+  --aec-chip-selectable-color-inverse-text-selected-default: #1A1A1A;
+  --aec-chip-selectable-color-inverse-text-selected-disabled: #787878;
+  --aec-chip-selectable-color-inverse-icon-default: #FFFFFF;
+  --aec-chip-selectable-color-inverse-icon-hover: #D2D2D2;
+  --aec-chip-selectable-color-inverse-icon-active: #D2D2D2;
+  --aec-chip-selectable-color-inverse-icon-disabled: #787878;
+  --aec-chip-selectable-color-inverse-icon-selected-default: #000000;
+  --aec-chip-selectable-color-inverse-icon-selected-disabled: #787878;
+  --aec-chip-information-color-primary-bg: #171473;
+  --aec-chip-information-color-primary-border: transparent;
+  --aec-chip-information-color-primary-text: #FFFFFF;
+  --aec-chip-information-color-primary-icon: #FFFFFF;
+  --aec-chip-information-color-primary-subtle-bg: #EEEEFD;
+  --aec-chip-information-color-primary-subtle-border: transparent;
+  --aec-chip-information-color-primary-subtle-text: #171473;
+  --aec-chip-information-color-primary-subtle-icon: #171473;
+  --aec-chip-information-color-success-bg: #0A7305;
+  --aec-chip-information-color-success-border: transparent;
+  --aec-chip-information-color-success-text: #FFFFFF;
+  --aec-chip-information-color-success-icon: #FFFFFF;
+  --aec-chip-information-color-success-subtle-bg: #DDEAD9;
+  --aec-chip-information-color-success-subtle-border: transparent;
+  --aec-chip-information-color-success-subtle-text: #0A7305;
+  --aec-chip-information-color-success-subtle-icon: #0A7305;
+  --aec-chip-information-color-warning-bg: #F5D98F;
+  --aec-chip-information-color-warning-border: transparent;
+  --aec-chip-information-color-warning-text: #282828;
+  --aec-chip-information-color-warning-icon: #282828;
+  --aec-chip-information-color-warning-subtle-bg: #FFF9EE;
+  --aec-chip-information-color-warning-subtle-border: transparent;
+  --aec-chip-information-color-warning-subtle-text: #B3842D;
+  --aec-chip-information-color-warning-subtle-icon: #B3842D;
+  --aec-chip-information-color-error-bg: #B50000;
+  --aec-chip-information-color-error-border: transparent;
+  --aec-chip-information-color-error-text: #FFFFFF;
+  --aec-chip-information-color-error-icon: #FFFFFF;
+  --aec-chip-information-color-error-subtle-bg: #FBDED6;
+  --aec-chip-information-color-error-subtle-border: transparent;
+  --aec-chip-information-color-error-subtle-text: #B50000;
+  --aec-chip-information-color-error-subtle-icon: #B50000;
+  --aec-chip-information-color-grey-bg: #282828;
+  --aec-chip-information-color-grey-border: transparent;
+  --aec-chip-information-color-grey-text: #FFFFFF;
+  --aec-chip-information-color-grey-icon: #282828;
+  --aec-chip-information-color-grey-subtle-bg: #F2F2F2;
+  --aec-chip-information-color-grey-subtle-border: transparent;
+  --aec-chip-information-color-grey-subtle-text: #1A1A1A;
+  --aec-chip-information-color-grey-subtle-icon: #000000;
+  --aec-chip-plain-color-primary-text: #171473;
+  --aec-chip-plain-color-primary-icon: #171473;
+  --aec-chip-plain-color-success-text: #0A7305;
+  --aec-chip-plain-color-success-icon: #0A7305;
+  --aec-chip-plain-color-warning-text: #F5D98F;
+  --aec-chip-plain-color-warning-icon: #F5D98F;
+  --aec-chip-plain-color-error-text: #B50000;
+  --aec-chip-plain-color-error-icon: #B50000;
+  --aec-chip-plain-color-grey-text: #262626;
+  --aec-chip-plain-color-grey-icon: #000000;
+  --aec-chip-dismissable-color-bg-default: #FFFFFF;
+  --aec-chip-dismissable-color-bg-hover: #F2F2F2;
+  --aec-chip-dismissable-color-bg-active: #F2F2F2;
+  --aec-chip-dismissable-color-bg-disabled: #FFFFFF;
+  --aec-chip-dismissable-color-border-default: #A0A0A0;
+  --aec-chip-dismissable-color-border-hover: #D2D2D2;
+  --aec-chip-dismissable-color-border-active: #171473;
+  --aec-chip-dismissable-color-border-disabled: #A3A3A3;
+  --aec-chip-dismissable-color-text-default: #1A1A1A;
+  --aec-chip-dismissable-color-text-hover: #1A1A1A;
+  --aec-chip-dismissable-color-text-active: #1A1A1A;
+  --aec-chip-dismissable-color-text-disabled: #8C8C8C;
+  --aec-chip-dismissable-color-icon-default: #000000;
+  --aec-chip-dismissable-color-icon-hover: #666666;
+  --aec-chip-dismissable-color-icon-active: #666666;
+  --aec-chip-dismissable-color-icon-disabled: #b3b3b3;
+  --aec-chip-dismissable-color-inverse-bg-default: #505050;
+  --aec-chip-dismissable-color-inverse-bg-hover: #282828;
+  --aec-chip-dismissable-color-inverse-bg-active: #282828;
+  --aec-chip-dismissable-color-inverse-bg-disabled: #505050;
+  --aec-chip-dismissable-color-inverse-border-default: #A0A0A0;
+  --aec-chip-dismissable-color-inverse-border-hover: #787878;
+  --aec-chip-dismissable-color-inverse-border-active: #F2F2F2;
+  --aec-chip-dismissable-color-inverse-border-disabled: #787878;
+  --aec-chip-dismissable-color-inverse-text-default: #D2D2D2;
+  --aec-chip-dismissable-color-inverse-text-hover: #FFFFFF;
+  --aec-chip-dismissable-color-inverse-text-active: #FFFFFF;
+  --aec-chip-dismissable-color-inverse-text-disabled: #8C8C8C;
+  --aec-chip-dismissable-color-inverse-icon-default: #FFFFFF;
+  --aec-chip-dismissable-color-inverse-icon-hover: #D2D2D2;
+  --aec-chip-dismissable-color-inverse-icon-active: #D2D2D2;
+  --aec-chip-dismissable-color-inverse-icon-disabled: #787878;
+  --aec-dialog-color-bg: #FFFFFF;
+  --aec-dialog-color-border: #B3B3B3;
+  --aec-dialog-box-shadow: 0 20px 12px 0 rgba(0, 0, 0, 0.03), 0 8px 4px 0 rgba(0, 0, 0, 0.08);
+  --aec-divider-color-border: #B3B3B3;
+  --aec-divider-width: 1px;
+  --aec-drawer-color-bg: #FFFFFF;
+  --aec-drawer-color-border: #B3B3B3;
+  --aec-form-control-color-text-default: #1A1A1A;
+  --aec-form-control-color-text-disabled: #8C8C8C;
+  --aec-media-query-breakpoint-s: 576;
+  --aec-media-query-breakpoint-m: 768;
+  --aec-media-query-breakpoint-l: 1024;
+  --aec-media-query-breakpoint-xl: 1200;
+  --aec-media-query-breakpoint-2xl: 1400;
+  --aec-media-query-columns-s: 4;
+  --aec-media-query-columns-m: 8;
+  --aec-media-query-columns-l: 12;
+  --aec-media-query-page-inset-none: 0px;
+  --aec-media-query-page-inset-s: 16px;
+  --aec-media-query-page-inset-m: 24px;
+  --aec-media-query-page-inset-l: 32px;
+  --aec-media-query-page-inset-xl: 48px;
+  --aec-media-query-page-inside-none: 0px;
+  --aec-media-query-page-inside-xxs: 4px;
+  --aec-media-query-page-inside-xs: 8px;
+  --aec-media-query-page-inside-s: 16px;
+  --aec-media-query-page-inside-m: 32px;
+  --aec-media-query-page-inside-l: 64px;
+  --aec-media-query-page-inside-xl: 128px;
+  --aec-media-query-page-inside-xxl: 256px;
+  --aec-input-standard-outlined-color-bg-default: #FFFFFF;
+  --aec-input-standard-outlined-color-bg-hover: #FFFFFF;
+  --aec-input-standard-outlined-color-bg-active: #FFFFFF;
+  --aec-input-standard-outlined-color-bg-disabled: #F2F2F2;
+  --aec-input-standard-outlined-color-border-default: #A0A0A0;
+  --aec-input-standard-outlined-color-border-hover: #D2D2D2;
+  --aec-input-standard-outlined-color-border-active: #171473;
+  --aec-input-standard-outlined-color-border-disabled: #A3A3A3;
+  --aec-input-standard-outlined-color-text-prompt: #8C8C8C;
+  --aec-input-standard-outlined-color-text-default: #1A1A1A;
+  --aec-input-standard-outlined-color-text-hover: #1A1A1A;
+  --aec-input-standard-outlined-color-text-active: #1A1A1A;
+  --aec-input-standard-outlined-color-text-disabled: #8C8C8C;
+  --aec-input-standard-outlined-color-label-prompt: #666666;
+  --aec-input-standard-outlined-color-label-default: #1A1A1A;
+  --aec-input-standard-outlined-color-label-hover: #1A1A1A;
+  --aec-input-standard-outlined-color-label-active: #1A1A1A;
+  --aec-input-standard-outlined-color-label-disabled: #8C8C8C;
+  --aec-input-standard-outlined-color-icon-default: #000000;
+  --aec-input-standard-outlined-color-icon-hover: #000000;
+  --aec-input-standard-outlined-color-icon-active: #000000;
+  --aec-input-standard-outlined-color-icon-disabled: #b3b3b3;
+  --aec-input-standard-outlined-color-error-bg-default: #FFFFFF;
+  --aec-input-standard-outlined-color-error-border-default: #B50000;
+  --aec-input-standard-outlined-color-error-text-default: #1A1A1A;
+  --aec-input-standard-outlined-color-error-label-default: #B50000;
+  --aec-input-standard-outlined-color-error-icon-default: #B50000;
+  --aec-input-standard-outlined-prefix-color-bg-default: transparent;
+  --aec-input-standard-outlined-prefix-color-bg-hover: #F2F2F2;
+  --aec-input-standard-outlined-prefix-color-bg-active: #FFFFFF;
+  --aec-input-standard-outlined-prefix-color-bg-disabled: transparent;
+  --aec-input-standard-outlined-prefix-color-border-default: transparent;
+  --aec-input-standard-outlined-prefix-color-border-hover: #D2D2D2;
+  --aec-input-standard-outlined-prefix-color-border-active: #171473;
+  --aec-input-standard-outlined-prefix-color-border-disabled: transparent;
+  --aec-input-standard-outlined-prefix-color-text-default: #1A1A1A;
+  --aec-input-standard-outlined-prefix-color-text-hover: #1A1A1A;
+  --aec-input-standard-outlined-prefix-color-text-active: #1A1A1A;
+  --aec-input-standard-outlined-prefix-color-text-disabled: #8C8C8C;
+  --aec-input-standard-outlined-prefix-color-icon-default: #000000;
+  --aec-input-standard-outlined-prefix-color-icon-hover: #000000;
+  --aec-input-standard-outlined-prefix-color-icon-active: #000000;
+  --aec-input-standard-outlined-prefix-color-icon-disabled: #b3b3b3;
+  --aec-input-standard-outlined-prefix-color-divider-default: #A0A0A0;
+  --aec-input-standard-outlined-prefix-color-divider-hover: transparent;
+  --aec-input-standard-outlined-prefix-color-divider-active: transparent;
+  --aec-input-standard-outlined-prefix-color-divider-disabled: #A3A3A3;
+  --aec-input-standard-outlined-suffix-color-bg-default: transparent;
+  --aec-input-standard-outlined-suffix-color-bg-hover: #F2F2F2;
+  --aec-input-standard-outlined-suffix-color-bg-active: #FFFFFF;
+  --aec-input-standard-outlined-suffix-color-bg-disabled: transparent;
+  --aec-input-standard-outlined-suffix-color-border-default: transparent;
+  --aec-input-standard-outlined-suffix-color-border-hover: #D2D2D2;
+  --aec-input-standard-outlined-suffix-color-border-active: #171473;
+  --aec-input-standard-outlined-suffix-color-border-disabled: transparent;
+  --aec-input-standard-outlined-suffix-color-text-default: #1A1A1A;
+  --aec-input-standard-outlined-suffix-color-text-hover: #1A1A1A;
+  --aec-input-standard-outlined-suffix-color-text-active: #1A1A1A;
+  --aec-input-standard-outlined-suffix-color-text-disabled: #8C8C8C;
+  --aec-input-standard-outlined-suffix-color-icon-default: #000000;
+  --aec-input-standard-outlined-suffix-color-icon-hover: #000000;
+  --aec-input-standard-outlined-suffix-color-icon-active: #000000;
+  --aec-input-standard-outlined-suffix-color-icon-disabled: #b3b3b3;
+  --aec-input-standard-outlined-suffix-color-divider-default: #A0A0A0;
+  --aec-input-standard-outlined-suffix-color-divider-hover: transparent;
+  --aec-input-standard-outlined-suffix-color-divider-active: transparent;
+  --aec-input-standard-outlined-suffix-color-divider-disabled: #A3A3A3;
+  --aec-input-standard-filled-color-bg-default: #F2F2F2;
+  --aec-input-standard-filled-color-bg-hover: #F2F2F2;
+  --aec-input-standard-filled-color-bg-active: #F2F2F2;
+  --aec-input-standard-filled-color-bg-disabled: #a3a3a3;
+  --aec-input-standard-filled-color-border-default: #A0A0A0;
+  --aec-input-standard-filled-color-border-hover: #D2D2D2;
+  --aec-input-standard-filled-color-border-active: #171473;
+  --aec-input-standard-filled-color-border-disabled: #A3A3A3;
+  --aec-input-standard-filled-color-text-prompt: #8C8C8C;
+  --aec-input-standard-filled-color-text-default: #1A1A1A;
+  --aec-input-standard-filled-color-text-hover: #1A1A1A;
+  --aec-input-standard-filled-color-text-active: #1A1A1A;
+  --aec-input-standard-filled-color-text-disabled: #FFFFFF;
+  --aec-input-standard-filled-color-label-prompt: #666666;
+  --aec-input-standard-filled-color-label-default: #1A1A1A;
+  --aec-input-standard-filled-color-label-hover: #1A1A1A;
+  --aec-input-standard-filled-color-label-active: #1A1A1A;
+  --aec-input-standard-filled-color-label-disabled: #8C8C8C;
+  --aec-input-standard-filled-color-icon-default: #000000;
+  --aec-input-standard-filled-color-icon-hover: #000000;
+  --aec-input-standard-filled-color-icon-active: #000000;
+  --aec-input-standard-filled-color-icon-disabled: #b3b3b3;
+  --aec-input-standard-filled-color-error-bg-default: #FFFFFF;
+  --aec-input-standard-filled-color-error-border-default: #B50000;
+  --aec-input-standard-filled-color-error-text-default: #1A1A1A;
+  --aec-input-standard-filled-color-error-label-default: #B50000;
+  --aec-input-standard-filled-color-error-icon-default: #B50000;
+  --aec-input-standard-filled-prefix-color-bg-default: transparent;
+  --aec-input-standard-filled-prefix-color-bg-hover: #F2F2F2;
+  --aec-input-standard-filled-prefix-color-bg-active: #FFFFFF;
+  --aec-input-standard-filled-prefix-color-bg-disabled: #a3a3a3;
+  --aec-input-standard-filled-prefix-color-border-default: transparent;
+  --aec-input-standard-filled-prefix-color-border-hover: #D2D2D2;
+  --aec-input-standard-filled-prefix-color-border-active: #171473;
+  --aec-input-standard-filled-prefix-color-border-disabled: #A3A3A3;
+  --aec-input-standard-filled-prefix-color-text-default: #1A1A1A;
+  --aec-input-standard-filled-prefix-color-text-hover: #1A1A1A;
+  --aec-input-standard-filled-prefix-color-text-active: #1A1A1A;
+  --aec-input-standard-filled-prefix-color-text-disabled: #8C8C8C;
+  --aec-input-standard-filled-prefix-color-icon-default: #000000;
+  --aec-input-standard-filled-prefix-color-icon-hover: #000000;
+  --aec-input-standard-filled-prefix-color-icon-active: #000000;
+  --aec-input-standard-filled-prefix-color-icon-disabled: #b3b3b3;
+  --aec-input-standard-filled-prefix-color-divider-default: #A0A0A0;
+  --aec-input-standard-filled-prefix-color-divider-hover: transparent;
+  --aec-input-standard-filled-prefix-color-divider-active: transparent;
+  --aec-input-standard-filled-prefix-color-divider-disabled: #A3A3A3;
+  --aec-input-standard-filled-suffix-color-bg-default: transparent;
+  --aec-input-standard-filled-suffix-color-bg-hover: #F2F2F2;
+  --aec-input-standard-filled-suffix-color-bg-active: #FFFFFF;
+  --aec-input-standard-filled-suffix-color-bg-disabled: #a3a3a3;
+  --aec-input-standard-filled-suffix-color-border-default: transparent;
+  --aec-input-standard-filled-suffix-color-border-hover: #D2D2D2;
+  --aec-input-standard-filled-suffix-color-border-active: #171473;
+  --aec-input-standard-filled-suffix-color-border-disabled: #A3A3A3;
+  --aec-input-standard-filled-suffix-color-text-default: #1A1A1A;
+  --aec-input-standard-filled-suffix-color-text-hover: #1A1A1A;
+  --aec-input-standard-filled-suffix-color-text-active: #1A1A1A;
+  --aec-input-standard-filled-suffix-color-text-disabled: #8C8C8C;
+  --aec-input-standard-filled-suffix-color-icon-default: #000000;
+  --aec-input-standard-filled-suffix-color-icon-hover: #000000;
+  --aec-input-standard-filled-suffix-color-icon-active: #000000;
+  --aec-input-standard-filled-suffix-color-icon-disabled: #b3b3b3;
+  --aec-input-standard-filled-suffix-color-divider-default: #A0A0A0;
+  --aec-input-standard-filled-suffix-color-divider-hover: transparent;
+  --aec-input-standard-filled-suffix-color-divider-active: transparent;
+  --aec-input-standard-filled-suffix-color-divider-disabled: #A3A3A3;
+  --aec-input-material-outlined-color-bg-default: #E8E8E8;
+  --aec-input-material-outlined-color-bg-hover: #E8E8E8;
+  --aec-input-material-outlined-color-bg-active: #E8E8E8;
+  --aec-input-material-outlined-color-bg-disabled: #a3a3a3;
+  --aec-input-material-outlined-color-border-default: #A0A0A0;
+  --aec-input-material-outlined-color-border-hover: #D2D2D2;
+  --aec-input-material-outlined-color-border-active: #171473;
+  --aec-input-material-outlined-color-border-disabled: #A3A3A3;
+  --aec-input-material-outlined-color-text-prompt: #8C8C8C;
+  --aec-input-material-outlined-color-text-default: #1A1A1A;
+  --aec-input-material-outlined-color-text-hover: #1A1A1A;
+  --aec-input-material-outlined-color-text-active: #1A1A1A;
+  --aec-input-material-outlined-color-text-disabled: #8C8C8C;
+  --aec-input-material-outlined-color-label-prompt: #666666;
+  --aec-input-material-outlined-color-label-default: #1A1A1A;
+  --aec-input-material-outlined-color-label-hover: #1A1A1A;
+  --aec-input-material-outlined-color-label-active: #1A1A1A;
+  --aec-input-material-outlined-color-label-disabled: #8C8C8C;
+  --aec-input-material-outlined-color-icon-prompt: #000000;
+  --aec-input-material-outlined-color-icon-default: #000000;
+  --aec-input-material-outlined-color-icon-hover: #000000;
+  --aec-input-material-outlined-color-icon-active: #000000;
+  --aec-input-material-outlined-color-icon-disabled: #b3b3b3;
+  --aec-input-material-outlined-color-error-bg-default: #E8E8E8;
+  --aec-input-material-outlined-color-error-border-default: #B50000;
+  --aec-input-material-outlined-color-error-text-default: #1A1A1A;
+  --aec-input-material-outlined-color-error-icon-default: #B50000;
+  --aec-input-material-outlined-prefix-color-bg-default: transparent;
+  --aec-input-material-outlined-prefix-color-bg-hover: #F2F2F2;
+  --aec-input-material-outlined-prefix-color-bg-active: #FFFFFF;
+  --aec-input-material-outlined-prefix-color-bg-disabled: #a3a3a3;
+  --aec-input-material-outlined-prefix-color-border-default: transparent;
+  --aec-input-material-outlined-prefix-color-border-hover: #D2D2D2;
+  --aec-input-material-outlined-prefix-color-border-active: #171473;
+  --aec-input-material-outlined-prefix-color-border-disabled: #A3A3A3;
+  --aec-input-material-outlined-prefix-color-text-default: #1A1A1A;
+  --aec-input-material-outlined-prefix-color-text-hover: #1A1A1A;
+  --aec-input-material-outlined-prefix-color-text-active: #1A1A1A;
+  --aec-input-material-outlined-prefix-color-text-disabled: #8C8C8C;
+  --aec-input-material-outlined-prefix-color-icon-default: #000000;
+  --aec-input-material-outlined-prefix-color-icon-hover: #000000;
+  --aec-input-material-outlined-prefix-color-icon-active: #000000;
+  --aec-input-material-outlined-prefix-color-icon-disabled: #b3b3b3;
+  --aec-input-material-outlined-prefix-color-divider-default: #A0A0A0;
+  --aec-input-material-outlined-prefix-color-divider-hover: transparent;
+  --aec-input-material-outlined-prefix-color-divider-active: transparent;
+  --aec-input-material-outlined-prefix-color-divider-disabled: #A3A3A3;
+  --aec-input-material-outlined-suffix-color-bg-default: transparent;
+  --aec-input-material-outlined-suffix-color-bg-hover: #F2F2F2;
+  --aec-input-material-outlined-suffix-color-bg-active: #FFFFFF;
+  --aec-input-material-outlined-suffix-color-bg-disabled: #a3a3a3;
+  --aec-input-material-outlined-suffix-color-border-default: transparent;
+  --aec-input-material-outlined-suffix-color-border-hover: #D2D2D2;
+  --aec-input-material-outlined-suffix-color-border-active: #171473;
+  --aec-input-material-outlined-suffix-color-border-disabled: #A3A3A3;
+  --aec-input-material-outlined-suffix-color-text-default: #1A1A1A;
+  --aec-input-material-outlined-suffix-color-text-hover: #1A1A1A;
+  --aec-input-material-outlined-suffix-color-text-active: #1A1A1A;
+  --aec-input-material-outlined-suffix-color-text-disabled: #8C8C8C;
+  --aec-input-material-outlined-suffix-color-icon-default: #000000;
+  --aec-input-material-outlined-suffix-color-icon-hover: #000000;
+  --aec-input-material-outlined-suffix-color-icon-active: #000000;
+  --aec-input-material-outlined-suffix-color-icon-disabled: #b3b3b3;
+  --aec-input-material-outlined-suffix-color-divider-default: #A0A0A0;
+  --aec-input-material-outlined-suffix-color-divider-hover: transparent;
+  --aec-input-material-outlined-suffix-color-divider-active: transparent;
+  --aec-input-material-outlined-suffix-color-divider-disabled: #A3A3A3;
+  --aec-input-material-filled-color-bg-default: #E8E8E8;
+  --aec-input-material-filled-color-bg-hover: #E8E8E8;
+  --aec-input-material-filled-color-bg-active: #E8E8E8;
+  --aec-input-material-filled-color-bg-disabled: #a3a3a3;
+  --aec-input-material-filled-color-border-default: #A0A0A0;
+  --aec-input-material-filled-color-border-hover: #D2D2D2;
+  --aec-input-material-filled-color-border-active: #171473;
+  --aec-input-material-filled-color-border-disabled: #A3A3A3;
+  --aec-input-material-filled-color-text-prompt: #8C8C8C;
+  --aec-input-material-filled-color-text-default: #1A1A1A;
+  --aec-input-material-filled-color-text-hover: #1A1A1A;
+  --aec-input-material-filled-color-text-active: #1A1A1A;
+  --aec-input-material-filled-color-text-disabled: #8C8C8C;
+  --aec-input-material-filled-color-label-prompt: #666666;
+  --aec-input-material-filled-color-label-default: #1A1A1A;
+  --aec-input-material-filled-color-label-hover: #1A1A1A;
+  --aec-input-material-filled-color-label-active: #1A1A1A;
+  --aec-input-material-filled-color-label-disabled: #8C8C8C;
+  --aec-input-material-filled-color-icon-prompt: #000000;
+  --aec-input-material-filled-color-icon-default: #000000;
+  --aec-input-material-filled-color-icon-hover: #000000;
+  --aec-input-material-filled-color-icon-active: #000000;
+  --aec-input-material-filled-color-icon-disabled: #b3b3b3;
+  --aec-input-material-filled-color-error-bg-default: #E8E8E8;
+  --aec-input-material-filled-color-error-border-default: #B50000;
+  --aec-input-material-filled-color-error-text-default: #1A1A1A;
+  --aec-input-material-filled-color-error-icon-default: #B50000;
+  --aec-input-material-filled-prefix-color-bg-default: transparent;
+  --aec-input-material-filled-prefix-color-bg-hover: #F2F2F2;
+  --aec-input-material-filled-prefix-color-bg-active: #FFFFFF;
+  --aec-input-material-filled-prefix-color-bg-disabled: #a3a3a3;
+  --aec-input-material-filled-prefix-color-border-default: transparent;
+  --aec-input-material-filled-prefix-color-border-hover: #D2D2D2;
+  --aec-input-material-filled-prefix-color-border-active: #171473;
+  --aec-input-material-filled-prefix-color-border-disabled: #A3A3A3;
+  --aec-input-material-filled-prefix-color-text-default: #1A1A1A;
+  --aec-input-material-filled-prefix-color-text-hover: #1A1A1A;
+  --aec-input-material-filled-prefix-color-text-active: #1A1A1A;
+  --aec-input-material-filled-prefix-color-text-disabled: #8C8C8C;
+  --aec-input-material-filled-prefix-color-icon-default: #000000;
+  --aec-input-material-filled-prefix-color-icon-hover: #000000;
+  --aec-input-material-filled-prefix-color-icon-active: #000000;
+  --aec-input-material-filled-prefix-color-icon-disabled: #b3b3b3;
+  --aec-input-material-filled-prefix-color-divider-default: #A0A0A0;
+  --aec-input-material-filled-prefix-color-divider-hover: transparent;
+  --aec-input-material-filled-prefix-color-divider-active: transparent;
+  --aec-input-material-filled-prefix-color-divider-disabled: #A3A3A3;
+  --aec-input-material-filled-suffix-color-bg-default: transparent;
+  --aec-input-material-filled-suffix-color-bg-hover: #F2F2F2;
+  --aec-input-material-filled-suffix-color-bg-active: #FFFFFF;
+  --aec-input-material-filled-suffix-color-bg-disabled: #a3a3a3;
+  --aec-input-material-filled-suffix-color-border-default: transparent;
+  --aec-input-material-filled-suffix-color-border-hover: #D2D2D2;
+  --aec-input-material-filled-suffix-color-border-active: #171473;
+  --aec-input-material-filled-suffix-color-border-disabled: #A3A3A3;
+  --aec-input-material-filled-suffix-color-text-default: #1A1A1A;
+  --aec-input-material-filled-suffix-color-text-hover: #1A1A1A;
+  --aec-input-material-filled-suffix-color-text-active: #1A1A1A;
+  --aec-input-material-filled-suffix-color-text-disabled: #8C8C8C;
+  --aec-input-material-filled-suffix-color-icon-default: #000000;
+  --aec-input-material-filled-suffix-color-icon-hover: #000000;
+  --aec-input-material-filled-suffix-color-icon-active: #000000;
+  --aec-input-material-filled-suffix-color-icon-disabled: #b3b3b3;
+  --aec-input-material-filled-suffix-color-divider-default: #A0A0A0;
+  --aec-input-material-filled-suffix-color-divider-hover: transparent;
+  --aec-input-material-filled-suffix-color-divider-active: transparent;
+  --aec-input-material-filled-suffix-color-divider-disabled: #A3A3A3;
+  --aec-input-material-plain-color-bg-default: #E8E8E8;
+  --aec-input-material-plain-color-bg-hover: #E8E8E8;
+  --aec-input-material-plain-color-bg-active: #E8E8E8;
+  --aec-input-material-plain-color-bg-disabled: #a3a3a3;
+  --aec-input-material-plain-color-border-default: #A0A0A0;
+  --aec-input-material-plain-color-border-hover: #D2D2D2;
+  --aec-input-material-plain-color-border-active: #171473;
+  --aec-input-material-plain-color-border-disabled: #A3A3A3;
+  --aec-input-material-plain-color-text-prompt: #8C8C8C;
+  --aec-input-material-plain-color-text-default: #1A1A1A;
+  --aec-input-material-plain-color-text-hover: #1A1A1A;
+  --aec-input-material-plain-color-text-active: #1A1A1A;
+  --aec-input-material-plain-color-text-disabled: #8C8C8C;
+  --aec-input-material-plain-color-label-prompt: #666666;
+  --aec-input-material-plain-color-label-default: #1A1A1A;
+  --aec-input-material-plain-color-label-hover: #1A1A1A;
+  --aec-input-material-plain-color-label-active: #1A1A1A;
+  --aec-input-material-plain-color-label-disabled: #8C8C8C;
+  --aec-input-material-plain-color-icon-prompt: #000000;
+  --aec-input-material-plain-color-icon-default: #000000;
+  --aec-input-material-plain-color-icon-hover: #000000;
+  --aec-input-material-plain-color-icon-active: #000000;
+  --aec-input-material-plain-color-icon-disabled: #b3b3b3;
+  --aec-input-material-plain-color-error-bg-default: #E8E8E8;
+  --aec-input-material-plain-color-error-border-default: #B50000;
+  --aec-input-material-plain-color-error-text-default: #1A1A1A;
+  --aec-input-material-plain-color-error-icon-default: #B50000;
+  --aec-input-material-plain-prefix-color-bg-default: transparent;
+  --aec-input-material-plain-prefix-color-bg-hover: #F2F2F2;
+  --aec-input-material-plain-prefix-color-bg-active: #FFFFFF;
+  --aec-input-material-plain-prefix-color-bg-disabled: #a3a3a3;
+  --aec-input-material-plain-prefix-color-border-default: transparent;
+  --aec-input-material-plain-prefix-color-border-hover: #D2D2D2;
+  --aec-input-material-plain-prefix-color-border-active: #171473;
+  --aec-input-material-plain-prefix-color-border-disabled: #A3A3A3;
+  --aec-input-material-plain-prefix-color-text-default: #1A1A1A;
+  --aec-input-material-plain-prefix-color-text-hover: #1A1A1A;
+  --aec-input-material-plain-prefix-color-text-active: #1A1A1A;
+  --aec-input-material-plain-prefix-color-text-disabled: #8C8C8C;
+  --aec-input-material-plain-prefix-color-icon-default: #000000;
+  --aec-input-material-plain-prefix-color-icon-hover: #000000;
+  --aec-input-material-plain-prefix-color-icon-active: #000000;
+  --aec-input-material-plain-prefix-color-icon-disabled: #b3b3b3;
+  --aec-input-material-plain-prefix-color-divider-default: #A0A0A0;
+  --aec-input-material-plain-prefix-color-divider-hover: transparent;
+  --aec-input-material-plain-prefix-color-divider-active: transparent;
+  --aec-input-material-plain-prefix-color-divider-disabled: #A3A3A3;
+  --aec-input-material-plain-suffix-color-bg-default: transparent;
+  --aec-input-material-plain-suffix-color-bg-hover: #F2F2F2;
+  --aec-input-material-plain-suffix-color-bg-active: #FFFFFF;
+  --aec-input-material-plain-suffix-color-bg-disabled: #a3a3a3;
+  --aec-input-material-plain-suffix-color-border-default: transparent;
+  --aec-input-material-plain-suffix-color-border-hover: #D2D2D2;
+  --aec-input-material-plain-suffix-color-border-active: #171473;
+  --aec-input-material-plain-suffix-color-border-disabled: #A3A3A3;
+  --aec-input-material-plain-suffix-color-text-default: #1A1A1A;
+  --aec-input-material-plain-suffix-color-text-hover: #1A1A1A;
+  --aec-input-material-plain-suffix-color-text-active: #1A1A1A;
+  --aec-input-material-plain-suffix-color-text-disabled: #8C8C8C;
+  --aec-input-material-plain-suffix-color-icon-default: #000000;
+  --aec-input-material-plain-suffix-color-icon-hover: #000000;
+  --aec-input-material-plain-suffix-color-icon-active: #000000;
+  --aec-input-material-plain-suffix-color-icon-disabled: #b3b3b3;
+  --aec-input-material-plain-suffix-color-divider-default: #A0A0A0;
+  --aec-input-material-plain-suffix-color-divider-hover: transparent;
+  --aec-input-material-plain-suffix-color-divider-active: transparent;
+  --aec-input-material-plain-suffix-color-divider-disabled: #A3A3A3;
+  --aec-link-color-primary-bg-default: transparent;
+  --aec-link-color-primary-bg-hover: transparent;
+  --aec-link-color-primary-bg-disabled: transparent;
+  --aec-link-color-primary-border-default: transparent;
+  --aec-link-color-primary-border-hover: transparent;
+  --aec-link-color-primary-border-disabled: transparent;
+  --aec-link-color-primary-text-default: #171473;
+  --aec-link-color-primary-text-hover: #211FAB;
+  --aec-link-color-primary-text-disabled: #8C8C8C;
+  --aec-link-color-primary-icon-default: #171473;
+  --aec-link-color-primary-icon-hover: #211FAB;
+  --aec-link-color-primary-icon-disabled: #b3b3b3;
+  --aec-link-color-inverse-bg-default: transparent;
+  --aec-link-color-inverse-bg-hover: transparent;
+  --aec-link-color-inverse-bg-disabled: transparent;
+  --aec-link-color-inverse-border-default: transparent;
+  --aec-link-color-inverse-border-hover: transparent;
+  --aec-link-color-inverse-border-disabled: transparent;
+  --aec-link-color-inverse-text-default: #FFFFFF;
+  --aec-link-color-inverse-text-hover: #D2D2D2;
+  --aec-link-color-inverse-text-disabled: #787878;
+  --aec-link-color-inverse-icon-default: #FFFFFF;
+  --aec-link-color-inverse-icon-hover: #D2D2D2;
+  --aec-link-color-inverse-icon-disabled: #787878;
+  --aec-link-color-neutral-bg-default: transparent;
+  --aec-link-color-neutral-bg-hover: transparent;
+  --aec-link-color-neutral-bg-disabled: transparent;
+  --aec-link-color-neutral-border-default: transparent;
+  --aec-link-color-neutral-border-hover: transparent;
+  --aec-link-color-neutral-border-disabled: transparent;
+  --aec-link-color-neutral-text-default: #1A1A1A;
+  --aec-link-color-neutral-text-hover: #1A1A1A;
+  --aec-link-color-neutral-text-disabled: #8C8C8C;
+  --aec-link-color-neutral-icon-default: #000000;
+  --aec-link-color-neutral-icon-hover: #666666;
+  --aec-link-color-neutral-icon-disabled: #b3b3b3;
+  --aec-link-color-brand-text-default: #171473;
+  --aec-link-color-brand-text-hover: #211FAB;
+  --aec-link-color-brand-text-disabled: #8C8C8C;
+  --aec-link-color-brand-icon-default: #171473;
+  --aec-link-color-brand-icon-hover: #211FAB;
+  --aec-link-color-brand-icon-disabled: #b3b3b3;
+  --aec-list-item-color-bg-default: transparent;
+  --aec-list-item-color-bg-hover: #F2F2F2;
+  --aec-list-item-color-bg-active: #F2F2F2;
+  --aec-list-item-color-bg-disabled: #FFFFFF;
+  --aec-list-item-color-bg-selected: #F2F2F2;
+  --aec-list-item-color-text-default: #1A1A1A;
+  --aec-list-item-color-text-hover: #1A1A1A;
+  --aec-list-item-color-text-active: #1A1A1A;
+  --aec-list-item-color-text-disabled: #8C8C8C;
+  --aec-list-item-color-text-selected: #1A1A1A;
+  --aec-list-item-color-description-default: #666666;
+  --aec-list-item-color-description-hover: #666666;
+  --aec-list-item-color-description-active: #666666;
+  --aec-list-item-color-description-disabled: #8C8C8C;
+  --aec-list-item-color-description-selected: #666666;
+  --aec-list-item-color-icon-default: #000000;
+  --aec-list-item-color-icon-hover: #666666;
+  --aec-list-item-color-icon-active: #666666;
+  --aec-list-item-color-icon-disabled: #8C8C8C;
+  --aec-list-item-color-icon-selected: #171473;
+  --aec-notification-color-success-bg: #FFFFFF;
+  --aec-notification-color-success-border: #B3B3B3;
+  --aec-notification-color-success-title: #1A1A1A;
+  --aec-notification-color-success-description: #666666;
+  --aec-notification-color-success-icon: #0A7305;
+  --aec-notification-color-error-bg: #FFFFFF;
+  --aec-notification-color-error-border: #B3B3B3;
+  --aec-notification-color-error-title: #1A1A1A;
+  --aec-notification-color-error-description: #666666;
+  --aec-notification-color-error-icon: #B50000;
+  --aec-notification-color-warning-bg: #FFFFFF;
+  --aec-notification-color-warning-border: #B3B3B3;
+  --aec-notification-color-warning-title: #1A1A1A;
+  --aec-notification-color-warning-description: #666666;
+  --aec-notification-color-warning-icon: #F5D98F;
+  --aec-notification-color-information-bg: #FFFFFF;
+  --aec-notification-color-information-border: #B3B3B3;
+  --aec-notification-color-information-title: #1A1A1A;
+  --aec-notification-color-information-description: #666666;
+  --aec-notification-color-information-icon: #666666;
+  --aec-notification-container-inside-spacing: 16px;
+  --aec-notification-container-inside-item-spacing: 16px;
+  --aec-notification-container-inside-border-radius: 0px;
+  --aec-notification-container-inside-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  --aec-notification-container-inside-border-width-left: 2px;
+  --aec-notification-container-inside-border-width-top: 0px;
+  --aec-notification-container-inside-border-width-right: 0px;
+  --aec-notification-container-inside-border-width-bottom: 0px;
+  --aec-notification-container-bg-border-radius: 0px;
+  --aec-notification-container-bg-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  --aec-notification-container-bg-border-width-left: 1px;
+  --aec-notification-container-bg-border-width-top: 1px;
+  --aec-notification-container-bg-border-width-right: 1px;
+  --aec-notification-container-bg-border-width-bottom: 1px;
+  --aec-notification-container-bg-spacing: 0px;
+  --aec-notification-container-text-item-spacing: 4px;
+  --aec-radio-color-bg-default: #FFFFFF;
+  --aec-radio-color-bg-hover: #FFFFFF;
+  --aec-radio-color-bg-active: #FFFFFF;
+  --aec-radio-color-bg-disabled: #FFFFFF;
+  --aec-radio-color-border-default: #505050;
+  --aec-radio-color-border-hover: #282828;
+  --aec-radio-color-border-active: #282828;
+  --aec-radio-color-border-disabled: #A3A3A3;
+  --aec-radio-color-icon-default: transparent;
+  --aec-radio-color-icon-hover: transparent;
+  --aec-radio-color-icon-active: transparent;
+  --aec-radio-color-icon-disabled: transparent;
+  --aec-radio-color-selected-bg-default: #FFFFFF;
+  --aec-radio-color-selected-bg-disabled: #FFFFFF;
+  --aec-radio-color-selected-border-default: #505050;
+  --aec-radio-color-selected-border-disabled: #A3A3A3;
+  --aec-radio-color-selected-icon-default: #282828;
+  --aec-radio-color-selected-icon-disabled: #b3b3b3;
+  --aec-radio-container-sizing: 24px;
+  --aec-radio-container-border-radius: 384px;
+  --aec-radio-container-border-width: 1px;
+  --aec-radio-hit-area-sizing: 32px;
+  --aec-radio-indicator-sizing: 16px;
+  --aec-radio-focus-ring-border-radius: 388px;
+  --aec-slider-color-track-bg-default: #A0A0A0;
+  --aec-slider-color-track-bg-selected: #171473;
+  --aec-slider-color-track-bg-disabled: #A3A3A3;
+  --aec-slider-color-track-border-default: transparent;
+  --aec-slider-color-track-border-selected: transparent;
+  --aec-slider-color-track-border-disabled: transparent;
+  --aec-slider-color-handle-bg-default: #FFFFFF;
+  --aec-slider-color-handle-bg-hover: #FFFFFF;
+  --aec-slider-color-handle-bg-disabled: #FFFFFF;
+  --aec-slider-color-handle-border-default: #171473;
+  --aec-slider-color-handle-border-hover: #171473;
+  --aec-slider-color-handle-border-disabled: #A3A3A3;
+  --aec-slider-track-height: 4px;
+  --aec-slider-track-border-radius: 0px;
+  --aec-slider-track-border-width: 1px;
+  --aec-slider-handle-height: 16px;
+  --aec-slider-handle-border-radius: 384px;
+  --aec-slider-handle-border-width: 1px;
+  --aec-slider-handle-width: 16px;
+  --aec-slider-hit-area-width: 32px;
+  --aec-slider-hit-area-height: 32px;
+  --aec-snackbar-color-bg: #F2F2F2;
+  --aec-snackbar-color-border: none;
+  --aec-snackbar-color-description: #1A1A1A;
+  --aec-switch-color-track-bg-default: #FFFFFF;
+  --aec-switch-color-track-bg-hover: #FFFFFF;
+  --aec-switch-color-track-bg-active: #FFFFFF;
+  --aec-switch-color-track-bg-disabled: #FFFFFF;
+  --aec-switch-color-track-border-default: #505050;
+  --aec-switch-color-track-border-hover: #282828;
+  --aec-switch-color-track-border-active: #282828;
+  --aec-switch-color-track-border-disabled: #A3A3A3;
+  --aec-switch-color-track-selected-bg-default: #505050;
+  --aec-switch-color-track-selected-bg-hover: #505050;
+  --aec-switch-color-track-selected-bg-active: #505050;
+  --aec-switch-color-track-selected-bg-disabled: #D2D2D2;
+  --aec-switch-color-track-selected-border-default: transparent;
+  --aec-switch-color-track-selected-border-hover: #505050;
+  --aec-switch-color-track-selected-border-active: #505050;
+  --aec-switch-color-track-selected-border-disabled: transparent;
+  --aec-switch-color-handle-bg-default: #505050;
+  --aec-switch-color-handle-bg-hover: #282828;
+  --aec-switch-color-handle-bg-active: #282828;
+  --aec-switch-color-handle-bg-disabled: #a3a3a3;
+  --aec-switch-color-handle-border-default: transparent;
+  --aec-switch-color-handle-border-hover: transparent;
+  --aec-switch-color-handle-border-active: transparent;
+  --aec-switch-color-handle-border-disabled: transparent;
+  --aec-switch-color-handle-selected-bg-default: #FFFFFF;
+  --aec-switch-color-handle-selected-bg-hover: #FFFFFF;
+  --aec-switch-color-handle-selected-bg-active: #FFFFFF;
+  --aec-switch-color-handle-selected-bg-disabled: #FFFFFF;
+  --aec-switch-color-handle-selected-border-default: transparent;
+  --aec-switch-color-handle-selected-border-hover: transparent;
+  --aec-switch-color-handle-selected-border-active: transparent;
+  --aec-switch-color-handle-selected-border-disabled: transparent;
+  --aec-switch-container-width: 48px;
+  --aec-switch-container-height: 24px;
+  --aec-switch-container-spacing: 2px;
+  --aec-switch-container-border-radius: 384px;
+  --aec-switch-container-border-width: 1px;
+  --aec-switch-handle-width: 20px;
+  --aec-switch-handle-height: 20px;
+  --aec-switch-handle-border-radius: 384px;
+  --aec-switch-handle-border-width: 1px;
+  --aec-switch-hit-area-width: 40px;
+  --aec-switch-hit-area-height: 32px;
+  --aec-tabbar-contained-tab-item-color-bg-default: transparent;
+  --aec-tabbar-contained-tab-item-color-bg-hover: #F2F2F2;
+  --aec-tabbar-contained-tab-item-color-bg-active: #F2F2F2;
+  --aec-tabbar-contained-tab-item-color-bg-disabled: transparent;
+  --aec-tabbar-contained-tab-item-color-border-default: transparent;
+  --aec-tabbar-contained-tab-item-color-border-hover: transparent;
+  --aec-tabbar-contained-tab-item-color-border-active: transparent;
+  --aec-tabbar-contained-tab-item-color-border-disabled: transparent;
+  --aec-tabbar-contained-tab-item-color-text-default: #262626;
+  --aec-tabbar-contained-tab-item-color-text-hover: #1A1A1A;
+  --aec-tabbar-contained-tab-item-color-text-active: #1A1A1A;
+  --aec-tabbar-contained-tab-item-color-text-disabled: #8C8C8C;
+  --aec-tabbar-contained-tab-item-color-icon-default: #000000;
+  --aec-tabbar-contained-tab-item-color-icon-hover: #666666;
+  --aec-tabbar-contained-tab-item-color-icon-active: #666666;
+  --aec-tabbar-contained-tab-item-color-icon-disabled: #b3b3b3;
+  --aec-tabbar-contained-tab-item-color-selected-bg-default: #171473;
+  --aec-tabbar-contained-tab-item-color-selected-bg-disabled: transparent;
+  --aec-tabbar-contained-tab-item-color-selected-border-default: transparent;
+  --aec-tabbar-contained-tab-item-color-selected-border-disabled: transparent;
+  --aec-tabbar-contained-tab-item-color-selected-text-default: #FFFFFF;
+  --aec-tabbar-contained-tab-item-color-selected-text-disabled: #8C8C8C;
+  --aec-tabbar-contained-tab-item-color-selected-icon-default: #FFFFFF;
+  --aec-tabbar-contained-tab-item-color-selected-icon-disabled: #b3b3b3;
+  --aec-tabbar-contained-tab-color-bg-default: transparent;
+  --aec-tabbar-contained-tab-color-border-default: #B3B3B3;
+  --aec-tabbar-segment-tab-item-color-bg-default: #F2F2F2;
+  --aec-tabbar-segment-tab-item-color-bg-hover: #F2F2F2;
+  --aec-tabbar-segment-tab-item-color-bg-active: #F2F2F2;
+  --aec-tabbar-segment-tab-item-color-bg-disabled: #a3a3a3;
+  --aec-tabbar-segment-tab-item-color-border-default: transparent;
+  --aec-tabbar-segment-tab-item-color-border-hover: transparent;
+  --aec-tabbar-segment-tab-item-color-border-active: transparent;
+  --aec-tabbar-segment-tab-item-color-border-disabled: transparent;
+  --aec-tabbar-segment-tab-item-color-text-default: #262626;
+  --aec-tabbar-segment-tab-item-color-text-hover: #1A1A1A;
+  --aec-tabbar-segment-tab-item-color-text-active: #1A1A1A;
+  --aec-tabbar-segment-tab-item-color-text-disabled: #8C8C8C;
+  --aec-tabbar-segment-tab-item-color-icon-default: #000000;
+  --aec-tabbar-segment-tab-item-color-icon-hover: #666666;
+  --aec-tabbar-segment-tab-item-color-icon-active: #666666;
+  --aec-tabbar-segment-tab-item-color-icon-disabled: #b3b3b3;
+  --aec-tabbar-segment-tab-item-color-selected-bg-default: #171473;
+  --aec-tabbar-segment-tab-item-color-selected-bg-disabled: #FFFFFF;
+  --aec-tabbar-segment-tab-item-color-selected-border-default: transparent;
+  --aec-tabbar-segment-tab-item-color-selected-border-disabled: transparent;
+  --aec-tabbar-segment-tab-item-color-selected-text-default: #FFFFFF;
+  --aec-tabbar-segment-tab-item-color-selected-text-disabled: #8C8C8C;
+  --aec-tabbar-segment-tab-item-color-selected-icon-default: #FFFFFF;
+  --aec-tabbar-segment-tab-item-color-selected-icon-disabled: #b3b3b3;
+  --aec-tabbar-segment-tab-color-bg-default: transparent;
+  --aec-tabbar-segment-tab-color-border-default: #B3B3B3;
+  --aec-tabbar-stacked-tab-item-color-bg-default: #FFFFFF;
+  --aec-tabbar-stacked-tab-item-color-bg-hover: #F2F2F2;
+  --aec-tabbar-stacked-tab-item-color-bg-active: #F2F2F2;
+  --aec-tabbar-stacked-tab-item-color-bg-disabled: #a3a3a3;
+  --aec-tabbar-stacked-tab-item-color-border-default: #A0A0A0;
+  --aec-tabbar-stacked-tab-item-color-border-hover: #D2D2D2;
+  --aec-tabbar-stacked-tab-item-color-border-active: #171473;
+  --aec-tabbar-stacked-tab-item-color-border-disabled: #A3A3A3;
+  --aec-tabbar-stacked-tab-item-color-text-default: #262626;
+  --aec-tabbar-stacked-tab-item-color-text-hover: #1A1A1A;
+  --aec-tabbar-stacked-tab-item-color-text-active: #1A1A1A;
+  --aec-tabbar-stacked-tab-item-color-text-disabled: #8C8C8C;
+  --aec-tabbar-stacked-tab-item-color-icon-default: #000000;
+  --aec-tabbar-stacked-tab-item-color-icon-hover: #666666;
+  --aec-tabbar-stacked-tab-item-color-icon-active: #666666;
+  --aec-tabbar-stacked-tab-item-color-icon-disabled: #b3b3b3;
+  --aec-tabbar-stacked-tab-item-color-selected-bg-default: #171473;
+  --aec-tabbar-stacked-tab-item-color-selected-bg-disabled: #FFFFFF;
+  --aec-tabbar-stacked-tab-item-color-selected-border-default: transparent;
+  --aec-tabbar-stacked-tab-item-color-selected-border-disabled: transparent;
+  --aec-tabbar-stacked-tab-item-color-selected-text-default: #FFFFFF;
+  --aec-tabbar-stacked-tab-item-color-selected-text-disabled: #8C8C8C;
+  --aec-tabbar-stacked-tab-item-color-selected-icon-default: #FFFFFF;
+  --aec-tabbar-stacked-tab-item-color-selected-icon-disabled: #b3b3b3;
+  --aec-tabbar-stacked-tab-color-bg-default: transparent;
+  --aec-tabbar-stacked-tab-color-border-default: transparent;
+  --aec-tabbar-underlined-inset-tab-item-color-bg-default: #FFFFFF;
+  --aec-tabbar-underlined-inset-tab-item-color-bg-hover: #FFFFFF;
+  --aec-tabbar-underlined-inset-tab-item-color-bg-active: #FFFFFF;
+  --aec-tabbar-underlined-inset-tab-item-color-bg-disabled: transparent;
+  --aec-tabbar-underlined-inset-tab-item-color-border-default: #B3B3B3;
+  --aec-tabbar-underlined-inset-tab-item-color-border-hover: #A0A0A0;
+  --aec-tabbar-underlined-inset-tab-item-color-border-active: #171473;
+  --aec-tabbar-underlined-inset-tab-item-color-border-disabled: #B3B3B3;
+  --aec-tabbar-underlined-inset-tab-item-color-text-default: #666666;
+  --aec-tabbar-underlined-inset-tab-item-color-text-hover: #1A1A1A;
+  --aec-tabbar-underlined-inset-tab-item-color-text-active: #1A1A1A;
+  --aec-tabbar-underlined-inset-tab-item-color-text-disabled: #8C8C8C;
+  --aec-tabbar-underlined-inset-tab-item-color-icon-default: #000000;
+  --aec-tabbar-underlined-inset-tab-item-color-icon-hover: #000000;
+  --aec-tabbar-underlined-inset-tab-item-color-icon-active: #000000;
+  --aec-tabbar-underlined-inset-tab-item-color-icon-disabled: #b3b3b3;
+  --aec-tabbar-underlined-inset-tab-item-color-selected-bg-default: transparent;
+  --aec-tabbar-underlined-inset-tab-item-color-selected-bg-disabled: transparent;
+  --aec-tabbar-underlined-inset-tab-item-color-selected-border-default: #171473;
+  --aec-tabbar-underlined-inset-tab-item-color-selected-border-disabled: #A3A3A3;
+  --aec-tabbar-underlined-inset-tab-item-color-selected-text-default: #1A1A1A;
+  --aec-tabbar-underlined-inset-tab-item-color-selected-text-disabled: #8C8C8C;
+  --aec-tabbar-underlined-inset-tab-item-color-selected-icon-default: #171473;
+  --aec-tabbar-underlined-inset-tab-item-color-selected-icon-disabled: #8C8C8C;
+  --aec-tabbar-underlined-inset-tab-color-bg-default: transparent;
+  --aec-tabbar-underlined-inset-tab-color-border-default: #B3B3B3;
+  --aec-tabbar-underlined-inside-tab-item-color-bg-default: transparent;
+  --aec-tabbar-underlined-inside-tab-item-color-bg-hover: #F2F2F2;
+  --aec-tabbar-underlined-inside-tab-item-color-bg-active: transparent;
+  --aec-tabbar-underlined-inside-tab-item-color-bg-disabled: transparent;
+  --aec-tabbar-underlined-inside-tab-item-color-border-default: #B3B3B3;
+  --aec-tabbar-underlined-inside-tab-item-color-border-hover: #D2D2D2;
+  --aec-tabbar-underlined-inside-tab-item-color-border-active: #171473;
+  --aec-tabbar-underlined-inside-tab-item-color-border-disabled: #a3a3a3;
+  --aec-tabbar-underlined-inside-tab-item-color-text-default: #1A1A1A;
+  --aec-tabbar-underlined-inside-tab-item-color-text-hover: #1A1A1A;
+  --aec-tabbar-underlined-inside-tab-item-color-text-active: #1A1A1A;
+  --aec-tabbar-underlined-inside-tab-item-color-text-disabled: #8C8C8C;
+  --aec-tabbar-underlined-inside-tab-item-color-icon-default: #000000;
+  --aec-tabbar-underlined-inside-tab-item-color-icon-hover: #000000;
+  --aec-tabbar-underlined-inside-tab-item-color-icon-active: #000000;
+  --aec-tabbar-underlined-inside-tab-item-color-icon-disabled: #b3b3b3;
+  --aec-tabbar-underlined-inside-tab-item-color-selected-bg-default: transparent;
+  --aec-tabbar-underlined-inside-tab-item-color-selected-bg-disabled: transparent;
+  --aec-tabbar-underlined-inside-tab-item-color-selected-border-default: #171473;
+  --aec-tabbar-underlined-inside-tab-item-color-selected-border-disabled: #A3A3A3;
+  --aec-tabbar-underlined-inside-tab-item-color-selected-text-default: #171473;
+  --aec-tabbar-underlined-inside-tab-item-color-selected-text-disabled: #8C8C8C;
+  --aec-tabbar-underlined-inside-tab-item-color-selected-icon-default: #171473;
+  --aec-tabbar-underlined-inside-tab-item-color-selected-icon-disabled: #8C8C8C;
+  --aec-tabbar-underlined-inside-tab-color-bg-default: transparent;
+  --aec-tabbar-underlined-inside-tab-color-border-default: transparent;
+  --aec-tabbar-vertical-tab-item-color-bg-default: transparent;
+  --aec-tabbar-vertical-tab-item-color-bg-hover: #F2F2F2;
+  --aec-tabbar-vertical-tab-item-color-bg-active: #F2F2F2;
+  --aec-tabbar-vertical-tab-item-color-bg-disabled: transparent;
+  --aec-tabbar-vertical-tab-item-color-border-default: transparent;
+  --aec-tabbar-vertical-tab-item-color-border-hover: transparent;
+  --aec-tabbar-vertical-tab-item-color-border-active: transparent;
+  --aec-tabbar-vertical-tab-item-color-border-disabled: transparent;
+  --aec-tabbar-vertical-tab-item-color-text-default: #666666;
+  --aec-tabbar-vertical-tab-item-color-text-hover: #1A1A1A;
+  --aec-tabbar-vertical-tab-item-color-text-active: #1A1A1A;
+  --aec-tabbar-vertical-tab-item-color-text-disabled: #8C8C8C;
+  --aec-tabbar-vertical-tab-item-color-icon-default: #000000;
+  --aec-tabbar-vertical-tab-item-color-icon-hover: #666666;
+  --aec-tabbar-vertical-tab-item-color-icon-active: #666666;
+  --aec-tabbar-vertical-tab-item-color-icon-disabled: #b3b3b3;
+  --aec-tabbar-vertical-tab-item-color-selected-bg-default: #F2F2F2;
+  --aec-tabbar-vertical-tab-item-color-selected-bg-disabled: transparent;
+  --aec-tabbar-vertical-tab-item-color-selected-border-default: #171473;
+  --aec-tabbar-vertical-tab-item-color-selected-border-disabled: transparent;
+  --aec-tabbar-vertical-tab-item-color-selected-text-default: #1A1A1A;
+  --aec-tabbar-vertical-tab-item-color-selected-text-disabled: #8C8C8C;
+  --aec-tabbar-vertical-tab-item-color-selected-icon-default: #000000;
+  --aec-tabbar-vertical-tab-item-color-selected-icon-disabled: #b3b3b3;
+  --aec-tabbar-vertical-tab-color-bg-default: transparent;
+  --aec-tabbar-vertical-tab-color-border-default: transparent;
+  --aec-toggle-button-color-option-1-bg-default: #FFFFFF;
+  --aec-toggle-button-color-option-1-bg-hover: #282828;
+  --aec-toggle-button-color-option-1-bg-active: #171473;
+  --aec-toggle-button-color-option-1-bg-disabled: #FFFFFF;
+  --aec-toggle-button-color-option-1-border-default: #171473;
+  --aec-toggle-button-color-option-1-border-hover: transparent;
+  --aec-toggle-button-color-option-1-border-active: transparent;
+  --aec-toggle-button-color-option-1-border-disabled: #A3A3A3;
+  --aec-toggle-button-color-option-1-text-default: #171473;
+  --aec-toggle-button-color-option-1-text-hover: #FFFFFF;
+  --aec-toggle-button-color-option-1-text-active: #FFFFFF;
+  --aec-toggle-button-color-option-1-text-disabled: #8C8C8C;
+  --aec-toggle-button-color-option-1-icon-default: #171473;
+  --aec-toggle-button-color-option-1-icon-hover: #FFFFFF;
+  --aec-toggle-button-color-option-1-icon-active: #FFFFFF;
+  --aec-toggle-button-color-option-1-icon-disabled: #b3b3b3;
+  --aec-toggle-button-color-option-1-icon-display-default: inherit;
+  --aec-toggle-button-color-option-1-icon-display-hover: inherit;
+  --aec-toggle-button-color-option-1-icon-display-active: inherit;
+  --aec-toggle-button-color-option-1-icon-display-disabled: inherit;
+  --aec-toggle-button-color-option-1-selected-bg-default: #171473;
+  --aec-toggle-button-color-option-1-selected-bg-hover: #171473;
+  --aec-toggle-button-color-option-1-selected-bg-active: #171473;
+  --aec-toggle-button-color-option-1-selected-bg-disabled: #FFFFFF;
+  --aec-toggle-button-color-option-1-selected-border-default: transparent;
+  --aec-toggle-button-color-option-1-selected-border-hover: transparent;
+  --aec-toggle-button-color-option-1-selected-border-active: transparent;
+  --aec-toggle-button-color-option-1-selected-border-disabled: #A3A3A3;
+  --aec-toggle-button-color-option-1-selected-text-default: #FFFFFF;
+  --aec-toggle-button-color-option-1-selected-text-hover: #FFFFFF;
+  --aec-toggle-button-color-option-1-selected-text-active: #FFFFFF;
+  --aec-toggle-button-color-option-1-selected-text-disabled: #8C8C8C;
+  --aec-toggle-button-color-option-1-selected-icon-default: #FFFFFF;
+  --aec-toggle-button-color-option-1-selected-icon-hover: #FFFFFF;
+  --aec-toggle-button-color-option-1-selected-icon-active: #FFFFFF;
+  --aec-toggle-button-color-option-1-selected-icon-disabled: #b3b3b3;
+  --aec-toggle-button-color-option-1-selected-icon-display-default: inherit;
+  --aec-toggle-button-color-option-1-selected-icon-display-hover: inherit;
+  --aec-toggle-button-color-option-1-selected-icon-display-active: inherit;
+  --aec-toggle-button-color-option-1-selected-icon-display-disabled: inherit;
+  --aec-toggle-button-color-option-2-bg-default: transparent;
+  --aec-toggle-button-color-option-2-bg-hover: transparent;
+  --aec-toggle-button-color-option-2-bg-active: transparent;
+  --aec-toggle-button-color-option-2-bg-disabled: transparent;
+  --aec-toggle-button-color-option-2-border-default: transparent;
+  --aec-toggle-button-color-option-2-border-hover: transparent;
+  --aec-toggle-button-color-option-2-border-active: transparent;
+  --aec-toggle-button-color-option-2-border-disabled: transparent;
+  --aec-toggle-button-color-option-2-text-default: #171473;
+  --aec-toggle-button-color-option-2-text-hover: #211FAB;
+  --aec-toggle-button-color-option-2-text-active: #211FAB;
+  --aec-toggle-button-color-option-2-text-disabled: #8C8C8C;
+  --aec-toggle-button-color-option-2-icon-default: #171473;
+  --aec-toggle-button-color-option-2-icon-hover: #211FAB;
+  --aec-toggle-button-color-option-2-icon-active: #211FAB;
+  --aec-toggle-button-color-option-2-icon-disabled: #b3b3b3;
+  --aec-toggle-button-color-option-2-selected-bg-default: transparent;
+  --aec-toggle-button-color-option-2-selected-bg-hover: transparent;
+  --aec-toggle-button-color-option-2-selected-bg-active: transparent;
+  --aec-toggle-button-color-option-2-selected-bg-disabled: transparent;
+  --aec-toggle-button-color-option-2-selected-border-default: transparent;
+  --aec-toggle-button-color-option-2-selected-border-hover: transparent;
+  --aec-toggle-button-color-option-2-selected-border-active: transparent;
+  --aec-toggle-button-color-option-2-selected-border-disabled: transparent;
+  --aec-toggle-button-color-option-2-selected-text-default: #171473;
+  --aec-toggle-button-color-option-2-selected-text-hover: #211FAB;
+  --aec-toggle-button-color-option-2-selected-text-active: #211FAB;
+  --aec-toggle-button-color-option-2-selected-text-disabled: #8C8C8C;
+  --aec-toggle-button-color-option-2-selected-icon-default: #171473;
+  --aec-toggle-button-color-option-2-selected-icon-hover: #211FAB;
+  --aec-toggle-button-color-option-2-selected-icon-active: #211FAB;
+  --aec-toggle-button-color-option-2-selected-icon-disabled: #b3b3b3;
+  --aec-toggle-button-color-option-3-bg-default: #FFFFFF;
+  --aec-toggle-button-color-option-3-bg-hover: #FFFFFF;
+  --aec-toggle-button-color-option-3-bg-active: #FFFFFF;
+  --aec-toggle-button-color-option-3-bg-disabled: #FFFFFF;
+  --aec-toggle-button-color-option-3-border-default: #A0A0A0;
+  --aec-toggle-button-color-option-3-border-hover: #211FAB;
+  --aec-toggle-button-color-option-3-border-active: #171473;
+  --aec-toggle-button-color-option-3-border-disabled: #A3A3A3;
+  --aec-toggle-button-color-option-3-text-default: #171473;
+  --aec-toggle-button-color-option-3-text-hover: #171473;
+  --aec-toggle-button-color-option-3-text-active: #171473;
+  --aec-toggle-button-color-option-3-text-disabled: #171473;
+  --aec-toggle-button-color-option-3-icon-default: #171473;
+  --aec-toggle-button-color-option-3-icon-hover: #171473;
+  --aec-toggle-button-color-option-3-icon-active: #171473;
+  --aec-toggle-button-color-option-3-icon-disabled: #171473;
+  --aec-toggle-button-color-option-3-selected-bg-default: #EEEEFD;
+  --aec-toggle-button-color-option-3-selected-bg-disabled: #EEEEFD;
+  --aec-toggle-button-color-option-3-selected-border-default: #171473;
+  --aec-toggle-button-color-option-3-selected-border-disabled: #171473;
+  --aec-toggle-button-color-option-3-selected-text-default: #171473;
+  --aec-toggle-button-color-option-3-selected-text-disabled: #171473;
+  --aec-toggle-button-color-option-3-selected-icon-default: #171473;
+  --aec-toggle-button-color-option-3-selected-icon-disabled: #171473;
+  --aec-toggle-group-tab-item-color-option-1-bg-default: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-1-bg-hover: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-1-bg-active: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-1-bg-disabled: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-1-border-default: #A0A0A0;
+  --aec-toggle-group-tab-item-color-option-1-border-hover: #D2D2D2;
+  --aec-toggle-group-tab-item-color-option-1-border-active: #171473;
+  --aec-toggle-group-tab-item-color-option-1-border-disabled: #A3A3A3;
+  --aec-toggle-group-tab-item-color-option-1-text-default: #262626;
+  --aec-toggle-group-tab-item-color-option-1-text-hover: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-1-text-active: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-1-text-disabled: #8C8C8C;
+  --aec-toggle-group-tab-item-color-option-1-icon-default: #000000;
+  --aec-toggle-group-tab-item-color-option-1-icon-hover: #666666;
+  --aec-toggle-group-tab-item-color-option-1-icon-active: #666666;
+  --aec-toggle-group-tab-item-color-option-1-icon-disabled: #b3b3b3;
+  --aec-toggle-group-tab-item-color-option-1-selected-bg-default: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-1-selected-bg-disabled: #F2F2F2;
+  --aec-toggle-group-tab-item-color-option-1-selected-border-default: #171473;
+  --aec-toggle-group-tab-item-color-option-1-selected-border-disabled: #A3A3A3;
+  --aec-toggle-group-tab-item-color-option-1-selected-text-default: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-1-selected-text-disabled: #8C8C8C;
+  --aec-toggle-group-tab-item-color-option-1-selected-icon-default: #666666;
+  --aec-toggle-group-tab-item-color-option-1-selected-icon-disabled: #b3b3b3;
+  --aec-toggle-group-tab-item-color-option-2-bg-default: #F2F2F2;
+  --aec-toggle-group-tab-item-color-option-2-bg-hover: #F2F2F2;
+  --aec-toggle-group-tab-item-color-option-2-bg-active: #F2F2F2;
+  --aec-toggle-group-tab-item-color-option-2-bg-disabled: #F2F2F2;
+  --aec-toggle-group-tab-item-color-option-2-border-default: transparent;
+  --aec-toggle-group-tab-item-color-option-2-border-hover: #D2D2D2;
+  --aec-toggle-group-tab-item-color-option-2-border-active: #171473;
+  --aec-toggle-group-tab-item-color-option-2-border-disabled: transparent;
+  --aec-toggle-group-tab-item-color-option-2-text-default: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-2-text-hover: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-2-text-active: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-2-text-disabled: #8C8C8C;
+  --aec-toggle-group-tab-item-color-option-2-icon-default: #000000;
+  --aec-toggle-group-tab-item-color-option-2-icon-hover: #000000;
+  --aec-toggle-group-tab-item-color-option-2-icon-active: #000000;
+  --aec-toggle-group-tab-item-color-option-2-icon-disabled: #b3b3b3;
+  --aec-toggle-group-tab-item-color-option-2-selected-bg-default: #171473;
+  --aec-toggle-group-tab-item-color-option-2-selected-bg-disabled: #F2F2F2;
+  --aec-toggle-group-tab-item-color-option-2-selected-border-default: transparent;
+  --aec-toggle-group-tab-item-color-option-2-selected-border-disabled: transparent;
+  --aec-toggle-group-tab-item-color-option-2-selected-text-default: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-2-selected-text-disabled: #8C8C8C;
+  --aec-toggle-group-tab-item-color-option-2-selected-icon-default: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-2-selected-icon-disabled: #b3b3b3;
+  --aec-toggle-group-tab-item-color-option-3-bg-default: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-3-bg-hover: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-3-bg-active: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-3-bg-disabled: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-3-border-default: #A0A0A0;
+  --aec-toggle-group-tab-item-color-option-3-border-hover: #D2D2D2;
+  --aec-toggle-group-tab-item-color-option-3-border-active: #171473;
+  --aec-toggle-group-tab-item-color-option-3-border-disabled: #A3A3A3;
+  --aec-toggle-group-tab-item-color-option-3-text-default: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-3-text-hover: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-3-text-active: #1A1A1A;
+  --aec-toggle-group-tab-item-color-option-3-text-disabled: #8C8C8C;
+  --aec-toggle-group-tab-item-color-option-3-icon-default: #000000;
+  --aec-toggle-group-tab-item-color-option-3-icon-hover: #666666;
+  --aec-toggle-group-tab-item-color-option-3-icon-active: #666666;
+  --aec-toggle-group-tab-item-color-option-3-icon-disabled: #b3b3b3;
+  --aec-toggle-group-tab-item-color-option-3-selected-bg-default: #171473;
+  --aec-toggle-group-tab-item-color-option-3-selected-bg-disabled: #a3a3a3;
+  --aec-toggle-group-tab-item-color-option-3-selected-border-default: transparent;
+  --aec-toggle-group-tab-item-color-option-3-selected-border-disabled: transparent;
+  --aec-toggle-group-tab-item-color-option-3-selected-text-default: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-3-selected-text-disabled: #8C8C8C;
+  --aec-toggle-group-tab-item-color-option-3-selected-icon-default: #FFFFFF;
+  --aec-toggle-group-tab-item-color-option-3-selected-icon-disabled: #b3b3b3;
+  --aec-toggle-group-tab-item-container-bg-spacing: 16px;
+  --aec-toggle-group-tab-item-container-bg-border-radius: 8px;
+  --aec-toggle-group-tab-item-container-bg-border-width-top: 2px;
+  --aec-toggle-group-tab-item-container-bg-border-width-right: 2px;
+  --aec-toggle-group-tab-item-container-bg-border-width-bottom: 2px;
+  --aec-toggle-group-tab-item-container-bg-border-width-left: 2px;
+  --aec-toggle-group-tab-item-container-text-item-spacing: 8px;
+  --aec-toggle-group-tab-color-option-1-bg-default: transparent;
+  --aec-toggle-group-tab-color-option-1-border-default: transparent;
+  --aec-toggle-group-tab-color-option-2-bg-default: transparent;
+  --aec-toggle-group-tab-color-option-2-border-default: transparent;
+  --aec-toggle-group-tab-container-bg-m-item-spacing: 8px;
+  --aec-toggle-group-tab-container-bg-m-spacing: 0px;
+  --aec-toggle-group-tab-container-bg-m-height: 40px;
+  --aec-toggle-group-tab-container-bg-m-border-radius: 0px;
+  --aec-toggle-group-tab-container-bg-m-border-width-top: 0px;
+  --aec-toggle-group-tab-container-bg-m-border-width-right: 0px;
+  --aec-toggle-group-tab-container-bg-m-border-width-bottom: 0px;
+  --aec-toggle-group-tab-container-bg-m-border-width-left: 0px;
+  --aec-toggle-group-tab-container-bg-l-item-spacing: 8px;
+  --aec-toggle-group-tab-container-bg-l-spacing: 0px;
+  --aec-toggle-group-tab-container-bg-l-height: 48px;
+  --aec-toggle-group-tab-container-bg-l-border-radius: 0px;
+  --aec-toggle-group-tab-container-bg-l-border-width-top: 0px;
+  --aec-toggle-group-tab-container-bg-l-border-width-right: 0px;
+  --aec-toggle-group-tab-container-bg-l-border-width-bottom: 0px;
+  --aec-toggle-group-tab-container-bg-l-border-width-left: 0px;
+  --aec-tooltip-color-dark-bg: #000000;
+  --aec-tooltip-color-dark-border: none;
+  --aec-tooltip-color-dark-title: #FFFFFF;
+  --aec-tooltip-color-dark-body: #FFFFFF;
+  --aec-tooltip-color-white-bg: #FFFFFF;
+  --aec-tooltip-color-white-border: none;
+  --aec-tooltip-color-white-title: #1A1A1A;
+  --aec-tooltip-color-white-body: #666666;
+  --aec-font-weight-100: 100;
+  --aec-font-weight-200: 200;
+  --aec-font-weight-300: 300;
+  --aec-font-weight-400: 400;
+  --aec-font-weight-500: 500;
+  --aec-font-weight-600: 600;
+  --aec-font-weight-700: 700;
+  --aec-font-weight-800: 800;
+  --aec-font-weight-900: 900;
+  --aec-font-weight-body-regular: 400;
+  --aec-font-weight-body-medium: 500;
+  --aec-font-weight-body-bold: 700;
+  --aec-font-weight-body-link: 500;
+  --aec-font-weight-body-all-caps: 500;
+  --aec-font-weight-heading-1: 700;
+  --aec-font-weight-heading-2: 700;
+  --aec-font-weight-heading-3: 700;
+  --aec-font-weight-heading-4: 700;
+  --aec-font-weight-heading-5: 700;
+  --aec-font-weight-heading-6: 700;
+  --aec-font-weight-display-1: 700;
+  --aec-font-weight-display-2: 700;
+  --aec-font-weight-button: 500;
+  --aec-font-weight-regular: 400;
+  --aec-font-weight-medium: 500;
+  --aec-font-weight-semi-bold: 500;
+  --aec-font-weight-bold: 700;
+  --aec-font-family-body: Cadillac Gothic Narrow;
+  --aec-font-family-heading: Cadillac Gothic;
+  --aec-font-family-display: Cadillac Gothic Wide;
+  --aec-font-family-button: Cadillac Gothic;
+  --aec-letter-spacing-0: 0em;
+  --aec-paragraph-spacing-0: 0;
+  --aec-paragraph-spacing-100: 8;
+  --aec-paragraph-spacing-200: 16;
+  --aec-paragraph-indent-0: 0px;
+  --aec-text-case-none: none;
+  --aec-text-case-uppercase: uppercase;
+  --aec-text-decoration-none: none;
+  --aec-text-decoration-underline: underline;
+  --aec-sizing-illustration-2xs: 24px;
+  --aec-sizing-illustration-xs: 32px;
+  --aec-sizing-illustration-s: 40px;
+  --aec-sizing-illustration-m: 64px;
+  --aec-sizing-illustration-l: 80px;
+  --aec-sizing-illustration-xl: 128px;
+  --aec-sizing-illustration-2xl: 256px;
+  --aec-sizing-icon-xs: 12px;
+  --aec-sizing-icon-s: 16px;
+  --aec-sizing-icon-m: 24px;
+  --aec-sizing-icon-l: 32px;
+  --aec-sizing-icon-xl: 40px;
+  --aec-sizing-selectable-xs: 24px;
+  --aec-sizing-selectable-s: 32px;
+  --aec-sizing-selectable-m: 40px;
+  --aec-sizing-selectable-l: 48px;
+  --aec-sizing-selectable-xl: 64px;
+  --aec-spacing-container-padding-none: 0px;
+  --aec-spacing-container-padding-xs: 8px;
+  --aec-spacing-container-padding-s: 16px;
+  --aec-spacing-container-padding-m: 24px;
+  --aec-spacing-container-padding-l: 40px;
+  --aec-spacing-container-gap-none: 0px;
+  --aec-spacing-container-gap-xs: 4px;
+  --aec-spacing-container-gap-s: 8px;
+  --aec-spacing-container-gap-m: 16px;
+  --aec-spacing-container-gap-l: 24px;
+  --aec-spacing-container-gap-xl: 40px;
+  --aec-spacing-container-stack-none: 0px;
+  --aec-spacing-container-stack-xs: 8px;
+  --aec-spacing-container-stack-s: 16px;
+  --aec-spacing-container-stack-m: 24px;
+  --aec-spacing-container-stack-l: 40px;
+  --aec-spacing-container-stack-xl: 64px;
+  --aec-spacing-selectable-padding-none: 0px;
+  --aec-spacing-selectable-padding-xs: 4px;
+  --aec-spacing-selectable-padding-s: 8px;
+  --aec-spacing-selectable-padding-m: 16px;
+  --aec-spacing-selectable-padding-l: 24px;
+  --aec-spacing-selectable-gap-none: 0px;
+  --aec-spacing-selectable-gap-xs: 2px;
+  --aec-spacing-selectable-gap-s: 4px;
+  --aec-spacing-selectable-gap-m: 8px;
+  --aec-spacing-selectable-gap-l: 16px;
+  --aec-spacing-selectable-stack-none: 0px;
+  --aec-spacing-selectable-stack-s: 8px;
+  --aec-spacing-selectable-stack-m: 16px;
+  --aec-spacing-selectable-stack-l: 24px;
+  --aec-border-radius-none: 0px;
+  --aec-border-radius-default: 0px;
+  --aec-border-radius-rounded-rect: 4px;
+  --aec-border-radius-xl: 8px;
+  --aec-border-radius-rounded: 384px;
+  --aec-border-radius-focus: 4px;
+  --aec-border-width-10: 1px;
+  --aec-border-width-15: 1.5px;
+  --aec-border-width-20: 2px;
+  --aec-border-width-30: 3px;
+  --aec-border-width-40: 4px;
+  --aec-border-width-none: 0px;
+  --aec-border-width-default: 1px;
+  --aec-border-width-focus: 1px;
+  --aec-box-shadow-none: 0 0 0 0 rgba(0, 0, 0, 0);
+  --aec-box-shadow-xs: 0 0 0 0 rgba(0, 0, 0, 0);
+  --aec-box-shadow-s: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  --aec-box-shadow-m: 0 4px 3px 0 rgba(0, 0, 0, 0.07), 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+  --aec-box-shadow-l: 0 10px 8px 0 rgba(0, 0, 0, 0.04), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  --aec-box-shadow-xl: 0 20px 12px 0 rgba(0, 0, 0, 0.03), 0 8px 4px 0 rgba(0, 0, 0, 0.08);
+  --aec-box-shadow-2xl: 0 24px 24px 0 rgba(0, 0, 0, 0.15);
+  --aec-color-bg-default: #FFFFFF;
+  --aec-color-bg-variant: #F2F2F2;
+  --aec-color-bg-disabled: #a3a3a3;
+  --aec-color-bg-inverse: #000000;
+  --aec-color-border-default: #B3B3B3;
+  --aec-color-border-variant: #8C8C8C;
+  --aec-color-border-disabled: #A3A3A3;
+  --aec-color-text-default: #1A1A1A;
+  --aec-color-text-subtle: #262626;
+  --aec-color-text-variant: #666666;
+  --aec-color-text-disabled: #8C8C8C;
+  --aec-color-text-inverse: #FFFFFF;
+  --aec-color-icon-default: #000000;
+  --aec-color-icon-variant: #666666;
+  --aec-color-icon-disabled: #b3b3b3;
+  --aec-color-icon-inverse: #FFFFFF;
+  --aec-color-backdrop-inverse: #FFFFFF40;
+  --aec-color-backdrop-default: #00000085;
+  --aec-color-primary-default: #171473;
+  --aec-color-primary-hover: #211FAB;
+  --aec-color-primary-subtle: #EEEEFD;
+  --aec-color-primary-on-default: #FFFFFF;
+  --aec-color-primary-on-subtle: #171473;
+  --aec-color-action-bg-default: #171473;
+  --aec-color-action-bg-hover: #211FAB;
+  --aec-color-action-bg-active: #171473;
+  --aec-color-action-bg-disabled: #D2D2D2;
+  --aec-color-action-border-default: #A0A0A0;
+  --aec-color-action-border-hover: #D2D2D2;
+  --aec-color-action-border-active: #171473;
+  --aec-color-action-inverse-bg-default: #FFFFFF;
+  --aec-color-action-inverse-bg-hover: #F2F2F2;
+  --aec-color-action-inverse-bg-active: #F2F2F2;
+  --aec-color-action-inverse-bg-disabled: #787878;
+  --aec-color-action-inverse-border-default: #F2F2F2;
+  --aec-color-action-inverse-border-hover: #F2F2F2;
+  --aec-color-action-inverse-border-active: #F2F2F2;
+  --aec-color-secondary-default: #505050;
+  --aec-color-secondary-hover: #282828;
+  --aec-color-secondary-subtle: #E9E5F1;
+  --aec-color-secondary-on-default: #FFFFFF;
+  --aec-color-secondary-on-subtle: #505050;
+  --aec-color-success-default: #0A7305;
+  --aec-color-success-subtle: #DDEAD9;
+  --aec-color-success-on-default: #FFFFFF;
+  --aec-color-success-on-subtle: #0A7305;
+  --aec-color-warning-default: #F5D98F;
+  --aec-color-warning-subtle: #FFF9EE;
+  --aec-color-warning-on-default: #282828;
+  --aec-color-warning-on-subtle: #B3842D;
+  --aec-color-error-default: #B50000;
+  --aec-color-error-subtle: #FBDED6;
+  --aec-color-error-on-default: #FFFFFF;
+  --aec-color-error-on-subtle: #B50000;
+  --aec-color-decoration-01: #C8800D;
+  --aec-color-decoration-02: #FAEDDB;
+  --aec-color-decoration-03: #22180A;
+  --aec-color-decoration-04: #B50000;
+  --aec-color-decoration-05: #FBDED6;
+  --aec-color-decoration-06: #220D02;
+  --aec-color-inverse-bg-default: #505050;
+  --aec-color-inverse-bg-variant: #282828;
+  --aec-color-inverse-bg-disabled: #787878;
+  --aec-color-inverse-border-default: #A0A0A0;
+  --aec-color-inverse-border-variant: #787878;
+  --aec-color-inverse-border-disabled: #787878;
+  --aec-color-inverse-text-default: #FFFFFF;
+  --aec-color-inverse-text-variant: #D2D2D2;
+  --aec-color-inverse-text-disabled: #787878;
+  --aec-color-inverse-icon-default: #FFFFFF;
+  --aec-color-inverse-icon-variant: #D2D2D2;
+  --aec-color-inverse-icon-disabled: #787878;
+  --aec-color-dark-grey-base: #787878;
+  --aec-color-dark-grey-weak: #B9B9B9;
+  --aec-color-dark-grey-strong: #3C3C3C;
+  --aec-color-light-grey-base: #D2D2D2;
+  --aec-color-light-grey-weak: #E8E8E8;
+  --aec-color-light-grey-strong: #A4A4A4;
+  --aec-color-focus-default: #171473;
+  --aec-color-info-default: #2263e3;
+  --aec-color-info-subtle: #ebf2ff;
+  --aec-color-info-on-default: #ffffff;
+  --aec-color-info-on-subtle: #2263e3;
+  --aec-color-track-bg-default: #ffffff;
+  --aec-color-track-bg-selected: #739fd2;
+  --aec-color-track-bg-disabled: #ffffff;
+  --aec-color-track-border-default: #00395c;
+  --aec-color-track-border-selected: #00000000;
+  --aec-color-track-border-disabled: #bfbfc1;
+  --aec-header-color-bg-default: #F2F2F2;
+  --aec-header-color-border-default: #B3B3B3;
+  --aec-header-color-text-default: #1A1A1A;
+  --aec-header-color-icon-default: #000000;
+}
+
+@media(min-width: 1025px) {
+  body {
+    --aec-notification-container-inside-spacing: 16px;
+    --aec-notification-container-inside-item-spacing: 16px;
+    --aec-notification-container-inside-border-radius: 0px;
+    --aec-notification-container-inside-box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.07), 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+    --aec-notification-container-inside-border-width-left: 2px;
+    --aec-notification-container-inside-border-width-top: 0px;
+    --aec-notification-container-inside-border-width-right: 0px;
+    --aec-notification-container-inside-border-width-bottom: 0px;
+    --aec-radio-hit-area-sizing: 24px;
+    --aec-slider-hit-area-width: 24px;
+    --aec-slider-hit-area-height: 24px;
+    --aec-switch-hit-area-width: 40px;
+    --aec-switch-hit-area-height: 24px;
+  }
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rich tooltip · DRS Design System</title>
+<meta name="description" content="A dark tooltip with an illustration, such as “Where to find VIN?”, that becomes a bottom sheet on mobile.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="536-165750" data-figma-file="g5hh34klkdaAOzyjoDRDgJ">
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Feedback</p>
+  <h1>Rich tooltip</h1>
+  <p class="doc-lead">A help tooltip with an illustration, used next to the VIN field to show where to find the number. On mobile it opens as a bottom sheet.</p>
+  <div class="doc-meta"><span>Desktop bubble · mobile sheet</span><span><code>.aec-tooltip--rich</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="desktop">Desktop</h2>
+    <div class="doc-example" data-label="Rich tooltip">
+      <div class="doc-example-preview" style="padding-top:160px;justify-content:flex-end">
+        <div class="aec-field" style="width:320px">
+          <span class="aec-row" style="justify-content:space-between"><label class="aec-field__label" for="vin">VIN</label>
+            <span class="aec-tooltip-anchor"><button class="aec-link aec-link--sm" type="button" aria-describedby="vin-tip">Where to find VIN?</button>
+              <span class="aec-tooltip aec-tooltip--rich" role="tooltip" id="vin-tip" data-placement="top-end">
+                <span class="aec-img-slot aec-tooltip__media"><span class="aec-icon aec-icon--40" style="--aec-icon-src:url(/assets/icons/car.svg)" aria-hidden="true"></span></span>
+                <span class="aec-tooltip__text"><span class="aec-tooltip__title">Where to find VIN?</span>The Vehicle Identification Number (VIN) is usually at the base of the windshield or on the driver's door jamb.</span>
+              </span></span></span>
+          <div class="aec-field__box"><input class="aec-field__input" id="vin" placeholder="17 characters" maxlength="17" autocomplete="off"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="mobile">Mobile</h2>
+    <p>On small screens, the trigger opens a bottom sheet with a header, a close button and a larger illustration.</p>
+    <div class="doc-example" data-no-code><div class="doc-example-preview"><button class="aec-link" type="button" data-aec-open="vin-sheet">Where is my VIN?</button></div></div>
+    <dialog class="aec-modal aec-modal--bottom-sheet" id="vin-sheet" aria-labelledby="vin-sheet-title">
+      <div class="aec-modal__header"><h2 class="aec-modal__title" id="vin-sheet-title">Where is my VIN?</h2><button class="aec-icon-btn aec-icon-btn--neutral" type="button" aria-label="Close" data-aec-close><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button></div>
+      <div class="aec-modal__body"><div class="aec-img-slot" style="height:205px;border-radius:8px"><span class="aec-icon aec-icon--40" style="--aec-icon-src:url(/assets/icons/car.svg)" aria-hidden="true"></span></div>
+        <div><p class="aec-body-2 aec-medium">Where to find VIN?</p><p class="aec-body-3 aec-text-subtle">The Vehicle Identification Number (VIN) is usually at the base of the windshield or on the driver's door jamb.</p></div></div>
+    </dialog>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="spec">Specification</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Bubble</td><td><code>inverse/bg/default</code>, 4px radius, padding 8/16/8/8, 18px gap, 6px arrow</td></tr>
+        <tr><td>Media</td><td>160×100px image slot on a white background</td></tr>
+        <tr><td>Title</td><td>body-2 medium, <code>text/inverse</code></td></tr>
+        <tr><td>Text</td><td>body-3, <code>inverse/text/variant</code></td></tr>
+        <tr><td>Mobile</td><td><a href="../components/modal.html">Bottom sheet</a> over <code>backdrop/default</code> with a 327×205px illustration</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The surface is #232323, which has no token. The code uses <code>inverse/bg/default</code> (#262626).</li>
+      <li>The mobile backdrop is 60% black. The token <code>backdrop/default</code> is 52%.</li>
+      <li>The illustration is vehicle photography with red markers (#ff0000). Here it's an image slot.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>

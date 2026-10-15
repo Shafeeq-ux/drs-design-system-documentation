@@ -1,0 +1,95 @@
+---
+title: Colour
+description: Semantic colour tokens for surfaces, text, icons, actions and status in the DRS Chevrolet foundation.
+figma: 1403-9180
+scripts: foundations.js
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Foundations</p>
+  <h1>Colour</h1>
+  <p class="doc-lead">Colour tokens are named by role, not by hue. Use the role that describes what an element does, such as text, a border or a primary action, and the right value follows.</p>
+  <div class="doc-meta"><span>83 tokens</span><span>Prefix <code>--aec-color-</code></span></div>
+
+  <div class="doc-intro">
+    <p>Every token maps one-to-one to a Figma colour style. The style <code>primary/default</code> becomes <code>--aec-color-primary-default</code>. Click a swatch to copy its <code>var()</code>.</p>
+    <p>Contrast is measured against white, or against <code>text/default</code> if that scores higher. <strong>AA</strong> means at least 4.5:1, which is safe for body text.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="naming">How tokens are named</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Part</th><th>Examples</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>Role</td><td><code>bg</code> <code>text</code> <code>icon</code> <code>border</code> <code>action</code> <code>primary</code> <code>success</code></td><td>What the colour is used for</td></tr>
+        <tr><td>Variant</td><td><code>default</code> <code>variant</code> <code>subtle</code> <code>disabled</code> <code>inverse</code></td><td>Emphasis, or the surface the colour sits on</td></tr>
+        <tr><td>State</td><td><code>hover</code> <code>active</code></td><td>The interaction state for actions</td></tr>
+        <tr><td>On-colour</td><td><code>on-default</code> <code>on-subtle</code></td><td>Text or icons placed <em>on</em> that colour</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="neutral">Neutral</h2>
+    <p>Backgrounds, borders, text and icons. Most of the interface is built from these tokens.</p>
+    <h3 class="doc-h3">Background</h3>
+    <div class="doc-swatches" data-swatches="Neutral" data-prefix="bg/"></div>
+    <h3 class="doc-h3">Border</h3>
+    <div class="doc-swatches" data-swatches="Neutral" data-prefix="border/"></div>
+    <h3 class="doc-h3">Text</h3>
+    <div class="doc-swatches" data-swatches="Neutral" data-prefix="text/"></div>
+    <h3 class="doc-h3">Icon</h3>
+    <div class="doc-swatches" data-swatches="Neutral" data-prefix="icon/"></div>
+    <h3 class="doc-h3">Backdrop</h3>
+    <div class="doc-swatches" data-swatches="Neutral" data-prefix="backdrop/"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="brand">Brand</h2>
+    <p>Chevrolet blue is the primary colour for links, focus and the main call to action. Secondary is near-black and used for strong, neutral emphasis.</p>
+    <div class="doc-swatches" data-swatches="Brand"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="action">Action</h2>
+    <p>Fills and borders for interactive controls such as buttons, chips, toggles and selectable cards. Use <code>action/inverse</code> on dark surfaces.</p>
+    <div class="doc-swatches" data-swatches="Action"></div>
+    <h3 class="doc-h3">Action – inverse</h3>
+    <div class="doc-swatches" data-swatches="Action – inverse"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="status">Status</h2>
+    <p>Feedback for success, warning, error and information. Pair a <code>subtle</code> background with its <code>on-subtle</code> text, and a <code>default</code> background with its <code>on-default</code> text.</p>
+    <div class="doc-swatches" data-swatches="Status"></div>
+    <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><p><code>warning/default</code> (#b3842d) is only 3.36:1 against white. Use it for icons, borders and large text, and keep body text in <code>text/default</code>. Text on a <code>warning/default</code> fill uses <code>warning/on-default</code> (#1a1a1a).</p></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="inverse">Inverse</h2>
+    <p>For dark surfaces such as the header, footer, tooltips and snackbars.</p>
+    <div class="doc-swatches" data-swatches="Inverse"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="greys">Greys and decoration</h2>
+    <p>Supporting greys, plus decoration colours for illustrations and promotional accents. Don't use decoration colours to convey status.</p>
+    <div class="doc-swatches" data-swatches="Greys"></div>
+    <div class="doc-swatches" data-swatches="Decoration"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview"><span style="color:var(--aec-color-text-default)" class="aec-body-1">Monthly payment</span><span style="color:var(--aec-color-text-subtle)" class="aec-body-2">Estimated</span></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Use semantic tokens such as <code>text/default</code> and <code>text/subtle</code> so the hierarchy stays consistent.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><span style="color:#0077d9" class="aec-body-1">Monthly payment</span><span style="color:#2d871b" class="aec-body-2">Estimated</span></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't hard-code hex values or borrow brand and status colours for plain text.</div></div>
+    </div>
+<pre><code>.price-card {
+  background: var(--aec-color-bg-default);
+  border: var(--aec-border-width-default) solid var(--aec-color-border-default);
+  color: var(--aec-color-text-default);
+}
+.price-card__note { color: var(--aec-color-text-subtle); }</code></pre>
+  </section>
+</div>

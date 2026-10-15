@@ -1,0 +1,57 @@
+---
+title: Misc
+description: Page titles, loading and concierge frames, designer placeholders, third-party embed frames and the data-table cell kit.
+figma: 6175-21149
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Media &amp; screens</p>
+  <h1>Misc</h1>
+  <p class="doc-lead">Smaller pieces from the Misc page: hero page titles, content frames for loading and concierge sessions, and frames for embedded third-party content.</p>
+  <div class="doc-meta"><span>Titles · frames · placeholders</span></div>
+
+  <section class="doc-section">
+    <h2 id="titles">Page titles</h2>
+    <p>Large white titles on dark hero backgrounds, for example "Offers listing". They are 56px on desktop, 48px on tablet and 40px on mobile.</p>
+    <div class="doc-example" data-label="Page title">
+      <div class="doc-example-preview is-inverse"><h2 class="aec-page-title">Offers listing</h2></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="frames">Content frames</h2>
+    <div class="doc-example" data-label="Loading, concierge and embed frames">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <div class="aec-loading" role="status" style="min-height:220px;padding:40px 16px"><span class="aec-spinner aec-spinner--lg" aria-hidden="true"></span><span>Calculating your trade-in estimate. Please wait.</span></div>
+        <div class="aec-loading" style="min-height:220px;padding:40px 16px;background:var(--aec-color-bg-variant);color:var(--aec-color-text-variant)">Concierge session</div>
+        <div class="aec-loading" style="min-height:220px;padding:40px 16px;background:var(--aec-color-bg-variant);border-radius:4px"><span class="aec-heading-5" style="color:var(--aec-color-text-variant)">Embedded content</span><span class="aec-body-3">Third-party iFrame</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="table-kit">Data-table cell kit</h2>
+    <p>The Figma section includes an unpublished kit of table cells: text, numbers (default, blue, green, red), icons, ratings, user, tags and buttons, in rows of 1–5 columns. Build these with the foundation <a href="../components/table.html">table</a>.</p>
+    <div class="doc-example" data-label="Table with rich cells">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-table-wrap"><table class="aec-table aec-table--sm">
+          <thead><tr><th scope="col">Dealer</th><th scope="col">Rating</th><th scope="col" class="aec-num">Price</th><th scope="col">Status</th><th scope="col"><span class="aec-visually-hidden">Actions</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="aec-row"><span class="aec-avatar aec-avatar--sm aec-avatar--inverse" aria-hidden="true">RC</span>Riverside Chevrolet</span></td><td>★★★★☆ <span class="aec-text-subtle">4.6</span></td><td class="aec-num" style="color:var(--aec-color-success-default)">$47,600</td><td><span class="aec-chip aec-chip--info aec-chip--success aec-chip--sm">In stock</span></td><td><button class="aec-btn aec-btn--primary aec-btn--inline" type="button">View</button></td></tr>
+            <tr><td><span class="aec-row"><span class="aec-avatar aec-avatar--sm" aria-hidden="true">GC</span>Gilroy Chevrolet</span></td><td>★★★★★ <span class="aec-text-subtle">4.9</span></td><td class="aec-num" style="color:var(--aec-color-error-default)">$49,250</td><td><span class="aec-chip aec-chip--info aec-chip--warning aec-chip--sm">In transit</span></td><td><button class="aec-btn aec-btn--primary aec-btn--inline" type="button">View</button></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Titles use raw sizes (56, 48 and 40px) with no text style. The closest are the display styles.</li>
+      <li>The loading screen's text layer is named "Please enter your email to continue".</li>
+      <li>The "Acura- iFrame" frame and the designer "Replace with page content" placeholder are design-time only.</li>
+      <li>The <code>_cell-*</code> table kit is unpublished.</li>
+    </ul>
+  </section>
+</div>

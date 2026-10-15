@@ -1,0 +1,46 @@
+---
+title: For designers
+description: How to use the DRS Chevrolet Figma library, styles and components.
+figma: 0-1
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Get started</p>
+  <h1>For designers</h1>
+  <p class="doc-lead">The Figma library <strong>DR 2.0 – SC GM Chevrolet Design Foundation</strong> is the source of truth. This site documents it and mirrors it in code.</p>
+
+  <section class="doc-section">
+    <h2 id="enable">Enable the library</h2>
+    <ol>
+      <li>In your Figma file, open <strong>Assets → Libraries</strong> (Alt/Option + 3, then the book icon).</li>
+      <li>Turn on <strong>DR 2.0 – SC GM Chevrolet Design Foundation</strong>. Its components depend on <strong>GM • 01. Core Variables</strong> and <strong>GM • 02.00 Domain Variables</strong>, so enable those too.</li>
+      <li>Use the colour, text and effect styles. Don't use raw hex values, so that designs stay linked to tokens.</li>
+    </ol>
+    <p><a href="https://www.figma.com/design/ilpJ5K66cGR85o287K4HDD" target="_blank" rel="noopener">Open the library in Figma (opens in a new tab)</a></p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="structure">How the file is organised</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Section</th><th>Pages</th></tr></thead>
+      <tbody>
+        <tr><td>Foundations</td><td>Colors, Typography, Elevation, Border, Spacing</td></tr>
+        <tr><td>Inputs</td><td>Button, Checkbox, Form Control, Menu, Radio Button, Slider, Switch, Text Field, Toggle Button</td></tr>
+        <tr><td>Data display</td><td>Avatar, Badge, Chip, Tooltip, Table</td></tr>
+        <tr><td>Feedback</td><td>Alert, Banner, Progress, Snackbar, Modal</td></tr>
+        <tr><td>Surfaces</td><td>Accordion</td></tr>
+        <tr><td>Navigation</td><td>Breadcrumbs, Header, Link, Pagination, Tabs</td></tr>
+        <tr><td>Library</td><td>Icons, Illustrations</td></tr>
+      </tbody>
+    </table></div>
+    <p>Pages marked 🚧 in Figma are still in progress and aren't documented here yet. See <a href="status.html">Component status</a>.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="handoff">Handoff</h2>
+    <ul>
+      <li>Every style name maps to a CSS token. <code>text/subtle</code> in Figma is <code>--aec-color-text-subtle</code> in code.</li>
+      <li>Component variant properties map to CSS modifiers. For example, Button <code>style=outline</code> becomes <code>.aec-btn--outline</code>.</li>
+      <li>Each component page has a <strong>View in Figma</strong> link to its source page.</li>
+    </ul>
+  </section>
+</div>

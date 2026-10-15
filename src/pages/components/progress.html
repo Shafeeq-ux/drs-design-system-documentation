@@ -1,0 +1,49 @@
+---
+title: Progress
+description: Progress indicators show that something is happening and, when known, how far along it is. Beta — pending Figma design.
+figma: 3769-50200
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Feedback</p>
+  <h1>Progress <span class="doc-nav-badge" style="font-size:14px;vertical-align:middle">Beta</span></h1>
+  <p class="doc-lead">Shows that something is happening and, when known, how far along it is, for example uploading documents or checking credit.</p>
+
+  <div class="doc-callout is-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><p><strong>Not yet designed.</strong> The Figma Progress page only holds a placeholder (four grey 24px circles). These styles are a token-based proposal for the design team to review and may change.</p></div>
+
+  <section class="doc-section">
+    <h2 id="spinner">Spinner</h2>
+    <p>For short waits of unknown length, such as loading offers.</p>
+    <div class="doc-example" data-label="Spinners">
+      <div class="doc-example-preview">
+        <span class="aec-spinner aec-spinner--sm" role="status" aria-label="Loading"></span>
+        <span class="aec-spinner" role="status" aria-label="Loading"></span>
+        <span class="aec-spinner aec-spinner--lg" role="status" aria-label="Loading"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="linear">Linear</h2>
+    <p>For tasks with a known end point, such as a document upload. Set the value with <code>--aec-progress</code> and <code>aria-valuenow</code>.</p>
+    <div class="doc-example" data-label="Linear progress">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-progress-field">
+          <div class="aec-progress-field__head"><span id="pg-1">Uploading insurance card</span><span>64%</span></div>
+          <div class="aec-progress" role="progressbar" aria-labelledby="pg-1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64" style="--aec-progress:64%"></div>
+        </div>
+        <div class="aec-progress-field">
+          <div class="aec-progress-field__head"><span id="pg-2">Checking credit</span></div>
+          <div class="aec-progress aec-progress--indeterminate" role="progressbar" aria-labelledby="pg-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Role and name <span class="doc-wcag">WCAG 4.1.2</span></h3><p>Use <code>role="progressbar"</code> with a label and <code>aria-valuenow</code>, <code>aria-valuemin</code> and <code>aria-valuemax</code>. Leave the values out for indeterminate progress. Spinners use <code>role="status"</code> with an <code>aria-label</code>.</p></div>
+      <div class="doc-a11y-item"><h3>Motion <span class="doc-wcag">WCAG 2.3.3</span></h3><p>Animations slow down when <code>prefers-reduced-motion</code> is set.</p></div>
+    </div>
+  </section>
+</div>

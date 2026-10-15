@@ -1,0 +1,70 @@
+---
+title: Typography
+description: Display, heading and body text styles for the DRS Chevrolet foundation, set in DM Sans with responsive sizes.
+figma: 398-2756
+scripts: foundations.js
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Foundations</p>
+  <h1>Typography</h1>
+  <p class="doc-lead">One typeface and a small set of styles. Display and headings scale down on mobile, and body styles stay the same at every size.</p>
+  <div class="doc-meta"><span>Typeface: DM Sans</span><span>11 styles · 3 breakpoints</span></div>
+
+  <div class="doc-intro">
+    <p>Figma uses <strong>Chevy Sans</strong>. The web build uses <strong>DM Sans</strong> from Google Fonts. Weights are mapped as follows: Chevy Sans Medium → 400, Demi → 600, Bold → 700. <code>body/*/medium</code> uses 500.</p>
+    <p>Sizes are mobile-first. Desktop and tablet values apply from <code>768px</code> up. The Figma tablet and desktop styles are identical.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="display">Display</h2>
+    <p>For hero headlines and marketing moments. Use at most one per screen.</p>
+    <div data-type-scale="display" data-sample="Find your next Chevy"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="headings">Headings</h2>
+    <p>Headings form the outline of the page. Keep the visual level in step with the HTML level (<code>h1</code>–<code>h6</code>).</p>
+    <div data-type-scale="heading" data-sample="Review your deal"></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="body">Body</h2>
+    <p><code>body-1</code> (16px) is the default for running text. Use <code>body-2</code> for dense UI and <code>body-3</code> for captions and legal text.</p>
+    <div data-type-scale="body" data-sample="Your estimated monthly payment includes taxes and fees. Final terms are confirmed by the dealer."></div>
+    <h3 class="doc-h3" id="body-modifiers">Body modifiers</h3>
+    <p>The Figma body styles come in <code>regular</code>, <code>medium</code>, <code>bold</code>, <code>link</code>, <code>all-caps</code> and <code>list</code> flavours. In CSS, combine a body class with a modifier:</p>
+    <div class="doc-example" data-label="Body modifiers">
+      <div class="doc-example-preview is-col">
+        <p class="aec-body-2">body-2 regular</p>
+        <p class="aec-body-2 aec-medium">body-2 medium</p>
+        <p class="aec-body-2 aec-bold">body-2 bold</p>
+        <p class="aec-body-2 aec-link-text">body-2 link</p>
+        <p class="aec-body-2 aec-all-caps">body-2 all caps</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="scale">Full scale</h2>
+    <div class="doc-table-wrap" data-type-table></div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+<pre><code>&lt;h1 class="aec-heading-1"&gt;Review your deal&lt;/h1&gt;
+&lt;p class="aec-body-1"&gt;Your estimated payment includes taxes and fees.&lt;/p&gt;
+
+/* or with tokens */
+.title {
+  font-size: var(--aec-typography-heading-3-font-size);
+  line-height: var(--aec-typography-heading-3-line-height);
+  font-weight: var(--aec-typography-heading-3-font-weight);
+}</code></pre>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start"><span class="aec-heading-4">Trade-in value</span><span class="aec-body-2 aec-text-subtle">Based on your vehicle's condition</span></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Pair a heading with body text one or two steps smaller to make the hierarchy clear.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview" style="flex-direction:column;align-items:flex-start"><span class="aec-heading-4 aec-all-caps">TRADE-IN VALUE</span><span class="aec-heading-5">Based on your vehicle's condition</span></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't put long headings in all caps, or stack two headings of nearly the same size.</div></div>
+    </div>
+  </section>
+</div>

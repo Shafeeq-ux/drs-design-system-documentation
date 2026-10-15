@@ -1,0 +1,69 @@
+---
+title: Congratulations
+description: The order confirmation screen — success banner, vehicle image, deal recap, delivery appointment, final steps and delivery checklist.
+figma: 2558-114779
+figmaFile: g5hh34klkdaAOzyjoDRDgJ
+---
+<div class="doc-content">
+  <p class="doc-eyebrow">Patterns · Media &amp; screens</p>
+  <h1>Congratulations</h1>
+  <p class="doc-lead">The final confirmation after secure checkout. It recaps the vehicle and deal, the delivery appointment, the remaining steps and what to bring.</p>
+  <div class="doc-meta"><span>Web · Tablet · Mobile</span><span><code>.aec-confirmation</code></span></div>
+
+  <section class="doc-section">
+    <h2 id="screen">Screen</h2>
+    <div class="doc-example" data-label="Congratulations screen">
+      <div class="doc-example-preview is-stretch is-plain" style="padding:0">
+        <div class="aec-confirmation">
+          <div class="aec-hero-success" role="status">
+            <span class="aec-hero-success__check"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/check.svg)" aria-hidden="true"></span></span>
+            <div><h2 class="aec-hero-success__title">All set!</h2><p class="aec-hero-success__text">You're one step closer to your 2025 Blazer EV SS AWD! We'll be in touch shortly to finalise your purchase.</p></div>
+          </div>
+          <div class="aec-confirmation__content">
+            <div class="aec-vehicle-image">
+              <span class="aec-img-slot">Vehicle photo</span>
+              <button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--filled aec-vehicle-image__nav aec-vehicle-image__nav--prev" type="button" aria-label="Previous photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-left.svg)" aria-hidden="true"></span></button>
+              <button class="aec-icon-btn aec-icon-btn--inverse aec-icon-btn--filled aec-vehicle-image__nav aec-vehicle-image__nav--next" type="button" aria-label="Next photo"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/caret-right.svg)" aria-hidden="true"></span></button>
+            </div>
+            <div class="aec-confirmation__info">
+              <section class="aec-confirmation__block"><h3>Your vehicle</h3><p>2025 Blazer EV <span class="aec-sep">•</span> SS AWD</p><small>Dealer price: $52,392.00</small><p>Est. monthly payment <b>$364.81/mo.</b></p><small>49 months • 4% APR • $4,000 down payment<br>$0 security deposit</small><a class="aec-link" href="#screen">Payment summary</a></section>
+              <section class="aec-confirmation__block"><h3>Home delivery</h3><p>Fri, Nov 13, 2026</p><small>3208 Johnston Rd, Pleasanton, CA 94588</small><a class="aec-link aec-link--neutral" href="tel:+19515550168">(951) 555-0168</a><a class="aec-link" href="#screen">Reschedule</a></section>
+              <section class="aec-confirmation__block"><h3>Final steps for a seamless delivery</h3><p>First service appointment <b style="color:var(--aec-color-success-default);font-size:12px">Complete</b></p><small>We make maintenance simple. Book your first service with Chevrolet-certified technicians.</small><button class="aec-btn aec-btn--standard aec-btn--sm" type="button" disabled style="align-self:flex-start">Schedule now</button></section>
+              <section class="aec-confirmation__block"><h3>What you need at delivery</h3><ul><li>Driver's licence</li><li>Proof of insurance</li><li>Trade-in vehicle title</li></ul></section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="layout">Layout</h2>
+    <div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr><th>Width</th><th>Banner</th><th>Content</th></tr></thead>
+      <tbody>
+        <tr><td>1366–1440</td><td>250px</td><td>Image (640) and info grid side by side. 40px padding and gap.</td></tr>
+        <tr><td>768</td><td>272px</td><td>Image on top, info blocks below. 40px padding.</td></tr>
+        <tr><td>375</td><td>290–304px</td><td>Stacked, 24px padding. Image 327×184.</td></tr>
+      </tbody>
+    </table></div>
+    <p>The layout uses a container query, so it switches to one column when its container is narrower than 1000px.</p>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Confirmation <span class="doc-wcag">WCAG 4.1.3 · 2.4.2</span></h3><p>Move focus to the "All set!" heading when the page loads, and update the document title to "Order confirmed".</p></div>
+      <div class="doc-a11y-item"><h3>Headings</h3><p>Each recap block is a <code>&lt;section&gt;</code> with an <code>h3</code>, so screen-reader users can jump between them.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>The variant name has a typo: <code>Web (!366)</code>.</li>
+      <li>The banner green (#41b473) has no token.</li>
+      <li>The image arrows are drawn disabled in the web instance.</li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alert · DRS Design System</title>
+<meta name="description" content="Alerts display an important message about the current page or task — success, warning, error or information.">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<script>(function(d){var R={"ids":["base","chevrolet","gmc","buick","cadillac","carbravo"],"def":"base","fonts":{"gmc":"https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap","buick":"https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Lexend:wght@300..700&display=swap","cadillac":"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Archivo:wght@300..800&display=swap"}},h=d.documentElement,q,s,b;try{q=new URLSearchParams(location.search).get('brand')}catch(e){}try{s=localStorage.getItem('drs-brand')}catch(e){}b=[q,s,R.def].filter(function(x){return x&&R.ids.indexOf(x)>-1})[0];if(q&&q===b){try{localStorage.setItem('drs-brand',b)}catch(e){}}h.setAttribute('data-brand',b);var r=h.getAttribute('data-root')||'';d.write('<link rel="stylesheet" href="'+r+'css/brands/'+b+'.css" data-brand-css="'+b+'">'+(R.fonts[b]?'<link rel="stylesheet" href="'+R.fonts[b]+'" data-brand-font="'+b+'">':''))})(document);</script>
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/patterns.css">
+<link rel="stylesheet" href="../css/brand-components.css">
+<link rel="stylesheet" href="../css/docs.css">
+
+</head>
+<body>
+<main data-figma="3769-50197">
+<div class="doc-content">
+  <p class="doc-eyebrow">Components · Feedback</p>
+  <h1>Alert</h1>
+  <p class="doc-lead">Displays an important message about the current page or task. It stays visible until the issue is resolved or the person dismisses it.</p>
+  <div class="doc-meta"><span>4 statuses</span><span><code>.aec-alert</code></span></div>
+
+  <div class="doc-intro">
+    <p>Use an alert for messages tied to the content in front of the user, such as <em>Your credit application was approved</em>. For brief confirmations of an action, use a <a href="snackbar.html">snackbar</a>. For neutral announcements at the top of a page, use a <a href="banner.html">banner</a>.</p>
+  </div>
+
+  <section class="doc-section">
+    <h2 id="status">Statuses</h2>
+    <div class="doc-example" data-label="Alert statuses">
+      <div class="doc-example-preview is-stretch">
+        <div class="aec-alert aec-alert--success" role="status">
+          <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-success.svg)" aria-hidden="true"></span>
+            <div class="aec-alert__content"><p class="aec-alert__title">You're pre-qualified</p><p class="aec-alert__message">Estimated APR 5.9% for 60 months. Final terms are confirmed by GM Financial.</p></div></div>
+        </div>
+        <div class="aec-alert aec-alert--warning" role="status">
+          <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/warning.svg)" aria-hidden="true"></span>
+            <div class="aec-alert__content"><p class="aec-alert__title">Offer ends soon</p><p class="aec-alert__message">The $1,500 loyalty bonus expires on October 31.</p></div></div>
+        </div>
+        <div class="aec-alert aec-alert--error" role="alert">
+          <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span>
+            <div class="aec-alert__content"><p class="aec-alert__title">We couldn't verify your address</p><p class="aec-alert__message">Check the ZIP code and try again.</p><a class="aec-link" href="#status">Edit address</a></div></div>
+        </div>
+        <div class="aec-alert aec-alert--info" role="status" data-aec-dismissable>
+          <div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/info.svg)" aria-hidden="true"></span>
+            <div class="aec-alert__content"><p class="aec-alert__message">Prices include destination freight but exclude tax, title and registration.</p></div></div>
+          <button class="aec-icon-btn aec-icon-btn--neutral aec-icon-btn--sm" type="button" aria-label="Dismiss" data-aec-dismiss><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/close.svg)" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="anatomy">Anatomy</h2>
+    <ol>
+      <li><strong>Container</strong>: <code>bg/default</code>, 1px <code>border/default</code>, <code>shadow/m</code>, square corners and 16px padding. Add <code>.aec-alert--flat</code> to remove the shadow inside cards.</li>
+      <li><strong>Status accent</strong>: a 2px left border in the status colour.</li>
+      <li><strong>Icon</strong>: 24px, in the status colour.</li>
+      <li><strong>Title (optional)</strong>: body-1 bold, <code>text/default</code>.</li>
+      <li><strong>Message</strong>: body-2, <code>text/subtle</code>.</li>
+      <li><strong>Link (optional)</strong> and <strong>close button (optional)</strong>.</li>
+    </ol>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="usage">Usage</h2>
+    <div class="doc-dd">
+      <div class="doc-dd-card"><div class="doc-dd-preview"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Upload a photo of your driver's licence to continue.</p></div></div></div></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Do</div>Say what happened and what to do next.</div></div>
+      <div class="doc-dd-card is-dont"><div class="doc-dd-preview"><div class="aec-alert aec-alert--error aec-alert--flat"><div class="aec-alert__body"><span class="aec-icon" style="--aec-icon-src:url(/assets/icons/state-error.svg)" aria-hidden="true"></span><div class="aec-alert__content"><p class="aec-alert__message">Error 422: validation failed.</p></div></div></div></div>
+        <div class="doc-dd-body"><div class="doc-dd-label">Don't</div>Don't show technical codes or blame the user.</div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="accessibility">Accessibility</h2>
+    <div class="doc-a11y">
+      <div class="doc-a11y-item"><h3>Announcements <span class="doc-wcag">WCAG 4.1.3</span></h3><p>Use <code>role="alert"</code> only for urgent errors that appear dynamically. Use <code>role="status"</code> for success, info and warning. Alerts present when the page loads need neither.</p></div>
+      <div class="doc-a11y-item"><h3>Not colour alone <span class="doc-wcag">WCAG 1.4.1</span></h3><p>Each status has its own icon and message, so meaning doesn't depend on the accent colour.</p></div>
+      <div class="doc-a11y-item"><h3>Dismissing <span class="doc-wcag">WCAG 2.1.1</span></h3><p>The close button is a labelled icon button. When the alert is removed, focus moves to the next element.</p></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2 id="figma-notes">Figma notes</h2>
+    <ul class="doc-small">
+      <li>Every status uses the same placeholder icon. The code uses status icons from the library (<code>state-success</code>, <code>warning</code>, <code>state-error</code>, <code>info</code>).</li>
+      <li><em>Information</em> uses grey #666666 in Figma. The code uses <code>info/default</code>. Confirm which is intended.</li>
+      <li>The shadow is a raw effect, but its values match <code>shadow/m</code> exactly.</li>
+    </ul>
+  </section>
+</div>
+</main>
+<script src="../js/tokens-data.js"></script>
+<script src="../js/brands-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/components.js"></script>
+
+</body>
+</html>
